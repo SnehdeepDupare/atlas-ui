@@ -2,6 +2,8 @@ import { Inter } from "next/font/google";
 import type { Metadata } from "next";
 
 import "./globals.css";
+import { ThemeProvider } from "@/components/theme-provider";
+import { Header } from "@/components/header";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -17,7 +19,19 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${inter.className} antialiased`}>{children}</body>
+      <body
+        className={`${inter.className} antialiased min-h-svh flex flex-col bg-background`}
+      >
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
+        >
+          <Header />
+          <main className="flex flex-1 flex-col">{children}</main>
+        </ThemeProvider>
+      </body>
     </html>
   );
 }
