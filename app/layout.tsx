@@ -4,6 +4,7 @@ import type { Metadata } from "next";
 import "@/styles/globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
 import { Header } from "@/components/header";
+import { Footer } from "@/components/footer";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -30,6 +31,7 @@ export default function RootLayout({
         >
           <Header />
           <main className="flex flex-1 flex-col">{children}</main>
+          <Footer />
         </ThemeProvider>
       </body>
     </html>
