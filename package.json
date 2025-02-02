@@ -36,6 +36,7 @@
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
+    "mdast-util-toc": "^6.1.1",
     "postcss": "^8",
     "rehype": "^13.0.2",
     "rehype-autolink-headings": "^7.1.0",
