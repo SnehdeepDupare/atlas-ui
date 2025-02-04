@@ -19,4 +19,19 @@ export const demoComponents: Record<string, any> = {
     })),
     path: "components/atlas_ui/(react)/animated-mobile-navbar.tsx",
   },
+  "shiny-button-demo": {
+    component: lazy(async () => ({
+      default: (
+        await import("components/demo-components/react/shiny-button-demo")
+      ).ShinyButtonDemo,
+    })),
+    path: "components/demo-components/react/shiny-button-demo.tsx",
+  },
+  "shiny-button": {
+    component: lazy(async () => ({
+      default: (await import("components/atlas_ui/(react)/shiny-button"))
+        .ShinyButton,
+    })),
+    path: "components/atlas_ui/(react)/shiny-button.tsx",
+  },
 };

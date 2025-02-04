@@ -1,0 +1,70 @@
+---
+title: Shiny Button
+description: Shiny Button
+---
+ 
+<ComponentPreview
+  name="shiny-button-demo"
+/>
+
+## Installation
+
+<Steps>
+
+<Step>Install the following dependencies:</Step>
+
+```bash
+npm install motion
+```
+
+<Step>Copy and paste the following code into your project.</Step>
+
+<ComponentSource name="shiny-button" filePath="components/atlas_ui/shiny-button.tsx" />
+
+<Step>Update `globals.css`</Step>
+
+```css
+.radial-gradient {
+  background: radial-gradient(
+      circle at 50% 0%,
+      rgba(250, 250, 250, 0.05) 0%,
+      transparent 60%
+    ),
+    rgba(15, 15, 15, 1);
+}
+
+.linear-mask {
+  mask-image: linear-gradient(
+    -75deg,
+    white calc(var(--x) + 20%),
+    transparent calc(var(--x) + 30%),
+    white calc(var(--x) + 100%)
+  );
+}
+
+.linear-overlay {
+  background-image: linear-gradient(
+    -75deg,
+    rgba(255, 255, 255, 0.1) calc(var(--x) + 20%),
+    rgba(255, 255, 255, 0.5) calc(var(--x) + 25%),
+    rgba(255, 255, 255, 0.1) calc(var(--x) + 100%)
+  );
+
+  mask: linear-gradient(black, black) content-box, linear-gradient(black, black);
+  mask-composite: exclude;
+}
+```
+
+<Step>Update the import paths to match your project setup.</Step>
+
+</Steps>
+
+## Usage
+
+```tsx
+import { ShinyButton } from "@/components/atlas_ui/shiny-button";
+```
+
+```tsx
+<ShinyButton>Button</ShinyButton>
+```
