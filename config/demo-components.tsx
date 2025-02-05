@@ -34,4 +34,22 @@ export const demoComponents: Record<string, any> = {
     })),
     path: "components/atlas_ui/(react)/shiny-button.tsx",
   },
+  "dot-and-circle-mouse-trailer-demo": {
+    component: lazy(async () => ({
+      default: (
+        await import(
+          "components/demo-components/react/dot-and-circle-mouse-trailer-demo"
+        )
+      ).DotAndCircleMouseTrailerDemo,
+    })),
+    path: "components/demo-components/react/dot-and-circle-mouse-trailer-demo.tsx",
+  },
+  "dot-and-circle-mouse-trailer": {
+    component: lazy(async () => ({
+      default: (
+        await import("components/atlas_ui/(react)/dot-and-circle-mouse-trailer")
+      ).DotAndCircleMouseTrailer,
+    })),
+    path: "components/atlas_ui/(react)/dot-and-circle-mouse-trailer.tsx",
+  },
 };

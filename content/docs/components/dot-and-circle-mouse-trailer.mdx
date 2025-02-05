@@ -1,0 +1,50 @@
+---
+title: Dot and Circle Mouse Trailer
+description: A simple Lazy Dot and Circle Mouse Trailer
+---
+
+<ComponentPreview
+  name="dot-and-circle-mouse-trailer-demo"
+/>
+
+## Installation
+
+<Steps>
+
+<Step>Install the following dependencies:</Step>
+
+```bash
+npm install motion 
+```
+
+<Step>Copy and paste the following code into your project.</Step>
+
+<ComponentSource name="dot-and-circle-mouse-trailer" filePath="components/atlas_ui/dot-and-circle-mouse-trailer.tsx" />
+
+<Step>Update the import paths to match your project setup.</Step>
+
+</Steps>
+
+## Usage
+
+```tsx
+import { DotAndCircleMouseTrailer } from "@/components/atlas_ui/dot-and-circle-mouse-trailer";
+```
+
+Place the Component in your `layout.tsx` to make the Mouse Trailer accessible in entire project
+```tsx
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
+  return (
+    <html lang="en">
+      <body>
+        {children}
+        <DotAndCircleMouseTrailer />
+      </body>
+    </html>
+  );
+}
+```
