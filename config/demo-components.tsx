@@ -52,4 +52,36 @@ export const demoComponents: Record<string, any> = {
     })),
     path: "components/atlas_ui/(react)/dot-and-circle-mouse-trailer.tsx",
   },
+  "blob-mouse-trailer-demo": {
+    component: lazy(async () => ({
+      default: (
+        await import("components/demo-components/react/blob-mouse-trailer-demo")
+      ).BlobMouseTrailerDemo,
+    })),
+    path: "components/demo-components/react/blob-mouse-trailer-demo.tsx",
+  },
+  "blob-mouse-trailer": {
+    component: lazy(async () => ({
+      default: (await import("components/atlas_ui/(react)/blob-mouse-trailer"))
+        .BlobMouseTrailer,
+    })),
+    path: "components/atlas_ui/(react)/blob-mouse-trailer.tsx",
+  },
+  "blend-mouse-trailer-demo": {
+    component: lazy(async () => ({
+      default: (
+        await import(
+          "components/demo-components/react/blend-mouse-trailer-demo"
+        )
+      ).BlendMouseTrailerDemo,
+    })),
+    path: "components/demo-components/react/blend-mouse-trailer-demo.tsx",
+  },
+  "blend-mouse-trailer": {
+    component: lazy(async () => ({
+      default: (await import("components/atlas_ui/(react)/blend-mouse-trailer"))
+        .BlendMouseTrailer,
+    })),
+    path: "components/atlas_ui/(react)/blend-mouse-trailer.tsx",
+  },
 };

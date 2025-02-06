@@ -1,0 +1,56 @@
+---
+title: Blend Mouse Trailer
+description: A simple Lazy Blend Mouse Trailer
+---
+
+<ComponentPreview
+  name="blend-mouse-trailer-demo"
+/>
+
+## Installation
+
+<Steps>
+
+<Step>Install the following dependencies:</Step>
+
+```bash
+npm install motion 
+```
+
+<Step>Copy and paste the following code into your project.</Step>
+
+<ComponentSource name="blend-mouse-trailer" filePath="components/atlas_ui/blend-mouse-trailer.tsx" />
+
+<Step>Update the import paths to match your project setup.</Step>
+
+</Steps>
+
+## Usage
+
+```tsx
+import { BlendMouseTrailer } from "@/components/atlas_ui/blend-mouse-trailer";
+```
+
+Define a state to check if the desired component is hovered or not
+```tsx
+import { useState } from "react";
+
+const [isHovered, setIsHovered] = useState(false);
+```
+
+Track and update the hover state using `onMouseEnter` and `onMouseLeave` methods.
+```tsx
+<h1
+  onMouseEnter={() => setIsHovered(true)}
+  onMouseLeave={() => setIsHovered(false)}
+  className="text-5xl text-center"
+>
+  AtlasUI is an open-source library offering a suite of prebuilt animated
+  components for React, Next.js, and Vanilla JS.
+</h1>
+```
+
+Call the `BlendMouseTrailer` Component and pass the hovered state as props
+```tsx
+<BlendMouseTrailer isHovered={isHovered} />
+```
