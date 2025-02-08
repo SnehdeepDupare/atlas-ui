@@ -99,4 +99,60 @@ export const demoComponents: Record<string, any> = {
     })),
     path: "components/atlas_ui/(react)/hacker-text.tsx",
   },
+  "scroll-based-text-reveal-demo": {
+    component: lazy(async () => ({
+      default: (
+        await import(
+          "components/demo-components/react/scroll-based-text-reveal-demo"
+        )
+      ).ScrollBasedTextRevealDemo,
+    })),
+    path: "components/demo-components/react/scroll-based-text-reveal-demo.tsx",
+  },
+  "scroll-based-text-reveal": {
+    component: lazy(async () => ({
+      default: (
+        await import("components/atlas_ui/(react)/scroll-based-text-reveal")
+      ).ScrollBasedTextReveal,
+    })),
+    path: "components/atlas_ui/(react)/scroll-based-text-reveal.tsx",
+  },
+  "scroll-based-word-reveal-demo": {
+    component: lazy(async () => ({
+      default: (
+        await import(
+          "components/demo-components/react/scroll-based-word-reveal-demo"
+        )
+      ).ScrollBasedWordRevealDemo,
+    })),
+    path: "components/demo-components/react/scroll-based-word-reveal-demo.tsx",
+  },
+  "scroll-based-word-reveal": {
+    component: lazy(async () => ({
+      default: (
+        await import("components/atlas_ui/(react)/scroll-based-word-reveal")
+      ).ScrollBasedWordReveal,
+    })),
+    path: "components/atlas_ui/(react)/scroll-based-word-reveal.tsx",
+  },
+  "scroll-based-character-reveal-demo": {
+    component: lazy(async () => ({
+      default: (
+        await import(
+          "components/demo-components/react/scroll-based-character-reveal-demo"
+        )
+      ).ScrollBasedCharacterRevealDemo,
+    })),
+    path: "components/demo-components/react/scroll-based-character-reveal-demo.tsx",
+  },
+  "scroll-based-character-reveal": {
+    component: lazy(async () => ({
+      default: (
+        await import(
+          "components/atlas_ui/(react)/scroll-based-character-reveal"
+        )
+      ).ScrollBasedCharacterReveal,
+    })),
+    path: "components/atlas_ui/(react)/scroll-based-character-reveal.tsx",
+  },
 };
