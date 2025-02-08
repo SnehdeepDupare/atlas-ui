@@ -84,4 +84,19 @@ export const demoComponents: Record<string, any> = {
     })),
     path: "components/atlas_ui/(react)/blend-mouse-trailer.tsx",
   },
+  "hacker-text-demo": {
+    component: lazy(async () => ({
+      default: (
+        await import("components/demo-components/react/hacker-text-demo")
+      ).HackerTextDemo,
+    })),
+    path: "components/demo-components/react/hacker-text-demo.tsx",
+  },
+  "hacker-text": {
+    component: lazy(async () => ({
+      default: (await import("components/atlas_ui/(react)/hacker-text"))
+        .HackerText,
+    })),
+    path: "components/atlas_ui/(react)/hacker-text.tsx",
+  },
 };
