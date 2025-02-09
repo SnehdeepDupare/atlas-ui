@@ -15,6 +15,7 @@ import {
   SheetTitle,
   SheetTrigger,
 } from "@/components/ui/sheet";
+import { CommandMenu } from "./command-menu";
 
 export const Header = () => {
   const { setTheme, theme } = useTheme();
@@ -56,7 +57,7 @@ export const Header = () => {
 
           <div className="flex flex-1 items-center justify-between gap-2 md:justify-end">
             <div className="w-full flex-1 md:w-auto md:flex-none">
-              {/* TODO: Add Command Menu */}
+              <CommandMenu />
             </div>
 
             <div className="flex items-center gap-1">
