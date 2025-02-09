@@ -16,6 +16,8 @@ import {
   SheetTrigger,
 } from "@/components/ui/sheet";
 import { CommandMenu } from "./command-menu";
+import { DocsNav } from "./docs-nav";
+import { docsConfig } from "@/config/docs";
 
 export const Header = () => {
   const { setTheme, theme } = useTheme();
@@ -42,11 +44,13 @@ export const Header = () => {
                 <SheetHeader>
                   <SheetTitle>
                     <Link href="/">
-                      <h3 className="font-semibold text-2xl">AtlasUI.</h3>
+                      <h3 className="font-semibold text-2xl mb-4 text-left">
+                        AtlasUI.
+                      </h3>
                     </Link>
                   </SheetTitle>
                 </SheetHeader>
-                {/* TODO: Add Sidebar */}
+                <DocsNav config={docsConfig} />
               </SheetContent>
             </Sheet>
           </div>
