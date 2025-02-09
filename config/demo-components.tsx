@@ -19,6 +19,21 @@ export const demoComponents: Record<string, any> = {
     })),
     path: "components/atlas_ui/(react)/animated-mobile-navbar.tsx",
   },
+  "parallax-sections-demo": {
+    component: lazy(async () => ({
+      default: (
+        await import("components/demo-components/react/parallax-section-demo")
+      ).ParallaxSectionDemo,
+    })),
+    path: "components/demo-components/react/parallax-section-demo.tsx",
+  },
+  "parallax-sections": {
+    component: lazy(async () => ({
+      default: (await import("@/components/atlas_ui/(react)/parallax-sections"))
+        .ParallaxSections,
+    })),
+    path: "components/atlas_ui/(react)/parallax-sections.tsx",
+  },
   "shiny-button-demo": {
     component: lazy(async () => ({
       default: (
