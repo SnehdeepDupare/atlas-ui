@@ -19,6 +19,20 @@ export const demoComponents: Record<string, any> = {
     })),
     path: "components/atlas_ui/(react)/animated-mobile-navbar.tsx",
   },
+  "project-gallery-demo": {
+    component: lazy(async () => ({
+      default: (await import("components/preview/project-gallery-preview"))
+        .ProjectGalleryPreview,
+    })),
+    path: "components/demo-components/react/project-gallery-demo.tsx",
+  },
+  "project-gallery": {
+    component: lazy(async () => ({
+      default: (await import("components/atlas_ui/(react)/project-gallery"))
+        .ProjectGallery,
+    })),
+    path: "components/atlas_ui/(react)/project-gallery.tsx",
+  },
   "parallax-sections-demo": {
     component: lazy(async () => ({
       default: (

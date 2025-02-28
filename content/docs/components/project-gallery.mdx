@@ -1,0 +1,78 @@
+---
+title: Project Gallery
+description: Project Gallery
+---
+
+<ComponentPreview
+  name="project-gallery-demo"
+/>
+
+## Installation
+
+<Steps>
+
+<Step>Install the following dependencies:</Step>
+
+```bash
+npm install motion
+```
+
+<Step>Copy and paste the following code into your project.</Step>
+
+<ComponentSource name="project-gallery" filePath="components/atlas_ui/project-gallery.tsx" />
+
+<Step>Update the import paths to match your project setup.</Step>
+
+</Steps>
+
+## Usage
+
+```tsx
+import {
+  Project,
+  ProjectGallery,
+} from "@/components/atlas_ui/(react)/project-gallery";
+```
+
+```tsx
+<ProjectGallery>
+  <Project
+    title="Earth"
+    subtitle="Frontend"
+    href="#"
+    imgSrc="/earth.jpg"
+    color="#FAFBFC"
+  />
+  <Project
+    title="Black Hole"
+    subtitle="Frontend"
+    href="#"
+    imgSrc="/black-hole.jpg"
+    color="#404040"
+  />
+  <Project
+    title="Red Moon"
+    subtitle="Frontend"
+    href="#"
+    imgSrc="/red-moon.jpg"
+    color="#EFE8D3"
+  />
+  <Project
+    title="Space X"
+    subtitle="Frontend"
+    href="#"
+    imgSrc="/space-x.jpg"
+    color="#706D63"
+  />
+</ProjectGallery>
+```
+
+## Props
+
+| Prop         | Type     | Description                                   |
+| ------------ | -------- | --------------------------------------------- |
+| `title`      | `string` | Project Name / Title                          |
+| `subtitle`   | `string` | Project SubTitle / Category                   |
+| `href`       | `string` | Link to the project                           |
+| `imgSrc`     | `string` | Image Source for ComponentPreview             |
+| `color`      | `string` | Background Color for the Modal                |

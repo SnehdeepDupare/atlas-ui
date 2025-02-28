@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 
 export default function Home() {
   return (
-    <div className="pt-14">
+    <div className="">
       <section className="max-w-4xl mx-auto px-6 lg:px-8 py-24 text-center">
         <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight ">
           Ready-to-Use Animated Components for Modern Interfaces
