@@ -76,7 +76,7 @@ export default makeSource({
       [
         rehypePrettyCode,
         {
-          theme: "one-dark-pro",
+          theme: "poimandres",
           getHighlighter,
           onVisitLine(node) {
             // Prevent lines from collapsing in `display: grid` mode, and allow empty
