@@ -30,7 +30,7 @@ export function ComponentSource({
         </span>
       )}
       <Collapsible open={isOpened} onOpenChange={setIsOpened}>
-        <div className={cn("relative overflow-hidden", className)}>
+        <div className={cn("relative overflow-hidden rounded-xl", className)}>
           <CollapsibleContent
             forceMount
             className={cn("overflow-hidden", !isOpened && "max-h-64")}
@@ -45,7 +45,7 @@ export function ComponentSource({
           </CollapsibleContent>
           <div
             className={cn(
-              "absolute flex items-end justify-center bg-gradient-to-b from-transparent to-zinc-950/90 p-2",
+              "absolute flex items-end justify-center rounded-xl bg-gradient-to-b from-transparent to-zinc-950/90 p-2",
               isOpened ? "inset-x-0 bottom-4 h-12" : "inset-0"
             )}
           >
