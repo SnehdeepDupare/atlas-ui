@@ -30,7 +30,7 @@ export const Header = () => {
     }
   };
   return (
-    <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 shadow-md dark:shadow-primary-foreground">
+    <header className="sticky top-0 z-50 w-full border-b  backdrop-blur dark:backdrop-blur-sm   shadow-md dark:shadow-primary-foreground">
       <div className="container-wrapper">
         <div className="container flex h-14 items-center">
           <div className="md:hidden">
