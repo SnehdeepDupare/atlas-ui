@@ -150,7 +150,7 @@ const components = {
       <div className="relative">
         <pre
           className={cn(
-            "mb-4 mt-6 max-h-[400px] overflow-x-auto rounded-xl bg-zinc-950 py-4 dark:bg-zinc-900",
+            "mb-4 mt-6 max-h-[400px] overflow-x-auto rounded-xl dark:ring-1 dark:ring-white/10 bg-zinc-900 dark:bg-[#1d1d20] py-4",
             className
           )}
           {...props}
