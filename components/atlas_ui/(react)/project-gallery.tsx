@@ -75,7 +75,7 @@ const Project = (props: BaseProjectProps | InternalProjectProps) => {
   return (
     <Link href={href}>
       <div
-        className="flex items-center justify-between w-full px-24 py-24 border-t cursor-pointer group hover:opacity-40 transition-all duration-200 ease-linear"
+        className="flex items-center justify-between w-full p-24 border-t border-primary cursor-pointer group hover:opacity-40 transition-all duration-200 ease-linear"
         onMouseEnter={() => setModal?.({ active: true, index })}
         onMouseLeave={() => setModal?.({ active: false, index })}
       >
@@ -120,7 +120,7 @@ const Modal = ({ modal, projects }: ModalProps) => {
   };
 
   const smoothOptions = {
-    damping: 30,
+    damping: 40,
     stiffness: 300,
     mass: 0.5,
   };
