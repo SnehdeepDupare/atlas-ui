@@ -50,6 +50,7 @@ export const Header = () => {
                         alt="Atlas UI Logo"
                         width={120}
                         height={40}
+                        className="invert dark:invert-0"
                       />
                     </Link>
                   </SheetTitle>
@@ -65,7 +66,7 @@ export const Header = () => {
               alt="Atlas UI Logo"
               width={120}
               height={40}
-              className="hidden md:block"
+              className="hidden md:block invert dark:invert-0"
             />
 
             <Image
