@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 
 import { useTheme } from "next-themes";
 import { Moon, Sun } from "lucide-react";
@@ -44,9 +45,12 @@ export const Header = () => {
                 <SheetHeader>
                   <SheetTitle>
                     <Link href="/">
-                      <h3 className="font-semibold text-2xl mb-4 text-left">
-                        AtlasUI.
-                      </h3>
+                      <Image
+                        src="/logo.svg"
+                        alt="Atlas UI Logo"
+                        width={120}
+                        height={40}
+                      />
                     </Link>
                   </SheetTitle>
                 </SheetHeader>
@@ -56,7 +60,21 @@ export const Header = () => {
           </div>
 
           <Link href="/">
-            <h3 className="font-semibold text-2xl">AtlasUI.</h3>
+            <Image
+              src="/logo.svg"
+              alt="Atlas UI Logo"
+              width={120}
+              height={40}
+              className="hidden md:block"
+            />
+
+            <Image
+              src="/letter-logo.svg"
+              alt="Atlas UI Logo"
+              width={40}
+              height={40}
+              className="md:hidden mr-4"
+            />
           </Link>
 
           <div className="flex flex-1 items-center justify-between gap-2 md:justify-end">
