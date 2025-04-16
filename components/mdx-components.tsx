@@ -10,6 +10,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "./ui/tabs";
 import { ComponentPreview } from "./component-preview";
 import { ComponentSource } from "./component-source";
 import CopyCode from "./copy-code";
+import { UsageTabs } from "./usage-tabs";
 
 const components = {
   h1: ({ className, ...props }: React.HTMLAttributes<HTMLHeadingElement>) => (
@@ -176,6 +177,7 @@ const components = {
   Image,
   ComponentPreview,
   ComponentSource,
+  UsageTabs,
   Step: ({ className, ...props }: React.ComponentProps<"h3">) => (
     <h3
       className={cn(
