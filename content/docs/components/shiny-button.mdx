@@ -9,6 +9,10 @@ description: Shiny Button
 
 ## Installation
 
+<UsageTabs>
+
+<TabsContent value="React/Next">
+
 <Steps>
 
 <Step>Install the following dependencies:</Step>
@@ -59,7 +63,128 @@ npm install motion
 
 </Steps>
 
+</TabsContent>
+
+<TabsContent value="JavaScript">
+
+<Steps>
+
+<Step>Add the following script to your project head section to use Motion library.</Step>
+
+```html
+<script src="https://cdn.jsdelivr.net/npm/motion@latest/dist/motion.js"></script>
+```
+
+<Step>Copy and paste the following code into your project.</Step>
+
+```html
+<button class="shiny-button">
+  <span class="button-content">Button</span>
+  <span class="shiny-overlay"></span>
+</button>
+```
+
+<Step>Add `style.css`</Step>
+
+```css
+.shiny-button {
+  position: relative;
+  padding: 0.5rem 1.5rem;
+  position: relative;
+  border: none;
+  border-radius: 8px;
+  background: radial-gradient(
+      circle at 50% 0%,
+      rgba(250, 250, 250, 0.05) 0%,
+      transparent 60%
+    ),
+    rgba(15, 15, 15, 1);
+  cursor: pointer;
+  overflow: hidden;
+}
+
+.button-content {
+  position: relative;
+  color: #f5f5f5;
+  font-weight: 300;
+  letter-spacing: 0.025em;
+  height: 100%;
+  width: 100%;
+  display: block;
+  mask-image: linear-gradient(
+    -75deg,
+    white calc(var(--x) + 20%),
+    transparent calc(var(--x) + 30%),
+    white calc(var(--x) + 100%)
+  );
+}
+
+.shiny-overlay {
+  position: absolute;
+  inset: 0px;
+  padding: 1px;
+  border-radius: 8px;
+  display: block;
+  background-image: linear-gradient(
+    -75deg,
+    rgba(255, 255, 255, 0.1) calc(var(--x) + 20%),
+    rgba(255, 255, 255, 0.5) calc(var(--x) + 25%),
+    rgba(255, 255, 255, 0.1) calc(var(--x) + 100%)
+  );
+  mask: linear-gradient(black, black) content-box, linear-gradient(black, black);
+  mask-composite: exclude;
+  pointer-events: none;
+}
+```
+
+<Step>Add `script.js`</Step>
+
+```js
+const { animate, spring } = Motion;
+
+const btn = document.querySelector(".shiny-button");
+
+animate(
+  btn,
+  { "--x": ["100%", "-100%"] },
+  {
+    repeat: Infinity,
+    repeatType: "loop",
+    repeatDelay: 1,
+    duration: 2,
+  },
+  {
+    type: "spring",
+    stiffness: 20,
+    damping: 15,
+    mass: 2,
+  }
+);
+
+btn.addEventListener("mousedown", () => {
+  animate(btn, {
+    scale: 0.95,
+  });
+});
+
+btn.addEventListener("mouseup", () => {
+  animate(btn, {
+    scale: 1,
+  });
+});
+```
+
+</Steps>
+
+</TabsContent>
+
+</UsageTabs>
+
 ## Usage
+
+<UsageTabs>
+
+<TabsContent value="React/Next">
 
 ```tsx
 import { ShinyButton } from "@/components/atlas_ui/shiny-button";
@@ -68,3 +193,20 @@ import { ShinyButton } from "@/components/atlas_ui/shiny-button";
 ```tsx
 <ShinyButton>Button</ShinyButton>
 ```
+
+</TabsContent>
+
+<TabsContent value="JavaScript">
+
+Define your button with `class="shiny-button"`. Add the text in the span with `class="button-content"`. Add the overlay using the span with `class="shiny-overlay"`.
+
+```html
+<button class="shiny-button">
+  <span class="button-content">Button</span>
+  <span class="shiny-overlay"></span>
+</button>
+```
+
+</TabsContent>
+
+</UsageTabs>

@@ -9,6 +9,10 @@ description: Project Gallery
 
 ## Installation
 
+<UsageTabs>
+
+<TabsContent value="React/Next">
+
 <Steps>
 
 <Step>Install the following dependencies:</Step>
@@ -25,7 +29,416 @@ npm install motion
 
 </Steps>
 
+</TabsContent>
+
+<TabsContent value="JavaScript">
+
+<Steps>
+
+<Step>Add the following script to your project head section to use Motion library.</Step>
+
+```html
+<script src="https://cdn.jsdelivr.net/npm/motion@latest/dist/motion.js"></script>
+```
+
+<Step>Copy and paste the following code into your project.</Step>
+
+```html
+<!-- Project Gallery Section -->
+<section id="project-gallery" class="project-gallery">
+  <a
+    href="#"
+    class="gallery-item"
+    data-index="0"
+    data-title="Earth"
+    data-subtitle="Frontend"
+    data-color="#FAFBFC"
+  >
+    <h2>Earth</h2>
+    <p>Frontend</p>
+  </a>
+
+  <a
+    href="#"
+    class="gallery-item"
+    data-index="1"
+    data-title="Black Hole"
+    data-subtitle="Frontend"
+    data-color="#404040"
+  >
+    <h2>Black Hole</h2>
+    <p>Frontend</p>
+  </a>
+
+  <a
+    href="#"
+    class="gallery-item"
+    data-index="2"
+    data-title="Red Moon"
+    data-subtitle="Frontend"
+    data-color="#EFE8D3"
+  >
+    <h2>Red Moon</h2>
+    <p>Frontend</p>
+  </a>
+
+  <a
+    href="#"
+    class="gallery-item"
+    data-index="3"
+    data-title="Space X"
+    data-subtitle="Frontend"
+    data-color="#706D63"
+  >
+    <h2>Space X</h2>
+    <p>Frontend</p>
+  </a>
+</section>
+
+<!-- Interactive Modal Section -->
+<section id="interactive-modal" class="interactive-modal">
+  <!-- Modal Container -->
+  <div class="modal" id="modal">
+    <div class="modal-images" id="modal-images">
+      <div
+        class="modal-image"
+        data-index="0"
+        style="background-color: #fafbfc"
+      >
+        <img src="./assets/earth.jpg" alt="Earth" />
+      </div>
+      <div
+        class="modal-image"
+        data-index="1"
+        style="background-color: #404040"
+      >
+        <img src="./assets/black-hole.jpg" alt="Black Hole" />
+      </div>
+      <div
+        class="modal-image"
+        data-index="2"
+        style="background-color: #efe8d3"
+      >
+        <img src="./assets/red-moon.jpg" alt="Red Moon" />
+      </div>
+      <div
+        class="modal-image"
+        data-index="3"
+        style="background-color: #706d63"
+      >
+        <img src="./assets/space-x.jpg" alt="Space X" />
+      </div>
+    </div>
+  </div>
+
+  <!-- Cursor Elements -->
+  <div class="cursor" id="cursor"></div>
+  <div class="cursor-label" id="cursor-label">View</div>
+</section>
+```
+
+<Step>Add `style.css` </Step>
+```css
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: sans-serif;
+  background: #18181b;
+  color: #fff;
+  overflow-x: hidden;
+  max-width: 80rem;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.gallery-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 6rem;
+  border-top: 1px solid white;
+  cursor: pointer;
+  transition: opacity 0.2s linear;
+}
+
+.gallery-item:hover {
+  opacity: 0.4;
+}
+
+.gallery-item h2 {
+  font-size: 3.75rem;
+  font-weight: 400;
+}
+
+.gallery-item h2,
+.gallery-item p {
+  transition: transform 0.2s linear;
+}
+
+.gallery-item:hover h2 {
+  transform: translateX(-12px);
+}
+
+.gallery-item:hover p {
+  transform: translateX(12px);
+}
+
+.modal,
+.cursor,
+.cursor-label {
+  position: fixed;
+  pointer-events: none;
+  transform: translate(-50%, -50%) scale(0);
+  z-index: 1000;
+  will-change: transform, left, top;
+}
+
+.modal {
+  width: 400px;
+  height: 350px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform-origin: center center;
+}
+
+.modal-images {
+  position: absolute;
+  transition: top 0.5s cubic-bezier(0.76, 0, 0.24, 1);
+  width: 100%;
+}
+
+.modal-image {
+  width: 100%;
+  height: 350px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-image img {
+  width: 350px;
+  height: auto;
+}
+
+.cursor,
+.cursor-label {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform-origin: center center;
+}
+
+.cursor {
+  background: #2563eb;
+}
+
+.cursor-label {
+  color: white;
+  font-size: 16px;
+}
+```
+
+<Step>Add `script.js`</Step>
+
+```js
+const { animate: motionAnimate } = Motion;
+
+const modal = document.getElementById("modal");
+const modalImages = document.getElementById("modal-images");
+const cursor = document.getElementById("cursor");
+const cursorLabel = document.getElementById("cursor-label");
+
+const galleryItems = document.querySelectorAll(".gallery-item");
+
+let activeIndex = 0;
+let isModalVisible = false;
+
+let mouseX = 0;
+let mouseY = 0;
+
+const modalAnimationOptions = {
+  duration: 300,
+  easing: "ease-out",
+  fill: "forwards",
+};
+
+const cursorAnimationOptions = {
+  duration: 150,
+  easing: "ease-out",
+  fill: "forwards",
+};
+
+function updatePositions() {
+  if (isModalVisible) {
+    const modalWidth = modal.offsetWidth;
+    const modalHeight = modal.offsetHeight;
+    const cursorWidth = cursor.offsetWidth;
+    const cursorHeight = cursor.offsetHeight;
+
+    const modalLeft = mouseX - modalWidth / 2;
+    const modalTop = mouseY - modalHeight / 2;
+    const cursorLeft = mouseX - cursorWidth / 2;
+    const cursorTop = mouseY - cursorHeight / 2;
+
+    modal.animate(
+      [
+        { left: modal.offsetLeft + "px", top: modal.offsetTop + "px" },
+        { left: modalLeft + "px", top: modalTop + "px" },
+      ],
+      modalAnimationOptions
+    );
+
+    modal.style.left = modalLeft + "px";
+    modal.style.top = modalTop + "px";
+
+    cursor.animate(
+      [
+        { left: cursor.offsetLeft + "px", top: cursor.offsetTop + "px" },
+        { left: cursorLeft + "px", top: cursorTop + "px" },
+      ],
+      cursorAnimationOptions
+    );
+
+    cursor.style.left = cursorLeft + "px";
+    cursor.style.top = cursorTop + "px";
+
+    cursorLabel.animate(
+      [
+        {
+          left: cursorLabel.offsetLeft + "px",
+          top: cursorLabel.offsetTop + "px",
+        },
+        { left: cursorLeft + "px", top: cursorTop + "px" },
+      ],
+      cursorAnimationOptions
+    );
+
+    cursorLabel.style.left = cursorLeft + "px";
+    cursorLabel.style.top = cursorTop + "px";
+  }
+
+  requestAnimationFrame(updatePositions);
+}
+
+function handleMouseMove(e) {
+  const { clientX, clientY } = e;
+
+  mouseX = clientX;
+  mouseY = clientY;
+}
+
+function showModal(index) {
+  if (index < 0 || index >= galleryItems.length) {
+    console.error(`Invalid project index: ${index}`);
+    return;
+  }
+
+  activeIndex = index;
+  modalImages.style.top = `-${index * 100}%`;
+  isModalVisible = true;
+
+  motionAnimate(modal, {
+    scale: 1,
+    transition: {
+      duration: 0.4,
+      ease: [0.76, 0, 0.24, 1],
+    },
+  });
+
+  motionAnimate(cursor, {
+    scale: 1,
+    transition: {
+      duration: 0.4,
+      ease: [0.76, 0, 0.24, 1],
+    },
+  });
+
+  motionAnimate(cursorLabel, {
+    scale: 1,
+    transition: {
+      duration: 0.4,
+      ease: [0.76, 0, 0.24, 1],
+    },
+  });
+}
+
+function hideModal() {
+  isModalVisible = false;
+
+  motionAnimate(modal, {
+    scale: 0,
+    transition: {
+      duration: 0.4,
+      ease: [0.32, 0, 0.67, 0],
+    },
+  });
+
+  motionAnimate(cursor, {
+    scale: 0,
+    transition: {
+      duration: 0.4,
+      ease: [0.32, 0, 0.67, 0],
+    },
+  });
+
+  motionAnimate(cursorLabel, {
+    scale: 0,
+    transition: {
+      duration: 0.4,
+      ease: [0.32, 0, 0.67, 0],
+    },
+  });
+}
+
+galleryItems.forEach((item) => {
+  const index = parseInt(item.getAttribute("data-index"), 10);
+
+  if (isNaN(index)) {
+    console.error("Invalid data-index attribute:", item);
+    return;
+  }
+
+  item.addEventListener("mouseenter", (e) => {
+    e.preventDefault();
+    showModal(index);
+  });
+
+  item.addEventListener("mouseleave", hideModal);
+});
+
+window.addEventListener("mousemove", handleMouseMove);
+
+updatePositions();
+```
+
+</Steps>
+
+</TabsContent>
+
+</UsageTabs>
+
 ## Usage
+
+<UsageTabs>
+
+<TabsContent value="React/Next">
 
 ```tsx
 import {
@@ -66,6 +479,76 @@ import {
   />
 </ProjectGallery>
 ```
+
+</TabsContent>
+
+<TabsContent value="JavaScript">
+
+Define your projects in the project gallery section.
+
+```html
+<section id="project-gallery" class="project-gallery">
+  <a
+    href="#"
+    class="gallery-item"
+    data-index="0"
+    data-title="Earth"
+    data-subtitle="Frontend"
+    data-color="#FAFBFC"
+  >
+    <h2>Earth</h2>
+    <p>Frontend</p>
+  </a>
+
+  <a
+    href="#"
+    class="gallery-item"
+    data-index="1"
+    data-title="Black Hole"
+    data-subtitle="Frontend"
+    data-color="#404040"
+  >
+    <h2>Black Hole</h2>
+    <p>Frontend</p>
+  </a>
+</section>
+```
+
+Add your project images and your background color to the interactive modal section.
+
+```html
+<section id="interactive-modal" class="interactive-modal">
+  <!-- Modal Container -->
+  <div class="modal" id="modal">
+    <div class="modal-images" id="modal-images">
+      <div
+        class="modal-image"
+        data-index="0"
+        style="background-color: #fafbfc"
+      >
+        <img src="./assets/earth.jpg" alt="Earth" />
+      </div>
+      <div
+        class="modal-image"
+        data-index="1"
+        style="background-color: #404040"
+      >
+        <img src="./assets/black-hole.jpg" alt="Black Hole" />
+      </div>
+    </div>
+  </div>
+</section>
+```
+Add the cursor elements in the interactive modal section.
+
+```html
+<div class="cursor" id="cursor"></div>
+<div class="cursor-label" id="cursor-label">View</div>
+```
+
+</TabsContent>
+
+</UsageTabs>
 
 ## Props
 

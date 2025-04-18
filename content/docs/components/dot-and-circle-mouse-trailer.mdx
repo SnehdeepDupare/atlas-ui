@@ -9,6 +9,10 @@ description: A simple Lazy Dot and Circle Mouse Trailer
 
 ## Installation
 
+<UsageTabs>
+
+<TabsContent value="React/Next">
+
 <Steps>
 
 <Step>Install the following dependencies:</Step>
@@ -25,7 +29,101 @@ npm install motion
 
 </Steps>
 
+</TabsContent>
+
+<TabsContent value="JavaScript">
+
+<Steps>
+
+<Step>Copy and paste the following code into your project.</Step>
+
+```html
+<div class="trailer" id="trailer"></div>
+<div class="trailer-outline" id="trailer-outline"></div>
+```
+
+<Step>Add `style.css`</Step>
+
+```css
+body {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  width: 100%;
+  background-color: #18181b;
+}
+
+.trailer {
+  position: fixed;
+  width: 8px;
+  height: 8px;
+  background-color: white;
+  border-radius: 50%;
+  left: 0;
+  top: 0;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  z-index: 1000;
+}
+
+.trailer-outline {
+  position: fixed;
+  left: 0;
+  top: 0;
+  transform: translate(-50%, -50%);
+  width: 80px;
+  height: 80px;
+  border: 2px solid white;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 1000;
+}
+```
+
+<Step>Add `script.js`</Step>
+
+```js
+const trailer = document.getElementById("trailer");
+const trailerOutline = document.getElementById("trailer-outline");
+
+document.body.onpointermove = (e) => {
+  const { clientX, clientY } = e;
+
+  trailer.animate(
+    {
+      left: `${clientX}px`,
+      top: `${clientY}px`,
+    },
+    {
+      duration: 1000,
+      fill: "forwards",
+    }
+  );
+
+  trailerOutline.animate(
+    {
+      left: `${clientX}px`,
+      top: `${clientY}px`,
+    },
+    {
+      duration: 3000,
+      fill: "forwards",
+    }
+  );
+};
+```
+
+</Steps>
+
+</TabsContent>
+
+</UsageTabs>
+
 ## Usage
+
+<UsageTabs>
+
+<TabsContent value="React/Next">
 
 ```tsx
 import { DotAndCircleMouseTrailer } from "@/components/atlas_ui/dot-and-circle-mouse-trailer";
@@ -48,3 +146,18 @@ export default function RootLayout({
   );
 }
 ```
+
+</TabsContent>
+
+<TabsContent value="JavaScript">
+
+Place the following code in your `index.html` to use the Mouse Trailer.
+
+```html
+<div class="trailer" id="trailer"></div>
+<div class="trailer-outline" id="trailer-outline"></div>
+```
+
+</TabsContent>
+
+</UsageTabs>

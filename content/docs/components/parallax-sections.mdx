@@ -9,6 +9,10 @@ description: This is parallax sections component.
 
 ## Installation
 
+<UsageTabs>
+
+<TabsContent value="React/Next">
+
 <Steps>
 
 <Step>Install the following dependencies:</Step>
@@ -24,3 +28,111 @@ npm install motion
 <Step>Update the import paths to match your project setup.</Step>
 
 </Steps>
+
+</TabsContent>
+
+<TabsContent value="JavaScript">
+
+<Steps>
+
+<Step>Add the following script to your project head section to use Motion library.</Step>
+
+```html
+<script src="https://cdn.jsdelivr.net/npm/motion@latest/dist/motion.js"></script>
+```
+
+<Step>Copy and paste the following code into your project.</Step>
+
+```html
+<div id="parallax-container">
+  <section class="section1">
+    <h1>This section is Cool.</h1>
+  </section>
+
+  <section class="section2">
+    <h1>This is Cooler!</h1>
+  </section>
+</div>
+```
+
+<Step>Add `style.css` </Step>
+
+```css
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body,
+html {
+  font-family: sans-serif;
+  position: relative;
+}
+
+#parallax-container {
+  width: 100%;
+  height: 200vh;
+  position: relative;
+}
+
+.section1 {
+  position: sticky;
+  top: 0;
+  background-color: #404040;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  will-change: transform;
+}
+
+.section2 {
+  background-color: #ef4444;
+  position: relative;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  will-change: transform;
+}
+
+h1 {
+  font-size: 3rem;
+  font-weight: bold;
+  color: white;
+}
+```
+
+<Step>Add `script.js` </Step>
+
+```js
+const { scroll, transform } = Motion;
+
+const container = document.getElementById("parallax-container");
+const section1 = document.querySelector(".section1");
+const section2 = document.querySelector(".section2");
+
+scroll(
+  (progress) => {
+    const scale1 = transform(progress, [0, 1], [1, 0.8]);
+    const rotate1 = transform(progress, [0, 1], [0, -5]);
+    section1.style.transform = `scale(${scale1}) rotate(${rotate1}deg)`;
+
+    const scale2 = transform(progress, [0, 1], [0.8, 1]);
+    const rotate2 = transform(progress, [0, 1], [-5, 0]);
+    section2.style.transform = `scale(${scale2}) rotate(${rotate2}deg)`;
+  },
+  {
+    target: container,
+    offset: ["start start", "end end"],
+  }
+);
+```
+
+</Steps>
+
+</TabsContent>
+
+</UsageTabs>
+
