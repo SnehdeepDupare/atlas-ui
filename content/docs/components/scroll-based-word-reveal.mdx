@@ -9,6 +9,10 @@ description: Scroll Based Word Reveal
 
 ## Installation
 
+<UsageTabs>
+
+<TabsContent value="React/Next">
+
 <Steps>
 
 <Step>Install the following dependencies:</Step>
@@ -25,7 +29,138 @@ npm install motion
 
 </Steps>
 
+</TabsContent>
+
+<TabsContent value="JavaScript">
+
+<Steps>
+
+<Step>Add the following script to your project head section to use Motion library.</Step>
+
+```html
+<script src="https://cdn.jsdelivr.net/npm/motion@latest/dist/motion.js"></script>
+```
+
+<Step>Copy and paste the following code into your project.</Step>
+
+```html
+<div class="spacer"></div>
+<p class="reveal-text" id="reveal-text">
+  AtlasUI is an open-source library offering a suite of prebuilt animated
+  components for React, Next.js, and Vanilla JS.
+</p>
+<div class="spacer"></div>
+```
+
+<Step>Add `style.css`</Step>
+
+```css
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  width: 100%;
+  background: #18181b;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+}
+
+.spacer {
+  height: 100vh;
+}
+
+.reveal-text {
+  font-size: 3rem;
+  font-weight: bold;
+  text-align: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.3rem;
+  max-width: 64rem;
+}
+
+.word-container {
+  position: relative;
+  display: inline-block;
+}
+
+.word-shadow {
+  font-size: 3rem;
+  font-weight: bold;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  opacity: 0.1;
+  pointer-events: none;
+}
+
+.word {
+  font-size: 3rem;
+  font-weight: bold;
+  opacity: 0;
+  display: inline-block;
+}
+```
+
+<Step>Add `script.js`</Step>
+
+```js
+const { animate, scroll, transform } = Motion;
+
+const revealText = document.getElementById("reveal-text");
+
+const words = revealText.innerText.split(" ");
+revealText.innerHTML = words
+  .map(
+    (word) => `
+    <span class="word-container">
+      <span class="word-shadow">${word}</span>
+      <span class="word">${word}</span>
+    </span>
+  `
+  )
+  .join(" ");
+
+const wordSpans = document.querySelectorAll(".word");
+
+wordSpans.forEach((span) => {
+  span.style.opacity = 0;
+});
+
+scroll(
+  (progress) => {
+    wordSpans.forEach((span, i) => {
+      const start = i / wordSpans.length;
+      const end = (start + i) / wordSpans.length;
+
+      const opacity = transform(progress, [start, end], [0, 1]);
+
+      span.style.opacity = opacity;
+    });
+  },
+  {
+    target: revealText,
+    offset: ["start 0.8", "start 0.3"],
+  }
+);
+```
+
+</Steps>
+
+</TabsContent>
+
+</UsageTabs>
+
 ## Usage
+
+<UsageTabs>
+
+<TabsContent value="React/Next">
 
 ```tsx
 import { ScrollBasedWordReveal } from "@/components/atlas_ui/scroll-based-word-reveal";
@@ -34,3 +169,28 @@ import { ScrollBasedWordReveal } from "@/components/atlas_ui/scroll-based-word-r
 ```tsx
 <ScrollBasedWordReveal text="AtlasUI is an open-source library offering a suite of prebuilt animated components for React, Next.js, and Vanilla JS." />
 ```
+
+</TabsContent>
+
+<TabsContent value="JavaScript">
+
+Define the text you want to display with Scroll Based Word Reveal Effect in a p element with `id="reveal-text"` and `class="reveal-text"`.
+
+```html
+<p class="reveal-text" id="reveal-text">
+  AtlasUI is an open-source library offering a suite of prebuilt animated
+  components for React, Next.js, and Vanilla JS.
+</p>
+```
+
+Add spacer `div` to create space between the text and the top of the page or replace it with your own content.
+
+```html {1,3} 
+<div class="spacer"></div>
+<p class="reveal-text" id="reveal-text">...</p>
+<div class="spacer"></div>
+```
+
+</TabsContent>
+
+</UsageTabs>

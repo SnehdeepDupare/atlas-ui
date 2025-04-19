@@ -9,6 +9,10 @@ description: Scroll Based Character Reveal
 
 ## Installation
 
+<UsageTabs>
+
+<TabsContent value="React/Next">
+
 <Steps>
 
 <Step>Install the following dependencies:</Step>
@@ -25,7 +29,146 @@ npm install motion
 
 </Steps>
 
+</TabsContent>
+
+<TabsContent value="JavaScript">
+
+<Steps>
+
+<Step>Add the following script to your project head section to use Motion library.</Step>
+
+```html
+<script src="https://cdn.jsdelivr.net/npm/motion@latest/dist/motion.js"></script>
+```
+
+<Step>Copy and paste the following code into your project.</Step>
+
+```html
+<div class="spacer"></div>
+<p class="reveal-text" id="reveal-text">
+  AtlasUI is an open-source library offering a suite of prebuilt animated
+  components for React, Next.js, and Vanilla JS.
+</p>
+<div class="spacer"></div>
+```
+
+<Step>Add `style.css`</Step>
+
+```css
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  width: 100%;
+  background: #18181b;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+}
+
+.spacer {
+  height: 100vh;
+}
+
+.reveal-text {
+  font-size: 3rem;
+  font-weight: bold;
+  text-align: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  max-width: 64rem;
+}
+
+.word {
+  display: flex;
+  align-items: center;
+  margin-right: 0.5rem;
+}
+
+.character-container {
+  position: relative;
+  display: inline-flex;
+}
+
+.char-shadow {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.1;
+}
+
+.char {
+  opacity: 0;
+}
+```
+
+<Step>Add `script.js`</Step>
+
+```js
+const { animate, scroll, transform } = Motion;
+
+const revealText = document.getElementById("reveal-text");
+
+const words = revealText.innerText.split(" ");
+revealText.innerHTML = words
+  .map(
+    (word) => `
+    <span class="word">
+      ${word
+        .split("")
+        .map(
+          (char) => `
+          <span class="character-container">
+            <span class="char-shadow">${char}</span>
+            <span class="char">${char}</span>
+          </span>
+        `
+        )
+        .join("")}
+    </span>
+  `
+  )
+  .join(" ");
+
+const characters = document.querySelectorAll(".char");
+
+characters.forEach((char) => {
+  char.style.opacity = 0;
+});
+
+scroll(
+  (progress) => {
+    characters.forEach((char, i) => {
+      const start = i / characters.length;
+      const end = (start + i) / characters.length;
+
+      const opacity = transform(progress, [start, end], [0, 1]);
+
+      char.style.opacity = opacity;
+    });
+  },
+  {
+    target: revealText,
+    offset: ["start 0.8", "start 0.3"],
+  }
+);
+```
+
+</Steps>
+
+</TabsContent>
+
+</UsageTabs>
+
+
 ## Usage
+
+<UsageTabs>
+
+<TabsContent value="React/Next">
 
 ```tsx
 import { ScrollBasedCharacterReveal } from "@/components/atlas_ui/scroll-based-character-reveal";
@@ -34,3 +177,28 @@ import { ScrollBasedCharacterReveal } from "@/components/atlas_ui/scroll-based-c
 ```tsx
 <ScrollBasedCharacterReveal text="AtlasUI is an open-source library offering a suite of prebuilt animated components for React, Next.js, and Vanilla JS." />
 ```
+
+</TabsContent>
+
+<TabsContent value="JavaScript">
+
+Define the text you want to display with Scroll Based Character Reveal Effect in a p element with `id="reveal-text"` and `class="reveal-text"`.
+
+```html
+<p class="reveal-text" id="reveal-text">
+  AtlasUI is an open-source library offering a suite of prebuilt animated
+  components for React, Next.js, and Vanilla JS.
+</p>
+```
+
+Add spacer `div` to create space between the text and the top of the page or replace it with your own content.
+
+```html {1,3} 
+<div class="spacer"></div>
+<p class="reveal-text" id="reveal-text">...</p>
+<div class="spacer"></div>
+```
+
+</TabsContent>
+
+</UsageTabs>
