@@ -42,16 +42,17 @@ export const Header = () => {
                 </Button>
               </SheetTrigger>
               <SheetContent side="left">
-                <SheetHeader>
+                <SheetHeader className="mb-4">
                   <SheetTitle>
-                    <Link href="/">
+                    <Link href="/" className="flex items-center gap-2">
                       <Image
-                        src="/logo.svg"
+                        src="/logo-dark.svg"
                         alt="Atlas UI Logo"
-                        width={120}
-                        height={40}
-                        className="invert dark:invert-0"
+                        width={32}
+                        height={32}
+                        className="rounded-md"
                       />
+                      <h1 className="font-bold text-2xl">Atlas UI</h1>
                     </Link>
                   </SheetTitle>
                 </SheetHeader>
@@ -60,22 +61,24 @@ export const Header = () => {
             </Sheet>
           </div>
 
-          <Link href="/">
+          <Link href="/" className="flex items-center gap-2 group mr-3">
             <Image
-              src="/logo.svg"
+              src="/logo-dark.svg"
               alt="Atlas UI Logo"
-              width={120}
-              height={40}
-              className="hidden md:block invert dark:invert-0"
+              width={32}
+              height={32}
+              className="rounded-md group-hover:opacity-0 transition-opacity duration-500 ease-in-out"
             />
 
             <Image
-              src="/letter-logo.svg"
+              src="/logo-dark-gradient.svg"
               alt="Atlas UI Logo"
-              width={40}
-              height={40}
-              className="md:hidden mr-4"
+              width={32}
+              height={32}
+              className="rounded-md opacity-0 group-hover:opacity-100 transition-opacity duration-500 ease-in-out absolute"
             />
+
+            <h1 className="font-bold text-2xl hidden md:block">Atlas UI</h1>
           </Link>
 
           <div className="flex flex-1 items-center justify-between gap-2 md:justify-end">
