@@ -1,5 +1,7 @@
 import Link from "next/link";
 
+import { siteConfig } from "@/config/site";
+
 export const Footer = () => {
   return (
     <footer className="border-t py-6 md:px-8 md:py-0">
@@ -8,7 +10,7 @@ export const Footer = () => {
           <div className="text-balance text-center text-sm leading-loose text-muted-foreground md:text-left">
             Developed by{" "}
             <Link
-              href="https://snehdeepdupare.in"
+              href={siteConfig.links.portfolio}
               target="_blank"
               className="font-medium underline underline-offset-4 hover:text-primary"
             >
@@ -16,7 +18,7 @@ export const Footer = () => {
             </Link>
             . Source code available on{" "}
             <Link
-              href="#"
+              href={siteConfig.links.github}
               target="_blank"
               rel="noreferrer"
               className="font-medium underline underline-offset-4 hover:text-primary"
