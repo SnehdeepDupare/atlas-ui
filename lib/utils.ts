@@ -7,3 +7,7 @@ export function cn(...inputs: ClassValue[]) {
 }
 
 export const firaCode = Fira_Code({ subsets: ["latin"] });
+
+export function absoluteUrl(path: string) {
+  return `${process.env.NEXT_PUBLIC_APP_URL}${path}`;
+}
