@@ -11,6 +11,7 @@ import { ComponentPreview } from "./component-preview";
 import { ComponentSource } from "./component-source";
 import CopyCode from "./copy-code";
 import { UsageTabs } from "./usage-tabs";
+import { Callout } from "./callout";
 
 const components = {
   h1: ({ className, ...props }: React.HTMLAttributes<HTMLHeadingElement>) => (
@@ -175,6 +176,7 @@ const components = {
     />
   ),
   Image,
+  Callout,
   ComponentPreview,
   ComponentSource,
   UsageTabs,
@@ -236,6 +238,15 @@ const components = {
   Link: ({ className, ...props }: React.ComponentProps<typeof Link>) => (
     <Link
       className={cn("font-medium underline underline-offset-4", className)}
+      {...props}
+    />
+  ),
+  LinkedCard: ({ className, ...props }: React.ComponentProps<typeof Link>) => (
+    <Link
+      className={cn(
+        "flex w-full flex-col items-center rounded-xl border bg-card p-6 text-card-foreground shadow transition-colors hover:bg-muted/50 sm:p-10",
+        className
+      )}
       {...props}
     />
   ),
