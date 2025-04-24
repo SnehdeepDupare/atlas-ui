@@ -12,6 +12,8 @@ import { ComponentSource } from "./component-source";
 import CopyCode from "./copy-code";
 import { UsageTabs } from "./usage-tabs";
 import { Callout } from "./callout";
+import { Event } from "@/lib/events";
+import { CopyButton } from "./copy-button";
 
 const components = {
   h1: ({ className, ...props }: React.HTMLAttributes<HTMLHeadingElement>) => (
@@ -144,9 +146,17 @@ const components = {
   pre: ({
     className,
     __rawString__,
+    __withMeta__,
+    __src__,
+    __event__,
+    __name__,
     ...props
   }: React.HTMLAttributes<HTMLPreElement> & {
     __rawString__?: string;
+    __withMeta__?: boolean;
+    __src__?: string;
+    __event__?: Event["name"];
+    __name__?: string;
   }) => {
     return (
       <div className="relative">
@@ -158,9 +168,14 @@ const components = {
           {...props}
         />
         {__rawString__ && (
-          <CopyCode
-            text={__rawString__}
-            className={cn("absolute right-4 top-4 z-30")}
+          <CopyButton
+            value={__rawString__}
+            src={__src__}
+            event={__event__}
+            className={cn(
+              "absolute right-4 top-4 z-30",
+              __withMeta__ && "top-16"
+            )}
           />
         )}
       </div>

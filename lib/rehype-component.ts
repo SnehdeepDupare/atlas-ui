@@ -32,6 +32,9 @@ export function rehypeComponent() {
                   properties: {
                     className: ["language-tsx"],
                   },
+                  data: {
+                    meta: `event="copy_source_code"`,
+                  },
                   children: [
                     {
                       type: "text",
