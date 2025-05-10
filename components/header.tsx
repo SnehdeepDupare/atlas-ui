@@ -19,6 +19,8 @@ import {
 import { CommandMenu } from "./command-menu";
 import { DocsNav } from "./docs-nav";
 import { docsConfig } from "@/config/docs";
+import { cn } from "@/lib/utils";
+import { usePathname } from "next/navigation";
 
 export const Header = () => {
   const { setTheme, theme } = useTheme();
@@ -30,6 +32,8 @@ export const Header = () => {
       setTheme("dark");
     }
   };
+
+  const pathname = usePathname();
   return (
     <header className="sticky top-0 z-50 w-full border-b  backdrop-blur dark:backdrop-blur-sm   shadow-md dark:shadow-primary-foreground">
       <div className="container-wrapper">
@@ -61,25 +65,51 @@ export const Header = () => {
             </Sheet>
           </div>
 
-          <Link href="/" className="flex items-center gap-2 group mr-3">
-            <Image
-              src="/logo-dark.svg"
-              alt="Atlas UI Logo"
-              width={32}
-              height={32}
-              className="rounded-md group-hover:opacity-0 transition-opacity duration-500 ease-in-out"
-            />
+          <nav className="flex items-center gap-4 text-sm xl:gap-6">
+            <Link href="/" className="flex items-center gap-2 group mr-3">
+              <Image
+                src="/logo-dark.svg"
+                alt="Atlas UI Logo"
+                width={32}
+                height={32}
+                className="rounded-md group-hover:opacity-0 transition-opacity duration-500 ease-in-out invert dark:invert-0"
+              />
 
-            <Image
-              src="/logo-dark-gradient.svg"
-              alt="Atlas UI Logo"
-              width={32}
-              height={32}
-              className="rounded-md opacity-0 group-hover:opacity-100 transition-opacity duration-500 ease-in-out absolute"
-            />
+              <Image
+                src="/logo-dark-gradient.svg"
+                alt="Atlas UI Logo"
+                width={32}
+                height={32}
+                className="rounded-md opacity-0 group-hover:opacity-100 transition-opacity duration-500 ease-in-out absolute"
+              />
 
-            <h1 className="font-bold text-2xl hidden md:block">Atlas UI</h1>
-          </Link>
+              <h1 className="font-bold text-2xl hidden md:block">Atlas UI</h1>
+            </Link>
+
+            <Link
+              href="/docs"
+              className={cn(
+                "transition-colors hover:text-foreground/80 hidden md:block",
+                pathname === "/docs/installation"
+                  ? "text-foreground"
+                  : "text-foreground/80"
+              )}
+            >
+              Docs
+            </Link>
+
+            <Link
+              href="/docs/components/animated-mobile-navbar"
+              className={cn(
+                "transition-colors hover:text-foreground/80 hidden md:block",
+                pathname?.startsWith("/docs/components")
+                  ? "text-foreground"
+                  : "text-foreground/80"
+              )}
+            >
+              Components
+            </Link>
+          </nav>
 
           <div className="flex flex-1 items-center justify-between gap-2 md:justify-end">
             <div className="w-full flex-1 md:w-auto md:flex-none">
