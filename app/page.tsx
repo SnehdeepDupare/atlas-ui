@@ -1,8 +1,37 @@
 import Link from "next/link";
+import { Metadata } from "next";
 
+import { RevealEffect } from "@/components/atlas_ui/(react)/reveal-effect";
 import { Button } from "@/components/ui/button";
 import { VideoShowcase } from "@/components/video-showcase";
-import { RevealEffect } from "@/components/atlas_ui/(react)/reveal-effect";
+
+const title = "Atlas UI";
+const description =
+  "An open-source library of prebuilt components, crafted with TypeScript and Tailwind CSS. Powered by motion for React and Next.js, with seamless options for Vanilla JS and CSS. Built to save time, inspire creativity, and elevate your UI.";
+
+export const metadata: Metadata = {
+  title,
+  description,
+  openGraph: {
+    images: [
+      {
+        url: `/og?title=${encodeURIComponent(
+          title
+        )}&description=${encodeURIComponent(description)}`,
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    images: [
+      {
+        url: `/og?title=${encodeURIComponent(
+          title
+        )}&description=${encodeURIComponent(description)}`,
+      },
+    ],
+  },
+};
 
 export default function Home() {
   return (
