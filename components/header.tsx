@@ -21,6 +21,7 @@ import { DocsNav } from "./docs-nav";
 import { docsConfig } from "@/config/docs";
 import { cn } from "@/lib/utils";
 import { usePathname } from "next/navigation";
+import { siteConfig } from "@/config/site";
 
 export const Header = () => {
   const { setTheme, theme } = useTheme();
@@ -117,9 +118,17 @@ export const Header = () => {
             </div>
 
             <div className="flex items-center gap-1">
-              <Button variant="ghost" size="icon" className="h-8 w-8 px-0">
-                {/* change link later */}
-                <Link href="/" target="_blank" rel="noreferrer">
+              <Button
+                variant="ghost"
+                size="icon"
+                className="h-8 w-8 px-0"
+                asChild
+              >
+                <Link
+                  href={siteConfig.links.github}
+                  target="_blank"
+                  rel="noreferrer"
+                >
                   <FaGithub className="h-4 w-4" />
                 </Link>
               </Button>
