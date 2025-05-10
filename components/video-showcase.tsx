@@ -127,7 +127,7 @@ export const VideoShowcase = () => {
         variants={containerVariants}
         initial="hidden"
         whileInView="show"
-        viewport={{ amount: 0.2 }}
+        viewport={{ once: true, amount: 0.2 }}
         className="mt-10 px-4 sm:px-6 lg:px-8 grid grid-cols-1 gap-4 md:hidden"
       >
         <div className="grid grid-cols-2 gap-4">
