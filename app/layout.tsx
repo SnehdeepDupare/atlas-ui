@@ -22,12 +22,12 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${inter.className} antialiased min-h-svh flex flex-col bg-background`}
+        className={`${inter.className} antialiased min-h-svh flex flex-col bg-background selection:bg-emerald-200/50 selection:text-emerald-900 dark:selection:bg-emerald-400/10 dark:selection:text-emerald-300`}
       >
         <PostHogProvider>
           <ThemeProvider
             attribute="class"
-            defaultTheme="system"
+            defaultTheme="dark"
             enableSystem
             disableTransitionOnChange
           >
