@@ -50,18 +50,8 @@ export function ComponentPreview({ name, children }: ComponentPreviewProps) {
             Code
           </TabsTrigger>
         </TabsList>
-        <TabsContent
-          value="preview"
-          // className="border border-input rounded-xl p-3 max-h-[500px] overflow-auto "
-          className="relative rounded-md"
-        >
+        <TabsContent value="preview" className="relative rounded-md">
           <ComponentWrapper>
-            <CopyCode
-              text={codeString}
-              // className="h-7 w-7 text-foreground opacity-100 hover:bg-muted hover:text-foreground [&_svg]:h-3.5 [&_svg]:w-3.5"
-              className="absolute right-4 top-4 z-10 ml-4 flex items-center rounded-lg px-3 py-1"
-            />
-
             <div className="min-h-80 flex items-center justify-center flex-wrap gap-y-3 w-full mx-auto lg:px-10 pb-7 mt-1.5">
               <React.Suspense
                 fallback={
@@ -77,15 +67,10 @@ export function ComponentPreview({ name, children }: ComponentPreviewProps) {
         </TabsContent>
         <TabsContent
           value="code"
-          className="border border-input rounded-xl relative"
+          className="border border-input rounded-xl relative overflow-hidden"
         >
           <div className="flex flex-col space-y-4">
             <div className="w-full rounded-md [&_pre]:my-0 [&_pre]:max-h-[400px] [&_pre]:whitespace-pre-wrap">
-              {/* <CopyCode
-                text={codeString}
-                className="absolute right-5 top-3 z-30"
-              /> */}
-
               {Code}
             </div>
           </div>
