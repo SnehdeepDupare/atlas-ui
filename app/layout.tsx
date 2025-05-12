@@ -1,4 +1,5 @@
 import { Inter } from "next/font/google";
+import { Analytics } from "@vercel/analytics/next";
 
 import "@/styles/globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
@@ -76,6 +77,7 @@ export default function RootLayout({
             <Header />
             <main className="flex flex-1 flex-col">{children}</main>
             <Footer />
+            <Analytics />
           </ThemeProvider>
         </PostHogProvider>
       </body>
