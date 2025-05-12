@@ -251,7 +251,22 @@ Place the following code in the body to create the animated menu.
 ```
 > **NOTE:** The `class` and `id` value must match with your CSS and JavaScript codes respectively.
 
-
 </TabsContent>
 
 </UsageTabs>
+
+## Props
+
+| Prop        | Type     | Default | Description                                   |
+| ----------- | -------- | ------- | --------------------------------------------- |
+| `side`      | `string` | `"top"` | Direction from where the animation will start |
+
+## Examples
+
+### Side
+
+Use the `side` property to `<AnimatedMobileNavbarContent>` to indicate the direction from where the animation will start. The values can be `top`, `left`, or `right`.
+
+<ComponentPreview name="animated-mobile-navbar-side-example" />
+
+> **NOTE:** The `side` property is currently available only for React/Next.js version. The Vanilla JS version will be added soon.
