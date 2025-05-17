@@ -14,7 +14,7 @@ export const AnimatedMobileNavbarExample = () => {
   return (
     <div className="flex gap-2">
       {SIDES.map((side) => (
-        <AnimatedMobileNavbar>
+        <AnimatedMobileNavbar key={side}>
           <AnimatedMobileNavbarTrigger>
             <Button variant="outline">{side}</Button>
           </AnimatedMobileNavbarTrigger>
