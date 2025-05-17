@@ -8,6 +8,7 @@ import { Footer } from "@/components/footer";
 import { PostHogProvider } from "@/components/posthog-provider";
 import { siteConfig } from "@/config/site";
 import { Metadata } from "next";
+import { LenisProvider } from "@/components/lenis-provider";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -74,10 +75,12 @@ export default function RootLayout({
             enableSystem
             disableTransitionOnChange
           >
-            <Header />
-            <main className="flex flex-1 flex-col">{children}</main>
-            <Footer />
-            <Analytics />
+            <LenisProvider>
+              <Header />
+              <main className="flex flex-1 flex-col">{children}</main>
+              <Footer />
+              <Analytics />
+            </LenisProvider>
           </ThemeProvider>
         </PostHogProvider>
       </body>
