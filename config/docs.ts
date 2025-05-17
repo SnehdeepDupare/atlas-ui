@@ -119,6 +119,11 @@ export const docsConfig: DocsConfig = {
           href: "/docs/components/scroll-based-character-reveal",
           items: [],
         },
+        {
+          title: "Reveal Effect",
+          href: "/docs/components/reveal-effect",
+          items: [],
+        },
       ],
     },
   ],

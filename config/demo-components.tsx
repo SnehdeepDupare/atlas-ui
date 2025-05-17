@@ -194,4 +194,49 @@ export const demoComponents: Record<string, any> = {
     })),
     path: "components/atlas_ui/(react)/scroll-based-character-reveal.tsx",
   },
+  "reveal-effect-demo": {
+    component: lazy(async () => ({
+      default: (
+        await import("components/demo-components/react/reveal-effect-demo")
+      ).RevealEffectDemo,
+    })),
+    path: "components/demo-components/react/reveal-effect-demo.tsx",
+  },
+  "reveal-effect": {
+    component: lazy(async () => ({
+      default: (await import("components/atlas_ui/(react)/reveal-effect"))
+        .RevealEffect,
+    })),
+    path: "components/atlas_ui/(react)/reveal-effect.tsx",
+  },
+  "reveal-effect-speed-example": {
+    component: lazy(async () => ({
+      default: (
+        await import(
+          "components/demo-components/examples/reveal-effect/speed-example"
+        )
+      ).RevealEffectSpeedExample,
+    })),
+    path: "components/demo-components/examples/reveal-effect/speed-example.tsx",
+  },
+  "reveal-effect-delay-example": {
+    component: lazy(async () => ({
+      default: (
+        await import(
+          "components/demo-components/examples/reveal-effect/delay-example"
+        )
+      ).RevealEffectDelayExample,
+    })),
+    path: "components/demo-components/examples/reveal-effect/delay-example.tsx",
+  },
+  "reveal-effect-translate-y-example": {
+    component: lazy(async () => ({
+      default: (
+        await import(
+          "components/demo-components/examples/reveal-effect/translate-y-example"
+        )
+      ).RevealEffectTranslateExample,
+    })),
+    path: "components/demo-components/examples/reveal-effect/translate-y-example.tsx",
+  },
 };

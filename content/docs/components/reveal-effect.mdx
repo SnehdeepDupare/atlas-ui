@@ -1,0 +1,263 @@
+---
+title: Reveal Effect
+description: Reveal Effect
+---
+
+<ComponentPreview
+  name="reveal-effect-demo"
+/>
+
+## Installation
+
+<UsageTabs>
+
+<TabsContent value="React/Next">
+
+<Steps>
+
+<Step>Install the following dependencies:</Step>
+
+```bash
+npm install motion
+```
+<Step>Copy and paste the following code into your project.</Step>
+
+<ComponentSource name="reveal-effect" filePath="components/atlas_ui/reveal-effect.tsx" />
+
+<Step>Update the import paths to match your project setup.</Step>
+
+</Steps>
+
+</TabsContent>
+
+<TabsContent value="JavaScript">
+
+<Steps>
+
+<Step>Add the following script to your project head section to use Motion library.</Step>
+
+```html
+<script src="https://cdn.jsdelivr.net/npm/motion@latest/dist/motion.js"></script>
+```
+
+<Step>Copy and paste the following `script.js` into your project.</Step>
+
+```js
+const { animate, inView } = Motion;
+
+const speedDurations = {
+  slow: 1.6,
+  medium: 1,
+  fast: 0.5,
+};
+
+document.querySelectorAll("#reveal-effect").forEach((el) => {
+  const delay = parseFloat(el.dataset.delay) || 0;
+  const speed = el.dataset.speed || "medium";
+  const translateY = parseFloat(el.dataset.translatey) || 0;
+
+  el.style.opacity = "0";
+  el.style.filter = "blur(12px)";
+  el.style.clipPath = "inset(-5% 100% -5% 0)";
+  el.style.transform = `translateY(${translateY}px)`;
+
+  inView(el, () => {
+    animate(
+      el,
+      {
+        opacity: 1,
+        filter: "blur(0px)",
+        clipPath: "inset(-5% 0% -5% 0)",
+        transform: "translateY(0)",
+      },
+      {
+        duration: speedDurations[speed],
+        easing: "ease-in-out",
+        delay,
+      }
+    );
+  });
+});
+```
+
+</Steps>
+
+</TabsContent>
+
+</UsageTabs>
+
+## Usage
+
+<UsageTabs>
+
+<TabsContent value="React/Next">
+
+```tsx
+import { RevealEffect } from "@/components/atlas_ui/reveal-effect";
+```
+
+```tsx
+<RevealEffect>
+  <h1>Reveal Effect</h1>
+</RevealEffect>
+
+<RevealEffect>
+  // Pass any children here, and the reveal effect will be applied to it.
+</RevealEffect>
+```
+
+You can increase/decrease the speed of the animation by passing the `speed` prop.
+
+</TabsContent>
+
+<TabsContent value="JavaScript">
+
+Assign the `id="reveal-effect"` to any element to apply the reveal effect.
+
+```html
+<div id="reveal-effect">
+  <h1>Reveal Effect</h1>
+</div>
+```
+
+</TabsContent>
+
+</UsageTabs>
+
+## Props / Data Attributes
+
+<UsageTabs>
+
+<TabsContent value="React/Next">
+
+| Prop         | Type              | Default    | Description                                                                  |
+| ------------ | ----------------- | ---------- | ---------------------------------------------------------------------------- |
+| `children`   | `React.ReactNode` | -          | The content to which animation must be applied                               |
+| `speed`      | `string`          | `"medium"` | Animation speed, can be `"slow"`, `"medium"`, or `"fast"`                    |
+| `delay`      | `number`          | `0`        | Delay before the animation starts                                            |
+| `translateY` | `number`          | `0`        | The Y-axis translation from where the element will initially begin animation |
+
+</TabsContent>
+
+<TabsContent value="JavaScript">
+
+| Data Attribute     | Type     | Default    | Description                                                                  |
+| ------------------ | -------- | ---------- | ---------------------------------------------------------------------------- |
+| `data-speed`       | `string` | `"medium"` | Animation speed, can be `"slow"`, `"medium"`, or `"fast"`                    |
+| `data-delay`       | `number` | `0`        | Delay before the animation starts                                            |
+| `data-translatey`  | `number` | `0`        | The Y-axis translation from where the element will initially begin animation |
+
+</TabsContent>
+
+</UsageTabs>
+
+## Example
+
+### Speed
+
+To change the speed of the animation, you can pass the `speed` prop or use the `data-speed` attribute.
+The default speed is `"medium"`. You can set it to `"slow"` or `"fast"`.
+
+<ComponentPreview
+  name="reveal-effect-speed-example"
+/>
+
+<UsageTabs>
+
+<TabsContent value="React/Next">
+
+```tsx {2,4} showLineNumbers
+<div>
+  <RevealEffect speed="slow">...</RevealEffect>
+
+  <RevealEffect speed="fast">...</RevealEffect>
+</div>
+```
+
+</TabsContent>
+
+<TabsContent value="JavaScript">
+
+```html {2,4} showLineNumbers
+<div>
+  <div id="reveal-effect" data-speed="fast">...</div>
+
+  <div id="reveal-effect" data-speed="slow">...</div>
+</div>
+```
+
+</TabsContent>
+
+</UsageTabs>
+
+### Delay
+
+To add a delay before the animation starts, you can pass the `delay` prop or use the `data-delay` attribute.
+The default delay is `0`. 
+
+<ComponentPreview
+  name="reveal-effect-delay-example"
+/>
+
+<UsageTabs>
+
+<TabsContent value="React/Next">
+
+```tsx {2,4} showLineNumbers
+<div>
+  <RevealEffect delay={0.2}>...</RevealEffect>
+
+  <RevealEffect delay={0.5}>...</RevealEffect>
+</div>
+```
+
+</TabsContent>
+
+<TabsContent value="JavaScript">
+
+```html {2,4} showLineNumbers
+<div>
+  <div id="reveal-effect" data-delay="0.2">...</div>
+  <div id="reveal-effect" data-delay="0.5">...</div>
+</div>
+```
+</TabsContent>
+
+</UsageTabs>
+
+### Translate Y
+
+To change the Y-axis translation from where the element will initially begin animation, you can pass the `translateY` prop or use the `data-translatey` attribute.
+The default value is `0`. You can set the value between `10-15` for a subtle effect or any other value suitable for your needs.
+Pair translateY with a small delay for a more pronounced effect.
+
+<ComponentPreview
+  name="reveal-effect-translate-y-example"
+/>
+
+<UsageTabs>
+
+<TabsContent value="React/Next">
+
+```tsx {2,4} showLineNumbers
+<div>
+  <RevealEffect translateY={10}>...</RevealEffect>
+
+  <RevealEffect translateY={15}>...</RevealEffect>
+</div>
+```
+
+</TabsContent>
+
+<TabsContent value="JavaScript">
+
+```html {2,4} showLineNumbers
+<div>
+  <div id="reveal-effect" data-translatey="10">...</div>
+  <div id="reveal-effect" data-translatey="15">...</div>
+</div>
+```
+
+</TabsContent>
+
+</UsageTabs>
