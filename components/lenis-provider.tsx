@@ -5,7 +5,9 @@ import Lenis from "lenis";
 
 export const LenisProvider = ({ children }: { children: React.ReactNode }) => {
   useEffect(() => {
-    const lenis = new Lenis();
+    const lenis = new Lenis({
+      allowNestedScroll: true,
+    });
 
     function raf(time: number) {
       lenis.raf(time);
