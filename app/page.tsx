@@ -4,6 +4,7 @@ import { Metadata } from "next";
 import { RevealEffect } from "@/components/atlas_ui/(react)/reveal-effect";
 import { Button } from "@/components/ui/button";
 import { VideoShowcase } from "@/components/video-showcase";
+import { FeaturesSection } from "@/components/features-section";
 
 const title = "Atlas UI";
 const description =
@@ -91,6 +92,8 @@ export default function Home() {
       </section>
 
       <VideoShowcase />
+
+      <FeaturesSection />
     </div>
   );
 }
