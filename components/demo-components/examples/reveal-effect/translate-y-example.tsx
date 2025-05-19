@@ -8,13 +8,13 @@ export const RevealEffectTranslateExample = () => {
       </RevealEffect>
 
       <RevealEffect delay={0.2} translateY={10}>
-        <p className="font-semibold text-xl">
+        <p className="font-semibold text-xl text-center">
           An open-source library of prebuilt components.
         </p>
       </RevealEffect>
 
       <RevealEffect delay={0.4} translateY={15}>
-        <p className="font-semibold text-xl">
+        <p className="font-semibold text-xl text-center">
           Built to save time, inspire creativity, and elevate your UI
         </p>
       </RevealEffect>

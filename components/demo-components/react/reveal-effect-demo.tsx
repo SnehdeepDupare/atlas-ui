@@ -8,7 +8,7 @@ export const RevealEffectDemo = () => {
       </RevealEffect>
 
       <RevealEffect delay={0.2} translateY={15}>
-        <p className="font-semibold text-xl">
+        <p className="font-semibold text-xl text-center">
           This is the same effect you saw on the homepage ;)
         </p>
       </RevealEffect>

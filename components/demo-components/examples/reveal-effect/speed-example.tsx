@@ -8,7 +8,7 @@ export const RevealEffectSpeedExample = () => {
       </RevealEffect>
 
       <RevealEffect>
-        <p className="font-semibold text-xl">
+        <p className="font-semibold text-xl text-center">
           This is medium speed, which is the default.
         </p>
       </RevealEffect>

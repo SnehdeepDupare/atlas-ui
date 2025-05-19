@@ -4,7 +4,7 @@ import { Button } from "../ui/button";
 export const ProjectGalleryPreview = () => {
   return (
     <div className="flex flex-col items-center">
-      <h2 className="font-bold text-xl mb-2">
+      <h2 className="font-bold text-xl mb-2 text-center">
         Trust me, I look better on FullScreen :)
       </h2>
 
