@@ -38,7 +38,7 @@ export const FeaturesSection = () => {
   ];
 
   return (
-    <section className="w-full max-w-7xl mx-auto px-6 lg:px-8 flex flex-col items-center justify-center mt-14">
+    <section className="w-full max-w-7xl mx-auto px-6 lg:px-8 flex flex-col items-center justify-center py-24 min-h-svh">
       <motion.h2
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -118,7 +118,7 @@ const Card = ({ title, description, icon: Icon, href }: CardProps) => {
 
         {/* Radial Gradient Highlight */}
         <motion.div
-          className="absolute inset-0 rounded-2xl bg-gradient-to-r from-[#D7EDEA] to-[#F4FBDF] opacity-0 transition duration-300 group-hover:opacity-100 dark:from-[#202D2E] dark:to-[#303428]"
+          className="absolute inset-0 rounded-2xl bg-gradient-to-r from-[#D7EDEA] to-[#F4FBDF] opacity-0 transition duration-300 group-hover:opacity-100 dark:from-[#202D2E] dark:to-[#303428] hidden md:block"
           style={{
             maskImage: useMotionTemplate`radial-gradient(180px at ${mouseX}px ${mouseY}px, white , transparent)`,
             WebkitMaskImage: useMotionTemplate`radial-gradient(180px at ${mouseX}px ${mouseY}px, white , transparent)`,
