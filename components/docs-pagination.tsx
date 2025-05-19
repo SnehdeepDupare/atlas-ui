@@ -30,9 +30,9 @@ export function DocsPager({ doc }: DocsPagerProps) {
         </Button>
       )}
       {pager?.next?.href && (
-        <Button variant="ghost" className="ml-auto" asChild>
+        <Button variant="ghost" className="ml-auto min-w-0 text-right" asChild>
           <Link href={pager.next.href}>
-            {pager.next.title}
+            <span className="truncate">{pager.next.title}</span>
             <ChevronRight />
           </Link>
         </Button>
