@@ -1,27 +1,18 @@
 "use client";
 
-import Link from "next/link";
 import Image from "next/image";
+import Link from "next/link";
 
-import { useTheme } from "next-themes";
 import { Moon, Sun } from "lucide-react";
+import { useTheme } from "next-themes";
+import { usePathname } from "next/navigation";
 import { FaGithub } from "react-icons/fa";
-import { HiBars2 } from "react-icons/hi2";
 
 import { Button } from "@/components/ui/button";
-import {
-  Sheet,
-  SheetContent,
-  SheetHeader,
-  SheetTitle,
-  SheetTrigger,
-} from "@/components/ui/sheet";
-import { CommandMenu } from "./command-menu";
-import { DocsNav } from "./docs-nav";
-import { docsConfig } from "@/config/docs";
-import { cn } from "@/lib/utils";
-import { usePathname } from "next/navigation";
 import { siteConfig } from "@/config/site";
+import { cn } from "@/lib/utils";
+import { CommandMenu } from "./command-menu";
+import { MobileNav } from "./mobile-nav";
 
 export const Header = () => {
   const { setTheme, theme } = useTheme();
@@ -39,32 +30,7 @@ export const Header = () => {
     <header className="sticky top-0 z-50 w-full border-b  backdrop-blur dark:backdrop-blur-sm   shadow-md dark:shadow-primary-foreground">
       <div className="container-wrapper">
         <div className="container flex h-14 items-center">
-          <div className="md:hidden">
-            <Sheet>
-              <SheetTrigger asChild>
-                <Button variant="ghost" size="icon">
-                  <HiBars2 className="h-[1.2rem] w-[1.2rem]" />
-                </Button>
-              </SheetTrigger>
-              <SheetContent side="left">
-                <SheetHeader className="mb-4">
-                  <SheetTitle>
-                    <Link href="/" className="flex items-center gap-2">
-                      <Image
-                        src="/logo-dark.svg"
-                        alt="Atlas UI Logo"
-                        width={32}
-                        height={32}
-                        className="rounded-md"
-                      />
-                      <h1 className="font-bold text-2xl">Atlas UI</h1>
-                    </Link>
-                  </SheetTitle>
-                </SheetHeader>
-                <DocsNav config={docsConfig} />
-              </SheetContent>
-            </Sheet>
-          </div>
+          <MobileNav />
 
           <nav className="flex items-center gap-4 text-sm xl:gap-6">
             <Link href="/" className="flex items-center gap-2 group mr-3">
