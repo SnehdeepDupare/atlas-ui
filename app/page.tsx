@@ -62,10 +62,9 @@ export default function Home() {
 
         <RevealEffect delay={0.3} translateY={10}>
           <p className="text-muted-foreground max-w-2xl mx-auto mt-5">
-            An open-source library of prebuilt components, crafted with
-            TypeScript and Tailwind CSS. Powered by motion for React and
-            Next.js, with seamless options for Vanilla JS and CSS. Built to save
-            time, inspire creativity, and elevate your UI.
+            Seamless animation meets effortless integration. Discover
+            beautifully crafted components that accelerate development, inspire
+            creativity, and bring interfaces to life.
           </p>
         </RevealEffect>
 
