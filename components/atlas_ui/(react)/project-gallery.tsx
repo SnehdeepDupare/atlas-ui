@@ -38,7 +38,7 @@ const ProjectGallery = ({ children }: ProjectGalleryProps) => {
   const [modal, setModal] = useState({ active: false, index: 0 });
 
   return (
-    <div>
+    <div className="grid grid-cols-1 sm:grid-cols-2 md:block">
       {children &&
         React.Children.map(children, (child, index) => {
           if (React.isValidElement<BaseProjectProps>(child)) {
@@ -75,14 +75,27 @@ const Project = (props: BaseProjectProps | InternalProjectProps) => {
   return (
     <Link href={href}>
       <div
-        className="flex items-center justify-between w-full p-24 border-t border-primary cursor-pointer group hover:opacity-40 transition-all duration-200 ease-linear"
+        className="flex w-full flex-col justify-between p-4 md:flex-row md:items-center md:border-t md:p-24 border-primary cursor-pointer group transition-all duration-200 ease-linear md:hover:opacity-40"
         onMouseEnter={() => setModal?.({ active: true, index })}
         onMouseLeave={() => setModal?.({ active: false, index })}
       >
-        <h2 className="font-normal text-6xl group-hover:-translate-x-3 transition-all duration-200 ease-linear">
+        <div
+          style={{ backgroundColor: color }}
+          className="relative mb-4 w-full overflow-hidden aspect-[4/3] md:hidden"
+        >
+          <Image
+            src={imgSrc}
+            alt={title}
+            fill
+            className="object-contain p-4"
+            sizes="(max-width: 768px) 100vw"
+          />
+        </div>
+
+        <h2 className="font-bold md:font-normal text-2xl sm:text-3xl md:text-6xl md:group-hover:-translate-x-3 transition-all duration-200 ease-linear">
           {title}
         </h2>
-        <p className="font-light group-hover:translate-x-3 transition-all duration-200 ease-linear">
+        <p className="font-light text-sm sm:text-base md:group-hover:translate-x-3 transition-all duration-200 ease-linear">
           {subtitle}
         </p>
       </div>
@@ -108,7 +121,6 @@ const Modal = ({ modal, projects }: ModalProps) => {
 
   const mouseMove = (e: any) => {
     const { clientX, clientY } = e;
-    console.log("Mouse position:", e.clientX, e.clientY);
     mouse.x.set(clientX);
     mouse.y.set(clientY + window.scrollY);
   };
@@ -184,7 +196,7 @@ const Modal = ({ modal, projects }: ModalProps) => {
         initial={"initial"}
         animate={active ? "open" : "closed"}
         ref={modalRef}
-        className="h-[350px] w-[400px] flex items-center justify-center absolute overflow-hidden pointer-events-none"
+        className="h-[350px] w-[400px] hidden md:flex items-center justify-center absolute overflow-hidden pointer-events-none"
         style={{
           left: smoothMouse.x,
           top: smoothMouse.y,
@@ -224,7 +236,7 @@ const Modal = ({ modal, projects }: ModalProps) => {
         initial={"initial"}
         animate={active ? "open" : "closed"}
         ref={cursorRef}
-        className="h-20 w-20 flex items-center justify-center rounded-full absolute pointer-events-none bg-blue-600 "
+        className="h-20 w-20 hidden md:flex items-center justify-center rounded-full absolute pointer-events-none bg-blue-600 "
         style={{
           left: smoothCursor._x,
           top: smoothCursor._y,
@@ -235,7 +247,7 @@ const Modal = ({ modal, projects }: ModalProps) => {
         initial={"initial"}
         animate={active ? "open" : "closed"}
         ref={cursorLabelRef}
-        className="h-20 w-20 flex items-center justify-center rounded-full absolute pointer-events-none bg-transparent text-primary"
+        className="h-20 w-20 hidden md:flex items-center justify-center rounded-full absolute pointer-events-none bg-transparent text-primary"
         style={{
           left: smoothCursor._x,
           top: smoothCursor._y,
