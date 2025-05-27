@@ -13,7 +13,7 @@ export const CtaSection = () => {
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6, ease: "easeOut" }}
       viewport={{ once: true, amount: 0.6 }}
-      className="pt-12 md:pt-24 pb-24 text-center px-6 lg:px-8"
+      className="pt-12 pb-24 text-center px-6 lg:px-8"
     >
       <h2 className="text-4xl font-bold mb-4">
         Ready to Harness the Strength of Atlas?
