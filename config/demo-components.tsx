@@ -239,4 +239,19 @@ export const demoComponents: Record<string, any> = {
     })),
     path: "components/demo-components/examples/reveal-effect/translate-y-example.tsx",
   },
+  "loki-text-effect-demo": {
+    component: lazy(async () => ({
+      default: (
+        await import("components/demo-components/react/loki-text-effect-demo")
+      ).LokiTextEffectDemo,
+    })),
+    path: "components/demo-components/react/loki-text-effect-demo.tsx",
+  },
+  "loki-text-effect": {
+    component: lazy(async () => ({
+      default: (await import("components/atlas_ui/(react)/loki-text-effect"))
+        .LokiTextEffect,
+    })),
+    path: "components/atlas_ui/(react)/loki-text-effect.tsx",
+  },
 };

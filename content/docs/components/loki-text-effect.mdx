@@ -1,0 +1,283 @@
+---
+title: Loki Text Effect
+description: The iconic text animation from the Loki series intro.  
+---
+
+<ComponentPreview
+  name="loki-text-effect-demo"
+/>
+
+## Installation
+
+<UsageTabs>
+
+<TabsContent value="React/Next">
+
+<Steps>
+
+<Step>Download all the fonts and add them to your project. [Download Link](https://github.com/SnehdeepDupare/atlas-ui/tree/master/app/fonts)</Step>
+
+```txt
+└──app
+    └──fonts
+        ├──fontOne.woff2
+        ├──fontTwo.woff2
+        ├──fontThree.woff2
+        ├──fontFour.woff2
+        ├──fontFive.woff2
+        ├──fontSix.woff2
+        └──fontSeven.woff2
+```
+
+<Step>Copy and paste the following code into your project.</Step>
+
+<ComponentSource name="loki-text-effect" filePath="components/atlas_ui/loki-text-effect.tsx" />
+
+<Step>Add `@/fonts/font.ts`.</Step>
+
+```tsx
+import localFont from "next/font/local";
+
+const fontOne = localFont({
+  src: "../app/fonts/fontOne.woff2",
+});
+const fontTwo = localFont({
+  src: "../app/fonts/fontTwo.woff2",
+});
+const fontThree = localFont({
+  src: "../app/fonts/fontThree.woff2",
+});
+const fontFour = localFont({
+  src: "../app/fonts/fontFour.woff2",
+});
+const fontFive = localFont({
+  src: "../app/fonts/fontFive.woff2",
+});
+const fontSix = localFont({
+  src: "../app/fonts/fontSix.woff2",
+});
+const fontSeven = localFont({
+  src: "../app/fonts/fontSeven.woff2",
+});
+
+export { fontOne, fontTwo, fontThree, fontFour, fontFive, fontSix, fontSeven };
+```
+
+<Step>Update the import paths to match your project setup.</Step>
+
+</Steps>
+
+</TabsContent>
+
+<TabsContent value="JavaScript">
+
+<Steps>
+
+<Step>Download all the fonts and add them to your project. [Download Link](https://github.com/SnehdeepDupare/atlas-ui/tree/master/app/fonts)</Step>
+
+```txt
+index.html
+fonts
+├──fontOne.woff2
+├──fontTwo.woff2
+├──fontThree.woff2
+├──fontFour.woff2
+├──fontFive.woff2
+├──fontSix.woff2
+└──fontSeven.woff2
+```     
+
+<Step>Add the following script to your project head section to use Motion library.</Step>
+
+```html
+<script src="https://cdn.jsdelivr.net/npm/motion@latest/dist/motion.js"></script>
+```
+
+<Step>Copy and paste the following code into your project.</Step>
+
+```html
+<p id="loki-effect-text" data-value="Loki">Loki</p>
+```
+
+<Step>Add `style.css` </Step>
+
+```css
+/* Import fonts */
+@font-face {
+  font-family: "FontOne";
+  src: url("/fonts/fontOne.woff2") format("woff2");
+}
+@font-face {
+  font-family: "FontTwo";
+  src: url("/fonts/fontTwo.woff2") format("woff2");
+}
+@font-face {
+  font-family: "FontThree";
+  src: url("/fonts/fontThree.woff2") format("woff2");
+}
+@font-face {
+  font-family: "FontFour";
+  src: url("/fonts/fontFour.woff2") format("woff2");
+}
+@font-face {
+  font-family: "FontFive";
+  src: url("/fonts/fontFive.woff2") format("woff2");
+}
+@font-face {
+  font-family: "FontSix";
+  src: url("/fonts/fontSix.woff2") format("woff2");
+}
+@font-face {
+  font-family: "FontSeven";
+  src: url("/fonts/fontSeven.woff2") format("woff2");
+}
+
+body {
+  background-color: #18181b;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100svh;
+  margin: 0;
+}
+
+.loki-letter {
+  display: inline-block;
+  font-size: clamp(3rem, 10vw, 7rem); /* You can adjust the font size according to you usage ;) */
+  font-weight: 700;
+  color: white;
+  letter-spacing: 0.15em;
+  text-shadow: 0 0 2px #ffffff66, 0 0 5px #ffffff66;
+  filter: drop-shadow(0 0 8px white);
+}
+```
+
+<Step>Add `script.js`</Step>
+
+```js
+const { animate } = Motion;
+
+const fonts = [
+  "FontOne",
+  "FontTwo",
+  "FontThree",
+  "FontFour",
+  "FontFive",
+  "FontSix",
+  "FontSeven",
+];
+
+const getRandomFont = (current) => {
+  let next = current;
+  while (next === current) {
+    next = fonts[Math.floor(Math.random() * fonts.length)];
+  }
+  return next;
+};
+
+const getRandomOffset = () => ({
+  x: (Math.random() - 0.5) * 2,
+  y: (Math.random() - 0.5) * 2,
+});
+
+const applyLokiEffect = (element) => {
+  const text = element.dataset.value || element.textContent.trim();
+  const velocityFont = Math.max(
+    100,
+    Number(element.dataset.velocityFont || 800)
+  );
+  const velocityMove = Math.max(
+    100,
+    Number(element.dataset.velocityMove || 1800)
+  );
+
+  element.innerHTML = "";
+
+  text.split("").forEach((char, i) => {
+    const span = document.createElement("span");
+    span.className = "loki-letter";
+    span.textContent = char;
+
+    let baseFont = fonts[i % fonts.length];
+    span.style.fontFamily = baseFont;
+    element.appendChild(span);
+
+    // Font swap
+    setInterval(() => {
+      baseFont = getRandomFont(baseFont);
+      span.style.fontFamily = baseFont;
+    }, velocityFont);
+
+    // Position animate
+    setInterval(() => {
+      const { x, y } = getRandomOffset();
+      animate(span, { x, y }, { duration: 0.5, easing: "ease-in-out" });
+    }, velocityMove);
+  });
+};
+
+window.addEventListener("DOMContentLoaded", () => {
+  document.querySelectorAll("#loki-effect-text").forEach(applyLokiEffect);
+});
+```
+
+</Steps>
+
+</TabsContent>
+
+</UsageTabs>
+
+## Usage
+
+<UsageTabs>
+
+<TabsContent value="React/Next">
+
+```tsx
+import { LokiTextEffect } from "@/components/atlas_ui/(react)/loki-text-effect";
+```
+
+```tsx
+<LokiTextEffect text="Loki" />
+```
+
+</TabsContent>
+
+<TabsContent value="JavaScript">
+
+Define the text you want to display with Loki text Effect with `id="loki-effect-text"`. Add `data-value` attribute to the element with the text you want to display, it must be the same as the text you want to display.
+
+```html
+<p id="loki-effect-text" data-value="Loki">Loki</p>
+```
+
+</TabsContent>
+
+</UsageTabs>
+
+## Props / Data Attributes
+
+<UsageTabs>
+
+<TabsContent value="React/Next">
+
+| Prop            | Type     | Default | Required | Description                                                              |
+| --------------- | -------- | ------- | -------- | ------------------------------------------------------------------------ |
+| `text`          | `string` | –       | true     | The text to display and animate                                          |
+| `velocityFont`  | `number` | `800`   | false    | Interval in ms for how often the font changes                            |
+| `velocityMove`  | `number` | `1800`  | false    | Interval in ms for how often the position jitter is updated              |
+| `className`     | `string` | –       | false    | Optional classnames for according to match your setup                    |
+
+</TabsContent>
+
+<TabsContent value="JavaScript">
+
+| Data Attribute         | Type     | Default | Required | Description                                                              |
+| ---------------------- | -------- | ------- | -------- | ------------------------------------------------------------------------ |
+| `data-value`           | `string` | –       | true     | The text to display and animate                                          |
+| `data-velocity-font`   | `number` | `800`   | false    | Interval in ms for how often the font changes                            |
+| `data-velocity-move`   | `number` | `1800`  | false    | Interval in ms for how often the position jitter is updated              |
+
+</TabsContent>
+
+</UsageTabs>

@@ -100,8 +100,19 @@ export const docsConfig: DocsConfig = {
       title: "Text Animations",
       items: [
         {
+          title: "Loki Text Effect",
+          href: "/docs/components/loki-text-effect",
+          items: [],
+          label: "New",
+        },
+        {
           title: "Hacker Text",
           href: "/docs/components/hacker-text",
+          items: [],
+        },
+        {
+          title: "Reveal Effect",
+          href: "/docs/components/reveal-effect",
           items: [],
         },
         {
@@ -117,11 +128,6 @@ export const docsConfig: DocsConfig = {
         {
           title: "Scroll Based Character Reveal",
           href: "/docs/components/scroll-based-character-reveal",
-          items: [],
-        },
-        {
-          title: "Reveal Effect",
-          href: "/docs/components/reveal-effect",
           items: [],
         },
       ],
