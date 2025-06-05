@@ -6,6 +6,7 @@ import { Button } from "@/components/ui/button";
 import { VideoShowcase } from "@/components/video-showcase";
 import { FeaturesSection } from "@/components/features-section";
 import { CtaSection } from "@/components/cta-section";
+import { NewUpdateCallout } from "@/components/new-update-callout";
 
 const title = "Atlas UI";
 const description =
@@ -50,7 +51,11 @@ export default function Home() {
       </div>
 
       <section className="max-w-4xl mx-auto px-6 lg:px-8 py-24 text-center">
-        <RevealEffect>
+        <RevealEffect translateY={10}>
+          <NewUpdateCallout />
+        </RevealEffect>
+
+        <RevealEffect delay={0.1} translateY={10}>
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight">
             Motion Powered{" "}
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#36B49F] via-[#DBFF75] to-[#36B49F] bg-[length:200%] animate-bg-pan">
