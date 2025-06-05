@@ -32,13 +32,18 @@ interface InternalProjectProps extends BaseProjectProps {
 interface ModalProps {
   modal: { active: boolean; index: number };
   projects: BaseProjectProps[];
+  containerRef: React.RefObject<HTMLDivElement>;
 }
 
 const ProjectGallery = ({ children }: ProjectGalleryProps) => {
   const [modal, setModal] = useState({ active: false, index: 0 });
+  const containerRef = useRef<HTMLDivElement>(null);
 
   return (
-    <div className="grid grid-cols-1 sm:grid-cols-2 md:block">
+    <div
+      ref={containerRef}
+      className="grid grid-cols-1 sm:grid-cols-2 md:block relative"
+    >
       {children &&
         React.Children.map(children, (child, index) => {
           if (React.isValidElement<BaseProjectProps>(child)) {
@@ -63,6 +68,7 @@ const ProjectGallery = ({ children }: ProjectGalleryProps) => {
             return null;
           })
           .filter((project): project is BaseProjectProps => project !== null)}
+        containerRef={containerRef}
       />
     </div>
   );
@@ -103,7 +109,7 @@ const Project = (props: BaseProjectProps | InternalProjectProps) => {
   );
 };
 
-const Modal = ({ modal, projects }: ModalProps) => {
+const Modal = ({ modal, projects, containerRef }: ModalProps) => {
   const { index, active } = modal;
   const modalRef = useRef(null);
   const cursorRef = useRef(null);
@@ -120,15 +126,33 @@ const Modal = ({ modal, projects }: ModalProps) => {
   };
 
   const mouseMove = (e: any) => {
-    const { clientX, clientY } = e;
-    mouse.x.set(clientX);
-    mouse.y.set(clientY + window.scrollY);
+    if (containerRef.current) {
+      const rect = containerRef.current.getBoundingClientRect();
+      const styles = getComputedStyle(containerRef.current);
+      const paddingLeft = parseFloat(styles.paddingLeft) || 0;
+      const paddingTop = parseFloat(styles.paddingTop) || 0;
+      const borderLeftWidth = parseFloat(styles.borderLeftWidth) || 0;
+      const borderTopWidth = parseFloat(styles.borderTopWidth) || 0;
+      const x = e.clientX - rect.left - paddingLeft - borderLeftWidth;
+      const y = e.clientY - rect.top - paddingTop - borderTopWidth;
+      mouse.x.set(x);
+      mouse.y.set(y);
+    }
   };
 
   const cursorMove = (e: any) => {
-    const { clientX, clientY } = e;
-    cursor._x.set(clientX);
-    cursor._y.set(clientY + window.scrollY);
+    if (containerRef.current) {
+      const rect = containerRef.current.getBoundingClientRect();
+      const styles = getComputedStyle(containerRef.current);
+      const paddingLeft = parseFloat(styles.paddingLeft) || 0;
+      const paddingTop = parseFloat(styles.paddingTop) || 0;
+      const borderLeftWidth = parseFloat(styles.borderLeftWidth) || 0;
+      const borderTopWidth = parseFloat(styles.borderTopWidth) || 0;
+      const x = e.clientX - rect.left - paddingLeft - borderLeftWidth;
+      const y = e.clientY - rect.top - paddingTop - borderTopWidth;
+      cursor._x.set(x);
+      cursor._y.set(y);
+    }
   };
 
   const smoothOptions = {

@@ -63,6 +63,7 @@ export const docsConfig: DocsConfig = {
           title: "Project Gallery",
           href: "/docs/components/project-gallery",
           items: [],
+          label: "Updated",
         },
         {
           title: "Parallax Sections",

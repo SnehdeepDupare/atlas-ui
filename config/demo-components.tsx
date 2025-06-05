@@ -31,8 +31,9 @@ export const demoComponents: Record<string, any> = {
   },
   "project-gallery-demo": {
     component: lazy(async () => ({
-      default: (await import("components/preview/project-gallery-preview"))
-        .ProjectGalleryPreview,
+      default: (
+        await import("components/demo-components/react/project-gallery-demo")
+      ).ProjectGalleryDemo,
     })),
     path: "components/demo-components/react/project-gallery-demo.tsx",
   },
