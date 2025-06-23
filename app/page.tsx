@@ -15,12 +15,8 @@ const description =
 export const metadata: Metadata = {
   title,
   description,
-  openGraph: {
-    images: [{ url: `${process.env.NEXT_PUBLIC_APP_URL}/og.png` }],
-  },
   twitter: {
     card: "summary_large_image",
-    images: [{ url: `${process.env.NEXT_PUBLIC_APP_URL}/og.png` }],
   },
 };
 
