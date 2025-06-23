@@ -10,29 +10,17 @@ import { NewUpdateCallout } from "@/components/new-update-callout";
 
 const title = "Atlas UI";
 const description =
-  "An open-source library of prebuilt components, crafted with TypeScript and Tailwind CSS. Powered by motion for React and Next.js, with seamless options for Vanilla JS and CSS. Built to save time, inspire creativity, and elevate your UI.";
+  "Beautiful, Open Source, Motion powered components for React, Next.js, and Vanilla JS. Accelerate development, inspire creativity, and bring interfaces to life with seamless animations.";
 
 export const metadata: Metadata = {
   title,
   description,
   openGraph: {
-    images: [
-      {
-        url: `/og?title=${encodeURIComponent(
-          title
-        )}&description=${encodeURIComponent(description)}`,
-      },
-    ],
+    images: [{ url: `/og.png` }],
   },
   twitter: {
     card: "summary_large_image",
-    images: [
-      {
-        url: `/og?title=${encodeURIComponent(
-          title
-        )}&description=${encodeURIComponent(description)}`,
-      },
-    ],
+    images: [{ url: `/og.png` }],
   },
 };
 
