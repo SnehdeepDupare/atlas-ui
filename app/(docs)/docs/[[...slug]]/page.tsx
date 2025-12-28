@@ -12,12 +12,10 @@ import { absoluteUrl } from "@/lib/utils";
 import type { Metadata } from "next";
 
 interface DocPageProps {
-  params: {
-    slug: string[];
-  };
+  params: Promise<{ slug: string[] }>;
 }
 
-async function getDocFromParams({ params }: DocPageProps) {
+async function getDocFromParams(params: { slug: string[] }) {
   const slug = params.slug?.join("/") || "";
   const doc = allDocs.find((doc) => doc.slugAsParams === slug);
 
@@ -26,10 +24,9 @@ async function getDocFromParams({ params }: DocPageProps) {
   return doc;
 }
 
-export async function generateMetadata({
-  params,
-}: DocPageProps): Promise<Metadata> {
-  const doc = await getDocFromParams({ params });
+export async function generateMetadata(props: DocPageProps): Promise<Metadata> {
+  const params = await props.params;
+  const doc = await getDocFromParams(params);
 
   if (!doc) {
     return {};
@@ -67,16 +64,15 @@ export async function generateMetadata({
   };
 }
 
-export async function generateStaticParams(): Promise<
-  DocPageProps["params"][]
-> {
+export async function generateStaticParams(): Promise<{ slug: string[] }[]> {
   return allDocs.map((doc) => ({
     slug: doc.slugAsParams.split("/"),
   }));
 }
 
-const DocPage = async ({ params }: DocPageProps) => {
-  const doc = await getDocFromParams({ params });
+const DocPage = async (props: DocPageProps) => {
+  const params = await props.params;
+  const doc = await getDocFromParams(params);
 
   if (!doc) {
     notFound();

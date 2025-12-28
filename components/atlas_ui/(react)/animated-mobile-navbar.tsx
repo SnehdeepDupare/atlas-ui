@@ -69,7 +69,12 @@ const AnimatedMobileNavbarContent = ({
       x: 0,
       transition: {
         duration: 0.5,
-        ease: side === "top" ? [0.12, 0, 0.39, 0] : [0, 0.55, 0.45, 1],
+        ease: (side === "top" ? [0.12, 0, 0.39, 0] : [0, 0.55, 0.45, 1]) as [
+          number,
+          number,
+          number,
+          number
+        ],
       },
     },
     exit: {
@@ -79,7 +84,12 @@ const AnimatedMobileNavbarContent = ({
       transition: {
         delay: 0.5,
         duration: 0.5,
-        ease: side === "top" ? [0.22, 1, 0.36, 1] : [0.61, 1, 0.88, 1],
+        ease: (side === "top" ? [0.22, 1, 0.36, 1] : [0.61, 1, 0.88, 1]) as [
+          number,
+          number,
+          number,
+          number
+        ],
       },
     },
   };
@@ -158,14 +168,14 @@ const AnimatedMobileNavbarLink = ({
       y: "30vh",
       transition: {
         duration: 0.5,
-        ease: [0.37, 0, 0.36, 1],
+        ease: [0.37, 0, 0.36, 1] as [number, number, number, number],
       },
     },
     open: {
       y: 0,
       transition: {
         duration: 0.7,
-        ease: [0, 0.55, 0.45, 1],
+        ease: [0, 0.55, 0.45, 1] as [number, number, number, number],
       },
     },
   };

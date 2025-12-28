@@ -32,7 +32,7 @@ interface InternalProjectProps extends BaseProjectProps {
 interface ModalProps {
   modal: { active: boolean; index: number };
   projects: BaseProjectProps[];
-  containerRef: React.RefObject<HTMLDivElement>;
+  containerRef: React.RefObject<HTMLDivElement | null>;
 }
 
 const ProjectGallery = ({ children }: ProjectGalleryProps) => {
@@ -199,7 +199,7 @@ const Modal = ({ modal, projects, containerRef }: ModalProps) => {
       y: "-50%",
       transition: {
         duration: 0.4,
-        ease: [0.76, 0, 0.24, 1],
+        ease: [0.76, 0, 0.24, 1] as [number, number, number, number],
       },
     },
     closed: {
@@ -208,7 +208,7 @@ const Modal = ({ modal, projects, containerRef }: ModalProps) => {
       y: "-50%",
       transition: {
         duration: 0.4,
-        ease: [0.32, 0, 0.67, 0],
+        ease: [0.32, 0, 0.67, 0] as [number, number, number, number],
       },
     },
   };
