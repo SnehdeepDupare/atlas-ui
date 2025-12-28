@@ -29,10 +29,10 @@ export const VideoShowcase = () => {
       viewport={{ once: true }}
       transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
       className={cn(
-        "relative w-full max-w-screen-2xl mx-auto mt-10 px-4 sm:px-6 lg:px-8",
+        "relative w-full max-w-(--breakpoint-2xl) mx-auto mt-10 px-4 sm:px-6 lg:px-8",
         isMobile
           ? "grid grid-cols-2 gap-4"
-          : "flex items-center justify-center min-h-[800px]"
+          : "flex items-center justify-center min-h-200"
       )}
     >
       {/* Top Left */}
@@ -119,7 +119,7 @@ export const VideoShowcase = () => {
           "rounded-xl overflow-hidden border-2 border-neutral-800 z-20",
           isMobile
             ? "col-span-2"
-            : "absolute top-28 w-full max-w-lg sm:max-w-xl md:max-w-3xl h-[60vh] sm:h-[30rem]"
+            : "absolute top-28 w-full max-w-lg sm:max-w-xl md:max-w-3xl h-[60vh] sm:h-120"
         )}
       >
         <Video

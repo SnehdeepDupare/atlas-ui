@@ -32,7 +32,7 @@ interface InternalProjectProps extends BaseProjectProps {
 interface ModalProps {
   modal: { active: boolean; index: number };
   projects: BaseProjectProps[];
-  containerRef: React.RefObject<HTMLDivElement>;
+  containerRef: React.RefObject<HTMLDivElement | null>;
 }
 
 const ProjectGallery = ({ children }: ProjectGalleryProps) => {
@@ -87,7 +87,7 @@ const Project = (props: BaseProjectProps | InternalProjectProps) => {
       >
         <div
           style={{ backgroundColor: color }}
-          className="relative mb-4 w-full overflow-hidden aspect-[4/3] md:hidden"
+          className="relative mb-4 w-full overflow-hidden aspect-4/3 md:hidden"
         >
           <Image
             src={imgSrc}
@@ -199,7 +199,7 @@ const Modal = ({ modal, projects, containerRef }: ModalProps) => {
       y: "-50%",
       transition: {
         duration: 0.4,
-        ease: [0.76, 0, 0.24, 1],
+        ease: [0.76, 0, 0.24, 1] as [number, number, number, number],
       },
     },
     closed: {
@@ -208,7 +208,7 @@ const Modal = ({ modal, projects, containerRef }: ModalProps) => {
       y: "-50%",
       transition: {
         duration: 0.4,
-        ease: [0.32, 0, 0.67, 0],
+        ease: [0.32, 0, 0.67, 0] as [number, number, number, number],
       },
     },
   };
@@ -220,7 +220,7 @@ const Modal = ({ modal, projects, containerRef }: ModalProps) => {
         initial={"initial"}
         animate={active ? "open" : "closed"}
         ref={modalRef}
-        className="h-[350px] w-[400px] hidden md:flex items-center justify-center absolute overflow-hidden pointer-events-none"
+        className="h-87.5 w-100 hidden md:flex items-center justify-center absolute overflow-hidden pointer-events-none"
         style={{
           left: smoothMouse.x,
           top: smoothMouse.y,

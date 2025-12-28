@@ -10,7 +10,7 @@ interface ComponentPreviewProps extends React.HTMLAttributes<HTMLDivElement> {
 }
 
 export function ComponentPreview({ name, children }: ComponentPreviewProps) {
-  const Code = (React.Children.toArray(children) as React.ReactElement[])[0];
+  const Code = (React.Children.toArray(children) as React.ReactElement<any>[])[0];
 
   const Preview = React.useMemo(() => {
     const Component = demoComponents[name]?.component;

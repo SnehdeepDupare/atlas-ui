@@ -48,10 +48,10 @@ export async function GET(request: Request) {
         tw="flex h-full w-full bg-black text-white"
         style={{ fontFamily: "Geist Sans" }}
       >
-        <div tw="flex border absolute border-stone-700 border-dashed inset-y-0 left-16 w-[1px]" />
-        <div tw="flex border absolute border-stone-700 border-dashed inset-y-0 right-16 w-[1px]" />
-        <div tw="flex border absolute border-stone-700 inset-x-0 h-[1px] top-16" />
-        <div tw="flex border absolute border-stone-700 inset-x-0 h-[1px] bottom-16" />
+        <div tw="flex border absolute border-stone-700 border-dashed inset-y-0 left-16 w-px" />
+        <div tw="flex border absolute border-stone-700 border-dashed inset-y-0 right-16 w-px" />
+        <div tw="flex border absolute border-stone-700 inset-x-0 h-px top-16" />
+        <div tw="flex border absolute border-stone-700 inset-x-0 h-px bottom-16" />
         <div tw="flex absolute flex-row bottom-24 right-24 text-white">
           <div tw="flex items-center">
             <svg
@@ -145,7 +145,7 @@ export async function GET(request: Request) {
         </div>
         <div tw="flex flex-col absolute w-[896px] justify-center inset-32">
           <div
-            tw="tracking-tight flex-grow-1 flex flex-col justify-center leading-[1.1]"
+            tw="tracking-tight grow flex flex-col justify-center leading-[1.1]"
             style={{
               textWrap: "balance",
               fontWeight: 600,
@@ -156,7 +156,7 @@ export async function GET(request: Request) {
             {title}
           </div>
           <div
-            tw="text-[40px] leading-[1.5] flex-grow-1 text-stone-400"
+            tw="text-[40px] leading-normal grow text-stone-400"
             style={{
               fontWeight: 500,
               textWrap: "balance",

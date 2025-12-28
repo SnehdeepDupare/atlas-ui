@@ -15,7 +15,7 @@ const digitVariants = {
     y: 0,
     opacity: 1,
     transition: {
-      type: "spring",
+      type: "spring" as const,
       stiffness: 500,
       damping: 15,
       delay: i * 0.2,

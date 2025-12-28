@@ -118,7 +118,7 @@ const Card = ({ title, description, icon: Icon, href }: CardProps) => {
 
         {/* Radial Gradient Highlight */}
         <motion.div
-          className="absolute inset-0 rounded-2xl bg-gradient-to-r from-[#D7EDEA] to-[#F4FBDF] opacity-0 transition duration-300 group-hover:opacity-100 dark:from-[#202D2E] dark:to-[#303428] hidden md:block"
+          className="absolute inset-0 rounded-2xl bg-linear-to-r from-[#D7EDEA] to-[#F4FBDF] opacity-0 transition duration-300 group-hover:opacity-100 dark:from-[#202D2E] dark:to-[#303428] hidden md:block"
           style={{
             maskImage: useMotionTemplate`radial-gradient(180px at ${mouseX}px ${mouseY}px, white , transparent)`,
             WebkitMaskImage: useMotionTemplate`radial-gradient(180px at ${mouseX}px ${mouseY}px, white , transparent)`,

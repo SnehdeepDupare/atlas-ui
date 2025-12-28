@@ -40,7 +40,7 @@ export const BlobMouseTrailer = () => {
     <motion.div
       className={` ${
         isVisible ? "hidden md:block" : "hidden"
-      } h-96 w-96 rounded-full bg-gradient-to-r from-purple-500 to-amber-500 fixed top-0 left-0 pointer-events-none animate-rotate opacity-80 -z-10 blur-[100px]`}
+      } h-96 w-96 rounded-full bg-linear-to-r from-purple-500 to-amber-500 fixed top-0 left-0 pointer-events-none animate-rotate opacity-80 -z-10 blur-[100px]`}
       style={{
         left: smoothMouse.x,
         top: smoothMouse.y,
