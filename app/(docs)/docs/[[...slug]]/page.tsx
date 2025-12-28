@@ -1,8 +1,6 @@
 import { notFound } from "next/navigation";
 import { ChevronRight } from "lucide-react";
 
-import "@/styles/mdx.css";
-
 import { allDocs } from "contentlayer/generated";
 import { Mdx } from "@/components/mdx-components";
 import { DocsPager } from "@/components/docs-pagination";

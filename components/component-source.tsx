@@ -45,7 +45,7 @@ export function ComponentSource({
           </CollapsibleContent>
           <div
             className={cn(
-              "absolute flex items-end justify-center rounded-xl bg-gradient-to-b from-transparent to-zinc-950/90 p-2",
+              "absolute flex items-end justify-center rounded-xl bg-linear-to-b from-transparent to-zinc-950/90 p-2",
               isOpened ? "inset-x-0 bottom-4 h-12" : "inset-0"
             )}
           >

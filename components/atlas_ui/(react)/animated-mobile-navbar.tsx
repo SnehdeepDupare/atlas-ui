@@ -175,9 +175,9 @@ const AnimatedMobileNavbarLink = ({
       <motion.div variants={linkVariants}>
         <Link
           href={href}
-          className={`mx-4 relative after:hover:scale-x-125 hover:text-primary text-lg uppercase font-bold text-muted-foreground ${
+          className={`mx-4 relative hover:after:scale-x-125 hover:text-primary text-lg uppercase font-bold text-muted-foreground ${
             isActive ? "text-primary" : "text-muted-foreground"
-          } after:content-[''] after:absolute after:bg-primary after:h-[1px] after:w-full after:left-0 after:bottom-[-2px] after:scale-x-0 after:duration-300`}
+          } after:content-[''] after:absolute after:bg-primary after:h-px after:w-full after:left-0 after:-bottom-0.5 after:scale-x-0 after:duration-300`}
           onClick={onClick}
         >
           {label}

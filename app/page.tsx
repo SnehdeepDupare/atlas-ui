@@ -39,13 +39,13 @@ export const metadata: Metadata = {
 export default function Home() {
   return (
     <div className="relative flex flex-col h-full w-full mb-6">
-      <div className="from-background via-background to-background fixed inset-0 -z-10 bg-gradient-to-br">
-        <div className="fixed inset-0 hidden bg-gradient-to-br from-black via-zinc-900/90 to-black dark:block">
-          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-emerald-900/20 via-emerald-950/5 to-transparent opacity-25"></div>
+      <div className="from-background via-background to-background fixed inset-0 -z-10 bg-linear-to-br">
+        <div className="fixed inset-0 hidden bg-linear-to-br from-black via-zinc-900/90 to-black dark:block">
+          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,var(--tw-gradient-stops))] from-emerald-900/20 via-emerald-950/5 to-transparent opacity-25"></div>
           <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMDAiIGhlaWdodD0iMzAwIj48ZmlsdGVyIGlkPSJhIiB4PSIwIiB5PSIwIj48ZmVUdXJidWxlbmNlIGJhc2VGcmVxdWVuY3k9Ii43NSIgc3RpdGNoVGlsZXM9InN0aXRjaCIgdHlwZT0iZnJhY3RhbE5vaXNlIi8+PGZlQ29sb3JNYXRyaXggdHlwZT0ic2F0dXJhdGUiIHZhbHVlcz0iMCIvPjwvZmlsdGVyPjxwYXRoIGQ9Ik0wIDBoMzAwdjMwMEgweiIgZmlsdGVyPSJ1cmwoI2EpIiBvcGFjaXR5PSIuMDIiLz48L3N2Zz4=')]"></div>
         </div>
-        <div className="fixed inset-0 bg-gradient-to-br from-white via-zinc-50/5 to-white dark:hidden">
-          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-blue-50/30 via-amber-50/20 to-transparent opacity-70"></div>
+        <div className="fixed inset-0 bg-linear-to-br from-white via-zinc-50/5 to-white dark:hidden">
+          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,var(--tw-gradient-stops))] from-blue-50/30 via-amber-50/20 to-transparent opacity-70"></div>
           <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMDAiIGhlaWdodD0iMzAwIj48ZmlsdGVyIGlkPSJhIiB4PSIwIiB5PSIwIj48ZmVUdXJidWxlbmNlIGJhc2VGcmVxdWVuY3k9Ii43NSIgc3RpdGNoVGlsZXM9InN0aXRjaCIgdHlwZT0iZnJhY3RhbE5vaXNlIi8+PGZlQ29sb3JNYXRyaXggdHlwZT0ic2F0dXJhdGUiIHZhbHVlcz0iMCIvPjwvZmlsdGVyPjxwYXRoIGQ9Ik0wIDBoMzAwdjMwMEgweiIgZmlsdGVyPSJ1cmwoI2EpIiBvcGFjaXR5PSIuMDIiLz48L3N2Zz4=')]"></div>
         </div>
       </div>
@@ -58,7 +58,7 @@ export default function Home() {
         <RevealEffect delay={0.1} translateY={10}>
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight">
             Motion Powered{" "}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#36B49F] via-[#DBFF75] to-[#36B49F] bg-[length:200%] animate-bg-pan">
+            <span className="text-transparent bg-clip-text bg-linear-to-r from-[#36B49F] via-[#DBFF75] to-[#36B49F] bg-size-[200%] animate-bg-pan">
               Animated Components
             </span>{" "}
             for React, Next.js & Vanilla JS

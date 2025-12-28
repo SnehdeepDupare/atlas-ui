@@ -98,7 +98,7 @@ export const LokiTextEffect = ({
   className = "",
 }: LokiEffectProps) => {
   return (
-    <div className={`flex flex-wrap justify-center gap-[1px] ${className}`}>
+    <div className={`flex flex-wrap justify-center gap-px ${className}`}>
       {text.split("").map((char, i) => (
         <AnimatedLetter
           key={i}
