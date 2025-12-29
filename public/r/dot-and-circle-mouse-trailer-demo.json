@@ -1,0 +1,17 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "dot-and-circle-mouse-trailer-demo",
+  "description": "",
+  "registryDependencies": [
+    "dot-and-circle-mouse-trailer"
+  ],
+  "files": [
+    {
+      "path": "registry/react/examples/dot-and-circle-mouse-trailer-demo.tsx",
+      "content": "import { DotAndCircleMouseTrailer } from \"@/registry/react/atlasui/dot-and-circle-mouse-trailer\";\n\nexport const DotAndCircleMouseTrailerDemo = () => {\n  return (\n    <div>\n      <p>Move you mouse around ;)</p>\n      <DotAndCircleMouseTrailer />\n    </div>\n  );\n};\n",
+      "type": "registry:example",
+      "target": "components/dot-and-circle-mouse-trailer-demo.tsx"
+    }
+  ],
+  "type": "registry:example"
+}

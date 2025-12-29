@@ -1,0 +1,17 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "scroll-based-word-reveal-demo",
+  "description": "",
+  "registryDependencies": [
+    "scroll-based-word-reveal"
+  ],
+  "files": [
+    {
+      "path": "registry/react/examples/scroll-based-word-reveal-demo.tsx",
+      "content": "import { ScrollBasedWordReveal } from \"@/registry/react/atlasui/scroll-based-word-reveal\";\n\nexport const ScrollBasedWordRevealDemo = () => {\n  return (\n    <ScrollBasedWordReveal text=\"AtlasUI is an open-source library offering a suite of prebuilt animated components for React, Next.js, and Vanilla JS.\" />\n  );\n};\n",
+      "type": "registry:example",
+      "target": "components/scroll-based-word-reveal-demo.tsx"
+    }
+  ],
+  "type": "registry:example"
+}

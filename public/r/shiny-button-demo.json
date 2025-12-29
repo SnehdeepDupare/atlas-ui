@@ -1,0 +1,17 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "shiny-button-demo",
+  "description": "",
+  "registryDependencies": [
+    "shiny-button"
+  ],
+  "files": [
+    {
+      "path": "registry/react/examples/shiny-button-demo.tsx",
+      "content": "import { ShinyButton } from \"@/registry/react/atlasui/shiny-button\";\n\nexport const ShinyButtonDemo = () => {\n  return <ShinyButton>Button</ShinyButton>;\n};\n",
+      "type": "registry:example",
+      "target": "components/shiny-button-demo.tsx"
+    }
+  ],
+  "type": "registry:example"
+}

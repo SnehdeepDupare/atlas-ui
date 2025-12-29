@@ -1,0 +1,17 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "loki-text-effect-demo",
+  "description": "",
+  "registryDependencies": [
+    "loki-text-effect"
+  ],
+  "files": [
+    {
+      "path": "registry/react/examples/loki-text-effect-demo.tsx",
+      "content": "import { LokiTextEffect } from \"@/registry/react/atlasui/loki-text-effect\";\n\nexport const LokiTextEffectDemo = () => {\n  return <LokiTextEffect text=\"Loki\" />;\n};\n",
+      "type": "registry:example",
+      "target": "components/loki-text-effect-demo.tsx"
+    }
+  ],
+  "type": "registry:example"
+}

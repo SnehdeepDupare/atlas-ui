@@ -1,0 +1,17 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "reveal-effect-translate-y-example",
+  "description": "",
+  "registryDependencies": [
+    "reveal-effect"
+  ],
+  "files": [
+    {
+      "path": "registry/react/examples/reveal-effect-translate-y-example.tsx",
+      "content": "import { RevealEffect } from \"@/registry/react/atlasui/reveal-effect\";\n\nexport const RevealEffectTranslateExample = () => {\n  return (\n    <div className=\"flex flex-col items-center space-y-2\">\n      <RevealEffect translateY={5}>\n        <h1 className=\"font-bold text-5xl\">Atlas UI</h1>\n      </RevealEffect>\n\n      <RevealEffect delay={0.2} translateY={10}>\n        <p className=\"font-semibold text-xl text-center\">\n          An open-source library of prebuilt components.\n        </p>\n      </RevealEffect>\n\n      <RevealEffect delay={0.4} translateY={15}>\n        <p className=\"font-semibold text-xl text-center\">\n          Built to save time, inspire creativity, and elevate your UI\n        </p>\n      </RevealEffect>\n    </div>\n  );\n};\n",
+      "type": "registry:example",
+      "target": "components/reveal-effect-translate-y-example.tsx"
+    }
+  ],
+  "type": "registry:example"
+}

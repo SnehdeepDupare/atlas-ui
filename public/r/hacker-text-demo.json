@@ -1,0 +1,17 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "hacker-text-demo",
+  "description": "",
+  "registryDependencies": [
+    "hacker-text"
+  ],
+  "files": [
+    {
+      "path": "registry/react/examples/hacker-text-demo.tsx",
+      "content": "import { HackerText } from \"@/registry/react/atlasui/hacker-text\";\n\nexport const HackerTextDemo = () => {\n  return <HackerText text=\"Hover Me!\" />;\n};\n",
+      "type": "registry:example",
+      "target": "components/hacker-text-demo.tsx"
+    }
+  ],
+  "type": "registry:example"
+}

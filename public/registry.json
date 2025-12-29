@@ -1,0 +1,477 @@
+{
+  "name": "atlas-ui",
+  "homepage": "https://atlasui.vercel.app",
+  "items": [
+    {
+      "name": "index",
+      "dependencies": [
+        "class-variance-authority",
+        "lucide-react"
+      ],
+      "devDependencies": [
+        "tw-animate-css"
+      ],
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [],
+      "cssVars": {},
+      "type": "registry:style"
+    },
+    {
+      "name": "animated-mobile-navbar",
+      "title": "Animated Mobile Navbar",
+      "description": "",
+      "dependencies": [
+        "motion",
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "button"
+      ],
+      "files": [
+        {
+          "path": "registry/react/atlasui/animated-mobile-navbar.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "type": "registry:ui"
+    },
+    {
+      "name": "project-gallery",
+      "title": "Project Gallery",
+      "description": "",
+      "dependencies": [
+        "motion"
+      ],
+      "files": [
+        {
+          "path": "registry/react/atlasui/project-gallery.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "type": "registry:ui"
+    },
+    {
+      "name": "parallax-sections",
+      "title": "Parallax Sections",
+      "description": "",
+      "dependencies": [
+        "motion"
+      ],
+      "files": [
+        {
+          "path": "registry/react/atlasui/parallax-sections.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "type": "registry:ui"
+    },
+    {
+      "name": "shiny-button",
+      "title": "Shiny Button",
+      "description": "",
+      "dependencies": [
+        "motion"
+      ],
+      "registryDependencies": [
+        "button"
+      ],
+      "files": [
+        {
+          "path": "registry/react/atlasui/shiny-button.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "type": "registry:ui"
+    },
+    {
+      "name": "dot-and-circle-mouse-trailer",
+      "title": "Dot And Circle Mouse Trailer",
+      "description": "",
+      "dependencies": [
+        "motion"
+      ],
+      "files": [
+        {
+          "path": "registry/react/atlasui/dot-and-circle-mouse-trailer.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "type": "registry:ui"
+    },
+    {
+      "name": "blob-mouse-trailer",
+      "title": "Blob Mouse Trailer",
+      "description": "",
+      "dependencies": [
+        "motion"
+      ],
+      "files": [
+        {
+          "path": "registry/react/atlasui/blob-mouse-trailer.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "type": "registry:ui"
+    },
+    {
+      "name": "blend-mouse-trailer",
+      "title": "Blend Mouse Trailer",
+      "description": "",
+      "dependencies": [
+        "motion"
+      ],
+      "files": [
+        {
+          "path": "registry/react/atlasui/blend-mouse-trailer.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "type": "registry:ui"
+    },
+    {
+      "name": "hacker-text",
+      "title": "Hacker Text",
+      "description": "",
+      "dependencies": [
+        "motion"
+      ],
+      "files": [
+        {
+          "path": "registry/react/atlasui/hacker-text.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "type": "registry:ui"
+    },
+    {
+      "name": "scroll-based-text-reveal",
+      "title": "Scroll Based Text Reveal",
+      "description": "",
+      "dependencies": [
+        "motion"
+      ],
+      "files": [
+        {
+          "path": "registry/react/atlasui/scroll-based-text-reveal.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "type": "registry:ui"
+    },
+    {
+      "name": "scroll-based-word-reveal",
+      "title": "Scroll Based Word Reveal",
+      "description": "",
+      "dependencies": [
+        "motion"
+      ],
+      "files": [
+        {
+          "path": "registry/react/atlasui/scroll-based-word-reveal.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "type": "registry:ui"
+    },
+    {
+      "name": "scroll-based-character-reveal",
+      "title": "Scroll Based Character Reveal",
+      "description": "",
+      "dependencies": [
+        "motion"
+      ],
+      "files": [
+        {
+          "path": "registry/react/atlasui/scroll-based-character-reveal.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "type": "registry:ui"
+    },
+    {
+      "name": "reveal-effect",
+      "title": "Reveal Effect",
+      "description": "",
+      "dependencies": [
+        "motion"
+      ],
+      "files": [
+        {
+          "path": "registry/react/atlasui/reveal-effect.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "type": "registry:ui"
+    },
+    {
+      "name": "loki-text-effect",
+      "title": "Loki Text Effect",
+      "description": "",
+      "dependencies": [
+        "motion"
+      ],
+      "files": [
+        {
+          "path": "registry/react/atlasui/loki-text-effect.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "type": "registry:ui"
+    },
+    {
+      "name": "animated-mobile-navbar-demo",
+      "description": "",
+      "registryDependencies": [
+        "animated-mobile-navbar"
+      ],
+      "files": [
+        {
+          "path": "registry/react/examples/animated-mobile-navbar-demo.tsx",
+          "type": "registry:example"
+        }
+      ],
+      "type": "registry:example"
+    },
+    {
+      "name": "animated-mobile-navbar-side-example",
+      "description": "",
+      "registryDependencies": [
+        "animated-mobile-navbar"
+      ],
+      "files": [
+        {
+          "path": "registry/react/examples/animated-mobile-navbar-side-example.tsx",
+          "type": "registry:example"
+        }
+      ],
+      "type": "registry:example"
+    },
+    {
+      "name": "project-gallery-demo",
+      "description": "",
+      "registryDependencies": [
+        "project-gallery"
+      ],
+      "files": [
+        {
+          "path": "registry/react/examples/project-gallery-demo.tsx",
+          "type": "registry:example",
+          "target": "components/project-gallery-demo.tsx"
+        }
+      ],
+      "type": "registry:example"
+    },
+    {
+      "name": "parallax-sections-demo",
+      "description": "",
+      "registryDependencies": [
+        "parallax-sections"
+      ],
+      "files": [
+        {
+          "path": "registry/react/examples/parallax-sections-demo.tsx",
+          "type": "registry:example",
+          "target": "components/parallax-sections-demo.tsx"
+        }
+      ],
+      "type": "registry:example"
+    },
+    {
+      "name": "shiny-button-demo",
+      "description": "",
+      "registryDependencies": [
+        "shiny-button"
+      ],
+      "files": [
+        {
+          "path": "registry/react/examples/shiny-button-demo.tsx",
+          "type": "registry:example",
+          "target": "components/shiny-button-demo.tsx"
+        }
+      ],
+      "type": "registry:example"
+    },
+    {
+      "name": "dot-and-circle-mouse-trailer-demo",
+      "description": "",
+      "registryDependencies": [
+        "dot-and-circle-mouse-trailer"
+      ],
+      "files": [
+        {
+          "path": "registry/react/examples/dot-and-circle-mouse-trailer-demo.tsx",
+          "type": "registry:example",
+          "target": "components/dot-and-circle-mouse-trailer-demo.tsx"
+        }
+      ],
+      "type": "registry:example"
+    },
+    {
+      "name": "blob-mouse-trailer-demo",
+      "description": "",
+      "registryDependencies": [
+        "blob-mouse-trailer"
+      ],
+      "files": [
+        {
+          "path": "registry/react/examples/blob-mouse-trailer-demo.tsx",
+          "type": "registry:example",
+          "target": "components/blob-mouse-trailer-demo.tsx"
+        }
+      ],
+      "type": "registry:example"
+    },
+    {
+      "name": "blend-mouse-trailer-demo",
+      "description": "",
+      "registryDependencies": [
+        "blend-mouse-trailer"
+      ],
+      "files": [
+        {
+          "path": "registry/react/examples/blend-mouse-trailer-demo.tsx",
+          "type": "registry:example",
+          "target": "components/blend-mouse-trailer-demo.tsx"
+        }
+      ],
+      "type": "registry:example"
+    },
+    {
+      "name": "hacker-text-demo",
+      "description": "",
+      "registryDependencies": [
+        "hacker-text"
+      ],
+      "files": [
+        {
+          "path": "registry/react/examples/hacker-text-demo.tsx",
+          "type": "registry:example",
+          "target": "components/hacker-text-demo.tsx"
+        }
+      ],
+      "type": "registry:example"
+    },
+    {
+      "name": "scroll-based-text-reveal-demo",
+      "description": "",
+      "registryDependencies": [
+        "scroll-based-text-reveal"
+      ],
+      "files": [
+        {
+          "path": "registry/react/examples/scroll-based-text-reveal-demo.tsx",
+          "type": "registry:example",
+          "target": "components/scroll-based-text-reveal-demo.tsx"
+        }
+      ],
+      "type": "registry:example"
+    },
+    {
+      "name": "scroll-based-word-reveal-demo",
+      "description": "",
+      "registryDependencies": [
+        "scroll-based-word-reveal"
+      ],
+      "files": [
+        {
+          "path": "registry/react/examples/scroll-based-word-reveal-demo.tsx",
+          "type": "registry:example",
+          "target": "components/scroll-based-word-reveal-demo.tsx"
+        }
+      ],
+      "type": "registry:example"
+    },
+    {
+      "name": "scroll-based-character-reveal-demo",
+      "description": "",
+      "registryDependencies": [
+        "scroll-based-character-reveal"
+      ],
+      "files": [
+        {
+          "path": "registry/react/examples/scroll-based-character-reveal-demo.tsx",
+          "type": "registry:example",
+          "target": "components/scroll-based-character-reveal-demo.tsx"
+        }
+      ],
+      "type": "registry:example"
+    },
+    {
+      "name": "reveal-effect-demo",
+      "description": "",
+      "registryDependencies": [
+        "reveal-effect"
+      ],
+      "files": [
+        {
+          "path": "registry/react/examples/reveal-effect-demo.tsx",
+          "type": "registry:example",
+          "target": "components/reveal-effect-demo.tsx"
+        }
+      ],
+      "type": "registry:example"
+    },
+    {
+      "name": "reveal-effect-speed-example",
+      "description": "",
+      "registryDependencies": [
+        "reveal-effect"
+      ],
+      "files": [
+        {
+          "path": "registry/react/examples/reveal-effect-speed-example.tsx",
+          "type": "registry:example",
+          "target": "components/reveal-effect-speed-example.tsx"
+        }
+      ],
+      "type": "registry:example"
+    },
+    {
+      "name": "reveal-effect-delay-example",
+      "description": "",
+      "registryDependencies": [
+        "reveal-effect"
+      ],
+      "files": [
+        {
+          "path": "registry/react/examples/reveal-effect-delay-example.tsx",
+          "type": "registry:example",
+          "target": "components/reveal-effect-delay-example.tsx"
+        }
+      ],
+      "type": "registry:example"
+    },
+    {
+      "name": "reveal-effect-translate-y-example",
+      "description": "",
+      "registryDependencies": [
+        "reveal-effect"
+      ],
+      "files": [
+        {
+          "path": "registry/react/examples/reveal-effect-translate-y-example.tsx",
+          "type": "registry:example",
+          "target": "components/reveal-effect-translate-y-example.tsx"
+        }
+      ],
+      "type": "registry:example"
+    },
+    {
+      "name": "loki-text-effect-demo",
+      "description": "",
+      "registryDependencies": [
+        "loki-text-effect"
+      ],
+      "files": [
+        {
+          "path": "registry/react/examples/loki-text-effect-demo.tsx",
+          "type": "registry:example",
+          "target": "components/loki-text-effect-demo.tsx"
+        }
+      ],
+      "type": "registry:example"
+    }
+  ]
+}

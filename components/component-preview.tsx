@@ -1,19 +1,22 @@
 "use client";
+
 import * as React from "react";
-import { demoComponents } from "@/config/demo-components";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import CopyCode from "@/components/copy-code";
 import ComponentWrapper from "./component-wrapper";
+
+import { Index } from "@/registry/__index__";
 
 interface ComponentPreviewProps extends React.HTMLAttributes<HTMLDivElement> {
   name: string;
 }
 
 export function ComponentPreview({ name, children }: ComponentPreviewProps) {
-  const Code = (React.Children.toArray(children) as React.ReactElement<any>[])[0];
+  const Code = (
+    React.Children.toArray(children) as React.ReactElement<any>[]
+  )[0];
 
   const Preview = React.useMemo(() => {
-    const Component = demoComponents[name]?.component;
+    const Component = Index[name]?.component;
     if (!Component) {
       return (
         <p className="text-sm text-muted-foreground">
@@ -21,7 +24,7 @@ export function ComponentPreview({ name, children }: ComponentPreviewProps) {
           <code className="relative rounded bg-muted px-[0.3rem] py-[0.2rem] font-mono text-sm">
             {name}
           </code>{" "}
-          not found.
+          not found in registry.
         </p>
       );
     }
@@ -70,7 +73,7 @@ export function ComponentPreview({ name, children }: ComponentPreviewProps) {
           className="border border-input rounded-xl relative overflow-hidden"
         >
           <div className="flex flex-col space-y-4">
-            <div className="w-full rounded-md [&_pre]:my-0 [&_pre]:max-h-[400px] [&_pre]:whitespace-pre-wrap">
+            <div className="w-full rounded-md [&_pre]:my-0 [&_pre]:max-h-100 [&_pre]:whitespace-pre-wrap">
               {Code}
             </div>
           </div>

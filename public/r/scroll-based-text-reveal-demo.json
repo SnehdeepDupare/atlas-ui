@@ -1,0 +1,17 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "scroll-based-text-reveal-demo",
+  "description": "",
+  "registryDependencies": [
+    "scroll-based-text-reveal"
+  ],
+  "files": [
+    {
+      "path": "registry/react/examples/scroll-based-text-reveal-demo.tsx",
+      "content": "import { ScrollBasedTextReveal } from \"@/registry/react/atlasui/scroll-based-text-reveal\";\n\nexport const ScrollBasedTextRevealDemo = () => {\n  return (\n    <ScrollBasedTextReveal text=\"AtlasUI is an open-source library offering a suite of prebuilt animated components for React, Next.js, and Vanilla JS.\" />\n  );\n};\n",
+      "type": "registry:example",
+      "target": "components/scroll-based-text-reveal-demo.tsx"
+    }
+  ],
+  "type": "registry:example"
+}

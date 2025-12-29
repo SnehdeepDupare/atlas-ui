@@ -1,0 +1,17 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "blob-mouse-trailer-demo",
+  "description": "",
+  "registryDependencies": [
+    "blob-mouse-trailer"
+  ],
+  "files": [
+    {
+      "path": "registry/react/examples/blob-mouse-trailer-demo.tsx",
+      "content": "import { BlobMouseTrailer } from \"@/registry/react/atlasui/blob-mouse-trailer\";\n\nexport const BlobMouseTrailerDemo = () => {\n  return (\n    <div>\n      <p>Move you mouse around ;)</p>\n      <BlobMouseTrailer />\n    </div>\n  );\n};\n",
+      "type": "registry:example",
+      "target": "components/blob-mouse-trailer-demo.tsx"
+    }
+  ],
+  "type": "registry:example"
+}

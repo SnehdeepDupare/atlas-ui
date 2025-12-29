@@ -1,0 +1,17 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "parallax-sections-demo",
+  "description": "",
+  "registryDependencies": [
+    "parallax-sections"
+  ],
+  "files": [
+    {
+      "path": "registry/react/examples/parallax-sections-demo.tsx",
+      "content": "import { ParallaxSections } from \"@/registry/react/atlasui/parallax-sections\";\n\nexport const ParallaxSectionsDemo = () => {\n  return <ParallaxSections />;\n};\n",
+      "type": "registry:example",
+      "target": "components/parallax-sections-demo.tsx"
+    }
+  ],
+  "type": "registry:example"
+}

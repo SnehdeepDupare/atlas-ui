@@ -1,0 +1,17 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "reveal-effect",
+  "title": "Reveal Effect",
+  "description": "",
+  "dependencies": [
+    "motion"
+  ],
+  "files": [
+    {
+      "path": "registry/react/atlasui/reveal-effect.tsx",
+      "content": "\"use client\";\n\nimport { motion } from \"motion/react\";\n\ninterface RevealEffectProps {\n  children: React.ReactNode;\n  translateY?: number;\n  delay?: number;\n  speed?: \"slow\" | \"medium\" | \"fast\";\n}\n\nconst speedDurations = {\n  slow: 1.6,\n  medium: 1,\n  fast: 0.5,\n};\n\nexport const RevealEffect = ({\n  children,\n  translateY,\n  delay,\n  speed = \"medium\",\n}: RevealEffectProps) => {\n  return (\n    <motion.div\n      initial={{\n        opacity: 0,\n        filter: \"blur(12px)\",\n        clipPath: \"inset(-5% 100% -5% 0)\",\n        translateY: translateY,\n      }}\n      whileInView={{\n        opacity: 1,\n        filter: \"blur(0px)\",\n        clipPath: \"inset(-5% 0% -5% 0)\",\n        translateY: 0,\n      }}\n      transition={{\n        duration: speedDurations[speed],\n        ease: \"easeInOut\",\n        delay: delay,\n      }}\n      viewport={{ once: true }}\n    >\n      {children}\n    </motion.div>\n  );\n};\n",
+      "type": "registry:ui"
+    }
+  ],
+  "type": "registry:ui"
+}
