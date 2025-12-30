@@ -4,8 +4,10 @@
   "private": true,
   "type": "module",
   "scripts": {
+    "preinstall": "npx only-allow pnpm",
     "dev": "next dev",
-    "build": "npm run contentlayer:build && next build",
+    "prebuild": "pnpm registry:build && pnpm contentlayer:build",
+    "build": "next build",
     "start": "next start",
     "lint": "eslint .",
     "contentlayer": "contentlayer2",
