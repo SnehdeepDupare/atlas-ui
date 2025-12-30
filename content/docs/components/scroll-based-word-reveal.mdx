@@ -35,7 +35,7 @@ npm install motion
 
 <ComponentSource
   name="scroll-based-word-reveal"
-  filePath="components/atlas_ui/scroll-based-word-reveal.tsx"
+  filePath="components/scroll-based-word-reveal.tsx"
 />
 
 <Step>Update the import paths to match your project setup.</Step>
@@ -141,7 +141,7 @@ revealText.innerHTML = words
       <span class="word-shadow">${word}</span>
       <span class="word">${word}</span>
     </span>
-  `,
+  `
   )
   .join(" ");
 
@@ -165,7 +165,7 @@ scroll(
   {
     target: revealText,
     offset: ["start 0.8", "start 0.3"],
-  },
+  }
 );
 ```
 
@@ -182,7 +182,7 @@ scroll(
 <TabsContent value="React/Next">
 
 ```tsx
-import { ScrollBasedWordReveal } from "@/components/atlas_ui/scroll-based-word-reveal";
+import { ScrollBasedWordReveal } from "@/components/scroll-based-word-reveal";
 ```
 
 ```tsx

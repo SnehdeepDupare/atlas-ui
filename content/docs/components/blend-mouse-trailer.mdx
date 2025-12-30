@@ -35,7 +35,7 @@ npm install motion
 
 <ComponentSource
   name="blend-mouse-trailer"
-  filePath="components/atlas_ui/blend-mouse-trailer.tsx"
+  filePath="components/blend-mouse-trailer.tsx"
 />
 
 <Step>Update the import paths to match your project setup.</Step>
@@ -115,7 +115,7 @@ document.addEventListener("mousemove", (e) => {
       left: `${clientX}px`,
       top: `${clientY}px`,
     },
-    { duration: 500, fill: "forwards" },
+    { duration: 500, fill: "forwards" }
   );
 
   trailer.style.height = `${size}px`;
@@ -140,7 +140,7 @@ heroText.addEventListener("mouseleave", () => (isHovered = false));
 <TabsContent value="React/Next">
 
 ```tsx
-import { BlendMouseTrailer } from "@/components/atlas_ui/blend-mouse-trailer";
+import { BlendMouseTrailer } from "@/components/blend-mouse-trailer";
 ```
 
 Define a state to check if the desired component is hovered or not

@@ -35,7 +35,7 @@ npm install motion
 
 <ComponentSource
   name="blob-mouse-trailer"
-  filePath="components/atlas_ui/blob-mouse-trailer.tsx"
+  filePath="components/blob-mouse-trailer.tsx"
 />
 
 <Step>Update the import paths to match your project setup.</Step>
@@ -111,7 +111,7 @@ document.body.onpointermove = (e) => {
     {
       duration: 3000,
       fill: "forwards",
-    },
+    }
   );
 };
 ```
@@ -129,7 +129,7 @@ document.body.onpointermove = (e) => {
 <TabsContent value="React/Next">
 
 ```tsx
-import { BlobMouseTrailer } from "@/components/atlas_ui/blob-mouse-trailer";
+import { BlobMouseTrailer } from "@/components/blob-mouse-trailer";
 ```
 
 Place the Component in your `layout.tsx` to make the Mouse Trailer accessible in entire project

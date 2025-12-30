@@ -35,7 +35,7 @@ npm install motion lucide-react
 
 <ComponentSource
   name="animated-mobile-navbar"
-  filePath="components/atlas_ui/animated-mobile-navbar.tsx"
+  filePath="components/animated-mobile-navbar.tsx"
 />
 
 <Step>Update the import paths to match your project setup.</Step>
@@ -167,7 +167,7 @@ document.addEventListener("DOMContentLoaded", () => {
     animate(
       mobileMenu,
       { transform: "translateY(0%)", opacity: 1 },
-      { duration: 0.5, easing: [0.12, 0, 0.39, 0] },
+      { duration: 0.5, easing: [0.12, 0, 0.39, 0] }
     );
 
     animate(
@@ -177,7 +177,7 @@ document.addEventListener("DOMContentLoaded", () => {
         delay: stagger(0.09, { start: 0.3 }),
         duration: 0.7,
         easing: [0, 0.55, 0.45, 1],
-      },
+      }
     );
   };
 
@@ -189,7 +189,7 @@ document.addEventListener("DOMContentLoaded", () => {
         delay: stagger(0.09, { start: 0, from: "last" }),
         duration: 0.5,
         easing: [0.37, 0, 0.36, 1],
-      },
+      }
     ).finished.then(() => {
       animate(
         mobileMenu,
@@ -197,7 +197,7 @@ document.addEventListener("DOMContentLoaded", () => {
         {
           duration: 0.5,
           easing: [0.22, 1, 0.36, 1],
-        },
+        }
       ).finished.then(() => {
         mobileMenu.classList.remove("active");
       });
@@ -227,7 +227,7 @@ import {
   AnimatedMobileNavbarContent,
   AnimatedMobileNavbarLink,
   AnimatedMobileNavbarTrigger,
-} from "@/components/atlas_ui/animated-mobile-navbar";
+} from "@/components/animated-mobile-navbar";
 ```
 
 ```tsx

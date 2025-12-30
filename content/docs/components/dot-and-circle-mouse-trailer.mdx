@@ -35,7 +35,7 @@ npm install motion
 
 <ComponentSource
   name="dot-and-circle-mouse-trailer"
-  filePath="components/atlas_ui/dot-and-circle-mouse-trailer.tsx"
+  filePath="components/dot-and-circle-mouse-trailer.tsx"
 />
 
 <Step>Update the import paths to match your project setup.</Step>
@@ -114,7 +114,7 @@ document.body.onpointermove = (e) => {
     {
       duration: 1000,
       fill: "forwards",
-    },
+    }
   );
 
   trailerOutline.animate(
@@ -125,7 +125,7 @@ document.body.onpointermove = (e) => {
     {
       duration: 3000,
       fill: "forwards",
-    },
+    }
   );
 };
 ```
@@ -143,7 +143,7 @@ document.body.onpointermove = (e) => {
 <TabsContent value="React/Next">
 
 ```tsx
-import { DotAndCircleMouseTrailer } from "@/components/atlas_ui/dot-and-circle-mouse-trailer";
+import { DotAndCircleMouseTrailer } from "@/components/dot-and-circle-mouse-trailer";
 ```
 
 Place the Component in your `layout.tsx` to make the Mouse Trailer accessible in entire project

@@ -33,10 +33,7 @@ npm install motion
 
 <Step>Copy and paste the following code into your project.</Step>
 
-<ComponentSource
-  name="reveal-effect"
-  filePath="components/atlas_ui/reveal-effect.tsx"
-/>
+<ComponentSource name="reveal-effect" filePath="components/reveal-effect.tsx" />
 
 <Step>Update the import paths to match your project setup.</Step>
 
@@ -94,7 +91,7 @@ document.querySelectorAll("#reveal-effect").forEach((el) => {
         duration: speedDurations[speed],
         easing: "ease-in-out",
         delay,
-      },
+      }
     );
   });
 });
@@ -113,7 +110,7 @@ document.querySelectorAll("#reveal-effect").forEach((el) => {
 <TabsContent value="React/Next">
 
 ```tsx
-import { RevealEffect } from "@/components/atlas_ui/reveal-effect";
+import { RevealEffect } from "@/components/reveal-effect";
 ```
 
 ```tsx

@@ -46,7 +46,7 @@ npx shadcn@latest add https://atlasui.vercel.app/r/loki-text-effect.json
 
 <ComponentSource
   name="loki-text-effect"
-  filePath="components/atlas_ui/loki-text-effect.tsx"
+  filePath="components/loki-text-effect.tsx"
 />
 
 <Step>Add `@/fonts/font.ts`.</Step>
@@ -215,11 +215,11 @@ const applyLokiEffect = (element) => {
   const text = element.dataset.value || element.textContent.trim();
   const velocityFont = Math.max(
     100,
-    Number(element.dataset.velocityFont || 800),
+    Number(element.dataset.velocityFont || 800)
   );
   const velocityMove = Math.max(
     100,
-    Number(element.dataset.velocityMove || 1800),
+    Number(element.dataset.velocityMove || 1800)
   );
 
   element.innerHTML = "";
@@ -265,7 +265,7 @@ window.addEventListener("DOMContentLoaded", () => {
 <TabsContent value="React/Next">
 
 ```tsx
-import { LokiTextEffect } from "@/components/atlas_ui/(react)/loki-text-effect";
+import { LokiTextEffect } from "@/components/(react)/loki-text-effect";
 ```
 
 ```tsx
