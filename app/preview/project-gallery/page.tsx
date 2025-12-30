@@ -1,4 +1,4 @@
-import { ProjectGalleryDemo } from "@/components/demo-components/react/project-gallery-demo";
+import { ProjectGalleryDemo } from "@/registry/react/examples/project-gallery-demo";
 
 const ProjectGalleryPreviewPage = () => {
   return <ProjectGalleryDemo />;
