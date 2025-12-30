@@ -2,16 +2,26 @@
 title: Shiny Button
 description: A shiny button with a sleek animation effect.
 ---
- 
-<ComponentPreview
-  name="shiny-button-demo"
-/>
+
+<ComponentPreview name="shiny-button-demo" />
 
 ## Installation
 
 <UsageTabs>
 
 <TabsContent value="React/Next">
+
+<InstallationTabs>
+
+<TabsContent value="cli">
+
+```bash
+npx shadcn@latest add https://atlasui.vercel.app/r/shiny-button.json
+```
+
+</TabsContent>
+
+<TabsContent value="manual">
 
 <Steps>
 
@@ -23,13 +33,17 @@ npm install motion
 
 <Step>Copy and paste the following code into your project.</Step>
 
-<ComponentSource name="shiny-button" filePath="components/atlas_ui/shiny-button.tsx" />
+<ComponentSource
+  name="shiny-button"
+  filePath="components/atlas_ui/shiny-button.tsx"
+/>
 
 <Step>Update `globals.css`</Step>
 
 ```css
 .radial-gradient {
-  background: radial-gradient(
+  background:
+    radial-gradient(
       circle at 50% 0%,
       rgba(250, 250, 250, 0.05) 0%,
       transparent 60%
@@ -54,7 +68,9 @@ npm install motion
     rgba(255, 255, 255, 0.1) calc(var(--x) + 100%)
   );
 
-  mask: linear-gradient(black, black) content-box, linear-gradient(black, black);
+  mask:
+    linear-gradient(black, black) content-box,
+    linear-gradient(black, black);
   mask-composite: exclude;
 }
 ```
@@ -65,11 +81,17 @@ npm install motion
 
 </TabsContent>
 
+</InstallationTabs>
+
+</TabsContent>
+
 <TabsContent value="JavaScript">
 
 <Steps>
 
-<Step>Add the following script to your project head section to use Motion library.</Step>
+<Step>
+  Add the following script to your project head section to use Motion library.
+</Step>
 
 ```html
 <script src="https://cdn.jsdelivr.net/npm/motion@latest/dist/motion.js"></script>
@@ -93,7 +115,8 @@ npm install motion
   position: relative;
   border: none;
   border-radius: 8px;
-  background: radial-gradient(
+  background:
+    radial-gradient(
       circle at 50% 0%,
       rgba(250, 250, 250, 0.05) 0%,
       transparent 60%
@@ -131,7 +154,9 @@ npm install motion
     rgba(255, 255, 255, 0.5) calc(var(--x) + 25%),
     rgba(255, 255, 255, 0.1) calc(var(--x) + 100%)
   );
-  mask: linear-gradient(black, black) content-box, linear-gradient(black, black);
+  mask:
+    linear-gradient(black, black) content-box,
+    linear-gradient(black, black);
   mask-composite: exclude;
   pointer-events: none;
 }

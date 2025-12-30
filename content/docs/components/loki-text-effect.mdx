@@ -1,11 +1,9 @@
 ---
 title: Loki Text Effect
-description: The iconic text animation from the Loki series intro.  
+description: The iconic text animation from the Loki series intro.
 ---
 
-<ComponentPreview
-  name="loki-text-effect-demo"
-/>
+<ComponentPreview name="loki-text-effect-demo" />
 
 ## Installation
 
@@ -13,9 +11,24 @@ description: The iconic text animation from the Loki series intro.
 
 <TabsContent value="React/Next">
 
+<InstallationTabs>
+
+<TabsContent value="cli">
+
+```bash
+npx shadcn@latest add https://atlasui.vercel.app/r/loki-text-effect.json
+```
+
+</TabsContent>
+
+<TabsContent value="manual">
+
 <Steps>
 
-<Step>Download all the fonts and add them to your project. [Download Link](https://github.com/SnehdeepDupare/atlas-ui/tree/master/app/fonts)</Step>
+<Step>
+  Download all the fonts and add them to your project. [Download
+  Link](https://github.com/SnehdeepDupare/atlas-ui/tree/master/app/fonts)
+</Step>
 
 ```txt
 └──app
@@ -31,7 +44,10 @@ description: The iconic text animation from the Loki series intro.
 
 <Step>Copy and paste the following code into your project.</Step>
 
-<ComponentSource name="loki-text-effect" filePath="components/atlas_ui/loki-text-effect.tsx" />
+<ComponentSource
+  name="loki-text-effect"
+  filePath="components/atlas_ui/loki-text-effect.tsx"
+/>
 
 <Step>Add `@/fonts/font.ts`.</Step>
 
@@ -69,11 +85,18 @@ export { fontOne, fontTwo, fontThree, fontFour, fontFive, fontSix, fontSeven };
 
 </TabsContent>
 
+</InstallationTabs>
+
+</TabsContent>
+
 <TabsContent value="JavaScript">
 
 <Steps>
 
-<Step>Download all the fonts and add them to your project. [Download Link](https://github.com/SnehdeepDupare/atlas-ui/tree/master/app/fonts)</Step>
+<Step>
+  Download all the fonts and add them to your project. [Download
+  Link](https://github.com/SnehdeepDupare/atlas-ui/tree/master/app/fonts)
+</Step>
 
 ```txt
 index.html
@@ -85,9 +108,11 @@ fonts
 ├──fontFive.woff2
 ├──fontSix.woff2
 └──fontSeven.woff2
-```     
+```
 
-<Step>Add the following script to your project head section to use Motion library.</Step>
+<Step>
+  Add the following script to your project head section to use Motion library.
+</Step>
 
 ```html
 <script src="https://cdn.jsdelivr.net/npm/motion@latest/dist/motion.js"></script>
@@ -143,11 +168,17 @@ body {
 
 .loki-letter {
   display: inline-block;
-  font-size: clamp(3rem, 10vw, 7rem); /* You can adjust the font size according to you usage ;) */
+  font-size: clamp(
+    3rem,
+    10vw,
+    7rem
+  ); /* You can adjust the font size according to you usage ;) */
   font-weight: 700;
   color: white;
   letter-spacing: 0.15em;
-  text-shadow: 0 0 2px #ffffff66, 0 0 5px #ffffff66;
+  text-shadow:
+    0 0 2px #ffffff66,
+    0 0 5px #ffffff66;
   filter: drop-shadow(0 0 8px white);
 }
 ```
@@ -261,22 +292,22 @@ Define the text you want to display with Loki text Effect with `id="loki-effect-
 
 <TabsContent value="React/Next">
 
-| Prop            | Type     | Default | Required | Description                                                              |
-| --------------- | -------- | ------- | -------- | ------------------------------------------------------------------------ |
-| `text`          | `string` | –       | true     | The text to display and animate                                          |
-| `velocityFont`  | `number` | `800`   | false    | Interval in ms for how often the font changes                            |
-| `velocityMove`  | `number` | `1800`  | false    | Interval in ms for how often the position jitter is updated              |
-| `className`     | `string` | –       | false    | Optional classnames for according to match your setup                    |
+| Prop           | Type     | Default | Required | Description                                                 |
+| -------------- | -------- | ------- | -------- | ----------------------------------------------------------- |
+| `text`         | `string` | –       | true     | The text to display and animate                             |
+| `velocityFont` | `number` | `800`   | false    | Interval in ms for how often the font changes               |
+| `velocityMove` | `number` | `1800`  | false    | Interval in ms for how often the position jitter is updated |
+| `className`    | `string` | –       | false    | Optional classnames for according to match your setup       |
 
 </TabsContent>
 
 <TabsContent value="JavaScript">
 
-| Data Attribute         | Type     | Default | Required | Description                                                              |
-| ---------------------- | -------- | ------- | -------- | ------------------------------------------------------------------------ |
-| `data-value`           | `string` | –       | true     | The text to display and animate                                          |
-| `data-velocity-font`   | `number` | `800`   | false    | Interval in ms for how often the font changes                            |
-| `data-velocity-move`   | `number` | `1800`  | false    | Interval in ms for how often the position jitter is updated              |
+| Data Attribute       | Type     | Default | Required | Description                                                 |
+| -------------------- | -------- | ------- | -------- | ----------------------------------------------------------- |
+| `data-value`         | `string` | –       | true     | The text to display and animate                             |
+| `data-velocity-font` | `number` | `800`   | false    | Interval in ms for how often the font changes               |
+| `data-velocity-move` | `number` | `1800`  | false    | Interval in ms for how often the position jitter is updated |
 
 </TabsContent>
 

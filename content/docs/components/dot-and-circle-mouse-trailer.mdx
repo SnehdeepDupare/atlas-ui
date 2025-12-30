@@ -3,9 +3,7 @@ title: Dot and Circle Mouse Trailer
 description: A simple Lazy Dot and Circle Mouse Trailer
 ---
 
-<ComponentPreview
-  name="dot-and-circle-mouse-trailer-demo"
-/>
+<ComponentPreview name="dot-and-circle-mouse-trailer-demo" />
 
 ## Installation
 
@@ -13,21 +11,40 @@ description: A simple Lazy Dot and Circle Mouse Trailer
 
 <TabsContent value="React/Next">
 
+<InstallationTabs>
+
+<TabsContent value="cli">
+
+```bash
+npx shadcn@latest add https://atlasui.vercel.app/r/dot-and-circle-mouse-trailer.json
+```
+
+</TabsContent>
+
+<TabsContent value="manual">
+
 <Steps>
 
 <Step>Install the following dependencies:</Step>
 
 ```bash
-npm install motion 
+npm install motion
 ```
 
 <Step>Copy and paste the following code into your project.</Step>
 
-<ComponentSource name="dot-and-circle-mouse-trailer" filePath="components/atlas_ui/dot-and-circle-mouse-trailer.tsx" />
+<ComponentSource
+  name="dot-and-circle-mouse-trailer"
+  filePath="components/atlas_ui/dot-and-circle-mouse-trailer.tsx"
+/>
 
 <Step>Update the import paths to match your project setup.</Step>
 
 </Steps>
+
+</TabsContent>
+
+</InstallationTabs>
 
 </TabsContent>
 
@@ -130,6 +147,7 @@ import { DotAndCircleMouseTrailer } from "@/components/atlas_ui/dot-and-circle-m
 ```
 
 Place the Component in your `layout.tsx` to make the Mouse Trailer accessible in entire project
+
 ```tsx
 export default function RootLayout({
   children,

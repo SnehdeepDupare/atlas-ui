@@ -3,15 +3,25 @@ title: Reveal Effect
 description: Animates content into view with a vertical slide, blur fade-in, and clipping reveal effect.
 ---
 
-<ComponentPreview
-  name="reveal-effect-demo"
-/>
+<ComponentPreview name="reveal-effect-demo" />
 
 ## Installation
 
 <UsageTabs>
 
 <TabsContent value="React/Next">
+
+<InstallationTabs>
+
+<TabsContent value="cli">
+
+```bash
+npx shadcn@latest add https://atlasui.vercel.app/r/reveal-effect.json
+```
+
+</TabsContent>
+
+<TabsContent value="manual">
 
 <Steps>
 
@@ -20,9 +30,13 @@ description: Animates content into view with a vertical slide, blur fade-in, and
 ```bash
 npm install motion
 ```
+
 <Step>Copy and paste the following code into your project.</Step>
 
-<ComponentSource name="reveal-effect" filePath="components/atlas_ui/reveal-effect.tsx" />
+<ComponentSource
+  name="reveal-effect"
+  filePath="components/atlas_ui/reveal-effect.tsx"
+/>
 
 <Step>Update the import paths to match your project setup.</Step>
 
@@ -30,11 +44,17 @@ npm install motion
 
 </TabsContent>
 
+</InstallationTabs>
+
+</TabsContent>
+
 <TabsContent value="JavaScript">
 
 <Steps>
 
-<Step>Add the following script to your project head section to use Motion library.</Step>
+<Step>
+  Add the following script to your project head section to use Motion library.
+</Step>
 
 ```html
 <script src="https://cdn.jsdelivr.net/npm/motion@latest/dist/motion.js"></script>
@@ -141,11 +161,11 @@ Assign the `id="reveal-effect"` to any element to apply the reveal effect.
 
 <TabsContent value="JavaScript">
 
-| Data Attribute     | Type     | Default    | Description                                                                  |
-| ------------------ | -------- | ---------- | ---------------------------------------------------------------------------- |
-| `data-speed`       | `string` | `"medium"` | Animation speed, can be `"slow"`, `"medium"`, or `"fast"`                    |
-| `data-delay`       | `number` | `0`        | Delay before the animation starts                                            |
-| `data-translatey`  | `number` | `0`        | The Y-axis translation from where the element will initially begin animation |
+| Data Attribute    | Type     | Default    | Description                                                                  |
+| ----------------- | -------- | ---------- | ---------------------------------------------------------------------------- |
+| `data-speed`      | `string` | `"medium"` | Animation speed, can be `"slow"`, `"medium"`, or `"fast"`                    |
+| `data-delay`      | `number` | `0`        | Delay before the animation starts                                            |
+| `data-translatey` | `number` | `0`        | The Y-axis translation from where the element will initially begin animation |
 
 </TabsContent>
 
@@ -158,9 +178,7 @@ Assign the `id="reveal-effect"` to any element to apply the reveal effect.
 To change the speed of the animation, you can pass the `speed` prop or use the `data-speed` attribute.
 The default speed is `"medium"`. You can set it to `"slow"` or `"fast"`.
 
-<ComponentPreview
-  name="reveal-effect-speed-example"
-/>
+<ComponentPreview name="reveal-effect-speed-example" />
 
 <UsageTabs>
 
@@ -193,11 +211,9 @@ The default speed is `"medium"`. You can set it to `"slow"` or `"fast"`.
 ### Delay
 
 To add a delay before the animation starts, you can pass the `delay` prop or use the `data-delay` attribute.
-The default delay is `0`. 
+The default delay is `0`.
 
-<ComponentPreview
-  name="reveal-effect-delay-example"
-/>
+<ComponentPreview name="reveal-effect-delay-example" />
 
 <UsageTabs>
 
@@ -221,6 +237,7 @@ The default delay is `0`.
   <div id="reveal-effect" data-delay="0.5">...</div>
 </div>
 ```
+
 </TabsContent>
 
 </UsageTabs>
@@ -231,9 +248,7 @@ To change the Y-axis translation from where the element will initially begin ani
 The default value is `0`. You can set the value between `10-15` for a subtle effect or any other value suitable for your needs.
 Pair `translateY` with a small `delay` for a more pronounced effect.
 
-<ComponentPreview
-  name="reveal-effect-translate-y-example"
-/>
+<ComponentPreview name="reveal-effect-translate-y-example" />
 
 <UsageTabs>
 

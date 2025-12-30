@@ -3,9 +3,7 @@ title: Scroll Based Word Reveal
 description: A text reveal effect which progressively reveals text word by word as you scroll.
 ---
 
-<ComponentPreview
-  name="scroll-based-word-reveal-demo"
-/>
+<ComponentPreview name="scroll-based-word-reveal-demo" />
 
 ## Installation
 
@@ -13,17 +11,32 @@ description: A text reveal effect which progressively reveals text word by word 
 
 <TabsContent value="React/Next">
 
+<InstallationTabs>
+
+<TabsContent value="cli">
+
+```bash
+npx shadcn@latest add https://atlasui.vercel.app/r/scroll-based-word-reveal.json
+```
+
+</TabsContent>
+
+<TabsContent value="manual">
+
 <Steps>
 
 <Step>Install the following dependencies:</Step>
 
 ```bash
-npm install motion 
+npm install motion
 ```
 
 <Step>Copy and paste the following code into your project.</Step>
 
-<ComponentSource name="scroll-based-word-reveal" filePath="components/atlas_ui/scroll-based-word-reveal.tsx" />
+<ComponentSource
+  name="scroll-based-word-reveal"
+  filePath="components/atlas_ui/scroll-based-word-reveal.tsx"
+/>
 
 <Step>Update the import paths to match your project setup.</Step>
 
@@ -31,11 +44,17 @@ npm install motion
 
 </TabsContent>
 
+</InstallationTabs>
+
+</TabsContent>
+
 <TabsContent value="JavaScript">
 
 <Steps>
 
-<Step>Add the following script to your project head section to use Motion library.</Step>
+<Step>
+  Add the following script to your project head section to use Motion library.
+</Step>
 
 ```html
 <script src="https://cdn.jsdelivr.net/npm/motion@latest/dist/motion.js"></script>
@@ -185,7 +204,7 @@ Define the text you want to display with Scroll Based Word Reveal Effect in a p 
 
 Add spacer `div` to create space between the text and the top of the page or replace it with your own content.
 
-```html {1,3} 
+```html {1,3}
 <div class="spacer"></div>
 <p class="reveal-text" id="reveal-text">...</p>
 <div class="spacer"></div>
