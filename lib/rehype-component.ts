@@ -1,26 +1,8 @@
+import { UnistNode, UnistTree } from "@/types/unist";
 import fs from "fs";
 import path from "path";
 import { u } from "unist-builder";
 import { visit } from "unist-util-visit";
-
-interface UnistNode {
-  type: string;
-  name?: string;
-  tagName?: string;
-  value?: string;
-  properties?: Record<string, unknown>;
-  attributes?: {
-    name: string;
-    value: unknown;
-    type?: string;
-  }[];
-  children?: UnistNode[];
-}
-
-export interface UnistTree {
-  type: string;
-  children: UnistNode[];
-}
 
 const registry = JSON.parse(
   fs.readFileSync(path.join(process.cwd(), "registry.json"), "utf8")

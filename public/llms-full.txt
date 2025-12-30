@@ -1307,8 +1307,6 @@ export const RevealEffectSpeedExample = () => {
       <RevealEffect speed="slow">
         <p className="font-semibold text-xl">I'm slow as molasses.</p>
       </RevealEffect>
-
-      <p>will this work?</p>
     </div>
   );
 };

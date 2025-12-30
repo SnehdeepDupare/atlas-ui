@@ -9,11 +9,12 @@ import { cn, firaCode } from "@/lib/utils";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "./ui/tabs";
 import { ComponentPreview } from "./component-preview";
 import { ComponentSource } from "./component-source";
-import CopyCode from "./copy-code";
 import { UsageTabs } from "./usage-tabs";
 import { Callout } from "./callout";
 import { Event } from "@/lib/events";
 import { CopyButton } from "./copy-button";
+import { CodeBlockCommand } from "./code-block-command";
+import { InstallationTabs } from "./installation-tabs";
 
 const components = {
   h1: ({ className, ...props }: React.HTMLAttributes<HTMLHeadingElement>) => (
@@ -147,6 +148,10 @@ const components = {
     __src__,
     __event__,
     __name__,
+    __npm__,
+    __yarn__,
+    __pnpm__,
+    __bun__,
     ...props
   }: React.HTMLAttributes<HTMLPreElement> & {
     __rawString__?: string;
@@ -154,7 +159,25 @@ const components = {
     __src__?: string;
     __event__?: Event["name"];
     __name__?: string;
+    __npm__?: string;
+    __yarn__?: string;
+    __pnpm__?: string;
+    __bun__?: string;
   }) => {
+    // npm command.
+    const isNpmCommand = __npm__ && __yarn__ && __pnpm__ && __bun__;
+    if (isNpmCommand) {
+      return (
+        <CodeBlockCommand
+          __npm__={__npm__}
+          __yarn__={__yarn__}
+          __pnpm__={__pnpm__}
+          __bun__={__bun__}
+        />
+      );
+    }
+
+    // Default
     return (
       <div className="relative">
         <pre
@@ -192,6 +215,7 @@ const components = {
   ComponentPreview,
   ComponentSource,
   UsageTabs,
+  InstallationTabs,
   Step: ({ className, ...props }: React.ComponentProps<"h3">) => (
     <h3
       className={cn(
