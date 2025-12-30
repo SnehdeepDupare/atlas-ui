@@ -1,9 +1,10 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "animated-mobile-navbar-demo",
-  "description": "",
+  "title": "Animated Mobile Navbar Demo",
+  "description": "Example showcasing the Animated Mobile Navbar component.",
   "registryDependencies": [
-    "animated-mobile-navbar"
+    "https://atlasui.vercel.app/r/animated-mobile-navbar.json"
   ],
   "files": [
     {

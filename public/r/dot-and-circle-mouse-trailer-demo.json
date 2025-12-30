@@ -1,9 +1,10 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "dot-and-circle-mouse-trailer-demo",
-  "description": "",
+  "title": "Dot and Circle Mouse Trailer Demo",
+  "description": "Example showing the lazy dot and circle that follows the mouse cursor.",
   "registryDependencies": [
-    "dot-and-circle-mouse-trailer"
+    "https://atlasui.vercel.app/r/dot-and-circle-mouse-trailer.json"
   ],
   "files": [
     {

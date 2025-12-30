@@ -1,9 +1,10 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "hacker-text-demo",
-  "description": "",
+  "title": "Hacker Text Demo",
+  "description": "Example showcasing text animation that scrambles letters before revealing the final text",
   "registryDependencies": [
-    "hacker-text"
+    "https://atlasui.vercel.app/r/hacker-text.json"
   ],
   "files": [
     {

@@ -1,9 +1,10 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "reveal-effect-translate-y-example",
-  "description": "",
+  "title": "Reveal Effect Example 3",
+  "description": "Example of Reveal Effect with a custom translate-y.",
   "registryDependencies": [
-    "reveal-effect"
+    "https://atlasui.vercel.app/r/reveal-effect.json"
   ],
   "files": [
     {

@@ -1,9 +1,10 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "scroll-based-text-reveal-demo",
-  "description": "",
+  "title": "Scroll Based Text Reveal Demo",
+  "description": "Example showcasing a text reveal effect which animates the opacity of the text as you scroll.",
   "registryDependencies": [
-    "scroll-based-text-reveal"
+    "https://atlasui.vercel.app/r/scroll-based-text-reveal.json"
   ],
   "files": [
     {

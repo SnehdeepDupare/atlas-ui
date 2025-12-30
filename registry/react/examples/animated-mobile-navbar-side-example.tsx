@@ -8,8 +8,6 @@ import { Button } from "@/components/ui/button";
 
 const SIDES = ["left", "top", "right"] as const;
 
-// lets see if this appears??
-
 export const AnimatedMobileNavbarSidesExample = () => {
   return (
     <div className="flex gap-2">

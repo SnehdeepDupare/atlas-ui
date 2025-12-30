@@ -2,7 +2,7 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "blend-mouse-trailer",
   "title": "Blend Mouse Trailer",
-  "description": "",
+  "description": "A simple Lazy Mouse Trailer which blends with the content on hover.",
   "dependencies": [
     "motion"
   ],
@@ -10,8 +10,8 @@
     {
       "path": "registry/react/atlasui/blend-mouse-trailer.tsx",
       "content": "\"use client\";\n\nimport { motion, useMotionValue, useSpring } from \"motion/react\";\nimport { useEffect, useState, useMemo } from \"react\";\n\nexport const BlendMouseTrailer = ({ isHovered }: { isHovered: boolean }) => {\n  const [isVisible, setIsVisible] = useState(false);\n\n  const mouse = {\n    x: useMotionValue(0),\n    y: useMotionValue(0),\n  };\n\n  const smoothOptions = {\n    damping: 20,\n    stiffness: 300,\n    mass: 0.5,\n  };\n\n  const smoothMouse = {\n    x: useSpring(mouse.x, smoothOptions),\n    y: useSpring(mouse.y, smoothOptions),\n  };\n\n  const size = useMemo(() => (isHovered ? 300 : 30), [isHovered]);\n\n  const mouseMove = (e: MouseEvent) => {\n    const { clientX, clientY } = e;\n\n    mouse.x.set(clientX - size / 2);\n    mouse.y.set(clientY - size / 2);\n    setIsVisible(true);\n  };\n\n  useEffect(() => {\n    window.addEventListener(\"mousemove\", mouseMove);\n\n    return () => {\n      window.removeEventListener(\"mousemove\", mouseMove);\n    };\n  }, [size]);\n\n  return (\n    <motion.div\n      className={`${\n        isVisible ? \"hidden md:block\" : \"hidden\"\n      } rounded-full bg-sky-300 fixed top-0 left-0 pointer-events-none mix-blend-difference`}\n      style={{\n        left: smoothMouse.x,\n        top: smoothMouse.y,\n        height: size,\n        width: size,\n        filter: `blur(${isHovered ? 30 : 0}px)`,\n        transition:\n          \"height 0.3s ease-out, width 0.3s ease-out, filter 0.3s ease-out\",\n      }}\n    />\n  );\n};\n",
-      "type": "registry:ui"
+      "type": "registry:component"
     }
   ],
-  "type": "registry:ui"
+  "type": "registry:component"
 }

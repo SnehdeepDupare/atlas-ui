@@ -1,9 +1,10 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "reveal-effect-demo",
-  "description": "",
+  "title": "Reveal Effect Demo",
+  "description": "Example of Reveal Effect with a vertical slide, blur fade-in, and clipping reveal effect.",
   "registryDependencies": [
-    "reveal-effect"
+    "https://atlasui.vercel.app/r/reveal-effect.json"
   ],
   "files": [
     {

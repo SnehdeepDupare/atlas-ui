@@ -1,9 +1,10 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "blend-mouse-trailer-demo",
-  "description": "",
+  "title": "Blend Mouse Trailer Demo",
+  "description": "Example showing the lazy mouse trailer which blends with the content on hover.",
   "registryDependencies": [
-    "blend-mouse-trailer"
+    "https://atlasui.vercel.app/r/blend-mouse-trailer.json"
   ],
   "files": [
     {

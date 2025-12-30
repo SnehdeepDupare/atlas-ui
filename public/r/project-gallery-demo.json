@@ -1,9 +1,10 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "project-gallery-demo",
-  "description": "",
+  "title": "Project Gallery Demo",
+  "description": "Example of Project Gallery with an interactive modal.",
   "registryDependencies": [
-    "project-gallery"
+    "https://atlasui.vercel.app/r/project-gallery.json"
   ],
   "files": [
     {

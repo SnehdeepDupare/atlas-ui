@@ -1,9 +1,10 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "shiny-button-demo",
-  "description": "",
+  "title": "Shiny Button Demo",
+  "description": "Example of Shiny Button with a sleek animation effect.",
   "registryDependencies": [
-    "shiny-button"
+    "https://atlasui.vercel.app/r/shiny-button.json"
   ],
   "files": [
     {

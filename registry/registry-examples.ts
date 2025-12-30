@@ -4,8 +4,11 @@ export const examples: Registry["items"] = [
   {
     name: "animated-mobile-navbar-demo",
     type: "registry:example",
-    description: "",
-    registryDependencies: ["animated-mobile-navbar"],
+    title: "Animated Mobile Navbar Demo",
+    description: "Example showcasing the Animated Mobile Navbar component.",
+    registryDependencies: [
+      "https://atlasui.vercel.app/r/animated-mobile-navbar.json",
+    ],
     files: [
       {
         path: "react/examples/animated-mobile-navbar-demo.tsx",
@@ -16,8 +19,11 @@ export const examples: Registry["items"] = [
   {
     name: "animated-mobile-navbar-side-example",
     type: "registry:example",
-    description: "",
-    registryDependencies: ["animated-mobile-navbar"],
+    title: "Animated Mobile Navbar Side Example",
+    description: "Example showcasing the Mobile Navbar emerging from the side.",
+    registryDependencies: [
+      "https://atlasui.vercel.app/r/animated-mobile-navbar.json",
+    ],
     files: [
       {
         path: "react/examples/animated-mobile-navbar-side-example.tsx",
@@ -28,8 +34,9 @@ export const examples: Registry["items"] = [
   {
     name: "project-gallery-demo",
     type: "registry:example",
-    description: "",
-    registryDependencies: ["project-gallery"],
+    title: "Project Gallery Demo",
+    description: "Example of Project Gallery with an interactive modal.",
+    registryDependencies: ["https://atlasui.vercel.app/r/project-gallery.json"],
     files: [
       {
         path: "react/examples/project-gallery-demo.tsx",
@@ -41,8 +48,11 @@ export const examples: Registry["items"] = [
   {
     name: "parallax-sections-demo",
     type: "registry:example",
-    description: "",
-    registryDependencies: ["parallax-sections"],
+    title: "Parallax Sections Demo",
+    description: "Example of Parallax Sections component.",
+    registryDependencies: [
+      "https://atlasui.vercel.app/r/parallax-sections.json",
+    ],
     files: [
       {
         path: "react/examples/parallax-sections-demo.tsx",
@@ -54,8 +64,9 @@ export const examples: Registry["items"] = [
   {
     name: "shiny-button-demo",
     type: "registry:example",
-    description: "",
-    registryDependencies: ["shiny-button"],
+    title: "Shiny Button Demo",
+    description: "Example of Shiny Button with a sleek animation effect.",
+    registryDependencies: ["https://atlasui.vercel.app/r/shiny-button.json"],
     files: [
       {
         path: "react/examples/shiny-button-demo.tsx",
@@ -67,8 +78,12 @@ export const examples: Registry["items"] = [
   {
     name: "dot-and-circle-mouse-trailer-demo",
     type: "registry:example",
-    description: "",
-    registryDependencies: ["dot-and-circle-mouse-trailer"],
+    title: "Dot and Circle Mouse Trailer Demo",
+    description:
+      "Example showing the lazy dot and circle that follows the mouse cursor.",
+    registryDependencies: [
+      "https://atlasui.vercel.app/r/dot-and-circle-mouse-trailer.json",
+    ],
     files: [
       {
         path: "react/examples/dot-and-circle-mouse-trailer-demo.tsx",
@@ -80,8 +95,11 @@ export const examples: Registry["items"] = [
   {
     name: "blob-mouse-trailer-demo",
     type: "registry:example",
-    description: "",
-    registryDependencies: ["blob-mouse-trailer"],
+    title: "Blob Mouse Trailer Demo",
+    description: "Example showing the lazy blob that follows the mouse cursor.",
+    registryDependencies: [
+      "https://atlasui.vercel.app/r/blob-mouse-trailer.json",
+    ],
     files: [
       {
         path: "react/examples/blob-mouse-trailer-demo.tsx",
@@ -93,8 +111,12 @@ export const examples: Registry["items"] = [
   {
     name: "blend-mouse-trailer-demo",
     type: "registry:example",
-    description: "",
-    registryDependencies: ["blend-mouse-trailer"],
+    title: "Blend Mouse Trailer Demo",
+    description:
+      "Example showing the lazy mouse trailer which blends with the content on hover.",
+    registryDependencies: [
+      "https://atlasui.vercel.app/r/blend-mouse-trailer.json",
+    ],
     files: [
       {
         path: "react/examples/blend-mouse-trailer-demo.tsx",
@@ -106,8 +128,10 @@ export const examples: Registry["items"] = [
   {
     name: "hacker-text-demo",
     type: "registry:example",
-    description: "",
-    registryDependencies: ["hacker-text"],
+    title: "Hacker Text Demo",
+    description:
+      "Example showcasing text animation that scrambles letters before revealing the final text",
+    registryDependencies: ["https://atlasui.vercel.app/r/hacker-text.json"],
     files: [
       {
         path: "react/examples/hacker-text-demo.tsx",
@@ -119,8 +143,12 @@ export const examples: Registry["items"] = [
   {
     name: "scroll-based-text-reveal-demo",
     type: "registry:example",
-    description: "",
-    registryDependencies: ["scroll-based-text-reveal"],
+    title: "Scroll Based Text Reveal Demo",
+    description:
+      "Example showcasing a text reveal effect which animates the opacity of the text as you scroll.",
+    registryDependencies: [
+      "https://atlasui.vercel.app/r/scroll-based-text-reveal.json",
+    ],
     files: [
       {
         path: "react/examples/scroll-based-text-reveal-demo.tsx",
@@ -132,8 +160,12 @@ export const examples: Registry["items"] = [
   {
     name: "scroll-based-word-reveal-demo",
     type: "registry:example",
-    description: "",
-    registryDependencies: ["scroll-based-word-reveal"],
+    title: "Scroll Based Word Reveal Demo",
+    description:
+      "Example showcasing a word reveal effect which animates the opacity of the word as you scroll.",
+    registryDependencies: [
+      "https://atlasui.vercel.app/r/scroll-based-word-reveal.json",
+    ],
     files: [
       {
         path: "react/examples/scroll-based-word-reveal-demo.tsx",
@@ -145,8 +177,12 @@ export const examples: Registry["items"] = [
   {
     name: "scroll-based-character-reveal-demo",
     type: "registry:example",
-    description: "",
-    registryDependencies: ["scroll-based-character-reveal"],
+    title: "Scroll Based Character Reveal Demo",
+    description:
+      "Example showcasing a character reveal effect which animates the opacity of the character as you scroll.",
+    registryDependencies: [
+      "https://atlasui.vercel.app/r/scroll-based-character-reveal.json",
+    ],
     files: [
       {
         path: "react/examples/scroll-based-character-reveal-demo.tsx",
@@ -158,8 +194,10 @@ export const examples: Registry["items"] = [
   {
     name: "reveal-effect-demo",
     type: "registry:example",
-    description: "",
-    registryDependencies: ["reveal-effect"],
+    title: "Reveal Effect Demo",
+    description:
+      "Example of Reveal Effect with a vertical slide, blur fade-in, and clipping reveal effect.",
+    registryDependencies: ["https://atlasui.vercel.app/r/reveal-effect.json"],
     files: [
       {
         path: "react/examples/reveal-effect-demo.tsx",
@@ -171,8 +209,9 @@ export const examples: Registry["items"] = [
   {
     name: "reveal-effect-speed-example",
     type: "registry:example",
-    description: "",
-    registryDependencies: ["reveal-effect"],
+    title: "Reveal Effect Example 1",
+    description: "Example of Reveal Effect with a custom speed.",
+    registryDependencies: ["https://atlasui.vercel.app/r/reveal-effect.json"],
     files: [
       {
         path: "react/examples/reveal-effect-speed-example.tsx",
@@ -184,8 +223,9 @@ export const examples: Registry["items"] = [
   {
     name: "reveal-effect-delay-example",
     type: "registry:example",
-    description: "",
-    registryDependencies: ["reveal-effect"],
+    title: "Reveal Effect Example 2",
+    description: "Example of Reveal Effect with a custom delay.",
+    registryDependencies: ["https://atlasui.vercel.app/r/reveal-effect.json"],
     files: [
       {
         path: "react/examples/reveal-effect-delay-example.tsx",
@@ -197,8 +237,9 @@ export const examples: Registry["items"] = [
   {
     name: "reveal-effect-translate-y-example",
     type: "registry:example",
-    description: "",
-    registryDependencies: ["reveal-effect"],
+    title: "Reveal Effect Example 3",
+    description: "Example of Reveal Effect with a custom translate-y.",
+    registryDependencies: ["https://atlasui.vercel.app/r/reveal-effect.json"],
     files: [
       {
         path: "react/examples/reveal-effect-translate-y-example.tsx",
@@ -210,8 +251,12 @@ export const examples: Registry["items"] = [
   {
     name: "loki-text-effect-demo",
     type: "registry:example",
-    description: "",
-    registryDependencies: ["loki-text-effect"],
+    title: "Loki Text Effect Demo",
+    description:
+      "Example showcasing the iconic animation from the Loki series intro.",
+    registryDependencies: [
+      "https://atlasui.vercel.app/r/loki-text-effect.json",
+    ],
     files: [
       {
         path: "react/examples/loki-text-effect-demo.tsx",

@@ -1,9 +1,10 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "loki-text-effect-demo",
-  "description": "",
+  "title": "Loki Text Effect Demo",
+  "description": "Example showcasing the iconic animation from the Loki series intro.",
   "registryDependencies": [
-    "loki-text-effect"
+    "https://atlasui.vercel.app/r/loki-text-effect.json"
   ],
   "files": [
     {

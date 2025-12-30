@@ -1,9 +1,10 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "parallax-sections-demo",
-  "description": "",
+  "title": "Parallax Sections Demo",
+  "description": "Example of Parallax Sections component.",
   "registryDependencies": [
-    "parallax-sections"
+    "https://atlasui.vercel.app/r/parallax-sections.json"
   ],
   "files": [
     {

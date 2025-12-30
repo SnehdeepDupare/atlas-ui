@@ -1,9 +1,10 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "blob-mouse-trailer-demo",
-  "description": "",
+  "title": "Blob Mouse Trailer Demo",
+  "description": "Example showing the lazy blob that follows the mouse cursor.",
   "registryDependencies": [
-    "blob-mouse-trailer"
+    "https://atlasui.vercel.app/r/blob-mouse-trailer.json"
   ],
   "files": [
     {

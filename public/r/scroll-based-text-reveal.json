@@ -2,7 +2,7 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "scroll-based-text-reveal",
   "title": "Scroll Based Text Reveal",
-  "description": "",
+  "description": "A text reveal effect which animates the opacity of the text as you scroll.",
   "dependencies": [
     "motion"
   ],
@@ -10,8 +10,8 @@
     {
       "path": "registry/react/atlasui/scroll-based-text-reveal.tsx",
       "content": "\"use client\";\n\nimport { useRef } from \"react\";\nimport { motion, useScroll } from \"motion/react\";\n\ninterface ScrollBasedTextRevealProps {\n  text: string;\n}\n\nexport const ScrollBasedTextReveal = ({ text }: ScrollBasedTextRevealProps) => {\n  const container = useRef(null);\n  const { scrollYProgress } = useScroll({\n    target: container,\n    offset: [\"start 0.8\", \"start 0.3\"],\n  });\n\n  return (\n    <div className=\"flex flex-col items-center justify-center \">\n      <div className=\"h-[50vh]\" />\n      <motion.p\n        style={{ opacity: scrollYProgress }}\n        ref={container}\n        className=\"text-5xl font-bold max-w-5xl text-center\"\n      >\n        {text}\n      </motion.p>\n      <div className=\"h-[50vh]\" />\n    </div>\n  );\n};\n",
-      "type": "registry:ui"
+      "type": "registry:component"
     }
   ],
-  "type": "registry:ui"
+  "type": "registry:component"
 }

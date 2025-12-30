@@ -1,9 +1,10 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "reveal-effect-speed-example",
-  "description": "",
+  "title": "Reveal Effect Example 1",
+  "description": "Example of Reveal Effect with a custom speed.",
   "registryDependencies": [
-    "reveal-effect"
+    "https://atlasui.vercel.app/r/reveal-effect.json"
   ],
   "files": [
     {
