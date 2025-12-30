@@ -6,7 +6,7 @@ import {
   CollapsibleTrigger,
 } from "@/components/ui/collapsible";
 
-import { useState, useCallback } from "react";
+import { useState } from "react";
 import { Button } from "./ui/button";
 
 interface ComponentSourceProps {
@@ -37,7 +37,7 @@ export function ComponentSource({
           >
             <div
               className={cn(
-                !isOpened ? "[&_pre]:overflow-hidden" : "[&_pre]:overflow-auto"
+                !isOpened ? "[&_pre]:overflow-hidden" : "[&_pre]:overflow-auto",
               )}
             >
               {children}
@@ -46,7 +46,7 @@ export function ComponentSource({
           <div
             className={cn(
               "absolute flex items-end justify-center rounded-xl bg-linear-to-b from-transparent to-zinc-950/90 p-2",
-              isOpened ? "inset-x-0 bottom-4 h-12" : "inset-0"
+              isOpened ? "inset-x-0 bottom-4 h-12" : "inset-0",
             )}
           >
             <CollapsibleTrigger asChild>

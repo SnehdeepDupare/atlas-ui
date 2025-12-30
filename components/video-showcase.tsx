@@ -32,7 +32,7 @@ export const VideoShowcase = () => {
         "relative w-full max-w-(--breakpoint-2xl) mx-auto mt-10 px-4 sm:px-6 lg:px-8",
         isMobile
           ? "grid grid-cols-2 gap-4"
-          : "flex items-center justify-center min-h-200"
+          : "flex items-center justify-center min-h-200",
       )}
     >
       {/* Top Left */}
@@ -59,7 +59,7 @@ export const VideoShowcase = () => {
           "rounded-xl overflow-hidden border-2 border-neutral-800",
           isMobile
             ? ""
-            : "absolute top-4 sm:top-10 left-4 sm:left-[8%] z-10 w-[40vw] sm:w-[20rem]"
+            : "absolute top-4 sm:top-10 left-4 sm:left-[8%] z-10 w-[40vw] sm:w-[20rem]",
         )}
       >
         <Video
@@ -93,7 +93,7 @@ export const VideoShowcase = () => {
           "rounded-xl overflow-hidden border-2 border-neutral-800",
           isMobile
             ? ""
-            : "absolute top-6 sm:top-12 right-4 sm:right-[15%] z-10 w-[40vw] sm:w-[200px]"
+            : "absolute top-6 sm:top-12 right-4 sm:right-[15%] z-10 w-[40vw] sm:w-[200px]",
         )}
       >
         <Video
@@ -119,7 +119,7 @@ export const VideoShowcase = () => {
           "rounded-xl overflow-hidden border-2 border-neutral-800 z-20",
           isMobile
             ? "col-span-2"
-            : "absolute top-28 w-full max-w-lg sm:max-w-xl md:max-w-3xl h-[60vh] sm:h-120"
+            : "absolute top-28 w-full max-w-lg sm:max-w-xl md:max-w-3xl h-[60vh] sm:h-120",
         )}
       >
         <Video
@@ -154,7 +154,7 @@ export const VideoShowcase = () => {
           "rounded-xl overflow-hidden border-2 border-neutral-800",
           isMobile
             ? ""
-            : "absolute bottom-20 left-4 sm:left-[10%] z-10 w-[40vw] sm:w-[20rem]"
+            : "absolute bottom-20 left-4 sm:left-[10%] z-10 w-[40vw] sm:w-[20rem]",
         )}
       >
         <Video
@@ -188,7 +188,7 @@ export const VideoShowcase = () => {
           "rounded-xl overflow-hidden border-2 border-neutral-800",
           isMobile
             ? ""
-            : "absolute bottom-24 right-4 sm:right-[10%] z-10 w-[45vw] sm:w-[250px]"
+            : "absolute bottom-24 right-4 sm:right-[10%] z-10 w-[45vw] sm:w-[250px]",
         )}
       >
         <Video

@@ -59,7 +59,7 @@ export const Header = () => {
                 "transition-colors hover:text-foreground/80 hidden md:block",
                 pathname === "/docs/installation"
                   ? "text-foreground"
-                  : "text-foreground/80"
+                  : "text-foreground/80",
               )}
             >
               Docs
@@ -71,7 +71,7 @@ export const Header = () => {
                 "transition-colors hover:text-foreground/80 hidden md:block",
                 pathname?.startsWith("/docs/components")
                   ? "text-foreground"
-                  : "text-foreground/80"
+                  : "text-foreground/80",
               )}
             >
               Components

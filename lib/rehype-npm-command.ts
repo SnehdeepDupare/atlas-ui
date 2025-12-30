@@ -14,15 +14,15 @@ export function rehypeNpmCommand() {
         node.properties["__npm__"] = npmCommand;
         node.properties["__yarn__"] = npmCommand.replace(
           "npm install",
-          "yarn add"
+          "yarn add",
         );
         node.properties["__pnpm__"] = npmCommand.replace(
           "npm install",
-          "pnpm add"
+          "pnpm add",
         );
         node.properties["__bun__"] = npmCommand.replace(
           "npm install",
-          "bun add"
+          "bun add",
         );
       }
 
@@ -32,11 +32,11 @@ export function rehypeNpmCommand() {
         node.properties["__npm__"] = npmCommand;
         node.properties["__yarn__"] = npmCommand.replace(
           "npx create-",
-          "yarn create "
+          "yarn create ",
         );
         node.properties["__pnpm__"] = npmCommand.replace(
           "npx create-",
-          "pnpm create "
+          "pnpm create ",
         );
         node.properties["__bun__"] = npmCommand.replace("npx", "bunx --bun");
       }
@@ -47,15 +47,15 @@ export function rehypeNpmCommand() {
         node.properties["__npm__"] = npmCommand;
         node.properties["__yarn__"] = npmCommand.replace(
           "npm create",
-          "yarn create"
+          "yarn create",
         );
         node.properties["__pnpm__"] = npmCommand.replace(
           "npm create",
-          "pnpm create"
+          "pnpm create",
         );
         node.properties["__bun__"] = npmCommand.replace(
           "npm create",
-          "bun create"
+          "bun create",
         );
       }
 

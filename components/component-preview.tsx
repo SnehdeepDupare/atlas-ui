@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 "use client";
 
 import * as React from "react";
@@ -31,10 +32,6 @@ export function ComponentPreview({ name, children }: ComponentPreviewProps) {
 
     return <Component />;
   }, [name]);
-
-  const codeString = React.useMemo(() => {
-    return Code?.props?.__rawString__ || null;
-  }, [Code]);
 
   return (
     <div className="relative my-4 flex flex-col space-y-2">

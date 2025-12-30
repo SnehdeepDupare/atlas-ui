@@ -5,7 +5,7 @@ import { u } from "unist-builder";
 import { visit } from "unist-util-visit";
 
 const registry = JSON.parse(
-  fs.readFileSync(path.join(process.cwd(), "registry.json"), "utf8")
+  fs.readFileSync(path.join(process.cwd(), "registry.json"), "utf8"),
 );
 
 export function rehypeComponent() {
@@ -36,7 +36,7 @@ export function rehypeComponent() {
             src = path.join(process.cwd(), srcPath);
           } else {
             const component = registry.items.find(
-              (item: any) => item.name === name
+              (item: any) => item.name === name,
             );
             src = fileName
               ? component.files.find((file: unknown) => {
@@ -63,7 +63,7 @@ export function rehypeComponent() {
           // For now a simple regex should do.
           source = source.replaceAll(
             `@/registry/react/atlasui/`,
-            "@/components/"
+            "@/components/",
           );
           source = source.replaceAll("export default", "export");
 
@@ -88,7 +88,7 @@ export function rehypeComponent() {
                   ],
                 }),
               ],
-            })
+            }),
           );
         } catch (error) {
           console.error(error);
@@ -104,7 +104,7 @@ export function rehypeComponent() {
 
         try {
           const component = registry.items.find(
-            (item: any) => item.name === name
+            (item: any) => item.name === name,
           );
           const fileEntry = component.files[0];
           const src = path.join(process.cwd(), fileEntry.path);
@@ -121,7 +121,7 @@ export function rehypeComponent() {
           // For now a simple regex should do.
           source = source.replaceAll(
             `@/registry/react/atlasui/`,
-            "@/components/"
+            "@/components/",
           );
           source = source.replaceAll("export default", "export");
 
@@ -146,7 +146,7 @@ export function rehypeComponent() {
                   ],
                 }),
               ],
-            })
+            }),
           );
         } catch (error) {
           console.error(error);

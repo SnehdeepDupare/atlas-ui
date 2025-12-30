@@ -7,7 +7,7 @@ const eventSchema = z.object({
   properties: z
     .record(
       z.string(),
-      z.union([z.string(), z.number(), z.boolean(), z.null()])
+      z.union([z.string(), z.number(), z.boolean(), z.null()]),
     )
     .optional(),
 });

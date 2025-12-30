@@ -28,7 +28,7 @@ export async function getRegistryItem(name: string) {
   // Convert all file paths to object.
   // TODO: remove when we migrate to new registry.
   item.files = item.files.map((file: unknown) =>
-    typeof file === "string" ? { path: file } : file
+    typeof file === "string" ? { path: file } : file,
   );
 
   // Fail early before doing expensive file operations.
@@ -156,7 +156,7 @@ export function fixImport(content: string) {
     match: string,
     path: string,
     type: string,
-    component: string
+    component: string,
   ) => {
     if (type.endsWith("components")) {
       return `@/components/${component}`;
@@ -181,7 +181,7 @@ export type FileTree = {
 };
 
 export function createFileTreeForRegistryItemFiles(
-  files: Array<{ path: string; target?: string }>
+  files: Array<{ path: string; target?: string }>,
 ) {
   const root: FileTree[] = [];
 

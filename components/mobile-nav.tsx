@@ -63,7 +63,7 @@ export function MobileNav() {
                       href={item.href}
                       className={cn(
                         "flex justify-between text-muted-foreground",
-                        item.disabled && "cursor-not-allowed opacity-60"
+                        item.disabled && "cursor-not-allowed opacity-60",
                       )}
                     >
                       {item.title}
@@ -80,7 +80,7 @@ export function MobileNav() {
                       key={index}
                       className={cn(
                         "text-muted-foreground",
-                        item.disabled && "cursor-not-allowed opacity-60"
+                        item.disabled && "cursor-not-allowed opacity-60",
                       )}
                     >
                       {item.title}
@@ -90,7 +90,7 @@ export function MobileNav() {
                         </span>
                       )}
                     </span>
-                  )
+                  ),
                 )}
               </div>
             ))}
@@ -130,7 +130,7 @@ function MobileLink({
           "group flex h-8 w-full items-center rounded-r-lg px-2 font-normal text-foreground",
           isActive
             ? "bg-accent font-medium text-accent-foreground border-l-2 hover:rounded-l-none border-emerald-500"
-            : ""
+            : "",
         )}
         {...props}
       >

@@ -4,7 +4,7 @@ export const RevealEffectDelayExample = () => {
   return (
     <div className="flex flex-col items-center space-y-2">
       <RevealEffect speed="fast">
-        <p className="font-semibold text-xl">I'm First.</p>
+        <p className="font-semibold text-xl">I&apos;m First.</p>
       </RevealEffect>
 
       <RevealEffect delay={0.2}>
