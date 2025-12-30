@@ -9,7 +9,7 @@
   "files": [
     {
       "path": "registry/react/examples/reveal-effect-speed-example.tsx",
-      "content": "import { RevealEffect } from \"@/registry/react/atlasui/reveal-effect\";\n\nexport const RevealEffectSpeedExample = () => {\n  return (\n    <div className=\"flex flex-col items-center space-y-2\">\n      <RevealEffect speed=\"fast\">\n        <p className=\"font-semibold text-xl\">I'm fast as heck.</p>\n      </RevealEffect>\n\n      <RevealEffect>\n        <p className=\"font-semibold text-xl text-center\">\n          This is medium speed, which is the default.\n        </p>\n      </RevealEffect>\n\n      <RevealEffect speed=\"slow\">\n        <p className=\"font-semibold text-xl\">I'm slow as molasses.</p>\n      </RevealEffect>\n    </div>\n  );\n};\n",
+      "content": "import { RevealEffect } from \"@/registry/react/atlasui/reveal-effect\";\n\nexport const RevealEffectSpeedExample = () => {\n  return (\n    <div className=\"flex flex-col items-center space-y-2\">\n      <RevealEffect speed=\"fast\">\n        <p className=\"font-semibold text-xl\">I&apos;m fast as heck.</p>\n      </RevealEffect>\n\n      <RevealEffect>\n        <p className=\"font-semibold text-xl text-center\">\n          This is medium speed, which is the default.\n        </p>\n      </RevealEffect>\n\n      <RevealEffect speed=\"slow\">\n        <p className=\"font-semibold text-xl\">I&apos;m slow as molasses.</p>\n      </RevealEffect>\n    </div>\n  );\n};\n",
       "type": "registry:example",
       "target": "components/reveal-effect-speed-example.tsx"
     }
