@@ -1,0 +1,48 @@
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  width: 100%;
+  background: #18181b;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+}
+
+.spacer {
+  height: 100vh;
+}
+
+.reveal-text {
+  font-size: 3rem;
+  font-weight: bold;
+  text-align: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  max-width: 64rem;
+}
+
+.word {
+  display: flex;
+  align-items: center;
+  margin-right: 0.5rem;
+}
+
+.character-container {
+  position: relative;
+  display: inline-flex;
+}
+
+.char-shadow {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.1;
+}
+
+.char {
+  opacity: 0;
+}

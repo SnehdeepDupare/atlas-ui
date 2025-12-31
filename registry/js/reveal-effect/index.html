@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Reveal Effect - Atlas UI</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div
+      id="reveal-effect"
+      data-speed="medium"
+      data-delay="0.2"
+      data-translatey="40"
+    >
+      This content fades in, unblurs, and slides up when visible.
+    </div>
+
+    <div id="reveal-effect" data-speed="fast">
+      Slower animation with more translateY.
+    </div>
+
+    <div id="reveal-effect" data-speed="fast" data-translatey="20">
+      Fast and snappy reveal effect.
+    </div>
+
+    <button id="reveal-effect" data-speed="fast">Magic</button>
+  </body>
+
+  <script type="module" src="script.js"></script>
+</html>

@@ -1,0 +1,89 @@
+---
+title: Vanilla JavaScript
+description: Install and configure Atlas UI for Vanilla JavaScript projects.
+---
+
+<Steps>
+
+### Create a new project and initialize your package manager
+
+```bash
+npm init -y
+```
+
+### Install dependencies
+
+```bash
+npm install motion
+```
+
+### Install Vite
+
+Vite is required to bundle npm dependencies so they work in the browser:
+
+```bash
+npm install -D vite
+```
+
+### Update package.json
+
+Add scripts to your `package.json`:
+
+```json
+{
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  }
+}
+```
+
+Now you can run the following commands:
+- `npm run dev` to start the development server
+- `npm run build` to build the project
+- `npm run preview` to preview the built project
+
+### Project Structure
+
+Your project should look like this:
+
+```txt
+project-root/
+├─ index.html
+├─ script.js
+├─ style.css
+├─ package.json
+```
+
+Vite uses `index.html` as the entry point and rewrites npm imports automatically.
+
+
+### Add components
+
+You can now start adding Atlas UI components to your project.
+
+```bash
+npx shadcn@latest add https://atlasui.vercel.app/r/reveal-effect-js.json
+```
+
+The above command will add `RevealEffect` component to your project in the `reveal-effect` directory with its own `index.html`, `index.js`, and `style.css` files.
+
+```txt
+project-root/
+├─reveal-effect/
+│  ├─index.html
+│  ├─script.js
+│  └─style.css
+├─ index.html
+├─ script.js
+├─ style.css
+├─ package.json
+```
+
+**Note:** We are adding the `html` and `css` files to make sure the component works without additional setup. You can then copy and paste the javascript logic from the `script.js` file to integrate it into your main project so you can style and customize it as needed.
+
+Visit http://localhost:5173/reveal-effect/index.html to see the component in action.
+
+</Steps>
+

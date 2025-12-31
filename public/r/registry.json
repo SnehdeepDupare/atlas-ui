@@ -535,6 +535,411 @@
         }
       ],
       "type": "registry:example"
+    },
+    {
+      "name": "animated-mobile-navbar-js",
+      "title": "Animated Mobile Navbar",
+      "description": "A simple animated mobile navbar component in HTML, CSS, JavaScript and Motion.",
+      "dependencies": [
+        "motion"
+      ],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "registry/js/animated-mobile-navbar/index.html",
+          "type": "registry:file",
+          "target": "~/animated-mobile-navbar/index.html"
+        },
+        {
+          "path": "registry/js/animated-mobile-navbar/style.css",
+          "type": "registry:file",
+          "target": "~/animated-mobile-navbar/style.css"
+        },
+        {
+          "path": "registry/js/animated-mobile-navbar/script.js",
+          "type": "registry:file",
+          "target": "~/animated-mobile-navbar/script.js"
+        }
+      ],
+      "meta": {
+        "framework": "vanilla"
+      },
+      "type": "registry:file"
+    },
+    {
+      "name": "project-gallery-js",
+      "title": "Project Gallery",
+      "description": "A Project Gallery with an interactive modal using HTML, CSS, JavaScript and Motion.",
+      "dependencies": [
+        "motion"
+      ],
+      "files": [
+        {
+          "path": "registry/js/project-gallery/index.html",
+          "type": "registry:file",
+          "target": "~/project-gallery/index.html"
+        },
+        {
+          "path": "registry/js/project-gallery/style.css",
+          "type": "registry:file",
+          "target": "~/project-gallery/style.css"
+        },
+        {
+          "path": "registry/js/project-gallery/script.js",
+          "type": "registry:file",
+          "target": "~/project-gallery/script.js"
+        }
+      ],
+      "meta": {
+        "framework": "vanilla"
+      },
+      "type": "registry:file"
+    },
+    {
+      "name": "parallax-sections-js",
+      "title": "Parallax Sections",
+      "description": "A simple Parallax effect using HTML, CSS, JavaScript and Motion.",
+      "dependencies": [
+        "motion"
+      ],
+      "files": [
+        {
+          "path": "registry/js/parallax-sections/index.html",
+          "type": "registry:file",
+          "target": "~/parallax-sections/index.html"
+        },
+        {
+          "path": "registry/js/parallax-sections/style.css",
+          "type": "registry:file",
+          "target": "~/parallax-sections/style.css"
+        },
+        {
+          "path": "registry/js/parallax-sections/script.js",
+          "type": "registry:file",
+          "target": "~/parallax-sections/script.js"
+        }
+      ],
+      "meta": {
+        "framework": "vanilla"
+      },
+      "type": "registry:file"
+    },
+    {
+      "name": "shiny-button-js",
+      "title": "Shiny Button",
+      "description": "A shiny button with a sleek animation effect using HTML, CSS, JavaScript and Motion.",
+      "dependencies": [
+        "motion"
+      ],
+      "files": [
+        {
+          "path": "registry/js/shiny-button/index.html",
+          "type": "registry:file",
+          "target": "~/shiny-button/index.html"
+        },
+        {
+          "path": "registry/js/shiny-button/style.css",
+          "type": "registry:file",
+          "target": "~/shiny-button/style.css"
+        },
+        {
+          "path": "registry/js/shiny-button/script.js",
+          "type": "registry:file",
+          "target": "~/shiny-button/script.js"
+        }
+      ],
+      "meta": {
+        "framework": "vanilla"
+      },
+      "type": "registry:file"
+    },
+    {
+      "name": "dot-and-circle-mouse-trailer-js",
+      "title": "Dot And Circle Mouse Trailer",
+      "description": "A simple Lazy Dot and Circle Mouse Trailer using HTML, CSS and JavaScript.",
+      "dependencies": [],
+      "files": [
+        {
+          "path": "registry/js/dot-and-circle-mouse-trailer/index.html",
+          "type": "registry:file",
+          "target": "~/dot-and-circle-mouse-trailer/index.html"
+        },
+        {
+          "path": "registry/js/dot-and-circle-mouse-trailer/style.css",
+          "type": "registry:file",
+          "target": "~/dot-and-circle-mouse-trailer/style.css"
+        },
+        {
+          "path": "registry/js/dot-and-circle-mouse-trailer/script.js",
+          "type": "registry:file",
+          "target": "~/dot-and-circle-mouse-trailer/script.js"
+        }
+      ],
+      "meta": {
+        "framework": "vanilla"
+      },
+      "type": "registry:file"
+    },
+    {
+      "name": "blob-mouse-trailer-js",
+      "title": "Blob Mouse Trailer",
+      "description": "A simple Lazy Blob Mouse Trailer using HTML, CSS and JavaScript.",
+      "dependencies": [],
+      "files": [
+        {
+          "path": "registry/js/blob-mouse-trailer/index.html",
+          "type": "registry:file",
+          "target": "~/blob-mouse-trailer/index.html"
+        },
+        {
+          "path": "registry/js/blob-mouse-trailer/style.css",
+          "type": "registry:file",
+          "target": "~/blob-mouse-trailer/style.css"
+        },
+        {
+          "path": "registry/js/blob-mouse-trailer/script.js",
+          "type": "registry:file",
+          "target": "~/blob-mouse-trailer/script.js"
+        }
+      ],
+      "meta": {
+        "framework": "vanilla"
+      },
+      "type": "registry:file"
+    },
+    {
+      "name": "blend-mouse-trailer-js",
+      "title": "Blend Mouse Trailer",
+      "description": "A simple Lazy Mouse Trailer which blends with the content on hover using HTML, CSS and JavaScript.",
+      "dependencies": [],
+      "files": [
+        {
+          "path": "registry/js/blend-mouse-trailer/index.html",
+          "type": "registry:file",
+          "target": "~/blend-mouse-trailer/index.html"
+        },
+        {
+          "path": "registry/js/blend-mouse-trailer/style.css",
+          "type": "registry:file",
+          "target": "~/blend-mouse-trailer/style.css"
+        },
+        {
+          "path": "registry/js/blend-mouse-trailer/script.js",
+          "type": "registry:file",
+          "target": "~/blend-mouse-trailer/script.js"
+        }
+      ],
+      "meta": {
+        "framework": "vanilla"
+      },
+      "type": "registry:file"
+    },
+    {
+      "name": "hacker-text-js",
+      "title": "Hacker Text",
+      "description": "A text animation that scrambles letters before revealing the final text using HTML, CSS and JavaScript.",
+      "dependencies": [],
+      "files": [
+        {
+          "path": "registry/js/hacker-text/index.html",
+          "type": "registry:file",
+          "target": "~/hacker-text/index.html"
+        },
+        {
+          "path": "registry/js/hacker-text/style.css",
+          "type": "registry:file",
+          "target": "~/hacker-text/style.css"
+        },
+        {
+          "path": "registry/js/hacker-text/script.js",
+          "type": "registry:file",
+          "target": "~/hacker-text/script.js"
+        }
+      ],
+      "meta": {
+        "framework": "vanilla"
+      },
+      "type": "registry:file"
+    },
+    {
+      "name": "scroll-based-text-reveal-js",
+      "title": "Scroll Based Text Reveal",
+      "description": "A text reveal effect which animates the opacity of the text as you scroll using HTML, CSS, JavaScript and Motion.",
+      "dependencies": [
+        "motion"
+      ],
+      "files": [
+        {
+          "path": "registry/js/scroll-based-text-reveal/index.html",
+          "type": "registry:file",
+          "target": "~/scroll-based-text-reveal/index.html"
+        },
+        {
+          "path": "registry/js/scroll-based-text-reveal/style.css",
+          "type": "registry:file",
+          "target": "~/scroll-based-text-reveal/style.css"
+        },
+        {
+          "path": "registry/js/scroll-based-text-reveal/script.js",
+          "type": "registry:file",
+          "target": "~/scroll-based-text-reveal/script.js"
+        }
+      ],
+      "meta": {
+        "framework": "vanilla"
+      },
+      "type": "registry:file"
+    },
+    {
+      "name": "scroll-based-word-reveal-js",
+      "title": "Scroll Based Word Reveal",
+      "description": "A text reveal effect which progressively reveals text word by word as you scroll using HTML, CSS, JavaScript and Motion.",
+      "dependencies": [
+        "motion"
+      ],
+      "files": [
+        {
+          "path": "registry/js/scroll-based-word-reveal/index.html",
+          "type": "registry:file",
+          "target": "~/scroll-based-word-reveal/index.html"
+        },
+        {
+          "path": "registry/js/scroll-based-word-reveal/style.css",
+          "type": "registry:file",
+          "target": "~/scroll-based-word-reveal/style.css"
+        },
+        {
+          "path": "registry/js/scroll-based-word-reveal/script.js",
+          "type": "registry:file",
+          "target": "~/scroll-based-word-reveal/script.js"
+        }
+      ],
+      "meta": {
+        "framework": "vanilla"
+      },
+      "type": "registry:file"
+    },
+    {
+      "name": "scroll-based-character-reveal-js",
+      "title": "Scroll Based Character Reveal",
+      "description": "A text reveal effect which progressively reveals text character by character as you scroll using HTML, CSS, JavaScript and Motion.",
+      "dependencies": [
+        "motion"
+      ],
+      "files": [
+        {
+          "path": "registry/js/scroll-based-character-reveal/index.html",
+          "type": "registry:file",
+          "target": "~/scroll-based-character-reveal/index.html"
+        },
+        {
+          "path": "registry/js/scroll-based-character-reveal/style.css",
+          "type": "registry:file",
+          "target": "~/scroll-based-character-reveal/style.css"
+        },
+        {
+          "path": "registry/js/scroll-based-character-reveal/script.js",
+          "type": "registry:file",
+          "target": "~/scroll-based-character-reveal/script.js"
+        }
+      ],
+      "meta": {
+        "framework": "vanilla"
+      },
+      "type": "registry:file"
+    },
+    {
+      "name": "reveal-effect-js",
+      "title": "Reveal Effect",
+      "description": "Animates content into view with a vertical slide, blur fade-in, and clipping reveal effect using HTML, CSS, JavaScript and Motion.",
+      "dependencies": [
+        "motion"
+      ],
+      "files": [
+        {
+          "path": "registry/js/reveal-effect/index.html",
+          "type": "registry:file",
+          "target": "~/reveal-effect/index.html"
+        },
+        {
+          "path": "registry/js/reveal-effect/style.css",
+          "type": "registry:file",
+          "target": "~/reveal-effect/style.css"
+        },
+        {
+          "path": "registry/js/reveal-effect/script.js",
+          "type": "registry:file",
+          "target": "~/reveal-effect/script.js"
+        }
+      ],
+      "meta": {
+        "framework": "vanilla"
+      },
+      "type": "registry:file"
+    },
+    {
+      "name": "loki-text-effect-js",
+      "title": "Loki Text Effect",
+      "description": "The iconic text animation from the Loki series intro using HTML, CSS, JavaScript and Motion.",
+      "dependencies": [
+        "motion"
+      ],
+      "files": [
+        {
+          "path": "registry/js/loki-text-effect/index.html",
+          "type": "registry:file",
+          "target": "~/loki-text-effect/index.html"
+        },
+        {
+          "path": "registry/js/loki-text-effect/style.css",
+          "type": "registry:file",
+          "target": "~/loki-text-effect/style.css"
+        },
+        {
+          "path": "registry/js/loki-text-effect/script.js",
+          "type": "registry:file",
+          "target": "~/loki-text-effect/script.js"
+        },
+        {
+          "path": "registry/fonts/fontOne.woff2",
+          "type": "registry:file",
+          "target": "~/fonts/fontOne.woff2"
+        },
+        {
+          "path": "registry/fonts/fontTwo.woff2",
+          "type": "registry:file",
+          "target": "~/fonts/fontTwo.woff2"
+        },
+        {
+          "path": "registry/fonts/fontThree.woff2",
+          "type": "registry:file",
+          "target": "~/fonts/fontThree.woff2"
+        },
+        {
+          "path": "registry/fonts/fontFour.woff2",
+          "type": "registry:file",
+          "target": "~/fonts/fontFour.woff2"
+        },
+        {
+          "path": "registry/fonts/fontFive.woff2",
+          "type": "registry:file",
+          "target": "~/fonts/fontFive.woff2"
+        },
+        {
+          "path": "registry/fonts/fontSix.woff2",
+          "type": "registry:file",
+          "target": "~/fonts/fontSix.woff2"
+        },
+        {
+          "path": "registry/fonts/fontSeven.woff2",
+          "type": "registry:file",
+          "target": "~/fonts/fontSeven.woff2"
+        }
+      ],
+      "meta": {
+        "framework": "vanilla"
+      },
+      "type": "registry:file"
     }
   ]
 }

@@ -79,6 +79,19 @@ export function rehypeNpmCommand() {
         node.properties["__pnpm__"] = npmCommand.replace("npm run", "pnpm");
         node.properties["__bun__"] = npmCommand.replace("npm run", "bun");
       }
+
+      // npm init.
+      if (node.properties?.["__rawString__"]?.startsWith("npm init")) {
+        const npmCommand = node.properties["__rawString__"];
+
+        const hasYesFlag =
+          npmCommand.includes(" -y") || npmCommand.includes(" --yes");
+
+        node.properties["__npm__"] = npmCommand;
+        node.properties["__yarn__"] = hasYesFlag ? "yarn init -y" : "yarn init";
+        node.properties["__pnpm__"] = "pnpm init";
+        node.properties["__bun__"] = hasYesFlag ? "bun init -y" : "bun init";
+      }
     });
   };
 }

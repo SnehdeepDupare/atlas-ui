@@ -1,0 +1,31 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "dot-and-circle-mouse-trailer-js",
+  "title": "Dot And Circle Mouse Trailer",
+  "description": "A simple Lazy Dot and Circle Mouse Trailer using HTML, CSS and JavaScript.",
+  "dependencies": [],
+  "files": [
+    {
+      "path": "registry/js/dot-and-circle-mouse-trailer/index.html",
+      "content": "<!DOCTYPE html>\r\n<html lang=\"en\">\r\n  <head>\r\n    <meta charset=\"UTF-8\" />\r\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" />\r\n    <title>Dot and Circle Mouse Trailer - Atlas UI</title>\r\n    <link rel=\"stylesheet\" href=\"style.css\" />\r\n  </head>\r\n  <body>\r\n    <div class=\"trailer\" id=\"trailer\"></div>\r\n    <div class=\"trailer-outline\" id=\"trailer-outline\"></div>\r\n  </body>\r\n\r\n  <script type=\"module\" src=\"script.js\"></script>\r\n</html>\r\n",
+      "type": "registry:file",
+      "target": "~/dot-and-circle-mouse-trailer/index.html"
+    },
+    {
+      "path": "registry/js/dot-and-circle-mouse-trailer/style.css",
+      "content": "body {\r\n  margin: 0;\r\n  padding: 0;\r\n  height: 100vh;\r\n  width: 100%;\r\n  background-color: #18181b;\r\n}\r\n\r\n.trailer {\r\n  position: fixed;\r\n  width: 8px;\r\n  height: 8px;\r\n  background-color: white;\r\n  border-radius: 50%;\r\n  left: 0;\r\n  top: 0;\r\n  transform: translate(-50%, -50%);\r\n  pointer-events: none;\r\n  z-index: 1000;\r\n}\r\n\r\n.trailer-outline {\r\n  position: fixed;\r\n  left: 0;\r\n  top: 0;\r\n  transform: translate(-50%, -50%);\r\n  width: 80px;\r\n  height: 80px;\r\n  border: 2px solid white;\r\n  border-radius: 50%;\r\n  pointer-events: none;\r\n  z-index: 1000;\r\n}\r\n",
+      "type": "registry:file",
+      "target": "~/dot-and-circle-mouse-trailer/style.css"
+    },
+    {
+      "path": "registry/js/dot-and-circle-mouse-trailer/script.js",
+      "content": "const trailer = document.getElementById(\"trailer\");\r\nconst trailerOutline = document.getElementById(\"trailer-outline\");\r\n\r\ndocument.body.onpointermove = (e) => {\r\n  const { clientX, clientY } = e;\r\n\r\n  trailer.animate(\r\n    {\r\n      left: `${clientX}px`,\r\n      top: `${clientY}px`,\r\n    },\r\n    {\r\n      duration: 1000,\r\n      fill: \"forwards\",\r\n    }\r\n  );\r\n\r\n  trailerOutline.animate(\r\n    {\r\n      left: `${clientX}px`,\r\n      top: `${clientY}px`,\r\n    },\r\n    {\r\n      duration: 3000,\r\n      fill: \"forwards\",\r\n    }\r\n  );\r\n};\r\n",
+      "type": "registry:file",
+      "target": "~/dot-and-circle-mouse-trailer/script.js"
+    }
+  ],
+  "meta": {
+    "framework": "vanilla"
+  },
+  "type": "registry:file"
+}

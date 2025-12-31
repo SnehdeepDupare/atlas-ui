@@ -1,0 +1,33 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "scroll-based-text-reveal-js",
+  "title": "Scroll Based Text Reveal",
+  "description": "A text reveal effect which animates the opacity of the text as you scroll using HTML, CSS, JavaScript and Motion.",
+  "dependencies": [
+    "motion"
+  ],
+  "files": [
+    {
+      "path": "registry/js/scroll-based-text-reveal/index.html",
+      "content": "<!DOCTYPE html>\r\n<html lang=\"en\">\r\n  <head>\r\n    <meta charset=\"UTF-8\" />\r\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" />\r\n    <title>Scroll Based Text Reveal - Atlas UI</title>\r\n    <link rel=\"stylesheet\" href=\"style.css\" />\r\n  </head>\r\n  <body>\r\n    <div class=\"spacer\"></div>\r\n    <p class=\"reveal-text\" id=\"reveal-text\">\r\n      AtlasUI is an open-source library offering a suite of prebuilt animated\r\n      components for React, Next.js, and Vanilla JS.\r\n    </p>\r\n    <div class=\"spacer\"></div>\r\n  </body>\r\n\r\n  <script type=\"module\" src=\"script.js\"></script>\r\n</html>\r\n",
+      "type": "registry:file",
+      "target": "~/scroll-based-text-reveal/index.html"
+    },
+    {
+      "path": "registry/js/scroll-based-text-reveal/style.css",
+      "content": "body {\r\n  margin: 0;\r\n  padding: 0;\r\n  min-height: 100vh;\r\n  width: 100%;\r\n  background: #18181b;\r\n  display: flex;\r\n  flex-direction: column;\r\n  align-items: center;\r\n  justify-content: center;\r\n  color: #fff;\r\n}\r\n\r\n.spacer {\r\n  height: 100vh;\r\n}\r\n\r\n.reveal-text {\r\n  font-size: 3rem;\r\n  line-height: 1;\r\n  font-weight: bold;\r\n  text-align: center;\r\n  opacity: 0;\r\n  max-width: 64rem;\r\n}\r\n",
+      "type": "registry:file",
+      "target": "~/scroll-based-text-reveal/style.css"
+    },
+    {
+      "path": "registry/js/scroll-based-text-reveal/script.js",
+      "content": "import { animate, scroll } from \"motion\";\r\n\r\nconst revealText = document.getElementById(\"reveal-text\");\r\n\r\nscroll((progress) => animate(revealText, { opacity: progress }), {\r\n  target: revealText,\r\n  offset: [\"start 0.8\", \"start 0.3\"],\r\n});\r\n",
+      "type": "registry:file",
+      "target": "~/scroll-based-text-reveal/script.js"
+    }
+  ],
+  "meta": {
+    "framework": "vanilla"
+  },
+  "type": "registry:file"
+}

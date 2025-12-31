@@ -7,6 +7,9 @@ import { Registry } from "shadcn/schema";
 import { siteConfig } from "../config/site";
 import { registry } from "../registry/index";
 
+/**
+ * IMPORTANT: This index is used by the Next.js site and MUST ONLY contain React-importable registry items. Vanilla HTML/CSS/JS registry entries are intentionally excluded.
+ */
 async function buildRegistryIndex() {
   let index = `/* eslint-disable @typescript-eslint/ban-ts-comment */
 /* eslint-disable @typescript-eslint/no-explicit-any */
@@ -16,7 +19,12 @@ async function buildRegistryIndex() {
 import * as React from "react"
 
 export const Index: Record<string, any> = {`;
-  for (const item of registry.items) {
+  const indexableItems = registry.items.filter((item) => {
+    // Exclude vanilla / non-react registry entries
+    return item.meta?.framework !== "vanilla";
+  });
+
+  for (const item of indexableItems) {
     const resolveFiles = item.files?.map((file) => `registry/${file.path}`);
     if (!resolveFiles) {
       continue;
