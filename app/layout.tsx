@@ -1,5 +1,6 @@
 import { Inter } from "next/font/google";
 import { Analytics } from "@vercel/analytics/next";
+import { Provider as JotaiProvider } from "jotai";
 
 import "@/styles/globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
@@ -69,23 +70,25 @@ export default function RootLayout({
       <body
         className={`${inter.className} antialiased min-h-svh flex flex-col bg-background selection:bg-emerald-200/50 selection:text-emerald-900 dark:selection:bg-emerald-400/10 dark:selection:text-emerald-300`}
       >
-        <PostHogProvider>
-          <ThemeProvider
-            attribute="class"
-            defaultTheme="dark"
-            enableSystem
-            disableTransitionOnChange
-          >
-            <LenisProvider>
-              <TooltipProvider>
-                <Header />
-                <main className="flex flex-1 flex-col">{children}</main>
-                <Footer />
-              </TooltipProvider>
-              <Analytics />
-            </LenisProvider>
-          </ThemeProvider>
-        </PostHogProvider>
+        <JotaiProvider>
+          <PostHogProvider>
+            <ThemeProvider
+              attribute="class"
+              defaultTheme="dark"
+              enableSystem
+              disableTransitionOnChange
+            >
+              <LenisProvider>
+                <TooltipProvider>
+                  <Header />
+                  <main className="flex flex-1 flex-col">{children}</main>
+                  <Footer />
+                </TooltipProvider>
+                <Analytics />
+              </LenisProvider>
+            </ThemeProvider>
+          </PostHogProvider>
+        </JotaiProvider>
       </body>
     </html>
   );
