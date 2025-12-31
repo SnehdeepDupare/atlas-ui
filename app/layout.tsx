@@ -9,6 +9,7 @@ import { PostHogProvider } from "@/components/posthog-provider";
 import { siteConfig } from "@/config/site";
 import { Metadata } from "next";
 import { LenisProvider } from "@/components/lenis-provider";
+import { TooltipProvider } from "@/components/ui/tooltip";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -76,9 +77,11 @@ export default function RootLayout({
             disableTransitionOnChange
           >
             <LenisProvider>
-              <Header />
-              <main className="flex flex-1 flex-col">{children}</main>
-              <Footer />
+              <TooltipProvider>
+                <Header />
+                <main className="flex flex-1 flex-col">{children}</main>
+                <Footer />
+              </TooltipProvider>
               <Analytics />
             </LenisProvider>
           </ThemeProvider>
