@@ -11,7 +11,7 @@ export const InstallationTabs = ({
   const [config, setConfig] = useConfig();
 
   const installationType = React.useMemo(() => {
-    return config.installationType || "CLI";
+    return config.installationType || "cli";
   }, [config]);
 
   return (
