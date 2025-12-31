@@ -4,6 +4,7 @@ import * as React from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { useMDXComponent } from "next-contentlayer2/hooks";
+import { ComponentsList } from "./components-list";
 
 import { cn, firaCode } from "@/lib/utils";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "./ui/tabs";
@@ -216,6 +217,7 @@ const components = {
   ComponentSource,
   UsageTabs,
   InstallationTabs,
+  ComponentsList,
   Step: ({ className, ...props }: React.ComponentProps<"h3">) => (
     <h3
       className={cn(

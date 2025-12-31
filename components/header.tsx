@@ -66,7 +66,7 @@ export const Header = () => {
             </Link>
 
             <Link
-              href="/docs/components/animated-mobile-navbar"
+              href="/docs/components"
               className={cn(
                 "transition-colors hover:text-foreground/80 hidden md:block",
                 pathname?.startsWith("/docs/components")

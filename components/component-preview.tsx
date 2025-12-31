@@ -3,9 +3,10 @@
 
 import * as React from "react";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import ComponentWrapper from "./component-wrapper";
+import ComponentWrapper from "@/components/component-wrapper";
 
 import { Index } from "@/registry/__index__";
+import { OpenInV0Button } from "@/components/open-in-v0-button";
 
 interface ComponentPreviewProps extends React.HTMLAttributes<HTMLDivElement> {
   name: string;
@@ -52,6 +53,11 @@ export function ComponentPreview({ name, children }: ComponentPreviewProps) {
         </TabsList>
         <TabsContent value="preview" className="relative rounded-md">
           <ComponentWrapper>
+            <div className="absolute top-2 right-2 z-10">
+              <OpenInV0Button
+                url={`https://atlasui.vercel.app/r/${name}.json`}
+              />
+            </div>
             <div className="min-h-80 flex items-center justify-center flex-wrap gap-y-3 w-full mx-auto lg:px-10 pb-7 mt-1.5">
               <React.Suspense
                 fallback={

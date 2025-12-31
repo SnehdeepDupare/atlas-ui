@@ -17,7 +17,7 @@ export const docsConfig: DocsConfig = {
     },
     {
       title: "Components",
-      href: "/docs/components/animated-mobile-navbar",
+      href: "/docs/components",
     },
   ],
   sidebarNav: [
@@ -30,8 +30,18 @@ export const docsConfig: DocsConfig = {
           items: [],
         },
         {
+          title: "Components",
+          href: "/docs/components",
+          items: [],
+        },
+        {
           title: "Installation",
           href: "/docs/installation",
+          items: [],
+        },
+        {
+          title: "Changelog",
+          href: "/docs/changelog",
           items: [],
         },
       ],
