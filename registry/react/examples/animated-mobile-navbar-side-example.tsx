@@ -1,0 +1,30 @@
+import {
+  AnimatedMobileNavbar,
+  AnimatedMobileNavbarContent,
+  AnimatedMobileNavbarLink,
+  AnimatedMobileNavbarTrigger,
+} from "@/registry/react/atlasui/animated-mobile-navbar";
+import { Button } from "@/components/ui/button";
+
+const SIDES = ["left", "top", "right"] as const;
+
+export const AnimatedMobileNavbarSidesExample = () => {
+  return (
+    <div className="flex gap-2">
+      {SIDES.map((side) => (
+        <AnimatedMobileNavbar key={side}>
+          <AnimatedMobileNavbarTrigger>
+            <Button variant="outline">{side}</Button>
+          </AnimatedMobileNavbarTrigger>
+          <AnimatedMobileNavbarContent side={side}>
+            <AnimatedMobileNavbarLink label="Home" href="#" />
+            <AnimatedMobileNavbarLink label="About" href="#" />
+            <AnimatedMobileNavbarLink label="Services" href="#" />
+            <AnimatedMobileNavbarLink label="Contact Us" href="#" />
+            <AnimatedMobileNavbarLink label="Pricing" href="#" />
+          </AnimatedMobileNavbarContent>
+        </AnimatedMobileNavbar>
+      ))}
+    </div>
+  );
+};

@@ -3,9 +3,7 @@ title: Hacker Text
 description: A text animation that scrambles letters before revealing the final text.
 ---
 
-<ComponentPreview
-  name="hacker-text-demo"
-/>
+<ComponentPreview name="hacker-text-demo" />
 
 ## Installation
 
@@ -13,11 +11,23 @@ description: A text animation that scrambles letters before revealing the final 
 
 <TabsContent value="React/Next">
 
+<InstallationTabs>
+
+<TabsContent value="cli">
+
+```bash
+npx shadcn@latest add https://atlasui.vercel.app/r/hacker-text.json
+```
+
+</TabsContent>
+
+<TabsContent value="manual">
+
 <Steps>
 
 <Step>Copy and paste the following code into your project.</Step>
 
-<ComponentSource name="hacker-text" filePath="components/atlas_ui/hacker-text.tsx" />
+<ComponentSource name="hacker-text" filePath="components/hacker-text.tsx" />
 
 <Step>Update the import paths to match your project setup.</Step>
 
@@ -25,7 +35,23 @@ description: A text animation that scrambles letters before revealing the final 
 
 </TabsContent>
 
+</InstallationTabs>
+
+</TabsContent>
+
 <TabsContent value="JavaScript">
+
+<InstallationTabs>
+
+<TabsContent value="cli">
+
+```bash
+npx shadcn@latest add https://atlasui.vercel.app/r/hacker-text-js.json
+```
+
+</TabsContent>
+
+<TabsContent value="manual">
 
 <Steps>
 
@@ -37,7 +63,7 @@ description: A text animation that scrambles letters before revealing the final 
 
 <Step>Add `style.css`</Step>
 
->Styles for this component are optional, you can use your own styles or modify these according to your needs. The magic happens in the JavaScript file.
+> Styles for this component are optional, you can use your own styles or modify these according to your needs. The magic happens in the JavaScript file.
 
 ```css
 body {
@@ -121,6 +147,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
 </TabsContent>
 
+</InstallationTabs>
+
+</TabsContent>
+
 </UsageTabs>
 
 ## Usage
@@ -130,7 +160,7 @@ document.addEventListener("DOMContentLoaded", () => {
 <TabsContent value="React/Next">
 
 ```tsx
-import { HackerText } from "@/components/atlas_ui/hacker-text";
+import { HackerText } from "@/components/hacker-text";
 ```
 
 ```tsx

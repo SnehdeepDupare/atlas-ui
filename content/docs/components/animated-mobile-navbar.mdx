@@ -3,9 +3,7 @@ title: Animated Mobile Navbar
 description: A simple animated mobile navbar component.
 ---
 
-<ComponentPreview
-  name="animated-mobile-navbar-demo"
-/>
+<ComponentPreview name="animated-mobile-navbar-demo" />
 
 ## Installation
 
@@ -13,18 +11,32 @@ description: A simple animated mobile navbar component.
 
 <TabsContent value="React/Next">
 
+<InstallationTabs>
+
+<TabsContent value="cli">
+
+```bash
+npx shadcn@latest add https://atlasui.vercel.app/r/animated-mobile-navbar.json
+```
+
+</TabsContent>
+
+<TabsContent value="manual">
+
 <Steps>
 
 <Step>Install the following dependencies:</Step>
 
 ```bash
 npm install motion lucide-react
-npx shadcn@latest add button
 ```
 
 <Step>Copy and paste the following code into your project.</Step>
 
-<ComponentSource name="animated-mobile-navbar" filePath="components/atlas_ui/animated-mobile-navbar.tsx" />
+<ComponentSource
+  name="animated-mobile-navbar"
+  filePath="components/animated-mobile-navbar.tsx"
+/>
 
 <Step>Update the import paths to match your project setup.</Step>
 
@@ -32,21 +44,39 @@ npx shadcn@latest add button
 
 </TabsContent>
 
+</InstallationTabs>
+
+</TabsContent>
+
 <TabsContent value="JavaScript">
+
+<InstallationTabs>
+
+<TabsContent value="cli">
+
+```bash
+npx shadcn@latest add https://atlasui.vercel.app/r/animated-mobile-navbar-js.json
+```
+
+</TabsContent>
+
+<TabsContent value="manual">
 
 <Steps>
 
-<Step>Add the following script to your project head section to use Motion library.</Step>
+<Step>
+ Install the following dependencies:
+</Step>
 
-```html
-<script src="https://cdn.jsdelivr.net/npm/motion@latest/dist/motion.js"></script>
+```bash
+npm install motion
 ```
 
 <Step>Copy and paste the following code into your project.</Step>
 
 Structure in your html file. Place the button with the id `menu-trigger` in the header to trigger the menu.
 
-```html 
+```html
 <button id="menu-trigger" class="menu-trigger">☰</button>
 
 <div id="mobile-menu" class="mobile-menu">
@@ -135,7 +165,7 @@ body {
 <Step>Add `script.js`</Step>
 
 ```js
-const { animate, stagger } = Motion;
+import { animate, stagger } from "motion";
 
 document.addEventListener("DOMContentLoaded", () => {
   const menuTrigger = document.getElementById("menu-trigger");
@@ -195,6 +225,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
 </TabsContent>
 
+</InstallationTabs>
+
+</TabsContent>
+
 </UsageTabs>
 
 ## Usage
@@ -209,7 +243,7 @@ import {
   AnimatedMobileNavbarContent,
   AnimatedMobileNavbarLink,
   AnimatedMobileNavbarTrigger,
-} from "@/components/atlas_ui/animated-mobile-navbar";
+} from "@/components/animated-mobile-navbar";
 ```
 
 ```tsx
@@ -249,6 +283,7 @@ Place the following code in the body to create the animated menu.
   </nav>
 </div>
 ```
+
 > **NOTE:** The `class` and `id` value must match with your CSS and JavaScript codes respectively.
 
 </TabsContent>
@@ -257,9 +292,9 @@ Place the following code in the body to create the animated menu.
 
 ## Props
 
-| Prop        | Type     | Default | Description                                   |
-| ----------- | -------- | ------- | --------------------------------------------- |
-| `side`      | `string` | `"top"` | Direction from where the animation will start |
+| Prop   | Type     | Default | Description                                   |
+| ------ | -------- | ------- | --------------------------------------------- |
+| `side` | `string` | `"top"` | Direction from where the animation will start |
 
 ## Examples
 

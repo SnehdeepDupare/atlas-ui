@@ -1,0 +1,17 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "dot-and-circle-mouse-trailer",
+  "title": "Dot And Circle Mouse Trailer",
+  "description": "A simple Lazy Dot and Circle Mouse Trailer",
+  "dependencies": [
+    "motion"
+  ],
+  "files": [
+    {
+      "path": "registry/react/atlasui/dot-and-circle-mouse-trailer.tsx",
+      "content": "\"use client\";\n\nimport React, { useEffect, useState } from \"react\";\nimport { motion, useMotionValue, useSpring } from \"motion/react\";\n\nexport const DotAndCircleMouseTrailer = () => {\n  const [isVisible, setIsVisible] = useState(false);\n\n  // Cursor Dot\n  const mouse = {\n    x: useMotionValue(0),\n    y: useMotionValue(0),\n  };\n\n  const mouseMove = (e: any) => {\n    const { clientX, clientY } = e;\n    mouse.x.set(clientX - 4);\n    mouse.y.set(clientY - 4);\n    setIsVisible(true);\n  };\n\n  const smoothOptions = {\n    damping: 20,\n    stiffness: 300,\n    mass: 0.5,\n  };\n\n  const smoothMouse = {\n    x: useSpring(mouse.x, smoothOptions),\n    y: useSpring(mouse.y, smoothOptions),\n  };\n\n  //   Cursor Outline\n  const mouseOutline = {\n    _x: useMotionValue(0),\n    _y: useMotionValue(0),\n  };\n\n  const outlineMouse = (e: any) => {\n    const { clientX, clientY } = e;\n    mouseOutline._x.set(clientX - 40);\n    mouseOutline._y.set(clientY - 40);\n  };\n\n  const outlineOptions = {\n    damping: 10,\n    stiffness: 50,\n    mass: 0.5,\n  };\n  const smoothOutline = {\n    _x: useSpring(mouseOutline._x, outlineOptions),\n    _y: useSpring(mouseOutline._y, outlineOptions),\n  };\n\n  useEffect(() => {\n    window.addEventListener(\"mousemove\", mouseMove);\n    window.addEventListener(\"mousemove\", outlineMouse);\n\n    return () => {\n      window.removeEventListener(\"mousemove\", mouseMove);\n      window.removeEventListener(\"mousemove\", outlineMouse);\n    };\n  }, []);\n\n  return (\n    <motion.div\n      className={`${\n        isVisible ? \"hidden md:block\" : \"hidden\"\n      } h-20 w-20 fixed border rounded-full top-0 left-0 pointer-events-none z-50 border-black dark:border-white`}\n      style={{\n        left: smoothOutline._x,\n        top: smoothOutline._y,\n      }}\n    >\n      <motion.div\n        className=\"hidden md:block h-2 w-2 rounded-full bg-black dark:bg-white fixed top-0 left-0 pointer-events-none\"\n        style={{\n          left: smoothMouse.x,\n          top: smoothMouse.y,\n        }}\n      />\n    </motion.div>\n  );\n};\n",
+      "type": "registry:component"
+    }
+  ],
+  "type": "registry:component"
+}

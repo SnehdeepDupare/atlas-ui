@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "scroll-based-word-reveal-demo",
+  "title": "Scroll Based Word Reveal Demo",
+  "description": "Example showcasing a word reveal effect which animates the opacity of the word as you scroll.",
+  "registryDependencies": [
+    "https://atlasui.vercel.app/r/scroll-based-word-reveal.json"
+  ],
+  "files": [
+    {
+      "path": "registry/react/examples/scroll-based-word-reveal-demo.tsx",
+      "content": "import { ScrollBasedWordReveal } from \"@/registry/react/atlasui/scroll-based-word-reveal\";\n\nexport const ScrollBasedWordRevealDemo = () => {\n  return (\n    <ScrollBasedWordReveal text=\"AtlasUI is an open-source library offering a suite of prebuilt animated components for React, Next.js, and Vanilla JS.\" />\n  );\n};\n",
+      "type": "registry:example",
+      "target": "components/scroll-based-word-reveal-demo.tsx"
+    }
+  ],
+  "type": "registry:example"
+}

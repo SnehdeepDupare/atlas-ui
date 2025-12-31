@@ -1,0 +1,17 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "scroll-based-character-reveal",
+  "title": "Scroll Based Character Reveal",
+  "description": "A text reveal effect which progressively reveals text character by character as you scroll.",
+  "dependencies": [
+    "motion"
+  ],
+  "files": [
+    {
+      "path": "registry/react/atlasui/scroll-based-character-reveal.tsx",
+      "content": "\"use client\";\n\nimport { useRef } from \"react\";\nimport { motion, MotionValue, useScroll, useTransform } from \"motion/react\";\n\ninterface ScrollBasedCharacterRevealProps {\n  text: string;\n}\n\ninterface WordProps {\n  children: string;\n  scrollYProgress: MotionValue<number>;\n  range: [number, number];\n}\n\ninterface CharacterProps {\n  children: string;\n  scrollYProgress: MotionValue<number>;\n  range: [number, number];\n}\n\nexport const ScrollBasedCharacterReveal = ({\n  text,\n}: ScrollBasedCharacterRevealProps) => {\n  const container = useRef(null);\n  const { scrollYProgress } = useScroll({\n    target: container,\n    offset: [\"start 0.8\", \"start 0.3\"],\n  });\n\n  const words = text.split(\" \");\n\n  return (\n    <div className=\"flex flex-col items-center justify-center \">\n      <div className=\"h-[50vh]\" />\n      <p\n        ref={container}\n        className=\"text-5xl font-bold max-w-5xl text-center flex flex-wrap\"\n      >\n        {words.map((word, i) => {\n          const start = i / words.length;\n          const end = (start + i) / words.length;\n\n          return (\n            <Word\n              key={i}\n              range={[start, end]}\n              scrollYProgress={scrollYProgress}\n            >\n              {word}\n            </Word>\n          );\n        })}\n      </p>\n      <div className=\"h-[50vh]\" />\n    </div>\n  );\n};\n\nconst Word = ({ children, scrollYProgress, range }: WordProps) => {\n  const characters = children.split(\"\");\n  const amount = range[1] - range[0];\n  const step = amount / children.length;\n\n  return (\n    <span className=\"mr-2 mt-1 relative\">\n      {characters.map((character, i) => {\n        const start = range[0] + step * i;\n        const end = range[0] + step * (i + 1);\n        return (\n          <Character\n            key={i}\n            range={[start, end]}\n            scrollYProgress={scrollYProgress}\n          >\n            {character}\n          </Character>\n        );\n      })}\n    </span>\n  );\n};\n\nconst Character = ({ children, scrollYProgress, range }: CharacterProps) => {\n  const opacity = useTransform(scrollYProgress, range, [0, 1]);\n  return (\n    <span className=\"relative\">\n      <span className=\"absolute opacity-10\">{children}</span>\n      <motion.span style={{ opacity }}>{children}</motion.span>\n    </span>\n  );\n};\n",
+      "type": "registry:component"
+    }
+  ],
+  "type": "registry:component"
+}

@@ -1,0 +1,31 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "shiny-button",
+  "title": "Shiny Button",
+  "description": "A shiny button with a sleek animation effect.",
+  "dependencies": [
+    "motion"
+  ],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "registry/react/atlasui/shiny-button.tsx",
+      "content": "\"use client\";\n\nimport { cn } from \"@/lib/utils\";\nimport { motion, MotionProps } from \"motion/react\";\nimport { ButtonHTMLAttributes } from \"react\";\n\ntype MergedProps = Omit<\n  ButtonHTMLAttributes<HTMLButtonElement>,\n  keyof MotionProps\n> &\n  MotionProps;\n\ninterface ShinyButtonProps extends MergedProps {\n  children: React.ReactNode;\n  className?: string;\n}\n\nexport const ShinyButton = ({\n  children,\n  className,\n  ...props\n}: ShinyButtonProps) => {\n  return (\n    <motion.button\n      className={cn(\"px-6 py-2 rounded-md relative radial-gradient\", className)}\n      initial={{ \"--x\": \"100%\", scale: 1 }}\n      animate={{ \"--x\": \"-100%\" }}\n      whileTap={{ scale: 0.97 }}\n      transition={{\n        repeat: Infinity,\n        repeatType: \"loop\",\n        repeatDelay: 1,\n        type: \"spring\",\n        stiffness: 20,\n        damping: 15,\n        mass: 2,\n        scale: {\n          type: \"spring\",\n          stiffness: 10,\n          damping: 5,\n          mass: 0.1,\n        },\n      }}\n      {...props}\n    >\n      <span className=\"text-neutral-100 tracking-wide font-light h-full w-full block relative linear-mask\">\n        {children}\n      </span>\n      <span className=\"block absolute inset-0 rounded-md p-px linear-overlay\" />\n    </motion.button>\n  );\n};\n",
+      "type": "registry:ui"
+    }
+  ],
+  "css": {
+    ".radial-gradient": {
+      "background": "radial-gradient(circle at 50% 0%, rgba(250, 250, 250, 0.05) 0%, transparent 60%), rgba(15, 15, 15, 1)"
+    },
+    ".linear-mask": {
+      "mask-image": "linear-gradient(-75deg, white calc(var(--x) + 20%), transparent calc(var(--x) + 30%), white calc(var(--x) + 100%))"
+    },
+    ".linear-overlay": {
+      "background-image": "linear-gradient(-75deg, rgba(255,255,255,0.1) calc(var(--x) + 20%), rgba(255,255,255,0.5) calc(var(--x) + 25%), rgba(255,255,255,0.1) calc(var(--x) + 100%))",
+      "mask": "linear-gradient(black, black) content-box, linear-gradient(black, black)",
+      "mask-composite": "exclude"
+    }
+  },
+  "type": "registry:ui"
+}

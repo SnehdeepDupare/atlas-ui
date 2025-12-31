@@ -1,0 +1,33 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "reveal-effect-js",
+  "title": "Reveal Effect",
+  "description": "Animates content into view with a vertical slide, blur fade-in, and clipping reveal effect using HTML, CSS, JavaScript and Motion.",
+  "dependencies": [
+    "motion"
+  ],
+  "files": [
+    {
+      "path": "registry/js/reveal-effect/index.html",
+      "content": "<!DOCTYPE html>\r\n<html lang=\"en\">\r\n  <head>\r\n    <meta charset=\"UTF-8\" />\r\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" />\r\n    <title>Reveal Effect - Atlas UI</title>\r\n    <link rel=\"stylesheet\" href=\"style.css\" />\r\n  </head>\r\n  <body>\r\n    <div\r\n      id=\"reveal-effect\"\r\n      data-speed=\"medium\"\r\n      data-delay=\"0.2\"\r\n      data-translatey=\"40\"\r\n    >\r\n      This content fades in, unblurs, and slides up when visible.\r\n    </div>\r\n\r\n    <div id=\"reveal-effect\" data-speed=\"fast\">\r\n      Slower animation with more translateY.\r\n    </div>\r\n\r\n    <div id=\"reveal-effect\" data-speed=\"fast\" data-translatey=\"20\">\r\n      Fast and snappy reveal effect.\r\n    </div>\r\n\r\n    <button id=\"reveal-effect\" data-speed=\"fast\">Magic</button>\r\n  </body>\r\n\r\n  <script type=\"module\" src=\"script.js\"></script>\r\n</html>\r\n",
+      "type": "registry:file",
+      "target": "~/reveal-effect/index.html"
+    },
+    {
+      "path": "registry/js/reveal-effect/style.css",
+      "content": "* {\r\n  margin: 0;\r\n  padding: 0;\r\n}\r\n\r\nbody {\r\n  background-color: #18181b;\r\n  color: #fff;\r\n  display: flex;\r\n  flex-direction: column;\r\n  gap: 2rem;\r\n  align-items: center;\r\n  justify-content: center;\r\n  min-height: 100svh;\r\n  font-size: x-large;\r\n}\r\n",
+      "type": "registry:file",
+      "target": "~/reveal-effect/style.css"
+    },
+    {
+      "path": "registry/js/reveal-effect/script.js",
+      "content": "import { animate, inView } from \"motion\";\r\n\r\nconst speedDurations = {\r\n  slow: 1.6,\r\n  medium: 1,\r\n  fast: 0.5,\r\n};\r\n\r\ndocument.querySelectorAll(\"#reveal-effect\").forEach((el) => {\r\n  const delay = parseFloat(el.dataset.delay) || 0;\r\n  const speed = el.dataset.speed || \"medium\";\r\n  const translateY = parseFloat(el.dataset.translatey) || 0;\r\n\r\n  el.style.opacity = \"0\";\r\n  el.style.filter = \"blur(12px)\";\r\n  el.style.clipPath = \"inset(-5% 100% -5% 0)\";\r\n  el.style.transform = `translateY(${translateY}px)`;\r\n\r\n  inView(el, () => {\r\n    animate(\r\n      el,\r\n      {\r\n        opacity: 1,\r\n        filter: \"blur(0px)\",\r\n        clipPath: \"inset(-5% 0% -5% 0)\",\r\n        transform: \"translateY(0)\",\r\n      },\r\n      {\r\n        duration: speedDurations[speed],\r\n        easing: \"ease-in-out\",\r\n        delay,\r\n      }\r\n    );\r\n  });\r\n});\r\n",
+      "type": "registry:file",
+      "target": "~/reveal-effect/script.js"
+    }
+  ],
+  "meta": {
+    "framework": "vanilla"
+  },
+  "type": "registry:file"
+}

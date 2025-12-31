@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Project Gallery - Atlas UI</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- Project Gallery Section -->
+    <section id="project-gallery" class="project-gallery">
+      <a href="#" class="gallery-item" data-index="0">
+        <div
+          class="project-image-container"
+          data-index="0"
+          style="background-color: #efe8d3"
+        >
+          <img src="https://atlasui.vercel.app/og.png" alt="Atlas UI" />
+        </div>
+        <h2>Atlas UI</h2>
+        <p>Frontend</p>
+      </a>
+
+      <a href="#" class="gallery-item" data-index="1">
+        <div
+          class="project-image-container"
+          data-index="1"
+          style="background-color: #706d63"
+        >
+          <img
+            src="https://atlasui.vercel.app/assets/portfolio.png"
+            alt="Portfolio"
+          />
+        </div>
+        <h2>Portfolio</h2>
+        <p>Design & Development</p>
+      </a>
+
+      <a href="#" class="gallery-item" data-index="2">
+        <div
+          class="project-image-container"
+          data-index="2"
+          style="background-color: #fafbfc"
+        >
+          <img
+            src="https://images.unsplash.com/photo-1540652980807-db4655e8fa60?q=80&w=2130&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+            alt="Tokyo Art"
+          />
+        </div>
+        <h2>Tokyo Art</h2>
+        <p>Photography</p>
+      </a>
+
+      <a href="#" class="gallery-item" data-index="3">
+        <div
+          class="project-image-container"
+          data-index="3"
+          style="background-color: #404040"
+        >
+          <img
+            src="https://images.unsplash.com/photo-1515705576963-95cad62945b6?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+            alt="Milky Way"
+          />
+        </div>
+        <h2>Milky Way</h2>
+        <p>Photography</p>
+      </a>
+    </section>
+
+    <!-- Interactive Modal Section -->
+    <section id="interactive-modal" class="interactive-modal">
+      <!-- Modal Container -->
+      <div class="modal" id="modal">
+        <div class="modal-images" id="modal-images">
+          <div
+            class="modal-image"
+            data-index="0"
+            style="background-color: #efe8d3"
+          >
+            <img src="https://atlasui.vercel.app/og.png" alt="Atlas UI" />
+          </div>
+          <div
+            class="modal-image"
+            data-index="1"
+            style="background-color: #706d63"
+          >
+            <img
+              src="https://atlasui.vercel.app/assets/portfolio.png"
+              alt="Portfolio"
+            />
+          </div>
+          <div
+            class="modal-image"
+            data-index="2"
+            style="background-color: #fafbfc"
+          >
+            <img
+              src="https://images.unsplash.com/photo-1540652980807-db4655e8fa60?q=80&w=2130&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+              alt="Tokyo Art"
+            />
+          </div>
+          <div
+            class="modal-image"
+            data-index="3"
+            style="background-color: #404040"
+          >
+            <img
+              src="https://images.unsplash.com/photo-1515705576963-95cad62945b6?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+              alt="Milky Way"
+            />
+          </div>
+        </div>
+      </div>
+
+      <!-- Cursor Elements -->
+      <div class="cursor" id="cursor"></div>
+      <div class="cursor-label" id="cursor-label">View</div>
+    </section>
+  </body>
+  <script type="module" src="script.js"></script>
+</html>

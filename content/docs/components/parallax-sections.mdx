@@ -3,15 +3,25 @@ title: Parallax Sections
 description: A simple Parallax effect using Motion.
 ---
 
-<ComponentPreview
-  name="parallax-sections-demo"
-/>
+<ComponentPreview name="parallax-sections-demo" />
 
 ## Installation
 
 <UsageTabs>
 
 <TabsContent value="React/Next">
+
+<InstallationTabs>
+
+<TabsContent value="cli">
+
+```bash
+npx shadcn@latest add https://atlasui.vercel.app/r/parallax-sections.json
+```
+
+</TabsContent>
+
+<TabsContent value="manual">
 
 <Steps>
 
@@ -23,7 +33,10 @@ npm install motion
 
 <Step>Copy and paste the following code into your project.</Step>
 
-<ComponentSource name="parallax-sections" filePath="components/atlas_ui/parallax-sections.tsx" />
+<ComponentSource
+  name="parallax-sections"
+  filePath="components/parallax-sections.tsx"
+/>
 
 <Step>Update the import paths to match your project setup.</Step>
 
@@ -31,14 +44,32 @@ npm install motion
 
 </TabsContent>
 
+</InstallationTabs>
+
+</TabsContent>
+
 <TabsContent value="JavaScript">
+
+<InstallationTabs>
+
+<TabsContent value="cli">
+
+```bash
+npx shadcn@latest add https://atlasui.vercel.app/r/parallax-sections-js.json
+```
+
+</TabsContent>
+
+<TabsContent value="manual">
 
 <Steps>
 
-<Step>Add the following script to your project head section to use Motion library.</Step>
+<Step>
+ Install the following dependencies:
+</Step>
 
-```html
-<script src="https://cdn.jsdelivr.net/npm/motion@latest/dist/motion.js"></script>
+```bash
+npm install motion
 ```
 
 <Step>Copy and paste the following code into your project.</Step>
@@ -107,7 +138,7 @@ h1 {
 <Step>Add `script.js` </Step>
 
 ```js
-const { scroll, transform } = Motion;
+import { scroll, transform } from "motion";
 
 const container = document.getElementById("parallax-container");
 const section1 = document.querySelector(".section1");
@@ -134,5 +165,8 @@ scroll(
 
 </TabsContent>
 
-</UsageTabs>
+</InstallationTabs>
 
+</TabsContent>
+
+</UsageTabs>

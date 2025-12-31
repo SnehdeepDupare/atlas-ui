@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "scroll-based-character-reveal-demo",
+  "title": "Scroll Based Character Reveal Demo",
+  "description": "Example showcasing a character reveal effect which animates the opacity of the character as you scroll.",
+  "registryDependencies": [
+    "https://atlasui.vercel.app/r/scroll-based-character-reveal.json"
+  ],
+  "files": [
+    {
+      "path": "registry/react/examples/scroll-based-character-reveal-demo.tsx",
+      "content": "import { ScrollBasedCharacterReveal } from \"@/registry/react/atlasui/scroll-based-character-reveal\";\n\nexport const ScrollBasedCharacterRevealDemo = () => {\n  return (\n    <ScrollBasedCharacterReveal text=\"AtlasUI is an open-source library offering a suite of prebuilt animated components for React, Next.js, and Vanilla JS.\" />\n  );\n};\n",
+      "type": "registry:example",
+      "target": "components/scroll-based-character-reveal-demo.tsx"
+    }
+  ],
+  "type": "registry:example"
+}

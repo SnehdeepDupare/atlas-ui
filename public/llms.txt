@@ -1,0 +1,34 @@
+# Atlas UI
+
+> Beautiful, Open Source, Motion powered components for React, Next.js, and Vanilla JS. Accelerate development, inspire creativity, and bring interfaces to life with seamless animations.
+
+This file provides LLM-friendly entry points to documentation and examples.
+
+## Components
+
+- [Shiny Button](https://atlasui.vercel.app/docs/components/shiny-button): A shiny button with a sleek animation effect.
+
+## Examples
+
+- [Animated Mobile Navbar Demo](https://github.com/SnehdeepDupare/atlas-ui/blob/main/react/examples/animated-mobile-navbar-demo.tsx): Example usage
+- [Animated Mobile Navbar Side Example](https://github.com/SnehdeepDupare/atlas-ui/blob/main/react/examples/animated-mobile-navbar-side-example.tsx): Example usage
+- [Project Gallery Demo](https://github.com/SnehdeepDupare/atlas-ui/blob/main/react/examples/project-gallery-demo.tsx): Example usage
+- [Parallax Sections Demo](https://github.com/SnehdeepDupare/atlas-ui/blob/main/react/examples/parallax-sections-demo.tsx): Example usage
+- [Shiny Button Demo](https://github.com/SnehdeepDupare/atlas-ui/blob/main/react/examples/shiny-button-demo.tsx): Example usage
+- [Dot and Circle Mouse Trailer Demo](https://github.com/SnehdeepDupare/atlas-ui/blob/main/react/examples/dot-and-circle-mouse-trailer-demo.tsx): Example usage
+- [Blob Mouse Trailer Demo](https://github.com/SnehdeepDupare/atlas-ui/blob/main/react/examples/blob-mouse-trailer-demo.tsx): Example usage
+- [Blend Mouse Trailer Demo](https://github.com/SnehdeepDupare/atlas-ui/blob/main/react/examples/blend-mouse-trailer-demo.tsx): Example usage
+- [Hacker Text Demo](https://github.com/SnehdeepDupare/atlas-ui/blob/main/react/examples/hacker-text-demo.tsx): Example usage
+- [Scroll Based Text Reveal Demo](https://github.com/SnehdeepDupare/atlas-ui/blob/main/react/examples/scroll-based-text-reveal-demo.tsx): Example usage
+- [Scroll Based Word Reveal Demo](https://github.com/SnehdeepDupare/atlas-ui/blob/main/react/examples/scroll-based-word-reveal-demo.tsx): Example usage
+- [Scroll Based Character Reveal Demo](https://github.com/SnehdeepDupare/atlas-ui/blob/main/react/examples/scroll-based-character-reveal-demo.tsx): Example usage
+- [Reveal Effect Demo](https://github.com/SnehdeepDupare/atlas-ui/blob/main/react/examples/reveal-effect-demo.tsx): Example usage
+- [Reveal Effect Example 1](https://github.com/SnehdeepDupare/atlas-ui/blob/main/react/examples/reveal-effect-speed-example.tsx): Example usage
+- [Reveal Effect Example 2](https://github.com/SnehdeepDupare/atlas-ui/blob/main/react/examples/reveal-effect-delay-example.tsx): Example usage
+- [Reveal Effect Example 3](https://github.com/SnehdeepDupare/atlas-ui/blob/main/react/examples/reveal-effect-translate-y-example.tsx): Example usage
+- [Loki Text Effect Demo](https://github.com/SnehdeepDupare/atlas-ui/blob/main/react/examples/loki-text-effect-demo.tsx): Example usage
+
+## Optional
+
+- [Repository](https://github.com/SnehdeepDupare/atlas-ui): Source code and issues
+- [Sitemap](https://atlasui.vercel.app/sitemap.xml): Indexable pages

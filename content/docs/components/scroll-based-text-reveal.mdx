@@ -3,9 +3,7 @@ title: Scroll Based Text Reveal
 description: A text reveal effect which animates the opacity of the text as you scroll.
 ---
 
-<ComponentPreview
-  name="scroll-based-text-reveal-demo"
-/>
+<ComponentPreview name="scroll-based-text-reveal-demo" />
 
 ## Installation
 
@@ -13,17 +11,32 @@ description: A text reveal effect which animates the opacity of the text as you 
 
 <TabsContent value="React/Next">
 
+<InstallationTabs>
+
+<TabsContent value="cli">
+
+```bash
+npx shadcn@latest add https://atlasui.vercel.app/r/scroll-based-text-reveal.json
+```
+
+</TabsContent>
+
+<TabsContent value="manual">
+
 <Steps>
 
 <Step>Install the following dependencies:</Step>
 
 ```bash
-npm install motion 
+npm install motion
 ```
 
 <Step>Copy and paste the following code into your project.</Step>
 
-<ComponentSource name="scroll-based-text-reveal" filePath="components/atlas_ui/scroll-based-text-reveal.tsx" />
+<ComponentSource
+  name="scroll-based-text-reveal"
+  filePath="components/scroll-based-text-reveal.tsx"
+/>
 
 <Step>Update the import paths to match your project setup.</Step>
 
@@ -31,14 +44,32 @@ npm install motion
 
 </TabsContent>
 
+</InstallationTabs>
+
+</TabsContent>
+
 <TabsContent value="JavaScript">
+
+<InstallationTabs>
+
+<TabsContent value="cli">
+
+```bash
+npx shadcn@latest add https://atlasui.vercel.app/r/scroll-based-text-reveal-js.json
+```
+
+</TabsContent>
+
+<TabsContent value="manual">
 
 <Steps>
 
-<Step>Add the following script to your project head section to use Motion library.</Step>
+<Step>
+ Install the following dependencies:
+</Step>
 
-```html
-<script src="https://cdn.jsdelivr.net/npm/motion@latest/dist/motion.js"></script>
+```bash
+npm install motion
 ```
 
 <Step>Copy and paste the following code into your project.</Step>
@@ -85,7 +116,7 @@ body {
 <Step>Add `script.js`</Step>
 
 ```js
-const { animate, scroll } = Motion;
+import { animate, scroll } from "motion";
 
 const revealText = document.getElementById("reveal-text");
 
@@ -99,6 +130,10 @@ scroll((progress) => animate(revealText, { opacity: progress }), {
 
 </TabsContent>
 
+</InstallationTabs>
+
+</TabsContent>
+
 </UsageTabs>
 
 ## Usage
@@ -108,7 +143,7 @@ scroll((progress) => animate(revealText, { opacity: progress }), {
 <TabsContent value="React/Next">
 
 ```tsx
-import { ScrollBasedTextReveal } from "@/components/atlas_ui/scroll-based-text-reveal";
+import { ScrollBasedTextReveal } from "@/components/scroll-based-text-reveal";
 ```
 
 ```tsx
@@ -130,7 +165,7 @@ Define the text you want to display with Scroll Based Text Reveal Effect in a p 
 
 Add spacer `div` to create space between the text and the top of the page or replace it with your own content.
 
-```html {1,3} 
+```html {1,3}
 <div class="spacer"></div>
 <p class="reveal-text" id="reveal-text">...</p>
 <div class="spacer"></div>

@@ -1,11 +1,12 @@
 "use client";
 
+import { CheckIcon, CopyIcon } from "lucide-react";
 import * as React from "react";
-import { CheckIcon, ClipboardIcon } from "lucide-react";
 
 import { Event, trackEvent } from "@/lib/events";
 import { cn } from "@/lib/utils";
 import { Button, ButtonProps } from "./ui/button";
+import { Tooltip, TooltipContent, TooltipTrigger } from "./ui/tooltip";
 
 interface CopyButtonProps extends ButtonProps {
   value: string;
@@ -37,31 +38,39 @@ export function CopyButton({
   }, [hasCopied]);
 
   return (
-    <Button
-      size="icon"
-      variant={variant}
-      className={cn(
-        "relative z-10 h-6 w-6 text-zinc-50 hover:bg-zinc-700 hover:text-zinc-50 [&_svg]:h-3 [&_svg]:w-3",
-        className
-      )}
-      onClick={() => {
-        copyToClipboardWithMeta(
-          value,
-          event
-            ? {
-                name: event,
-                properties: {
-                  code: value,
-                },
-              }
-            : undefined
-        );
-        setHasCopied(true);
-      }}
-      {...props}
-    >
-      <span className="sr-only">Copy</span>
-      {hasCopied ? <CheckIcon /> : <ClipboardIcon />}
-    </Button>
+    <Tooltip>
+      <TooltipTrigger asChild>
+        <Button
+          data-slot="copy-button"
+          size="icon"
+          variant={variant}
+          className={cn(
+            "relative z-10 size-6 text-zinc-50 hover:bg-zinc-700 hover:text-zinc-50 opacity-70 hover:opacity-100",
+            className
+          )}
+          onClick={() => {
+            copyToClipboardWithMeta(
+              value,
+              event
+                ? {
+                    name: event,
+                    properties: {
+                      code: value,
+                    },
+                  }
+                : undefined
+            );
+            setHasCopied(true);
+          }}
+          {...props}
+        >
+          <span className="sr-only">Copy</span>
+          {hasCopied ? <CheckIcon /> : <CopyIcon />}
+        </Button>
+      </TooltipTrigger>
+      <TooltipContent>
+        {hasCopied ? "Copied" : "Copy to Clipboard"}
+      </TooltipContent>
+    </Tooltip>
   );
 }

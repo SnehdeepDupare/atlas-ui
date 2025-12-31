@@ -1,0 +1,28 @@
+body {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  width: 100%;
+  background: #18181b;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-text {
+  color: #fff;
+  font-size: 3rem;
+  text-align: center;
+}
+
+.trailer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  background-color: #7dd3fc;
+  mix-blend-mode: difference;
+  pointer-events: none;
+  transition: height 0.3s ease-out, width 0.3s ease-out, filter 0.3s ease-out;
+}

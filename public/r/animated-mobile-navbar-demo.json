@@ -1,0 +1,17 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "animated-mobile-navbar-demo",
+  "title": "Animated Mobile Navbar Demo",
+  "description": "Example showcasing the Animated Mobile Navbar component.",
+  "registryDependencies": [
+    "https://atlasui.vercel.app/r/animated-mobile-navbar.json"
+  ],
+  "files": [
+    {
+      "path": "registry/react/examples/animated-mobile-navbar-demo.tsx",
+      "content": "import {\n  AnimatedMobileNavbar,\n  AnimatedMobileNavbarContent,\n  AnimatedMobileNavbarLink,\n  AnimatedMobileNavbarTrigger,\n} from \"@/registry/react/atlasui/animated-mobile-navbar\";\n\nexport const AnimatedMobileNavbarDemo = () => {\n  return (\n    <AnimatedMobileNavbar>\n      <AnimatedMobileNavbarTrigger>Open</AnimatedMobileNavbarTrigger>\n      <AnimatedMobileNavbarContent>\n        <AnimatedMobileNavbarLink label=\"Home\" href=\"#\" />\n        <AnimatedMobileNavbarLink label=\"About\" href=\"#\" />\n        <AnimatedMobileNavbarLink label=\"Services\" href=\"#\" />\n        <AnimatedMobileNavbarLink label=\"Contact Us\" href=\"#\" />\n        <AnimatedMobileNavbarLink label=\"Pricing\" href=\"#\" />\n      </AnimatedMobileNavbarContent>\n    </AnimatedMobileNavbar>\n  );\n};\n",
+      "type": "registry:example"
+    }
+  ],
+  "type": "registry:example"
+}

@@ -47,8 +47,8 @@ const NotFoundPage = () => {
         transition={{ duration: 0.8, delay: 0.4, ease: "easeInOut" }}
         className="flex flex-col items-center justify-center text-center"
       >
-        <h2 className="mb-1">It seems that you're lost</h2>
-        <h2 className="mb-1">Let's get you back to the Good Stuff</h2>
+        <h2 className="mb-1">It seems that you&apos;re lost</h2>
+        <h2 className="mb-1">Let&apos;s get you back to the Good Stuff</h2>
         <div className="flex gap-4">
           <Link href="/" className="underline underline-offset-2">
             Home

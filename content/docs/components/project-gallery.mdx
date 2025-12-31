@@ -3,9 +3,7 @@ title: Project Gallery
 description: A Project Gallery with an interactive modal
 ---
 
-<ComponentPreview
-  name="project-gallery-demo"
-/>
+<ComponentPreview name="project-gallery-demo" />
 
 Here's a [full page preview](https://atlasui.vercel.app/preview/project-gallery) of this component.
 
@@ -14,6 +12,18 @@ Here's a [full page preview](https://atlasui.vercel.app/preview/project-gallery)
 <UsageTabs>
 
 <TabsContent value="React/Next">
+
+<InstallationTabs>
+
+<TabsContent value="cli">
+
+```bash
+npx shadcn@latest add https://atlasui.vercel.app/r/project-gallery.json
+```
+
+</TabsContent>
+
+<TabsContent value="manual">
 
 <Steps>
 
@@ -25,7 +35,10 @@ npm install motion
 
 <Step>Copy and paste the following code into your project.</Step>
 
-<ComponentSource name="project-gallery" filePath="components/atlas_ui/project-gallery.tsx" />
+<ComponentSource
+  name="project-gallery"
+  filePath="components/project-gallery.tsx"
+/>
 
 <Step>Update the import paths to match your project setup.</Step>
 
@@ -33,14 +46,32 @@ npm install motion
 
 </TabsContent>
 
+</InstallationTabs>
+
+</TabsContent>
+
 <TabsContent value="JavaScript">
+
+<InstallationTabs>
+
+<TabsContent value="cli">
+
+```bash
+npx shadcn@latest add https://atlasui.vercel.app/r/project-gallery-js.json
+```
+
+</TabsContent>
+
+<TabsContent value="manual">
 
 <Steps>
 
-<Step>Add the following script to your project head section to use Motion library.</Step>
+<Step>
+  Install the following dependencies:
+</Step>
 
-```html
-<script src="https://cdn.jsdelivr.net/npm/motion@latest/dist/motion.js"></script>
+```bash
+npm install motion
 ```
 
 <Step>Copy and paste the following code into your project.</Step>
@@ -111,38 +142,22 @@ npm install motion
   <!-- Modal Container -->
   <div class="modal" id="modal">
     <div class="modal-images" id="modal-images">
-      <div
-        class="modal-image"
-        data-index="0"
-        style="background-color: #efe8d3"
-      >
+      <div class="modal-image" data-index="0" style="background-color: #efe8d3">
         <img src="https://atlasui.vercel.app/og.png" alt="Atlas UI" />
       </div>
-      <div
-        class="modal-image"
-        data-index="1"
-        style="background-color: #706d63"
-      >
+      <div class="modal-image" data-index="1" style="background-color: #706d63">
         <img
           src="https://atlasui.vercel.app/assets/portfolio.png"
           alt="Portfolio"
         />
       </div>
-      <div
-        class="modal-image"
-        data-index="2"
-        style="background-color: #fafbfc"
-      >
+      <div class="modal-image" data-index="2" style="background-color: #fafbfc">
         <img
           src="https://images.unsplash.com/photo-1540652980807-db4655e8fa60?q=80&w=2130&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
           alt="Tokyo Art"
         />
       </div>
-      <div
-        class="modal-image"
-        data-index="3"
-        style="background-color: #404040"
-      >
+      <div class="modal-image" data-index="3" style="background-color: #404040">
         <img
           src="https://images.unsplash.com/photo-1515705576963-95cad62945b6?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
           alt="Milky Way"
@@ -166,202 +181,203 @@ npm install motion
 }
 
 body {
-  font-family: sans-serif;
-  background: #18181b;
-  color: #fff;
-  overflow-x: hidden;
-  max-width: 80rem;
-  width: 100%;
-  margin: 0 auto;
-  padding: 0 1.25rem;
+font-family: sans-serif;
+background: #18181b;
+color: #fff;
+overflow-x: hidden;
+max-width: 80rem;
+width: 100%;
+margin: 0 auto;
+padding: 0 1.25rem;
 }
 
 a {
-  text-decoration: none;
-  color: inherit;
+text-decoration: none;
+color: inherit;
 }
 
 .project-gallery {
-  display: block;
+display: block;
 }
 
-/* Gallery items */
+/_ Gallery items _/
 .gallery-item {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 6rem;
-  border-top: 1px solid white;
-  cursor: pointer;
-  transition: opacity 0.2s linear;
+display: flex;
+justify-content: space-between;
+align-items: center;
+padding: 6rem;
+border-top: 1px solid white;
+cursor: pointer;
+transition: opacity 0.2s linear;
 }
 
 .gallery-item:hover {
-  opacity: 0.4;
+opacity: 0.4;
 }
 
 .gallery-item h2 {
-  font-size: 3.75rem;
-  font-weight: 400;
-  transition: transform 0.2s linear;
+font-size: 3.75rem;
+font-weight: 400;
+transition: transform 0.2s linear;
 }
 
 .gallery-item p {
-  transition: transform 0.2s linear;
+transition: transform 0.2s linear;
 }
 
 .gallery-item:hover h2 {
-  transform: translateX(-12px);
+transform: translateX(-12px);
 }
 
 .gallery-item:hover p {
-  transform: translateX(12px);
+transform: translateX(12px);
 }
 
 .modal,
 .cursor,
 .cursor-label {
-  position: fixed;
-  pointer-events: none;
-  transform: translate(-50%, -50%) scale(0);
-  z-index: 1000;
-  will-change: transform, left, top;
-  transform-origin: center center;
+position: fixed;
+pointer-events: none;
+transform: translate(-50%, -50%) scale(0);
+z-index: 1000;
+will-change: transform, left, top;
+transform-origin: center center;
 }
 
 .modal {
-  width: 400px;
-  height: 350px;
-  overflow: hidden;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+width: 400px;
+height: 350px;
+overflow: hidden;
+display: flex;
+align-items: center;
+justify-content: center;
 }
 
 .modal-images {
-  position: absolute;
-  width: 100%;
-  transition: top 0.5s cubic-bezier(0.76, 0, 0.24, 1);
+position: absolute;
+width: 100%;
+transition: top 0.5s cubic-bezier(0.76, 0, 0.24, 1);
 }
 
 .modal-image {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  height: 350px;
+display: flex;
+align-items: center;
+justify-content: center;
+width: 100%;
+height: 350px;
 }
 
 .modal-image img {
-  width: 350px;
-  height: auto;
+width: 350px;
+height: auto;
 }
 
 .cursor,
 .cursor-label {
-  width: 80px;
-  height: 80px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+width: 80px;
+height: 80px;
+border-radius: 50%;
+display: flex;
+align-items: center;
+justify-content: center;
 }
 
 .cursor {
-  background: #2563eb;
+background: #2563eb;
 }
 
 .cursor-label {
-  color: white;
-  font-size: 16px;
+color: white;
+font-size: 16px;
 }
 
 .project-image-container {
-  display: none;
+display: none;
 }
 
 @media (max-width: 768px) {
-  .project-gallery {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
+.project-gallery {
+display: grid;
+grid-template-columns: repeat(2, minmax(0, 1fr));
+}
 
-  .gallery-item {
-    flex-direction: column;
-    align-items: flex-start;
-    padding: 1rem;
-    border-top: none;
-    width: 100%;
-    transition: none;
-  }
+.gallery-item {
+flex-direction: column;
+align-items: flex-start;
+padding: 1rem;
+border-top: none;
+width: 100%;
+transition: none;
+}
 
-  .project-image-container {
-    display: block;
-    position: relative;
-    width: 100%;
-    overflow: hidden;
-    aspect-ratio: 4 / 3;
-    margin-bottom: 1rem;
-  }
+.project-image-container {
+display: block;
+position: relative;
+width: 100%;
+overflow: hidden;
+aspect-ratio: 4 / 3;
+margin-bottom: 1rem;
+}
 
-  .project-image-container img {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-    padding: 1rem;
-    aspect-ratio: 4 / 3;
-  }
+.project-image-container img {
+width: 100%;
+height: 100%;
+object-fit: contain;
+padding: 1rem;
+aspect-ratio: 4 / 3;
+}
 
-  .gallery-item h2 {
-    font-size: 1.5rem;
-    font-weight: 700;
-    line-height: 2rem;
-  }
+.gallery-item h2 {
+font-size: 1.5rem;
+font-weight: 700;
+line-height: 2rem;
+}
 
-  .gallery-item p {
-    font-size: 0.875rem;
-    font-weight: 300;
-    line-height: 1.25rem;
-  }
+.gallery-item p {
+font-size: 0.875rem;
+font-weight: 300;
+line-height: 1.25rem;
+}
 
-  .gallery-item:hover {
-    opacity: 1;
-  }
+.gallery-item:hover {
+opacity: 1;
+}
 
-  .gallery-item:hover h2,
-  .gallery-item:hover p {
-    transform: none;
-  }
+.gallery-item:hover h2,
+.gallery-item:hover p {
+transform: none;
+}
 
-  .modal,
-  .cursor,
-  .cursor-label {
-    display: none !important;
-  }
+.modal,
+.cursor,
+.cursor-label {
+display: none !important;
+}
 }
 
 @media (min-width: 640px) and (max-width: 768px) {
-  .project-gallery {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
+.project-gallery {
+grid-template-columns: repeat(2, minmax(0, 1fr));
+}
 
-  .gallery-item h2 {
-    font-size: 1.875rem;
-    line-height: 2.25rem;
-  }
+.gallery-item h2 {
+font-size: 1.875rem;
+line-height: 2.25rem;
+}
 }
 
 @media (max-width: 640px) {
-  .project-gallery {
-    grid-template-columns: repeat(1, minmax(0, 1fr));
-  }
+.project-gallery {
+grid-template-columns: repeat(1, minmax(0, 1fr));
 }
-```
+}
+
+````
 
 <Step>Add `script.js`</Step>
 
 ```js
-const { animate: motionAnimate } = Motion;
+import { animate as motionAnimate } from "motion";
 
 const modal = document.getElementById("modal");
 const modalImages = document.getElementById("modal-images");
@@ -529,9 +545,13 @@ galleryItems.forEach((item) => {
 window.addEventListener("mousemove", handleMouseMove);
 
 updatePositions();
-```
+````
 
 </Steps>
+
+</TabsContent>
+
+</InstallationTabs>
 
 </TabsContent>
 
@@ -544,10 +564,7 @@ updatePositions();
 <TabsContent value="React/Next">
 
 ```tsx
-import {
-  Project,
-  ProjectGallery,
-} from "@/components/atlas_ui/(react)/project-gallery";
+import { Project, ProjectGallery } from "@/components/(react)/project-gallery";
 ```
 
 ```tsx
@@ -626,18 +643,10 @@ Add your project images and your background color to the interactive modal secti
 <section id="interactive-modal" class="interactive-modal">
   <!-- Modal Container -->
   <div class="modal" id="modal">
-    <div
-      class="modal-image"
-      data-index="0"
-      style="background-color: #efe8d3"
-    >
+    <div class="modal-image" data-index="0" style="background-color: #efe8d3">
       <img src="https://atlasui.vercel.app/og.png" alt="Atlas UI" />
     </div>
-    <div
-      class="modal-image"
-      data-index="1"
-      style="background-color: #706d63"
-    >
+    <div class="modal-image" data-index="1" style="background-color: #706d63">
       <img
         src="https://atlasui.vercel.app/assets/portfolio.png"
         alt="Portfolio"
@@ -646,6 +655,7 @@ Add your project images and your background color to the interactive modal secti
   </div>
 </section>
 ```
+
 Add the cursor elements in the interactive modal section.
 
 ```html
@@ -659,10 +669,10 @@ Add the cursor elements in the interactive modal section.
 
 ## Props
 
-| Prop         | Type     | Description                                   |
-| ------------ | -------- | --------------------------------------------- |
-| `title`      | `string` | Project Name / Title                          |
-| `subtitle`   | `string` | Project SubTitle / Category                   |
-| `href`       | `string` | Link to the project                           |
-| `imgSrc`     | `string` | Image Source for ComponentPreview             |
-| `color`      | `string` | Background Color for the Modal                |
+| Prop       | Type     | Description                       |
+| ---------- | -------- | --------------------------------- |
+| `title`    | `string` | Project Name / Title              |
+| `subtitle` | `string` | Project SubTitle / Category       |
+| `href`     | `string` | Link to the project               |
+| `imgSrc`   | `string` | Image Source for ComponentPreview |
+| `color`    | `string` | Background Color for the Modal    |

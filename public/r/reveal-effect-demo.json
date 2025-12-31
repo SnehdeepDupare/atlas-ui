@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "reveal-effect-demo",
+  "title": "Reveal Effect Demo",
+  "description": "Example of Reveal Effect with a vertical slide, blur fade-in, and clipping reveal effect.",
+  "registryDependencies": [
+    "https://atlasui.vercel.app/r/reveal-effect.json"
+  ],
+  "files": [
+    {
+      "path": "registry/react/examples/reveal-effect-demo.tsx",
+      "content": "import { RevealEffect } from \"@/registry/react/atlasui/reveal-effect\";\n\nexport const RevealEffectDemo = () => {\n  return (\n    <div className=\"flex flex-col items-center space-y-2\">\n      <RevealEffect>\n        <h1 className=\"font-bold text-5xl\">Atlas UI</h1>\n      </RevealEffect>\n\n      <RevealEffect delay={0.2} translateY={15}>\n        <p className=\"font-semibold text-xl text-center\">\n          This is the same effect you saw on the homepage ;)\n        </p>\n      </RevealEffect>\n    </div>\n  );\n};\n",
+      "type": "registry:example",
+      "target": "components/reveal-effect-demo.tsx"
+    }
+  ],
+  "type": "registry:example"
+}

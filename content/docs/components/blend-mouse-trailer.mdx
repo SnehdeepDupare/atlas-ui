@@ -3,9 +3,7 @@ title: Blend Mouse Trailer
 description: A simple Lazy Mouse Trailer which blends with the content on hover.
 ---
 
-<ComponentPreview
-  name="blend-mouse-trailer-demo"
-/>
+<ComponentPreview name="blend-mouse-trailer-demo" />
 
 ## Installation
 
@@ -13,17 +11,32 @@ description: A simple Lazy Mouse Trailer which blends with the content on hover.
 
 <TabsContent value="React/Next">
 
+<InstallationTabs>
+
+<TabsContent value="cli">
+
+```bash
+npx shadcn@latest add https://atlasui.vercel.app/r/blend-mouse-trailer.json
+```
+
+</TabsContent>
+
+<TabsContent value="manual">
+
 <Steps>
 
 <Step>Install the following dependencies:</Step>
 
 ```bash
-npm install motion 
+npm install motion
 ```
 
 <Step>Copy and paste the following code into your project.</Step>
 
-<ComponentSource name="blend-mouse-trailer" filePath="components/atlas_ui/blend-mouse-trailer.tsx" />
+<ComponentSource
+  name="blend-mouse-trailer"
+  filePath="components/blend-mouse-trailer.tsx"
+/>
 
 <Step>Update the import paths to match your project setup.</Step>
 
@@ -31,7 +44,23 @@ npm install motion
 
 </TabsContent>
 
+</InstallationTabs>
+
+</TabsContent>
+
 <TabsContent value="JavaScript">
+
+<InstallationTabs>
+
+<TabsContent value="cli">
+
+```bash
+npx shadcn@latest add https://atlasui.vercel.app/r/blend-mouse-trailer-js.json
+```
+
+</TabsContent>
+
+<TabsContent value="manual">
 
 <Steps>
 
@@ -74,7 +103,10 @@ body {
   background-color: #7dd3fc;
   mix-blend-mode: difference;
   pointer-events: none;
-  transition: height 0.3s ease-out, width 0.3s ease-out, filter 0.3s ease-out;
+  transition:
+    height 0.3s ease-out,
+    width 0.3s ease-out,
+    filter 0.3s ease-out;
 }
 ```
 
@@ -111,6 +143,10 @@ heroText.addEventListener("mouseleave", () => (isHovered = false));
 
 </TabsContent>
 
+</InstallationTabs>
+
+</TabsContent>
+
 </UsageTabs>
 
 ## Usage
@@ -120,10 +156,11 @@ heroText.addEventListener("mouseleave", () => (isHovered = false));
 <TabsContent value="React/Next">
 
 ```tsx
-import { BlendMouseTrailer } from "@/components/atlas_ui/blend-mouse-trailer";
+import { BlendMouseTrailer } from "@/components/blend-mouse-trailer";
 ```
 
 Define a state to check if the desired component is hovered or not
+
 ```tsx
 import { useState } from "react";
 
@@ -131,6 +168,7 @@ const [isHovered, setIsHovered] = useState(false);
 ```
 
 Track and update the hover state using `onMouseEnter` and `onMouseLeave` methods.
+
 ```tsx
 <h1
   onMouseEnter={() => setIsHovered(true)}
@@ -143,6 +181,7 @@ Track and update the hover state using `onMouseEnter` and `onMouseLeave` methods
 ```
 
 Call the `BlendMouseTrailer` Component and pass the hovered state as props
+
 ```tsx
 <BlendMouseTrailer isHovered={isHovered} />
 ```
@@ -169,4 +208,3 @@ Define the text you want to blend with the trailer onHover. Pass `id="heroText"`
 </TabsContent>
 
 </UsageTabs>
-

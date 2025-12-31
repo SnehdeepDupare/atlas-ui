@@ -1,0 +1,52 @@
+/* Loading the fonts */
+@font-face {
+  font-family: "FontOne";
+  src: url("/fonts/fontOne.woff2") format("woff2");
+}
+@font-face {
+  font-family: "FontTwo";
+  src: url("/fonts/fontTwo.woff2") format("woff2");
+}
+@font-face {
+  font-family: "FontThree";
+  src: url("/fonts/fontThree.woff2") format("woff2");
+}
+@font-face {
+  font-family: "FontFour";
+  src: url("/fonts/fontFour.woff2") format("woff2");
+}
+@font-face {
+  font-family: "FontFive";
+  src: url("/fonts/fontFive.woff2") format("woff2");
+}
+@font-face {
+  font-family: "FontSix";
+  src: url("/fonts/fontSix.woff2") format("woff2");
+}
+@font-face {
+  font-family: "FontSeven";
+  src: url("/fonts/fontSeven.woff2") format("woff2");
+}
+
+body {
+  background-color: #18181b;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100svh;
+  margin: 0;
+}
+
+.loki-letter {
+  display: inline-block;
+  font-size: clamp(
+    3rem,
+    10vw,
+    7rem
+  ); /* You can adjust the font size according to you usage ;) */
+  font-weight: 700;
+  color: white;
+  letter-spacing: 0.15em;
+  text-shadow: 0 0 2px #ffffff66, 0 0 5px #ffffff66;
+  filter: drop-shadow(0 0 8px white);
+}

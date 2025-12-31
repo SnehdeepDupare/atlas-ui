@@ -43,7 +43,7 @@ export async function generateMetadata(props: DocPageProps): Promise<Metadata> {
       images: [
         {
           url: `/og?title=${encodeURIComponent(
-            doc.title
+            doc.title,
           )}&description=${encodeURIComponent(doc.description)}`,
         },
       ],
@@ -55,7 +55,7 @@ export async function generateMetadata(props: DocPageProps): Promise<Metadata> {
       images: [
         {
           url: `/og?title=${encodeURIComponent(
-            doc.title
+            doc.title,
           )}&description=${encodeURIComponent(doc.description)}`,
         },
       ],

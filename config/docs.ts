@@ -17,7 +17,7 @@ export const docsConfig: DocsConfig = {
     },
     {
       title: "Components",
-      href: "/docs/components/animated-mobile-navbar",
+      href: "/docs/components",
     },
   ],
   sidebarNav: [
@@ -30,27 +30,37 @@ export const docsConfig: DocsConfig = {
           items: [],
         },
         {
+          title: "Components",
+          href: "/docs/components",
+          items: [],
+        },
+        {
           title: "Installation",
           href: "/docs/installation",
           items: [],
         },
+        {
+          title: "Changelog",
+          href: "/docs/changelog",
+          items: [],
+        },
       ],
     },
-    // {
-    //   title: "Installation",
-    //   items: [
-    //     {
-    //       title: "Next.js",
-    //       href: "/docs/installation/next",
-    //       items: [],
-    //     },
-    //     {
-    //       title: "Javascript",
-    //       href: "/docs/installation/javascript",
-    //       items: [],
-    //     },
-    //   ],
-    // },
+    {
+      title: "Installation",
+      items: [
+        {
+          title: "Next.js",
+          href: "/docs/installation/next",
+          items: [],
+        },
+        {
+          title: "Vanilla JavaScript",
+          href: "/docs/installation/javascript",
+          items: [],
+        },
+      ],
+    },
     {
       title: "Components",
       items: [
@@ -63,7 +73,6 @@ export const docsConfig: DocsConfig = {
           title: "Project Gallery",
           href: "/docs/components/project-gallery",
           items: [],
-          label: "Updated",
         },
         {
           title: "Parallax Sections",

@@ -8,20 +8,6 @@ import { cn } from "@/lib/utils";
 import { buttonVariants } from "./ui/button";
 
 export const NewUpdateCallout = () => {
-  const shineVariants = {
-    initial: { x: "-100%" },
-    animate: {
-      x: "100%",
-      transition: {
-        duration: 1.2,
-        ease: "easeInOut",
-        repeat: Infinity,
-        repeatType: "loop",
-        repeatDelay: 1,
-      },
-    },
-  };
-
   return (
     <div className="relative overflow-hidden inline-block mb-4 rounded-full">
       <Link
@@ -31,7 +17,7 @@ export const NewUpdateCallout = () => {
             variant: "outline",
             size: "sm",
           }),
-          "rounded-full text-xs relative"
+          "rounded-full text-xs relative",
         )}
       >
         🎉 Introducing Loki Text Effect

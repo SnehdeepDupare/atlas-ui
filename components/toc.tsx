@@ -21,7 +21,7 @@ export function DashboardTableOfContents({ toc }: TocProps) {
             .filter(Boolean)
             .map((id) => id?.split("#")[1])
         : [],
-    [toc]
+    [toc],
   );
   const activeHeading = useActiveItem(itemIds);
   const mounted = useMounted();
@@ -50,7 +50,7 @@ function useActiveItem(itemIds: string[]) {
           }
         });
       },
-      { rootMargin: `0% 0% -80% 0%` }
+      { rootMargin: `0% 0% -80% 0%` },
     );
 
     itemIds?.forEach((id) => {
@@ -91,7 +91,7 @@ function Tree({ tree, level = 1, activeItem }: TreeProps) {
                 "inline-block no-underline transition-colors hover:text-foreground",
                 item.url === `#${activeItem}`
                   ? "font-semibold text-emerald-500"
-                  : "text-muted-foreground"
+                  : "text-muted-foreground",
               )}
             >
               {item.title}
