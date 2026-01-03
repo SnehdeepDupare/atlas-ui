@@ -14,7 +14,7 @@
     },
     {
       "path": "registry/fonts/font.ts",
-      "content": "import localFont from \"next/font/local\";\n\nconst fontOne = localFont({\n  src: \"../app/fonts/fontOne.woff2\",\n});\nconst fontTwo = localFont({\n  src: \"../app/fonts/fontTwo.woff2\",\n});\nconst fontThree = localFont({\n  src: \"../app/fonts/fontThree.woff2\",\n});\nconst fontFour = localFont({\n  src: \"../app/fonts/fontFour.woff2\",\n});\nconst fontFive = localFont({\n  src: \"../app/fonts/fontFive.woff2\",\n});\nconst fontSix = localFont({\n  src: \"../app/fonts/fontSix.woff2\",\n});\nconst fontSeven = localFont({\n  src: \"../app/fonts/fontSeven.woff2\",\n});\n\nexport { fontOne, fontTwo, fontThree, fontFour, fontFive, fontSix, fontSeven };\n",
+      "content": "import localFont from \"next/font/local\";\r\n\r\nconst fontOne = localFont({\r\n  src: \"../app/fonts/fontOne.woff2\",\r\n});\r\nconst fontTwo = localFont({\r\n  src: \"../app/fonts/fontTwo.woff2\",\r\n});\r\nconst fontThree = localFont({\r\n  src: \"../app/fonts/fontThree.woff2\",\r\n});\r\nconst fontFour = localFont({\r\n  src: \"../app/fonts/fontFour.woff2\",\r\n});\r\nconst fontFive = localFont({\r\n  src: \"../app/fonts/fontFive.woff2\",\r\n});\r\nconst fontSix = localFont({\r\n  src: \"../app/fonts/fontSix.woff2\",\r\n});\r\nconst fontSeven = localFont({\r\n  src: \"../app/fonts/fontSeven.woff2\",\r\n});\r\n\r\nexport { fontOne, fontTwo, fontThree, fontFour, fontFive, fontSix, fontSeven };\r\n",
       "type": "registry:file",
       "target": "~/fonts/font.ts"
     },

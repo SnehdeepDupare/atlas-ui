@@ -100,7 +100,7 @@ async function buildRegistryJsonFile() {
   await fs.writeFile(
     rootRegistryPath,
     JSON.stringify(fixedRegistry, null, 2),
-    "utf8"
+    "utf8",
   );
 
   // 3. Write public registry.json
@@ -110,7 +110,7 @@ async function buildRegistryJsonFile() {
   await fs.writeFile(
     path.join(publicDir, "registry.json"),
     JSON.stringify(fixedRegistry, null, 2),
-    "utf8"
+    "utf8",
   );
 }
 
@@ -132,7 +132,7 @@ async function readRegistryFilesContents(item: RegistryItem): Promise<string> {
       try {
         const content = await fs.readFile(
           path.join(process.cwd(), "registry", filePath),
-          "utf8"
+          "utf8",
         );
         return `--- file: ${filePath} ---\n${
           content.endsWith("\n") ? content : content + "\n"
@@ -140,7 +140,7 @@ async function readRegistryFilesContents(item: RegistryItem): Promise<string> {
       } catch {
         return null; // Skip missing files
       }
-    })
+    }),
   );
 
   // Join non-null contents with blank lines between them
@@ -169,7 +169,10 @@ function getComponentExamples() {
 
 async function generateLlmsContent() {
   const components = registry.items
-    .filter((item) => item.type === "registry:ui")
+    .filter(
+      (item) =>
+        item.type === "registry:ui" || item.type === "registry:component",
+    )
     .sort((a, b) => a.name.localeCompare(b.name))
     .map((component) => {
       const title = component.title || component.name;
@@ -217,10 +220,13 @@ async function generateLlmsContent() {
 }
 
 async function generateLlmsFullContent(
-  examplesByComponent: Map<string, string[]>
+  examplesByComponent: Map<string, string[]>,
 ) {
   const components = registry.items
-    .filter((item) => item.type === "registry:ui")
+    .filter(
+      (item) =>
+        item.type === "registry:ui" || item.type === "registry:component",
+    )
     .sort((a, b) => a.name.localeCompare(b.name));
 
   const componentContents = await Promise.all(
@@ -254,7 +260,7 @@ async function generateLlmsFullContent(
       }
 
       return content;
-    })
+    }),
   );
 
   return componentContents.join("\n\n\n");

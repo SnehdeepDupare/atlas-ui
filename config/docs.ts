@@ -44,6 +44,11 @@ export const docsConfig: DocsConfig = {
           href: "/docs/changelog",
           items: [],
         },
+        {
+          title: "llms.txt",
+          href: "/llms.txt",
+          items: [],
+        },
       ],
     },
     {
