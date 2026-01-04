@@ -112,13 +112,12 @@ export const docsConfig: DocsConfig = {
       ],
     },
     {
-      title: "Text Animations",
+      title: "Animations",
       items: [
         {
           title: "Loki Text Effect",
           href: "/docs/components/loki-text-effect",
           items: [],
-          label: "New",
         },
         {
           title: "Hacker Text",
@@ -129,6 +128,12 @@ export const docsConfig: DocsConfig = {
           title: "Reveal Effect",
           href: "/docs/components/reveal-effect",
           items: [],
+        },
+        {
+          title: "Box Reveal",
+          href: "/docs/components/box-reveal",
+          items: [],
+          label: "New",
         },
         {
           title: "Scroll Based Text Reveal",

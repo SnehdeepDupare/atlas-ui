@@ -265,4 +265,19 @@ export const examples: Registry["items"] = [
       },
     ],
   },
+  {
+    name: "box-reveal-demo",
+    type: "registry:example",
+    title: "Box Reveal Demo",
+    description:
+      "Example of Box Reveal that has a smooth reveal animation that slides a colored overlay away to introduce content as it enters the viewport.",
+    registryDependencies: ["https://atlasui.vercel.app/r/box-reveal.json"],
+    files: [
+      {
+        path: "react/examples/box-reveal-demo.tsx",
+        type: "registry:example",
+        target: "components/box-reveal-demo.tsx",
+      },
+    ],
+  },
 ];

@@ -234,4 +234,18 @@ export const ui: Registry["items"] = [
       },
     ],
   },
+  {
+    name: "box-reveal",
+    type: "registry:component",
+    title: "Box Reveal",
+    description:
+      "A smooth reveal animation that slides a colored overlay away to introduce content as it enters the viewport.",
+    dependencies: ["motion"],
+    files: [
+      {
+        path: "react/atlasui/box-reveal.tsx",
+        type: "registry:component",
+      },
+    ],
+  },
 ];

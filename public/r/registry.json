@@ -267,6 +267,21 @@
       "type": "registry:component"
     },
     {
+      "name": "box-reveal",
+      "title": "Box Reveal",
+      "description": "A smooth reveal animation that slides a colored overlay away to introduce content as it enters the viewport.",
+      "dependencies": [
+        "motion"
+      ],
+      "files": [
+        {
+          "path": "registry/react/atlasui/box-reveal.tsx",
+          "type": "registry:component"
+        }
+      ],
+      "type": "registry:component"
+    },
+    {
       "name": "animated-mobile-navbar-demo",
       "title": "Animated Mobile Navbar Demo",
       "description": "Example showcasing the Animated Mobile Navbar component.",
@@ -532,6 +547,22 @@
           "path": "registry/react/examples/loki-text-effect-demo.tsx",
           "type": "registry:example",
           "target": "components/loki-text-effect-demo.tsx"
+        }
+      ],
+      "type": "registry:example"
+    },
+    {
+      "name": "box-reveal-demo",
+      "title": "Box Reveal Demo",
+      "description": "Example of Box Reveal that has a smooth reveal animation that slides a colored overlay away to introduce content as it enters the viewport.",
+      "registryDependencies": [
+        "https://atlasui.vercel.app/r/box-reveal.json"
+      ],
+      "files": [
+        {
+          "path": "registry/react/examples/box-reveal-demo.tsx",
+          "type": "registry:example",
+          "target": "components/box-reveal-demo.tsx"
         }
       ],
       "type": "registry:example"
@@ -940,6 +971,20 @@
         "framework": "vanilla"
       },
       "type": "registry:file"
+    },
+    {
+      "name": "utils",
+      "dependencies": [
+        "clsx",
+        "tailwind-merge"
+      ],
+      "files": [
+        {
+          "path": "registry/react/lib/utils.ts",
+          "type": "registry:lib"
+        }
+      ],
+      "type": "registry:lib"
     }
   ]
 }

@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "box-reveal-demo",
+  "title": "Box Reveal Demo",
+  "description": "Example of Box Reveal that has a smooth reveal animation that slides a colored overlay away to introduce content as it enters the viewport.",
+  "registryDependencies": [
+    "https://atlasui.vercel.app/r/box-reveal.json"
+  ],
+  "files": [
+    {
+      "path": "registry/react/examples/box-reveal-demo.tsx",
+      "content": "import { BoxReveal } from \"@/registry/react/atlasui/box-reveal\";\n\nexport const BoxRevealDemo = () => {\n  return (\n    <div className=\"flex flex-col gap-1\">\n      <BoxReveal>\n        <h1 className=\"font-bold text-5xl\">Atlas UI</h1>\n      </BoxReveal>\n\n      <BoxReveal>\n        <p className=\"font-semibold text-lg\">\n          Because your content deserves a dramatic entrance, not a simple fade-in ;)\n        </p>\n      </BoxReveal>\n    </div>\n  );\n};\n",
+      "type": "registry:example",
+      "target": "components/box-reveal-demo.tsx"
+    }
+  ],
+  "type": "registry:example"
+}

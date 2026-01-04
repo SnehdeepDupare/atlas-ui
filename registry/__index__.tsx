@@ -268,6 +268,23 @@ export const Index: Record<string, any> = {
     }),
     meta: undefined,
   },
+  "box-reveal": {
+    name: "box-reveal",
+    description: "A smooth reveal animation that slides a colored overlay away to introduce content as it enters the viewport.",
+    type: "registry:component",
+    registryDependencies: undefined,
+    files: [{
+      path: "registry/react/atlasui/box-reveal.tsx",
+      type: "registry:component",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/react/atlasui/box-reveal.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: undefined,
+  },
   "animated-mobile-navbar-demo": {
     name: "animated-mobile-navbar-demo",
     description: "Example showcasing the Animated Mobile Navbar component.",
@@ -552,6 +569,40 @@ export const Index: Record<string, any> = {
     }],
     component: React.lazy(async () => {
       const mod = await import("@/registry/react/examples/loki-text-effect-demo.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: undefined,
+  },
+  "box-reveal-demo": {
+    name: "box-reveal-demo",
+    description: "Example of Box Reveal that has a smooth reveal animation that slides a colored overlay away to introduce content as it enters the viewport.",
+    type: "registry:example",
+    registryDependencies: ["https://atlasui.vercel.app/r/box-reveal.json"],
+    files: [{
+      path: "registry/react/examples/box-reveal-demo.tsx",
+      type: "registry:example",
+      target: "components/box-reveal-demo.tsx"
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/react/examples/box-reveal-demo.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: undefined,
+  },
+  "utils": {
+    name: "utils",
+    description: "",
+    type: "registry:lib",
+    registryDependencies: undefined,
+    files: [{
+      path: "registry/react/lib/utils.ts",
+      type: "registry:lib",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/react/lib/utils.ts")
       const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
       return { default: mod.default || mod[exportName] }
     }),

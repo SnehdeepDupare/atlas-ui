@@ -9,6 +9,7 @@ This file provides LLM-friendly entry points to documentation and examples.
 - [Animated Mobile Navbar](https://atlasui.vercel.app/docs/components/animated-mobile-navbar): A simple animated mobile navbar component.
 - [Blend Mouse Trailer](https://atlasui.vercel.app/docs/components/blend-mouse-trailer): A simple Lazy Mouse Trailer which blends with the content on hover.
 - [Blob Mouse Trailer](https://atlasui.vercel.app/docs/components/blob-mouse-trailer): A simple Lazy Blob Mouse Trailer
+- [Box Reveal](https://atlasui.vercel.app/docs/components/box-reveal): A smooth reveal animation that slides a colored overlay away to introduce content as it enters the viewport.
 - [Dot And Circle Mouse Trailer](https://atlasui.vercel.app/docs/components/dot-and-circle-mouse-trailer): A simple Lazy Dot and Circle Mouse Trailer
 - [Hacker Text](https://atlasui.vercel.app/docs/components/hacker-text): A text animation that scrambles letters before revealing the final text.
 - [Loki Text Effect](https://atlasui.vercel.app/docs/components/loki-text-effect): The iconic text animation from the Loki series intro.
@@ -39,6 +40,7 @@ This file provides LLM-friendly entry points to documentation and examples.
 - [Reveal Effect Example 2](https://github.com/SnehdeepDupare/atlas-ui/blob/main/react/examples/reveal-effect-delay-example.tsx): Example usage
 - [Reveal Effect Example 3](https://github.com/SnehdeepDupare/atlas-ui/blob/main/react/examples/reveal-effect-translate-y-example.tsx): Example usage
 - [Loki Text Effect Demo](https://github.com/SnehdeepDupare/atlas-ui/blob/main/react/examples/loki-text-effect-demo.tsx): Example usage
+- [Box Reveal Demo](https://github.com/SnehdeepDupare/atlas-ui/blob/main/react/examples/box-reveal-demo.tsx): Example usage
 
 ## Optional
 

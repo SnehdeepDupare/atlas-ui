@@ -11,7 +11,7 @@ export const NewUpdateCallout = () => {
   return (
     <div className="relative overflow-hidden inline-block mb-4 rounded-full">
       <Link
-        href="/docs/components/loki-text-effect"
+        href="/docs/components/box-reveal"
         className={cn(
           buttonVariants({
             variant: "outline",
@@ -20,7 +20,7 @@ export const NewUpdateCallout = () => {
           "rounded-full text-xs relative",
         )}
       >
-        🎉 Introducing Loki Text Effect
+        🎉 Introducing Box Reveal Animation
         <ChevronRight className="ml-1 size-3 text-muted-foreground" />
       </Link>
 
