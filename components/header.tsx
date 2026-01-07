@@ -3,8 +3,6 @@
 import Image from "next/image";
 import Link from "next/link";
 
-import { Moon, Sun } from "lucide-react";
-import { useTheme } from "next-themes";
 import { usePathname } from "next/navigation";
 import { FaGithub } from "react-icons/fa";
 
@@ -13,18 +11,9 @@ import { siteConfig } from "@/config/site";
 import { cn } from "@/lib/utils";
 import { CommandMenu } from "./command-menu";
 import { MobileNav } from "./mobile-nav";
+import { ModeToggle } from "./mode-toggle";
 
 export const Header = () => {
-  const { setTheme, theme } = useTheme();
-
-  const changeTheme = () => {
-    if (theme === "dark") {
-      setTheme("light");
-    } else {
-      setTheme("dark");
-    }
-  };
-
   const pathname = usePathname();
   return (
     <header className="sticky top-0 z-50 w-full border-b  backdrop-blur-sm dark:backdrop-blur-xs   shadow-md dark:shadow-primary-foreground">
@@ -99,15 +88,7 @@ export const Header = () => {
                 </Link>
               </Button>
 
-              <Button
-                variant="ghost"
-                size="icon"
-                className="h-8 w-8 px-0"
-                onClick={changeTheme}
-              >
-                <Sun className="h-4 w-4 rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
-                <Moon className="absolute h-4 w-4 rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
-              </Button>
+              <ModeToggle />
             </div>
           </div>
         </div>
