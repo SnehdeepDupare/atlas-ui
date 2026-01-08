@@ -87,7 +87,7 @@ const Project = (props: BaseProjectProps | InternalProjectProps) => {
       >
         <div
           style={{ backgroundColor: color }}
-          className="relative mb-4 w-full overflow-hidden aspect-4/3 md:hidden"
+          className="relative mb-4 w-full overflow-hidden aspect-4/3 md:hidden rounded-lg"
         >
           <Image
             src={imgSrc}
@@ -98,10 +98,10 @@ const Project = (props: BaseProjectProps | InternalProjectProps) => {
           />
         </div>
 
-        <h2 className="font-bold md:font-normal text-2xl sm:text-3xl md:text-6xl md:group-hover:-translate-x-3 transition-all duration-200 ease-linear">
+        <h2 className="font-bold md:font-normal text-2xl md:text-6xl md:group-hover:-translate-x-3 transition-all duration-200 ease-linear">
           {title}
         </h2>
-        <p className="font-light text-sm sm:text-base md:group-hover:translate-x-3 transition-all duration-200 ease-linear">
+        <p className="font-light text-xs md:text-base text-muted-foreground md:text-foreground md:group-hover:translate-x-3 transition-all duration-200 ease-linear">
           {subtitle}
         </p>
       </div>
