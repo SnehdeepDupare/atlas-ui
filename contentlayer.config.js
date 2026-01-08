@@ -130,6 +130,21 @@ export default makeSource({
           }
         });
       },
+      () => (tree) => {
+        visit(tree, (node) => {
+          if (node?.type === "element" && node?.tagName === "code") {
+            const dataLanguage = node.properties?.["data-language"];
+            if (dataLanguage === "txt") {
+              return;
+            }
+
+            if (!node.properties) {
+              node.properties = {};
+            }
+            node.properties["data-line-numbers"] = "";
+          }
+        });
+      },
       rehypeNpmCommand,
       [
         rehypeAutolinkHeadings,
