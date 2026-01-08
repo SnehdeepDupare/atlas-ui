@@ -76,7 +76,7 @@ export function ComponentPreview({ name, children }: ComponentPreviewProps) {
           className="border border-input rounded-xl relative overflow-hidden"
         >
           <div className="flex flex-col space-y-4">
-            <div className="w-full rounded-md [&_pre]:my-0 [&_pre]:max-h-100 [&_pre]:whitespace-pre-wrap">
+            <div className="w-full rounded-md [&_pre]:my-0 [&_pre]:max-h-100">
               {Code}
             </div>
           </div>

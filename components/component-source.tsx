@@ -30,7 +30,12 @@ export function ComponentSource({
         </span>
       )}
       <Collapsible open={isOpened} onOpenChange={setIsOpened}>
-        <div className={cn("relative overflow-hidden rounded-xl", className)}>
+        <div
+          className={cn(
+            "relative overflow-hidden rounded-xl dark:ring dark:ring-white/10 [&_pre]:my-0 mt-6",
+            className,
+          )}
+        >
           <CollapsibleContent
             forceMount
             className={cn("overflow-hidden", !isOpened && "max-h-64")}
@@ -46,7 +51,7 @@ export function ComponentSource({
           <div
             className={cn(
               "absolute flex items-end justify-center rounded-xl bg-linear-to-b from-transparent to-zinc-950/90 p-2",
-              isOpened ? "inset-x-0 bottom-4 h-12" : "inset-0",
+              isOpened ? "inset-x-0 bottom-0 h-12" : "inset-0",
             )}
           >
             <CollapsibleTrigger asChild>
