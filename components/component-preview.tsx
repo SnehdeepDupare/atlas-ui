@@ -7,12 +7,15 @@ import ComponentWrapper from "@/components/component-wrapper";
 
 import { Index } from "@/registry/__index__";
 import { OpenInV0Button } from "@/components/open-in-v0-button";
+import { Button } from "@/components/ui/button";
+import { RotateCcwIcon } from "lucide-react";
 
 interface ComponentPreviewProps extends React.HTMLAttributes<HTMLDivElement> {
   name: string;
 }
 
 export function ComponentPreview({ name, children }: ComponentPreviewProps) {
+  const [key, setKey] = React.useState(0);
   const Code = (
     React.Children.toArray(children) as React.ReactElement<any>[]
   )[0];
@@ -53,12 +56,24 @@ export function ComponentPreview({ name, children }: ComponentPreviewProps) {
         </TabsList>
         <TabsContent value="preview" className="relative rounded-md">
           <ComponentWrapper>
-            <div className="absolute top-2 right-2 z-10">
+            <div className="absolute top-2 right-2 z-10 flex items-center gap-2">
               <OpenInV0Button
                 url={`https://atlasui.vercel.app/r/${name}.json`}
               />
+
+              <Button
+                onClick={() => setKey((prev) => prev + 1)}
+                variant="ghost"
+                size="icon"
+                className="size-8"
+              >
+                <RotateCcwIcon aria-label="restart-btn" className="size-4" />
+              </Button>
             </div>
-            <div className="min-h-80 flex items-center justify-center flex-wrap gap-y-3 w-full mx-auto lg:px-10 pb-7 mt-1.5">
+            <div
+              key={key}
+              className="min-h-80 flex items-center justify-center flex-wrap gap-y-3 w-full mx-auto lg:px-10 pb-7 mt-1.5"
+            >
               <React.Suspense
                 fallback={
                   <div className="flex w-full items-center justify-center text-sm text-muted-foreground">
