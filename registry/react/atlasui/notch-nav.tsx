@@ -105,7 +105,7 @@ const NotchNavTrigger = () => {
         delay: 0.2,
       }}
       className={cn(
-        "absolute top-0 left-1/2 -translate-x-1/2 w-48 h-12 rounded-b-4xl bg-[#b3eb14] text-neutral-900 flex items-center justify-center",
+        "absolute top-0 w-48 h-12 rounded-b-4xl bg-[#b3eb14] text-neutral-900 flex items-center justify-center",
         "before:content-[''] before:absolute before:top-0 before:-left-[14px] before:w-[30px] before:h-[15.5px] before:bg-no-repeat before:bg-size-[50%_100%] before:bg-[radial-gradient(circle_at_0_100%,transparent_14px,#b3eb14_15px)]",
         "after:content-[''] after:absolute after:top-0 after:left-full after:w-[30px] after:h-[15px] after:bg-no-repeat after:bg-size-[50%_100%] after:bg-[radial-gradient(circle_at_100%_100%,transparent_15px,#b3eb14_15px)]",
         open && "-top-px",
