@@ -81,7 +81,7 @@ const Path = (props: PathProps) => (
   />
 );
 
-const NotchNavTrigger = () => {
+const NotchNavTrigger = ({ className }: { className?: string }) => {
   const { open, toggle, contentHeight, offsetY } = useNotchNav();
 
   return (
@@ -109,6 +109,7 @@ const NotchNavTrigger = () => {
         "before:content-[''] before:absolute before:top-0 before:-left-[14px] before:w-[30px] before:h-[15.5px] before:bg-no-repeat before:bg-size-[50%_100%] before:bg-[radial-gradient(circle_at_0_100%,transparent_14px,#b3eb14_15px)]",
         "after:content-[''] after:absolute after:top-0 after:left-full after:w-[30px] after:h-[15px] after:bg-no-repeat after:bg-size-[50%_100%] after:bg-[radial-gradient(circle_at_100%_100%,transparent_15px,#b3eb14_15px)]",
         open && "-top-px",
+        className,
       )}
     >
       <motion.svg
@@ -142,13 +143,17 @@ const NotchNavTrigger = () => {
   );
 };
 
+interface NotchNavContentProps {
+  children: ReactNode;
+  offsetY?: number;
+  className?: string;
+}
+
 const NotchNavContent = ({
   children,
   offsetY = 20,
-}: {
-  children: ReactNode;
-  offsetY?: number;
-}) => {
+  className,
+}: NotchNavContentProps) => {
   const { open, contentRef, setOffsetY } = useNotchNav();
 
   useEffect(() => {
@@ -184,7 +189,10 @@ const NotchNavContent = ({
           variants={contentVariants}
           initial="closed"
           animate={open ? "open" : "closed"}
-          className="bg-[#b3eb14] w-96 rounded-4xl py-8 px-6 flex flex-col gap-2"
+          className={cn(
+            "bg-[#b3eb14] w-96 rounded-4xl py-8 px-6 flex flex-col gap-2",
+            className,
+          )}
         >
           {children}
         </motion.div>
