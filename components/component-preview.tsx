@@ -72,7 +72,7 @@ export function ComponentPreview({ name, children }: ComponentPreviewProps) {
             </div>
             <div
               key={key}
-              className="min-h-80 flex items-center justify-center flex-wrap gap-y-3 w-full mx-auto lg:px-10 pb-7 mt-1.5"
+              className="min-h-80 flex items-center justify-center flex-wrap gap-y-3 w-full mx-auto lg:px-10 pb-7"
             >
               <React.Suspense
                 fallback={
