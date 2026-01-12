@@ -1,0 +1,581 @@
+---
+title: Notch Nav
+description: A Notch style trigger that reveals the navigation menu from above.
+---
+
+<ComponentPreview name="notch-nav-demo" />
+
+## Installation
+
+<UsageTabs>
+
+<TabsContent value="React/Next">
+
+<InstallationTabs>
+
+<TabsContent value="cli">
+
+```bash
+npx shadcn@latest add https://atlasui.vercel.app/r/notch-nav.json
+```
+
+</TabsContent>
+
+<TabsContent value="manual">
+
+<Steps>
+
+<Step>Install the following dependencies:</Step>
+
+```bash
+npm install motion
+```
+
+<Step>Copy and paste the following code into your project.</Step>
+
+<ComponentSource name="notch-nav" filePath="components/notch-nav.tsx" />
+
+<Step>Update the import paths to match your project setup.</Step>
+
+</Steps>
+
+</TabsContent>
+
+</InstallationTabs>
+
+</TabsContent>
+
+<TabsContent value="JavaScript">
+
+<InstallationTabs>
+
+<TabsContent value="cli">
+
+```bash
+npx shadcn@latest add https://atlasui.vercel.app/r/notch-nav-js.json
+```
+
+</TabsContent>
+
+<TabsContent value="manual">
+
+<Steps>
+
+<Step>Install the following dependencies:</Step>
+
+```bash
+npm install motion
+```
+
+<Step>Copy and paste the following code into your project.</Step>
+
+Structure in your html file:
+
+```html
+<div id="notch-nav">
+  <button id="notch-nav-trigger"></button>
+  <div id="notch-nav-content">
+    <a href="#" id="notch-nav-item">Home</a>
+    <a href="#" id="notch-nav-item">About</a>
+    <a href="#" id="notch-nav-item">Services</a>
+    <a href="#" id="notch-nav-item">Portfolio</a>
+    <a href="#" id="notch-nav-item">Contact</a>
+  </div>
+</div>
+```
+
+<Step>Add `style.css` </Step>
+
+```css
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #18181b;
+}
+
+#notch-nav {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+#notch-nav-trigger {
+  all: unset;
+  position: absolute;
+  top: 0;
+
+  width: 12rem;
+  height: 3rem;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background-color: #b3eb14;
+  color: #171717;
+
+  border-bottom-left-radius: 2rem;
+  border-bottom-right-radius: 2rem;
+}
+
+#notch-nav-trigger::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -14px;
+
+  width: 30px;
+  height: 15.5px;
+
+  background-repeat: no-repeat;
+  background-size: 50% 100%;
+  background-image: radial-gradient(
+    circle at 0 100%,
+    transparent 14px,
+    #b3eb14 15px
+  );
+}
+
+#notch-nav-trigger::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 100%;
+
+  width: 30px;
+  height: 15px;
+
+  background-repeat: no-repeat;
+  background-size: 50% 100%;
+  background-image: radial-gradient(
+    circle at 100% 100%,
+    transparent 15px,
+    #b3eb14 15px
+  );
+}
+
+#notch-nav-trigger svg {
+  width: 23px;
+  height: 23px;
+}
+
+#notch-nav-trigger .line {
+  stroke: #171717;
+  stroke-width: 1.5;
+  stroke-linecap: round;
+}
+
+#notch-nav-trigger:focus-visible {
+  outline: 2px solid #171717;
+  outline-offset: 4px;
+}
+
+#notch-nav-content {
+  position: absolute;
+  top: 0;
+
+  width: 24rem;
+  padding: 2rem 1.5rem;
+
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+
+  background-color: #b3eb14;
+  border-radius: 2rem;
+
+  transform: translateY(-100%);
+}
+
+#notch-nav-item {
+  position: relative;
+  height: 2rem;
+  padding: 0.25rem;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  overflow: hidden;
+
+  color: #171717;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 16px;
+
+  border-bottom: 1px solid #171717;
+
+  opacity: 0;
+  transform: translateY(20px);
+
+  font-family:
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Roboto,
+    Oxygen,
+    Ubuntu,
+    Cantarell,
+    "Open Sans",
+    "Helvetica Neue",
+    sans-serif;
+}
+
+.item-label {
+  position: absolute;
+  inset: 0;
+
+  display: flex;
+  align-items: center;
+
+  transition: transform 0.25s ease-out;
+}
+
+.item-label.secondary {
+  transform: translateY(100%);
+  font-style: italic;
+  font-weight: 500;
+}
+
+#notch-nav-item:hover .primary {
+  transform: translateY(-100%);
+}
+
+#notch-nav-item:hover .secondary {
+  transform: translateY(0);
+}
+```
+
+<Step>Add `script.js`</Step>
+
+```js
+import { animate, stagger } from "motion";
+
+let open = false;
+const DEFAULT_OFFSET_Y = 20;
+
+const trigger = document.getElementById("notch-nav-trigger");
+const content = document.getElementById("notch-nav-content");
+const items = document.querySelectorAll("#notch-nav-item");
+
+const getOffsetY = () => {
+  const attr = content.getAttribute("data-offset-y");
+
+  if (attr === null || attr === "") {
+    return DEFAULT_OFFSET_Y;
+  }
+
+  const value = Number(attr);
+  return Number.isFinite(value) ? value : DEFAULT_OFFSET_Y;
+};
+
+const offsetY = getOffsetY();
+
+if (!trigger.dataset.enhanced) {
+  trigger.innerHTML = `
+    <svg
+      width="23"
+      height="23"
+      viewBox="0 0 23 23"
+      fill="none"
+    >
+      <path class="line top" />
+      <path class="line middle" />
+      <path class="line bottom" />
+    </svg>
+  `;
+  trigger.dataset.enhanced = "true";
+}
+
+const paths = {
+  top: trigger.querySelector(".top"),
+  middle: trigger.querySelector(".middle"),
+  bottom: trigger.querySelector(".bottom"),
+};
+
+const CLOSED = {
+  top: "M 2 2.5 L 20 2.5",
+  middle: "M 2 9.423 L 20 9.423",
+  bottom: "M 2 16.346 L 20 16.346",
+};
+
+const OPEN = {
+  top: "M 3 16.5 L 17 2.5",
+  middle: "",
+  bottom: "M 3 2.5 L 17 16.346",
+};
+
+paths.top.setAttribute("d", CLOSED.top);
+paths.middle.setAttribute("d", CLOSED.middle);
+paths.bottom.setAttribute("d", CLOSED.bottom);
+
+const animateTriggerOpen = () => {
+  animate(
+    paths.top,
+    { d: OPEN.top },
+    { duration: 0.25, easing: "ease-in-out" },
+  );
+  animate(
+    paths.bottom,
+    { d: OPEN.bottom },
+    { duration: 0.25, easing: "ease-in-out" },
+  );
+  animate(paths.middle, { opacity: 0 }, { duration: 0.1 });
+};
+
+const animateTriggerClose = () => {
+  animate(
+    paths.top,
+    { d: CLOSED.top },
+    { duration: 0.25, easing: "ease-in-out" },
+  );
+  animate(
+    paths.bottom,
+    { d: CLOSED.bottom },
+    { duration: 0.25, easing: "ease-in-out" },
+  );
+  animate(paths.middle, { opacity: 1 }, { duration: 0.1, delay: 0.15 });
+};
+
+const getContentHeight = () => content.getBoundingClientRect().height;
+
+const openNav = () => {
+  open = true;
+
+  const height = getContentHeight();
+
+  // Move trigger
+  animate(
+    trigger,
+    { y: height + offsetY },
+    {
+      type: "spring",
+      stiffness: 300,
+      damping: 20,
+      mass: 0.9,
+      delay: 0.2,
+    },
+  );
+
+  // Content slide in
+  animate(
+    content,
+    { y: offsetY },
+    {
+      type: "spring",
+      stiffness: 300,
+      damping: 20,
+      mass: 0.9,
+      delay: 0.2,
+    },
+  );
+
+  // Stagger items in
+  animate(
+    items,
+    { opacity: [0, 1], y: [20, 0] },
+    {
+      delay: stagger(0.1, { startDelay: 0.3 }),
+      duration: 0.3,
+      easing: "ease-out",
+    },
+  );
+};
+
+const closeNav = () => {
+  open = false;
+
+  // Move trigger back
+  animate(
+    trigger,
+    { y: 0 },
+    {
+      type: "spring",
+      stiffness: 300,
+      damping: 20,
+      mass: 0.9,
+      delay: 0.2,
+    },
+  );
+
+  // Stagger items out (reverse)
+  animate(
+    items,
+    { opacity: [1, 0], y: [0, 20] },
+    {
+      delay: stagger(0.05, { from: "last" }),
+      duration: 0.2,
+      easing: "ease-in",
+    },
+  );
+
+  // Content slide out
+  animate(
+    content,
+    { y: "-100%" },
+    {
+      duration: 0.25,
+      easing: "ease-in",
+      delay: 0.2,
+    },
+  );
+};
+
+trigger.addEventListener("click", () => {
+  if (open) {
+    closeNav();
+    animateTriggerClose();
+  } else {
+    openNav();
+    animateTriggerOpen();
+  }
+});
+
+items.forEach((item) => {
+  // Prevent double-init
+  if (item.dataset.enhanced) return;
+
+  const text = item.textContent.trim();
+  item.textContent = "";
+
+  const primary = document.createElement("span");
+  primary.className = "item-label primary";
+  primary.textContent = text;
+
+  const secondary = document.createElement("span");
+  secondary.className = "item-label secondary";
+  secondary.textContent = text;
+
+  item.append(primary, secondary);
+  item.dataset.enhanced = "true";
+});
+```
+
+</Steps>
+
+</TabsContent>
+
+</InstallationTabs>
+
+</TabsContent>
+
+</UsageTabs>
+
+## Usage
+
+<UsageTabs>
+
+<TabsContent value="React/Next">
+
+```tsx
+import {
+  NotchNav,
+  NotchNavContent,
+  NotchNavItem,
+  NotchNavTrigger,
+} from "@/components/notch-nav";
+```
+
+```tsx
+<NotchNav>
+  <NotchNavTrigger />
+  <NotchNavContent>
+    <NotchNavItem href="/">Home</NotchNavItem>
+    <NotchNavItem href="/about">About</NotchNavItem>
+    <NotchNavItem href="/products">Products</NotchNavItem>
+    <NotchNavItem href="/services">Services</NotchNavItem>
+    <NotchNavItem href="/contact">Contact</NotchNavItem>
+  </NotchNavContent>
+</NotchNav>
+```
+
+**NOTE:** `<NotchNavTrigger />` includes all required animation and interaction logic out of the box. The trigger is absolutely positioned at `top-0` so ensure the parent container has `relative` position.
+
+</TabsContent>
+
+<TabsContent value="JavaScript">
+
+Create a wrapper div with `id="notch-nav"`
+
+```html
+<div id="notch-nav"></div>
+```
+
+Place a button with `id="notch-nav-trigger"` inside the wrapper div. The button can remain empty as the icons are already handled by the `script.js` file.
+
+```html {2}
+<div id="notch-nav">
+  <button id="notch-nav-trigger"></button>
+</div>
+```
+
+Create a `div` with `id="notch-nav-content"` inside the wrapper div and place your links inside the `<a>` tags with `id="notch-nav-item"`.
+
+```html {3-9}
+<div id="notch-nav">
+  <button id="notch-nav-trigger"></button>
+  <div id="notch-nav-content">
+    <a href="#" id="notch-nav-item">Home</a>
+    <a href="#" id="notch-nav-item">About</a>
+    <a href="#" id="notch-nav-item">Services</a>
+    <a href="#" id="notch-nav-item">Portfolio</a>
+    <a href="#" id="notch-nav-item">Contact</a>
+  </div>
+</div>
+```
+
+You can optionally control the vertical offset using the `data-offset-y` attribute on `#notch-nav-content`.
+
+**NOTE:** Do not change any of the IDs as the styles and animations are dependent on them.
+
+</TabsContent>
+
+</UsageTabs>
+
+## Props / Data Attributes
+
+<UsageTabs>
+
+<TabsContent value="React/Next">
+
+**`<NotchNavTrigger />`**
+
+| Prop        | Type     | Default | Description                              |
+| ----------- | -------- | ------- | ---------------------------------------- |
+| `className` | `string` | -       | Optional class names for custom styling. |
+
+**`<NotchNavContent />`**
+
+| Prop       | Type              | Default | Description                                                                      |
+| ---------- | ----------------- | ------- | -------------------------------------------------------------------------------- |
+| `children` | `React.ReactNode` | -       | The navigation items rendered inside the notch menu.                             |
+| `offsetY`  | `number`          | `20`    | Vertical offset from top (in pixels) applied when the menu slides in from above. |
+
+**`<NotchNavItem />`**
+
+| Prop        | Type              | Default | Description                               |
+| ----------- | ----------------- | ------- | ----------------------------------------- |
+| `children`  | `React.ReactNode` | -       | The label content of the navigation item. |
+| `href`      | `string`          | -       | Destination URL for the navigation item.  |
+| `className` | `string`          | -       | Optional class names for custom styling.  |
+
+</TabsContent>
+
+<TabsContent value="JavaScript">
+
+**#notch-nav-content**
+
+| Data Attribute  | Type     | Default | Description                                                                        |
+| --------------- | -------- | ------- | ---------------------------------------------------------------------------------- |
+| `data-offset-y` | `number` | `20`    | Vertical offset from top (in pixels) applied when the menu is revealed from above. |
+
+</TabsContent>
+
+</UsageTabs>

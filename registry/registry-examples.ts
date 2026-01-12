@@ -280,4 +280,19 @@ export const examples: Registry["items"] = [
       },
     ],
   },
+  {
+    name: "notch-nav-demo",
+    type: "registry:example",
+    title: "Notch Nav Demo",
+    description:
+      "Example of Notch style trigger that reveals the navigation menu from above.",
+    registryDependencies: ["https://atlasui.vercel.app/r/notch-nav.json"],
+    files: [
+      {
+        path: "react/examples/notch-nav-demo.tsx",
+        type: "registry:example",
+        target: "components/notch-nav-demo.tsx",
+      },
+    ],
+  },
 ];

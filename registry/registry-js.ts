@@ -401,4 +401,32 @@ export const js: Registry["items"] = [
       },
     ],
   },
+  {
+    name: "notch-nav-js",
+    type: "registry:file",
+    title: "Notch Nav",
+    description:
+      "A Notch style trigger that reveals the navigation menu from above built with HTML, CSS, JavaScript and Motion.",
+    meta: {
+      framework: "vanilla",
+    },
+    dependencies: ["motion"],
+    files: [
+      {
+        path: "js/notch-nav/index.html",
+        type: "registry:file",
+        target: "~/notch-nav/index.html",
+      },
+      {
+        path: "js/notch-nav/style.css",
+        type: "registry:file",
+        target: "~/notch-nav/style.css",
+      },
+      {
+        path: "js/notch-nav/script.js",
+        type: "registry:file",
+        target: "~/notch-nav/script.js",
+      },
+    ],
+  },
 ];

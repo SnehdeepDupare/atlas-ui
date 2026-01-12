@@ -70,6 +70,12 @@ export const docsConfig: DocsConfig = {
       title: "Components",
       items: [
         {
+          title: "Notch Nav",
+          href: "/docs/components/notch-nav",
+          items: [],
+          label: "New",
+        },
+        {
           title: "Animated Mobile Navbar",
           href: "/docs/components/animated-mobile-navbar",
           items: [],
