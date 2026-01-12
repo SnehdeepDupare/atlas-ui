@@ -282,6 +282,24 @@
       "type": "registry:component"
     },
     {
+      "name": "notch-nav",
+      "title": "Notch Nav",
+      "description": "A Notch style trigger that reveals the navigation menu from above.",
+      "dependencies": [
+        "motion"
+      ],
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "registry/react/atlasui/notch-nav.tsx",
+          "type": "registry:component"
+        }
+      ],
+      "type": "registry:component"
+    },
+    {
       "name": "animated-mobile-navbar-demo",
       "title": "Animated Mobile Navbar Demo",
       "description": "Example showcasing the Animated Mobile Navbar component.",
@@ -563,6 +581,22 @@
           "path": "registry/react/examples/box-reveal-demo.tsx",
           "type": "registry:example",
           "target": "components/box-reveal-demo.tsx"
+        }
+      ],
+      "type": "registry:example"
+    },
+    {
+      "name": "notch-nav-demo",
+      "title": "Notch Nav Demo",
+      "description": "Example of Notch style trigger that reveals the navigation menu from above.",
+      "registryDependencies": [
+        "https://atlasui.vercel.app/r/notch-nav.json"
+      ],
+      "files": [
+        {
+          "path": "registry/react/examples/notch-nav-demo.tsx",
+          "type": "registry:example",
+          "target": "components/notch-nav-demo.tsx"
         }
       ],
       "type": "registry:example"
@@ -965,6 +999,35 @@
           "path": "registry/fonts/fontSeven.woff2",
           "type": "registry:file",
           "target": "~/fonts/fontSeven.woff2"
+        }
+      ],
+      "meta": {
+        "framework": "vanilla"
+      },
+      "type": "registry:file"
+    },
+    {
+      "name": "notch-nav-js",
+      "title": "Notch Nav",
+      "description": "A Notch style trigger that reveals the navigation menu from above built with HTML, CSS, JavaScript and Motion.",
+      "dependencies": [
+        "motion"
+      ],
+      "files": [
+        {
+          "path": "registry/js/notch-nav/index.html",
+          "type": "registry:file",
+          "target": "~/notch-nav/index.html"
+        },
+        {
+          "path": "registry/js/notch-nav/style.css",
+          "type": "registry:file",
+          "target": "~/notch-nav/style.css"
+        },
+        {
+          "path": "registry/js/notch-nav/script.js",
+          "type": "registry:file",
+          "target": "~/notch-nav/script.js"
         }
       ],
       "meta": {

@@ -248,4 +248,19 @@ export const ui: Registry["items"] = [
       },
     ],
   },
+  {
+    name: "notch-nav",
+    type: "registry:component",
+    title: "Notch Nav",
+    description:
+      "A Notch style trigger that reveals the navigation menu from above.",
+    dependencies: ["motion"],
+    registryDependencies: ["utils"],
+    files: [
+      {
+        path: "react/atlasui/notch-nav.tsx",
+        type: "registry:component",
+      },
+    ],
+  },
 ];

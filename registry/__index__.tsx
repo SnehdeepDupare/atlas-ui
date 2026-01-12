@@ -285,6 +285,23 @@ export const Index: Record<string, any> = {
     }),
     meta: undefined,
   },
+  "notch-nav": {
+    name: "notch-nav",
+    description: "A Notch style trigger that reveals the navigation menu from above.",
+    type: "registry:component",
+    registryDependencies: ["utils"],
+    files: [{
+      path: "registry/react/atlasui/notch-nav.tsx",
+      type: "registry:component",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/react/atlasui/notch-nav.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: undefined,
+  },
   "animated-mobile-navbar-demo": {
     name: "animated-mobile-navbar-demo",
     description: "Example showcasing the Animated Mobile Navbar component.",
@@ -586,6 +603,23 @@ export const Index: Record<string, any> = {
     }],
     component: React.lazy(async () => {
       const mod = await import("@/registry/react/examples/box-reveal-demo.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: undefined,
+  },
+  "notch-nav-demo": {
+    name: "notch-nav-demo",
+    description: "Example of Notch style trigger that reveals the navigation menu from above.",
+    type: "registry:example",
+    registryDependencies: ["https://atlasui.vercel.app/r/notch-nav.json"],
+    files: [{
+      path: "registry/react/examples/notch-nav-demo.tsx",
+      type: "registry:example",
+      target: "components/notch-nav-demo.tsx"
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/react/examples/notch-nav-demo.tsx")
       const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
       return { default: mod.default || mod[exportName] }
     }),
