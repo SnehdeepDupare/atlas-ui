@@ -80,9 +80,7 @@ export default function Home() {
               size="lg"
               className="inline-flex gap-0.5 justify-center overflow-hidden text-sm font-medium transition bg-emerald-100 text-emerald-700 ring-1 ring-inset ring-emerald-600/20 hover:bg-emerald-200/80 hover:text-emerald-800 hover:ring-emerald-600/30 dark:bg-emerald-400/10 dark:text-emerald-400 dark:ring-1 dark:ring-inset dark:ring-emerald-400/20 dark:hover:bg-emerald-400/10 dark:hover:text-emerald-300 dark:hover:ring-emerald-300"
             >
-              <Link href="/docs/components/animated-mobile-navbar">
-                Explore Components
-              </Link>
+              <Link href="/docs/components">Explore Components</Link>
             </Button>
 
             <Button
