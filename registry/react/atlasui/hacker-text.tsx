@@ -2,10 +2,17 @@
 
 import { Bebas_Neue } from "next/font/google";
 import { useEffect } from "react";
+import { cn } from "@/lib/utils";
 
 const bebas = Bebas_Neue({ subsets: ["latin"], weight: ["400"] });
 
-export const HackerText = ({ text }: { text: string }) => {
+export const HackerText = ({
+  text,
+  className,
+}: {
+  text: string;
+  className?: string;
+}) => {
   const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 
   useEffect(() => {
@@ -78,7 +85,7 @@ export const HackerText = ({ text }: { text: string }) => {
     <span
       id="text"
       data-value={text}
-      className={`${bebas.className} uppercase text-4xl`}
+      className={cn("uppercase text-4xl", bebas.className, className)}
     >
       {text}
     </span>

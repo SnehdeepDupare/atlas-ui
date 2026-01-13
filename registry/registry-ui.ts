@@ -47,7 +47,7 @@ export const ui: Registry["items"] = [
     title: "Shiny Button",
     description: "A shiny button with a sleek animation effect.",
     dependencies: ["motion"],
-    registryDependencies: [],
+    registryDependencies: ["utils"],
     files: [
       {
         path: "react/atlasui/shiny-button.tsx",
@@ -118,6 +118,7 @@ export const ui: Registry["items"] = [
     description:
       "A text animation that scrambles letters before revealing the final text.",
     dependencies: [],
+    registryDependencies: ["utils"],
     files: [
       {
         path: "react/atlasui/hacker-text.tsx",
@@ -187,6 +188,7 @@ export const ui: Registry["items"] = [
     title: "Loki Text Effect",
     description: "The iconic text animation from the Loki series intro.",
     dependencies: ["motion"],
+    registryDependencies: ["utils"],
     files: [
       {
         path: "react/atlasui/loki-text-effect.tsx",
@@ -241,6 +243,7 @@ export const ui: Registry["items"] = [
     description:
       "A smooth reveal animation that slides a colored overlay away to introduce content as it enters the viewport.",
     dependencies: ["motion"],
+    registryDependencies: ["utils"],
     files: [
       {
         path: "react/atlasui/box-reveal.tsx",

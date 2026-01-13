@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { motion } from "motion/react";
+import { cn } from "@/lib/utils";
 
 import {
   fontFive,
@@ -80,7 +81,7 @@ const AnimatedLetter = ({
 
   return (
     <motion.span
-      className={`${fontClass} inline-block text-6xl md:text-9xl drop-shadow-[0_0_8px_black] dark:drop-shadow-[0_0_8px_white]`}
+      className={`${fontClass} inline-block drop-shadow-[0_0_8px_black] dark:drop-shadow-[0_0_8px_white]`}
       style={{
         fontWeight: 700,
         letterSpacing: "0.15em",
@@ -104,7 +105,12 @@ export const LokiTextEffect = ({
   className = "",
 }: LokiEffectProps) => {
   return (
-    <div className={`flex flex-wrap justify-center gap-px ${className}`}>
+    <div
+      className={cn(
+        "flex flex-wrap justify-center gap-px text-6xl md:text-9xl",
+        className,
+      )}
+    >
       {text.split("").map((char, i) => (
         <AnimatedLetter
           key={i}
