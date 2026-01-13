@@ -72,12 +72,23 @@ const components = {
       {...props}
     />
   ),
-  a: ({ className, ...props }: React.HTMLAttributes<HTMLAnchorElement>) => (
-    <a
-      className={cn("font-medium underline underline-offset-4", className)}
-      {...props}
-    />
-  ),
+  a: ({
+    className,
+    href,
+    ...props
+  }: React.HTMLAttributes<HTMLAnchorElement> & { href?: string }) => {
+    const isExternal = href?.startsWith("http");
+
+    return (
+      <a
+        href={href}
+        className={cn("font-medium underline underline-offset-4", className)}
+        target={isExternal ? "_blank" : undefined}
+        rel={isExternal ? "noopener noreferrer" : undefined}
+        {...props}
+      />
+    );
+  },
   p: ({ className, ...props }: React.HTMLAttributes<HTMLParagraphElement>) => (
     <p className={cn("leading-7 not-first:mt-6", className)} {...props} />
   ),
