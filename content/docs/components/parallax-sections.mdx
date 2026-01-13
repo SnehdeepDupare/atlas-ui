@@ -3,7 +3,7 @@ title: Parallax Sections
 description: A simple Parallax effect using Motion.
 ---
 
-<ComponentPreview name="parallax-sections-demo" />
+<ComponentPreview name="parallax-sections-demo" overflow="visible" />
 
 ## Installation
 
@@ -64,9 +64,7 @@ npx shadcn@latest add https://atlasui.vercel.app/r/parallax-sections-js.json
 
 <Steps>
 
-<Step>
- Install the following dependencies:
-</Step>
+<Step>Install the following dependencies:</Step>
 
 ```bash
 npm install motion
@@ -157,7 +155,7 @@ scroll(
   {
     target: container,
     offset: ["start start", "end end"],
-  }
+  },
 );
 ```
 

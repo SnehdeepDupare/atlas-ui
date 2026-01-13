@@ -1,20 +1,25 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 "use client";
 
-import * as React from "react";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import ComponentWrapper from "@/components/component-wrapper";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import * as React from "react";
 
-import { Index } from "@/registry/__index__";
 import { OpenInV0Button } from "@/components/open-in-v0-button";
 import { Button } from "@/components/ui/button";
+import { Index } from "@/registry/__index__";
 import { RotateCcwIcon } from "lucide-react";
 
 interface ComponentPreviewProps extends React.HTMLAttributes<HTMLDivElement> {
   name: string;
+  overflow?: "hidden" | "auto" | "visible";
 }
 
-export function ComponentPreview({ name, children }: ComponentPreviewProps) {
+export function ComponentPreview({
+  name,
+  children,
+  overflow = "hidden",
+}: ComponentPreviewProps) {
   const [key, setKey] = React.useState(0);
   const Code = (
     React.Children.toArray(children) as React.ReactElement<any>[]
@@ -55,7 +60,7 @@ export function ComponentPreview({ name, children }: ComponentPreviewProps) {
           </TabsTrigger>
         </TabsList>
         <TabsContent value="preview" className="relative rounded-md">
-          <ComponentWrapper>
+          <ComponentWrapper overflow={overflow}>
             <div className="absolute top-2 right-2 z-10 flex items-center gap-2">
               <OpenInV0Button
                 url={`https://atlasui.vercel.app/r/${name}.json`}
