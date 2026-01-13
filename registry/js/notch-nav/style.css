@@ -91,7 +91,8 @@ body {
   position: absolute;
   top: 0;
 
-  width: 24rem;
+  width: 90svw;
+  max-width: 24rem;
   padding: 2rem 1.5rem;
 
   display: flex;

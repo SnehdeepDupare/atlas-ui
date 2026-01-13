@@ -190,7 +190,7 @@ const NotchNavContent = ({
           initial="closed"
           animate={open ? "open" : "closed"}
           className={cn(
-            "bg-[#b3eb14] w-96 rounded-4xl py-8 px-6 flex flex-col gap-2",
+            "bg-[#b3eb14] w-[90svw] max-w-96 rounded-4xl py-8 px-6 flex flex-col gap-2",
             className,
           )}
         >
