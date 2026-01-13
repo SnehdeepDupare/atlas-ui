@@ -6,7 +6,9 @@
   "dependencies": [
     "motion"
   ],
-  "registryDependencies": [],
+  "registryDependencies": [
+    "utils"
+  ],
   "files": [
     {
       "path": "registry/react/atlasui/shiny-button.tsx",

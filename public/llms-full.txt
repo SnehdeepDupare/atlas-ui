@@ -518,10 +518,17 @@ Description: A text animation that scrambles letters before revealing the final 
 
 import { Bebas_Neue } from "next/font/google";
 import { useEffect } from "react";
+import { cn } from "@/lib/utils";
 
 const bebas = Bebas_Neue({ subsets: ["latin"], weight: ["400"] });
 
-export const HackerText = ({ text }: { text: string }) => {
+export const HackerText = ({
+  text,
+  className,
+}: {
+  text: string;
+  className?: string;
+}) => {
   const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 
   useEffect(() => {
@@ -594,7 +601,7 @@ export const HackerText = ({ text }: { text: string }) => {
     <span
       id="text"
       data-value={text}
-      className={`${bebas.className} uppercase text-4xl`}
+      className={cn("uppercase text-4xl", bebas.className, className)}
     >
       {text}
     </span>
@@ -1365,6 +1372,7 @@ c�& 7���w����iLc��P �Jvh�ޅ'C�`&��%�|L�
 
 import { useEffect, useState } from "react";
 import { motion } from "motion/react";
+import { cn } from "@/lib/utils";
 
 import {
   fontFive,
@@ -1443,7 +1451,7 @@ const AnimatedLetter = ({
 
   return (
     <motion.span
-      className={`${fontClass} inline-block text-6xl md:text-9xl drop-shadow-[0_0_8px_black] dark:drop-shadow-[0_0_8px_white]`}
+      className={`${fontClass} inline-block drop-shadow-[0_0_8px_black] dark:drop-shadow-[0_0_8px_white]`}
       style={{
         fontWeight: 700,
         letterSpacing: "0.15em",
@@ -1467,7 +1475,12 @@ export const LokiTextEffect = ({
   className = "",
 }: LokiEffectProps) => {
   return (
-    <div className={`flex flex-wrap justify-center gap-px ${className}`}>
+    <div
+      className={cn(
+        "flex flex-wrap justify-center gap-px text-6xl md:text-9xl",
+        className,
+      )}
+    >
       {text.split("").map((char, i) => (
         <AnimatedLetter
           key={i}
@@ -1680,7 +1693,7 @@ const NotchNavContent = ({
           initial="closed"
           animate={open ? "open" : "closed"}
           className={cn(
-            "bg-[#b3eb14] w-96 rounded-4xl py-8 px-6 flex flex-col gap-2",
+            "bg-[#b3eb14] w-[90svw] max-w-96 rounded-4xl py-8 px-6 flex flex-col gap-2",
             className,
           )}
         >

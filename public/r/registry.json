@@ -71,7 +71,9 @@
       "dependencies": [
         "motion"
       ],
-      "registryDependencies": [],
+      "registryDependencies": [
+        "utils"
+      ],
       "files": [
         {
           "path": "registry/react/atlasui/shiny-button.tsx",
@@ -143,6 +145,9 @@
       "title": "Hacker Text",
       "description": "A text animation that scrambles letters before revealing the final text.",
       "dependencies": [],
+      "registryDependencies": [
+        "utils"
+      ],
       "files": [
         {
           "path": "registry/react/atlasui/hacker-text.tsx",
@@ -218,6 +223,9 @@
       "dependencies": [
         "motion"
       ],
+      "registryDependencies": [
+        "utils"
+      ],
       "files": [
         {
           "path": "registry/react/atlasui/loki-text-effect.tsx",
@@ -272,6 +280,9 @@
       "description": "A smooth reveal animation that slides a colored overlay away to introduce content as it enters the viewport.",
       "dependencies": [
         "motion"
+      ],
+      "registryDependencies": [
+        "utils"
       ],
       "files": [
         {

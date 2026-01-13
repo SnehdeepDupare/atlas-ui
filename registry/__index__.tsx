@@ -70,7 +70,7 @@ export const Index: Record<string, any> = {
     name: "shiny-button",
     description: "A shiny button with a sleek animation effect.",
     type: "registry:ui",
-    registryDependencies: [],
+    registryDependencies: ["utils"],
     files: [{
       path: "registry/react/atlasui/shiny-button.tsx",
       type: "registry:ui",
@@ -138,7 +138,7 @@ export const Index: Record<string, any> = {
     name: "hacker-text",
     description: "A text animation that scrambles letters before revealing the final text.",
     type: "registry:component",
-    registryDependencies: undefined,
+    registryDependencies: ["utils"],
     files: [{
       path: "registry/react/atlasui/hacker-text.tsx",
       type: "registry:component",
@@ -223,7 +223,7 @@ export const Index: Record<string, any> = {
     name: "loki-text-effect",
     description: "The iconic text animation from the Loki series intro.",
     type: "registry:component",
-    registryDependencies: undefined,
+    registryDependencies: ["utils"],
     files: [{
       path: "registry/react/atlasui/loki-text-effect.tsx",
       type: "registry:component",
@@ -272,7 +272,7 @@ export const Index: Record<string, any> = {
     name: "box-reveal",
     description: "A smooth reveal animation that slides a colored overlay away to introduce content as it enters the viewport.",
     type: "registry:component",
-    registryDependencies: undefined,
+    registryDependencies: ["utils"],
     files: [{
       path: "registry/react/atlasui/box-reveal.tsx",
       type: "registry:component",
