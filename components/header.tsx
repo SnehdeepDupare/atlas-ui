@@ -9,9 +9,14 @@ import { FaGithub } from "react-icons/fa";
 import { Button } from "@/components/ui/button";
 import { siteConfig } from "@/config/site";
 import { cn } from "@/lib/utils";
-import { CommandMenu } from "./command-menu";
-import { MobileNav } from "./mobile-nav";
-import { ModeToggle } from "./mode-toggle";
+import { CommandMenu } from "@/components/command-menu";
+import { MobileNav } from "@/components/mobile-nav";
+import { ModeToggle } from "@/components/mode-toggle";
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipTrigger,
+} from "@/components/ui/tooltip";
 
 export const Header = () => {
   const pathname = usePathname();
@@ -73,20 +78,27 @@ export const Header = () => {
             </div>
 
             <div className="flex items-center gap-1">
-              <Button
-                variant="ghost"
-                size="icon"
-                className="h-8 w-8 px-0"
-                asChild
-              >
-                <Link
-                  href={siteConfig.links.github}
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  <FaGithub className="h-4 w-4" />
-                </Link>
-              </Button>
+              <Tooltip>
+                <TooltipTrigger asChild>
+                  <Button
+                    variant="ghost"
+                    size="icon"
+                    className="size-8"
+                    asChild
+                  >
+                    <Link
+                      href={siteConfig.links.github}
+                      target="_blank"
+                      rel="noreferrer"
+                    >
+                      <FaGithub className="h-4 w-4" />
+                    </Link>
+                  </Button>
+                </TooltipTrigger>
+                <TooltipContent>
+                  <p>View on GitHub</p>
+                </TooltipContent>
+              </Tooltip>
 
               <ModeToggle />
             </div>
