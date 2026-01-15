@@ -1,4 +1,5 @@
 @import "tailwindcss";
+@import "tw-animate-css";
 
 @custom-variant dark (&:is(.dark *));
 
@@ -72,6 +73,21 @@
     @apply absolute w-9 h-9 bg-muted rounded-full font-mono font-medium text-center text-base inline-flex items-center justify-center -indent-px border-4 border-background;
     @apply ml-[-50px] mt-[-4px];
     content: counter(step);
+  }
+}
+
+@utility extend-touch-target {
+  @media (pointer: coarse) {
+    @apply relative touch-manipulation after:absolute after:-inset-2;
+  }
+}
+
+@utility no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+
+  &::-webkit-scrollbar {
+    display: none;
   }
 }
 

@@ -21,10 +21,10 @@ import {
 export const Header = () => {
   const pathname = usePathname();
   return (
-    <header className="sticky top-0 z-50 w-full border-b  backdrop-blur-sm dark:backdrop-blur-xs   shadow-md dark:shadow-primary-foreground">
+    <header className="sticky top-0 z-50 w-full border-b backdrop-blur-sm dark:backdrop-blur-xs shadow-md dark:shadow-primary-foreground">
       <div className="container-wrapper">
         <div className="container flex h-14 items-center">
-          <MobileNav />
+          <MobileNav className="mr-3 md:hidden" />
 
           <nav className="flex items-center gap-4 text-sm xl:gap-6">
             <Link href="/" className="flex items-center gap-2 group mr-3">
