@@ -9,7 +9,7 @@
   "files": [
     {
       "path": "registry/react/examples/notch-nav-demo.tsx",
-      "content": "import {\n  NotchNav,\n  NotchNavContent,\n  NotchNavItem,\n  NotchNavTrigger,\n} from \"@/registry/react/atlasui/notch-nav\";\n\nexport const NotchNavDemo = () => {\n  return (\n    <div className=\"relative h-[50vh]\">\n      <NotchNav>\n        <NotchNavTrigger />\n        <NotchNavContent>\n          <NotchNavItem href=\"/\">Home</NotchNavItem>\n          <NotchNavItem href=\"/about\">About</NotchNavItem>\n          <NotchNavItem href=\"/products\">Products</NotchNavItem>\n          <NotchNavItem href=\"/services\">Services</NotchNavItem>\n          <NotchNavItem href=\"/contact\">Contact</NotchNavItem>\n        </NotchNavContent>\n      </NotchNav>\n    </div>\n  );\n};\n",
+      "content": "import {\n  NotchNav,\n  NotchNavContent,\n  NotchNavItem,\n  NotchNavTrigger,\n} from \"@/registry/react/atlasui/notch-nav\";\n\nexport const NotchNavDemo = () => {\n  return (\n    <div className=\"relative min-h-80\">\n      <NotchNav>\n        <NotchNavTrigger />\n        <NotchNavContent>\n          <NotchNavItem href=\"#\">Home</NotchNavItem>\n          <NotchNavItem href=\"#\">About</NotchNavItem>\n          <NotchNavItem href=\"#\">Products</NotchNavItem>\n          <NotchNavItem href=\"#\">Services</NotchNavItem>\n          <NotchNavItem href=\"#\">Contact</NotchNavItem>\n        </NotchNavContent>\n      </NotchNav>\n    </div>\n  );\n};\n",
       "type": "registry:example",
       "target": "components/notch-nav-demo.tsx"
     }

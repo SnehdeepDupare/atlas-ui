@@ -7,15 +7,15 @@ import {
 
 export const NotchNavDemo = () => {
   return (
-    <div className="relative h-[50vh]">
+    <div className="relative min-h-80">
       <NotchNav>
         <NotchNavTrigger />
         <NotchNavContent>
-          <NotchNavItem href="/">Home</NotchNavItem>
-          <NotchNavItem href="/about">About</NotchNavItem>
-          <NotchNavItem href="/products">Products</NotchNavItem>
-          <NotchNavItem href="/services">Services</NotchNavItem>
-          <NotchNavItem href="/contact">Contact</NotchNavItem>
+          <NotchNavItem href="#">Home</NotchNavItem>
+          <NotchNavItem href="#">About</NotchNavItem>
+          <NotchNavItem href="#">Products</NotchNavItem>
+          <NotchNavItem href="#">Services</NotchNavItem>
+          <NotchNavItem href="#">Contact</NotchNavItem>
         </NotchNavContent>
       </NotchNav>
     </div>
