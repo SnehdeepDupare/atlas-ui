@@ -85,7 +85,7 @@ export const HackerText = ({
     <span
       id="text"
       data-value={text}
-      className={cn("uppercase text-4xl", bebas.className, className)}
+      className={cn("text-4xl uppercase", bebas.className, className)}
     >
       {text}
     </span>

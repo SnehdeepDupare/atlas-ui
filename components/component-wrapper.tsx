@@ -14,7 +14,7 @@ const ComponentWrapper = ({
     <div
       data-overflow={overflow}
       className={cn(
-        "relative flex items-center justify-center w-full rounded-xl bg-background p-0 border data-[overflow=hidden]:overflow-hidden data-[overflow=auto]:overflow-auto data-[overflow=visible]:overflow-visible",
+        "bg-background relative flex w-full items-center justify-center rounded-xl border p-0 data-[overflow=auto]:overflow-auto data-[overflow=hidden]:overflow-hidden data-[overflow=visible]:overflow-visible",
         className,
       )}
     >

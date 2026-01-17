@@ -64,9 +64,7 @@ npx shadcn@latest add https://atlasui.vercel.app/r/scroll-based-character-reveal
 
 <Steps>
 
-<Step>
- Install the following dependencies:
-</Step>
+<Step>Install the following dependencies:</Step>
 
 ```bash
 npm install motion
@@ -156,11 +154,11 @@ revealText.innerHTML = words
             <span class="char-shadow">${char}</span>
             <span class="char">${char}</span>
           </span>
-        `
+        `,
         )
         .join("")}
     </span>
-  `
+  `,
   )
   .join(" ");
 
@@ -184,7 +182,7 @@ scroll(
   {
     target: revealText,
     offset: ["start 0.8", "start 0.3"],
-  }
+  },
 );
 ```
 

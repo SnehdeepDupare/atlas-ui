@@ -105,9 +105,9 @@ const NotchNavTrigger = ({ className }: { className?: string }) => {
         delay: 0.2,
       }}
       className={cn(
-        "absolute top-0 w-48 h-12 rounded-b-4xl bg-[#b3eb14] text-neutral-900 flex items-center justify-center",
-        "before:content-[''] before:absolute before:top-0 before:-left-[14px] before:w-[30px] before:h-[15.5px] before:bg-no-repeat before:bg-size-[50%_100%] before:bg-[radial-gradient(circle_at_0_100%,transparent_14px,#b3eb14_15px)]",
-        "after:content-[''] after:absolute after:top-0 after:left-full after:w-[30px] after:h-[15px] after:bg-no-repeat after:bg-size-[50%_100%] after:bg-[radial-gradient(circle_at_100%_100%,transparent_15px,#b3eb14_15px)]",
+        "absolute top-0 flex h-12 w-48 items-center justify-center rounded-b-4xl bg-[#b3eb14] text-neutral-900",
+        "before:absolute before:top-0 before:-left-[14px] before:h-[15.5px] before:w-[30px] before:bg-[radial-gradient(circle_at_0_100%,transparent_14px,#b3eb14_15px)] before:bg-size-[50%_100%] before:bg-no-repeat before:content-['']",
+        "after:absolute after:top-0 after:left-full after:h-[15px] after:w-[30px] after:bg-[radial-gradient(circle_at_100%_100%,transparent_15px,#b3eb14_15px)] after:bg-size-[50%_100%] after:bg-no-repeat after:content-['']",
         open && "-top-px",
         className,
       )}
@@ -192,7 +192,7 @@ const NotchNavContent = ({
           initial="closed"
           animate={open ? "open" : "closed"}
           className={cn(
-            "bg-[#b3eb14] w-[90svw] max-w-96 rounded-4xl py-8 px-6 flex flex-col gap-2",
+            "flex w-[90svw] max-w-96 flex-col gap-2 rounded-4xl bg-[#b3eb14] px-6 py-8",
             className,
           )}
         >
@@ -226,7 +226,7 @@ const NotchNavItem = ({ href, children, className }: NotchNavItemProps) => {
       href={href}
       variants={itemVariants}
       className={cn(
-        "relative h-8 overflow-hidden uppercase border-b p-1 flex flex-col justify-center text-neutral-900 border-neutral-900/50 group",
+        "group relative flex h-8 flex-col justify-center overflow-hidden border-b border-neutral-900/50 p-1 text-neutral-900 uppercase",
         className,
       )}
     >
@@ -234,14 +234,14 @@ const NotchNavItem = ({ href, children, className }: NotchNavItemProps) => {
 
       <span
         aria-hidden
-        className="absolute top-0 group-hover:-top-full transition-all duration-300 ease-out"
+        className="absolute top-0 transition-all duration-300 ease-out group-hover:-top-full"
       >
         {children}
       </span>
 
       <span
         aria-hidden
-        className="absolute top-full group-hover:top-0 transition-all duration-300 ease-out italic font-medium"
+        className="absolute top-full font-medium italic transition-all duration-300 ease-out group-hover:top-0"
       >
         {children}
       </span>

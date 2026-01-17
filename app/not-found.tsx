@@ -25,7 +25,7 @@ const digitVariants = {
 
 const NotFoundPage = () => {
   return (
-    <div className="flex items-center justify-center flex-1 flex-col font-bold uppercase">
+    <div className="flex flex-1 flex-col items-center justify-center font-bold uppercase">
       <div className="flex">
         {[4, 0, 4].map((digit, index) => (
           <motion.span

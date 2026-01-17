@@ -21,19 +21,19 @@ import {
 export const Header = () => {
   const pathname = usePathname();
   return (
-    <header className="sticky top-0 z-50 w-full border-b backdrop-blur-sm dark:backdrop-blur-xs shadow-md dark:shadow-primary-foreground">
+    <header className="dark:shadow-primary-foreground sticky top-0 z-50 w-full border-b shadow-md backdrop-blur-sm dark:backdrop-blur-xs">
       <div className="container-wrapper">
         <div className="container flex h-14 items-center">
           <MobileNav className="mr-3 md:hidden" />
 
           <nav className="flex items-center gap-4 text-sm xl:gap-6">
-            <Link href="/" className="flex items-center gap-2 group mr-3">
+            <Link href="/" className="group mr-3 flex items-center gap-2">
               <Image
                 src="/logo-dark.svg"
                 alt="Atlas UI Logo"
                 width={32}
                 height={32}
-                className="rounded-md group-hover:opacity-0 transition-opacity duration-500 ease-in-out invert dark:invert-0"
+                className="rounded-md invert transition-opacity duration-500 ease-in-out group-hover:opacity-0 dark:invert-0"
               />
 
               <Image
@@ -41,16 +41,16 @@ export const Header = () => {
                 alt="Atlas UI Logo"
                 width={32}
                 height={32}
-                className="rounded-md opacity-0 group-hover:opacity-100 transition-opacity duration-500 ease-in-out absolute"
+                className="absolute rounded-md opacity-0 transition-opacity duration-500 ease-in-out group-hover:opacity-100"
               />
 
-              <h1 className="font-bold text-2xl hidden md:block">Atlas UI</h1>
+              <h1 className="hidden text-2xl font-bold md:block">Atlas UI</h1>
             </Link>
 
             <Link
               href="/docs"
               className={cn(
-                "transition-colors hover:text-foreground/80 hidden md:block",
+                "hover:text-foreground/80 hidden transition-colors md:block",
                 pathname === "/docs/installation"
                   ? "text-foreground"
                   : "text-foreground/80",
@@ -62,7 +62,7 @@ export const Header = () => {
             <Link
               href="/docs/components"
               className={cn(
-                "transition-colors hover:text-foreground/80 hidden md:block",
+                "hover:text-foreground/80 hidden transition-colors md:block",
                 pathname?.startsWith("/docs/components")
                   ? "text-foreground"
                   : "text-foreground/80",

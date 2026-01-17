@@ -46,7 +46,7 @@ export function MobileNav({ className }: { className?: string }) {
         </Button>
       </PopoverTrigger>
       <PopoverContent
-        className="bg-background/90 no-scrollbar h-(--radix-popper-available-height) w-(--radix-popper-available-width) min-[416px]:max-w-sm overflow-y-auto rounded-none border-y-0 border-r backdrop-blur shadow-none duration-300 ease-in-out overscroll-none data-[state=closed]:slide-out-to-left-full data-[state=open]:slide-in-from-left-full"
+        className="bg-background/90 no-scrollbar data-[state=closed]:slide-out-to-left-full data-[state=open]:slide-in-from-left-full h-(--radix-popper-available-height) w-(--radix-popper-available-width) overflow-y-auto overscroll-none rounded-none border-y-0 border-r shadow-none backdrop-blur duration-300 ease-in-out min-[416px]:max-w-sm"
         align="start"
         side="bottom"
         alignOffset={-16}
@@ -65,7 +65,7 @@ export function MobileNav({ className }: { className?: string }) {
                     href={item.href}
                     onOpenChange={setIsOpen}
                     className={cn(
-                      "flex justify-between text-muted-foreground",
+                      "text-muted-foreground flex justify-between",
                       item.disabled && "cursor-not-allowed opacity-60",
                     )}
                   >
@@ -88,7 +88,7 @@ export function MobileNav({ className }: { className?: string }) {
                   >
                     {item.title}
                     {item.label && (
-                      <span className="ml-2 rounded-md bg-muted px-1.5 py-0.5 text-xs leading-none text-muted-foreground no-underline group-hover:no-underline">
+                      <span className="bg-muted text-muted-foreground ml-2 rounded-md px-1.5 py-0.5 text-xs leading-none no-underline group-hover:no-underline">
                         {item.label}
                       </span>
                     )}
@@ -128,9 +128,9 @@ function MobileLink({
       }}
       className={cn(
         className,
-        "group flex h-8 w-full items-center rounded-r-lg px-2 font-normal text-foreground",
+        "group text-foreground flex h-8 w-full items-center rounded-r-lg px-2 font-normal",
         isActive
-          ? "bg-accent font-medium text-accent-foreground border-l-2 hover:rounded-l-none border-emerald-500"
+          ? "bg-accent text-accent-foreground border-l-2 border-emerald-500 font-medium hover:rounded-l-none"
           : "",
       )}
       {...props}

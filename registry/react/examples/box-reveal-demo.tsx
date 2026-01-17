@@ -4,11 +4,11 @@ export const BoxRevealDemo = () => {
   return (
     <div className="flex flex-col gap-1">
       <BoxReveal>
-        <h1 className="font-bold text-5xl">Atlas UI</h1>
+        <h1 className="text-5xl font-bold">Atlas UI</h1>
       </BoxReveal>
 
       <BoxReveal>
-        <p className="font-semibold text-lg">
+        <p className="text-lg font-semibold">
           Because your content deserves a dramatic entrance, not a simple
           fade-in ;)
         </p>

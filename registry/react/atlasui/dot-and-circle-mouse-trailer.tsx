@@ -66,14 +66,14 @@ export const DotAndCircleMouseTrailer = () => {
     <motion.div
       className={`${
         isVisible ? "hidden md:block" : "hidden"
-      } h-20 w-20 fixed border rounded-full top-0 left-0 pointer-events-none z-50 border-black dark:border-white`}
+      } pointer-events-none fixed top-0 left-0 z-50 h-20 w-20 rounded-full border border-black dark:border-white`}
       style={{
         left: smoothOutline._x,
         top: smoothOutline._y,
       }}
     >
       <motion.div
-        className="hidden md:block h-2 w-2 rounded-full bg-black dark:bg-white fixed top-0 left-0 pointer-events-none"
+        className="pointer-events-none fixed top-0 left-0 hidden h-2 w-2 rounded-full bg-black md:block dark:bg-white"
         style={{
           left: smoothMouse.x,
           top: smoothMouse.y,

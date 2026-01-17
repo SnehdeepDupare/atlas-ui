@@ -22,7 +22,7 @@ export const ShinyButton = ({
 }: ShinyButtonProps) => {
   return (
     <motion.button
-      className={cn("px-6 py-2 rounded-md relative radial-gradient", className)}
+      className={cn("radial-gradient relative rounded-md px-6 py-2", className)}
       initial={{ "--x": "100%", scale: 1 }}
       animate={{ "--x": "-100%" }}
       whileTap={{ scale: 0.97 }}
@@ -43,10 +43,10 @@ export const ShinyButton = ({
       }}
       {...props}
     >
-      <span className="text-neutral-100 tracking-wide font-light h-full w-full block relative linear-mask">
+      <span className="linear-mask relative block h-full w-full font-light tracking-wide text-neutral-100">
         {children}
       </span>
-      <span className="block absolute inset-0 rounded-md p-px linear-overlay" />
+      <span className="linear-overlay absolute inset-0 block rounded-md p-px" />
     </motion.button>
   );
 };

@@ -194,7 +194,7 @@ const components = {
       <div className="relative">
         <pre
           className={cn(
-            "mb-4 mt-6 max-h-100 overflow-x-auto rounded-xl dark:ring-1 dark:ring-white/10 bg-zinc-900 dark:bg-[#1d1d20] py-4",
+            "mt-6 mb-4 max-h-100 overflow-x-auto rounded-xl bg-zinc-900 py-4 dark:bg-[#1d1d20] dark:ring-1 dark:ring-white/10",
             className,
           )}
           {...props}
@@ -205,7 +205,7 @@ const components = {
             src={__src__}
             event={__event__}
             className={cn(
-              "absolute right-4 top-4 z-30",
+              "absolute top-4 right-4 z-30",
               __withMeta__ && "top-16",
             )}
           />
@@ -216,7 +216,7 @@ const components = {
   code: ({ className, ...props }: React.HTMLAttributes<HTMLElement>) => (
     <code
       className={cn(
-        `${firaCode.className} relative rounded bg-muted px-[0.3rem] py-[0.2rem] font-mono text-sm`,
+        `${firaCode.className} bg-muted relative rounded px-[0.3rem] py-[0.2rem] font-mono text-sm`,
         className,
       )}
       {...props}
@@ -265,7 +265,7 @@ const components = {
   }: React.ComponentProps<typeof TabsTrigger>) => (
     <TabsTrigger
       className={cn(
-        "relative h-9 rounded-none border-b-2 border-b-transparent bg-transparent px-4 pb-3 pt-2 font-semibold text-muted-foreground shadow-none transition-none data-[state=active]:border-b-primary data-[state=active]:text-foreground data-[state=active]:shadow-none",
+        "text-muted-foreground data-[state=active]:border-b-primary data-[state=active]:text-foreground relative h-9 rounded-none border-b-2 border-b-transparent bg-transparent px-4 pt-2 pb-3 font-semibold shadow-none transition-none data-[state=active]:shadow-none",
         className,
       )}
       {...props}
@@ -293,7 +293,7 @@ const components = {
   LinkedCard: ({ className, ...props }: React.ComponentProps<typeof Link>) => (
     <Link
       className={cn(
-        "flex w-full flex-col items-center rounded-xl border bg-card p-6 text-card-foreground shadow-sm transition-colors hover:bg-muted/50 sm:p-10",
+        "bg-card text-card-foreground hover:bg-muted/50 flex w-full flex-col items-center rounded-xl border p-6 shadow-sm transition-colors sm:p-10",
         className,
       )}
       {...props}

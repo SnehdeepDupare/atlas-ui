@@ -29,9 +29,9 @@ const Section1 = ({ scrollYProgress }: SectionProps) => {
   return (
     <motion.section
       style={{ scale, rotate }}
-      className="h-screen sticky top-0 bg-neutral-700 flex items-center justify-center"
+      className="sticky top-0 flex h-screen items-center justify-center bg-neutral-700"
     >
-      <h1 className="font-bold text-5xl">This section is Cool.</h1>
+      <h1 className="text-5xl font-bold">This section is Cool.</h1>
     </motion.section>
   );
 };
@@ -43,9 +43,9 @@ const Section2 = ({ scrollYProgress }: SectionProps) => {
   return (
     <motion.section
       style={{ scale, rotate }}
-      className="h-screen bg-red-500 relative flex items-center justify-center"
+      className="relative flex h-screen items-center justify-center bg-red-500"
     >
-      <h1 className="font-bold text-5xl">This is Cooler!</h1>
+      <h1 className="text-5xl font-bold">This is Cooler!</h1>
     </motion.section>
   );
 };

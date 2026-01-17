@@ -29,10 +29,10 @@ export const VideoShowcase = () => {
       viewport={{ once: true }}
       transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
       className={cn(
-        "relative w-full max-w-(--breakpoint-2xl) mx-auto mt-10 px-4 sm:px-6 lg:px-8",
+        "relative mx-auto mt-10 w-full max-w-(--breakpoint-2xl) px-4 sm:px-6 lg:px-8",
         isMobile
           ? "grid grid-cols-2 gap-4"
-          : "flex items-center justify-center min-h-200",
+          : "flex min-h-200 items-center justify-center",
       )}
     >
       {/* Top Left */}
@@ -56,16 +56,16 @@ export const VideoShowcase = () => {
         transition={{ duration: 0.75, ease: [0, 0.55, 0.45, 1] }}
         viewport={{ once: true, amount: 0.2 }}
         className={cn(
-          "rounded-xl overflow-hidden border-2 border-neutral-800",
+          "overflow-hidden rounded-xl border-2 border-neutral-800",
           isMobile
             ? ""
-            : "absolute top-4 sm:top-10 left-4 sm:left-[8%] z-10 w-[40vw] sm:w-[20rem]",
+            : "absolute top-4 left-4 z-10 w-[40vw] sm:top-10 sm:left-[8%] sm:w-[20rem]",
         )}
       >
         <Video
           href="/docs/components/parallax-sections"
           src="/assets/videos/parallax-section-demo.mp4"
-          className={isMobile ? "w-full h-full object-cover" : undefined}
+          className={isMobile ? "h-full w-full object-cover" : undefined}
         />
       </motion.div>
 
@@ -90,16 +90,16 @@ export const VideoShowcase = () => {
         transition={{ duration: 0.75, ease: [0, 0.55, 0.45, 1] }}
         viewport={{ once: true, amount: 0.2 }}
         className={cn(
-          "rounded-xl overflow-hidden border-2 border-neutral-800",
+          "overflow-hidden rounded-xl border-2 border-neutral-800",
           isMobile
             ? ""
-            : "absolute top-6 sm:top-12 right-4 sm:right-[15%] z-10 w-[40vw] sm:w-[200px]",
+            : "absolute top-6 right-4 z-10 w-[40vw] sm:top-12 sm:right-[15%] sm:w-[200px]",
         )}
       >
         <Video
           href="/docs/components/hacker-text"
           src="/assets/videos/hacker-text-demo.mp4"
-          className={isMobile ? "w-full h-full object-cover" : undefined}
+          className={isMobile ? "h-full w-full object-cover" : undefined}
         />
       </motion.div>
 
@@ -116,16 +116,16 @@ export const VideoShowcase = () => {
         transition={{ duration: 0.75, ease: [0, 0.55, 0.45, 1] }}
         viewport={{ once: true, amount: 0.2 }}
         className={cn(
-          "rounded-xl overflow-hidden border-2 border-neutral-800 z-20",
+          "z-20 overflow-hidden rounded-xl border-2 border-neutral-800",
           isMobile
             ? "col-span-2"
-            : "absolute top-28 w-full max-w-lg sm:max-w-xl md:max-w-3xl h-[60vh] sm:h-120",
+            : "absolute top-28 h-[60vh] w-full max-w-lg sm:h-120 sm:max-w-xl md:max-w-3xl",
         )}
       >
         <Video
           href="/docs/components/project-gallery"
           src="/assets/videos/project-gallery-demo.mp4"
-          className="w-full h-full object-cover rounded-lg"
+          className="h-full w-full rounded-lg object-cover"
           height="100%"
         />
       </motion.div>
@@ -151,16 +151,16 @@ export const VideoShowcase = () => {
         transition={{ duration: 0.75, ease: [0, 0.55, 0.45, 1] }}
         viewport={{ once: true, amount: 0.2 }}
         className={cn(
-          "rounded-xl overflow-hidden border-2 border-neutral-800",
+          "overflow-hidden rounded-xl border-2 border-neutral-800",
           isMobile
             ? ""
-            : "absolute bottom-20 left-4 sm:left-[10%] z-10 w-[40vw] sm:w-[20rem]",
+            : "absolute bottom-20 left-4 z-10 w-[40vw] sm:left-[10%] sm:w-[20rem]",
         )}
       >
         <Video
           href="/docs/components/blend-mouse-trailer"
           src="/assets/videos/blend-mouse-trailer-demo.mp4"
-          className={isMobile ? "w-full h-full object-cover" : undefined}
+          className={isMobile ? "h-full w-full object-cover" : undefined}
         />
       </motion.div>
 
@@ -185,16 +185,16 @@ export const VideoShowcase = () => {
         transition={{ duration: 0.75, ease: [0, 0.55, 0.45, 1] }}
         viewport={{ once: true, amount: 0.2 }}
         className={cn(
-          "rounded-xl overflow-hidden border-2 border-neutral-800",
+          "overflow-hidden rounded-xl border-2 border-neutral-800",
           isMobile
             ? ""
-            : "absolute bottom-24 right-4 sm:right-[10%] z-10 w-[45vw] sm:w-[250px]",
+            : "absolute right-4 bottom-24 z-10 w-[45vw] sm:right-[10%] sm:w-[250px]",
         )}
       >
         <Video
           href="/docs/components/dot-and-circle-mouse-trailer"
           src="/assets/videos/dot-and-circle-mouse-trailer-demo.mp4"
-          className={isMobile ? "w-full h-full object-cover" : undefined}
+          className={isMobile ? "h-full w-full object-cover" : undefined}
         />
       </motion.div>
     </motion.section>

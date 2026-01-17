@@ -31,11 +31,11 @@ export const ScrollBasedCharacterReveal = ({
   const words = text.split(" ");
 
   return (
-    <div className="flex flex-col items-center justify-center ">
+    <div className="flex flex-col items-center justify-center">
       <div className="h-[50vh]" />
       <p
         ref={container}
-        className="text-5xl font-bold max-w-5xl text-center flex flex-wrap"
+        className="flex max-w-5xl flex-wrap text-center text-5xl font-bold"
       >
         {words.map((word, i) => {
           const start = i / words.length;
@@ -63,7 +63,7 @@ const Word = ({ children, scrollYProgress, range }: WordProps) => {
   const step = amount / children.length;
 
   return (
-    <span className="mr-2 mt-1 relative">
+    <span className="relative mt-1 mr-2">
       {characters.map((character, i) => {
         const start = range[0] + step * i;
         const end = range[0] + step * (i + 1);

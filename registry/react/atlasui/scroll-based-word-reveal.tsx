@@ -17,11 +17,11 @@ export const ScrollBasedWordReveal = ({ text }: ScrollBasedWordRevealProps) => {
   const words = text.split(" ");
 
   return (
-    <div className="flex flex-col items-center justify-center ">
+    <div className="flex flex-col items-center justify-center">
       <div className="h-[50vh]" />
       <p
         ref={container}
-        className="text-5xl font-bold max-w-5xl flex items-center justify-center flex-wrap"
+        className="flex max-w-5xl flex-wrap items-center justify-center text-5xl font-bold"
       >
         {words.map((word, i) => {
           const start = i / words.length;
@@ -30,7 +30,7 @@ export const ScrollBasedWordReveal = ({ text }: ScrollBasedWordRevealProps) => {
           const opacity = useTransform(scrollYProgress, [start, end], [0, 1]);
 
           return (
-            <span key={i} className="mr-2 mt-1 relative">
+            <span key={i} className="relative mt-1 mr-2">
               <span className="absolute opacity-10">{word}</span>
               <motion.span style={{ opacity }}>{word}</motion.span>
             </span>

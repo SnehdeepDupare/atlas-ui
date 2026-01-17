@@ -61,9 +61,7 @@ npx shadcn@latest add https://atlasui.vercel.app/r/reveal-effect-js.json
 
 <Steps>
 
-<Step>
- Install the following dependencies:
-</Step>
+<Step>Install the following dependencies:</Step>
 
 ```bash
 npm install motion
@@ -103,7 +101,7 @@ document.querySelectorAll("#reveal-effect").forEach((el) => {
         duration: speedDurations[speed],
         easing: "ease-in-out",
         delay,
-      }
+      },
     );
   });
 });
@@ -283,7 +281,7 @@ Pair `translateY` with a small `delay` for a more pronounced effect.
 ```html {2,4}
 <div>
   <div id="reveal-effect" data-translatey="10">...</div>
-  
+
   <div id="reveal-effect" data-translatey="15">...</div>
 </div>
 ```

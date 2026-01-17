@@ -61,9 +61,7 @@ npx shadcn@latest add https://atlasui.vercel.app/r/box-reveal-js.json
 
 <Steps>
 
-<Step>
- Install the following dependencies:
-</Step>
+<Step>Install the following dependencies:</Step>
 
 ```bash
 npm install motion
@@ -102,11 +100,7 @@ document.querySelectorAll("#box-reveal").forEach((root) => {
   root.appendChild(overlay);
 
   // initial
-  animate(
-    contentWrapper,
-    { opacity: 0, y: 75 },
-    { duration: 0 }
-  );
+  animate(contentWrapper, { opacity: 0, y: 75 }, { duration: 0 });
 
   if (side === "right") {
     animate(overlay, { right: 0 }, { duration: 0 });
@@ -114,7 +108,6 @@ document.querySelectorAll("#box-reveal").forEach((root) => {
     animate(overlay, { left: 0 }, { duration: 0 });
   }
 
-  
   inView(
     root,
     () => {
@@ -125,22 +118,20 @@ document.querySelectorAll("#box-reveal").forEach((root) => {
         {
           duration: 0.5,
           delay: 0.35,
-        }
+        },
       );
 
       // overlay animation
       animate(
         overlay,
-        side === "right"
-          ? { right: "100%" }
-          : { left: "100%" },
+        side === "right" ? { right: "100%" } : { left: "100%" },
         {
           duration: 0.5,
           ease: "easeIn",
-        }
+        },
       );
     },
-    { once: true }
+    { once: true },
   );
 });
 ```
@@ -167,6 +158,7 @@ document.querySelectorAll("#box-reveal").forEach((root) => {
   z-index: 10;
 }
 ```
+
 </Steps>
 
 </TabsContent>
@@ -196,6 +188,7 @@ import { BoxReveal } from "@/components/box-reveal";
   // Pass any children here, and the reveal effect will be applied to it.
 </BoxReveal>
 ```
+
 </TabsContent>
 
 <TabsContent value="JavaScript">
@@ -218,23 +211,23 @@ Wrap any element with a `<div id="box-reveal">` to apply the box reveal effect.
 
 <TabsContent value="React/Next">
 
-| Prop        | Type                          | Default        | Description                                                              |
-| ----------- | ----------------------------- | -------------- | ------------------------------------------------------------------------ |
-| `children`  | `React.ReactNode`             | -              | The content to which animation must be applied                          |
-| `side`      | `"left" \| "right"`           | `"left"`       | Direction from which the reveal box slides away                            |
-| `width`     | `"fit-content" \| "full"`     | `"fit-content"`| Controls the width of the reveal container                                 |
-| `color`     | `string`                      | `"#FACC15"`    | Background color of the reveal overlay                                     |
-| `className` | `string`                      | -              | Additional class names applied to the root container                       |
+| Prop        | Type                      | Default         | Description                                          |
+| ----------- | ------------------------- | --------------- | ---------------------------------------------------- |
+| `children`  | `React.ReactNode`         | -               | The content to which animation must be applied       |
+| `side`      | `"left" \| "right"`       | `"left"`        | Direction from which the reveal box slides away      |
+| `width`     | `"fit-content" \| "full"` | `"fit-content"` | Controls the width of the reveal container           |
+| `color`     | `string`                  | `"#FACC15"`     | Background color of the reveal overlay               |
+| `className` | `string`                  | -               | Additional class names applied to the root container |
 
 </TabsContent>
 
 <TabsContent value="JavaScript">
 
-| Data Attribute | Type     | Default     | Description                                                              |
-| -------------- | -------- | ----------- | ------------------------------------------------------------------------ |
-| `data-side`    | `"left" \| "right"` | `"left"`    | Direction from which the reveal box slides away                            |
-| `data-color`   | `string` | `"#FACC15"` | Background color of the reveal overlay                                     |
-| `data-width`   | `"fit-content" \| "full"` | `"fit-content"` | Controls the width of the reveal container                                 |
+| Data Attribute | Type                      | Default         | Description                                     |
+| -------------- | ------------------------- | --------------- | ----------------------------------------------- |
+| `data-side`    | `"left" \| "right"`       | `"left"`        | Direction from which the reveal box slides away |
+| `data-color`   | `string`                  | `"#FACC15"`     | Background color of the reveal overlay          |
+| `data-width`   | `"fit-content" \| "full"` | `"fit-content"` | Controls the width of the reveal container      |
 
 </TabsContent>
 

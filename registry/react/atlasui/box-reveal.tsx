@@ -63,7 +63,7 @@ export const BoxReveal = ({
         animate={overlayAnimation}
         transition={{ duration: 0.5, ease: "easeIn" }}
         viewport={{ once: true }}
-        className="absolute inset-0 pointer-events-none z-20 top-1 bottom-1"
+        className="pointer-events-none absolute inset-0 top-1 bottom-1 z-20"
         style={{
           background: color,
         }}

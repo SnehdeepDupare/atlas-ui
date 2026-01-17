@@ -29,9 +29,9 @@ export function ComponentPreview({
     const Component = Index[name]?.component;
     if (!Component) {
       return (
-        <p className="text-sm text-muted-foreground">
+        <p className="text-muted-foreground text-sm">
           Component{" "}
-          <code className="relative rounded bg-muted px-[0.3rem] py-[0.2rem] font-mono text-sm">
+          <code className="bg-muted relative rounded px-[0.3rem] py-[0.2rem] font-mono text-sm">
             {name}
           </code>{" "}
           not found in registry.
@@ -48,13 +48,13 @@ export function ComponentPreview({
         <TabsList className="w-full justify-start rounded-none border-b bg-transparent p-0">
           <TabsTrigger
             value="preview"
-            className="relative h-10 rounded-none border-b-2 border-b-transparent bg-transparent px-4 pb-3 pt-2 font-semibold text-muted-foreground shadow-none transition-none data-[state=active]:border-b-emerald-500 data-[state=active]:text-emerald-400 data-[state=active]:shadow-none data-[state=active]:bg-transparent"
+            className="text-muted-foreground relative h-10 rounded-none border-b-2 border-b-transparent bg-transparent px-4 pt-2 pb-3 font-semibold shadow-none transition-none data-[state=active]:border-b-emerald-500 data-[state=active]:bg-transparent data-[state=active]:text-emerald-400 data-[state=active]:shadow-none"
           >
             Preview
           </TabsTrigger>
           <TabsTrigger
             value="code"
-            className="relative h-10 rounded-none border-b-2 border-b-transparent bg-transparent px-4 pb-3 pt-2 font-semibold text-muted-foreground shadow-none transition-none data-[state=active]:border-b-emerald-500 data-[state=active]:text-emerald-400 data-[state=active]:shadow-none data-[state=active]:bg-transparent"
+            className="text-muted-foreground relative h-10 rounded-none border-b-2 border-b-transparent bg-transparent px-4 pt-2 pb-3 font-semibold shadow-none transition-none data-[state=active]:border-b-emerald-500 data-[state=active]:bg-transparent data-[state=active]:text-emerald-400 data-[state=active]:shadow-none"
           >
             Code
           </TabsTrigger>
@@ -77,11 +77,11 @@ export function ComponentPreview({
             </div>
             <div
               key={key}
-              className="min-h-80 flex items-center justify-center flex-wrap gap-y-3 w-full mx-auto lg:px-10 pb-7"
+              className="mx-auto flex min-h-80 w-full flex-wrap items-center justify-center gap-y-3 pb-7 lg:px-10"
             >
               <React.Suspense
                 fallback={
-                  <div className="flex w-full items-center justify-center text-sm text-muted-foreground">
+                  <div className="text-muted-foreground flex w-full items-center justify-center text-sm">
                     Loading...
                   </div>
                 }
@@ -93,7 +93,7 @@ export function ComponentPreview({
         </TabsContent>
         <TabsContent
           value="code"
-          className="border border-input rounded-xl relative overflow-hidden"
+          className="border-input relative overflow-hidden rounded-xl border"
         >
           <div className="flex flex-col space-y-4">
             <div className="w-full rounded-md [&_pre]:my-0 [&_pre]:max-h-100">

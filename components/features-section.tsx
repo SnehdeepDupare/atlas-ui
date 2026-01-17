@@ -38,17 +38,17 @@ export const FeaturesSection = () => {
   ];
 
   return (
-    <section className="w-full max-w-7xl mx-auto px-6 lg:px-8 flex flex-col items-center justify-center py-24 min-h-svh">
+    <section className="mx-auto flex min-h-svh w-full max-w-7xl flex-col items-center justify-center px-6 py-24 lg:px-8">
       <motion.h2
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5, ease: "easeInOut" }}
         viewport={{ once: true }}
-        className="font-bold text-4xl"
+        className="text-4xl font-bold"
       >
         Why Atlas UI?
       </motion.h2>
-      <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 mt-10">
+      <div className="mt-10 grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3">
         {features.map((feature, i) => (
           <motion.div
             initial={{ opacity: 0, y: 40 }}
@@ -87,7 +87,7 @@ const Card = ({ title, description, icon: Icon, href }: CardProps) => {
   return (
     <motion.div
       onMouseMove={handleMouseMove}
-      className="group relative flex rounded-2xl bg-zinc-50 transition-shadow hover:shadow-md hover:shadow-zinc-900/5 dark:bg-white/5 dark:hover:shadow-black/5 overflow-hidden"
+      className="group relative flex overflow-hidden rounded-2xl bg-zinc-50 transition-shadow hover:shadow-md hover:shadow-zinc-900/5 dark:bg-white/5 dark:hover:shadow-black/5"
     >
       <div className="pointer-events-none">
         {/* Pattern Background */}
@@ -118,7 +118,7 @@ const Card = ({ title, description, icon: Icon, href }: CardProps) => {
 
         {/* Radial Gradient Highlight */}
         <motion.div
-          className="absolute inset-0 rounded-2xl bg-linear-to-r from-[#D7EDEA] to-[#F4FBDF] opacity-0 transition duration-300 group-hover:opacity-100 dark:from-[#202D2E] dark:to-[#303428] hidden md:block"
+          className="absolute inset-0 hidden rounded-2xl bg-linear-to-r from-[#D7EDEA] to-[#F4FBDF] opacity-0 transition duration-300 group-hover:opacity-100 md:block dark:from-[#202D2E] dark:to-[#303428]"
           style={{
             maskImage: useMotionTemplate`radial-gradient(180px at ${mouseX}px ${mouseY}px, white , transparent)`,
             WebkitMaskImage: useMotionTemplate`radial-gradient(180px at ${mouseX}px ${mouseY}px, white , transparent)`,
@@ -159,7 +159,7 @@ const Card = ({ title, description, icon: Icon, href }: CardProps) => {
       </div>
 
       {/* Border ring */}
-      <div className="absolute inset-0 rounded-2xl ring-1 ring-inset ring-zinc-900/10 group-hover:ring-zinc-900/15 dark:ring-white/10 dark:group-hover:ring-white/20" />
+      <div className="absolute inset-0 rounded-2xl ring-1 ring-zinc-900/10 ring-inset group-hover:ring-zinc-900/15 dark:ring-white/10 dark:group-hover:ring-white/20" />
 
       {/* Card Content */}
       <div className="relative rounded-2xl px-4 pt-24 pb-4">

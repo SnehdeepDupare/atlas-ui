@@ -45,8 +45,8 @@ export function CopyButton({
           size="icon"
           variant={variant}
           className={cn(
-            "relative z-10 size-6 text-zinc-50 hover:bg-zinc-700 hover:text-zinc-50 opacity-70 hover:opacity-100",
-            className
+            "relative z-10 size-6 text-zinc-50 opacity-70 hover:bg-zinc-700 hover:text-zinc-50 hover:opacity-100",
+            className,
           )}
           onClick={() => {
             copyToClipboardWithMeta(
@@ -58,7 +58,7 @@ export function CopyButton({
                       code: value,
                     },
                   }
-                : undefined
+                : undefined,
             );
             setHasCopied(true);
           }}

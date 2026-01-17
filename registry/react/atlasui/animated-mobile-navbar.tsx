@@ -114,7 +114,7 @@ const AnimatedMobileNavbarContent = ({
     <AnimatePresence>
       {open && (
         <motion.div
-          className={`fixed bg-primary-foreground h-screen w-full left-0 top-0 z-50 py-10 px-5 origin-top ${
+          className={`bg-primary-foreground fixed top-0 left-0 z-50 h-screen w-full origin-top px-5 py-10 ${
             side === "left"
               ? "origin-left"
               : side === "right"
@@ -130,13 +130,13 @@ const AnimatedMobileNavbarContent = ({
             variant="ghost"
             size="icon"
             onClick={toggle}
-            className="absolute top-5 right-5 text-foreground"
+            className="text-foreground absolute top-5 right-5"
           >
             <XIcon />
           </Button>
 
           <motion.div
-            className="flex flex-col items-center justify-center space-y-8 mt-16"
+            className="mt-16 flex flex-col items-center justify-center space-y-8"
             variants={containerVariants}
             initial="initial"
             animate="open"
@@ -185,9 +185,9 @@ const AnimatedMobileNavbarLink = ({
       <motion.div variants={linkVariants}>
         <Link
           href={href}
-          className={`mx-4 relative hover:after:scale-x-125 hover:text-primary text-lg uppercase font-bold text-muted-foreground ${
+          className={`hover:text-primary text-muted-foreground relative mx-4 text-lg font-bold uppercase hover:after:scale-x-125 ${
             isActive ? "text-primary" : "text-muted-foreground"
-          } after:content-[''] after:absolute after:bg-primary after:h-px after:w-full after:left-0 after:-bottom-0.5 after:scale-x-0 after:duration-300`}
+          } after:bg-primary after:absolute after:-bottom-0.5 after:left-0 after:h-px after:w-full after:scale-x-0 after:duration-300 after:content-['']`}
           onClick={onClick}
         >
           {label}

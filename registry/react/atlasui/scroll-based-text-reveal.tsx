@@ -15,12 +15,12 @@ export const ScrollBasedTextReveal = ({ text }: ScrollBasedTextRevealProps) => {
   });
 
   return (
-    <div className="flex flex-col items-center justify-center ">
+    <div className="flex flex-col items-center justify-center">
       <div className="h-[50vh]" />
       <motion.p
         style={{ opacity: scrollYProgress }}
         ref={container}
-        className="text-5xl font-bold max-w-5xl text-center"
+        className="max-w-5xl text-center text-5xl font-bold"
       >
         {text}
       </motion.p>

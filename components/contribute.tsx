@@ -45,7 +45,7 @@ export function Contribute({ doc }: { doc: Doc }) {
               href={link.href}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center text-sm text-muted-foreground transition-colors hover:text-foreground"
+              className="text-muted-foreground hover:text-foreground inline-flex items-center text-sm transition-colors"
             >
               <link.icon className="mr-2 size-4" />
               {link.text}

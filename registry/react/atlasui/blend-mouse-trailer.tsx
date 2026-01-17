@@ -44,7 +44,7 @@ export const BlendMouseTrailer = ({ isHovered }: { isHovered: boolean }) => {
     <motion.div
       className={`${
         isVisible ? "hidden md:block" : "hidden"
-      } rounded-full bg-sky-300 fixed top-0 left-0 pointer-events-none mix-blend-difference`}
+      } pointer-events-none fixed top-0 left-0 rounded-full bg-sky-300 mix-blend-difference`}
       style={{
         left: smoothMouse.x,
         top: smoothMouse.y,

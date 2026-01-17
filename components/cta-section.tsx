@@ -13,19 +13,19 @@ export const CtaSection = () => {
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6, ease: "easeOut" }}
       viewport={{ once: true, amount: 0.6 }}
-      className="pt-12 pb-24 text-center px-6 lg:px-8"
+      className="px-6 pt-12 pb-24 text-center lg:px-8"
     >
-      <h2 className="text-4xl font-bold mb-4">
+      <h2 className="mb-4 text-4xl font-bold">
         Ready to Harness the Strength of Atlas?
       </h2>
-      <p className="text-gray-400 max-w-xl mx-auto mb-8">
+      <p className="mx-auto mb-8 max-w-xl text-gray-400">
         Build beautiful UIs faster. Drop components straight into your stack.
       </p>
 
       <Button
         asChild
         size="lg"
-        className="inline-flex gap-0.5 justify-center overflow-hidden text-sm font-medium transition bg-emerald-100 text-emerald-700 ring-1 ring-inset ring-emerald-600/20 hover:bg-emerald-200/80 hover:text-emerald-800 hover:ring-emerald-600/30 dark:bg-emerald-400/10 dark:text-emerald-400 dark:ring-1 dark:ring-inset dark:ring-emerald-400/20 dark:hover:bg-emerald-400/10 dark:hover:text-emerald-300 dark:hover:ring-emerald-300 hover:scale-105 group"
+        className="group inline-flex justify-center gap-0.5 overflow-hidden bg-emerald-100 text-sm font-medium text-emerald-700 ring-1 ring-emerald-600/20 transition ring-inset hover:scale-105 hover:bg-emerald-200/80 hover:text-emerald-800 hover:ring-emerald-600/30 dark:bg-emerald-400/10 dark:text-emerald-400 dark:ring-1 dark:ring-emerald-400/20 dark:ring-inset dark:hover:bg-emerald-400/10 dark:hover:text-emerald-300 dark:hover:ring-emerald-300"
       >
         <Link href="/docs">
           Get Started{" "}

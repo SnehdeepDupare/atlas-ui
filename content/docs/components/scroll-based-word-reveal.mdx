@@ -64,9 +64,7 @@ npx shadcn@latest add https://atlasui.vercel.app/r/scroll-based-word-reveal-js.j
 
 <Steps>
 
-<Step>
- Install the following dependencies:
-</Step>
+<Step>Install the following dependencies:</Step>
 
 ```bash
 npm install motion
@@ -153,7 +151,7 @@ revealText.innerHTML = words
       <span class="word-shadow">${word}</span>
       <span class="word">${word}</span>
     </span>
-  `
+  `,
   )
   .join(" ");
 
@@ -177,7 +175,7 @@ scroll(
   {
     target: revealText,
     offset: ["start 0.8", "start 0.3"],
-  }
+  },
 );
 ```
 

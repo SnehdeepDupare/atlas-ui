@@ -25,14 +25,14 @@ export function ComponentSource({
   return (
     <div className="relative">
       {filePath && (
-        <span className="rounded bg-muted px-[0.3rem] py-[0.2rem] font-mono text-sm">
+        <span className="bg-muted rounded px-[0.3rem] py-[0.2rem] font-mono text-sm">
           {filePath}
         </span>
       )}
       <Collapsible open={isOpened} onOpenChange={setIsOpened}>
         <div
           className={cn(
-            "relative overflow-hidden rounded-xl dark:ring dark:ring-white/10 [&_pre]:my-0 mt-6",
+            "relative mt-6 overflow-hidden rounded-xl dark:ring dark:ring-white/10 [&_pre]:my-0",
             className,
           )}
         >

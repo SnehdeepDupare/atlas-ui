@@ -10,7 +10,7 @@ export const BlendMouseTrailerDemo = () => {
       <h1
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
-        className="text-5xl text-center"
+        className="text-center text-5xl"
       >
         AtlasUI is an open-source library offering a suite of prebuilt animated
         components for React, Next.js, and Vanilla JS.

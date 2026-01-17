@@ -42,7 +42,7 @@ const ProjectGallery = ({ children }: ProjectGalleryProps) => {
   return (
     <div
       ref={containerRef}
-      className="grid grid-cols-1 sm:grid-cols-2 md:block relative"
+      className="relative grid grid-cols-1 sm:grid-cols-2 md:block"
     >
       {children &&
         React.Children.map(children, (child, index) => {
@@ -81,13 +81,13 @@ const Project = (props: BaseProjectProps | InternalProjectProps) => {
   return (
     <Link href={href}>
       <div
-        className="flex w-full flex-col justify-between p-4 md:flex-row md:items-center md:border-t md:p-24 border-primary cursor-pointer group transition-all duration-200 ease-linear md:hover:opacity-40"
+        className="border-primary group flex w-full cursor-pointer flex-col justify-between p-4 transition-all duration-200 ease-linear md:flex-row md:items-center md:border-t md:p-24 md:hover:opacity-40"
         onMouseEnter={() => setModal?.({ active: true, index })}
         onMouseLeave={() => setModal?.({ active: false, index })}
       >
         <div
           style={{ backgroundColor: color }}
-          className="relative mb-4 w-full overflow-hidden aspect-4/3 md:hidden rounded-lg"
+          className="relative mb-4 aspect-4/3 w-full overflow-hidden rounded-lg md:hidden"
         >
           <Image
             src={imgSrc}
@@ -98,10 +98,10 @@ const Project = (props: BaseProjectProps | InternalProjectProps) => {
           />
         </div>
 
-        <h2 className="font-bold md:font-normal text-2xl md:text-6xl md:group-hover:-translate-x-3 transition-all duration-200 ease-linear">
+        <h2 className="text-2xl font-bold transition-all duration-200 ease-linear md:text-6xl md:font-normal md:group-hover:-translate-x-3">
           {title}
         </h2>
-        <p className="font-light text-xs md:text-base text-muted-foreground md:text-foreground md:group-hover:translate-x-3 transition-all duration-200 ease-linear">
+        <p className="text-muted-foreground md:text-foreground text-xs font-light transition-all duration-200 ease-linear md:text-base md:group-hover:translate-x-3">
           {subtitle}
         </p>
       </div>
@@ -220,14 +220,14 @@ const Modal = ({ modal, projects, containerRef }: ModalProps) => {
         initial={"initial"}
         animate={active ? "open" : "closed"}
         ref={modalRef}
-        className="h-87.5 w-100 hidden md:flex items-center justify-center absolute overflow-hidden pointer-events-none"
+        className="pointer-events-none absolute hidden h-87.5 w-100 items-center justify-center overflow-hidden md:flex"
         style={{
           left: smoothMouse.x,
           top: smoothMouse.y,
         }}
       >
         <div
-          className="h-full w-full absolute transition-[top] duration-500 ease-[cubic-bezier(0.76, 0, 0.24, 1)]"
+          className="ease-[cubic-bezier(0.76, 0, 0.24, 1)] absolute h-full w-full transition-[top] duration-500"
           style={{
             top: index * -100 + "%",
           }}
@@ -240,7 +240,7 @@ const Modal = ({ modal, projects, containerRef }: ModalProps) => {
                 style={{
                   backgroundColor: color,
                 }}
-                className="relative h-full flex items-center justify-center"
+                className="relative flex h-full items-center justify-center"
               >
                 <Image
                   src={imgSrc}
@@ -260,7 +260,7 @@ const Modal = ({ modal, projects, containerRef }: ModalProps) => {
         initial={"initial"}
         animate={active ? "open" : "closed"}
         ref={cursorRef}
-        className="h-20 w-20 hidden md:flex items-center justify-center rounded-full absolute pointer-events-none bg-blue-600 "
+        className="pointer-events-none absolute hidden h-20 w-20 items-center justify-center rounded-full bg-blue-600 md:flex"
         style={{
           left: smoothCursor._x,
           top: smoothCursor._y,
@@ -271,7 +271,7 @@ const Modal = ({ modal, projects, containerRef }: ModalProps) => {
         initial={"initial"}
         animate={active ? "open" : "closed"}
         ref={cursorLabelRef}
-        className="h-20 w-20 hidden md:flex items-center justify-center rounded-full absolute pointer-events-none bg-transparent text-primary"
+        className="text-primary pointer-events-none absolute hidden h-20 w-20 items-center justify-center rounded-full bg-transparent md:flex"
         style={{
           left: smoothCursor._x,
           top: smoothCursor._y,

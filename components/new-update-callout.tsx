@@ -9,7 +9,7 @@ import { buttonVariants } from "./ui/button";
 
 export const NewUpdateCallout = () => {
   return (
-    <div className="relative overflow-hidden inline-block mb-4 rounded-full">
+    <div className="relative mb-4 inline-block overflow-hidden rounded-full">
       <Link
         href="/docs/changelog"
         className={cn(
@@ -17,15 +17,15 @@ export const NewUpdateCallout = () => {
             variant: "outline",
             size: "sm",
           }),
-          "rounded-full text-xs relative",
+          "relative rounded-full text-xs",
         )}
       >
         🎉 Introducing Notch Nav & Box Reveal
-        <ChevronRight className="ml-1 size-3 text-muted-foreground" />
+        <ChevronRight className="text-muted-foreground ml-1 size-3" />
       </Link>
 
       <motion.div
-        className="absolute inset-0 pointer-events-none"
+        className="pointer-events-none absolute inset-0"
         initial={{ x: "-100%" }}
         animate={{ x: "calc(100% + 200px)" }}
         transition={{
@@ -36,7 +36,7 @@ export const NewUpdateCallout = () => {
           repeatDelay: 6,
         }}
       >
-        <div className="h-full w-10 bg-emerald-500/20 skew-x-[-20deg]" />
+        <div className="h-full w-10 skew-x-[-20deg] bg-emerald-500/20" />
       </motion.div>
     </div>
   );

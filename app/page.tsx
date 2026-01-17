@@ -38,7 +38,7 @@ export const metadata: Metadata = {
 
 export default function Home() {
   return (
-    <div className="relative flex flex-col h-full w-full mb-6">
+    <div className="relative mb-6 flex h-full w-full flex-col">
       <div className="from-background via-background to-background fixed inset-0 -z-10 bg-linear-to-br">
         <div className="fixed inset-0 hidden bg-linear-to-br from-black via-zinc-900/90 to-black dark:block">
           <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,var(--tw-gradient-stops))] from-emerald-900/20 via-emerald-950/5 to-transparent opacity-25"></div>
@@ -50,15 +50,15 @@ export default function Home() {
         </div>
       </div>
 
-      <section className="max-w-4xl mx-auto px-6 lg:px-8 py-24 text-center">
+      <section className="mx-auto max-w-4xl px-6 py-24 text-center lg:px-8">
         <RevealEffect translateY={10}>
           <NewUpdateCallout />
         </RevealEffect>
 
         <RevealEffect delay={0.1} translateY={10}>
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight">
+          <h1 className="text-4xl font-bold tracking-tight sm:text-5xl lg:text-6xl">
             Motion Powered{" "}
-            <span className="text-transparent bg-clip-text bg-linear-to-r from-[#36B49F] via-[#DBFF75] to-[#36B49F] bg-size-[200%] animate-bg-pan">
+            <span className="animate-bg-pan bg-linear-to-r from-[#36B49F] via-[#DBFF75] to-[#36B49F] bg-size-[200%] bg-clip-text text-transparent">
               Animated Components
             </span>{" "}
             for React, Next.js & Vanilla JS
@@ -66,7 +66,7 @@ export default function Home() {
         </RevealEffect>
 
         <RevealEffect delay={0.3} translateY={10}>
-          <p className="text-muted-foreground max-w-2xl mx-auto mt-5">
+          <p className="text-muted-foreground mx-auto mt-5 max-w-2xl">
             Seamless animation meets effortless integration. Discover
             beautifully crafted components that accelerate development, inspire
             creativity, and bring interfaces to life.
@@ -74,11 +74,11 @@ export default function Home() {
         </RevealEffect>
 
         <RevealEffect delay={0.5} translateY={10}>
-          <div className="mb-4 flex w-full flex-col justify-center space-y-2 sm:flex-row sm:space-y-0 sm:space-x-4 mt-10">
+          <div className="mt-10 mb-4 flex w-full flex-col justify-center space-y-2 sm:flex-row sm:space-y-0 sm:space-x-4">
             <Button
               asChild
               size="lg"
-              className="inline-flex gap-0.5 justify-center overflow-hidden text-sm font-medium transition bg-emerald-100 text-emerald-700 ring-1 ring-inset ring-emerald-600/20 hover:bg-emerald-200/80 hover:text-emerald-800 hover:ring-emerald-600/30 dark:bg-emerald-400/10 dark:text-emerald-400 dark:ring-1 dark:ring-inset dark:ring-emerald-400/20 dark:hover:bg-emerald-400/10 dark:hover:text-emerald-300 dark:hover:ring-emerald-300"
+              className="inline-flex justify-center gap-0.5 overflow-hidden bg-emerald-100 text-sm font-medium text-emerald-700 ring-1 ring-emerald-600/20 transition ring-inset hover:bg-emerald-200/80 hover:text-emerald-800 hover:ring-emerald-600/30 dark:bg-emerald-400/10 dark:text-emerald-400 dark:ring-1 dark:ring-emerald-400/20 dark:ring-inset dark:hover:bg-emerald-400/10 dark:hover:text-emerald-300 dark:hover:ring-emerald-300"
             >
               <Link href="/docs/components">Explore Components</Link>
             </Button>
@@ -86,7 +86,7 @@ export default function Home() {
             <Button
               asChild
               size="lg"
-              className="inline-flex gap-0.5 justify-center overflow-hidden text-sm font-medium transition px-4 ring-1 ring-inset bg-transparent text-zinc-900 ring-zinc-900/10 hover:bg-zinc-900/5 dark:bg-white/5 hover:text-zinc-900 dark:text-white dark:ring-white/10 dark:hover:bg-white/10 dark:hover:text-white"
+              className="inline-flex justify-center gap-0.5 overflow-hidden bg-transparent px-4 text-sm font-medium text-zinc-900 ring-1 ring-zinc-900/10 transition ring-inset hover:bg-zinc-900/5 hover:text-zinc-900 dark:bg-white/5 dark:text-white dark:ring-white/10 dark:hover:bg-white/10 dark:hover:text-white"
             >
               <Link href="/docs">View Docs</Link>
             </Button>
