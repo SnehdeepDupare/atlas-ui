@@ -9,7 +9,7 @@
   "files": [
     {
       "path": "registry/react/examples/reveal-effect-delay-example.tsx",
-      "content": "import { RevealEffect } from \"@/registry/react/atlasui/reveal-effect\";\n\nexport const RevealEffectDelayExample = () => {\n  return (\n    <div className=\"flex flex-col items-center space-y-2\">\n      <RevealEffect speed=\"fast\">\n        <p className=\"font-semibold text-xl\">I&apos;m First.</p>\n      </RevealEffect>\n\n      <RevealEffect delay={0.2}>\n        <p className=\"font-semibold text-xl\">I was delayed by 0.2 seconds.</p>\n      </RevealEffect>\n\n      <RevealEffect delay={0.5}>\n        <p className=\"font-semibold text-xl\">I was delayed by 0.5 seconds.</p>\n      </RevealEffect>\n    </div>\n  );\n};\n",
+      "content": "import { RevealEffect } from \"@/registry/react/atlasui/reveal-effect\";\n\nexport const RevealEffectDelayExample = () => {\n  return (\n    <div className=\"flex flex-col items-center space-y-2\">\n      <RevealEffect speed=\"fast\">\n        <p className=\"text-xl font-semibold\">I&apos;m First.</p>\n      </RevealEffect>\n\n      <RevealEffect delay={0.2}>\n        <p className=\"text-xl font-semibold\">I was delayed by 0.2 seconds.</p>\n      </RevealEffect>\n\n      <RevealEffect delay={0.5}>\n        <p className=\"text-xl font-semibold\">I was delayed by 0.5 seconds.</p>\n      </RevealEffect>\n    </div>\n  );\n};\n",
       "type": "registry:example",
       "target": "components/reveal-effect-delay-example.tsx"
     }

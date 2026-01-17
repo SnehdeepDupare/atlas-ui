@@ -119,7 +119,7 @@ const AnimatedMobileNavbarContent = ({
     <AnimatePresence>
       {open && (
         <motion.div
-          className={`fixed bg-primary-foreground h-screen w-full left-0 top-0 z-50 py-10 px-5 origin-top ${
+          className={`bg-primary-foreground fixed top-0 left-0 z-50 h-screen w-full origin-top px-5 py-10 ${
             side === "left"
               ? "origin-left"
               : side === "right"
@@ -135,13 +135,13 @@ const AnimatedMobileNavbarContent = ({
             variant="ghost"
             size="icon"
             onClick={toggle}
-            className="absolute top-5 right-5 text-foreground"
+            className="text-foreground absolute top-5 right-5"
           >
             <XIcon />
           </Button>
 
           <motion.div
-            className="flex flex-col items-center justify-center space-y-8 mt-16"
+            className="mt-16 flex flex-col items-center justify-center space-y-8"
             variants={containerVariants}
             initial="initial"
             animate="open"
@@ -190,9 +190,9 @@ const AnimatedMobileNavbarLink = ({
       <motion.div variants={linkVariants}>
         <Link
           href={href}
-          className={`mx-4 relative hover:after:scale-x-125 hover:text-primary text-lg uppercase font-bold text-muted-foreground ${
+          className={`hover:text-primary text-muted-foreground relative mx-4 text-lg font-bold uppercase hover:after:scale-x-125 ${
             isActive ? "text-primary" : "text-muted-foreground"
-          } after:content-[''] after:absolute after:bg-primary after:h-px after:w-full after:left-0 after:-bottom-0.5 after:scale-x-0 after:duration-300`}
+          } after:bg-primary after:absolute after:-bottom-0.5 after:left-0 after:h-px after:w-full after:scale-x-0 after:duration-300 after:content-['']`}
           onClick={onClick}
         >
           {label}
@@ -262,7 +262,7 @@ export const BlendMouseTrailer = ({ isHovered }: { isHovered: boolean }) => {
     <motion.div
       className={`${
         isVisible ? "hidden md:block" : "hidden"
-      } rounded-full bg-sky-300 fixed top-0 left-0 pointer-events-none mix-blend-difference`}
+      } pointer-events-none fixed top-0 left-0 rounded-full bg-sky-300 mix-blend-difference`}
       style={{
         left: smoothMouse.x,
         top: smoothMouse.y,
@@ -325,7 +325,7 @@ export const BlobMouseTrailer = () => {
     <motion.div
       className={` ${
         isVisible ? "hidden md:block" : "hidden"
-      } h-96 w-96 rounded-full bg-linear-to-r from-purple-500 to-amber-500 fixed top-0 left-0 pointer-events-none animate-rotate opacity-80 -z-10 blur-[100px]`}
+      } animate-rotate pointer-events-none fixed top-0 left-0 -z-10 h-96 w-96 rounded-full bg-linear-to-r from-purple-500 to-amber-500 opacity-80 blur-[100px]`}
       style={{
         left: smoothMouse.x,
         top: smoothMouse.y,
@@ -406,7 +406,7 @@ export const BoxReveal = ({
         animate={overlayAnimation}
         transition={{ duration: 0.5, ease: "easeIn" }}
         viewport={{ once: true }}
-        className="absolute inset-0 pointer-events-none z-20 top-1 bottom-1"
+        className="pointer-events-none absolute inset-0 top-1 bottom-1 z-20"
         style={{
           background: color,
         }}
@@ -490,14 +490,14 @@ export const DotAndCircleMouseTrailer = () => {
     <motion.div
       className={`${
         isVisible ? "hidden md:block" : "hidden"
-      } h-20 w-20 fixed border rounded-full top-0 left-0 pointer-events-none z-50 border-black dark:border-white`}
+      } pointer-events-none fixed top-0 left-0 z-50 h-20 w-20 rounded-full border border-black dark:border-white`}
       style={{
         left: smoothOutline._x,
         top: smoothOutline._y,
       }}
     >
       <motion.div
-        className="hidden md:block h-2 w-2 rounded-full bg-black dark:bg-white fixed top-0 left-0 pointer-events-none"
+        className="pointer-events-none fixed top-0 left-0 hidden h-2 w-2 rounded-full bg-black md:block dark:bg-white"
         style={{
           left: smoothMouse.x,
           top: smoothMouse.y,
@@ -601,7 +601,7 @@ export const HackerText = ({
     <span
       id="text"
       data-value={text}
-      className={cn("uppercase text-4xl", bebas.className, className)}
+      className={cn("text-4xl uppercase", bebas.className, className)}
     >
       {text}
     </span>
@@ -1608,9 +1608,9 @@ const NotchNavTrigger = ({ className }: { className?: string }) => {
         delay: 0.2,
       }}
       className={cn(
-        "absolute top-0 w-48 h-12 rounded-b-4xl bg-[#b3eb14] text-neutral-900 flex items-center justify-center",
-        "before:content-[''] before:absolute before:top-0 before:-left-[14px] before:w-[30px] before:h-[15.5px] before:bg-no-repeat before:bg-size-[50%_100%] before:bg-[radial-gradient(circle_at_0_100%,transparent_14px,#b3eb14_15px)]",
-        "after:content-[''] after:absolute after:top-0 after:left-full after:w-[30px] after:h-[15px] after:bg-no-repeat after:bg-size-[50%_100%] after:bg-[radial-gradient(circle_at_100%_100%,transparent_15px,#b3eb14_15px)]",
+        "absolute top-0 flex h-12 w-48 items-center justify-center rounded-b-4xl bg-[#b3eb14] text-neutral-900",
+        "before:absolute before:top-0 before:-left-[14px] before:h-[15.5px] before:w-[30px] before:bg-[radial-gradient(circle_at_0_100%,transparent_14px,#b3eb14_15px)] before:bg-size-[50%_100%] before:bg-no-repeat before:content-['']",
+        "after:absolute after:top-0 after:left-full after:h-[15px] after:w-[30px] after:bg-[radial-gradient(circle_at_100%_100%,transparent_15px,#b3eb14_15px)] after:bg-size-[50%_100%] after:bg-no-repeat after:content-['']",
         open && "-top-px",
         className,
       )}
@@ -1695,7 +1695,7 @@ const NotchNavContent = ({
           initial="closed"
           animate={open ? "open" : "closed"}
           className={cn(
-            "bg-[#b3eb14] w-[90svw] max-w-96 rounded-4xl py-8 px-6 flex flex-col gap-2",
+            "flex w-[90svw] max-w-96 flex-col gap-2 rounded-4xl bg-[#b3eb14] px-6 py-8",
             className,
           )}
         >
@@ -1729,7 +1729,7 @@ const NotchNavItem = ({ href, children, className }: NotchNavItemProps) => {
       href={href}
       variants={itemVariants}
       className={cn(
-        "relative h-8 overflow-hidden uppercase border-b p-1 flex flex-col justify-center text-neutral-900 border-neutral-900/50 group",
+        "group relative flex h-8 flex-col justify-center overflow-hidden border-b border-neutral-900/50 p-1 text-neutral-900 uppercase",
         className,
       )}
     >
@@ -1737,14 +1737,14 @@ const NotchNavItem = ({ href, children, className }: NotchNavItemProps) => {
 
       <span
         aria-hidden
-        className="absolute top-0 group-hover:-top-full transition-all duration-300 ease-out"
+        className="absolute top-0 transition-all duration-300 ease-out group-hover:-top-full"
       >
         {children}
       </span>
 
       <span
         aria-hidden
-        className="absolute top-full group-hover:top-0 transition-all duration-300 ease-out italic font-medium"
+        className="absolute top-full font-medium italic transition-all duration-300 ease-out group-hover:top-0"
       >
         {children}
       </span>
@@ -1792,9 +1792,9 @@ const Section1 = ({ scrollYProgress }: SectionProps) => {
   return (
     <motion.section
       style={{ scale, rotate }}
-      className="h-screen sticky top-0 bg-neutral-700 flex items-center justify-center"
+      className="sticky top-0 flex h-screen items-center justify-center bg-neutral-700"
     >
-      <h1 className="font-bold text-5xl">This section is Cool.</h1>
+      <h1 className="text-5xl font-bold">This section is Cool.</h1>
     </motion.section>
   );
 };
@@ -1806,9 +1806,9 @@ const Section2 = ({ scrollYProgress }: SectionProps) => {
   return (
     <motion.section
       style={{ scale, rotate }}
-      className="h-screen bg-red-500 relative flex items-center justify-center"
+      className="relative flex h-screen items-center justify-center bg-red-500"
     >
-      <h1 className="font-bold text-5xl">This is Cooler!</h1>
+      <h1 className="text-5xl font-bold">This is Cooler!</h1>
     </motion.section>
   );
 };
@@ -1864,7 +1864,7 @@ const ProjectGallery = ({ children }: ProjectGalleryProps) => {
   return (
     <div
       ref={containerRef}
-      className="grid grid-cols-1 sm:grid-cols-2 md:block relative"
+      className="relative grid grid-cols-1 sm:grid-cols-2 md:block"
     >
       {children &&
         React.Children.map(children, (child, index) => {
@@ -1903,13 +1903,13 @@ const Project = (props: BaseProjectProps | InternalProjectProps) => {
   return (
     <Link href={href}>
       <div
-        className="flex w-full flex-col justify-between p-4 md:flex-row md:items-center md:border-t md:p-24 border-primary cursor-pointer group transition-all duration-200 ease-linear md:hover:opacity-40"
+        className="border-primary group flex w-full cursor-pointer flex-col justify-between p-4 transition-all duration-200 ease-linear md:flex-row md:items-center md:border-t md:p-24 md:hover:opacity-40"
         onMouseEnter={() => setModal?.({ active: true, index })}
         onMouseLeave={() => setModal?.({ active: false, index })}
       >
         <div
           style={{ backgroundColor: color }}
-          className="relative mb-4 w-full overflow-hidden aspect-4/3 md:hidden rounded-lg"
+          className="relative mb-4 aspect-4/3 w-full overflow-hidden rounded-lg md:hidden"
         >
           <Image
             src={imgSrc}
@@ -1920,10 +1920,10 @@ const Project = (props: BaseProjectProps | InternalProjectProps) => {
           />
         </div>
 
-        <h2 className="font-bold md:font-normal text-2xl md:text-6xl md:group-hover:-translate-x-3 transition-all duration-200 ease-linear">
+        <h2 className="text-2xl font-bold transition-all duration-200 ease-linear md:text-6xl md:font-normal md:group-hover:-translate-x-3">
           {title}
         </h2>
-        <p className="font-light text-xs md:text-base text-muted-foreground md:text-foreground md:group-hover:translate-x-3 transition-all duration-200 ease-linear">
+        <p className="text-muted-foreground md:text-foreground text-xs font-light transition-all duration-200 ease-linear md:text-base md:group-hover:translate-x-3">
           {subtitle}
         </p>
       </div>
@@ -2042,14 +2042,14 @@ const Modal = ({ modal, projects, containerRef }: ModalProps) => {
         initial={"initial"}
         animate={active ? "open" : "closed"}
         ref={modalRef}
-        className="h-87.5 w-100 hidden md:flex items-center justify-center absolute overflow-hidden pointer-events-none"
+        className="pointer-events-none absolute hidden h-87.5 w-100 items-center justify-center overflow-hidden md:flex"
         style={{
           left: smoothMouse.x,
           top: smoothMouse.y,
         }}
       >
         <div
-          className="h-full w-full absolute transition-[top] duration-500 ease-[cubic-bezier(0.76, 0, 0.24, 1)]"
+          className="ease-[cubic-bezier(0.76, 0, 0.24, 1)] absolute h-full w-full transition-[top] duration-500"
           style={{
             top: index * -100 + "%",
           }}
@@ -2062,7 +2062,7 @@ const Modal = ({ modal, projects, containerRef }: ModalProps) => {
                 style={{
                   backgroundColor: color,
                 }}
-                className="relative h-full flex items-center justify-center"
+                className="relative flex h-full items-center justify-center"
               >
                 <Image
                   src={imgSrc}
@@ -2082,7 +2082,7 @@ const Modal = ({ modal, projects, containerRef }: ModalProps) => {
         initial={"initial"}
         animate={active ? "open" : "closed"}
         ref={cursorRef}
-        className="h-20 w-20 hidden md:flex items-center justify-center rounded-full absolute pointer-events-none bg-blue-600 "
+        className="pointer-events-none absolute hidden h-20 w-20 items-center justify-center rounded-full bg-blue-600 md:flex"
         style={{
           left: smoothCursor._x,
           top: smoothCursor._y,
@@ -2093,7 +2093,7 @@ const Modal = ({ modal, projects, containerRef }: ModalProps) => {
         initial={"initial"}
         animate={active ? "open" : "closed"}
         ref={cursorLabelRef}
-        className="h-20 w-20 hidden md:flex items-center justify-center rounded-full absolute pointer-events-none bg-transparent text-primary"
+        className="text-primary pointer-events-none absolute hidden h-20 w-20 items-center justify-center rounded-full bg-transparent md:flex"
         style={{
           left: smoothCursor._x,
           top: smoothCursor._y,
@@ -2203,11 +2203,11 @@ export const ScrollBasedCharacterReveal = ({
   const words = text.split(" ");
 
   return (
-    <div className="flex flex-col items-center justify-center ">
+    <div className="flex flex-col items-center justify-center">
       <div className="h-[50vh]" />
       <p
         ref={container}
-        className="text-5xl font-bold max-w-5xl text-center flex flex-wrap"
+        className="flex max-w-5xl flex-wrap text-center text-5xl font-bold"
       >
         {words.map((word, i) => {
           const start = i / words.length;
@@ -2235,7 +2235,7 @@ const Word = ({ children, scrollYProgress, range }: WordProps) => {
   const step = amount / children.length;
 
   return (
-    <span className="mr-2 mt-1 relative">
+    <span className="relative mt-1 mr-2">
       {characters.map((character, i) => {
         const start = range[0] + step * i;
         const end = range[0] + step * (i + 1);
@@ -2287,12 +2287,12 @@ export const ScrollBasedTextReveal = ({ text }: ScrollBasedTextRevealProps) => {
   });
 
   return (
-    <div className="flex flex-col items-center justify-center ">
+    <div className="flex flex-col items-center justify-center">
       <div className="h-[50vh]" />
       <motion.p
         style={{ opacity: scrollYProgress }}
         ref={container}
-        className="text-5xl font-bold max-w-5xl text-center"
+        className="max-w-5xl text-center text-5xl font-bold"
       >
         {text}
       </motion.p>
@@ -2327,11 +2327,11 @@ export const ScrollBasedWordReveal = ({ text }: ScrollBasedWordRevealProps) => {
   const words = text.split(" ");
 
   return (
-    <div className="flex flex-col items-center justify-center ">
+    <div className="flex flex-col items-center justify-center">
       <div className="h-[50vh]" />
       <p
         ref={container}
-        className="text-5xl font-bold max-w-5xl flex items-center justify-center flex-wrap"
+        className="flex max-w-5xl flex-wrap items-center justify-center text-5xl font-bold"
       >
         {words.map((word, i) => {
           const start = i / words.length;
@@ -2340,7 +2340,7 @@ export const ScrollBasedWordReveal = ({ text }: ScrollBasedWordRevealProps) => {
           const opacity = useTransform(scrollYProgress, [start, end], [0, 1]);
 
           return (
-            <span key={i} className="mr-2 mt-1 relative">
+            <span key={i} className="relative mt-1 mr-2">
               <span className="absolute opacity-10">{word}</span>
               <motion.span style={{ opacity }}>{word}</motion.span>
             </span>
@@ -2383,7 +2383,7 @@ export const ShinyButton = ({
 }: ShinyButtonProps) => {
   return (
     <motion.button
-      className={cn("px-6 py-2 rounded-md relative radial-gradient", className)}
+      className={cn("radial-gradient relative rounded-md px-6 py-2", className)}
       initial={{ "--x": "100%", scale: 1 }}
       animate={{ "--x": "-100%" }}
       whileTap={{ scale: 0.97 }}
@@ -2404,10 +2404,10 @@ export const ShinyButton = ({
       }}
       {...props}
     >
-      <span className="text-neutral-100 tracking-wide font-light h-full w-full block relative linear-mask">
+      <span className="linear-mask relative block h-full w-full font-light tracking-wide text-neutral-100">
         {children}
       </span>
-      <span className="block absolute inset-0 rounded-md p-px linear-overlay" />
+      <span className="linear-overlay absolute inset-0 block rounded-md p-px" />
     </motion.button>
   );
 };
