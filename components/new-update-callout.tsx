@@ -20,7 +20,7 @@ export const NewUpdateCallout = () => {
           "relative rounded-full text-xs",
         )}
       >
-        🎉 Introducing Notch Nav & Box Reveal
+        🎉 Introducing Morph Navbar & Notch Nav
         <ChevronRight className="text-muted-foreground ml-1 size-3" />
       </Link>
 
