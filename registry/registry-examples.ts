@@ -295,4 +295,19 @@ export const examples: Registry["items"] = [
       },
     ],
   },
+  {
+    name: "morph-navbar-demo",
+    type: "registry:example",
+    title: "Morph Navbar Demo",
+    description:
+      "Example of Morph Navbar with a fluid, morphing pill that tracks the active link and hover state.",
+    registryDependencies: ["https://atlasui.vercel.app/r/morph-navbar.json"],
+    files: [
+      {
+        path: "react/examples/morph-navbar-demo.tsx",
+        type: "registry:example",
+        target: "components/morph-navbar-demo.tsx",
+      },
+    ],
+  },
 ];

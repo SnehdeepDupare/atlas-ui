@@ -13,6 +13,7 @@ This file provides LLM-friendly entry points to documentation and examples.
 - [Dot And Circle Mouse Trailer](https://atlasui.vercel.app/docs/components/dot-and-circle-mouse-trailer): A simple Lazy Dot and Circle Mouse Trailer
 - [Hacker Text](https://atlasui.vercel.app/docs/components/hacker-text): A text animation that scrambles letters before revealing the final text.
 - [Loki Text Effect](https://atlasui.vercel.app/docs/components/loki-text-effect): The iconic text animation from the Loki series intro.
+- [Morph Navbar](https://atlasui.vercel.app/docs/components/morph-navbar): A polished navigation bar with a fluid, morphing pill that tracks the active link and hover state.
 - [Notch Nav](https://atlasui.vercel.app/docs/components/notch-nav): A Notch style trigger that reveals the navigation menu from above.
 - [Parallax Sections](https://atlasui.vercel.app/docs/components/parallax-sections): A simple Parallax effect using Motion.
 - [Project Gallery](https://atlasui.vercel.app/docs/components/project-gallery): A Project Gallery with an interactive modal.
@@ -43,6 +44,7 @@ This file provides LLM-friendly entry points to documentation and examples.
 - [Loki Text Effect Demo](https://github.com/SnehdeepDupare/atlas-ui/blob/main/react/examples/loki-text-effect-demo.tsx): Example usage
 - [Box Reveal Demo](https://github.com/SnehdeepDupare/atlas-ui/blob/main/react/examples/box-reveal-demo.tsx): Example usage
 - [Notch Nav Demo](https://github.com/SnehdeepDupare/atlas-ui/blob/main/react/examples/notch-nav-demo.tsx): Example usage
+- [Morph Navbar Demo](https://github.com/SnehdeepDupare/atlas-ui/blob/main/react/examples/morph-navbar-demo.tsx): Example usage
 
 ## Optional
 

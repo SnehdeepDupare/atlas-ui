@@ -429,4 +429,32 @@ export const js: Registry["items"] = [
       },
     ],
   },
+  {
+    name: "morph-navbar-js",
+    type: "registry:file",
+    title: "Morph Navbar",
+    description:
+      "A polished navigation bar with a fluid, morphing pill that tracks the active link and hover state built with HTML, CSS, JavaScript and Motion.",
+    meta: {
+      framework: "vanilla",
+    },
+    dependencies: ["motion"],
+    files: [
+      {
+        path: "js/morph-navbar/index.html",
+        type: "registry:file",
+        target: "~/morph-navbar/index.html",
+      },
+      {
+        path: "js/morph-navbar/style.css",
+        type: "registry:file",
+        target: "~/morph-navbar/style.css",
+      },
+      {
+        path: "js/morph-navbar/script.js",
+        type: "registry:file",
+        target: "~/morph-navbar/script.js",
+      },
+    ],
+  },
 ];

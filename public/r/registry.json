@@ -311,6 +311,24 @@
       "type": "registry:component"
     },
     {
+      "name": "morph-navbar",
+      "title": "Morph Navbar",
+      "description": "A polished navigation bar with a fluid, morphing pill that tracks the active link and hover state.",
+      "dependencies": [
+        "motion"
+      ],
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "registry/react/atlasui/morph-navbar.tsx",
+          "type": "registry:component"
+        }
+      ],
+      "type": "registry:component"
+    },
+    {
       "name": "animated-mobile-navbar-demo",
       "title": "Animated Mobile Navbar Demo",
       "description": "Example showcasing the Animated Mobile Navbar component.",
@@ -608,6 +626,22 @@
           "path": "registry/react/examples/notch-nav-demo.tsx",
           "type": "registry:example",
           "target": "components/notch-nav-demo.tsx"
+        }
+      ],
+      "type": "registry:example"
+    },
+    {
+      "name": "morph-navbar-demo",
+      "title": "Morph Navbar Demo",
+      "description": "Example of Morph Navbar with a fluid, morphing pill that tracks the active link and hover state.",
+      "registryDependencies": [
+        "https://atlasui.vercel.app/r/morph-navbar.json"
+      ],
+      "files": [
+        {
+          "path": "registry/react/examples/morph-navbar-demo.tsx",
+          "type": "registry:example",
+          "target": "components/morph-navbar-demo.tsx"
         }
       ],
       "type": "registry:example"
@@ -1039,6 +1073,35 @@
           "path": "registry/js/notch-nav/script.js",
           "type": "registry:file",
           "target": "~/notch-nav/script.js"
+        }
+      ],
+      "meta": {
+        "framework": "vanilla"
+      },
+      "type": "registry:file"
+    },
+    {
+      "name": "morph-navbar-js",
+      "title": "Morph Navbar",
+      "description": "A polished navigation bar with a fluid, morphing pill that tracks the active link and hover state built with HTML, CSS, JavaScript and Motion.",
+      "dependencies": [
+        "motion"
+      ],
+      "files": [
+        {
+          "path": "registry/js/morph-navbar/index.html",
+          "type": "registry:file",
+          "target": "~/morph-navbar/index.html"
+        },
+        {
+          "path": "registry/js/morph-navbar/style.css",
+          "type": "registry:file",
+          "target": "~/morph-navbar/style.css"
+        },
+        {
+          "path": "registry/js/morph-navbar/script.js",
+          "type": "registry:file",
+          "target": "~/morph-navbar/script.js"
         }
       ],
       "meta": {

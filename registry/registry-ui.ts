@@ -266,4 +266,19 @@ export const ui: Registry["items"] = [
       },
     ],
   },
+  {
+    name: "morph-navbar",
+    type: "registry:component",
+    title: "Morph Navbar",
+    description:
+      "A polished navigation bar with a fluid, morphing pill that tracks the active link and hover state.",
+    dependencies: ["motion"],
+    registryDependencies: ["utils"],
+    files: [
+      {
+        path: "react/atlasui/morph-navbar.tsx",
+        type: "registry:component",
+      },
+    ],
+  },
 ];
