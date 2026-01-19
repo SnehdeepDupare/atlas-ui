@@ -1,5 +1,9 @@
 "use client";
 
+import { useState } from "react";
+import Link from "next/link";
+import { ArrowUpRightIcon, RotateCcwIcon } from "lucide-react";
+
 import ComponentWrapper from "@/components/component-wrapper";
 import { Button } from "@/components/ui/button";
 import {
@@ -7,17 +11,16 @@ import {
   TooltipContent,
   TooltipTrigger,
 } from "@/components/ui/tooltip";
+
 import { cn } from "@/lib/utils";
+
 import { BoxRevealDemo } from "@/registry/react/examples/box-reveal-demo";
 import { HackerTextDemo } from "@/registry/react/examples/hacker-text-demo";
-import { LokiTextEffectDemo } from "@/components/sections/demo-components/loki-text-effect-demo";
 import { MorphNavbarDemo } from "@/registry/react/examples/morph-navbar-demo";
+import { ShinyButtonDemo } from "@/registry/react/examples/shiny-button-demo";
+import { LokiTextEffectDemo } from "@/components/sections/demo-components/loki-text-effect-demo";
 import { NotchNavDemo } from "@/components/sections/demo-components/notch-nav-demo";
 import { ProjectGalleryDemo } from "@/components/sections/demo-components/project-gallery-demo";
-import { ShinyButtonDemo } from "@/registry/react/examples/shiny-button-demo";
-import { ArrowUpRightIcon, RotateCcwIcon } from "lucide-react";
-import Link from "next/link";
-import { useState } from "react";
 
 export const ComponentShowcase = () => {
   const [key, setKey] = useState(0);
@@ -114,27 +117,17 @@ const ItemFooter = ({
         className,
       )}
     >
-      <div className="flex items-center gap-1">
-        <p className="text-lg font-medium">{title}</p>
-
-        <Tooltip>
-          <TooltipTrigger asChild>
-            <Button
-              asChild
-              size="icon-sm"
-              variant="ghost"
-              className="invisible group-hover:visible"
-            >
-              <Link href={href}>
-                <ArrowUpRightIcon className="size-4" />
-              </Link>
-            </Button>
-          </TooltipTrigger>
-          <TooltipContent side="bottom">
-            <p>View Component</p>
-          </TooltipContent>
-        </Tooltip>
-      </div>
+      <Tooltip>
+        <TooltipTrigger asChild>
+          <Link href={href} className="flex items-center gap-1">
+            <p className="text-lg font-medium">{title}</p>
+            <ArrowUpRightIcon className="invisible size-4 group-hover:visible" />
+          </Link>
+        </TooltipTrigger>
+        <TooltipContent side="bottom">
+          <p>View Component</p>
+        </TooltipContent>
+      </Tooltip>
     </div>
   );
 };
