@@ -76,6 +76,12 @@ export const docsConfig: DocsConfig = {
           label: "New",
         },
         {
+          title: "Morph Navbar",
+          href: "/docs/components/morph-navbar",
+          items: [],
+          label: "New",
+        },
+        {
           title: "Animated Mobile Navbar",
           href: "/docs/components/animated-mobile-navbar",
           items: [],

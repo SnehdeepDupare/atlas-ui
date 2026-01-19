@@ -302,6 +302,23 @@ export const Index: Record<string, any> = {
     }),
     meta: undefined,
   },
+  "morph-navbar": {
+    name: "morph-navbar",
+    description: "A polished navigation bar with a fluid, morphing pill that tracks the active link and hover state.",
+    type: "registry:component",
+    registryDependencies: ["utils"],
+    files: [{
+      path: "registry/react/atlasui/morph-navbar.tsx",
+      type: "registry:component",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/react/atlasui/morph-navbar.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: undefined,
+  },
   "animated-mobile-navbar-demo": {
     name: "animated-mobile-navbar-demo",
     description: "Example showcasing the Animated Mobile Navbar component.",
@@ -620,6 +637,23 @@ export const Index: Record<string, any> = {
     }],
     component: React.lazy(async () => {
       const mod = await import("@/registry/react/examples/notch-nav-demo.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: undefined,
+  },
+  "morph-navbar-demo": {
+    name: "morph-navbar-demo",
+    description: "Example of Morph Navbar with a fluid, morphing pill that tracks the active link and hover state.",
+    type: "registry:example",
+    registryDependencies: ["https://atlasui.vercel.app/r/morph-navbar.json"],
+    files: [{
+      path: "registry/react/examples/morph-navbar-demo.tsx",
+      type: "registry:example",
+      target: "components/morph-navbar-demo.tsx"
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/react/examples/morph-navbar-demo.tsx")
       const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
       return { default: mod.default || mod[exportName] }
     }),
