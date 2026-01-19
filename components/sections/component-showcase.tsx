@@ -27,8 +27,8 @@ export const ComponentShowcase = () => {
 
   return (
     <section className="mx-auto max-w-7xl px-6 py-10 lg:px-8">
-      <div className="grid w-full grid-cols-3 grid-rows-5 gap-4">
-        <ComponentWrapper className="group col-span-2 flex items-center justify-center overflow-hidden rounded-xl border p-2">
+      <div className="grid w-full grid-cols-1 gap-4 md:grid-cols-3 md:grid-rows-5">
+        <ComponentWrapper className="group flex h-48 items-center justify-center overflow-hidden rounded-xl border bg-neutral-50/30 p-2 shadow md:col-span-2 md:h-auto dark:bg-neutral-950">
           <MorphNavbarDemo />
 
           <ItemFooter
@@ -37,7 +37,7 @@ export const ComponentShowcase = () => {
           />
         </ComponentWrapper>
 
-        <ComponentWrapper className="group col-start-3 flex items-center justify-center overflow-hidden rounded-xl border p-2">
+        <ComponentWrapper className="group flex h-48 items-center justify-center overflow-hidden rounded-xl border bg-neutral-50/30 p-2 shadow md:col-start-3 md:h-auto dark:bg-neutral-950">
           <LokiTextEffectDemo />
 
           <ItemFooter
@@ -46,7 +46,7 @@ export const ComponentShowcase = () => {
           />
         </ComponentWrapper>
 
-        <ComponentWrapper className="relative row-span-2 row-start-2 flex h-128 items-center justify-center overflow-hidden rounded-xl border p-2">
+        <ComponentWrapper className="relative flex h-96 items-center justify-center overflow-hidden rounded-xl border bg-neutral-50/30 p-2 shadow md:row-span-2 md:row-start-2 md:h-128 dark:bg-neutral-950">
           <NotchNavDemo />
 
           <ItemFooter
@@ -56,23 +56,23 @@ export const ComponentShowcase = () => {
           />
         </ComponentWrapper>
 
-        <ComponentWrapper className="group col-span-2 row-span-3 row-start-2 items-center justify-center overflow-hidden rounded-xl border p-2">
+        <ComponentWrapper className="hidden items-center justify-center overflow-hidden rounded-xl border bg-neutral-50/30 p-2 shadow md:col-span-2 md:row-span-3 md:row-start-2 md:block dark:bg-neutral-950">
           <ProjectGalleryDemo />
 
           <ItemFooter
             title="Project Gallery"
             href="/docs/components/project-gallery"
-            className="h-20"
+            className="group h-20"
           />
         </ComponentWrapper>
 
-        <ComponentWrapper className="group row-start-4 flex items-center justify-center overflow-hidden rounded-xl border p-2">
+        <ComponentWrapper className="group flex h-48 items-center justify-center overflow-hidden rounded-xl border bg-neutral-50/30 p-2 shadow md:row-start-4 md:h-auto dark:bg-neutral-950">
           <HackerTextDemo />
 
           <ItemFooter title="Hacker Text" href="/docs/components/hacker-text" />
         </ComponentWrapper>
 
-        <ComponentWrapper className="group col-span-2 row-start-5 flex items-center justify-center overflow-hidden rounded-xl border p-2">
+        <ComponentWrapper className="group flex h-48 items-center justify-center overflow-hidden rounded-xl border bg-neutral-50/30 p-2 px-4 shadow md:col-span-2 md:row-start-5 md:h-auto dark:bg-neutral-950">
           <div className="absolute top-2 right-2">
             <RestartButton onRestart={() => setKey((prev) => prev + 1)} />
           </div>
@@ -81,7 +81,7 @@ export const ComponentShowcase = () => {
           <ItemFooter title="Box Reveal" href="/docs/components/box-reveal" />
         </ComponentWrapper>
 
-        <ComponentWrapper className="group row-start-5 flex items-center justify-center overflow-hidden rounded-xl border p-2">
+        <ComponentWrapper className="group flex h-48 items-center justify-center overflow-hidden rounded-xl border bg-neutral-50/30 p-2 shadow md:row-start-5 md:h-auto dark:bg-neutral-950">
           <ShinyButtonDemo />
 
           <ItemFooter
