@@ -4,7 +4,7 @@ import Link from "next/link";
 import { ArrowRightIcon } from "lucide-react";
 import { motion } from "motion/react";
 
-import { OpenSourceSkeleton } from "@/components/sections/skeletons/open-source-skeletion";
+import { OpenSourceSkeleton } from "@/components/sections/skeletons/open-source-skeleton";
 import { PlugAndPlaySkeleton } from "@/components/sections/skeletons/plug-and-play-skeleton";
 import { RunsOnAnyStackSkeleton } from "@/components/sections/skeletons/runs-on-any-stack-skeleton";
 import { siteConfig } from "@/config/site";
