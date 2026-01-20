@@ -59,7 +59,7 @@ export const OpenSourceSkeleton = () => {
       </svg>
 
       <div className="pointer-events-none relative z-10 h-full w-full font-mono text-xs select-none">
-        <div className="absolute top-4 left-4 flex items-center gap-2 rounded-full border border-purple-200 bg-purple-50 px-2 py-1 text-purple-700 dark:border-purple-900/50 dark:bg-purple-900/20 dark:text-purple-300">
+        <div className="absolute top-5 left-5 flex items-center gap-2 rounded-full border border-purple-200 bg-purple-50 px-2 py-1 text-purple-700 dark:border-purple-900/50 dark:bg-purple-900/20 dark:text-purple-300">
           <GitPullRequestIcon className="size-3" />
           <span>feat/new-components</span>
         </div>
@@ -67,8 +67,13 @@ export const OpenSourceSkeleton = () => {
         <motion.div
           initial={{ opacity: 0.5, y: 5 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 3, repeat: Infinity, repeatType: "reverse" }}
-          className="absolute top-[15px] left-[200px] flex items-center gap-2 rounded border border-neutral-200 bg-white p-1.5 shadow-sm dark:border-neutral-800 dark:bg-neutral-900"
+          transition={{
+            duration: 3,
+            ease: "linear",
+            repeat: Infinity,
+            repeatType: "reverse",
+          }}
+          className="absolute top-[18px] left-[210px] flex items-center gap-2 rounded border border-neutral-200 bg-white p-1.5 shadow-sm dark:border-neutral-800 dark:bg-neutral-900"
         >
           <div className="size-2 rounded-full bg-purple-500" />
           <span className="text-[10px] text-neutral-500 dark:text-neutral-400">
@@ -98,6 +103,7 @@ export const OpenSourceSkeleton = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{
             duration: 4,
+            ease: "linear",
             repeat: Infinity,
             repeatType: "reverse",
             delay: 1,
