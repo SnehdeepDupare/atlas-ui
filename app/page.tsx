@@ -1,4 +1,4 @@
-import { CtaSection } from "@/components/cta-section";
+import { CtaSection } from "@/components/sections/cta-section";
 import { FeaturesSection } from "@/components/sections/features-section";
 import { ComponentShowcase } from "@/components/sections/component-showcase";
 import { HeroSection } from "@/components/sections/hero-section";
