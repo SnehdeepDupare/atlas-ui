@@ -93,7 +93,7 @@ const Card = ({
         <p className="text-muted-foreground text-sm">{description}</p>
       </div>
 
-      <div className="h-80">{skeleton}</div>
+      <div className="h-64">{skeleton}</div>
 
       {/* {href && (
         <Link
