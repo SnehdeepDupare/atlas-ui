@@ -27,7 +27,7 @@ const Cell = ({
 }) => (
   <motion.div
     className={cn(
-      "flex size-20 items-center justify-center rounded-xl border bg-linear-to-b from-neutral-50 to-neutral-100 shadow-[inset_0_1px_2px_rgba(255,255,255,0.2)] dark:from-neutral-700 dark:to-neutral-800",
+      "relative flex size-18 items-center justify-center rounded-xl border border-neutral-200 bg-linear-to-b from-white to-neutral-100 shadow-[0_2px_4px_rgba(0,0,0,0.02),inset_0_1px_0_rgba(255,255,255,1)] dark:border-neutral-700/50 dark:from-neutral-800 dark:to-neutral-900 dark:shadow-[0_2px_4px_rgba(0,0,0,0.4),inset_0_1px_0_rgba(255,255,255,0.1),inset_0_-1px_0_rgba(0,0,0,0.3)]",
       !Icon && "opacity-40",
     )}
     animate={{
@@ -37,14 +37,14 @@ const Cell = ({
       duration: 2 + (index % 3),
       ease: "easeInOut",
       repeat: Infinity,
-      delay: index * 0.35,
+      delay: index * 0.2,
     }}
   >
     {Icon && (
       <div className="relative flex h-full w-full items-center justify-center">
-        <Icon className="z-5 size-10" />
+        <Icon className="z-10 size-9 text-neutral-600 drop-shadow-sm dark:text-neutral-300" />
 
-        <div className="pointer-events-none absolute top-1/2 left-1/2 size-10 -translate-x-1/2 -translate-y-1/2 rounded-full bg-white/20 blur" />
+        <div className="pointer-events-none absolute top-1/2 left-1/2 size-10 -translate-x-1/2 -translate-y-1/2 rounded-full bg-neutral-200/50 blur-lg dark:bg-neutral-500/20" />
       </div>
     )}
   </motion.div>
