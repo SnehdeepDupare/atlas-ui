@@ -1,20 +1,19 @@
 "use client";
 
-import { ArrowRightIcon, Clipboard, Code2 } from "lucide-react";
-import { motion, useMotionTemplate, useMotionValue } from "motion/react";
 import Link from "next/link";
-import { MouseEvent } from "react";
-import { Icons } from "@/components/icons";
-import { siteConfig } from "@/config/site";
+import { ArrowRightIcon } from "lucide-react";
+import { motion } from "motion/react";
+
+import { OpenSourceSkeleton } from "@/components/sections/skeletons/open-source-skeletion";
 import { PlugAndPlaySkeleton } from "@/components/sections/skeletons/plug-and-play-skeleton";
 import { RunsOnAnyStackSkeleton } from "@/components/sections/skeletons/runs-on-any-stack-skeleton";
-import { OpenSourceSkeleton } from "@/components/sections/skeletons/open-source-skeletion";
+import { siteConfig } from "@/config/site";
 
 interface CardProps {
   title: string;
   description: string;
-  icon: React.ElementType;
   href?: string;
+  hrefText?: string;
   skeleton: React.ReactNode;
 }
 
@@ -24,23 +23,25 @@ export const FeaturesSection = () => {
       title: "Plug and Play Setup",
       description:
         "Copy the code into your project or add it via the CLI. Everything works out of the box.",
-      icon: Clipboard,
       skeleton: <PlugAndPlaySkeleton />,
+      href: "/docs/installation",
+      hrefText: "Get Started",
     },
     {
       title: "Runs on Any Stack",
       description:
         "Use components as React elements or drop them directly into plain HTML. Same quality, full flexibility.",
-      icon: Code2,
       skeleton: <RunsOnAnyStackSkeleton />,
+      href: "/docs/installation",
+      hrefText: "Learn More",
     },
     {
       title: "Open Source by design",
       description:
         "MIT licensed with zero vendor lock-in. Use it freely, fork it, or contribute back to the ecosystem.",
-      icon: Icons.githubLine,
-      href: siteConfig.links.github,
       skeleton: <OpenSourceSkeleton />,
+      href: siteConfig.links.github,
+      hrefText: "View on GitHub",
     },
   ];
 
@@ -58,18 +59,17 @@ export const FeaturesSection = () => {
       <div className="mt-10 grid grid-cols-1 gap-4 md:grid-cols-3">
         {features.map((feature, i) => (
           <motion.div
-            initial={{ opacity: 0, y: 40 }}
+            initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, ease: "easeInOut", delay: i * 0.2 }}
+            transition={{ duration: 0.4, ease: "easeOut", delay: i * 0.1 }}
             viewport={{ once: true }}
             key={i}
-            className={`${i === 2 ? "sm:col-span-2 md:col-span-1" : ""}`}
           >
             <Card
               title={feature.title}
               description={feature.description}
-              icon={feature.icon}
               href={feature.href}
+              hrefText={feature.hrefText}
               skeleton={feature.skeleton}
             />
           </motion.div>
@@ -79,31 +79,34 @@ export const FeaturesSection = () => {
   );
 };
 
-const Card = ({
-  title,
-  description,
-  icon: Icon,
-  href,
-  skeleton,
-}: CardProps) => {
+const Card = ({ title, description, href, hrefText, skeleton }: CardProps) => {
   return (
-    <div className="flex flex-col rounded-xl border bg-neutral-50 p-6 shadow dark:bg-neutral-950">
-      <div className="flex flex-col gap-2">
-        <h3 className="text-2xl font-semibold">{title}</h3>
-        <p className="text-muted-foreground text-sm">{description}</p>
+    <div className="group relative flex w-full flex-col overflow-hidden rounded-2xl border border-neutral-200 bg-white shadow-xs ring-1 ring-neutral-950/5 transition-all ring-inset hover:shadow-sm dark:border-neutral-800 dark:bg-neutral-950 dark:ring-neutral-50/10">
+      <div className="relative z-10 flex flex-col p-6">
+        <h3 className="mb-2 text-lg font-semibold tracking-tight text-neutral-900 dark:text-neutral-100">
+          {title}
+        </h3>
+
+        <p className="text-sm leading-relaxed text-neutral-500 dark:text-neutral-400">
+          {description}
+        </p>
+
+        {href && (
+          <div className="mt-4 flex">
+            <Link
+              href={href}
+              className="inline-flex items-center gap-1 text-sm font-medium text-neutral-900 transition-colors hover:text-blue-600 dark:text-neutral-200 dark:hover:text-blue-400"
+            >
+              {hrefText}
+              <ArrowRightIcon className="size-3 transition-transform duration-200 ease-out group-hover:translate-x-1" />
+            </Link>
+          </div>
+        )}
       </div>
 
-      <div className="h-64">{skeleton}</div>
-
-      {/* {href && (
-        <Link
-          href={href}
-          className="flex items-center gap-1 hover:underline hover:underline-offset-2"
-        >
-          <p className="text-sm font-medium">Learn More</p>
-          <ArrowRightIcon className="size-4" />
-        </Link>
-      )} */}
+      <div className="relative mt-auto h-64 w-full overflow-hidden">
+        {skeleton}
+      </div>
     </div>
   );
 };
