@@ -42,7 +42,7 @@ const Cell = ({
   >
     {Icon && (
       <div className="relative flex h-full w-full items-center justify-center">
-        <Icon className="z-10 size-9 text-neutral-600 drop-shadow-sm dark:text-neutral-300" />
+        <Icon className="z-10 size-9 drop-shadow-sm dark:text-neutral-300" />
 
         <div className="pointer-events-none absolute top-1/2 left-1/2 size-10 -translate-x-1/2 -translate-y-1/2 rounded-full bg-neutral-200/50 blur-lg dark:bg-neutral-500/20" />
       </div>

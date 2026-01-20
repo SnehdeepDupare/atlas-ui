@@ -96,8 +96,8 @@ export const Icons = {
       xmlns="http://www.w3.org/2000/svg"
     >
       <title>React</title>
-      <g fill="none" fill-rule="evenodd">
-        <g fill="#087EA4" fill-rule="nonzero">
+      <g fill="none" fillRule="evenodd">
+        <g fill="#087EA4" fillRule="nonzero">
           <path
             d="M285.5,201 C255.400481,201 231,225.400481 231,255.5 C231,285.599519 255.400481,310 285.5,310 C315.599519,310 340,285.599519 340,255.5 C340,225.400481 315.599519,201 285.5,201"
             id="react_light-Path"
@@ -119,12 +119,12 @@ export const Icons = {
       viewBox="0 0 54 33"
     >
       <title>Tailwind CSS</title>
-      <g clip-path="url(#tailwindcss-a)">
+      <g clipPath="url(#tailwindcss-a)">
         <path
           fill="#38bdf8"
-          fill-rule="evenodd"
+          fillRule="evenodd"
           d="M27 0c-7.2 0-11.7 3.6-13.5 10.8 2.7-3.6 5.85-4.95 9.45-4.05 2.054.513 3.522 2.004 5.147 3.653C30.744 13.09 33.808 16.2 40.5 16.2c7.2 0 11.7-3.6 13.5-10.8-2.7 3.6-5.85 4.95-9.45 4.05-2.054-.513-3.522-2.004-5.147-3.653C36.756 3.11 33.692 0 27 0zM13.5 16.2C6.3 16.2 1.8 19.8 0 27c2.7-3.6 5.85-4.95 9.45-4.05 2.054.514 3.522 2.004 5.147 3.653C17.244 29.29 20.308 32.4 27 32.4c7.2 0 11.7-3.6 13.5-10.8-2.7 3.6-5.85 4.95-9.45 4.05-2.054-.513-3.522-2.004-5.147-3.653C23.256 19.31 20.192 16.2 13.5 16.2z"
-          clip-rule="evenodd"
+          clipRule="evenodd"
         />
       </g>
       <defs>
