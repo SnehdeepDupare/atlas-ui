@@ -3,6 +3,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import { ArrowUpRightIcon, RotateCcwIcon } from "lucide-react";
+import { motion } from "motion/react";
 
 import ComponentWrapper from "@/components/component-wrapper";
 import { Button } from "@/components/ui/button";
@@ -26,7 +27,16 @@ export const ComponentShowcase = () => {
   const [key, setKey] = useState(0);
 
   return (
-    <section className="mx-auto max-w-7xl px-6 py-10 lg:px-8">
+    <motion.section
+      initial={{ opacity: 0, y: 40 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{
+        duration: 0.4,
+        ease: "easeOut",
+        delay: 1,
+      }}
+      className="mx-auto max-w-7xl px-6 py-10 lg:px-8"
+    >
       <div className="grid w-full grid-cols-1 gap-4 md:grid-cols-3 md:grid-rows-5">
         <ComponentWrapper className="group flex h-48 items-center justify-center overflow-hidden rounded-xl border bg-neutral-50/30 p-2 shadow md:col-span-2 md:h-auto dark:bg-neutral-950">
           <MorphNavbarDemo />
@@ -90,7 +100,7 @@ export const ComponentShowcase = () => {
           />
         </ComponentWrapper>
       </div>
-    </section>
+    </motion.section>
   );
 };
 
