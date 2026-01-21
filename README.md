@@ -2,7 +2,7 @@
 
 Motion Powered Animated Components for React, Next.js & Vanilla JS. Free. Open Soure.
 
-![hero](public/og.png)
+![hero](public/og.jpg)
 
 ## Documentation
 
