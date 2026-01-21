@@ -5,20 +5,14 @@ import { HeroSection } from "@/components/sections/hero-section";
 import { siteConfig } from "@/config/site";
 import { Metadata } from "next";
 
-const title = "Atlas UI";
-const description =
-  "Beautiful, Open Source, Motion powered components for React, Next.js, and Vanilla JS. Accelerate development, inspire creativity, and bring interfaces to life with seamless animations.";
-
 export const metadata: Metadata = {
-  title,
-  description,
+  title: siteConfig.name,
+  description: siteConfig.description,
   openGraph: {
     url: siteConfig.url,
     images: [
       {
         url: siteConfig.ogImage,
-        width: 1200,
-        height: 630,
         alt: siteConfig.name,
       },
     ],
@@ -27,7 +21,12 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: siteConfig.name,
     description: siteConfig.description,
-    images: [siteConfig.ogImage],
+    images: [
+      {
+        url: siteConfig.ogImage,
+        alt: siteConfig.name,
+      },
+    ],
     creator: "@Snehdeep__",
   },
 };
