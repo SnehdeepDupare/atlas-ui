@@ -2,13 +2,13 @@ import { useAtom } from "jotai";
 import { atomWithStorage } from "jotai/utils";
 
 type Config = {
-  usageType: "React/Next" | "JavaScript";
+  usageType: "React" | "JavaScript";
   packageManager: "npm" | "yarn" | "pnpm" | "bun";
   installationType: "cli" | "manual";
 };
 
 const configAtom = atomWithStorage<Config>("config", {
-  usageType: "React/Next",
+  usageType: "React",
   packageManager: "pnpm",
   installationType: "cli",
 });
