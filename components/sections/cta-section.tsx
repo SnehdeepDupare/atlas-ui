@@ -25,7 +25,7 @@ export const CtaSection = () => {
       <Button
         asChild
         size="lg"
-        className="group inline-flex justify-center gap-0.5 overflow-hidden rounded-full bg-emerald-100 text-sm font-medium text-emerald-700 ring-1 ring-emerald-600/20 transition ring-inset hover:scale-105 hover:bg-emerald-200/80 hover:text-emerald-800 hover:ring-emerald-600/30 dark:bg-emerald-400/10 dark:text-emerald-400 dark:ring-1 dark:ring-emerald-400/20 dark:ring-inset dark:hover:bg-emerald-400/10 dark:hover:text-emerald-300 dark:hover:ring-emerald-300"
+        className="group inline-flex h-11 justify-center gap-0.5 overflow-hidden rounded-full bg-emerald-100 text-sm font-medium text-emerald-700 ring-1 ring-emerald-600/20 transition ring-inset hover:scale-105 hover:bg-emerald-200/80 hover:text-emerald-800 hover:ring-emerald-600/30 dark:bg-emerald-400/10 dark:text-emerald-400 dark:ring-1 dark:ring-emerald-400/20 dark:ring-inset dark:hover:bg-emerald-400/10 dark:hover:text-emerald-300 dark:hover:ring-emerald-300"
       >
         <Link href="/docs">
           Browse Components{" "}
