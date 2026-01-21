@@ -1,28 +1,18 @@
-import Link from "next/link";
-
-import { Metadata } from "next";
-import { RevealEffect } from "@/registry/react/atlasui/reveal-effect";
-import { Button } from "@/components/ui/button";
-import { VideoShowcase } from "@/components/video-showcase";
-import { FeaturesSection } from "@/components/features-section";
-import { CtaSection } from "@/components/cta-section";
-import { NewUpdateCallout } from "@/components/new-update-callout";
+import { CtaSection } from "@/components/sections/cta-section";
+import { FeaturesSection } from "@/components/sections/features-section";
+import { ComponentShowcase } from "@/components/sections/component-showcase";
+import { HeroSection } from "@/components/sections/hero-section";
 import { siteConfig } from "@/config/site";
-
-const title = "Atlas UI";
-const description =
-  "Beautiful, Open Source, Motion powered components for React, Next.js, and Vanilla JS. Accelerate development, inspire creativity, and bring interfaces to life with seamless animations.";
+import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title,
-  description,
+  title: siteConfig.name,
+  description: siteConfig.description,
   openGraph: {
     url: siteConfig.url,
     images: [
       {
         url: siteConfig.ogImage,
-        width: 1200,
-        height: 630,
         alt: siteConfig.name,
       },
     ],
@@ -31,7 +21,12 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: siteConfig.name,
     description: siteConfig.description,
-    images: [siteConfig.ogImage],
+    images: [
+      {
+        url: siteConfig.ogImage,
+        alt: siteConfig.name,
+      },
+    ],
     creator: "@Snehdeep__",
   },
 };
@@ -50,51 +45,9 @@ export default function Home() {
         </div>
       </div>
 
-      <section className="mx-auto max-w-4xl px-6 py-24 text-center lg:px-8">
-        <RevealEffect translateY={10}>
-          <NewUpdateCallout />
-        </RevealEffect>
+      <HeroSection />
 
-        <RevealEffect delay={0.1} translateY={10}>
-          <h1 className="text-4xl font-bold tracking-tight sm:text-5xl lg:text-6xl">
-            Motion Powered{" "}
-            <span className="animate-bg-pan bg-linear-to-r from-[#36B49F] via-[#DBFF75] to-[#36B49F] bg-size-[200%] bg-clip-text text-transparent">
-              Animated Components
-            </span>{" "}
-            for React, Next.js & Vanilla JS
-          </h1>
-        </RevealEffect>
-
-        <RevealEffect delay={0.3} translateY={10}>
-          <p className="text-muted-foreground mx-auto mt-5 max-w-2xl">
-            Seamless animation meets effortless integration. Discover
-            beautifully crafted components that accelerate development, inspire
-            creativity, and bring interfaces to life.
-          </p>
-        </RevealEffect>
-
-        <RevealEffect delay={0.5} translateY={10}>
-          <div className="mt-10 mb-4 flex w-full flex-col justify-center space-y-2 sm:flex-row sm:space-y-0 sm:space-x-4">
-            <Button
-              asChild
-              size="lg"
-              className="inline-flex justify-center gap-0.5 overflow-hidden bg-emerald-100 text-sm font-medium text-emerald-700 ring-1 ring-emerald-600/20 transition ring-inset hover:bg-emerald-200/80 hover:text-emerald-800 hover:ring-emerald-600/30 dark:bg-emerald-400/10 dark:text-emerald-400 dark:ring-1 dark:ring-emerald-400/20 dark:ring-inset dark:hover:bg-emerald-400/10 dark:hover:text-emerald-300 dark:hover:ring-emerald-300"
-            >
-              <Link href="/docs/components">Explore Components</Link>
-            </Button>
-
-            <Button
-              asChild
-              size="lg"
-              className="inline-flex justify-center gap-0.5 overflow-hidden bg-transparent px-4 text-sm font-medium text-zinc-900 ring-1 ring-zinc-900/10 transition ring-inset hover:bg-zinc-900/5 hover:text-zinc-900 dark:bg-white/5 dark:text-white dark:ring-white/10 dark:hover:bg-white/10 dark:hover:text-white"
-            >
-              <Link href="/docs">View Docs</Link>
-            </Button>
-          </div>
-        </RevealEffect>
-      </section>
-
-      <VideoShowcase />
+      <ComponentShowcase />
 
       <FeaturesSection />
 
