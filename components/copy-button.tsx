@@ -5,10 +5,10 @@ import * as React from "react";
 
 import { Event, trackEvent } from "@/lib/events";
 import { cn } from "@/lib/utils";
-import { Button, ButtonProps } from "./ui/button";
+import { Button } from "./ui/button";
 import { Tooltip, TooltipContent, TooltipTrigger } from "./ui/tooltip";
 
-interface CopyButtonProps extends ButtonProps {
+interface CopyButtonProps extends React.ComponentProps<typeof Button> {
   value: string;
   src?: string;
   event?: Event["name"];
