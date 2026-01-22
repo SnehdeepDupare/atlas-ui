@@ -119,21 +119,21 @@ const components = {
     <hr className="my-4 md:my-8" {...props} />
   ),
   table: ({ className, ...props }: React.HTMLAttributes<HTMLTableElement>) => (
-    <div className="my-6 w-full overflow-y-auto">
+    <div className="no-scrollbar my-6 w-full overflow-y-auto rounded-xl border">
       <table
         className={cn(
-          "relative w-full overflow-hidden border-none text-sm",
+          "relative w-full overflow-hidden border-none text-sm [&_tbody_tr:last-child]:border-b-0",
           className,
         )}
         {...props}
       />
     </div>
   ),
+  thead: ({ className, ...props }: React.ComponentProps<"thead">) => (
+    <thead className={cn("bg-muted/50 border-b", className)} {...props} />
+  ),
   tr: ({ className, ...props }: React.HTMLAttributes<HTMLTableRowElement>) => (
-    <tr
-      className={cn("last:border-b-none m-0 border-b", className)}
-      {...props}
-    />
+    <tr className={cn("m-0 border-b", className)} {...props} />
   ),
   th: ({ className, ...props }: React.HTMLAttributes<HTMLTableCellElement>) => (
     <th
@@ -147,7 +147,7 @@ const components = {
   td: ({ className, ...props }: React.HTMLAttributes<HTMLTableCellElement>) => (
     <td
       className={cn(
-        "px-4 py-2 text-left [[align=center]]:text-center [[align=right]]:text-right",
+        "px-4 py-2 text-left whitespace-nowrap [[align=center]]:text-center [[align=right]]:text-right",
         className,
       )}
       {...props}
