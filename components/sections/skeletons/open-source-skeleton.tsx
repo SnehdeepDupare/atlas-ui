@@ -12,11 +12,11 @@ export const OpenSourceSkeleton = () => {
   return (
     <div className="relative h-full w-full overflow-hidden mask-y-from-85% mask-x-from-90%">
       <div
-        className="absolute inset-0 z-0 opacity-15"
-        style={{
-          backgroundImage: "radial-gradient(#a1a1aa 1px, transparent 1px)",
-          backgroundSize: "20px 20px",
-        }}
+        className="absolute inset-0 z-0 opacity-15 bg-[radial-gradient(#a1a1aa_1px,transparent_1px)] bg-size-[20px_20px] dark:hidden"
+      />
+
+      <div
+        className="absolute inset-0 z-0 opacity-20 bg-[radial-gradient(#404040_1px,transparent_1px)] bg-size-[20px_20px] hidden dark:block"
       />
 
       {/* SVG Graph */}
