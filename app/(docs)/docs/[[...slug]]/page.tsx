@@ -1,5 +1,5 @@
 import { notFound } from "next/navigation";
-import { ChevronRight } from "lucide-react";
+import { ChevronRightIcon } from "lucide-react";
 
 import { allDocs } from "contentlayer/generated";
 import { Mdx } from "@/components/mdx-components";
@@ -10,6 +10,8 @@ import { DocGridPattern } from "@/components/doc-grid-pattern";
 import { Contribute } from "@/components/contribute";
 import { absoluteUrl } from "@/lib/utils";
 import type { Metadata } from "next";
+import { DocsCopyPage } from "@/components/docs-copy-page";
+import { processMdxContent } from "@/lib/llm";
 
 interface DocPageProps {
   params: Promise<{ slug: string[] }>;
@@ -87,13 +89,17 @@ const DocPage = async (props: DocPageProps) => {
         <div className="mx-auto w-full max-w-4xl min-w-0">
           <div className="mb-4 flex items-center space-x-2">
             <p className="text-muted-foreground">Docs</p>
-            <ChevronRight className="h-4 w-4" />
-            <p className="text-primary"> {doc?.title}</p>
+            <ChevronRightIcon className="size-4" />
+            <p className="text-primary">{doc?.title}</p>
           </div>
 
           <div className="space-y-2">
             <h2 className="text-3xl font-bold">{doc?.title}</h2>
             <p className="text-muted-foreground">{doc?.description}</p>
+            <DocsCopyPage
+              page={await processMdxContent(doc.body.raw)}
+              url={absoluteUrl(doc.slug)}
+            />
           </div>
 
           <div className="pt-8 pb-12">
