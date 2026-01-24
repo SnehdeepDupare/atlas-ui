@@ -25,7 +25,16 @@ export async function GET(
   // Replace component tags with actual source code
   mdx = await processMdxContent(mdx);
 
-  return new NextResponse(mdx, {
+  // Add frontmatter at the top
+  const frontmatter = `---
+title: ${doc.title}
+description: ${doc.description}
+---
+`;
+
+  const fullContent = frontmatter + mdx;
+
+  return new NextResponse(fullContent, {
     headers: {
       "Content-Type": "text/markdown; charset=utf-8",
     },
