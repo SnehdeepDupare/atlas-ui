@@ -12,6 +12,7 @@ import { absoluteUrl } from "@/lib/utils";
 import type { Metadata } from "next";
 import { DocsCopyPage } from "@/components/docs-copy-page";
 import { processMdxContent } from "@/lib/llm";
+import { ScrollToTop } from "@/components/scroll-to-top";
 
 interface DocPageProps {
   params: Promise<{ slug: string[] }>;
@@ -113,6 +114,7 @@ const DocPage = async (props: DocPageProps) => {
             <div className="no-scrollbar h-full space-y-4 overflow-auto pb-10">
               {doc.toc && <DashboardTableOfContents toc={toc} />}
               <Contribute doc={doc} />
+              <ScrollToTop />
             </div>
           </div>
         </div>
