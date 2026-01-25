@@ -647,7 +647,7 @@
       "type": "registry:example"
     },
     {
-      "name": "animated-mobile-navbar-js",
+      "name": "animated-mobile-navbar-html",
       "title": "Animated Mobile Navbar",
       "description": "A simple animated mobile navbar component in HTML, CSS, JavaScript and Motion.",
       "dependencies": [
@@ -656,28 +656,28 @@
       "registryDependencies": [],
       "files": [
         {
-          "path": "registry/js/animated-mobile-navbar/index.html",
+          "path": "registry/html/animated-mobile-navbar/index.html",
           "type": "registry:file",
           "target": "~/animated-mobile-navbar/index.html"
         },
         {
-          "path": "registry/js/animated-mobile-navbar/style.css",
+          "path": "registry/html/animated-mobile-navbar/style.css",
           "type": "registry:file",
           "target": "~/animated-mobile-navbar/style.css"
         },
         {
-          "path": "registry/js/animated-mobile-navbar/script.js",
+          "path": "registry/html/animated-mobile-navbar/script.js",
           "type": "registry:file",
           "target": "~/animated-mobile-navbar/script.js"
         }
       ],
       "meta": {
-        "framework": "vanilla"
+        "framework": "html"
       },
       "type": "registry:file"
     },
     {
-      "name": "project-gallery-js",
+      "name": "project-gallery-html",
       "title": "Project Gallery",
       "description": "A Project Gallery with an interactive modal using HTML, CSS, JavaScript and Motion.",
       "dependencies": [
@@ -685,28 +685,28 @@
       ],
       "files": [
         {
-          "path": "registry/js/project-gallery/index.html",
+          "path": "registry/html/project-gallery/index.html",
           "type": "registry:file",
           "target": "~/project-gallery/index.html"
         },
         {
-          "path": "registry/js/project-gallery/style.css",
+          "path": "registry/html/project-gallery/style.css",
           "type": "registry:file",
           "target": "~/project-gallery/style.css"
         },
         {
-          "path": "registry/js/project-gallery/script.js",
+          "path": "registry/html/project-gallery/script.js",
           "type": "registry:file",
           "target": "~/project-gallery/script.js"
         }
       ],
       "meta": {
-        "framework": "vanilla"
+        "framework": "html"
       },
       "type": "registry:file"
     },
     {
-      "name": "parallax-sections-js",
+      "name": "parallax-sections-html",
       "title": "Parallax Sections",
       "description": "A simple Parallax effect using HTML, CSS, JavaScript and Motion.",
       "dependencies": [
@@ -714,28 +714,28 @@
       ],
       "files": [
         {
-          "path": "registry/js/parallax-sections/index.html",
+          "path": "registry/html/parallax-sections/index.html",
           "type": "registry:file",
           "target": "~/parallax-sections/index.html"
         },
         {
-          "path": "registry/js/parallax-sections/style.css",
+          "path": "registry/html/parallax-sections/style.css",
           "type": "registry:file",
           "target": "~/parallax-sections/style.css"
         },
         {
-          "path": "registry/js/parallax-sections/script.js",
+          "path": "registry/html/parallax-sections/script.js",
           "type": "registry:file",
           "target": "~/parallax-sections/script.js"
         }
       ],
       "meta": {
-        "framework": "vanilla"
+        "framework": "html"
       },
       "type": "registry:file"
     },
     {
-      "name": "shiny-button-js",
+      "name": "shiny-button-html",
       "title": "Shiny Button",
       "description": "A shiny button with a sleek animation effect using HTML, CSS, JavaScript and Motion.",
       "dependencies": [
@@ -743,136 +743,136 @@
       ],
       "files": [
         {
-          "path": "registry/js/shiny-button/index.html",
+          "path": "registry/html/shiny-button/index.html",
           "type": "registry:file",
           "target": "~/shiny-button/index.html"
         },
         {
-          "path": "registry/js/shiny-button/style.css",
+          "path": "registry/html/shiny-button/style.css",
           "type": "registry:file",
           "target": "~/shiny-button/style.css"
         },
         {
-          "path": "registry/js/shiny-button/script.js",
+          "path": "registry/html/shiny-button/script.js",
           "type": "registry:file",
           "target": "~/shiny-button/script.js"
         }
       ],
       "meta": {
-        "framework": "vanilla"
+        "framework": "html"
       },
       "type": "registry:file"
     },
     {
-      "name": "dot-and-circle-mouse-trailer-js",
+      "name": "dot-and-circle-mouse-trailer-html",
       "title": "Dot And Circle Mouse Trailer",
       "description": "A simple Lazy Dot and Circle Mouse Trailer using HTML, CSS and JavaScript.",
       "dependencies": [],
       "files": [
         {
-          "path": "registry/js/dot-and-circle-mouse-trailer/index.html",
+          "path": "registry/html/dot-and-circle-mouse-trailer/index.html",
           "type": "registry:file",
           "target": "~/dot-and-circle-mouse-trailer/index.html"
         },
         {
-          "path": "registry/js/dot-and-circle-mouse-trailer/style.css",
+          "path": "registry/html/dot-and-circle-mouse-trailer/style.css",
           "type": "registry:file",
           "target": "~/dot-and-circle-mouse-trailer/style.css"
         },
         {
-          "path": "registry/js/dot-and-circle-mouse-trailer/script.js",
+          "path": "registry/html/dot-and-circle-mouse-trailer/script.js",
           "type": "registry:file",
           "target": "~/dot-and-circle-mouse-trailer/script.js"
         }
       ],
       "meta": {
-        "framework": "vanilla"
+        "framework": "html"
       },
       "type": "registry:file"
     },
     {
-      "name": "blob-mouse-trailer-js",
+      "name": "blob-mouse-trailer-html",
       "title": "Blob Mouse Trailer",
       "description": "A simple Lazy Blob Mouse Trailer using HTML, CSS and JavaScript.",
       "dependencies": [],
       "files": [
         {
-          "path": "registry/js/blob-mouse-trailer/index.html",
+          "path": "registry/html/blob-mouse-trailer/index.html",
           "type": "registry:file",
           "target": "~/blob-mouse-trailer/index.html"
         },
         {
-          "path": "registry/js/blob-mouse-trailer/style.css",
+          "path": "registry/html/blob-mouse-trailer/style.css",
           "type": "registry:file",
           "target": "~/blob-mouse-trailer/style.css"
         },
         {
-          "path": "registry/js/blob-mouse-trailer/script.js",
+          "path": "registry/html/blob-mouse-trailer/script.js",
           "type": "registry:file",
           "target": "~/blob-mouse-trailer/script.js"
         }
       ],
       "meta": {
-        "framework": "vanilla"
+        "framework": "html"
       },
       "type": "registry:file"
     },
     {
-      "name": "blend-mouse-trailer-js",
+      "name": "blend-mouse-trailer-html",
       "title": "Blend Mouse Trailer",
       "description": "A simple Lazy Mouse Trailer which blends with the content on hover using HTML, CSS and JavaScript.",
       "dependencies": [],
       "files": [
         {
-          "path": "registry/js/blend-mouse-trailer/index.html",
+          "path": "registry/html/blend-mouse-trailer/index.html",
           "type": "registry:file",
           "target": "~/blend-mouse-trailer/index.html"
         },
         {
-          "path": "registry/js/blend-mouse-trailer/style.css",
+          "path": "registry/html/blend-mouse-trailer/style.css",
           "type": "registry:file",
           "target": "~/blend-mouse-trailer/style.css"
         },
         {
-          "path": "registry/js/blend-mouse-trailer/script.js",
+          "path": "registry/html/blend-mouse-trailer/script.js",
           "type": "registry:file",
           "target": "~/blend-mouse-trailer/script.js"
         }
       ],
       "meta": {
-        "framework": "vanilla"
+        "framework": "html"
       },
       "type": "registry:file"
     },
     {
-      "name": "hacker-text-js",
+      "name": "hacker-text-html",
       "title": "Hacker Text",
       "description": "A text animation that scrambles letters before revealing the final text using HTML, CSS and JavaScript.",
       "dependencies": [],
       "files": [
         {
-          "path": "registry/js/hacker-text/index.html",
+          "path": "registry/html/hacker-text/index.html",
           "type": "registry:file",
           "target": "~/hacker-text/index.html"
         },
         {
-          "path": "registry/js/hacker-text/style.css",
+          "path": "registry/html/hacker-text/style.css",
           "type": "registry:file",
           "target": "~/hacker-text/style.css"
         },
         {
-          "path": "registry/js/hacker-text/script.js",
+          "path": "registry/html/hacker-text/script.js",
           "type": "registry:file",
           "target": "~/hacker-text/script.js"
         }
       ],
       "meta": {
-        "framework": "vanilla"
+        "framework": "html"
       },
       "type": "registry:file"
     },
     {
-      "name": "scroll-based-text-reveal-js",
+      "name": "scroll-based-text-reveal-html",
       "title": "Scroll Based Text Reveal",
       "description": "A text reveal effect which animates the opacity of the text as you scroll using HTML, CSS, JavaScript and Motion.",
       "dependencies": [
@@ -880,28 +880,28 @@
       ],
       "files": [
         {
-          "path": "registry/js/scroll-based-text-reveal/index.html",
+          "path": "registry/html/scroll-based-text-reveal/index.html",
           "type": "registry:file",
           "target": "~/scroll-based-text-reveal/index.html"
         },
         {
-          "path": "registry/js/scroll-based-text-reveal/style.css",
+          "path": "registry/html/scroll-based-text-reveal/style.css",
           "type": "registry:file",
           "target": "~/scroll-based-text-reveal/style.css"
         },
         {
-          "path": "registry/js/scroll-based-text-reveal/script.js",
+          "path": "registry/html/scroll-based-text-reveal/script.js",
           "type": "registry:file",
           "target": "~/scroll-based-text-reveal/script.js"
         }
       ],
       "meta": {
-        "framework": "vanilla"
+        "framework": "html"
       },
       "type": "registry:file"
     },
     {
-      "name": "scroll-based-word-reveal-js",
+      "name": "scroll-based-word-reveal-html",
       "title": "Scroll Based Word Reveal",
       "description": "A text reveal effect which progressively reveals text word by word as you scroll using HTML, CSS, JavaScript and Motion.",
       "dependencies": [
@@ -909,28 +909,28 @@
       ],
       "files": [
         {
-          "path": "registry/js/scroll-based-word-reveal/index.html",
+          "path": "registry/html/scroll-based-word-reveal/index.html",
           "type": "registry:file",
           "target": "~/scroll-based-word-reveal/index.html"
         },
         {
-          "path": "registry/js/scroll-based-word-reveal/style.css",
+          "path": "registry/html/scroll-based-word-reveal/style.css",
           "type": "registry:file",
           "target": "~/scroll-based-word-reveal/style.css"
         },
         {
-          "path": "registry/js/scroll-based-word-reveal/script.js",
+          "path": "registry/html/scroll-based-word-reveal/script.js",
           "type": "registry:file",
           "target": "~/scroll-based-word-reveal/script.js"
         }
       ],
       "meta": {
-        "framework": "vanilla"
+        "framework": "html"
       },
       "type": "registry:file"
     },
     {
-      "name": "scroll-based-character-reveal-js",
+      "name": "scroll-based-character-reveal-html",
       "title": "Scroll Based Character Reveal",
       "description": "A text reveal effect which progressively reveals text character by character as you scroll using HTML, CSS, JavaScript and Motion.",
       "dependencies": [
@@ -938,28 +938,28 @@
       ],
       "files": [
         {
-          "path": "registry/js/scroll-based-character-reveal/index.html",
+          "path": "registry/html/scroll-based-character-reveal/index.html",
           "type": "registry:file",
           "target": "~/scroll-based-character-reveal/index.html"
         },
         {
-          "path": "registry/js/scroll-based-character-reveal/style.css",
+          "path": "registry/html/scroll-based-character-reveal/style.css",
           "type": "registry:file",
           "target": "~/scroll-based-character-reveal/style.css"
         },
         {
-          "path": "registry/js/scroll-based-character-reveal/script.js",
+          "path": "registry/html/scroll-based-character-reveal/script.js",
           "type": "registry:file",
           "target": "~/scroll-based-character-reveal/script.js"
         }
       ],
       "meta": {
-        "framework": "vanilla"
+        "framework": "html"
       },
       "type": "registry:file"
     },
     {
-      "name": "reveal-effect-js",
+      "name": "reveal-effect-html",
       "title": "Reveal Effect",
       "description": "Animates content into view with a vertical slide, blur fade-in, and clipping reveal effect using HTML, CSS, JavaScript and Motion.",
       "dependencies": [
@@ -967,28 +967,28 @@
       ],
       "files": [
         {
-          "path": "registry/js/reveal-effect/index.html",
+          "path": "registry/html/reveal-effect/index.html",
           "type": "registry:file",
           "target": "~/reveal-effect/index.html"
         },
         {
-          "path": "registry/js/reveal-effect/style.css",
+          "path": "registry/html/reveal-effect/style.css",
           "type": "registry:file",
           "target": "~/reveal-effect/style.css"
         },
         {
-          "path": "registry/js/reveal-effect/script.js",
+          "path": "registry/html/reveal-effect/script.js",
           "type": "registry:file",
           "target": "~/reveal-effect/script.js"
         }
       ],
       "meta": {
-        "framework": "vanilla"
+        "framework": "html"
       },
       "type": "registry:file"
     },
     {
-      "name": "loki-text-effect-js",
+      "name": "loki-text-effect-html",
       "title": "Loki Text Effect",
       "description": "The iconic text animation from the Loki series intro using HTML, CSS, JavaScript and Motion.",
       "dependencies": [
@@ -996,17 +996,17 @@
       ],
       "files": [
         {
-          "path": "registry/js/loki-text-effect/index.html",
+          "path": "registry/html/loki-text-effect/index.html",
           "type": "registry:file",
           "target": "~/loki-text-effect/index.html"
         },
         {
-          "path": "registry/js/loki-text-effect/style.css",
+          "path": "registry/html/loki-text-effect/style.css",
           "type": "registry:file",
           "target": "~/loki-text-effect/style.css"
         },
         {
-          "path": "registry/js/loki-text-effect/script.js",
+          "path": "registry/html/loki-text-effect/script.js",
           "type": "registry:file",
           "target": "~/loki-text-effect/script.js"
         },
@@ -1047,12 +1047,41 @@
         }
       ],
       "meta": {
-        "framework": "vanilla"
+        "framework": "html"
       },
       "type": "registry:file"
     },
     {
-      "name": "notch-nav-js",
+      "name": "box-reveal-html",
+      "title": "Box Reveal",
+      "description": "A smooth reveal animation that slides a colored overlay away to introduce content as it enters the viewport.",
+      "dependencies": [
+        "motion"
+      ],
+      "files": [
+        {
+          "path": "registry/html/box-reveal/index.html",
+          "type": "registry:file",
+          "target": "~/box-reveal/index.html"
+        },
+        {
+          "path": "registry/html/box-reveal/style.css",
+          "type": "registry:file",
+          "target": "~/box-reveal/style.css"
+        },
+        {
+          "path": "registry/html/box-reveal/script.js",
+          "type": "registry:file",
+          "target": "~/box-reveal/script.js"
+        }
+      ],
+      "meta": {
+        "framework": "html"
+      },
+      "type": "registry:file"
+    },
+    {
+      "name": "notch-nav-html",
       "title": "Notch Nav",
       "description": "A Notch style trigger that reveals the navigation menu from above built with HTML, CSS, JavaScript and Motion.",
       "dependencies": [
@@ -1060,28 +1089,28 @@
       ],
       "files": [
         {
-          "path": "registry/js/notch-nav/index.html",
+          "path": "registry/html/notch-nav/index.html",
           "type": "registry:file",
           "target": "~/notch-nav/index.html"
         },
         {
-          "path": "registry/js/notch-nav/style.css",
+          "path": "registry/html/notch-nav/style.css",
           "type": "registry:file",
           "target": "~/notch-nav/style.css"
         },
         {
-          "path": "registry/js/notch-nav/script.js",
+          "path": "registry/html/notch-nav/script.js",
           "type": "registry:file",
           "target": "~/notch-nav/script.js"
         }
       ],
       "meta": {
-        "framework": "vanilla"
+        "framework": "html"
       },
       "type": "registry:file"
     },
     {
-      "name": "morph-navbar-js",
+      "name": "morph-navbar-html",
       "title": "Morph Navbar",
       "description": "A polished navigation bar with a fluid, morphing pill that tracks the active link and hover state built with HTML, CSS, JavaScript and Motion.",
       "dependencies": [
@@ -1089,23 +1118,23 @@
       ],
       "files": [
         {
-          "path": "registry/js/morph-navbar/index.html",
+          "path": "registry/html/morph-navbar/index.html",
           "type": "registry:file",
           "target": "~/morph-navbar/index.html"
         },
         {
-          "path": "registry/js/morph-navbar/style.css",
+          "path": "registry/html/morph-navbar/style.css",
           "type": "registry:file",
           "target": "~/morph-navbar/style.css"
         },
         {
-          "path": "registry/js/morph-navbar/script.js",
+          "path": "registry/html/morph-navbar/script.js",
           "type": "registry:file",
           "target": "~/morph-navbar/script.js"
         }
       ],
       "meta": {
-        "framework": "vanilla"
+        "framework": "html"
       },
       "type": "registry:file"
     },
