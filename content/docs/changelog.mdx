@@ -3,27 +3,52 @@ title: Changelog
 description: Latest updates and announcements.
 ---
 
-## January 2026 - New components
+## January 2026 - New components & Platform Updates
+
+### New domain
+
+- Atlas UI has moved from `atlasui.vercel.app` to **[`atlasui.dev`](https://atlasui.dev)**.
+- All documentation, demos, and registry files are now served from the new domain.
+
+### CLI & Registry Changes
+
+- All CLI install commands have been updated to use the new registry.
+- Example:
+  ```bash
+  npx shadcn@latest add https://atlasui.dev/r/reveal-effect.json
+  ```
+- For HTML users, the registry file naming has been updated for clarity:
+  - Before: `https://atlasui.dev/r/reveal-effect-js.json`
+  - After: `https://atlasui.dev/r/reveal-effect-html.json`
+
+> **Note:** `js` is updated to `html` for clarity.
+
+### Documentation Update
+
+- “JavaScript” tab has been renamed to “HTML” across the documentation.
+- This better reflects framework-agnostic usage and aligns with the updated registry naming.
+
+### New Components
 
 - [Morph Navbar](#morph-navbar): A polished navigation bar with a fluid, morphing pill that tracks the active link and hover state.
 
 - [Notch Nav](#notch-nav): A Notch style trigger that reveals the navigation menu from above.
 
-- [Box Reveal Animation](#box-reveal): A smooth reveal animation that slides a colored overlay away to introduce content as it enters the viewport.
+- [Box Reveal Animation](#box-reveal-animation): A smooth reveal animation that slides a colored overlay away to introduce content as it enters the viewport.
 
-### Morph Navbar
+#### Morph Navbar
 
 A polished navigation bar with a fluid, morphing pill that tracks the active link and hover state.
 
 <ComponentPreview name="morph-navbar-demo" />
 
-### Notch Nav
+#### Notch Nav
 
 A Notch style trigger that reveals the navigation menu from above.
 
 <ComponentPreview name="notch-nav-demo" />
 
-### Box Reveal Animation
+#### Box Reveal Animation
 
 A smooth reveal animation that slides a colored overlay away to introduce content as it enters the viewport.
 
@@ -39,15 +64,15 @@ All React components and the website have been upgraded to **Next.js 16** and **
 
 ### CLI Support
 
-You can now use the **shadcn CLI** to add Atlas UI components directly to your project. The CLI supports both **React** and **Vanilla JavaScript** components.
+You can now use the **shadcn CLI** to add Atlas UI components directly to your project. The CLI supports both **React** and **HTML** components.
 
 **Example:**
 
 ```bash
-npx shadcn@latest add https://atlasui.vercel.app/r/reveal-effect.json
+npx shadcn@latest add https://atlasui.dev/r/reveal-effect.json
 ```
 
-Explore more components at [here](https://atlasui.vercel.app/docs/components).
+Explore more components at [here](https://atlasui.dev/docs/components).
 
 ### v0 Integration
 

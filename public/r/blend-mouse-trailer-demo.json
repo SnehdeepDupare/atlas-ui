@@ -4,7 +4,7 @@
   "title": "Blend Mouse Trailer Demo",
   "description": "Example showing the lazy mouse trailer which blends with the content on hover.",
   "registryDependencies": [
-    "https://atlasui.vercel.app/r/blend-mouse-trailer.json"
+    "https://atlasui.dev/r/blend-mouse-trailer.json"
   ],
   "files": [
     {

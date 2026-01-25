@@ -1,10 +1,10 @@
 # Atlas UI
 
-Beautiful, Open Source, Motion powered components for React and Vanilla JS. Accelerate development, inspire creativity, and bring interfaces to life with seamless animations.
+Beautiful, Open Source, Motion powered components for React and HTML. Accelerate development, inspire creativity, and bring interfaces to life with seamless animations.
 
 ## Documentation
 
-Visit https://atlasui.vercel.app/docs to view the documentation.
+Visit https://atlasui.dev/docs to view the documentation.
 
 ## Running locally
 

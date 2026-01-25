@@ -4,7 +4,7 @@
   "title": "Animated Mobile Navbar Demo",
   "description": "Example showcasing the Animated Mobile Navbar component.",
   "registryDependencies": [
-    "https://atlasui.vercel.app/r/animated-mobile-navbar.json"
+    "https://atlasui.dev/r/animated-mobile-navbar.json"
   ],
   "files": [
     {

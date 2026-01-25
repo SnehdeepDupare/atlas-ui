@@ -4,7 +4,7 @@
   "title": "Project Gallery Demo",
   "description": "Example of Project Gallery with an interactive modal.",
   "registryDependencies": [
-    "https://atlasui.vercel.app/r/project-gallery.json"
+    "https://atlasui.dev/r/project-gallery.json"
   ],
   "files": [
     {

@@ -4,7 +4,7 @@
   "title": "Dot and Circle Mouse Trailer Demo",
   "description": "Example showing the lazy dot and circle that follows the mouse cursor.",
   "registryDependencies": [
-    "https://atlasui.vercel.app/r/dot-and-circle-mouse-trailer.json"
+    "https://atlasui.dev/r/dot-and-circle-mouse-trailer.json"
   ],
   "files": [
     {

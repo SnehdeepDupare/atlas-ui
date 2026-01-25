@@ -4,7 +4,7 @@
   "title": "Notch Nav Demo",
   "description": "Example of Notch style trigger that reveals the navigation menu from above.",
   "registryDependencies": [
-    "https://atlasui.vercel.app/r/notch-nav.json"
+    "https://atlasui.dev/r/notch-nav.json"
   ],
   "files": [
     {

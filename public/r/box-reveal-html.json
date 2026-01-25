@@ -1,0 +1,33 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "box-reveal-html",
+  "title": "Box Reveal",
+  "description": "A smooth reveal animation that slides a colored overlay away to introduce content as it enters the viewport.",
+  "dependencies": [
+    "motion"
+  ],
+  "files": [
+    {
+      "path": "registry/html/box-reveal/index.html",
+      "content": "<!doctype html>\r\n<html lang=\"en\">\r\n  <head>\r\n    <meta charset=\"UTF-8\" />\r\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" />\r\n    <title>Box Reveal - Atlas UI</title>\r\n    <link rel=\"stylesheet\" href=\"style.css\" />\r\n  </head>\r\n  <body>\r\n    <div id=\"box-reveal\">\r\n      <h1>Box Reveal Component</h1>\r\n    </div>\r\n\r\n    <div id=\"box-reveal\">\r\n      <button>Magic</button>\r\n    </div>\r\n  </body>\r\n\r\n  <script type=\"module\" src=\"script.js\"></script>\r\n</html>\r\n",
+      "type": "registry:file",
+      "target": "~/box-reveal/index.html"
+    },
+    {
+      "path": "registry/html/box-reveal/style.css",
+      "content": "* {\r\n  margin: 0;\r\n  padding: 0;\r\n}\r\n\r\nbody {\r\n  background-color: #18181b;\r\n  color: #fff;\r\n  display: flex;\r\n  flex-direction: column;\r\n  gap: 2rem;\r\n  align-items: center;\r\n  justify-content: center;\r\n  min-height: 100svh;\r\n  font-size: x-large;\r\n}\r\n\r\n#box-reveal {\r\n  position: relative;\r\n  overflow: hidden;\r\n}\r\n\r\n.box-reveal-overlay {\r\n  position: absolute;\r\n  inset: 0;\r\n  top: 0.25rem;\r\n  bottom: 0.25rem;\r\n  pointer-events: none;\r\n  z-index: 20;\r\n}\r\n\r\n.box-reveal-content {\r\n  position: relative;\r\n  z-index: 10;\r\n}\r\n",
+      "type": "registry:file",
+      "target": "~/box-reveal/style.css"
+    },
+    {
+      "path": "registry/html/box-reveal/script.js",
+      "content": "import { animate, inView } from \"motion\";\r\n\r\ndocument.querySelectorAll(\"#box-reveal\").forEach((root) => {\r\n  const side = root.dataset.side ?? \"left\";\r\n  const color = root.dataset.color ?? \"#FACC15\";\r\n  const width = root.dataset.width ?? \"fit-content\";\r\n\r\n  if (width === \"full\") {\r\n    root.style.width = \"100%\";\r\n  } else {\r\n    root.style.width = \"fit-content\";\r\n  }\r\n\r\n  const contentWrapper = document.createElement(\"div\");\r\n  contentWrapper.className = \"box-reveal-content\";\r\n\r\n  while (root.firstChild) {\r\n    contentWrapper.appendChild(root.firstChild);\r\n  }\r\n\r\n  root.appendChild(contentWrapper);\r\n\r\n  // overlay\r\n  const overlay = document.createElement(\"div\");\r\n  overlay.className = \"box-reveal-overlay\";\r\n  overlay.style.background = color;\r\n\r\n  root.appendChild(overlay);\r\n\r\n  // initial\r\n  animate(\r\n    contentWrapper,\r\n    { opacity: 0, y: 75 },\r\n    { duration: 0 }\r\n  );\r\n\r\n  if (side === \"right\") {\r\n    animate(overlay, { right: 0 }, { duration: 0 });\r\n  } else {\r\n    animate(overlay, { left: 0 }, { duration: 0 });\r\n  }\r\n\r\n  \r\n  inView(\r\n    root,\r\n    () => {\r\n      // content animation\r\n      animate(\r\n        contentWrapper,\r\n        { opacity: 1, y: 0 },\r\n        {\r\n          duration: 0.5,\r\n          delay: 0.35,\r\n        }\r\n      );\r\n\r\n      // overlay animation\r\n      animate(\r\n        overlay,\r\n        side === \"right\"\r\n          ? { right: \"100%\" }\r\n          : { left: \"100%\" },\r\n        {\r\n          duration: 0.5,\r\n          ease: \"easeIn\",\r\n        }\r\n      );\r\n    },\r\n    { once: true }\r\n  );\r\n});",
+      "type": "registry:file",
+      "target": "~/box-reveal/script.js"
+    }
+  ],
+  "meta": {
+    "framework": "html"
+  },
+  "type": "registry:file"
+}

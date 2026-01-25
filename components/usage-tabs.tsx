@@ -18,7 +18,7 @@ export const UsageTabs = ({ children }: React.ComponentProps<typeof Tabs>) => {
       onValueChange={(value) =>
         setConfig({
           ...config,
-          usageType: value as "React" | "JavaScript",
+          usageType: value as "React" | "HTML",
         })
       }
       className="relative mt-6 w-full"
@@ -31,10 +31,10 @@ export const UsageTabs = ({ children }: React.ComponentProps<typeof Tabs>) => {
           React
         </TabsTrigger>
         <TabsTrigger
-          value="JavaScript"
+          value="HTML"
           className="text-muted-foreground relative h-10 rounded-none border-b-2 border-b-transparent bg-transparent px-4 pt-2 pb-3 font-semibold shadow-none transition-none data-[state=active]:border-b-emerald-500 data-[state=active]:bg-transparent data-[state=active]:text-emerald-400 data-[state=active]:shadow-none"
         >
-          JavaScript
+          HTML
         </TabsTrigger>
       </TabsList>
       {children}

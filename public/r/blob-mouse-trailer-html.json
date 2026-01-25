@@ -1,0 +1,31 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "blob-mouse-trailer-html",
+  "title": "Blob Mouse Trailer",
+  "description": "A simple Lazy Blob Mouse Trailer using HTML, CSS and JavaScript.",
+  "dependencies": [],
+  "files": [
+    {
+      "path": "registry/html/blob-mouse-trailer/index.html",
+      "content": "<!DOCTYPE html>\r\n<html lang=\"en\">\r\n  <head>\r\n    <meta charset=\"UTF-8\" />\r\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" />\r\n    <title>Blob Mouse Trailer - Atlas UI</title>\r\n    <link rel=\"stylesheet\" href=\"style.css\" />\r\n  </head>\r\n  <body>\r\n    <div class=\"trailer\" id=\"trailer\"></div>\r\n  </body>\r\n  <script type=\"module\" src=\"script.js\"></script>\r\n</html>\r\n",
+      "type": "registry:file",
+      "target": "~/blob-mouse-trailer/index.html"
+    },
+    {
+      "path": "registry/html/blob-mouse-trailer/style.css",
+      "content": "body {\r\n  margin: 0;\r\n  padding: 0;\r\n  height: 100vh;\r\n  width: 100%;\r\n  background: #18181b;\r\n}\r\n\r\n.trailer {\r\n  position: fixed;\r\n  height: 24rem;\r\n  aspect-ratio: 1;\r\n  background: linear-gradient(to right, #a855f7, #f59e0b);\r\n  border-radius: 50%;\r\n  left: 0;\r\n  top: 0;\r\n  transform: translate(-50%, -50%);\r\n  transform-origin: center;\r\n  pointer-events: none;\r\n  z-index: -10;\r\n  filter: blur(100px);\r\n  animation: rotate 10s infinite;\r\n}\r\n\r\n@keyframes rotate {\r\n  from {\r\n    transform: translate(-50%, -50%) rotate(0deg);\r\n  }\r\n  to {\r\n    transform: translate(-50%, -50%) rotate(360deg);\r\n  }\r\n}\r\n",
+      "type": "registry:file",
+      "target": "~/blob-mouse-trailer/style.css"
+    },
+    {
+      "path": "registry/html/blob-mouse-trailer/script.js",
+      "content": "const trailer = document.getElementById(\"trailer\");\r\n\r\ndocument.body.onpointermove = (e) => {\r\n  const { clientX, clientY } = e;\r\n\r\n  trailer.animate(\r\n    {\r\n      left: `${clientX}px`,\r\n      top: `${clientY}px`,\r\n    },\r\n    {\r\n      duration: 3000,\r\n      fill: \"forwards\",\r\n    }\r\n  );\r\n};\r\n",
+      "type": "registry:file",
+      "target": "~/blob-mouse-trailer/script.js"
+    }
+  ],
+  "meta": {
+    "framework": "html"
+  },
+  "type": "registry:file"
+}

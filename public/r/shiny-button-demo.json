@@ -4,7 +4,7 @@
   "title": "Shiny Button Demo",
   "description": "Example of Shiny Button with a sleek animation effect.",
   "registryDependencies": [
-    "https://atlasui.vercel.app/r/shiny-button.json"
+    "https://atlasui.dev/r/shiny-button.json"
   ],
   "files": [
     {

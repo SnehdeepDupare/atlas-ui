@@ -1,0 +1,33 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "parallax-sections-html",
+  "title": "Parallax Sections",
+  "description": "A simple Parallax effect using HTML, CSS, JavaScript and Motion.",
+  "dependencies": [
+    "motion"
+  ],
+  "files": [
+    {
+      "path": "registry/html/parallax-sections/index.html",
+      "content": "<!DOCTYPE html>\r\n<html lang=\"en\">\r\n  <head>\r\n    <meta charset=\"UTF-8\" />\r\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" />\r\n    <title>Parallax Sections - Atlas UI</title>\r\n    <link rel=\"stylesheet\" href=\"style.css\" />\r\n  </head>\r\n  <body>\r\n    <div id=\"parallax-container\">\r\n      <section class=\"section1\">\r\n        <h1>This section is Cool.</h1>\r\n      </section>\r\n\r\n      <section class=\"section2\">\r\n        <h1>This is Cooler!</h1>\r\n      </section>\r\n    </div>\r\n  </body>\r\n\r\n  <script type=\"module\" src=\"script.js\"></script>\r\n</html>\r\n",
+      "type": "registry:file",
+      "target": "~/parallax-sections/index.html"
+    },
+    {
+      "path": "registry/html/parallax-sections/style.css",
+      "content": "* {\r\n  box-sizing: border-box;\r\n  margin: 0;\r\n  padding: 0;\r\n}\r\n\r\nbody,\r\nhtml {\r\n  font-family: sans-serif;\r\n  position: relative;\r\n}\r\n\r\n#parallax-container {\r\n  width: 100%;\r\n  height: 200vh;\r\n  position: relative;\r\n}\r\n\r\n.section1 {\r\n  position: sticky;\r\n  top: 0;\r\n  background-color: #404040;\r\n  height: 100vh;\r\n  display: flex;\r\n  align-items: center;\r\n  justify-content: center;\r\n  will-change: transform;\r\n}\r\n\r\n.section2 {\r\n  background-color: #ef4444;\r\n  position: relative;\r\n  height: 100vh;\r\n  display: flex;\r\n  align-items: center;\r\n  justify-content: center;\r\n  will-change: transform;\r\n}\r\n\r\nh1 {\r\n  font-size: 3rem;\r\n  font-weight: bold;\r\n  color: white;\r\n}\r\n",
+      "type": "registry:file",
+      "target": "~/parallax-sections/style.css"
+    },
+    {
+      "path": "registry/html/parallax-sections/script.js",
+      "content": "import { scroll, transform } from \"motion\";\r\n\r\nconst container = document.getElementById(\"parallax-container\");\r\nconst section1 = document.querySelector(\".section1\");\r\nconst section2 = document.querySelector(\".section2\");\r\n\r\nscroll(\r\n  (progress) => {\r\n    const scale1 = transform(progress, [0, 1], [1, 0.8]);\r\n    const rotate1 = transform(progress, [0, 1], [0, -5]);\r\n    section1.style.transform = `scale(${scale1}) rotate(${rotate1}deg)`;\r\n\r\n    const scale2 = transform(progress, [0, 1], [0.8, 1]);\r\n    const rotate2 = transform(progress, [0, 1], [-5, 0]);\r\n    section2.style.transform = `scale(${scale2}) rotate(${rotate2}deg)`;\r\n  },\r\n  {\r\n    target: container,\r\n    offset: [\"start start\", \"end end\"],\r\n  }\r\n);\r\n",
+      "type": "registry:file",
+      "target": "~/parallax-sections/script.js"
+    }
+  ],
+  "meta": {
+    "framework": "html"
+  },
+  "type": "registry:file"
+}

@@ -4,7 +4,7 @@
   "title": "Loki Text Effect Demo",
   "description": "Example showcasing the iconic animation from the Loki series intro.",
   "registryDependencies": [
-    "https://atlasui.vercel.app/r/loki-text-effect.json"
+    "https://atlasui.dev/r/loki-text-effect.json"
   ],
   "files": [
     {

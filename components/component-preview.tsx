@@ -62,9 +62,7 @@ export function ComponentPreview({
         <TabsContent value="preview" className="relative rounded-md">
           <ComponentWrapper overflow={overflow}>
             <div className="absolute top-2 right-2 z-10 flex items-center gap-2">
-              <OpenInV0Button
-                url={`https://atlasui.vercel.app/r/${name}.json`}
-              />
+              <OpenInV0Button url={`https://atlasui.dev/r/${name}.json`} />
 
               <Button
                 onClick={() => setKey((prev) => prev + 1)}

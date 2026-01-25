@@ -4,7 +4,7 @@
   "title": "Scroll Based Word Reveal Demo",
   "description": "Example showcasing a word reveal effect which animates the opacity of the word as you scroll.",
   "registryDependencies": [
-    "https://atlasui.vercel.app/r/scroll-based-word-reveal.json"
+    "https://atlasui.dev/r/scroll-based-word-reveal.json"
   ],
   "files": [
     {

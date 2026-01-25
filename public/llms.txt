@@ -1,27 +1,27 @@
 # Atlas UI
 
-> Beautiful, Open Source, Motion powered components for React and Vanilla JS. Accelerate development, inspire creativity, and bring interfaces to life with seamless animations.
+> Beautiful, Open Source, Motion powered components for React and HTML. Accelerate development, inspire creativity, and bring interfaces to life with seamless animations.
 
 This file provides LLM-friendly entry points to documentation and examples.
 
 ## Components
 
-- [Animated Mobile Navbar](https://atlasui.vercel.app/docs/components/animated-mobile-navbar): A simple animated mobile navbar component.
-- [Blend Mouse Trailer](https://atlasui.vercel.app/docs/components/blend-mouse-trailer): A simple Lazy Mouse Trailer which blends with the content on hover.
-- [Blob Mouse Trailer](https://atlasui.vercel.app/docs/components/blob-mouse-trailer): A simple Lazy Blob Mouse Trailer
-- [Box Reveal](https://atlasui.vercel.app/docs/components/box-reveal): A smooth reveal animation that slides a colored overlay away to introduce content as it enters the viewport.
-- [Dot And Circle Mouse Trailer](https://atlasui.vercel.app/docs/components/dot-and-circle-mouse-trailer): A simple Lazy Dot and Circle Mouse Trailer
-- [Hacker Text](https://atlasui.vercel.app/docs/components/hacker-text): A text animation that scrambles letters before revealing the final text.
-- [Loki Text Effect](https://atlasui.vercel.app/docs/components/loki-text-effect): The iconic text animation from the Loki series intro.
-- [Morph Navbar](https://atlasui.vercel.app/docs/components/morph-navbar): A polished navigation bar with a fluid, morphing pill that tracks the active link and hover state.
-- [Notch Nav](https://atlasui.vercel.app/docs/components/notch-nav): A Notch style trigger that reveals the navigation menu from above.
-- [Parallax Sections](https://atlasui.vercel.app/docs/components/parallax-sections): A simple Parallax effect using Motion.
-- [Project Gallery](https://atlasui.vercel.app/docs/components/project-gallery): A Project Gallery with an interactive modal.
-- [Reveal Effect](https://atlasui.vercel.app/docs/components/reveal-effect): Animates content into view with a vertical slide, blur fade-in, and clipping reveal effect.
-- [Scroll Based Character Reveal](https://atlasui.vercel.app/docs/components/scroll-based-character-reveal): A text reveal effect which progressively reveals text character by character as you scroll.
-- [Scroll Based Text Reveal](https://atlasui.vercel.app/docs/components/scroll-based-text-reveal): A text reveal effect which animates the opacity of the text as you scroll.
-- [Scroll Based Word Reveal](https://atlasui.vercel.app/docs/components/scroll-based-word-reveal): A text reveal effect which progressively reveals text word by word as you scroll.
-- [Shiny Button](https://atlasui.vercel.app/docs/components/shiny-button): A shiny button with a sleek animation effect.
+- [Animated Mobile Navbar](https://atlasui.dev/docs/components/animated-mobile-navbar): A simple animated mobile navbar component.
+- [Blend Mouse Trailer](https://atlasui.dev/docs/components/blend-mouse-trailer): A simple Lazy Mouse Trailer which blends with the content on hover.
+- [Blob Mouse Trailer](https://atlasui.dev/docs/components/blob-mouse-trailer): A simple Lazy Blob Mouse Trailer
+- [Box Reveal](https://atlasui.dev/docs/components/box-reveal): A smooth reveal animation that slides a colored overlay away to introduce content as it enters the viewport.
+- [Dot And Circle Mouse Trailer](https://atlasui.dev/docs/components/dot-and-circle-mouse-trailer): A simple Lazy Dot and Circle Mouse Trailer
+- [Hacker Text](https://atlasui.dev/docs/components/hacker-text): A text animation that scrambles letters before revealing the final text.
+- [Loki Text Effect](https://atlasui.dev/docs/components/loki-text-effect): The iconic text animation from the Loki series intro.
+- [Morph Navbar](https://atlasui.dev/docs/components/morph-navbar): A polished navigation bar with a fluid, morphing pill that tracks the active link and hover state.
+- [Notch Nav](https://atlasui.dev/docs/components/notch-nav): A Notch style trigger that reveals the navigation menu from above.
+- [Parallax Sections](https://atlasui.dev/docs/components/parallax-sections): A simple Parallax effect using Motion.
+- [Project Gallery](https://atlasui.dev/docs/components/project-gallery): A Project Gallery with an interactive modal.
+- [Reveal Effect](https://atlasui.dev/docs/components/reveal-effect): Animates content into view with a vertical slide, blur fade-in, and clipping reveal effect.
+- [Scroll Based Character Reveal](https://atlasui.dev/docs/components/scroll-based-character-reveal): A text reveal effect which progressively reveals text character by character as you scroll.
+- [Scroll Based Text Reveal](https://atlasui.dev/docs/components/scroll-based-text-reveal): A text reveal effect which animates the opacity of the text as you scroll.
+- [Scroll Based Word Reveal](https://atlasui.dev/docs/components/scroll-based-word-reveal): A text reveal effect which progressively reveals text word by word as you scroll.
+- [Shiny Button](https://atlasui.dev/docs/components/shiny-button): A shiny button with a sleek animation effect.
 
 ## Examples
 
@@ -49,4 +49,4 @@ This file provides LLM-friendly entry points to documentation and examples.
 ## Optional
 
 - [Repository](https://github.com/SnehdeepDupare/atlas-ui): Source code and issues
-- [Sitemap](https://atlasui.vercel.app/sitemap.xml): Indexable pages
+- [Sitemap](https://atlasui.dev/sitemap.xml): Indexable pages

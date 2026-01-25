@@ -4,7 +4,7 @@
   "title": "Parallax Sections Demo",
   "description": "Example of Parallax Sections component.",
   "registryDependencies": [
-    "https://atlasui.vercel.app/r/parallax-sections.json"
+    "https://atlasui.dev/r/parallax-sections.json"
   ],
   "files": [
     {

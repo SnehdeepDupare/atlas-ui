@@ -4,7 +4,7 @@
   "title": "Morph Navbar Demo",
   "description": "Example of Morph Navbar with a fluid, morphing pill that tracks the active link and hover state.",
   "registryDependencies": [
-    "https://atlasui.vercel.app/r/morph-navbar.json"
+    "https://atlasui.dev/r/morph-navbar.json"
   ],
   "files": [
     {

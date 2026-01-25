@@ -1,0 +1,33 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "shiny-button-html",
+  "title": "Shiny Button",
+  "description": "A shiny button with a sleek animation effect using HTML, CSS, JavaScript and Motion.",
+  "dependencies": [
+    "motion"
+  ],
+  "files": [
+    {
+      "path": "registry/html/shiny-button/index.html",
+      "content": "<!DOCTYPE html>\r\n<html lang=\"en\">\r\n  <head>\r\n    <meta charset=\"UTF-8\" />\r\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" />\r\n    <title>Shiny Button - Atlas UI</title>\r\n    <link rel=\"stylesheet\" href=\"style.css\" />\r\n  </head>\r\n  <body>\r\n    <button class=\"shiny-button\">\r\n      <span class=\"button-content\">Button</span>\r\n      <span class=\"shiny-overlay\"></span>\r\n    </button>\r\n  </body>\r\n\r\n  <script type=\"module\" src=\"script.js\"></script>\r\n</html>\r\n",
+      "type": "registry:file",
+      "target": "~/shiny-button/index.html"
+    },
+    {
+      "path": "registry/html/shiny-button/style.css",
+      "content": "body {\r\n  background-color: #18181b;\r\n}\r\n\r\n.shiny-button {\r\n  position: relative;\r\n  padding: 0.5rem 1.5rem;\r\n  position: relative;\r\n  border: none;\r\n  border-radius: 8px;\r\n  background: radial-gradient(\r\n      circle at 50% 0%,\r\n      rgba(250, 250, 250, 0.05) 0%,\r\n      transparent 60%\r\n    ),\r\n    rgba(15, 15, 15, 1);\r\n  cursor: pointer;\r\n  overflow: hidden;\r\n}\r\n\r\n.button-content {\r\n  position: relative;\r\n  color: #f5f5f5;\r\n  font-weight: 300;\r\n  letter-spacing: 0.025em;\r\n  height: 100%;\r\n  width: 100%;\r\n  display: block;\r\n  mask-image: linear-gradient(\r\n    -75deg,\r\n    white calc(var(--x) + 20%),\r\n    transparent calc(var(--x) + 30%),\r\n    white calc(var(--x) + 100%)\r\n  );\r\n}\r\n\r\n.shiny-overlay {\r\n  position: absolute;\r\n  inset: 0px;\r\n  padding: 1px;\r\n  border-radius: 8px;\r\n  display: block;\r\n  background-image: linear-gradient(\r\n    -75deg,\r\n    rgba(255, 255, 255, 0.1) calc(var(--x) + 20%),\r\n    rgba(255, 255, 255, 0.5) calc(var(--x) + 25%),\r\n    rgba(255, 255, 255, 0.1) calc(var(--x) + 100%)\r\n  );\r\n  mask: linear-gradient(black, black) content-box, linear-gradient(black, black);\r\n  mask-composite: exclude;\r\n  pointer-events: none;\r\n}\r\n",
+      "type": "registry:file",
+      "target": "~/shiny-button/style.css"
+    },
+    {
+      "path": "registry/html/shiny-button/script.js",
+      "content": "import { animate, spring } from \"motion\";\r\n\r\nconst btn = document.querySelector(\".shiny-button\");\r\n\r\nanimate(\r\n  btn,\r\n  { \"--x\": [\"100%\", \"-100%\"] },\r\n  {\r\n    repeat: Infinity,\r\n    repeatType: \"loop\",\r\n    repeatDelay: 1,\r\n    duration: 2,\r\n  },\r\n  {\r\n    type: \"spring\",\r\n    stiffness: 20,\r\n    damping: 15,\r\n    mass: 2,\r\n  }\r\n);\r\n\r\nbtn.addEventListener(\"mousedown\", () => {\r\n  animate(btn, {\r\n    scale: 0.95,\r\n  });\r\n});\r\n\r\nbtn.addEventListener(\"mouseup\", () => {\r\n  animate(btn, {\r\n    scale: 1,\r\n  });\r\n});\r\n",
+      "type": "registry:file",
+      "target": "~/shiny-button/script.js"
+    }
+  ],
+  "meta": {
+    "framework": "html"
+  },
+  "type": "registry:file"
+}
