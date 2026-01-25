@@ -60,8 +60,8 @@ export const docsConfig: DocsConfig = {
           items: [],
         },
         {
-          title: "Vanilla JavaScript",
-          href: "/docs/installation/javascript",
+          title: "HTML",
+          href: "/docs/installation/html",
           items: [],
         },
       ],

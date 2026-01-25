@@ -2,7 +2,7 @@ import { useAtom } from "jotai";
 import { atomWithStorage } from "jotai/utils";
 
 type Config = {
-  usageType: "React" | "JavaScript";
+  usageType: "React" | "HTML";
   packageManager: "npm" | "yarn" | "pnpm" | "bun";
   installationType: "cli" | "manual";
 };

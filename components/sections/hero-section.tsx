@@ -17,7 +17,7 @@ export const HeroSection = () => {
           <span className="animate-bg-pan bg-linear-to-r from-[#36B49F] via-[#DBFF75] to-[#36B49F] bg-size-[200%] bg-clip-text text-transparent">
             Animated Components
           </span>{" "}
-          for React & Vanilla JS
+          for React & HTML
         </h1>
       </RevealEffect>
 

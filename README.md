@@ -1,6 +1,6 @@
 # Atlas UI
 
-Beautiful, Open Source, Motion powered components for React and Vanilla JS. Accelerate development, inspire creativity, and bring interfaces to life with seamless animations.
+Beautiful, Open Source, Motion powered components for React and HTML. Accelerate development, inspire creativity, and bring interfaces to life with seamless animations.
 
 ## Documentation
 
