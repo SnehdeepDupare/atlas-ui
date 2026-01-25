@@ -4606,10 +4606,7 @@ Description: A Project Gallery with an interactive modal using HTML, CSS, JavaSc
           data-index="0"
           style="background-color: #efe8d3"
         >
-          <img
-            src="https://atlasui.vercel.app/assets/atlas-ui.png"
-            alt="Atlas UI"
-          />
+          <img src="https://atlasui.dev/assets/atlas-ui.png" alt="Atlas UI" />
         </div>
         <h2>Atlas UI</h2>
         <p>Frontend</p>
@@ -4621,10 +4618,7 @@ Description: A Project Gallery with an interactive modal using HTML, CSS, JavaSc
           data-index="1"
           style="background-color: #706d63"
         >
-          <img
-            src="https://atlasui.vercel.app/assets/portfolio.png"
-            alt="Portfolio"
-          />
+          <img src="https://atlasui.dev/assets/portfolio.png" alt="Portfolio" />
         </div>
         <h2>Portfolio</h2>
         <p>Design & Development</p>
@@ -4671,7 +4665,7 @@ Description: A Project Gallery with an interactive modal using HTML, CSS, JavaSc
             data-index="0"
             style="background-color: #efe8d3"
           >
-            <img src="https://atlasui.vercel.app/og.png" alt="Atlas UI" />
+            <img src="https://atlasui.dev/og.png" alt="Atlas UI" />
           </div>
           <div
             class="modal-image"
@@ -4679,7 +4673,7 @@ Description: A Project Gallery with an interactive modal using HTML, CSS, JavaSc
             style="background-color: #706d63"
           >
             <img
-              src="https://atlasui.vercel.app/assets/portfolio.png"
+              src="https://atlasui.dev/assets/portfolio.png"
               alt="Portfolio"
             />
           </div>

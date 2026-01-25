@@ -4,7 +4,7 @@
   "title": "Reveal Effect Example 1",
   "description": "Example of Reveal Effect with a custom speed.",
   "registryDependencies": [
-    "https://atlasui.vercel.app/r/reveal-effect.json"
+    "https://atlasui.dev/r/reveal-effect.json"
   ],
   "files": [
     {

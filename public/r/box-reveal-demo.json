@@ -4,7 +4,7 @@
   "title": "Box Reveal Demo",
   "description": "Example of Box Reveal that has a smooth reveal animation that slides a colored overlay away to introduce content as it enters the viewport.",
   "registryDependencies": [
-    "https://atlasui.vercel.app/r/box-reveal.json"
+    "https://atlasui.dev/r/box-reveal.json"
   ],
   "files": [
     {

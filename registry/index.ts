@@ -23,7 +23,7 @@ const DEFAULT: RegistryItem = {
 
 export const registry = {
   name: "atlas-ui",
-  homepage: "https://atlasui.vercel.app",
+  homepage: "https://atlasui.dev",
   items: registryIndexSchema.parse(
     [DEFAULT, ...ui, ...examples, ...html, ...lib].filter((item) => {
       return !DEPRECATED_ITEMS.includes(item.name);

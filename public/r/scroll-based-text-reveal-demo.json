@@ -4,7 +4,7 @@
   "title": "Scroll Based Text Reveal Demo",
   "description": "Example showcasing a text reveal effect which animates the opacity of the text as you scroll.",
   "registryDependencies": [
-    "https://atlasui.vercel.app/r/scroll-based-text-reveal.json"
+    "https://atlasui.dev/r/scroll-based-text-reveal.json"
   ],
   "files": [
     {

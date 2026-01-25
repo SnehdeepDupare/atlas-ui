@@ -4,7 +4,7 @@ import { getAllDocsLinks } from "@/lib/utils";
 import type { MetadataRoute } from "next";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = "https://atlasui.vercel.app";
+  const baseUrl = "https://atlasui.dev";
 
   const routes = getAllDocsLinks(docsConfig).filter((route) => {
     if (route.endsWith(".txt")) return false;

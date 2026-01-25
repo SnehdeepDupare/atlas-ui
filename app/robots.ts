@@ -7,6 +7,6 @@ export default function robots(): MetadataRoute.Robots {
       allow: "/",
       disallow: ["/api/", "/_next/", "/public/"],
     },
-    sitemap: "https://atlasui.vercel.app/sitemap.xml",
+    sitemap: "https://atlasui.dev/sitemap.xml",
   };
 }

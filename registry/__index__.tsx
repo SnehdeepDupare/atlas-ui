@@ -323,7 +323,7 @@ export const Index: Record<string, any> = {
     name: "animated-mobile-navbar-demo",
     description: "Example showcasing the Animated Mobile Navbar component.",
     type: "registry:example",
-    registryDependencies: ["https://atlasui.vercel.app/r/animated-mobile-navbar.json"],
+    registryDependencies: ["https://atlasui.dev/r/animated-mobile-navbar.json"],
     files: [{
       path: "registry/react/examples/animated-mobile-navbar-demo.tsx",
       type: "registry:example",
@@ -340,7 +340,7 @@ export const Index: Record<string, any> = {
     name: "animated-mobile-navbar-side-example",
     description: "Example showcasing the Mobile Navbar emerging from the side.",
     type: "registry:example",
-    registryDependencies: ["https://atlasui.vercel.app/r/animated-mobile-navbar.json"],
+    registryDependencies: ["https://atlasui.dev/r/animated-mobile-navbar.json"],
     files: [{
       path: "registry/react/examples/animated-mobile-navbar-side-example.tsx",
       type: "registry:example",
@@ -357,7 +357,7 @@ export const Index: Record<string, any> = {
     name: "project-gallery-demo",
     description: "Example of Project Gallery with an interactive modal.",
     type: "registry:example",
-    registryDependencies: ["https://atlasui.vercel.app/r/project-gallery.json"],
+    registryDependencies: ["https://atlasui.dev/r/project-gallery.json"],
     files: [{
       path: "registry/react/examples/project-gallery-demo.tsx",
       type: "registry:example",
@@ -374,7 +374,7 @@ export const Index: Record<string, any> = {
     name: "parallax-sections-demo",
     description: "Example of Parallax Sections component.",
     type: "registry:example",
-    registryDependencies: ["https://atlasui.vercel.app/r/parallax-sections.json"],
+    registryDependencies: ["https://atlasui.dev/r/parallax-sections.json"],
     files: [{
       path: "registry/react/examples/parallax-sections-demo.tsx",
       type: "registry:example",
@@ -391,7 +391,7 @@ export const Index: Record<string, any> = {
     name: "shiny-button-demo",
     description: "Example of Shiny Button with a sleek animation effect.",
     type: "registry:example",
-    registryDependencies: ["https://atlasui.vercel.app/r/shiny-button.json"],
+    registryDependencies: ["https://atlasui.dev/r/shiny-button.json"],
     files: [{
       path: "registry/react/examples/shiny-button-demo.tsx",
       type: "registry:example",
@@ -408,7 +408,7 @@ export const Index: Record<string, any> = {
     name: "dot-and-circle-mouse-trailer-demo",
     description: "Example showing the lazy dot and circle that follows the mouse cursor.",
     type: "registry:example",
-    registryDependencies: ["https://atlasui.vercel.app/r/dot-and-circle-mouse-trailer.json"],
+    registryDependencies: ["https://atlasui.dev/r/dot-and-circle-mouse-trailer.json"],
     files: [{
       path: "registry/react/examples/dot-and-circle-mouse-trailer-demo.tsx",
       type: "registry:example",
@@ -425,7 +425,7 @@ export const Index: Record<string, any> = {
     name: "blob-mouse-trailer-demo",
     description: "Example showing the lazy blob that follows the mouse cursor.",
     type: "registry:example",
-    registryDependencies: ["https://atlasui.vercel.app/r/blob-mouse-trailer.json"],
+    registryDependencies: ["https://atlasui.dev/r/blob-mouse-trailer.json"],
     files: [{
       path: "registry/react/examples/blob-mouse-trailer-demo.tsx",
       type: "registry:example",
@@ -442,7 +442,7 @@ export const Index: Record<string, any> = {
     name: "blend-mouse-trailer-demo",
     description: "Example showing the lazy mouse trailer which blends with the content on hover.",
     type: "registry:example",
-    registryDependencies: ["https://atlasui.vercel.app/r/blend-mouse-trailer.json"],
+    registryDependencies: ["https://atlasui.dev/r/blend-mouse-trailer.json"],
     files: [{
       path: "registry/react/examples/blend-mouse-trailer-demo.tsx",
       type: "registry:example",
@@ -459,7 +459,7 @@ export const Index: Record<string, any> = {
     name: "hacker-text-demo",
     description: "Example showcasing text animation that scrambles letters before revealing the final text",
     type: "registry:example",
-    registryDependencies: ["https://atlasui.vercel.app/r/hacker-text.json"],
+    registryDependencies: ["https://atlasui.dev/r/hacker-text.json"],
     files: [{
       path: "registry/react/examples/hacker-text-demo.tsx",
       type: "registry:example",
@@ -476,7 +476,7 @@ export const Index: Record<string, any> = {
     name: "scroll-based-text-reveal-demo",
     description: "Example showcasing a text reveal effect which animates the opacity of the text as you scroll.",
     type: "registry:example",
-    registryDependencies: ["https://atlasui.vercel.app/r/scroll-based-text-reveal.json"],
+    registryDependencies: ["https://atlasui.dev/r/scroll-based-text-reveal.json"],
     files: [{
       path: "registry/react/examples/scroll-based-text-reveal-demo.tsx",
       type: "registry:example",
@@ -493,7 +493,7 @@ export const Index: Record<string, any> = {
     name: "scroll-based-word-reveal-demo",
     description: "Example showcasing a word reveal effect which animates the opacity of the word as you scroll.",
     type: "registry:example",
-    registryDependencies: ["https://atlasui.vercel.app/r/scroll-based-word-reveal.json"],
+    registryDependencies: ["https://atlasui.dev/r/scroll-based-word-reveal.json"],
     files: [{
       path: "registry/react/examples/scroll-based-word-reveal-demo.tsx",
       type: "registry:example",
@@ -510,7 +510,7 @@ export const Index: Record<string, any> = {
     name: "scroll-based-character-reveal-demo",
     description: "Example showcasing a character reveal effect which animates the opacity of the character as you scroll.",
     type: "registry:example",
-    registryDependencies: ["https://atlasui.vercel.app/r/scroll-based-character-reveal.json"],
+    registryDependencies: ["https://atlasui.dev/r/scroll-based-character-reveal.json"],
     files: [{
       path: "registry/react/examples/scroll-based-character-reveal-demo.tsx",
       type: "registry:example",
@@ -527,7 +527,7 @@ export const Index: Record<string, any> = {
     name: "reveal-effect-demo",
     description: "Example of Reveal Effect with a vertical slide, blur fade-in, and clipping reveal effect.",
     type: "registry:example",
-    registryDependencies: ["https://atlasui.vercel.app/r/reveal-effect.json"],
+    registryDependencies: ["https://atlasui.dev/r/reveal-effect.json"],
     files: [{
       path: "registry/react/examples/reveal-effect-demo.tsx",
       type: "registry:example",
@@ -544,7 +544,7 @@ export const Index: Record<string, any> = {
     name: "reveal-effect-speed-example",
     description: "Example of Reveal Effect with a custom speed.",
     type: "registry:example",
-    registryDependencies: ["https://atlasui.vercel.app/r/reveal-effect.json"],
+    registryDependencies: ["https://atlasui.dev/r/reveal-effect.json"],
     files: [{
       path: "registry/react/examples/reveal-effect-speed-example.tsx",
       type: "registry:example",
@@ -561,7 +561,7 @@ export const Index: Record<string, any> = {
     name: "reveal-effect-delay-example",
     description: "Example of Reveal Effect with a custom delay.",
     type: "registry:example",
-    registryDependencies: ["https://atlasui.vercel.app/r/reveal-effect.json"],
+    registryDependencies: ["https://atlasui.dev/r/reveal-effect.json"],
     files: [{
       path: "registry/react/examples/reveal-effect-delay-example.tsx",
       type: "registry:example",
@@ -578,7 +578,7 @@ export const Index: Record<string, any> = {
     name: "reveal-effect-translate-y-example",
     description: "Example of Reveal Effect with a custom translate-y.",
     type: "registry:example",
-    registryDependencies: ["https://atlasui.vercel.app/r/reveal-effect.json"],
+    registryDependencies: ["https://atlasui.dev/r/reveal-effect.json"],
     files: [{
       path: "registry/react/examples/reveal-effect-translate-y-example.tsx",
       type: "registry:example",
@@ -595,7 +595,7 @@ export const Index: Record<string, any> = {
     name: "loki-text-effect-demo",
     description: "Example showcasing the iconic animation from the Loki series intro.",
     type: "registry:example",
-    registryDependencies: ["https://atlasui.vercel.app/r/loki-text-effect.json"],
+    registryDependencies: ["https://atlasui.dev/r/loki-text-effect.json"],
     files: [{
       path: "registry/react/examples/loki-text-effect-demo.tsx",
       type: "registry:example",
@@ -612,7 +612,7 @@ export const Index: Record<string, any> = {
     name: "box-reveal-demo",
     description: "Example of Box Reveal that has a smooth reveal animation that slides a colored overlay away to introduce content as it enters the viewport.",
     type: "registry:example",
-    registryDependencies: ["https://atlasui.vercel.app/r/box-reveal.json"],
+    registryDependencies: ["https://atlasui.dev/r/box-reveal.json"],
     files: [{
       path: "registry/react/examples/box-reveal-demo.tsx",
       type: "registry:example",
@@ -629,7 +629,7 @@ export const Index: Record<string, any> = {
     name: "notch-nav-demo",
     description: "Example of Notch style trigger that reveals the navigation menu from above.",
     type: "registry:example",
-    registryDependencies: ["https://atlasui.vercel.app/r/notch-nav.json"],
+    registryDependencies: ["https://atlasui.dev/r/notch-nav.json"],
     files: [{
       path: "registry/react/examples/notch-nav-demo.tsx",
       type: "registry:example",
@@ -646,7 +646,7 @@ export const Index: Record<string, any> = {
     name: "morph-navbar-demo",
     description: "Example of Morph Navbar with a fluid, morphing pill that tracks the active link and hover state.",
     type: "registry:example",
-    registryDependencies: ["https://atlasui.vercel.app/r/morph-navbar.json"],
+    registryDependencies: ["https://atlasui.dev/r/morph-navbar.json"],
     files: [{
       path: "registry/react/examples/morph-navbar-demo.tsx",
       type: "registry:example",

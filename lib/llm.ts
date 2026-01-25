@@ -13,7 +13,7 @@ const getComponentList = async () => {
   return components
     .map(
       (component) =>
-        `- [${component.title}](https://atlasui.vercel.app${component.slug})`,
+        `- [${component.title}](https://atlasui.dev${component.slug})`,
     )
     .join("\n");
 };

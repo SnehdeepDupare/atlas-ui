@@ -4,7 +4,7 @@
   "title": "Blob Mouse Trailer Demo",
   "description": "Example showing the lazy blob that follows the mouse cursor.",
   "registryDependencies": [
-    "https://atlasui.vercel.app/r/blob-mouse-trailer.json"
+    "https://atlasui.dev/r/blob-mouse-trailer.json"
   ],
   "files": [
     {

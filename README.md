@@ -4,7 +4,7 @@ Beautiful, Open Source, Motion powered components for React and HTML. Accelerate
 
 ## Documentation
 
-Visit https://atlasui.vercel.app/docs to view the documentation.
+Visit https://atlasui.dev/docs to view the documentation.
 
 ## Running locally
 
