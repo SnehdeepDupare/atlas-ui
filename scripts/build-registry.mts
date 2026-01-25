@@ -20,8 +20,8 @@ import * as React from "react"
 
 export const Index: Record<string, any> = {`;
   const indexableItems = registry.items.filter((item) => {
-    // Exclude vanilla / non-react registry entries
-    return item.meta?.framework !== "vanilla";
+    // Exclude html / non-react registry entries
+    return item.meta?.framework !== "html";
   });
 
   for (const item of indexableItems) {
@@ -225,7 +225,9 @@ async function generateLlmsFullContent(
   const components = registry.items
     .filter(
       (item) =>
-        item.type === "registry:ui" || item.type === "registry:component",
+        item.type === "registry:ui" ||
+        item.type === "registry:component" ||
+        item.type === "registry:file",
     )
     .sort((a, b) => a.name.localeCompare(b.name));
 
@@ -234,8 +236,16 @@ async function generateLlmsFullContent(
       const title = component.title || component.name;
       const description = component.description || `The ${title} component.`;
 
+      const framework = component.meta?.framework ?? "react";
+      const kind =
+        component.type === "registry:file"
+          ? "html-component"
+          : "react-component";
+
       let content = [
         `===== COMPONENT: ${component.name} =====`,
+        `Framework: ${framework}`,
+        `Kind: ${kind}`,
         `Title: ${title}`,
         `Description: ${description}`,
         "",
@@ -252,6 +262,7 @@ async function generateLlmsFullContent(
             "",
             "",
             `===== EXAMPLE: ${exampleName} =====`,
+            `Framework: ${framework}`,
             `Title: ${exTitle}`,
             "",
             await readRegistryFilesContents(example),
@@ -298,7 +309,7 @@ async function buildRegistry() {
 }
 
 try {
-  console.log("��️ Building registry/__index__.tsx...");
+  console.log("📦 Building registry/__index__.tsx...");
   await buildRegistryIndex();
   console.log("✅ Registry index built successfully");
 
@@ -308,7 +319,7 @@ try {
 
   console.log("🧠 Building llms files...");
   await buildLlmsFiles();
-  console.log("✅ llms-min.txt and llms.txt built successfully");
+  console.log("✅ llms-full.txt and llms.txt built successfully");
 
   console.log("🏗️ Building registry...");
   await buildRegistry();
