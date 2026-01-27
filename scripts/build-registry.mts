@@ -192,9 +192,73 @@ async function generateLlmsContent() {
       const title = example.title || example.name;
       const firstFile = example.files?.[0]?.path || "";
       const url = firstFile
-        ? `${siteConfig.links.github}/blob/main/${firstFile}`
+        ? `${siteConfig.links.github}/blob/master/registry/${firstFile}`
         : siteConfig.links.github;
       return `- [${title}](${url}): Example usage`;
+    });
+
+  const reactSourceCode = registry.items
+    .filter(
+      (item) =>
+        item.type === "registry:ui" || item.type === "registry:component",
+    )
+    .sort((a, b) => a.name.localeCompare(b.name))
+    .map((component) => {
+      const title = component.title || component.name;
+      const firstFile = component.files?.[0]?.path || "";
+      const url = firstFile
+        ? `${siteConfig.links.github}/blob/master/registry/${firstFile}`
+        : siteConfig.links.github;
+      return `- [${title}](${url}): Source code`;
+    });
+
+  const htmlFileItems = registry.items.filter(
+    (item) => item.type === "registry:file" && item.meta?.framework === "html",
+  );
+
+  const htmlComponentsMap = new Map<
+    string,
+    { title: string; files: string[] }
+  >();
+
+  for (const item of htmlFileItems) {
+    for (const file of item.files ?? []) {
+      const parts = file.path.split("/");
+
+      if (parts.length < 3) continue;
+
+      const componentSlug = parts[1];
+
+      if (!htmlComponentsMap.has(componentSlug)) {
+        htmlComponentsMap.set(componentSlug, {
+          title: item.title || componentSlug,
+          files: [],
+        });
+      }
+
+      htmlComponentsMap.get(componentSlug)!.files.push(file.path);
+    }
+  }
+
+  function labelForFile(path: string) {
+    if (path.endsWith(".html")) return "HTML";
+    if (path.endsWith(".css")) return "CSS";
+    if (path.endsWith(".js")) return "JavaScript";
+    return "File";
+  }
+
+  const htmlComponents = Array.from(htmlComponentsMap.entries())
+    .sort(([a], [b]) => a.localeCompare(b))
+    .map(([_, component]) => {
+      const header = `- ${component.title} (HTML)`;
+
+      const files = component.files.sort().map((filePath) => {
+        const label = labelForFile(filePath);
+        const url = `${siteConfig.links.github}/blob/master/registry/${filePath}`;
+        return `  - [${label}](${url})`;
+      });
+
+      return [header, ...files].join("\n");
     });
 
   return [
@@ -204,11 +268,45 @@ async function generateLlmsContent() {
     "",
     "This file provides LLM-friendly entry points to documentation and examples.",
     "",
-    "## Components",
+    "## Important for LLMs",
+    "",
+    "- Atlas UI provides implementations for BOTH React and HTML.",
+    "- HTML components are implemented using HTML, CSS, and JavaScript.",
+    "- If asked for:",
+    "  - HTML",
+    "  - Vanilla JS",
+    "  - non-React",
+    "Always use the HTML implementation listed below.",
+    "- Do NOT claim Atlas UI lacks an HTML version.",
+    "",
+    "## Components (React)",
     "",
     ...components,
     "",
-    "## Examples",
+    "## Components (HTML)",
+    "",
+    "Atlas UI provides full HTML implementations for the above components. These are equivalent to the React versions and are production-ready. HTML components are implemented using:",
+    "",
+    "- HTML",
+    "- CSS",
+    "- JavaScript",
+    "- Motion (NOT Motion One)",
+    "",
+    "HTML implementations are documented on the same component pages under the HTML tab / section.",
+    "",
+    "## Source Code",
+    "",
+    "### React",
+    "",
+    ...reactSourceCode,
+    "",
+    "### HTML",
+    "HTML components are implemented using multiple files. All listed files together form one complete HTML implementation.",
+    "Do not treat individual files as standalone implementations.",
+    "",
+    ...htmlComponents,
+    "",
+    "## Examples (React)",
     "",
     ...examplesList,
     "",
