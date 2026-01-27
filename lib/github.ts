@@ -42,8 +42,14 @@ export function getGitHubIssueUrl(params: GitHubIssueUrlParams): string {
   return `${baseUrl}?${urlParams.toString()}`;
 }
 
+const INDEX_ROUTES = new Set([
+  "/docs",
+  "/docs/components",
+  "/docs/installation",
+]);
+
 export function getGithubFileUrl(slug: string) {
-  return `https://github.com/SnehdeepDupare/atlas-ui/blob/master/content${
-    slug === "/docs" ? "/docs/index" : slug
-  }.mdx`;
+  const finalSlug = INDEX_ROUTES.has(slug) ? `${slug}/index` : slug;
+
+  return `https://github.com/SnehdeepDupare/atlas-ui/blob/master/content${finalSlug}.mdx`;
 }
