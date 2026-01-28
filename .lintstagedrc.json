@@ -1,0 +1,3 @@
+{
+  "*.{ts,tsx,mdx,css}": ["prettier --write --cache"]
+}

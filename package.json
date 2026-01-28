@@ -11,13 +11,15 @@
     "start": "next start",
     "lint": "eslint .",
     "lint:fix": "eslint --fix",
-    "format:fix": "prettier --write \"**/*.{ts,tsx,mdx}\" --cache",
-    "format:check": "prettier --check \"**/*.{ts,tsx,mdx}\" --cache",
+    "format:fix": "prettier --write \"**/*.{ts,tsx,mdx,css}\" --cache",
+    "format:check": "prettier --check \"**/*.{ts,tsx,mdx,css}\" --cache",
     "contentlayer": "contentlayer2",
     "contentlayer:build": "contentlayer2 build",
     "contentlayer:dev": "contentlayer2 dev",
     "registry:build": "pnpm dlx tsx ./scripts/build-registry.mts && prettier --log-level silent --write \"registry/**/*.{ts,tsx,json,mdx}\" --cache",
-    "shadcn:build": "shadcn build registry.json --output ./public/r"
+    "shadcn:build": "shadcn build registry.json --output ./public/r",
+    "prepare": "husky",
+    "lint-staged": "lint-staged"
   },
   "dependencies": {
     "@radix-ui/react-collapsible": "^1.1.2",
@@ -63,6 +65,7 @@
     "eslint": "^9",
     "eslint-config-next": "16.1.1",
     "husky": "^9.1.7",
+    "lint-staged": "^16.2.7",
     "mdast-util-toc": "^6.1.1",
     "postcss": "^8",
     "prettier": "^3.7.4",
