@@ -2,11 +2,12 @@
 
 import * as React from "react";
 
+import { TerminalIcon } from "lucide-react";
+
 import { CopyButton } from "@/components/copy-button";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { useConfig } from "@/hooks/use-config";
 import { firaCode } from "@/lib/utils";
-import { TerminalIcon } from "lucide-react";
 
 export function CodeBlockCommand({
   __npm__,

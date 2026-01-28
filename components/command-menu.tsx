@@ -1,5 +1,10 @@
 "use client";
 
+import { useCallback, useEffect, useState } from "react";
+
+import { useTheme } from "next-themes";
+import { useRouter } from "next/navigation";
+
 import { type DialogProps } from "@radix-ui/react-dialog";
 import {
   ArrowDownIcon,
@@ -10,12 +15,7 @@ import {
   MoonIcon,
   SunIcon,
 } from "lucide-react";
-import { useTheme } from "next-themes";
-import { useRouter } from "next/navigation";
-import { useCallback, useEffect, useState } from "react";
 
-import { cn } from "@/lib/utils";
-import { docsConfig } from "@/config/docs";
 import { Button } from "@/components/ui/button";
 import {
   Command,
@@ -35,6 +35,8 @@ import {
 } from "@/components/ui/dialog";
 import { Kbd } from "@/components/ui/kbd";
 import { Separator } from "@/components/ui/separator";
+import { docsConfig } from "@/config/docs";
+import { cn } from "@/lib/utils";
 
 export function CommandMenu({ ...props }: DialogProps) {
   const router = useRouter();
@@ -73,7 +75,7 @@ export function CommandMenu({ ...props }: DialogProps) {
         <Button
           variant="outline"
           className={cn(
-            "relative h-8 w-full justify-start rounded-[0.5rem] border-none bg-white text-sm font-normal text-zinc-500 shadow-none ring-1 ring-zinc-900/10 transition hover:ring-zinc-900/20 sm:pr-12 md:w-40 lg:flex lg:w-56 xl:w-64 dark:bg-white/5 dark:text-zinc-400 dark:ring-white/10 dark:ring-inset dark:hover:ring-white/20",
+            "relative h-8 w-full justify-start rounded-[0.5rem] border-none bg-white text-sm font-normal text-zinc-500 shadow-none ring-1 ring-zinc-900/10 transition hover:ring-zinc-900/20 sm:pr-12 md:w-40 lg:flex lg:w-56 xl:w-64 dark:bg-white/5 dark:text-zinc-400 dark:ring-white/10 dark:ring-inset dark:hover:ring-white/20"
           )}
           onClick={() => setOpen(true)}
           {...props}
@@ -203,7 +205,7 @@ function CommandMenuKbd({ className, ...props }: React.ComponentProps<"kbd">) {
     <kbd
       className={cn(
         "bg-background text-muted-foreground pointer-events-none flex h-5 items-center justify-center gap-1 rounded border px-1 font-sans text-[0.7rem] font-medium select-none [&_svg:not([class*='size-'])]:size-3",
-        className,
+        className
       )}
       {...props}
     />

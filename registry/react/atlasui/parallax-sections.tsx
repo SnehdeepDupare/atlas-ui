@@ -1,7 +1,8 @@
 "use client";
 
 import { useRef } from "react";
-import { motion, MotionValue, useScroll, useTransform } from "motion/react";
+
+import { MotionValue, motion, useScroll, useTransform } from "motion/react";
 
 interface SectionProps {
   scrollYProgress: MotionValue;

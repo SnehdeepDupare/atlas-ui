@@ -4,7 +4,7 @@ import { allDocs } from "contentlayer/generated";
 
 export const ComponentsList = () => {
   const components = allDocs.filter((doc) =>
-    doc.slugAsParams?.startsWith("components/"),
+    doc.slugAsParams?.startsWith("components/")
   );
 
   if (components.length === 0) {

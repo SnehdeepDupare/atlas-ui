@@ -1,18 +1,19 @@
+import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import { ChevronRightIcon } from "lucide-react";
 
 import { allDocs } from "contentlayer/generated";
-import { Mdx } from "@/components/mdx-components";
-import { DocsPager } from "@/components/docs-pagination";
-import { DashboardTableOfContents } from "@/components/toc";
-import { getTableOfContents } from "@/lib/toc";
-import { DocGridPattern } from "@/components/doc-grid-pattern";
+import { ChevronRightIcon } from "lucide-react";
+
 import { Contribute } from "@/components/contribute";
-import { absoluteUrl } from "@/lib/utils";
-import type { Metadata } from "next";
+import { DocGridPattern } from "@/components/doc-grid-pattern";
 import { DocsCopyPage } from "@/components/docs-copy-page";
-import { processMdxContent } from "@/lib/llm";
+import { DocsPager } from "@/components/docs-pagination";
+import { Mdx } from "@/components/mdx-components";
 import { ScrollToTop } from "@/components/scroll-to-top";
+import { DashboardTableOfContents } from "@/components/toc";
+import { processMdxContent } from "@/lib/llm";
+import { getTableOfContents } from "@/lib/toc";
+import { absoluteUrl } from "@/lib/utils";
 
 interface DocPageProps {
   params: Promise<{ slug: string[] }>;
@@ -46,7 +47,7 @@ export async function generateMetadata(props: DocPageProps): Promise<Metadata> {
       images: [
         {
           url: `/og?title=${encodeURIComponent(
-            doc.title,
+            doc.title
           )}&description=${encodeURIComponent(doc.description)}`,
         },
       ],
@@ -58,7 +59,7 @@ export async function generateMetadata(props: DocPageProps): Promise<Metadata> {
       images: [
         {
           url: `/og?title=${encodeURIComponent(
-            doc.title,
+            doc.title
           )}&description=${encodeURIComponent(doc.description)}`,
         },
       ],

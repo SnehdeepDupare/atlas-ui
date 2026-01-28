@@ -1,4 +1,5 @@
 import { motion } from "motion/react";
+
 import { Icons } from "@/components/icons";
 import { cn } from "@/lib/utils";
 
@@ -28,7 +29,7 @@ const Cell = ({
   <motion.div
     className={cn(
       "relative flex size-18 items-center justify-center rounded-xl border border-neutral-200 bg-linear-to-b from-white to-neutral-100 shadow-[0_2px_4px_rgba(0,0,0,0.02),inset_0_1px_0_rgba(255,255,255,1)] dark:border-neutral-700/50 dark:from-neutral-800 dark:to-neutral-900 dark:shadow-[0_2px_4px_rgba(0,0,0,0.4),inset_0_1px_0_rgba(255,255,255,0.1),inset_0_-1px_0_rgba(0,0,0,0.3)]",
-      !Icon && "opacity-40",
+      !Icon && "opacity-40"
     )}
     animate={{
       y: Icon ? [0, 3, 0] : [0, 0, 0],

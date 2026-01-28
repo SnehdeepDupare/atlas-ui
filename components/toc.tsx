@@ -3,9 +3,9 @@
 
 import * as React from "react";
 
+import { useMounted } from "@/hooks/use-mounted";
 import { TableOfContents } from "@/lib/toc";
 import { cn } from "@/lib/utils";
-import { useMounted } from "@/hooks/use-mounted";
 
 interface TocProps {
   toc: TableOfContents;
@@ -21,7 +21,7 @@ export function DashboardTableOfContents({ toc }: TocProps) {
             .filter(Boolean)
             .map((id) => id?.split("#")[1])
         : [],
-    [toc],
+    [toc]
   );
   const activeHeading = useActiveItem(itemIds);
   const mounted = useMounted();
@@ -50,7 +50,7 @@ function useActiveItem(itemIds: string[]) {
           }
         });
       },
-      { rootMargin: `0% 0% -80% 0%` },
+      { rootMargin: `0% 0% -80% 0%` }
     );
 
     itemIds?.forEach((id) => {
@@ -91,7 +91,7 @@ function Tree({ tree, level = 1, activeItem }: TreeProps) {
                 "hover:text-foreground inline-block no-underline transition-colors",
                 item.url === `#${activeItem}`
                   ? "font-semibold text-emerald-500"
-                  : "text-muted-foreground",
+                  : "text-muted-foreground"
               )}
             >
               {item.title}

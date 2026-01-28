@@ -3,6 +3,7 @@
 import * as React from "react";
 
 import { useConfig } from "@/hooks/use-config";
+
 import { Tabs, TabsList, TabsTrigger } from "./ui/tabs";
 
 export const UsageTabs = ({ children }: React.ComponentProps<typeof Tabs>) => {

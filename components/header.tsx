@@ -1,22 +1,22 @@
 "use client";
 
-import Image from "next/image";
-import Link from "next/link";
-
-import { usePathname } from "next/navigation";
 import { FaGithub } from "react-icons/fa";
 
-import { Button } from "@/components/ui/button";
-import { siteConfig } from "@/config/site";
-import { cn } from "@/lib/utils";
+import Image from "next/image";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
+
 import { CommandMenu } from "@/components/command-menu";
 import { MobileNav } from "@/components/mobile-nav";
 import { ModeToggle } from "@/components/mode-toggle";
+import { Button } from "@/components/ui/button";
 import {
   Tooltip,
   TooltipContent,
   TooltipTrigger,
 } from "@/components/ui/tooltip";
+import { siteConfig } from "@/config/site";
+import { cn } from "@/lib/utils";
 
 export const Header = () => {
   const pathname = usePathname();
@@ -53,7 +53,7 @@ export const Header = () => {
                 "hover:text-foreground/80 hidden transition-colors md:block",
                 pathname === "/docs/installation"
                   ? "text-foreground"
-                  : "text-foreground/80",
+                  : "text-foreground/80"
               )}
             >
               Docs
@@ -65,7 +65,7 @@ export const Header = () => {
                 "hover:text-foreground/80 hidden transition-colors md:block",
                 pathname?.startsWith("/docs/components")
                   ? "text-foreground"
-                  : "text-foreground/80",
+                  : "text-foreground/80"
               )}
             >
               Components

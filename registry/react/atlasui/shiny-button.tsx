@@ -1,8 +1,10 @@
 "use client";
 
-import { cn } from "@/lib/utils";
-import { motion, MotionProps } from "motion/react";
 import { ButtonHTMLAttributes } from "react";
+
+import { MotionProps, motion } from "motion/react";
+
+import { cn } from "@/lib/utils";
 
 type MergedProps = Omit<
   ButtonHTMLAttributes<HTMLButtonElement>,

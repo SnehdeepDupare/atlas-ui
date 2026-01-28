@@ -1,10 +1,12 @@
 "use client";
 
+import Link from "next/link";
+
+import { ChevronLeft, ChevronRight } from "lucide-react";
+
+import { Doc } from "@/.contentlayer/generated";
 import { Button } from "@/components/ui/button";
 import { docsConfig } from "@/config/docs";
-import { ChevronLeft, ChevronRight } from "lucide-react";
-import { Doc } from "@/.contentlayer/generated";
-import Link from "next/link";
 import { NavItem, NavItemWithChildren } from "@/types/nav";
 
 interface DocsPagerProps {
@@ -44,7 +46,7 @@ export function getPagerForDoc(doc: Doc) {
   const nav = docsConfig.sidebarNav;
   const flattenedLinks = [null, ...flatten(nav), null];
   const activeIndex = flattenedLinks.findIndex(
-    (link) => doc.slug === link?.href,
+    (link) => doc.slug === link?.href
   );
   const prev = activeIndex !== 0 ? flattenedLinks[activeIndex - 1] : null;
   const next =

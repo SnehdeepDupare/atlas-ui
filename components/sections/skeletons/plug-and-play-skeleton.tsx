@@ -1,7 +1,9 @@
 "use client";
 
 import { useEffect, useState } from "react";
+
 import { motion } from "motion/react";
+
 import { cn, firaCode } from "@/lib/utils";
 
 export const PlugAndPlaySkeleton = () => {
@@ -63,7 +65,7 @@ export const PlugAndPlaySkeleton = () => {
             className={cn(
               "absolute z-10 flex items-center justify-center gap-2 rounded-xl border px-4 py-2.5 whitespace-nowrap shadow-[0_2px_8px_rgba(0,0,0,0.04),inset_0_1px_0_rgba(255,255,255,0.4)] dark:shadow-[0_2px_8px_rgba(0,0,0,0.2),inset_0_1px_0_rgba(255,255,255,0.05)]",
               variant.base,
-              index === activeIndex && variant.activeBorder,
+              index === activeIndex && variant.activeBorder
             )}
             initial={false}
             animate={{
@@ -82,7 +84,7 @@ export const PlugAndPlaySkeleton = () => {
               className={cn(
                 "flex size-4 items-center justify-center text-sm font-bold",
                 firaCode.className,
-                variant.symbol,
+                variant.symbol
               )}
             >
               {item.symbol}

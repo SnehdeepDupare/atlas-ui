@@ -51,7 +51,7 @@ function DocsNavItems({
               "group text-foreground hover:bg-accent hover:text-accent-foreground flex h-8 w-full items-center rounded-r-lg px-2 font-normal underline-offset-2 hover:rounded-lg",
               item.disabled && "cursor-not-allowed opacity-60",
               pathname === item.href &&
-                "bg-accent text-accent-foreground border-l-2 border-emerald-500 font-medium hover:rounded-l-none",
+                "bg-accent text-accent-foreground border-l-2 border-emerald-500 font-medium hover:rounded-l-none"
             )}
             target={item.external ? "_blank" : ""}
             rel={item.external ? "noreferrer" : ""}
@@ -68,7 +68,7 @@ function DocsNavItems({
             key={index}
             className={cn(
               "text-muted-foreground flex w-full cursor-not-allowed items-center rounded-md p-2 hover:underline",
-              item.disabled && "cursor-not-allowed opacity-60",
+              item.disabled && "cursor-not-allowed opacity-60"
             )}
           >
             {item.title}
@@ -78,7 +78,7 @@ function DocsNavItems({
               </span>
             )}
           </span>
-        ),
+        )
       )}
     </div>
   ) : null;

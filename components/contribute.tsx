@@ -1,8 +1,9 @@
-import { Doc } from "@/.contentlayer/generated";
-import { BugIcon, LightbulbIcon, PencilIcon } from "lucide-react";
 import Link from "next/link";
 
-import { getGithubFileUrl, getGitHubIssueUrl } from "@/lib/github";
+import { BugIcon, LightbulbIcon, PencilIcon } from "lucide-react";
+
+import { Doc } from "@/.contentlayer/generated";
+import { getGitHubIssueUrl, getGithubFileUrl } from "@/lib/github";
 
 export function Contribute({ doc }: { doc: Doc }) {
   const contributeLinks = [

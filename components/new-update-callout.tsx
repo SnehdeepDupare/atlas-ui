@@ -1,10 +1,12 @@
 "use client";
 
-import { ChevronRight } from "lucide-react";
-import { motion } from "motion/react";
 import Link from "next/link";
 
+import { ChevronRight } from "lucide-react";
+import { motion } from "motion/react";
+
 import { cn } from "@/lib/utils";
+
 import { buttonVariants } from "./ui/button";
 
 export const NewUpdateCallout = () => {
@@ -17,7 +19,7 @@ export const NewUpdateCallout = () => {
             variant: "outline",
             size: "sm",
           }),
-          "relative rounded-full text-xs",
+          "relative rounded-full text-xs"
         )}
       >
         🎉 Introducing Morph Navbar & Notch Nav

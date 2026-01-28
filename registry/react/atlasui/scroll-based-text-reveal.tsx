@@ -1,6 +1,7 @@
 "use client";
 
 import { useRef } from "react";
+
 import { motion, useScroll } from "motion/react";
 
 interface ScrollBasedTextRevealProps {

@@ -1,7 +1,8 @@
 "use client";
 
-import { motion, useMotionValue, useSpring } from "motion/react";
 import { useEffect, useState } from "react";
+
+import { motion, useMotionValue, useSpring } from "motion/react";
 
 export const BlobMouseTrailer = () => {
   const [isVisible, setIsVisible] = useState(false);

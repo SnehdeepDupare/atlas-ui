@@ -1,6 +1,12 @@
 "use client";
 
-import { useCopyToClipboard } from "@/hooks/use-copy-to-clipboard";
+import {
+  CheckIcon,
+  ChevronDownIcon,
+  CopyIcon,
+  ExternalLinkIcon,
+} from "lucide-react";
+
 import { Button } from "@/components/ui/button";
 import {
   DropdownMenu,
@@ -8,19 +14,15 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
-import {
-  CheckIcon,
-  ChevronDownIcon,
-  CopyIcon,
-  ExternalLinkIcon,
-} from "lucide-react";
+import { useCopyToClipboard } from "@/hooks/use-copy-to-clipboard";
+
 import { ButtonGroup } from "./ui/button-group";
 
 const getPromptUrl = (baseURL: string, url: string) => {
   return `${baseURL}?q=${encodeURIComponent(
     `I'm looking at this Atlas UI documentation: ${url}.
 Help me understand how to use it. Be ready to explain concepts, give examples, or help debug based on it.
-  `,
+  `
   )}`;
 };
 export const DocsCopyPage = ({ page, url }: { page: string; url: string }) => {

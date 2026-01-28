@@ -1,12 +1,13 @@
 import * as React from "react";
-import { cn } from "@/lib/utils";
+import { useState } from "react";
+
 import {
   Collapsible,
   CollapsibleContent,
   CollapsibleTrigger,
 } from "@/components/ui/collapsible";
+import { cn } from "@/lib/utils";
 
-import { useState } from "react";
 import { Button } from "./ui/button";
 
 interface ComponentSourceProps {
@@ -33,7 +34,7 @@ export function ComponentSource({
         <div
           className={cn(
             "relative mt-6 overflow-hidden rounded-xl dark:ring dark:ring-white/10 [&_pre]:my-0",
-            className,
+            className
           )}
         >
           <CollapsibleContent
@@ -42,7 +43,7 @@ export function ComponentSource({
           >
             <div
               className={cn(
-                !isOpened ? "[&_pre]:overflow-hidden" : "[&_pre]:overflow-auto",
+                !isOpened ? "[&_pre]:overflow-hidden" : "[&_pre]:overflow-auto"
               )}
             >
               {children}
@@ -51,7 +52,7 @@ export function ComponentSource({
           <div
             className={cn(
               "absolute flex items-end justify-center rounded-xl bg-linear-to-b from-transparent to-zinc-950/90 p-2",
-              isOpened ? "inset-x-0 bottom-0 h-12" : "inset-0",
+              isOpened ? "inset-x-0 bottom-0 h-12" : "inset-0"
             )}
           >
             <CollapsibleTrigger asChild>

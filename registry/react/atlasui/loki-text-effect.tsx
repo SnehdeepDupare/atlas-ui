@@ -1,8 +1,8 @@
 "use client";
 
 import { useEffect, useState } from "react";
+
 import { motion } from "motion/react";
-import { cn } from "@/lib/utils";
 
 import {
   fontFive,
@@ -13,6 +13,7 @@ import {
   fontThree,
   fontTwo,
 } from "@/fonts/font";
+import { cn } from "@/lib/utils";
 
 const fonts = [
   fontOne.className,
@@ -63,14 +64,14 @@ const AnimatedLetter = ({
       () => {
         setFontClass((prev) => getRandomFont(prev));
       },
-      Math.max(100, velocityFont),
+      Math.max(100, velocityFont)
     );
 
     const moveTimer = setInterval(
       () => {
         setPos(getRandomOffset());
       },
-      Math.max(100, velocityMove),
+      Math.max(100, velocityMove)
     );
 
     return () => {
@@ -108,7 +109,7 @@ export const LokiTextEffect = ({
     <div
       className={cn(
         "flex flex-wrap justify-center gap-px text-6xl md:text-9xl",
-        className,
+        className
       )}
     >
       {text.split("").map((char, i) => (

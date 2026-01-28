@@ -1,16 +1,17 @@
+import { Metadata } from "next";
 import { Inter } from "next/font/google";
+
 import { Analytics } from "@vercel/analytics/next";
 import { Provider as JotaiProvider } from "jotai";
 
-import "@/styles/globals.css";
-import { ThemeProvider } from "@/components/theme-provider";
-import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
-import { PostHogProvider } from "@/components/posthog-provider";
-import { siteConfig } from "@/config/site";
-import { Metadata } from "next";
+import { Header } from "@/components/header";
 import { LenisProvider } from "@/components/lenis-provider";
+import { PostHogProvider } from "@/components/posthog-provider";
+import { ThemeProvider } from "@/components/theme-provider";
 import { TooltipProvider } from "@/components/ui/tooltip";
+import { siteConfig } from "@/config/site";
+import "@/styles/globals.css";
 
 const inter = Inter({ subsets: ["latin"] });
 

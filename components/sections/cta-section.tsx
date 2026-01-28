@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+
 import { MoveRight } from "lucide-react";
 import { motion } from "motion/react";
 

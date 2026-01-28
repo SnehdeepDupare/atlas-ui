@@ -1,7 +1,7 @@
 "use client";
 
-import { motion } from "motion/react";
 import { GitBranchIcon, GitPullRequestIcon, TagIcon } from "lucide-react";
+import { motion } from "motion/react";
 
 const pathMain = "M 80 100 L 800 100";
 const pathFeature =
@@ -11,13 +11,9 @@ const pathFork = "M 140 100 C 180 100 180 160 220 160 L 800 160";
 export const OpenSourceSkeleton = () => {
   return (
     <div className="relative h-full w-full overflow-hidden mask-y-from-85% mask-x-from-90%">
-      <div
-        className="absolute inset-0 z-0 opacity-15 bg-[radial-gradient(#a1a1aa_1px,transparent_1px)] bg-size-[20px_20px] dark:hidden"
-      />
+      <div className="absolute inset-0 z-0 bg-[radial-gradient(#a1a1aa_1px,transparent_1px)] bg-size-[20px_20px] opacity-15 dark:hidden" />
 
-      <div
-        className="absolute inset-0 z-0 opacity-20 bg-[radial-gradient(#404040_1px,transparent_1px)] bg-size-[20px_20px] hidden dark:block"
-      />
+      <div className="absolute inset-0 z-0 hidden bg-[radial-gradient(#404040_1px,transparent_1px)] bg-size-[20px_20px] opacity-20 dark:block" />
 
       {/* SVG Graph */}
       <svg

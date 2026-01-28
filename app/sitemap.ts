@@ -1,7 +1,7 @@
+import type { MetadataRoute } from "next";
+
 import { docsConfig } from "@/config/docs";
 import { getAllDocsLinks } from "@/lib/utils";
-
-import type { MetadataRoute } from "next";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = "https://atlasui.dev";

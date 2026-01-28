@@ -1,8 +1,9 @@
 "use client";
 
-import { motion } from "motion/react";
 import { Oswald } from "next/font/google";
 import Link from "next/link";
+
+import { motion } from "motion/react";
 
 const oswald = Oswald({
   subsets: ["latin"],

@@ -1,14 +1,14 @@
 import { notFound } from "next/navigation";
-import { NextResponse, type NextRequest } from "next/server";
+import { type NextRequest, NextResponse } from "next/server";
 
-import { processMdxContent } from "@/lib/llm";
 import { allDocs } from "@/.contentlayer/generated";
+import { processMdxContent } from "@/lib/llm";
 
 export const revalidate = false;
 
 export async function GET(
   _req: NextRequest,
-  { params }: { params: Promise<{ slug?: string[] }> },
+  { params }: { params: Promise<{ slug?: string[] }> }
 ) {
   const { slug } = await params;
 

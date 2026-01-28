@@ -1,15 +1,17 @@
 "use client";
 
-import { cn } from "@/lib/utils";
-import { AnimatePresence, motion, stagger, type Variants } from "motion/react";
 import {
+  type ReactNode,
   createContext,
   useContext,
   useEffect,
   useRef,
   useState,
-  type ReactNode,
 } from "react";
+
+import { AnimatePresence, type Variants, motion, stagger } from "motion/react";
+
+import { cn } from "@/lib/utils";
 
 interface NotchNavContextValue {
   open: boolean;
@@ -109,7 +111,7 @@ const NotchNavTrigger = ({ className }: { className?: string }) => {
         "before:absolute before:top-0 before:-left-[14px] before:h-[15.5px] before:w-[30px] before:bg-[radial-gradient(circle_at_0_100%,transparent_14px,#b3eb14_15px)] before:bg-size-[50%_100%] before:bg-no-repeat before:content-['']",
         "after:absolute after:top-0 after:left-full after:h-[15px] after:w-[30px] after:bg-[radial-gradient(circle_at_100%_100%,transparent_15px,#b3eb14_15px)] after:bg-size-[50%_100%] after:bg-no-repeat after:content-['']",
         open && "-top-px",
-        className,
+        className
       )}
     >
       <motion.svg
@@ -193,7 +195,7 @@ const NotchNavContent = ({
           animate={open ? "open" : "closed"}
           className={cn(
             "flex w-[90svw] max-w-96 flex-col gap-2 rounded-4xl bg-[#b3eb14] px-6 py-8",
-            className,
+            className
           )}
         >
           {children}
@@ -227,7 +229,7 @@ const NotchNavItem = ({ href, children, className }: NotchNavItemProps) => {
       variants={itemVariants}
       className={cn(
         "group relative flex h-8 flex-col justify-center overflow-hidden border-b border-neutral-900/50 p-1 text-neutral-900 uppercase",
-        className,
+        className
       )}
     >
       <span className="sr-only">{children}</span>

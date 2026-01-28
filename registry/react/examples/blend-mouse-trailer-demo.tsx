@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+
 import { BlendMouseTrailer } from "@/registry/react/atlasui/blend-mouse-trailer";
 
 export const BlendMouseTrailerDemo = () => {

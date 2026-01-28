@@ -1,10 +1,12 @@
 "use client";
 
-import { CheckIcon, CopyIcon } from "lucide-react";
 import * as React from "react";
+
+import { CheckIcon, CopyIcon } from "lucide-react";
 
 import { Event, trackEvent } from "@/lib/events";
 import { cn } from "@/lib/utils";
+
 import { Button } from "./ui/button";
 import { Tooltip, TooltipContent, TooltipTrigger } from "./ui/tooltip";
 
@@ -46,7 +48,7 @@ export function CopyButton({
           variant={variant}
           className={cn(
             "relative z-10 size-6 text-zinc-50 opacity-70 hover:bg-zinc-700 hover:text-zinc-50 hover:opacity-100",
-            className,
+            className
           )}
           onClick={() => {
             copyToClipboardWithMeta(
@@ -58,7 +60,7 @@ export function CopyButton({
                       code: value,
                     },
                   }
-                : undefined,
+                : undefined
             );
             setHasCopied(true);
           }}

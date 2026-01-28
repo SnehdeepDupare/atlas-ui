@@ -1,27 +1,27 @@
 "use client";
 
 import { useState } from "react";
+
 import Link from "next/link";
+
 import { ArrowUpRightIcon, RotateCcwIcon } from "lucide-react";
 import { motion } from "motion/react";
 
 import ComponentWrapper from "@/components/component-wrapper";
+import { LokiTextEffectDemo } from "@/components/sections/demo-components/loki-text-effect-demo";
+import { NotchNavDemo } from "@/components/sections/demo-components/notch-nav-demo";
+import { ProjectGalleryDemo } from "@/components/sections/demo-components/project-gallery-demo";
 import { Button } from "@/components/ui/button";
 import {
   Tooltip,
   TooltipContent,
   TooltipTrigger,
 } from "@/components/ui/tooltip";
-
 import { cn } from "@/lib/utils";
-
 import { BoxRevealDemo } from "@/registry/react/examples/box-reveal-demo";
 import { HackerTextDemo } from "@/registry/react/examples/hacker-text-demo";
 import { MorphNavbarDemo } from "@/registry/react/examples/morph-navbar-demo";
 import { ShinyButtonDemo } from "@/registry/react/examples/shiny-button-demo";
-import { LokiTextEffectDemo } from "@/components/sections/demo-components/loki-text-effect-demo";
-import { NotchNavDemo } from "@/components/sections/demo-components/notch-nav-demo";
-import { ProjectGalleryDemo } from "@/components/sections/demo-components/project-gallery-demo";
 
 export const ComponentShowcase = () => {
   const [key, setKey] = useState(0);
@@ -124,7 +124,7 @@ const ItemFooter = ({
       className={cn(
         "[--dot-color:rgba(0,0,0,0.15)] dark:[--dot-color:rgba(255,255,255,0.2)]",
         "absolute inset-x-0 bottom-0 flex h-1/3 items-end mask-t-from-0 mask-t-to-95% p-4",
-        className,
+        className
       )}
     >
       <Tooltip>

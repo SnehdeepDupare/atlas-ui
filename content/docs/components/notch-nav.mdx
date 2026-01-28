@@ -320,12 +320,12 @@ const animateTriggerOpen = () => {
   animate(
     paths.top,
     { d: OPEN.top },
-    { duration: 0.25, easing: "ease-in-out" },
+    { duration: 0.25, easing: "ease-in-out" }
   );
   animate(
     paths.bottom,
     { d: OPEN.bottom },
-    { duration: 0.25, easing: "ease-in-out" },
+    { duration: 0.25, easing: "ease-in-out" }
   );
   animate(paths.middle, { opacity: 0 }, { duration: 0.1 });
 };
@@ -334,12 +334,12 @@ const animateTriggerClose = () => {
   animate(
     paths.top,
     { d: CLOSED.top },
-    { duration: 0.25, easing: "ease-in-out" },
+    { duration: 0.25, easing: "ease-in-out" }
   );
   animate(
     paths.bottom,
     { d: CLOSED.bottom },
-    { duration: 0.25, easing: "ease-in-out" },
+    { duration: 0.25, easing: "ease-in-out" }
   );
   animate(paths.middle, { opacity: 1 }, { duration: 0.1, delay: 0.15 });
 };
@@ -361,7 +361,7 @@ const openNav = () => {
       damping: 20,
       mass: 0.9,
       delay: 0.2,
-    },
+    }
   );
 
   // Content slide in
@@ -374,7 +374,7 @@ const openNav = () => {
       damping: 20,
       mass: 0.9,
       delay: 0.2,
-    },
+    }
   );
 
   // Stagger items in
@@ -385,7 +385,7 @@ const openNav = () => {
       delay: stagger(0.1, { startDelay: 0.3 }),
       duration: 0.3,
       easing: "ease-out",
-    },
+    }
   );
 };
 
@@ -402,7 +402,7 @@ const closeNav = () => {
       damping: 20,
       mass: 0.9,
       delay: 0.2,
-    },
+    }
   );
 
   // Stagger items out (reverse)
@@ -413,7 +413,7 @@ const closeNav = () => {
       delay: stagger(0.05, { from: "last" }),
       duration: 0.2,
       easing: "ease-in",
-    },
+    }
   );
 
   // Content slide out
@@ -424,7 +424,7 @@ const closeNav = () => {
       duration: 0.25,
       easing: "ease-in",
       delay: 0.2,
-    },
+    }
   );
 };
 

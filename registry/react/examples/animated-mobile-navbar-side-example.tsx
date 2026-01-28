@@ -1,10 +1,10 @@
+import { Button } from "@/components/ui/button";
 import {
   AnimatedMobileNavbar,
   AnimatedMobileNavbarContent,
   AnimatedMobileNavbarLink,
   AnimatedMobileNavbarTrigger,
 } from "@/registry/react/atlasui/animated-mobile-navbar";
-import { Button } from "@/components/ui/button";
 
 const SIDES = ["left", "top", "right"] as const;
 

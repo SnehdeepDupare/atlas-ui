@@ -1,7 +1,8 @@
 "use client";
 
+import { useEffect, useMemo, useState } from "react";
+
 import { motion, useMotionValue, useSpring } from "motion/react";
-import { useEffect, useState, useMemo } from "react";
 
 export const BlendMouseTrailer = ({ isHovered }: { isHovered: boolean }) => {
   const [isVisible, setIsVisible] = useState(false);

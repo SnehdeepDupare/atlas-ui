@@ -169,6 +169,6 @@ export async function GET(request: Request) {
       width: 1200,
       height: 628,
       fonts,
-    },
+    }
   );
 }

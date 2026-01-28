@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+
 import { ArrowRightIcon } from "lucide-react";
 import { motion } from "motion/react";
 

@@ -259,7 +259,7 @@ function moveActivePill(el, immediate = false) {
     { left: `${left}px`, width: `${width}px` },
     immediate
       ? { duration: 0 }
-      : { type: "spring", stiffness: 400, damping: 33 },
+      : { type: "spring", stiffness: 400, damping: 33 }
   );
 }
 
@@ -269,7 +269,7 @@ function moveHoverPill(el) {
   animate(
     hoverPill,
     { left: `${left}px`, width: `${width}px` },
-    { type: "spring", stiffness: 400, damping: 33 },
+    { type: "spring", stiffness: 400, damping: 33 }
   );
 }
 
@@ -280,7 +280,7 @@ function resetHoverPill() {
       left: `${PADDING_OFFSET}px`,
       width: `calc(100% - ${PADDING_OFFSET * 2}px)`,
     },
-    { type: "spring", stiffness: 400, damping: 33 },
+    { type: "spring", stiffness: 400, damping: 33 }
   );
 }
 

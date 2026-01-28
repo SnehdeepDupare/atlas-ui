@@ -1,8 +1,9 @@
 "use client";
 
+import { useState } from "react";
+
 import Link, { LinkProps } from "next/link";
 import { usePathname, useRouter } from "next/navigation";
-import { useState } from "react";
 
 import { Button } from "@/components/ui/button";
 import {
@@ -23,7 +24,7 @@ export function MobileNav({ className }: { className?: string }) {
           variant="ghost"
           className={cn(
             "extend-touch-target h-8 touch-manipulation items-center justify-start gap-2.5 p-0! hover:bg-transparent focus-visible:bg-transparent focus-visible:ring-0 active:bg-transparent dark:hover:bg-transparent",
-            className,
+            className
           )}
         >
           <div className="relative flex h-8 w-4 items-center justify-center">
@@ -31,13 +32,13 @@ export function MobileNav({ className }: { className?: string }) {
               <span
                 className={cn(
                   "bg-foreground absolute left-0 block h-px w-4 transition-all duration-100",
-                  isOpen ? "top-[0.4rem] -rotate-45" : "top-1",
+                  isOpen ? "top-[0.4rem] -rotate-45" : "top-1"
                 )}
               />
               <span
                 className={cn(
                   "bg-foreground absolute left-0 block h-px w-4 transition-all duration-100",
-                  isOpen ? "top-[0.4rem] rotate-45" : "top-2.5",
+                  isOpen ? "top-[0.4rem] rotate-45" : "top-2.5"
                 )}
               />
             </div>
@@ -66,7 +67,7 @@ export function MobileNav({ className }: { className?: string }) {
                     onOpenChange={setIsOpen}
                     className={cn(
                       "text-muted-foreground flex justify-between",
-                      item.disabled && "cursor-not-allowed opacity-60",
+                      item.disabled && "cursor-not-allowed opacity-60"
                     )}
                   >
                     {item.title}
@@ -83,7 +84,7 @@ export function MobileNav({ className }: { className?: string }) {
                     key={index}
                     className={cn(
                       "text-muted-foreground",
-                      item.disabled && "cursor-not-allowed opacity-60",
+                      item.disabled && "cursor-not-allowed opacity-60"
                     )}
                   >
                     {item.title}
@@ -93,7 +94,7 @@ export function MobileNav({ className }: { className?: string }) {
                       </span>
                     )}
                   </span>
-                ),
+                )
               )}
             </div>
           ))}
@@ -131,7 +132,7 @@ function MobileLink({
         "group text-foreground flex h-8 w-full items-center rounded-r-lg px-2 font-normal",
         isActive
           ? "bg-accent text-accent-foreground border-l-2 border-emerald-500 font-medium hover:rounded-l-none"
-          : "",
+          : ""
       )}
       {...props}
     >

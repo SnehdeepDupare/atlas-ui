@@ -1,8 +1,10 @@
 "use client";
 
-import { cn } from "@/lib/utils";
+import { useEffect, useRef } from "react";
+
 import { motion, useAnimation, useInView } from "motion/react";
-import { useRef, useEffect } from "react";
+
+import { cn } from "@/lib/utils";
 
 interface BoxRevealProps {
   children: React.ReactNode;
@@ -38,7 +40,7 @@ export const BoxReveal = ({
       className={cn(
         "relative overflow-hidden",
         width === "full" ? "w-full" : "w-fit",
-        className,
+        className
       )}
     >
       <motion.div

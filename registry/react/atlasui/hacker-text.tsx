@@ -1,7 +1,9 @@
 "use client";
 
-import { Bebas_Neue } from "next/font/google";
 import { useEffect } from "react";
+
+import { Bebas_Neue } from "next/font/google";
+
 import { cn } from "@/lib/utils";
 
 const bebas = Bebas_Neue({ subsets: ["latin"], weight: ["400"] });

@@ -1,15 +1,18 @@
 "use client";
 
+import { useCallback, useEffect } from "react";
+
 import { useTheme } from "next-themes";
-import { Button } from "@/components/ui/button";
+
 import { MoonIcon, SunIcon } from "lucide-react";
+
+import { Button } from "@/components/ui/button";
 import { Kbd } from "@/components/ui/kbd";
 import {
   Tooltip,
   TooltipContent,
   TooltipTrigger,
 } from "@/components/ui/tooltip";
-import { useCallback, useEffect } from "react";
 
 export const ModeToggle = () => {
   const { setTheme, resolvedTheme } = useTheme();

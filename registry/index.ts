@@ -1,13 +1,13 @@
 import {
-  registryIndexSchema,
-  RegistryItem,
   type Registry,
+  RegistryItem,
+  registryIndexSchema,
 } from "shadcn/schema";
 
 import { examples } from "@/registry/registry-examples";
-import { ui } from "@/registry/registry-ui";
 import { html } from "@/registry/registry-html";
 import { lib } from "@/registry/registry-lib";
+import { ui } from "@/registry/registry-ui";
 
 const DEPRECATED_ITEMS = [""];
 
@@ -27,6 +27,6 @@ export const registry = {
   items: registryIndexSchema.parse(
     [DEFAULT, ...ui, ...examples, ...html, ...lib].filter((item) => {
       return !DEPRECATED_ITEMS.includes(item.name);
-    }),
+    })
   ),
 } satisfies Registry;

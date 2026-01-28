@@ -3,7 +3,7 @@ import { getRegistryItem } from "@/lib/registry";
 
 const getComponentList = async () => {
   const components = allDocs.filter((doc) =>
-    doc.slugAsParams?.startsWith("components/"),
+    doc.slugAsParams?.startsWith("components/")
   );
 
   if (components.length === 0) {
@@ -13,7 +13,7 @@ const getComponentList = async () => {
   return components
     .map(
       (component) =>
-        `- [${component.title}](https://atlasui.dev${component.slug})`,
+        `- [${component.title}](https://atlasui.dev${component.slug})`
     )
     .join("\n");
 };
@@ -24,7 +24,7 @@ export const processMdxContent = async (content: string) => {
   const componentListReplacement = await getComponentList();
   content = content.replace(
     componentsListRegex,
-    componentListReplacement || "",
+    componentListReplacement || ""
   );
 
   const componentRegex =

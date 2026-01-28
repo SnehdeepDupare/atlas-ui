@@ -1,7 +1,9 @@
 "use client";
 
 import * as React from "react";
+
 import Link from "next/link";
+
 import { motion } from "motion/react";
 
 import { cn } from "@/lib/utils";
@@ -166,7 +168,7 @@ export function MorphNavbarItem({
         className={cn(
           "flex items-center justify-center rounded-full px-4 py-3 font-sans text-xs font-medium transition-colors md:px-7 md:text-base",
           isActive ? "text-neutral-900" : "text-white",
-          className,
+          className
         )}
       >
         {children}

@@ -1,11 +1,12 @@
 "use client";
 
-import Link from "next/link";
-
 import { createContext, useContext, useState } from "react";
-import { AnimatePresence, motion } from "motion/react";
+
+import Link from "next/link";
 import { usePathname } from "next/navigation";
+
 import { XIcon } from "lucide-react";
+import { AnimatePresence, motion } from "motion/react";
 
 import { Button } from "@/components/ui/button";
 
@@ -21,7 +22,7 @@ export const useAnimatedMobileNavbar = () => {
   const context = useContext(AnimatedMobileNavbarContext);
   if (!context) {
     throw new Error(
-      "useAnimatedMobileNavbar must be used within an AnimatedMobileNavbar",
+      "useAnimatedMobileNavbar must be used within an AnimatedMobileNavbar"
     );
   }
   return context;

@@ -1,16 +1,18 @@
 "use client";
 
 import React, {
-  useState,
-  useRef,
-  useEffect,
   Dispatch,
-  SetStateAction,
   ReactNode,
+  SetStateAction,
+  useEffect,
+  useRef,
+  useState,
 } from "react";
-import { motion, useMotionValue, useSpring } from "motion/react";
+
 import Image from "next/image";
 import Link from "next/link";
+
+import { motion, useMotionValue, useSpring } from "motion/react";
 
 interface ProjectGalleryProps {
   children: ReactNode;
@@ -52,7 +54,7 @@ const ProjectGallery = ({ children }: ProjectGalleryProps) => {
               {
                 index,
                 setModal,
-              },
+              }
             );
           }
           return child;
