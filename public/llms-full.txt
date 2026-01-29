@@ -7,12 +7,13 @@ Description: A simple animated mobile navbar component.
 --- file: react/atlasui/animated-mobile-navbar.tsx ---
 "use client";
 
-import Link from "next/link";
-
 import { createContext, useContext, useState } from "react";
-import { AnimatePresence, motion } from "motion/react";
+
+import Link from "next/link";
 import { usePathname } from "next/navigation";
+
 import { XIcon } from "lucide-react";
+import { AnimatePresence, motion } from "motion/react";
 
 import { Button } from "@/components/ui/button";
 
@@ -28,7 +29,7 @@ export const useAnimatedMobileNavbar = () => {
   const context = useContext(AnimatedMobileNavbarContext);
   if (!context) {
     throw new Error(
-      "useAnimatedMobileNavbar must be used within an AnimatedMobileNavbar",
+      "useAnimatedMobileNavbar must be used within an AnimatedMobileNavbar"
     );
   }
   return context;
@@ -380,8 +381,9 @@ Description: A simple Lazy Mouse Trailer which blends with the content on hover.
 --- file: react/atlasui/blend-mouse-trailer.tsx ---
 "use client";
 
+import { useEffect, useMemo, useState } from "react";
+
 import { motion, useMotionValue, useSpring } from "motion/react";
-import { useEffect, useState, useMemo } from "react";
 
 export const BlendMouseTrailer = ({ isHovered }: { isHovered: boolean }) => {
   const [isVisible, setIsVisible] = useState(false);
@@ -532,8 +534,9 @@ Description: A simple Lazy Blob Mouse Trailer
 --- file: react/atlasui/blob-mouse-trailer.tsx ---
 "use client";
 
-import { motion, useMotionValue, useSpring } from "motion/react";
 import { useEffect, useState } from "react";
+
+import { motion, useMotionValue, useSpring } from "motion/react";
 
 export const BlobMouseTrailer = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -667,9 +670,11 @@ Description: A smooth reveal animation that slides a colored overlay away to int
 --- file: react/atlasui/box-reveal.tsx ---
 "use client";
 
-import { cn } from "@/lib/utils";
+import { useEffect, useRef } from "react";
+
 import { motion, useAnimation, useInView } from "motion/react";
-import { useRef, useEffect } from "react";
+
+import { cn } from "@/lib/utils";
 
 interface BoxRevealProps {
   children: React.ReactNode;
@@ -705,7 +710,7 @@ export const BoxReveal = ({
       className={cn(
         "relative overflow-hidden",
         width === "full" ? "w-full" : "w-fit",
-        className,
+        className
       )}
     >
       <motion.div
@@ -891,6 +896,7 @@ Description: A simple Lazy Dot and Circle Mouse Trailer
 "use client";
 
 import React, { useEffect, useState } from "react";
+
 import { motion, useMotionValue, useSpring } from "motion/react";
 
 export const DotAndCircleMouseTrailer = () => {
@@ -1074,8 +1080,10 @@ Description: A text animation that scrambles letters before revealing the final 
 --- file: react/atlasui/hacker-text.tsx ---
 "use client";
 
-import { Bebas_Neue } from "next/font/google";
 import { useEffect } from "react";
+
+import { Bebas_Neue } from "next/font/google";
+
 import { cn } from "@/lib/utils";
 
 const bebas = Bebas_Neue({ subsets: ["latin"], weight: ["400"] });
@@ -2029,8 +2037,8 @@ c�& 7���w����iLc��P �Jvh�ޅ'C�`&��%�|L�
 "use client";
 
 import { useEffect, useState } from "react";
+
 import { motion } from "motion/react";
-import { cn } from "@/lib/utils";
 
 import {
   fontFive,
@@ -2041,6 +2049,7 @@ import {
   fontThree,
   fontTwo,
 } from "@/fonts/font";
+import { cn } from "@/lib/utils";
 
 const fonts = [
   fontOne.className,
@@ -2091,14 +2100,14 @@ const AnimatedLetter = ({
       () => {
         setFontClass((prev) => getRandomFont(prev));
       },
-      Math.max(100, velocityFont),
+      Math.max(100, velocityFont)
     );
 
     const moveTimer = setInterval(
       () => {
         setPos(getRandomOffset());
       },
-      Math.max(100, velocityMove),
+      Math.max(100, velocityMove)
     );
 
     return () => {
@@ -2136,7 +2145,7 @@ export const LokiTextEffect = ({
     <div
       className={cn(
         "flex flex-wrap justify-center gap-px text-6xl md:text-9xl",
-        className,
+        className
       )}
     >
       {text.split("").map((char, i) => (
@@ -3034,7 +3043,9 @@ Description: A polished navigation bar with a fluid, morphing pill that tracks t
 "use client";
 
 import * as React from "react";
+
 import Link from "next/link";
+
 import { motion } from "motion/react";
 
 import { cn } from "@/lib/utils";
@@ -3199,7 +3210,7 @@ export function MorphNavbarItem({
         className={cn(
           "flex items-center justify-center rounded-full px-4 py-3 font-sans text-xs font-medium transition-colors md:px-7 md:text-base",
           isActive ? "text-neutral-900" : "text-white",
-          className,
+          className
         )}
       >
         {children}
@@ -3469,16 +3480,18 @@ Description: A Notch style trigger that reveals the navigation menu from above.
 --- file: react/atlasui/notch-nav.tsx ---
 "use client";
 
-import { cn } from "@/lib/utils";
-import { AnimatePresence, motion, stagger, type Variants } from "motion/react";
 import {
+  type ReactNode,
   createContext,
   useContext,
   useEffect,
   useRef,
   useState,
-  type ReactNode,
 } from "react";
+
+import { AnimatePresence, type Variants, motion, stagger } from "motion/react";
+
+import { cn } from "@/lib/utils";
 
 interface NotchNavContextValue {
   open: boolean;
@@ -3578,7 +3591,7 @@ const NotchNavTrigger = ({ className }: { className?: string }) => {
         "before:absolute before:top-0 before:-left-[14px] before:h-[15.5px] before:w-[30px] before:bg-[radial-gradient(circle_at_0_100%,transparent_14px,#b3eb14_15px)] before:bg-size-[50%_100%] before:bg-no-repeat before:content-['']",
         "after:absolute after:top-0 after:left-full after:h-[15px] after:w-[30px] after:bg-[radial-gradient(circle_at_100%_100%,transparent_15px,#b3eb14_15px)] after:bg-size-[50%_100%] after:bg-no-repeat after:content-['']",
         open && "-top-px",
-        className,
+        className
       )}
     >
       <motion.svg
@@ -3662,7 +3675,7 @@ const NotchNavContent = ({
           animate={open ? "open" : "closed"}
           className={cn(
             "flex w-[90svw] max-w-96 flex-col gap-2 rounded-4xl bg-[#b3eb14] px-6 py-8",
-            className,
+            className
           )}
         >
           {children}
@@ -3696,7 +3709,7 @@ const NotchNavItem = ({ href, children, className }: NotchNavItemProps) => {
       variants={itemVariants}
       className={cn(
         "group relative flex h-8 flex-col justify-center overflow-hidden border-b border-neutral-900/50 p-1 text-neutral-900 uppercase",
-        className,
+        className
       )}
     >
       <span className="sr-only">{children}</span>
@@ -4134,7 +4147,8 @@ Description: A simple Parallax effect using Motion.
 "use client";
 
 import { useRef } from "react";
-import { motion, MotionValue, useScroll, useTransform } from "motion/react";
+
+import { MotionValue, motion, useScroll, useTransform } from "motion/react";
 
 interface SectionProps {
   scrollYProgress: MotionValue;
@@ -4296,16 +4310,18 @@ Description: A Project Gallery with an interactive modal.
 "use client";
 
 import React, {
-  useState,
-  useRef,
-  useEffect,
   Dispatch,
-  SetStateAction,
   ReactNode,
+  SetStateAction,
+  useEffect,
+  useRef,
+  useState,
 } from "react";
-import { motion, useMotionValue, useSpring } from "motion/react";
+
 import Image from "next/image";
 import Link from "next/link";
+
+import { motion, useMotionValue, useSpring } from "motion/react";
 
 interface ProjectGalleryProps {
   children: ReactNode;
@@ -4347,7 +4363,7 @@ const ProjectGallery = ({ children }: ProjectGalleryProps) => {
               {
                 index,
                 setModal,
-              },
+              }
             );
           }
           return child;
@@ -5275,7 +5291,8 @@ Description: A text reveal effect which progressively reveals text character by 
 "use client";
 
 import { useRef } from "react";
-import { motion, MotionValue, useScroll, useTransform } from "motion/react";
+
+import { MotionValue, motion, useScroll, useTransform } from "motion/react";
 
 interface ScrollBasedCharacterRevealProps {
   text: string;
@@ -5505,6 +5522,7 @@ Description: A text reveal effect which animates the opacity of the text as you 
 "use client";
 
 import { useRef } from "react";
+
 import { motion, useScroll } from "motion/react";
 
 interface ScrollBasedTextRevealProps {
@@ -5611,6 +5629,7 @@ Description: A text reveal effect which progressively reveals text word by word 
 "use client";
 
 import { useRef } from "react";
+
 import { motion, useScroll, useTransform } from "motion/react";
 
 interface ScrollBasedWordRevealProps {
@@ -5784,9 +5803,11 @@ Description: A shiny button with a sleek animation effect.
 --- file: react/atlasui/shiny-button.tsx ---
 "use client";
 
-import { cn } from "@/lib/utils";
-import { motion, MotionProps } from "motion/react";
 import { ButtonHTMLAttributes } from "react";
+
+import { MotionProps, motion } from "motion/react";
+
+import { cn } from "@/lib/utils";
 
 type MergedProps = Omit<
   ButtonHTMLAttributes<HTMLButtonElement>,

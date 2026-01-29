@@ -9,7 +9,7 @@
   "files": [
     {
       "path": "registry/react/examples/blend-mouse-trailer-demo.tsx",
-      "content": "\"use client\";\n\nimport { useState } from \"react\";\nimport { BlendMouseTrailer } from \"@/registry/react/atlasui/blend-mouse-trailer\";\n\nexport const BlendMouseTrailerDemo = () => {\n  const [isHovered, setIsHovered] = useState(false);\n  return (\n    <div className=\"h-full\">\n      <h1\n        onMouseEnter={() => setIsHovered(true)}\n        onMouseLeave={() => setIsHovered(false)}\n        className=\"text-center text-5xl\"\n      >\n        AtlasUI is an open-source library offering a suite of prebuilt animated\n        components for React, Next.js, and Vanilla JS.\n      </h1>\n\n      <BlendMouseTrailer isHovered={isHovered} />\n    </div>\n  );\n};\n",
+      "content": "\"use client\";\n\nimport { useState } from \"react\";\n\nimport { BlendMouseTrailer } from \"@/registry/react/atlasui/blend-mouse-trailer\";\n\nexport const BlendMouseTrailerDemo = () => {\n  const [isHovered, setIsHovered] = useState(false);\n  return (\n    <div className=\"h-full\">\n      <h1\n        onMouseEnter={() => setIsHovered(true)}\n        onMouseLeave={() => setIsHovered(false)}\n        className=\"text-center text-5xl\"\n      >\n        AtlasUI is an open-source library offering a suite of prebuilt animated\n        components for React, Next.js, and Vanilla JS.\n      </h1>\n\n      <BlendMouseTrailer isHovered={isHovered} />\n    </div>\n  );\n};\n",
       "type": "registry:example",
       "target": "components/blend-mouse-trailer-demo.tsx"
     }
