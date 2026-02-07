@@ -98,7 +98,7 @@ export function CommandMenu({ ...props }: DialogProps) {
 
         <Command className="**:data-[slot=command-input-wrapper]:bg-input/50 **:data-[slot=command-input-wrapper]:border-input rounded-none bg-transparent **:data-[slot=command-input]:h-9! **:data-[slot=command-input]:py-0 **:data-[slot=command-input-wrapper]:mb-0 **:data-[slot=command-input-wrapper]:h-9! **:data-[slot=command-input-wrapper]:rounded-md **:data-[slot=command-input-wrapper]:border">
           <div className="relative">
-            <CommandInput placeholder="Type a command or search..." />
+            <CommandInput placeholder="Search documentation..." />
           </div>
           <CommandList className="no-scrollbar min-h-80 scroll-pt-2 scroll-pb-1.5">
             <CommandEmpty>No results found.</CommandEmpty>
