@@ -16,10 +16,10 @@ export const CtaSection = () => {
       viewport={{ once: true, amount: 0.6 }}
       className="px-6 pt-12 pb-24 text-center lg:px-8"
     >
-      <h2 className="mb-4 text-4xl font-bold">
+      <h2 className="mb-4 text-4xl font-bold text-balance">
         Ready to Harness the Strength of Atlas?
       </h2>
-      <p className="mx-auto mb-8 max-w-xl text-gray-400">
+      <p className="mx-auto mb-8 max-w-xl text-balance text-gray-400">
         Build beautiful UIs faster. Drop components straight into your stack.
       </p>
 
