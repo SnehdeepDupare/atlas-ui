@@ -196,7 +196,7 @@ const components = {
       <div className="relative">
         <pre
           className={cn(
-            "mt-6 mb-4 max-h-100 overflow-x-auto rounded-xl bg-zinc-900 py-4 dark:bg-[#1d1d20] dark:ring-1 dark:ring-white/10",
+            "no-scrollbar mt-6 mb-4 max-h-100 overflow-x-auto rounded-xl bg-zinc-900 py-4 dark:bg-[#1d1d20] dark:ring-1 dark:ring-white/10",
             className
           )}
           {...props}
