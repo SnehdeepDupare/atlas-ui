@@ -3,12 +3,16 @@
 import * as React from "react";
 
 import { CheckIcon, CopyIcon } from "lucide-react";
+import { AnimatePresence, motion } from "motion/react";
 
+import { Button } from "@/components/ui/button";
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipTrigger,
+} from "@/components/ui/tooltip";
 import { Event, trackEvent } from "@/lib/events";
 import { cn } from "@/lib/utils";
-
-import { Button } from "./ui/button";
-import { Tooltip, TooltipContent, TooltipTrigger } from "./ui/tooltip";
 
 interface CopyButtonProps extends React.ComponentProps<typeof Button> {
   value: string;
@@ -22,6 +26,19 @@ export async function copyToClipboardWithMeta(value: string, event?: Event) {
     trackEvent(event);
   }
 }
+
+const motionIconVariants = {
+  initial: { opacity: 0, scale: 0.8, filter: "blur(2px)" },
+  animate: { opacity: 1, scale: 1, filter: "blur(0px)" },
+  exit: { opacity: 0, scale: 0.8 },
+};
+
+const motionIconProps = {
+  variants: motionIconVariants,
+  initial: "initial",
+  animate: "animate",
+  exit: "exit",
+};
 
 export function CopyButton({
   value,
@@ -66,8 +83,18 @@ export function CopyButton({
           }}
           {...props}
         >
+          <AnimatePresence mode="popLayout" initial={false}>
+            {hasCopied ? (
+              <motion.span key="copied" {...motionIconProps}>
+                <CheckIcon className="size-4" strokeWidth={3} />
+              </motion.span>
+            ) : (
+              <motion.span key="idle" {...motionIconProps}>
+                <CopyIcon className="size-4" />
+              </motion.span>
+            )}
+          </AnimatePresence>
           <span className="sr-only">Copy</span>
-          {hasCopied ? <CheckIcon /> : <CopyIcon />}
         </Button>
       </TooltipTrigger>
       <TooltipContent>
