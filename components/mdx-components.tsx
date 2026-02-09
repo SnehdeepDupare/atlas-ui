@@ -16,7 +16,13 @@ import { ComponentSource } from "./component-source";
 import { ComponentsList } from "./components-list";
 import { CopyButton } from "./copy-button";
 import { InstallationTabs } from "./installation-tabs";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "./ui/tabs";
+import {
+  Tabs,
+  TabsContent,
+  TabsIndicator,
+  TabsList,
+  TabsTrigger,
+} from "./ui/tabs";
 import { UsageTabs } from "./usage-tabs";
 
 const components = {
@@ -255,7 +261,7 @@ const components = {
   }: React.ComponentProps<typeof TabsList>) => (
     <TabsList
       className={cn(
-        "w-full justify-start rounded-none border-b bg-transparent p-0",
+        "text-muted-foreground relative inline-flex h-10 w-full items-center justify-start rounded-md bg-transparent p-1",
         className
       )}
       {...props}
@@ -267,7 +273,7 @@ const components = {
   }: React.ComponentProps<typeof TabsTrigger>) => (
     <TabsTrigger
       className={cn(
-        "text-muted-foreground data-[state=active]:border-b-primary data-[state=active]:text-foreground relative h-9 rounded-none border-b-2 border-b-transparent bg-transparent px-4 pt-2 pb-3 font-semibold shadow-none transition-none data-[state=active]:shadow-none",
+        "ring-offset-background focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:outline-ring inline-flex items-center justify-center gap-2 rounded-sm px-4 py-1.5 text-sm font-medium whitespace-nowrap transition-all focus-visible:ring-[3px] focus-visible:ring-offset-2 focus-visible:outline-hidden focus-visible:outline-1 disabled:pointer-events-none disabled:opacity-50 data-active:text-emerald-400 [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4",
         className
       )}
       {...props}
@@ -279,7 +285,19 @@ const components = {
   }: React.ComponentProps<typeof TabsContent>) => (
     <TabsContent
       className={cn(
-        "relative [&_h3.font-heading]:text-base [&_h3.font-heading]:font-semibold",
+        "relative flex-1 outline-none [&_h3.font-heading]:text-base [&_h3.font-heading]:font-semibold",
+        className
+      )}
+      {...props}
+    />
+  ),
+  TabsIndicator: ({
+    className,
+    ...props
+  }: React.ComponentProps<typeof TabsIndicator>) => (
+    <TabsIndicator
+      className={cn(
+        "h-0.5 translate-y-0 rounded-none bg-emerald-500 shadow-none dark:bg-emerald-500",
         className
       )}
       {...props}

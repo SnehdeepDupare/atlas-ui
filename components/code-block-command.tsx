@@ -5,7 +5,13 @@ import * as React from "react";
 import { TerminalIcon } from "lucide-react";
 
 import { CopyButton } from "@/components/copy-button";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import {
+  Tabs,
+  TabsContent,
+  TabsIndicator,
+  TabsList,
+  TabsTrigger,
+} from "@/components/ui/tabs";
 import { useConfig } from "@/hooks/use-config";
 import { firaCode } from "@/lib/utils";
 
@@ -59,18 +65,20 @@ export function CodeBlockCommand({
           <div className="flex size-4 items-center justify-center rounded-[1px] bg-white opacity-70">
             <TerminalIcon className="size-3 text-black" />
           </div>
-          <TabsList className="h-8 translate-y-1 gap-3 rounded-none bg-transparent p-0">
+          <TabsList className="h-8 translate-y-1 gap-3 rounded-none bg-transparent p-0 dark:bg-transparent">
             {Object.entries(tabs).map(([key]) => {
               return (
                 <TabsTrigger
                   key={key}
                   value={key}
-                  className={`${firaCode.className} rounded-none border-b border-transparent bg-transparent px-1 pt-1 pb-2 font-mono text-zinc-400 data-[state=active]:border-b-emerald-500 data-[state=active]:bg-transparent data-[state=active]:text-emerald-400 data-[state=active]:shadow-none`}
+                  className={`${firaCode.className} mb-2 rounded-md p-0 px-1 text-zinc-400`}
                 >
                   {key}
                 </TabsTrigger>
               );
             })}
+
+            <TabsIndicator className="h-0.5 translate-y-0 rounded-none shadow-none" />
           </TabsList>
         </div>
         <div className="no-scrollbar overflow-x-auto dark:bg-white/2.5">
@@ -90,17 +98,6 @@ export function CodeBlockCommand({
           })}
         </div>
       </Tabs>
-
-      {/* <Button
-        data-slot="copy-button"
-        size="icon"
-        variant="ghost"
-        className="absolute top-2 right-2 z-10 size-6 text-zinc-50 hover:bg-zinc-700 hover:text-zinc-50 focus-visible:opacity-100"
-        onClick={copyCommand}
-      >
-        <span className="sr-only">Copy</span>
-        {hasCopied ? <CheckIcon /> : <CopyIcon />}
-      </Button> */}
 
       <CopyButton
         value={currentCommand || ""}

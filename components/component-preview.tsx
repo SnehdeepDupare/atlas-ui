@@ -8,7 +8,13 @@ import { RotateCcwIcon } from "lucide-react";
 import ComponentWrapper from "@/components/component-wrapper";
 import { OpenInV0Button } from "@/components/open-in-v0-button";
 import { Button } from "@/components/ui/button";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import {
+  Tabs,
+  TabsContent,
+  TabsIndicator,
+  TabsList,
+  TabsTrigger,
+} from "@/components/ui/tabs";
 import { Index } from "@/registry/__index__";
 
 interface ComponentPreviewProps extends React.HTMLAttributes<HTMLDivElement> {
@@ -46,19 +52,11 @@ export function ComponentPreview({
   return (
     <div className="relative my-4 flex flex-col space-y-2">
       <Tabs defaultValue="preview" className="relative mr-auto w-full">
-        <TabsList className="w-full justify-start rounded-none border-b bg-transparent p-0">
-          <TabsTrigger
-            value="preview"
-            className="text-muted-foreground relative h-10 rounded-none border-b-2 border-b-transparent bg-transparent px-4 pt-2 pb-3 font-semibold shadow-none transition-none data-[state=active]:border-b-emerald-500 data-[state=active]:bg-transparent data-[state=active]:text-emerald-400 data-[state=active]:shadow-none"
-          >
-            Preview
-          </TabsTrigger>
-          <TabsTrigger
-            value="code"
-            className="text-muted-foreground relative h-10 rounded-none border-b-2 border-b-transparent bg-transparent px-4 pt-2 pb-3 font-semibold shadow-none transition-none data-[state=active]:border-b-emerald-500 data-[state=active]:bg-transparent data-[state=active]:text-emerald-400 data-[state=active]:shadow-none"
-          >
-            Code
-          </TabsTrigger>
+        <TabsList className="mb-2 w-full justify-start rounded-none border-b bg-transparent p-0">
+          <TabsTrigger value="preview">Preview</TabsTrigger>
+          <TabsTrigger value="code">Code</TabsTrigger>
+
+          <TabsIndicator className="h-0.5 translate-y-0 rounded-none shadow-none" />
         </TabsList>
         <TabsContent value="preview" className="relative rounded-md">
           <ComponentWrapper overflow={overflow}>
