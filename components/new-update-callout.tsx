@@ -5,9 +5,8 @@ import Link from "next/link";
 import { ChevronRight } from "lucide-react";
 import { motion } from "motion/react";
 
+import { buttonVariants } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
-
-import { buttonVariants } from "./ui/button";
 
 export const NewUpdateCallout = () => {
   return (

@@ -1,14 +1,13 @@
 import * as React from "react";
 import { useState } from "react";
 
+import { Button } from "@/components/ui/button";
 import {
   Collapsible,
   CollapsibleContent,
   CollapsibleTrigger,
 } from "@/components/ui/collapsible";
 import { cn } from "@/lib/utils";
-
-import { Button } from "./ui/button";
 
 interface ComponentSourceProps {
   children?: React.ReactNode;

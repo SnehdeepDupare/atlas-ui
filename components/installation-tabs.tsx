@@ -2,9 +2,13 @@
 
 import * as React from "react";
 
+import {
+  Tabs,
+  TabsIndicator,
+  TabsList,
+  TabsTrigger,
+} from "@/components/ui/tabs";
 import { useConfig } from "@/hooks/use-config";
-
-import { Tabs, TabsIndicator, TabsList, TabsTrigger } from "./ui/tabs";
 
 export const InstallationTabs = ({
   children,

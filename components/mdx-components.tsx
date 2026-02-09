@@ -6,24 +6,23 @@ import { useMDXComponent } from "next-contentlayer2/hooks";
 import Image from "next/image";
 import Link from "next/link";
 
-import { Event } from "@/lib/events";
-import { cn, firaCode } from "@/lib/utils";
-
-import { Callout } from "./callout";
-import { CodeBlockCommand } from "./code-block-command";
-import { ComponentPreview } from "./component-preview";
-import { ComponentSource } from "./component-source";
-import { ComponentsList } from "./components-list";
-import { CopyButton } from "./copy-button";
-import { InstallationTabs } from "./installation-tabs";
+import { Callout } from "@/components/callout";
+import { CodeBlockCommand } from "@/components/code-block-command";
+import { ComponentPreview } from "@/components/component-preview";
+import { ComponentSource } from "@/components/component-source";
+import { ComponentsList } from "@/components/components-list";
+import { CopyButton } from "@/components/copy-button";
+import { InstallationTabs } from "@/components/installation-tabs";
 import {
   Tabs,
   TabsContent,
   TabsIndicator,
   TabsList,
   TabsTrigger,
-} from "./ui/tabs";
-import { UsageTabs } from "./usage-tabs";
+} from "@/components/ui/tabs";
+import { UsageTabs } from "@/components/usage-tabs";
+import { Event } from "@/lib/events";
+import { cn, firaCode } from "@/lib/utils";
 
 const components = {
   h1: ({ className, ...props }: React.HTMLAttributes<HTMLHeadingElement>) => (

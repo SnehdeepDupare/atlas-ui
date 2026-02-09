@@ -8,6 +8,7 @@ import {
 } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
+import { ButtonGroup } from "@/components/ui/button-group";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -15,8 +16,6 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { useCopyToClipboard } from "@/hooks/use-copy-to-clipboard";
-
-import { ButtonGroup } from "./ui/button-group";
 
 const getPromptUrl = (baseURL: string, url: string) => {
   return `${baseURL}?q=${encodeURIComponent(
