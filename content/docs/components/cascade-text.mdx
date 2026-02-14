@@ -1,0 +1,331 @@
+---
+title: Cascade Text
+description: A smooth line-by-line text reveal animation.
+---
+
+<ComponentPreview name="cascade-text-demo" />
+
+## Installation
+
+<UsageTabs>
+
+<TabsContent value="React">
+
+<InstallationTabs>
+
+<TabsContent value="cli">
+
+```bash
+npx shadcn@latest add https://atlasui.dev/r/cascade-text.json
+```
+
+</TabsContent>
+
+<TabsContent value="manual">
+
+<Steps>
+
+<Step>Install the following dependencies:</Step>
+
+```bash
+npm install motion
+```
+
+<Step>Copy and paste the following code into your project.</Step>
+
+<ComponentSource name="cascade-text" filePath="components/cascade-text.tsx" />
+
+<Step>Update the import paths to match your project setup.</Step>
+
+</Steps>
+
+</TabsContent>
+
+</InstallationTabs>
+
+</TabsContent>
+
+<TabsContent value="HTML">
+
+<InstallationTabs>
+
+<TabsContent value="cli">
+
+```bash
+npx shadcn@latest add https://atlasui.dev/r/cascade-text-html.json
+```
+
+</TabsContent>
+
+<TabsContent value="manual">
+
+<Steps>
+
+<Step>Copy and paste the following `script.js` into your project.</Step>
+
+```js
+import { animate, cubicBezier, inView, stagger } from "motion";
+
+const REVEAL_EASE = cubicBezier(0.165, 0.84, 0.44, 1);
+const SCROLL_MARGIN = "0px 0px -25% 0px";
+const reduceMotionQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
+
+const splitIntoLines = (element, reduceMotion) => {
+  const text = (element.textContent ?? "").trim();
+
+  if (!text) {
+    element.textContent = "";
+    return [];
+  }
+
+  const words = text.split(/\s+/).filter(Boolean);
+  const fragment = document.createDocumentFragment();
+  const wordSpans = [];
+
+  for (let index = 0; index < words.length; index += 1) {
+    const wordSpan = document.createElement("span");
+    wordSpan.textContent = words[index];
+    wordSpan.style.display = "inline-block";
+
+    wordSpans.push(wordSpan);
+    fragment.appendChild(wordSpan);
+
+    if (index < words.length - 1) {
+      fragment.appendChild(document.createTextNode(" "));
+    }
+  }
+
+  element.textContent = "";
+  element.appendChild(fragment);
+
+  const linesText = [];
+  let currentTop = null;
+  let currentWords = [];
+
+  wordSpans.forEach((span) => {
+    const top = span.offsetTop;
+    const value = span.textContent ?? "";
+
+    if (currentTop === null) {
+      currentTop = top;
+      currentWords.push(value);
+      return;
+    }
+
+    if (top !== currentTop) {
+      linesText.push(currentWords.join(" "));
+      currentWords = [value];
+      currentTop = top;
+      return;
+    }
+
+    currentWords.push(value);
+  });
+
+  if (currentWords.length > 0) {
+    linesText.push(currentWords.join(" "));
+  }
+
+  element.textContent = "";
+
+  const lines = [];
+
+  linesText.forEach((lineText) => {
+    const mask = document.createElement("span");
+    mask.setAttribute("data-mask", "");
+
+    const line = document.createElement("span");
+    line.setAttribute("data-line", "");
+    line.textContent = lineText;
+
+    if (reduceMotion) {
+      line.style.opacity = "0";
+      line.style.willChange = "opacity";
+    } else {
+      line.style.transform = "translateY(100%)";
+    }
+
+    mask.appendChild(line);
+    element.appendChild(mask);
+    lines.push(line);
+  });
+
+  return lines;
+};
+
+const prepareElement = (element, reduceMotion) => {
+  const lines = splitIntoLines(element, reduceMotion);
+  const textIndent = window.getComputedStyle(element).textIndent;
+
+  if (textIndent !== "0px" && lines.length > 0) {
+    lines[0].style.paddingLeft = textIndent;
+    element.style.textIndent = "0";
+  }
+
+  return lines;
+};
+
+const animateLines = (lines, startDelay, reduceMotion) => {
+  if (lines.length === 0) {
+    return;
+  }
+
+  return reduceMotion
+    ? animate(
+        lines,
+        { opacity: [0, 1] },
+        {
+          duration: 0.28,
+          delay: stagger(0.06, { startDelay }),
+          ease: "easeOut",
+        }
+      )
+    : animate(
+        lines,
+        { y: ["100%", "0%"] },
+        {
+          duration: 1,
+          delay: stagger(0.1, { startDelay }),
+          ease: REVEAL_EASE,
+        }
+      );
+};
+
+document.querySelectorAll("[data-cascade-text]").forEach((element) => {
+  const delay = Number.parseFloat(element.dataset.delay ?? "0") || 0;
+  const animateOnScroll = element.dataset.animateOnScroll !== "false";
+  const reduceMotion = reduceMotionQuery.matches;
+  const lines = prepareElement(element, reduceMotion);
+
+  const run = () => animateLines(lines, delay, reduceMotion);
+
+  if (!animateOnScroll) {
+    run();
+    return;
+  }
+
+  let stopInView;
+  stopInView = inView(
+    element,
+    () => {
+      run();
+      stopInView?.();
+    },
+    { margin: SCROLL_MARGIN }
+  );
+});
+```
+
+<Step>Add `style.css`</Step>
+
+```css
+/* These are the only styles you need, you can customize other as per your needs */
+[data-mask] {
+  display: block;
+  overflow: hidden;
+}
+
+[data-line] {
+  display: block;
+  will-change: transform;
+}
+
+/* Optional - you can customize these as needed */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100svh;
+  padding: 4rem 1.25rem;
+  background-color: #18181b;
+  color: #fff;
+  font-family: "Inter", sans-serif;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+p {
+  font-size: clamp(1rem, 1.15vw + 0.8rem, 1.25rem);
+  line-height: 1.45;
+  margin-block: 1rem;
+}
+```
+
+</Steps>
+
+</TabsContent>
+
+</InstallationTabs>
+
+</TabsContent>
+
+</UsageTabs>
+
+## Usage
+
+<UsageTabs>
+
+<TabsContent value="React">
+
+```tsx
+import { CascadeText } from "@/components/cascade-text";
+```
+
+```tsx
+<CascadeText>
+  <h1>Your text here</h1>
+</CascadeText>
+
+<CascadeText>
+  <p>Your description here</p>
+</CascadeText>
+
+<CascadeText>
+  {/* Pass any text element */}
+</CascadeText>
+```
+
+</TabsContent>
+
+<TabsContent value="HTML">
+
+Pass any text element with the `data-cascade-text` attribute to animate it.
+
+```html
+<h1 data-cascade-text>Your text here</h1>
+
+<p data-cascade-text>Your description here</p>
+```
+
+</TabsContent>
+
+</UsageTabs>
+
+## Props / Data Attributes
+
+<UsageTabs>
+
+<TabsContent value="React">
+
+| Prop              | Type              | Default | Description                                                               |
+| ----------------- | ----------------- | ------- | ------------------------------------------------------------------------- |
+| `children`        | `React.ReactNode` | -       | The text content to animate                                               |
+| `animateOnScroll` | `boolean`         | `true`  | Whether to animate on scroll, if set to false it will animate immediately |
+| `delay`           | `number`          | `0`     | Delay before the animation starts                                         |
+
+</TabsContent>
+
+<TabsContent value="HTML">
+
+| Data Attribute           | Type      | Default | Description                                                               |
+| ------------------------ | --------- | ------- | ------------------------------------------------------------------------- |
+| `data-cascade-text`      | `string`  | -       | The text content to animate                                               |
+| `data-animate-on-scroll` | `boolean` | `true`  | Whether to animate on scroll, if set to false it will animate immediately |
+| `data-delay`             | `number`  | `0`     | Delay before the animation starts                                         |
+
+</TabsContent>
+
+</UsageTabs>

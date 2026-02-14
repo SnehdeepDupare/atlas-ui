@@ -15,7 +15,7 @@
     },
     {
       "path": "registry/html/box-reveal/style.css",
-      "content": "* {\r\n  margin: 0;\r\n  padding: 0;\r\n}\r\n\r\nbody {\r\n  background-color: #18181b;\r\n  color: #fff;\r\n  display: flex;\r\n  flex-direction: column;\r\n  gap: 2rem;\r\n  align-items: center;\r\n  justify-content: center;\r\n  min-height: 100svh;\r\n  font-size: x-large;\r\n}\r\n\r\n#box-reveal {\r\n  position: relative;\r\n  overflow: hidden;\r\n}\r\n\r\n.box-reveal-overlay {\r\n  position: absolute;\r\n  inset: 0;\r\n  top: 0.25rem;\r\n  bottom: 0.25rem;\r\n  pointer-events: none;\r\n  z-index: 20;\r\n}\r\n\r\n.box-reveal-content {\r\n  position: relative;\r\n  z-index: 10;\r\n}\r\n",
+      "content": "* {\n  margin: 0;\n  padding: 0;\n}\n\nbody {\n  background-color: #18181b;\n  color: #fff;\n  display: flex;\n  flex-direction: column;\n  gap: 2rem;\n  align-items: center;\n  justify-content: center;\n  min-height: 100svh;\n  font-size: x-large;\n}\n\n#box-reveal {\n  position: relative;\n  overflow: hidden;\n}\n\n.box-reveal-overlay {\n  position: absolute;\n  inset: 0;\n  top: 0.25rem;\n  bottom: 0.25rem;\n  pointer-events: none;\n  z-index: 20;\n}\n\n.box-reveal-content {\n  position: relative;\n  z-index: 10;\n}\n",
       "type": "registry:file",
       "target": "~/box-reveal/style.css"
     },

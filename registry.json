@@ -329,6 +329,21 @@
       "type": "registry:component"
     },
     {
+      "name": "cascade-text",
+      "title": "Cascade Text",
+      "description": "A smooth line-by-line text reveal animation.",
+      "dependencies": [
+        "motion"
+      ],
+      "files": [
+        {
+          "path": "registry/react/atlasui/cascade-text.tsx",
+          "type": "registry:component"
+        }
+      ],
+      "type": "registry:component"
+    },
+    {
       "name": "animated-mobile-navbar-demo",
       "title": "Animated Mobile Navbar Demo",
       "description": "Example showcasing the Animated Mobile Navbar component.",
@@ -642,6 +657,22 @@
           "path": "registry/react/examples/morph-navbar-demo.tsx",
           "type": "registry:example",
           "target": "components/morph-navbar-demo.tsx"
+        }
+      ],
+      "type": "registry:example"
+    },
+    {
+      "name": "cascade-text-demo",
+      "title": "Cascade Text Demo",
+      "description": "Example of Cascade Text with a smooth line-by-line reveal.",
+      "registryDependencies": [
+        "https://atlasui.dev/r/cascade-text.json"
+      ],
+      "files": [
+        {
+          "path": "registry/react/examples/cascade-text-demo.tsx",
+          "type": "registry:example",
+          "target": "components/cascade-text-demo.tsx"
         }
       ],
       "type": "registry:example"
