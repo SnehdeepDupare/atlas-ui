@@ -264,6 +264,8 @@ p {
 
 </UsageTabs>
 
+We recommend pairing `CascadeText` with smooth scroll like [`lenis`](https://github.com/darkroomengineering/lenis?tab=readme-ov-file#installation) for the best effect.
+
 ## Usage
 
 <UsageTabs>
@@ -310,21 +312,21 @@ Pass any text element with the `data-cascade-text` attribute to animate it.
 
 <TabsContent value="React">
 
-| Prop              | Type              | Default | Description                                                               |
-| ----------------- | ----------------- | ------- | ------------------------------------------------------------------------- |
-| `children`        | `React.ReactNode` | -       | The text content to animate                                               |
-| `animateOnScroll` | `boolean`         | `true`  | Whether to animate on scroll, if set to false it will animate immediately |
-| `delay`           | `number`          | `0`     | Delay before the animation starts                                         |
+| Prop              | Type              | Default | Description                                                                                                                                                                                   |
+| ----------------- | ----------------- | ------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `children`        | `React.ReactNode` | -       | The text content to animate                                                                                                                                                                   |
+| `animateOnScroll` | `boolean`         | `true`  | Controls when the animation starts. When `true`, the animation triggers as the element enters the viewport (around the lower 75% of the screen). When `false`, it plays immediately on mount. |
+| `delay`           | `number`          | `0`     | Delay before the animation starts                                                                                                                                                             |
 
 </TabsContent>
 
 <TabsContent value="HTML">
 
-| Data Attribute           | Type      | Default | Description                                                               |
-| ------------------------ | --------- | ------- | ------------------------------------------------------------------------- |
-| `data-cascade-text`      | `string`  | -       | The text content to animate                                               |
-| `data-animate-on-scroll` | `boolean` | `true`  | Whether to animate on scroll, if set to false it will animate immediately |
-| `data-delay`             | `number`  | `0`     | Delay before the animation starts                                         |
+| Data Attribute           | Type      | Default | Description                                                                                                                                                                                   |
+| ------------------------ | --------- | ------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `data-cascade-text`      | `string`  | -       | The text content to animate                                                                                                                                                                   |
+| `data-animate-on-scroll` | `boolean` | `true`  | Controls when the animation starts. When `true`, the animation triggers as the element enters the viewport (around the lower 75% of the screen). When `false`, it plays immediately on mount. |
+| `data-delay`             | `number`  | `0`     | Delay before the animation starts                                                                                                                                                             |
 
 </TabsContent>
 
