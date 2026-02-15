@@ -1170,6 +1170,35 @@
       "type": "registry:file"
     },
     {
+      "name": "cascade-text-html",
+      "title": "Cascade Text",
+      "description": "A smooth line-by-line text reveal animation built with HTML, CSS, JavaScript and Motion.",
+      "dependencies": [
+        "motion"
+      ],
+      "files": [
+        {
+          "path": "registry/html/cascade-text/index.html",
+          "type": "registry:file",
+          "target": "~/cascade-text/index.html"
+        },
+        {
+          "path": "registry/html/cascade-text/style.css",
+          "type": "registry:file",
+          "target": "~/cascade-text/style.css"
+        },
+        {
+          "path": "registry/html/cascade-text/script.js",
+          "type": "registry:file",
+          "target": "~/cascade-text/script.js"
+        }
+      ],
+      "meta": {
+        "framework": "html"
+      },
+      "type": "registry:file"
+    },
+    {
       "name": "utils",
       "dependencies": [
         "clsx",
