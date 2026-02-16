@@ -13,7 +13,7 @@
     },
     {
       "path": "registry/html/hacker-text/style.css",
-      "content": "body {\r\n  margin: 0;\r\n  padding: 0;\r\n  height: 100vh;\r\n  width: 100%;\r\n  background: #18181b;\r\n  display: flex;\r\n  align-items: center;\r\n  justify-content: center;\r\n}\r\n\r\n.hacker-text {\r\n  font-family: \"Bebas Neue\", sans-serif;\r\n  text-transform: uppercase;\r\n  font-size: 4rem;\r\n  cursor: pointer;\r\n  color: #fff;\r\n}\r\n",
+      "content": "body {\n  margin: 0;\n  padding: 0;\n  height: 100vh;\n  width: 100%;\n  background: #18181b;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n}\n\n.hacker-text {\n  font-family: \"Bebas Neue\", sans-serif;\n  text-transform: uppercase;\n  font-size: 4rem;\n  cursor: pointer;\n  color: #fff;\n}\n",
       "type": "registry:file",
       "target": "~/hacker-text/style.css"
     },

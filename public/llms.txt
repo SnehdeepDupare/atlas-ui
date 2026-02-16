@@ -21,6 +21,7 @@ Always use the HTML implementation listed below.
 - [Blend Mouse Trailer](https://www.atlasui.dev/docs/components/blend-mouse-trailer): A simple Lazy Mouse Trailer which blends with the content on hover.
 - [Blob Mouse Trailer](https://www.atlasui.dev/docs/components/blob-mouse-trailer): A simple Lazy Blob Mouse Trailer
 - [Box Reveal](https://www.atlasui.dev/docs/components/box-reveal): A smooth reveal animation that slides a colored overlay away to introduce content as it enters the viewport.
+- [Cascade Text](https://www.atlasui.dev/docs/components/cascade-text): A smooth line-by-line text reveal animation.
 - [Dot And Circle Mouse Trailer](https://www.atlasui.dev/docs/components/dot-and-circle-mouse-trailer): A simple Lazy Dot and Circle Mouse Trailer
 - [Hacker Text](https://www.atlasui.dev/docs/components/hacker-text): A text animation that scrambles letters before revealing the final text.
 - [Loki Text Effect](https://www.atlasui.dev/docs/components/loki-text-effect): The iconic text animation from the Loki series intro.
@@ -53,6 +54,7 @@ HTML implementations are documented on the same component pages under the HTML t
 - [Blend Mouse Trailer](https://github.com/SnehdeepDupare/atlas-ui/blob/master/registry/react/atlasui/blend-mouse-trailer.tsx): Source code
 - [Blob Mouse Trailer](https://github.com/SnehdeepDupare/atlas-ui/blob/master/registry/react/atlasui/blob-mouse-trailer.tsx): Source code
 - [Box Reveal](https://github.com/SnehdeepDupare/atlas-ui/blob/master/registry/react/atlasui/box-reveal.tsx): Source code
+- [Cascade Text](https://github.com/SnehdeepDupare/atlas-ui/blob/master/registry/react/atlasui/cascade-text.tsx): Source code
 - [Dot And Circle Mouse Trailer](https://github.com/SnehdeepDupare/atlas-ui/blob/master/registry/react/atlasui/dot-and-circle-mouse-trailer.tsx): Source code
 - [Hacker Text](https://github.com/SnehdeepDupare/atlas-ui/blob/master/registry/react/atlasui/hacker-text.tsx): Source code
 - [Loki Text Effect](https://github.com/SnehdeepDupare/atlas-ui/blob/master/registry/react/atlasui/loki-text-effect.tsx): Source code
@@ -86,6 +88,10 @@ Do not treat individual files as standalone implementations.
   - [HTML](https://github.com/SnehdeepDupare/atlas-ui/blob/master/registry/html/box-reveal/index.html)
   - [JavaScript](https://github.com/SnehdeepDupare/atlas-ui/blob/master/registry/html/box-reveal/script.js)
   - [CSS](https://github.com/SnehdeepDupare/atlas-ui/blob/master/registry/html/box-reveal/style.css)
+- Cascade Text (HTML)
+  - [HTML](https://github.com/SnehdeepDupare/atlas-ui/blob/master/registry/html/cascade-text/index.html)
+  - [JavaScript](https://github.com/SnehdeepDupare/atlas-ui/blob/master/registry/html/cascade-text/script.js)
+  - [CSS](https://github.com/SnehdeepDupare/atlas-ui/blob/master/registry/html/cascade-text/style.css)
 - Dot And Circle Mouse Trailer (HTML)
   - [HTML](https://github.com/SnehdeepDupare/atlas-ui/blob/master/registry/html/dot-and-circle-mouse-trailer/index.html)
   - [JavaScript](https://github.com/SnehdeepDupare/atlas-ui/blob/master/registry/html/dot-and-circle-mouse-trailer/script.js)
@@ -157,6 +163,7 @@ Do not treat individual files as standalone implementations.
 - [Box Reveal Demo](https://github.com/SnehdeepDupare/atlas-ui/blob/master/registry/react/examples/box-reveal-demo.tsx): Example usage
 - [Notch Nav Demo](https://github.com/SnehdeepDupare/atlas-ui/blob/master/registry/react/examples/notch-nav-demo.tsx): Example usage
 - [Morph Navbar Demo](https://github.com/SnehdeepDupare/atlas-ui/blob/master/registry/react/examples/morph-navbar-demo.tsx): Example usage
+- [Cascade Text Demo](https://github.com/SnehdeepDupare/atlas-ui/blob/master/registry/react/examples/cascade-text-demo.tsx): Example usage
 
 ## Optional
 

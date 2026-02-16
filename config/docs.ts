@@ -137,6 +137,12 @@ export const docsConfig: DocsConfig = {
           items: [],
         },
         {
+          title: "Cascade Text",
+          href: "/docs/components/cascade-text",
+          items: [],
+          label: "New",
+        },
+        {
           title: "Reveal Effect",
           href: "/docs/components/reveal-effect",
           items: [],

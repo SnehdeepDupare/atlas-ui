@@ -15,7 +15,7 @@
     },
     {
       "path": "registry/html/parallax-sections/style.css",
-      "content": "* {\r\n  box-sizing: border-box;\r\n  margin: 0;\r\n  padding: 0;\r\n}\r\n\r\nbody,\r\nhtml {\r\n  font-family: sans-serif;\r\n  position: relative;\r\n}\r\n\r\n#parallax-container {\r\n  width: 100%;\r\n  height: 200vh;\r\n  position: relative;\r\n}\r\n\r\n.section1 {\r\n  position: sticky;\r\n  top: 0;\r\n  background-color: #404040;\r\n  height: 100vh;\r\n  display: flex;\r\n  align-items: center;\r\n  justify-content: center;\r\n  will-change: transform;\r\n}\r\n\r\n.section2 {\r\n  background-color: #ef4444;\r\n  position: relative;\r\n  height: 100vh;\r\n  display: flex;\r\n  align-items: center;\r\n  justify-content: center;\r\n  will-change: transform;\r\n}\r\n\r\nh1 {\r\n  font-size: 3rem;\r\n  font-weight: bold;\r\n  color: white;\r\n}\r\n",
+      "content": "* {\n  box-sizing: border-box;\n  margin: 0;\n  padding: 0;\n}\n\nbody,\nhtml {\n  font-family: sans-serif;\n  position: relative;\n}\n\n#parallax-container {\n  width: 100%;\n  height: 200vh;\n  position: relative;\n}\n\n.section1 {\n  position: sticky;\n  top: 0;\n  background-color: #404040;\n  height: 100vh;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  will-change: transform;\n}\n\n.section2 {\n  background-color: #ef4444;\n  position: relative;\n  height: 100vh;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  will-change: transform;\n}\n\nh1 {\n  font-size: 3rem;\n  font-weight: bold;\n  color: white;\n}\n",
       "type": "registry:file",
       "target": "~/parallax-sections/style.css"
     },

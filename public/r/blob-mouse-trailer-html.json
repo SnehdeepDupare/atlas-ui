@@ -13,7 +13,7 @@
     },
     {
       "path": "registry/html/blob-mouse-trailer/style.css",
-      "content": "body {\r\n  margin: 0;\r\n  padding: 0;\r\n  height: 100vh;\r\n  width: 100%;\r\n  background: #18181b;\r\n}\r\n\r\n.trailer {\r\n  position: fixed;\r\n  height: 24rem;\r\n  aspect-ratio: 1;\r\n  background: linear-gradient(to right, #a855f7, #f59e0b);\r\n  border-radius: 50%;\r\n  left: 0;\r\n  top: 0;\r\n  transform: translate(-50%, -50%);\r\n  transform-origin: center;\r\n  pointer-events: none;\r\n  z-index: -10;\r\n  filter: blur(100px);\r\n  animation: rotate 10s infinite;\r\n}\r\n\r\n@keyframes rotate {\r\n  from {\r\n    transform: translate(-50%, -50%) rotate(0deg);\r\n  }\r\n  to {\r\n    transform: translate(-50%, -50%) rotate(360deg);\r\n  }\r\n}\r\n",
+      "content": "body {\n  margin: 0;\n  padding: 0;\n  height: 100vh;\n  width: 100%;\n  background: #18181b;\n}\n\n.trailer {\n  position: fixed;\n  height: 24rem;\n  aspect-ratio: 1;\n  background: linear-gradient(to right, #a855f7, #f59e0b);\n  border-radius: 50%;\n  left: 0;\n  top: 0;\n  transform: translate(-50%, -50%);\n  transform-origin: center;\n  pointer-events: none;\n  z-index: -10;\n  filter: blur(100px);\n  animation: rotate 10s infinite;\n}\n\n@keyframes rotate {\n  from {\n    transform: translate(-50%, -50%) rotate(0deg);\n  }\n  to {\n    transform: translate(-50%, -50%) rotate(360deg);\n  }\n}\n",
       "type": "registry:file",
       "target": "~/blob-mouse-trailer/style.css"
     },

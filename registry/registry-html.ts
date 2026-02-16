@@ -485,4 +485,32 @@ export const html: Registry["items"] = [
       },
     ],
   },
+  {
+    name: "cascade-text-html",
+    type: "registry:file",
+    title: "Cascade Text",
+    description:
+      "A smooth line-by-line text reveal animation built with HTML, CSS, JavaScript and Motion.",
+    meta: {
+      framework: "html",
+    },
+    dependencies: ["motion"],
+    files: [
+      {
+        path: "html/cascade-text/index.html",
+        type: "registry:file",
+        target: "~/cascade-text/index.html",
+      },
+      {
+        path: "html/cascade-text/style.css",
+        type: "registry:file",
+        target: "~/cascade-text/style.css",
+      },
+      {
+        path: "html/cascade-text/script.js",
+        type: "registry:file",
+        target: "~/cascade-text/script.js",
+      },
+    ],
+  },
 ];

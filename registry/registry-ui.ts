@@ -281,4 +281,17 @@ export const ui: Registry["items"] = [
       },
     ],
   },
+  {
+    name: "cascade-text",
+    type: "registry:component",
+    title: "Cascade Text",
+    description: "A smooth line-by-line text reveal animation.",
+    dependencies: ["motion"],
+    files: [
+      {
+        path: "react/atlasui/cascade-text.tsx",
+        type: "registry:component",
+      },
+    ],
+  },
 ];

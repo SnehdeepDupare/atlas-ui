@@ -298,4 +298,18 @@ export const examples: Registry["items"] = [
       },
     ],
   },
+  {
+    name: "cascade-text-demo",
+    type: "registry:example",
+    title: "Cascade Text Demo",
+    description: "Example of Cascade Text with a smooth line-by-line reveal.",
+    registryDependencies: ["https://atlasui.dev/r/cascade-text.json"],
+    files: [
+      {
+        path: "react/examples/cascade-text-demo.tsx",
+        type: "registry:example",
+        target: "components/cascade-text-demo.tsx",
+      },
+    ],
+  },
 ];
