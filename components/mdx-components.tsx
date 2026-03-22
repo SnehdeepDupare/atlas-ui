@@ -284,7 +284,7 @@ const components = {
   }: React.ComponentProps<typeof TabsContent>) => (
     <TabsContent
       className={cn(
-        "relative flex-1 outline-none [&_h3.font-heading]:text-base [&_h3.font-heading]:font-semibold",
+        "relative flex-1 outline-none [&_h3.font-heading]:text-base [&_h3.font-heading]:font-semibold [&_p]:mt-6",
         className
       )}
       {...props}

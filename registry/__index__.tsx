@@ -336,6 +336,23 @@ export const Index: Record<string, any> = {
     }),
     meta: undefined,
   },
+  "letter-swap": {
+    name: "letter-swap",
+    description: "A text animation that swaps the letters vertically on hover.",
+    type: "registry:component",
+    registryDependencies: ["utils"],
+    files: [{
+      path: "registry/react/atlasui/letter-swap.tsx",
+      type: "registry:component",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/react/atlasui/letter-swap.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: undefined,
+  },
   "animated-mobile-navbar-demo": {
     name: "animated-mobile-navbar-demo",
     description: "Example showcasing the Animated Mobile Navbar component.",
@@ -688,6 +705,23 @@ export const Index: Record<string, any> = {
     }],
     component: React.lazy(async () => {
       const mod = await import("@/registry/react/examples/cascade-text-demo.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: undefined,
+  },
+  "letter-swap-demo": {
+    name: "letter-swap-demo",
+    description: "Example of Letter Swap that swaps the letters vertically on hover.",
+    type: "registry:example",
+    registryDependencies: ["https://atlasui.dev/r/letter-swap.json"],
+    files: [{
+      path: "registry/react/examples/letter-swap-demo.tsx",
+      type: "registry:example",
+      target: "components/letter-swap-demo.tsx"
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/react/examples/letter-swap-demo.tsx")
       const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
       return { default: mod.default || mod[exportName] }
     }),

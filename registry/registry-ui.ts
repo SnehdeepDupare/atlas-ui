@@ -294,4 +294,18 @@ export const ui: Registry["items"] = [
       },
     ],
   },
+  {
+    name: "letter-swap",
+    type: "registry:component",
+    title: "Letter Swap",
+    description: "A text animation that swaps the letters vertically on hover.",
+    dependencies: ["motion"],
+    registryDependencies: ["utils"],
+    files: [
+      {
+        path: "react/atlasui/letter-swap.tsx",
+        type: "registry:component",
+      },
+    ],
+  },
 ];

@@ -312,4 +312,19 @@ export const examples: Registry["items"] = [
       },
     ],
   },
+  {
+    name: "letter-swap-demo",
+    type: "registry:example",
+    title: "Letter Swap Demo",
+    description:
+      "Example of Letter Swap that swaps the letters vertically on hover.",
+    registryDependencies: ["https://atlasui.dev/r/letter-swap.json"],
+    files: [
+      {
+        path: "react/examples/letter-swap-demo.tsx",
+        type: "registry:example",
+        target: "components/letter-swap-demo.tsx",
+      },
+    ],
+  },
 ];

@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "letter-swap-demo",
+  "title": "Letter Swap Demo",
+  "description": "Example of Letter Swap that swaps the letters vertically on hover.",
+  "registryDependencies": [
+    "https://atlasui.dev/r/letter-swap.json"
+  ],
+  "files": [
+    {
+      "path": "registry/react/examples/letter-swap-demo.tsx",
+      "content": "import { LetterSwap } from \"@/registry/react/atlasui/letter-swap\";\n\nexport const LetterSwapDemo = () => {\n  return (\n    <div className=\"flex flex-col gap-6 p-10\">\n      <LetterSwap text=\"Hover me!\" className=\"text-3xl font-medium\" />\n\n      <LetterSwap\n        text=\"Feature, not a bug\"\n        className=\"text-3xl font-medium\"\n        reverse\n      />\n\n      <LetterSwap\n        text=\"Elegant chaos in production\"\n        className=\"text-3xl font-medium italic\"\n        reverse\n        staggerFrom=\"last\"\n      />\n\n      <LetterSwap\n        text=\"Fast, fragile, fantastic\"\n        className=\"text-3xl font-medium\"\n        staggerFrom=\"center\"\n      />\n\n      <LetterSwap\n        text=\"Deploy now, panic later\"\n        className=\"font-mono text-3xl font-medium\"\n        staggerDuration={0}\n      />\n    </div>\n  );\n};\n",
+      "type": "registry:example",
+      "target": "components/letter-swap-demo.tsx"
+    }
+  ],
+  "type": "registry:example"
+}

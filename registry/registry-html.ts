@@ -513,4 +513,32 @@ export const html: Registry["items"] = [
       },
     ],
   },
+  {
+    name: "letter-swap-html",
+    type: "registry:file",
+    title: "Letter Swap",
+    description:
+      "A text animation that swaps the letters vertically on hover, built with HTML, CSS, JavaScript and Motion.",
+    meta: {
+      framework: "html",
+    },
+    dependencies: ["motion"],
+    files: [
+      {
+        path: "html/letter-swap/index.html",
+        type: "registry:file",
+        target: "~/letter-swap/index.html",
+      },
+      {
+        path: "html/letter-swap/style.css",
+        type: "registry:file",
+        target: "~/letter-swap/style.css",
+      },
+      {
+        path: "html/letter-swap/script.js",
+        type: "registry:file",
+        target: "~/letter-swap/script.js",
+      },
+    ],
+  },
 ];

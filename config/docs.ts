@@ -143,6 +143,12 @@ export const docsConfig: DocsConfig = {
           label: "New",
         },
         {
+          title: "Letter Swap",
+          href: "/docs/components/letter-swap",
+          items: [],
+          label: "New",
+        },
+        {
           title: "Reveal Effect",
           href: "/docs/components/reveal-effect",
           items: [],
