@@ -70,6 +70,12 @@ export const docsConfig: DocsConfig = {
       title: "Components",
       items: [
         {
+          title: "Warp Slider",
+          href: "/docs/components/warp-slider",
+          items: [],
+          label: "New",
+        },
+        {
           title: "Notch Nav",
           href: "/docs/components/notch-nav",
           items: [],

@@ -353,6 +353,23 @@ export const Index: Record<string, any> = {
     }),
     meta: undefined,
   },
+  "warp-slider": {
+    name: "warp-slider",
+    description: "A smooth, infinite slider with dynamic warp distortion and momentum based scrolling.",
+    type: "registry:component",
+    registryDependencies: undefined,
+    files: [{
+      path: "registry/react/atlasui/warp-slider.tsx",
+      type: "registry:component",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/react/atlasui/warp-slider.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: undefined,
+  },
   "animated-mobile-navbar-demo": {
     name: "animated-mobile-navbar-demo",
     description: "Example showcasing the Animated Mobile Navbar component.",
@@ -722,6 +739,40 @@ export const Index: Record<string, any> = {
     }],
     component: React.lazy(async () => {
       const mod = await import("@/registry/react/examples/letter-swap-demo.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: undefined,
+  },
+  "warp-slider-demo": {
+    name: "warp-slider-demo",
+    description: "Example of a smooth, infinite slider with dynamic warp distortion and momentum based scrolling.",
+    type: "registry:example",
+    registryDependencies: ["https://atlasui.dev/r/warp-slider.json"],
+    files: [{
+      path: "registry/react/examples/warp-slider-demo.tsx",
+      type: "registry:example",
+      target: "components/warp-slider-demo.tsx"
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/react/examples/warp-slider-demo.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: undefined,
+  },
+  "warp-slider-horizontal-demo": {
+    name: "warp-slider-horizontal-demo",
+    description: "Example of a smooth, infinite horizontal slider with dynamic warp distortion and momentum based scrolling.",
+    type: "registry:example",
+    registryDependencies: ["https://atlasui.dev/r/warp-slider.json"],
+    files: [{
+      path: "registry/react/examples/warp-slider-horizontal-demo.tsx",
+      type: "registry:example",
+      target: "components/warp-slider-horizontal-demo.tsx"
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/react/examples/warp-slider-horizontal-demo.tsx")
       const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
       return { default: mod.default || mod[exportName] }
     }),

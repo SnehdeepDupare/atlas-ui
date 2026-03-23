@@ -541,4 +541,32 @@ export const html: Registry["items"] = [
       },
     ],
   },
+  {
+    name: "warp-slider-html",
+    type: "registry:file",
+    title: "Warp Slider",
+    description:
+      "A smooth, infinite slider with dynamic warp distortion and momentum based scrolling built with HTML, CSS, JavaScript and Three.js.",
+    meta: {
+      framework: "html",
+    },
+    dependencies: ["three"],
+    files: [
+      {
+        path: "html/warp-slider/index.html",
+        type: "registry:file",
+        target: "~/warp-slider/index.html",
+      },
+      {
+        path: "html/warp-slider/style.css",
+        type: "registry:file",
+        target: "~/warp-slider/style.css",
+      },
+      {
+        path: "html/warp-slider/script.js",
+        type: "registry:file",
+        target: "~/warp-slider/script.js",
+      },
+    ],
+  },
 ];

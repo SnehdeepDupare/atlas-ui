@@ -308,4 +308,19 @@ export const ui: Registry["items"] = [
       },
     ],
   },
+  {
+    name: "warp-slider",
+    type: "registry:component",
+    title: "Warp Slider",
+    description:
+      "A smooth, infinite slider with dynamic warp distortion and momentum based scrolling.",
+    dependencies: ["three"],
+    devDependencies: ["@types/three"],
+    files: [
+      {
+        path: "react/atlasui/warp-slider.tsx",
+        type: "registry:component",
+      },
+    ],
+  },
 ];
