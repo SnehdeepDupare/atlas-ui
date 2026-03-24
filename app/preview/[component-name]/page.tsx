@@ -1,7 +1,29 @@
+import { Metadata } from "next";
+
 import { Index } from "@/registry/__index__";
 
 interface PreviewPageProps {
   params: Promise<{ "component-name": string }>;
+}
+
+export async function generateMetadata(
+  props: PreviewPageProps
+): Promise<Metadata> {
+  const { "component-name": name } = await props.params;
+
+  const componentData = Index[name];
+
+  if (!componentData) {
+    return {};
+  }
+
+  const componentName = componentData.name.replaceAll("-", " ");
+  const title = componentName.replace(/\b\w/g, (c: string) => c.toUpperCase());
+
+  return {
+    title: title,
+    description: componentData.description,
+  };
 }
 
 const Page = async (props: PreviewPageProps) => {
