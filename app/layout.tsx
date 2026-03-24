@@ -4,8 +4,7 @@ import { Inter } from "next/font/google";
 import { Analytics } from "@vercel/analytics/next";
 import { Provider as JotaiProvider } from "jotai";
 
-import { Footer } from "@/components/footer";
-import { Header } from "@/components/header";
+import { LayoutShell } from "@/components/layout-shell";
 import { LenisProvider } from "@/components/lenis-provider";
 import { PostHogProvider } from "@/components/posthog-provider";
 import { ThemeProvider } from "@/components/theme-provider";
@@ -81,9 +80,7 @@ export default function RootLayout({
             >
               <LenisProvider>
                 <TooltipProvider>
-                  <Header />
-                  <main className="flex flex-1 flex-col">{children}</main>
-                  <Footer />
+                  <LayoutShell>{children}</LayoutShell>
                 </TooltipProvider>
                 <Analytics />
               </LenisProvider>

@@ -1,9 +1,15 @@
-export default function DocsLayout({
+import { PreviewNavbar } from "@/components/preview-navbar";
+
+export default function PreviewLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
   return (
-    <div className="mx-auto w-full max-w-7xl px-5 md:px-10">{children}</div>
+    <div className="flex min-h-svh w-full">
+      {children}
+
+      <PreviewNavbar />
+    </div>
   );
 }
