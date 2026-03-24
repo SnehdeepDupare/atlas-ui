@@ -9,7 +9,7 @@
   "files": [
     {
       "path": "registry/react/examples/scroll-based-word-reveal-demo.tsx",
-      "content": "import { ScrollBasedWordReveal } from \"@/registry/react/atlasui/scroll-based-word-reveal\";\n\nexport const ScrollBasedWordRevealDemo = () => {\n  return (\n    <ScrollBasedWordReveal text=\"AtlasUI is an open-source library offering a suite of prebuilt animated components for React, Next.js, and Vanilla JS.\" />\n  );\n};\n",
+      "content": "import { ScrollBasedWordReveal } from \"@/registry/react/atlasui/scroll-based-word-reveal\";\n\nexport const ScrollBasedWordRevealDemo = () => {\n  return (\n    <div>\n      <div className=\"flex h-svh items-center justify-center text-xl font-medium\">\n        Scroll to see magic :)\n      </div>\n\n      <ScrollBasedWordReveal text=\"AtlasUI is an open-source library offering a suite of prebuilt animated components for React, Next.js, and Vanilla JS.\" />\n\n      <div className=\"flex h-svh items-center justify-center text-xl font-medium\">\n        Loved it? Star us on GitHub!\n      </div>\n    </div>\n  );\n};\n",
       "type": "registry:example",
       "target": "components/scroll-based-word-reveal-demo.tsx"
     }

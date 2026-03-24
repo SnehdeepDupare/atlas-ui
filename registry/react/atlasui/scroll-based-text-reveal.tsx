@@ -17,7 +17,6 @@ export const ScrollBasedTextReveal = ({ text }: ScrollBasedTextRevealProps) => {
 
   return (
     <div className="flex flex-col items-center justify-center">
-      <div className="h-[50vh]" />
       <motion.p
         style={{ opacity: scrollYProgress }}
         ref={container}
@@ -25,7 +24,6 @@ export const ScrollBasedTextReveal = ({ text }: ScrollBasedTextRevealProps) => {
       >
         {text}
       </motion.p>
-      <div className="h-[50vh]" />
     </div>
   );
 };

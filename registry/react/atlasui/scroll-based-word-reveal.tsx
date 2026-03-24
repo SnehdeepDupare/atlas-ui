@@ -19,7 +19,6 @@ export const ScrollBasedWordReveal = ({ text }: ScrollBasedWordRevealProps) => {
 
   return (
     <div className="flex flex-col items-center justify-center">
-      <div className="h-[50vh]" />
       <p
         ref={container}
         className="flex max-w-5xl flex-wrap items-center justify-center text-5xl font-bold"
@@ -38,7 +37,6 @@ export const ScrollBasedWordReveal = ({ text }: ScrollBasedWordRevealProps) => {
           );
         })}
       </p>
-      <div className="h-[50vh]" />
     </div>
   );
 };

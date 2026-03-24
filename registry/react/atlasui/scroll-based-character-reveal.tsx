@@ -33,7 +33,6 @@ export const ScrollBasedCharacterReveal = ({
 
   return (
     <div className="flex flex-col items-center justify-center">
-      <div className="h-[50vh]" />
       <p
         ref={container}
         className="flex max-w-5xl flex-wrap text-center text-5xl font-bold"
@@ -53,7 +52,6 @@ export const ScrollBasedCharacterReveal = ({
           );
         })}
       </p>
-      <div className="h-[50vh]" />
     </div>
   );
 };
