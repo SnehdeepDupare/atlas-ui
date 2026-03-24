@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { usePathname } from "next/navigation";
+import { notFound, usePathname } from "next/navigation";
 
 import { ArrowLeftIcon, Code2Icon } from "lucide-react";
 
@@ -15,9 +15,13 @@ export const PreviewNavbar = () => {
 
   const componentName = pathname.split("/")[2];
 
-  const { registryDependencies } = Index[componentName];
+  const component = Index[componentName];
 
-  const componentUrl = registryDependencies[0]
+  if (!component) {
+    return notFound();
+  }
+
+  const componentUrl = component.registryDependencies[0]
     .replace("https://atlasui.dev/r/", "")
     .replace(".json", "");
 
