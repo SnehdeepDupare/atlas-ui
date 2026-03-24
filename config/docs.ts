@@ -79,13 +79,11 @@ export const docsConfig: DocsConfig = {
           title: "Notch Nav",
           href: "/docs/components/notch-nav",
           items: [],
-          label: "New",
         },
         {
           title: "Morph Navbar",
           href: "/docs/components/morph-navbar",
           items: [],
-          label: "New",
         },
         {
           title: "Animated Mobile Navbar",
@@ -163,7 +161,6 @@ export const docsConfig: DocsConfig = {
           title: "Box Reveal",
           href: "/docs/components/box-reveal",
           items: [],
-          label: "New",
         },
         {
           title: "Scroll Based Text Reveal",
