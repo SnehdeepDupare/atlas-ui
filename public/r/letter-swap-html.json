@@ -15,7 +15,7 @@
     },
     {
       "path": "registry/html/letter-swap/style.css",
-      "content": "* {\r\n  margin: 0;\r\n  padding: 0;\r\n  box-sizing: border-box;\r\n}\r\n\r\nbody {\r\n  min-height: 100svh;\r\n  background-color: #18181b;\r\n  color: #fff;\r\n  font-family: \"Inter\", sans-serif;\r\n  max-width: 800px;\r\n  margin: 0 auto;\r\n  display: flex;\r\n  flex-direction: column;\r\n  gap: 1rem;\r\n  align-items: center;\r\n  justify-content: center;\r\n}\r\n\r\nspan {\r\n  font-size: 2rem;\r\n  font-weight: 500;\r\n}\r\n\r\n/* Mandatory styles */\r\n\r\n.letter-swap {\r\n  position: relative;\r\n  display: flex;\r\n  align-items: center;\r\n  justify-content: center;\r\n  overflow: hidden;\r\n}\r\n\r\n.letter-wrapper {\r\n  position: relative;\r\n  display: inline-flex;\r\n  white-space: pre;\r\n}\r\n\r\n.letter-primary {\r\n  position: relative;\r\n}\r\n\r\n.letter-secondary {\r\n  position: absolute;\r\n}\r\n",
+      "content": "* {\n  margin: 0;\n  padding: 0;\n  box-sizing: border-box;\n}\n\nbody {\n  min-height: 100svh;\n  background-color: #18181b;\n  color: #fff;\n  font-family: \"Inter\", sans-serif;\n  max-width: 800px;\n  margin: 0 auto;\n  display: flex;\n  flex-direction: column;\n  gap: 1rem;\n  align-items: center;\n  justify-content: center;\n}\n\nspan {\n  font-size: 2rem;\n  font-weight: 500;\n}\n\n/* Mandatory styles */\n\n.letter-swap {\n  position: relative;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  overflow: hidden;\n}\n\n.letter-wrapper {\n  position: relative;\n  display: inline-flex;\n  white-space: pre;\n}\n\n.letter-primary {\n  position: relative;\n}\n\n.letter-secondary {\n  position: absolute;\n}\n",
       "type": "registry:file",
       "target": "~/letter-swap/style.css"
     },
