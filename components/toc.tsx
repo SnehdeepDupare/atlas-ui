@@ -7,6 +7,8 @@ import { useMounted } from "@/hooks/use-mounted";
 import { TableOfContents } from "@/lib/toc";
 import { cn } from "@/lib/utils";
 
+import { ScrollArea } from "./ui/scroll-area";
+
 interface TocProps {
   toc: TableOfContents;
 }
@@ -31,10 +33,12 @@ export function DashboardTableOfContents({ toc }: TocProps) {
   }
 
   return (
-    <div className="space-y-2">
-      <p className="font-medium">On This Page</p>
-      <Tree tree={toc} activeItem={activeHeading} />
-    </div>
+    <ScrollArea className="h-full max-h-[60svh] overflow-y-auto mask-b-from-95% [scrollbar-gutter:stable] [&_ul:last-of-type_li:last-child]:pb-2">
+      <div className="space-y-2">
+        <p className="font-medium">On This Page</p>
+        <Tree tree={toc} activeItem={activeHeading} />
+      </div>
+    </ScrollArea>
   );
 }
 
