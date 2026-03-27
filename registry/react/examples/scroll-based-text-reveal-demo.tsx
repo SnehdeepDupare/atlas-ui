@@ -2,6 +2,16 @@ import { ScrollBasedTextReveal } from "@/registry/react/atlasui/scroll-based-tex
 
 export const ScrollBasedTextRevealDemo = () => {
   return (
-    <ScrollBasedTextReveal text="AtlasUI is an open-source library offering a suite of prebuilt animated components for React, Next.js, and Vanilla JS." />
+    <div>
+      <div className="flex h-svh items-center justify-center text-xl font-medium">
+        Scroll to see magic :)
+      </div>
+
+      <ScrollBasedTextReveal text="AtlasUI is an open-source library offering a suite of prebuilt animated components for React, Next.js, and Vanilla JS." />
+
+      <div className="flex h-svh items-center justify-center text-xl font-medium">
+        Loved it? Star us on GitHub!
+      </div>
+    </div>
   );
 };

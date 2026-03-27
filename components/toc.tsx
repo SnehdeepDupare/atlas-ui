@@ -31,7 +31,7 @@ export function DashboardTableOfContents({ toc }: TocProps) {
   }
 
   return (
-    <div className="space-y-2">
+    <div className="no-scrollbar max-h-[60svh] space-y-2 overflow-y-auto mask-b-from-95% pb-4">
       <p className="font-medium">On This Page</p>
       <Tree tree={toc} activeItem={activeHeading} />
     </div>

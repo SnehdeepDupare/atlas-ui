@@ -3,7 +3,9 @@
 
 import * as React from "react";
 
-import { RotateCcwIcon } from "lucide-react";
+import Link from "next/link";
+
+import { FullscreenIcon, RotateCcwIcon } from "lucide-react";
 
 import ComponentWrapper from "@/components/component-wrapper";
 import { OpenInV0Button } from "@/components/open-in-v0-button";
@@ -60,8 +62,17 @@ export function ComponentPreview({
         </TabsList>
         <TabsContent value="preview" className="relative rounded-md">
           <ComponentWrapper overflow={overflow}>
-            <div className="absolute top-2 right-2 z-10 flex items-center gap-2">
+            <div className="absolute top-2 right-2 z-10 flex items-center gap-1">
               <OpenInV0Button url={`https://atlasui.dev/r/${name}.json`} />
+
+              <Button asChild variant="ghost" size="icon" className="size-8">
+                <Link href={`/preview/${name}`} target="_blank">
+                  <FullscreenIcon
+                    aria-label="fullscreen-btn"
+                    className="size-4"
+                  />
+                </Link>
+              </Button>
 
               <Button
                 onClick={() => setKey((prev) => prev + 1)}

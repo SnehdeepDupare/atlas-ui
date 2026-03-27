@@ -13,8 +13,9 @@ import {
   TooltipContent,
   TooltipTrigger,
 } from "@/components/ui/tooltip";
+import { cn } from "@/lib/utils";
 
-export const ModeToggle = () => {
+export const ModeToggle = ({ className }: { className?: string }) => {
   const { setTheme, resolvedTheme } = useTheme();
 
   const toggleTheme = useCallback(() => {
@@ -48,7 +49,7 @@ export const ModeToggle = () => {
         <Button
           variant="ghost"
           size="icon"
-          className="size-8"
+          className={cn("size-8", className)}
           onClick={toggleTheme}
         >
           <SunIcon className="h-4 w-4 scale-100 rotate-0 transition-all dark:scale-0 dark:-rotate-90" />

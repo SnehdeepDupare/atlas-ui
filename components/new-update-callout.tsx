@@ -21,7 +21,7 @@ export const NewUpdateCallout = () => {
           "relative rounded-full text-xs"
         )}
       >
-        🎉 Introducing Cascade Text
+        🎉 Introducing Warp Slider & Letter Swap
         <ChevronRight className="text-muted-foreground ml-1 size-3" />
       </Link>
 

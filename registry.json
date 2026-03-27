@@ -344,6 +344,42 @@
       "type": "registry:component"
     },
     {
+      "name": "letter-swap",
+      "title": "Letter Swap",
+      "description": "A text animation that swaps the letters vertically on hover.",
+      "dependencies": [
+        "motion"
+      ],
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "registry/react/atlasui/letter-swap.tsx",
+          "type": "registry:component"
+        }
+      ],
+      "type": "registry:component"
+    },
+    {
+      "name": "warp-slider",
+      "title": "Warp Slider",
+      "description": "A smooth, infinite slider with dynamic warp distortion and momentum based scrolling.",
+      "dependencies": [
+        "three"
+      ],
+      "devDependencies": [
+        "@types/three"
+      ],
+      "files": [
+        {
+          "path": "registry/react/atlasui/warp-slider.tsx",
+          "type": "registry:component"
+        }
+      ],
+      "type": "registry:component"
+    },
+    {
       "name": "animated-mobile-navbar-demo",
       "title": "Animated Mobile Navbar Demo",
       "description": "Example showcasing the Animated Mobile Navbar component.",
@@ -673,6 +709,54 @@
           "path": "registry/react/examples/cascade-text-demo.tsx",
           "type": "registry:example",
           "target": "components/cascade-text-demo.tsx"
+        }
+      ],
+      "type": "registry:example"
+    },
+    {
+      "name": "letter-swap-demo",
+      "title": "Letter Swap Demo",
+      "description": "Example of Letter Swap that swaps the letters vertically on hover.",
+      "registryDependencies": [
+        "https://atlasui.dev/r/letter-swap.json"
+      ],
+      "files": [
+        {
+          "path": "registry/react/examples/letter-swap-demo.tsx",
+          "type": "registry:example",
+          "target": "components/letter-swap-demo.tsx"
+        }
+      ],
+      "type": "registry:example"
+    },
+    {
+      "name": "warp-slider-demo",
+      "title": "Warp Slider Demo",
+      "description": "Example of a smooth, infinite slider with dynamic warp distortion and momentum based scrolling.",
+      "registryDependencies": [
+        "https://atlasui.dev/r/warp-slider.json"
+      ],
+      "files": [
+        {
+          "path": "registry/react/examples/warp-slider-demo.tsx",
+          "type": "registry:example",
+          "target": "components/warp-slider-demo.tsx"
+        }
+      ],
+      "type": "registry:example"
+    },
+    {
+      "name": "warp-slider-horizontal-demo",
+      "title": "Warp Slider Horizontal Demo",
+      "description": "Example of a smooth, infinite horizontal slider with dynamic warp distortion and momentum based scrolling.",
+      "registryDependencies": [
+        "https://atlasui.dev/r/warp-slider.json"
+      ],
+      "files": [
+        {
+          "path": "registry/react/examples/warp-slider-horizontal-demo.tsx",
+          "type": "registry:example",
+          "target": "components/warp-slider-horizontal-demo.tsx"
         }
       ],
       "type": "registry:example"
@@ -1191,6 +1275,64 @@
           "path": "registry/html/cascade-text/script.js",
           "type": "registry:file",
           "target": "~/cascade-text/script.js"
+        }
+      ],
+      "meta": {
+        "framework": "html"
+      },
+      "type": "registry:file"
+    },
+    {
+      "name": "letter-swap-html",
+      "title": "Letter Swap",
+      "description": "A text animation that swaps the letters vertically on hover, built with HTML, CSS, JavaScript and Motion.",
+      "dependencies": [
+        "motion"
+      ],
+      "files": [
+        {
+          "path": "registry/html/letter-swap/index.html",
+          "type": "registry:file",
+          "target": "~/letter-swap/index.html"
+        },
+        {
+          "path": "registry/html/letter-swap/style.css",
+          "type": "registry:file",
+          "target": "~/letter-swap/style.css"
+        },
+        {
+          "path": "registry/html/letter-swap/script.js",
+          "type": "registry:file",
+          "target": "~/letter-swap/script.js"
+        }
+      ],
+      "meta": {
+        "framework": "html"
+      },
+      "type": "registry:file"
+    },
+    {
+      "name": "warp-slider-html",
+      "title": "Warp Slider",
+      "description": "A smooth, infinite slider with dynamic warp distortion and momentum based scrolling built with HTML, CSS, JavaScript and Three.js.",
+      "dependencies": [
+        "three"
+      ],
+      "files": [
+        {
+          "path": "registry/html/warp-slider/index.html",
+          "type": "registry:file",
+          "target": "~/warp-slider/index.html"
+        },
+        {
+          "path": "registry/html/warp-slider/style.css",
+          "type": "registry:file",
+          "target": "~/warp-slider/style.css"
+        },
+        {
+          "path": "registry/html/warp-slider/script.js",
+          "type": "registry:file",
+          "target": "~/warp-slider/script.js"
         }
       ],
       "meta": {

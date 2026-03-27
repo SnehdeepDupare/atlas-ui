@@ -513,4 +513,60 @@ export const html: Registry["items"] = [
       },
     ],
   },
+  {
+    name: "letter-swap-html",
+    type: "registry:file",
+    title: "Letter Swap",
+    description:
+      "A text animation that swaps the letters vertically on hover, built with HTML, CSS, JavaScript and Motion.",
+    meta: {
+      framework: "html",
+    },
+    dependencies: ["motion"],
+    files: [
+      {
+        path: "html/letter-swap/index.html",
+        type: "registry:file",
+        target: "~/letter-swap/index.html",
+      },
+      {
+        path: "html/letter-swap/style.css",
+        type: "registry:file",
+        target: "~/letter-swap/style.css",
+      },
+      {
+        path: "html/letter-swap/script.js",
+        type: "registry:file",
+        target: "~/letter-swap/script.js",
+      },
+    ],
+  },
+  {
+    name: "warp-slider-html",
+    type: "registry:file",
+    title: "Warp Slider",
+    description:
+      "A smooth, infinite slider with dynamic warp distortion and momentum based scrolling built with HTML, CSS, JavaScript and Three.js.",
+    meta: {
+      framework: "html",
+    },
+    dependencies: ["three"],
+    files: [
+      {
+        path: "html/warp-slider/index.html",
+        type: "registry:file",
+        target: "~/warp-slider/index.html",
+      },
+      {
+        path: "html/warp-slider/style.css",
+        type: "registry:file",
+        target: "~/warp-slider/style.css",
+      },
+      {
+        path: "html/warp-slider/script.js",
+        type: "registry:file",
+        target: "~/warp-slider/script.js",
+      },
+    ],
+  },
 ];

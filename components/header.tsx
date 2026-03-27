@@ -26,8 +26,11 @@ export const Header = () => {
         <div className="container flex h-14 items-center">
           <MobileNav className="mr-3 md:hidden" />
 
-          <nav className="flex items-center gap-4 text-sm xl:gap-6">
-            <Link href="/" className="group mr-3 flex items-center gap-2">
+          <nav className="flex items-center text-sm">
+            <Link
+              href="/"
+              className="group focus-visible:border-ring focus-visible:ring-ring/50 aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive mr-3 flex items-center gap-2 rounded-md transition-all outline-none focus-visible:ring-[3px]"
+            >
               <Image
                 src="/logo-dark.svg"
                 alt="Atlas UI Logo"
@@ -46,30 +49,22 @@ export const Header = () => {
 
               <h1 className="hidden text-2xl font-bold md:block">Atlas UI</h1>
             </Link>
-
-            <Link
-              href="/docs"
-              className={cn(
-                "hover:text-foreground/80 hidden transition-colors md:block",
-                pathname === "/docs/installation"
-                  ? "text-foreground"
-                  : "text-foreground/80"
-              )}
+            <Button
+              asChild
+              variant="ghost"
+              size="sm"
+              className="hidden md:inline-flex"
             >
-              Docs
-            </Link>
-
-            <Link
-              href="/docs/components"
-              className={cn(
-                "hover:text-foreground/80 hidden transition-colors md:block",
-                pathname?.startsWith("/docs/components")
-                  ? "text-foreground"
-                  : "text-foreground/80"
-              )}
+              <Link href="/docs">Docs</Link>
+            </Button>
+            <Button
+              asChild
+              variant="ghost"
+              size="sm"
+              className="hidden md:inline-flex"
             >
-              Components
-            </Link>
+              <Link href="/docs/components">Components</Link>
+            </Button>
           </nav>
 
           <div className="flex flex-1 items-center justify-between gap-2 md:justify-end">
@@ -91,7 +86,7 @@ export const Header = () => {
                       target="_blank"
                       rel="noreferrer"
                     >
-                      <FaGithub className="h-4 w-4" />
+                      <FaGithub className="size-4" />
                     </Link>
                   </Button>
                 </TooltipTrigger>

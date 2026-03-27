@@ -24,6 +24,7 @@ Always use the HTML implementation listed below.
 - [Cascade Text](https://www.atlasui.dev/docs/components/cascade-text): A smooth line-by-line text reveal animation.
 - [Dot And Circle Mouse Trailer](https://www.atlasui.dev/docs/components/dot-and-circle-mouse-trailer): A simple Lazy Dot and Circle Mouse Trailer
 - [Hacker Text](https://www.atlasui.dev/docs/components/hacker-text): A text animation that scrambles letters before revealing the final text.
+- [Letter Swap](https://www.atlasui.dev/docs/components/letter-swap): A text animation that swaps the letters vertically on hover.
 - [Loki Text Effect](https://www.atlasui.dev/docs/components/loki-text-effect): The iconic text animation from the Loki series intro.
 - [Morph Navbar](https://www.atlasui.dev/docs/components/morph-navbar): A polished navigation bar with a fluid, morphing pill that tracks the active link and hover state.
 - [Notch Nav](https://www.atlasui.dev/docs/components/notch-nav): A Notch style trigger that reveals the navigation menu from above.
@@ -34,6 +35,7 @@ Always use the HTML implementation listed below.
 - [Scroll Based Text Reveal](https://www.atlasui.dev/docs/components/scroll-based-text-reveal): A text reveal effect which animates the opacity of the text as you scroll.
 - [Scroll Based Word Reveal](https://www.atlasui.dev/docs/components/scroll-based-word-reveal): A text reveal effect which progressively reveals text word by word as you scroll.
 - [Shiny Button](https://www.atlasui.dev/docs/components/shiny-button): A shiny button with a sleek animation effect.
+- [Warp Slider](https://www.atlasui.dev/docs/components/warp-slider): A smooth, infinite slider with dynamic warp distortion and momentum based scrolling.
 
 ## Components (HTML)
 
@@ -57,6 +59,7 @@ HTML implementations are documented on the same component pages under the HTML t
 - [Cascade Text](https://github.com/SnehdeepDupare/atlas-ui/blob/master/registry/react/atlasui/cascade-text.tsx): Source code
 - [Dot And Circle Mouse Trailer](https://github.com/SnehdeepDupare/atlas-ui/blob/master/registry/react/atlasui/dot-and-circle-mouse-trailer.tsx): Source code
 - [Hacker Text](https://github.com/SnehdeepDupare/atlas-ui/blob/master/registry/react/atlasui/hacker-text.tsx): Source code
+- [Letter Swap](https://github.com/SnehdeepDupare/atlas-ui/blob/master/registry/react/atlasui/letter-swap.tsx): Source code
 - [Loki Text Effect](https://github.com/SnehdeepDupare/atlas-ui/blob/master/registry/react/atlasui/loki-text-effect.tsx): Source code
 - [Morph Navbar](https://github.com/SnehdeepDupare/atlas-ui/blob/master/registry/react/atlasui/morph-navbar.tsx): Source code
 - [Notch Nav](https://github.com/SnehdeepDupare/atlas-ui/blob/master/registry/react/atlasui/notch-nav.tsx): Source code
@@ -67,6 +70,7 @@ HTML implementations are documented on the same component pages under the HTML t
 - [Scroll Based Text Reveal](https://github.com/SnehdeepDupare/atlas-ui/blob/master/registry/react/atlasui/scroll-based-text-reveal.tsx): Source code
 - [Scroll Based Word Reveal](https://github.com/SnehdeepDupare/atlas-ui/blob/master/registry/react/atlasui/scroll-based-word-reveal.tsx): Source code
 - [Shiny Button](https://github.com/SnehdeepDupare/atlas-ui/blob/master/registry/react/atlasui/shiny-button.tsx): Source code
+- [Warp Slider](https://github.com/SnehdeepDupare/atlas-ui/blob/master/registry/react/atlasui/warp-slider.tsx): Source code
 
 ### HTML
 HTML components are implemented using multiple files. All listed files together form one complete HTML implementation.
@@ -100,6 +104,10 @@ Do not treat individual files as standalone implementations.
   - [HTML](https://github.com/SnehdeepDupare/atlas-ui/blob/master/registry/html/hacker-text/index.html)
   - [JavaScript](https://github.com/SnehdeepDupare/atlas-ui/blob/master/registry/html/hacker-text/script.js)
   - [CSS](https://github.com/SnehdeepDupare/atlas-ui/blob/master/registry/html/hacker-text/style.css)
+- Letter Swap (HTML)
+  - [HTML](https://github.com/SnehdeepDupare/atlas-ui/blob/master/registry/html/letter-swap/index.html)
+  - [JavaScript](https://github.com/SnehdeepDupare/atlas-ui/blob/master/registry/html/letter-swap/script.js)
+  - [CSS](https://github.com/SnehdeepDupare/atlas-ui/blob/master/registry/html/letter-swap/style.css)
 - Loki Text Effect (HTML)
   - [HTML](https://github.com/SnehdeepDupare/atlas-ui/blob/master/registry/html/loki-text-effect/index.html)
   - [JavaScript](https://github.com/SnehdeepDupare/atlas-ui/blob/master/registry/html/loki-text-effect/script.js)
@@ -140,6 +148,10 @@ Do not treat individual files as standalone implementations.
   - [HTML](https://github.com/SnehdeepDupare/atlas-ui/blob/master/registry/html/shiny-button/index.html)
   - [JavaScript](https://github.com/SnehdeepDupare/atlas-ui/blob/master/registry/html/shiny-button/script.js)
   - [CSS](https://github.com/SnehdeepDupare/atlas-ui/blob/master/registry/html/shiny-button/style.css)
+- Warp Slider (HTML)
+  - [HTML](https://github.com/SnehdeepDupare/atlas-ui/blob/master/registry/html/warp-slider/index.html)
+  - [JavaScript](https://github.com/SnehdeepDupare/atlas-ui/blob/master/registry/html/warp-slider/script.js)
+  - [CSS](https://github.com/SnehdeepDupare/atlas-ui/blob/master/registry/html/warp-slider/style.css)
 
 ## Examples (React)
 
@@ -164,6 +176,9 @@ Do not treat individual files as standalone implementations.
 - [Notch Nav Demo](https://github.com/SnehdeepDupare/atlas-ui/blob/master/registry/react/examples/notch-nav-demo.tsx): Example usage
 - [Morph Navbar Demo](https://github.com/SnehdeepDupare/atlas-ui/blob/master/registry/react/examples/morph-navbar-demo.tsx): Example usage
 - [Cascade Text Demo](https://github.com/SnehdeepDupare/atlas-ui/blob/master/registry/react/examples/cascade-text-demo.tsx): Example usage
+- [Letter Swap Demo](https://github.com/SnehdeepDupare/atlas-ui/blob/master/registry/react/examples/letter-swap-demo.tsx): Example usage
+- [Warp Slider Demo](https://github.com/SnehdeepDupare/atlas-ui/blob/master/registry/react/examples/warp-slider-demo.tsx): Example usage
+- [Warp Slider Horizontal Demo](https://github.com/SnehdeepDupare/atlas-ui/blob/master/registry/react/examples/warp-slider-horizontal-demo.tsx): Example usage
 
 ## Optional
 

@@ -1771,6 +1771,330 @@ body {
 
 
 
+===== COMPONENT: letter-swap =====
+Framework: react
+Kind: react-component
+Title: Letter Swap
+Description: A text animation that swaps the letters vertically on hover.
+
+--- file: react/atlasui/letter-swap.tsx ---
+"use client";
+
+import { useState } from "react";
+
+import { motion, stagger, useAnimate } from "motion/react";
+
+import { cn } from "@/lib/utils";
+
+interface LetterSwapProps {
+  text: string;
+  reverse?: boolean;
+  staggerDuration?: number;
+  staggerFrom?: "first" | "last" | "center";
+  className?: string;
+}
+
+export const LetterSwap = ({
+  text,
+  reverse = false,
+  staggerDuration = 0.02,
+  staggerFrom = "first",
+  className,
+}: LetterSwapProps) => {
+  const [scope, animate] = useAnimate();
+  const [isHovered, setIsHovered] = useState(false);
+
+  const hoverStart = () => {
+    if (isHovered) return;
+    setIsHovered(true);
+
+    animate(
+      ".letter-primary",
+      { y: reverse ? "100%" : "-100%" },
+      {
+        delay: stagger(staggerDuration, {
+          from: staggerFrom,
+        }),
+      }
+    );
+
+    animate(
+      ".letter-secondary",
+      { top: "0%" },
+      {
+        delay: stagger(staggerDuration, {
+          from: staggerFrom,
+        }),
+      }
+    );
+  };
+
+  const hoverEnd = () => {
+    if (!isHovered) return;
+    setIsHovered(false);
+
+    animate(
+      ".letter-primary",
+      { y: 0 },
+      {
+        delay: stagger(staggerDuration, {
+          from: staggerFrom,
+        }),
+      }
+    );
+
+    animate(
+      ".letter-secondary",
+      { top: reverse ? "-100%" : "100%" },
+      {
+        delay: stagger(staggerDuration, {
+          from: staggerFrom,
+        }),
+      }
+    );
+  };
+
+  return (
+    <motion.span
+      ref={scope}
+      className={cn(
+        "relative flex items-center justify-center overflow-hidden",
+        className
+      )}
+      onHoverStart={hoverStart}
+      onHoverEnd={hoverEnd}
+    >
+      <span className="sr-only">{text}</span>
+
+      {text.split("").map((letter, i) => {
+        return (
+          <span
+            className="relative flex whitespace-pre"
+            key={i}
+            aria-hidden={true}
+          >
+            <motion.span className="letter-primary relative" style={{ top: 0 }}>
+              {letter}
+            </motion.span>
+
+            <motion.span
+              className="letter-secondary absolute"
+              style={{ top: reverse ? "-100%" : "100%" }}
+            >
+              {letter}
+            </motion.span>
+          </span>
+        );
+      })}
+    </motion.span>
+  );
+};
+
+
+
+===== COMPONENT: letter-swap-html =====
+Framework: html
+Kind: html-component
+Title: Letter Swap
+Description: A text animation that swaps the letters vertically on hover, built with HTML, CSS, JavaScript and Motion.
+
+--- file: html/letter-swap/index.html ---
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Letter Swap - Atlas UI</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <span class="letter-swap" data-text="Hover me!">Hover me!</span>
+
+    <span class="letter-swap" data-text="Feature, not a bug" data-reverse
+      >Feature, not a bug</span
+    >
+
+    <span
+      class="letter-swap"
+      data-text="Elegant chaos in production"
+      data-reverse
+      data-stagger-from="last"
+      >Elegant chaos in production</span
+    >
+
+    <span
+      class="letter-swap"
+      data-text="Fast, fragile, fantastic"
+      data-stagger-from="center"
+    >
+      Fast, fragile, fantastic
+    </span>
+
+    <span
+      class="letter-swap"
+      data-text="Deploy now, panic later"
+      data-stagger-duration="0"
+    >
+      Deploy now, panic later
+    </span>
+  </body>
+  <script type="module" src="script.js"></script>
+</html>
+
+--- file: html/letter-swap/script.js ---
+import { animate, stagger } from "motion";
+
+document.querySelectorAll(".letter-swap").forEach((element) => {
+  const text = element.getAttribute("data-text");
+  const reverse = element.hasAttribute("data-reverse");
+  const staggerDuration = element.getAttribute("data-stagger-duration") || 0.02;
+
+  const validStaggerFrom = ["first", "last", "center"];
+  const rawStaggerFrom = element.getAttribute("data-stagger-from");
+  if (rawStaggerFrom && !validStaggerFrom.includes(rawStaggerFrom)) {
+    console.error(
+      `Invalid data-stagger-from value: "${rawStaggerFrom}". Expected one of: ${validStaggerFrom.join(", ")}. Falling back to "first".`,
+    );
+  }
+  const staggerFrom = validStaggerFrom.includes(rawStaggerFrom)
+    ? rawStaggerFrom
+    : "first";
+
+  element.innerHTML = "";
+
+  const letters = [];
+
+  text.split("").forEach((char) => {
+    const wrapper = document.createElement("span");
+    wrapper.className = "letter-wrapper";
+
+    const primary = document.createElement("span");
+    primary.className = "letter-primary";
+    primary.textContent = char;
+
+    const secondary = document.createElement("span");
+    secondary.className = "letter-secondary";
+    secondary.textContent = char;
+    secondary.style.top = reverse ? "-100%" : "100%";
+
+    wrapper.appendChild(primary);
+    wrapper.appendChild(secondary);
+    element.appendChild(wrapper);
+
+    letters.push({ primary, secondary });
+  });
+
+  let isHovered = false;
+
+  const primaryEls = letters.map((l) => l.primary);
+  const secondaryEls = letters.map((l) => l.secondary);
+
+  const hoverStart = () => {
+    if (isHovered) return;
+    isHovered = true;
+
+    animate(
+      primaryEls,
+      { y: reverse ? "100%" : "-100%" },
+      {
+        delay: stagger(staggerDuration, {
+          from: staggerFrom,
+        }),
+      },
+    );
+
+    animate(
+      secondaryEls,
+      { top: "0%" },
+      {
+        delay: stagger(staggerDuration, {
+          from: staggerFrom,
+        }),
+      },
+    );
+  };
+
+  const hoverEnd = () => {
+    if (!isHovered) return;
+    isHovered = false;
+
+    animate(
+      primaryEls,
+      { y: 0 },
+      {
+        delay: stagger(staggerDuration, {
+          from: staggerFrom,
+        }),
+      },
+    );
+
+    animate(
+      secondaryEls,
+      { top: reverse ? "-100%" : "100%" },
+      {
+        delay: stagger(staggerDuration, {
+          from: staggerFrom,
+        }),
+      },
+    );
+  };
+
+  element.addEventListener("mouseenter", hoverStart);
+  element.addEventListener("mouseleave", hoverEnd);
+});
+
+--- file: html/letter-swap/style.css ---
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100svh;
+  background-color: #18181b;
+  color: #fff;
+  font-family: "Inter", sans-serif;
+  max-width: 800px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  align-items: center;
+  justify-content: center;
+}
+
+span {
+  font-size: 2rem;
+  font-weight: 500;
+}
+
+/* Mandatory styles */
+
+.letter-swap {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.letter-wrapper {
+  position: relative;
+  display: inline-flex;
+  white-space: pre;
+}
+
+.letter-primary {
+  position: relative;
+}
+
+.letter-secondary {
+  position: absolute;
+}
+
+
+
 ===== COMPONENT: loki-text-effect =====
 Framework: react
 Kind: react-component
@@ -5820,7 +6144,6 @@ export const ScrollBasedCharacterReveal = ({
 
   return (
     <div className="flex flex-col items-center justify-center">
-      <div className="h-[50vh]" />
       <p
         ref={container}
         className="flex max-w-5xl flex-wrap text-center text-5xl font-bold"
@@ -5840,7 +6163,6 @@ export const ScrollBasedCharacterReveal = ({
           );
         })}
       </p>
-      <div className="h-[50vh]" />
     </div>
   );
 };
@@ -6035,7 +6357,6 @@ export const ScrollBasedTextReveal = ({ text }: ScrollBasedTextRevealProps) => {
 
   return (
     <div className="flex flex-col items-center justify-center">
-      <div className="h-[50vh]" />
       <motion.p
         style={{ opacity: scrollYProgress }}
         ref={container}
@@ -6043,7 +6364,6 @@ export const ScrollBasedTextReveal = ({ text }: ScrollBasedTextRevealProps) => {
       >
         {text}
       </motion.p>
-      <div className="h-[50vh]" />
     </div>
   );
 };
@@ -6144,7 +6464,6 @@ export const ScrollBasedWordReveal = ({ text }: ScrollBasedWordRevealProps) => {
 
   return (
     <div className="flex flex-col items-center justify-center">
-      <div className="h-[50vh]" />
       <p
         ref={container}
         className="flex max-w-5xl flex-wrap items-center justify-center text-5xl font-bold"
@@ -6163,7 +6482,6 @@ export const ScrollBasedWordReveal = ({ text }: ScrollBasedWordRevealProps) => {
           );
         })}
       </p>
-      <div className="h-[50vh]" />
     </div>
   );
 };
@@ -6466,4 +6784,1085 @@ body {
   mask: linear-gradient(black, black) content-box, linear-gradient(black, black);
   mask-composite: exclude;
   pointer-events: none;
+}
+
+
+
+===== COMPONENT: warp-slider =====
+Framework: react
+Kind: react-component
+Title: Warp Slider
+Description: A smooth, infinite slider with dynamic warp distortion and momentum based scrolling.
+
+--- file: react/atlasui/warp-slider.tsx ---
+"use client";
+
+import { useEffect, useMemo, useRef } from "react";
+
+import * as THREE from "three";
+
+interface WarpSliderProps {
+  slides: {
+    name: string;
+    img: string;
+  }[];
+  config?: Partial<{
+    orientation: "vertical" | "horizontal";
+    minHeight: number;
+    maxHeight: number;
+    aspectRatio: number;
+    gap: number;
+    smoothing: number;
+    distortionStrength: number;
+    distortionSmoothing: number;
+    momentumFriction: number;
+    momentumThreshold: number;
+    wheelSpeed: number;
+    wheelMax: number;
+    dragSpeed: number;
+    dragMomentum: number;
+    touchSpeed: number;
+    touchMomentum: number;
+  }>;
+}
+
+const labToHex = (css: string): string => {
+  const values = css
+    .replace(/lab|\(|\)/g, "")
+    .split(/[ ,/]+/)
+    .filter(Boolean);
+
+  const [L, a, b] = values;
+
+  const l = parseFloat(L.replace("%", "")) / 100;
+  const A = parseFloat(a);
+  const B = parseFloat(b);
+
+  // LAB → XYZ
+  const y = (l + 0.16) / 1.16;
+  const x = A / 5 + y;
+  const z = y - B / 2;
+
+  const x3 = x ** 3;
+  const y3 = y ** 3;
+  const z3 = z ** 3;
+
+  const X = 0.95047 * (x3 > 0.008856 ? x3 : (x - 16 / 116) / 7.787);
+  const Y = 1.0 * (y3 > 0.008856 ? y3 : (y - 16 / 116) / 7.787);
+  const Z = 1.08883 * (z3 > 0.008856 ? z3 : (z - 16 / 116) / 7.787);
+
+  // XYZ → linear RGB
+  let r = X * 3.2406 + Y * -1.5372 + Z * -0.4986;
+  let g = X * -0.9689 + Y * 1.8758 + Z * 0.0415;
+  let b_ = X * 0.0557 + Y * -0.204 + Z * 1.057;
+
+  // linear → sRGB
+  const toSRGB = (x: number) =>
+    x <= 0.0031308 ? 12.92 * x : 1.055 * Math.pow(x, 1 / 2.4) - 0.055;
+
+  r = toSRGB(r);
+  g = toSRGB(g);
+  b_ = toSRGB(b_);
+
+  // clamp
+  r = Math.min(Math.max(r, 0), 1);
+  g = Math.min(Math.max(g, 0), 1);
+  b_ = Math.min(Math.max(b_, 0), 1);
+
+  const toHex = (x: number) =>
+    Math.round(x * 255)
+      .toString(16)
+      .padStart(2, "0");
+
+  return `#${toHex(r)}${toHex(g)}${toHex(b_)}`;
+};
+
+export const WarpSlider = ({
+  slides,
+  config: {
+    orientation = "vertical",
+    minHeight = 1,
+    maxHeight = 1.5,
+    aspectRatio = 1.5,
+    gap = 0.05,
+    smoothing = 0.05,
+    distortionStrength = 2.5,
+    distortionSmoothing = 0.1,
+    momentumFriction = 0.95,
+    momentumThreshold = 0.001,
+    wheelSpeed = 0.01,
+    wheelMax = 150,
+    dragSpeed = 0.01,
+    dragMomentum = 0.01,
+    touchSpeed = 0.01,
+    touchMomentum = 0.1,
+  } = {},
+}: WarpSliderProps) => {
+  const canvasRef = useRef<HTMLCanvasElement | null>(null);
+  const titleRef = useRef<HTMLParagraphElement | null>(null);
+  const counterRef = useRef<HTMLParagraphElement | null>(null);
+
+  const totalSlides = slides.length;
+
+  const defaultCount = useMemo(() => {
+    if (!totalSlides) {
+      return "00/00";
+    }
+    const zeroPad = (n: number) => String(n).padStart(2, "0");
+    return `${zeroPad(1)}/${zeroPad(totalSlides)}`;
+  }, [totalSlides]);
+
+  useEffect(() => {
+    const canvas = canvasRef.current;
+    const titleElement = titleRef.current;
+    const counterElement = counterRef.current;
+
+    if (!canvas || !titleElement || !counterElement || slides.length === 0) {
+      return;
+    }
+
+    const renderer = new THREE.WebGLRenderer({
+      canvas,
+      antialias: true,
+      preserveDrawingBuffer: true,
+    });
+    renderer.setSize(window.innerWidth, window.innerHeight);
+    renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+
+    const getBackgroundColor = () => {
+      const bgCssColor = getComputedStyle(document.body)
+        .getPropertyValue("--color-background")
+        .trim();
+      return labToHex(bgCssColor);
+    };
+
+    const scene = new THREE.Scene();
+    scene.background = new THREE.Color(getBackgroundColor());
+
+    const themeObserver = new MutationObserver(() => {
+      scene.background = new THREE.Color(getBackgroundColor());
+    });
+    themeObserver.observe(document.documentElement, {
+      attributes: true,
+      attributeFilter: ["class", "style", "data-theme"],
+    });
+
+    const camera = new THREE.PerspectiveCamera(
+      45,
+      window.innerWidth / window.innerHeight,
+      0.1,
+      100
+    );
+    camera.position.z = 5;
+
+    const isHorizontal = orientation === "horizontal";
+
+    const wrap = (value: number, range: number) =>
+      ((value % range) + range) % range;
+    const zeroPad = (n: number) => String(n).padStart(2, "0");
+
+    const slideHeights = Array.from(
+      { length: totalSlides },
+      () => minHeight + Math.random() * (maxHeight - minHeight)
+    );
+
+    const slideSizes = isHorizontal
+      ? slideHeights.map((h) => h * aspectRatio)
+      : slideHeights;
+
+    const slideOffsets: number[] = [];
+    let stackPosition = 0;
+
+    for (let i = 0; i < totalSlides; i += 1) {
+      if (i === 0) {
+        slideOffsets.push(0);
+        stackPosition = slideSizes[0] / 2;
+      } else {
+        stackPosition += gap + slideSizes[i] / 2;
+        slideOffsets.push(stackPosition);
+        stackPosition += slideSizes[i] / 2;
+      }
+    }
+
+    const loopLength = stackPosition + gap + slideSizes[0] / 2;
+    const halfLoop = loopLength / 2;
+
+    const directionSign = 1;
+
+    type MeshWithData = THREE.Mesh<
+      THREE.PlaneGeometry,
+      THREE.MeshBasicMaterial
+    > & {
+      userData: {
+        originalVertices: number[];
+        offset: number;
+        name: string;
+        index: number;
+      };
+    };
+
+    const meshes: MeshWithData[] = [];
+    const textureLoader = new THREE.TextureLoader();
+
+    for (let i = 0; i < totalSlides; i += 1) {
+      const height = slideHeights[i];
+      const width = height * aspectRatio;
+
+      const geometry = new THREE.PlaneGeometry(width, height, 32, 16);
+      const material = new THREE.MeshBasicMaterial({
+        side: THREE.DoubleSide,
+        color: 0x999999,
+      });
+      const mesh = new THREE.Mesh(geometry, material) as MeshWithData;
+
+      mesh.userData = {
+        originalVertices: Array.from(geometry.attributes.position.array),
+        offset: slideOffsets[i],
+        name: slides[i].name,
+        index: i,
+      };
+
+      textureLoader.load(slides[i].img, (texture) => {
+        texture.colorSpace = THREE.SRGBColorSpace;
+        material.map = texture;
+        material.color.set(0xffffff);
+        material.needsUpdate = true;
+
+        const imageAspect = texture.image.width / texture.image.height;
+        const planeAspect = width / height;
+        const ratio = imageAspect / planeAspect;
+
+        if (ratio > 1) {
+          mesh.scale.y = 1 / ratio;
+        } else {
+          mesh.scale.x = ratio;
+        }
+      });
+
+      scene.add(mesh);
+      meshes.push(mesh);
+    }
+
+    const applyDistortion = (
+      mesh: MeshWithData,
+      positionOnAxis: number,
+      strength: number
+    ) => {
+      const positions = mesh.geometry.attributes.position;
+      const original = mesh.userData.originalVertices;
+
+      for (let i = 0; i < positions.count; i += 1) {
+        const x = original[i * 3];
+        const y = original[i * 3 + 1];
+
+        const distance = isHorizontal
+          ? Math.sqrt((positionOnAxis + x) ** 2 + y * y)
+          : Math.sqrt(x * x + (positionOnAxis + y) ** 2);
+        const falloffRadius = isHorizontal ? 3.5 : 2;
+        const falloff = Math.max(0, 1 - distance / falloffRadius);
+        const bend = Math.pow(Math.sin((falloff * Math.PI) / 2), 1.5);
+        positions.setZ(i, bend * strength);
+      }
+
+      positions.needsUpdate = true;
+      mesh.geometry.computeVertexNormals();
+    };
+
+    let scrollPosition = 0;
+    let scrollTarget = 0;
+    let scrollMomentum = 0;
+    let isScrolling = false;
+    let lastFrameTime = 0;
+
+    let distortionAmount = 0;
+    let distortionTarget = 0;
+    let velocityPeak = 0;
+    let scrollDirection = 0;
+    let directionTarget = 0;
+    const velocityHistory = [0, 0, 0, 0, 0];
+
+    let isDragging = false;
+    let dragStart = 0;
+    let dragDelta = 0;
+    let touchStart = 0;
+    let touchLast = 0;
+    let activeSlideIndex = -1;
+    let animationFrame = 0;
+    let scrollTimeout: ReturnType<typeof setTimeout> | null = null;
+
+    const addDistortionBurst = (amount: number) => {
+      distortionTarget = Math.min(1, distortionTarget + amount);
+    };
+
+    const handleWheel = (e: WheelEvent) => {
+      e.preventDefault();
+
+      const rawDelta = isHorizontal
+        ? e.deltaX !== 0
+          ? e.deltaX
+          : e.deltaY
+        : e.deltaY;
+      const clampedDelta =
+        Math.sign(rawDelta) * Math.min(Math.abs(rawDelta), wheelMax);
+      addDistortionBurst(Math.abs(clampedDelta) * 0.001);
+      scrollTarget += clampedDelta * wheelSpeed * directionSign;
+      isScrolling = true;
+
+      if (scrollTimeout) {
+        clearTimeout(scrollTimeout);
+      }
+      scrollTimeout = setTimeout(() => {
+        isScrolling = false;
+      }, 150);
+    };
+
+    const handleTouchStart = (e: TouchEvent) => {
+      const coord = isHorizontal ? e.touches[0].clientX : e.touches[0].clientY;
+      touchStart = coord;
+      touchLast = coord;
+      isScrolling = true;
+      scrollMomentum = 0;
+    };
+
+    const handleTouchMove = (e: TouchEvent) => {
+      e.preventDefault();
+
+      const coord = isHorizontal ? e.touches[0].clientX : e.touches[0].clientY;
+      const delta = coord - touchLast;
+      touchLast = coord;
+
+      addDistortionBurst(Math.abs(delta) * 0.02);
+      scrollTarget -= delta * touchSpeed * directionSign;
+      isScrolling = true;
+    };
+
+    const handleTouchEnd = () => {
+      const swipeVelocity = (touchLast - touchStart) * 0.005;
+
+      if (Math.abs(swipeVelocity) > 0.5) {
+        scrollMomentum = -swipeVelocity * touchMomentum * directionSign;
+        addDistortionBurst(Math.abs(swipeVelocity) * 0.45);
+        isScrolling = true;
+        setTimeout(() => {
+          isScrolling = false;
+        }, 800);
+      }
+    };
+
+    const handleMouseDown = (e: MouseEvent) => {
+      isDragging = true;
+      dragStart = isHorizontal ? e.clientX : e.clientY;
+      dragDelta = 0;
+      scrollMomentum = 0;
+      canvas.style.cursor = "grabbing";
+    };
+
+    const handleMouseMove = (e: MouseEvent) => {
+      if (!isDragging) {
+        return;
+      }
+
+      const coord = isHorizontal ? e.clientX : e.clientY;
+      const delta = coord - dragStart;
+      dragStart = coord;
+      dragDelta = delta;
+
+      addDistortionBurst(Math.abs(delta) * 0.02);
+      scrollTarget -= delta * dragSpeed * directionSign;
+      isScrolling = true;
+    };
+
+    const handleMouseUp = () => {
+      if (!isDragging) {
+        return;
+      }
+
+      isDragging = false;
+      canvas.style.cursor = "grab";
+
+      if (Math.abs(dragDelta) > 2) {
+        scrollMomentum = -dragDelta * dragMomentum * directionSign;
+        addDistortionBurst(Math.abs(dragDelta) * 0.005);
+        isScrolling = true;
+        setTimeout(() => {
+          isScrolling = false;
+        }, 800);
+      }
+    };
+
+    const handleResize = () => {
+      camera.aspect = window.innerWidth / window.innerHeight;
+      camera.updateProjectionMatrix();
+      renderer.setSize(window.innerWidth, window.innerHeight);
+    };
+
+    canvas.style.cursor = "grab";
+
+    canvas.addEventListener("wheel", handleWheel, { passive: false });
+    canvas.addEventListener("touchstart", handleTouchStart, { passive: false });
+    canvas.addEventListener("touchmove", handleTouchMove, { passive: false });
+    canvas.addEventListener("touchend", handleTouchEnd);
+    canvas.addEventListener("mousedown", handleMouseDown);
+    window.addEventListener("mousemove", handleMouseMove);
+    window.addEventListener("mouseup", handleMouseUp);
+    window.addEventListener("resize", handleResize);
+
+    const animate = (time: number) => {
+      animationFrame = window.requestAnimationFrame(animate);
+
+      const deltaTime = lastFrameTime ? (time - lastFrameTime) / 1000 : 0.016;
+      lastFrameTime = time;
+
+      const previousScroll = scrollPosition;
+
+      if (isScrolling) {
+        scrollTarget += scrollMomentum;
+        scrollMomentum *= momentumFriction;
+
+        if (Math.abs(scrollMomentum) < momentumThreshold) {
+          scrollMomentum = 0;
+        }
+      }
+
+      scrollPosition += (scrollTarget - scrollPosition) * smoothing;
+
+      const frameDelta = scrollPosition - previousScroll;
+
+      if (Math.abs(frameDelta) > 0.00001) {
+        directionTarget = frameDelta > 0 ? 1 : -1;
+      }
+      scrollDirection += (directionTarget - scrollDirection) * 0.08;
+
+      const velocity = Math.abs(frameDelta) / deltaTime;
+
+      velocityHistory.push(velocity);
+      velocityHistory.shift();
+
+      const averageVelocity =
+        velocityHistory.reduce((acc, current) => acc + current, 0) /
+        velocityHistory.length;
+
+      if (averageVelocity > velocityPeak) {
+        velocityPeak = averageVelocity;
+      }
+
+      const isDecelerating =
+        averageVelocity / (velocityPeak + 0.001) < 0.7 && velocityPeak > 0.5;
+
+      if (velocity > 0.05) {
+        distortionTarget = Math.max(
+          distortionTarget,
+          Math.min(1, velocityPeak * 0.1)
+        );
+      }
+
+      if (isDecelerating || averageVelocity < 0.2) {
+        distortionTarget *= isDecelerating ? 0.95 : 0.855;
+      }
+
+      distortionAmount +=
+        (distortionTarget - distortionAmount) * distortionSmoothing;
+
+      const signedDistortion = distortionAmount * scrollDirection;
+
+      let closestDistance = Infinity;
+      let closestIndex = 0;
+
+      meshes.forEach((mesh) => {
+        const { offset } = mesh.userData;
+
+        let pos = -(offset - wrap(scrollPosition, loopLength));
+        pos = wrap(pos + halfLoop, loopLength) - halfLoop;
+        if (isHorizontal) pos = -pos;
+
+        if (isHorizontal) {
+          mesh.position.x = pos;
+          mesh.position.y = 0;
+        } else {
+          mesh.position.y = pos;
+          mesh.position.x = 0;
+        }
+
+        if (Math.abs(pos) < closestDistance) {
+          closestDistance = Math.abs(pos);
+          closestIndex = mesh.userData.index;
+        }
+
+        if (Math.abs(pos) < halfLoop + maxHeight) {
+          applyDistortion(mesh, pos, distortionStrength * signedDistortion);
+        }
+      });
+
+      if (closestIndex !== activeSlideIndex) {
+        activeSlideIndex = closestIndex;
+        titleElement.textContent = slides[activeSlideIndex].name;
+        counterElement.textContent = `${zeroPad(activeSlideIndex + 1)}/${zeroPad(totalSlides)}`;
+      }
+
+      renderer.render(scene, camera);
+    };
+
+    animate(0);
+
+    return () => {
+      if (scrollTimeout) {
+        clearTimeout(scrollTimeout);
+      }
+
+      window.cancelAnimationFrame(animationFrame);
+      canvas.removeEventListener("wheel", handleWheel);
+      canvas.removeEventListener("touchstart", handleTouchStart);
+      canvas.removeEventListener("touchmove", handleTouchMove);
+      canvas.removeEventListener("touchend", handleTouchEnd);
+      canvas.removeEventListener("mousedown", handleMouseDown);
+      window.removeEventListener("mousemove", handleMouseMove);
+      window.removeEventListener("mouseup", handleMouseUp);
+      window.removeEventListener("resize", handleResize);
+
+      meshes.forEach((mesh) => {
+        scene.remove(mesh);
+        mesh.geometry.dispose();
+        if (mesh.material.map) {
+          mesh.material.map.dispose();
+        }
+        mesh.material.dispose();
+      });
+
+      renderer.dispose();
+      themeObserver.disconnect();
+    };
+  }, [
+    aspectRatio,
+    dragMomentum,
+    dragSpeed,
+    distortionSmoothing,
+    distortionStrength,
+    gap,
+    maxHeight,
+    minHeight,
+    momentumFriction,
+    momentumThreshold,
+    orientation,
+    slides,
+    smoothing,
+    totalSlides,
+    touchMomentum,
+    touchSpeed,
+    wheelMax,
+    wheelSpeed,
+  ]);
+
+  return (
+    <section className="relative h-svh w-full overflow-hidden select-none">
+      <div className="absolute top-1/2 left-0 z-2 flex w-full -translate-y-1/2 justify-between px-4">
+        <p id="slide-title" ref={titleRef} className="text-xl font-medium">
+          {slides[0]?.name ?? ""}
+        </p>
+        <p id="slide-count" ref={counterRef} className="text-xl font-medium">
+          {defaultCount}
+        </p>
+      </div>
+
+      <canvas
+        ref={canvasRef}
+        className="absolute top-0 left-1/2 h-full w-full -translate-x-1/2 overflow-hidden"
+      />
+    </section>
+  );
+};
+
+
+
+===== COMPONENT: warp-slider-html =====
+Framework: html
+Kind: html-component
+Title: Warp Slider
+Description: A smooth, infinite slider with dynamic warp distortion and momentum based scrolling built with HTML, CSS, JavaScript and Three.js.
+
+--- file: html/warp-slider/index.html ---
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Atlas UI - Warp Slider</title>
+  </head>
+  <body>
+    <section class="slider">
+      <div class="slide-info">
+        <p id="slide-title"></p>
+        <p id="slide-count"></p>
+      </div>
+    </section>
+
+    <script type="module" src="script.js"></script>
+  </body>
+</html>
+
+--- file: html/warp-slider/script.js ---
+import * as THREE from "three";
+
+const slides = [
+  {
+    name: "Orion",
+    img: "https://images.unsplash.com/photo-1773311583232-0a5765cf08ac?q=80&w=1920&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+  },
+  {
+    name: "Aries",
+    img: "https://images.unsplash.com/photo-1773530615360-eb180ed88622?q=80&w=1920&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+  },
+  {
+    name: "Taurus",
+    img: "https://images.unsplash.com/photo-1773011389556-2bf0474cefd9?q=80&w=1920&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+  },
+  {
+    name: "Gemini",
+    img: "https://images.unsplash.com/photo-1771030668418-390b3edf33e4?q=80&w=1920&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+  },
+  {
+    name: "Cancer",
+    img: "https://images.unsplash.com/photo-1772289935218-78954128824a?q=80&w=1920&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+  },
+  {
+    name: "Leo",
+    img: "https://images.unsplash.com/photo-1770988966858-da0a4bde2f0b?q=80&w=1920&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+  },
+  {
+    name: "Virgo",
+    img: "https://images.unsplash.com/photo-1771308457683-eef03842c1ed?q=80&w=1920&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+  },
+  {
+    name: "Libra",
+    img: "https://images.unsplash.com/photo-1770341989953-f3efb336f7eb?q=80&w=1920&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+  },
+  {
+    name: "Scorpio",
+    img: "https://images.unsplash.com/photo-1595660981167-fe72e31f6a40?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+  },
+  {
+    name: "Sagittarius",
+    img: "https://images.unsplash.com/photo-1709570597799-7d94d430a2bc?q=80&w=1920&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+  },
+];
+
+const config = {
+  orientation: "vertical",
+  minHeight: 1,
+  maxHeight: 1.5,
+  aspectRatio: 1.5,
+  gap: 0.05,
+  smoothing: 0.05,
+  distortionStrength: 2.5,
+  distortionSmoothing: 0.1,
+  momentumFriction: 0.95,
+  momentumThreshold: 0.001,
+  wheelSpeed: 0.01,
+  wheelMax: 150,
+  dragSpeed: 0.01,
+  dragMomentum: 0.01,
+  touchSpeed: 0.01,
+  touchMomentum: 0.1,
+};
+
+const sliderSection = document.querySelector("section.slider");
+
+const canvas = document.createElement("canvas");
+sliderSection?.appendChild(canvas);
+
+const titleElement = document.querySelector("p#slide-title");
+const counterElement = document.querySelector("p#slide-count");
+
+const renderer = new THREE.WebGLRenderer({
+  canvas,
+  antialias: true,
+  preserveDrawingBuffer: true,
+});
+renderer.setSize(window.innerWidth, window.innerHeight);
+renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+
+const scene = new THREE.Scene();
+scene.background = new THREE.Color(0x141414);
+
+const camera = new THREE.PerspectiveCamera(
+  45,
+  window.innerWidth / window.innerHeight,
+  0.1,
+  100,
+);
+camera.position.z = 5;
+
+const wrap = (value, range) => ((value % range) + range) % range;
+
+const zeroPad = (n) => String(n).padStart(2, "0");
+
+const totalSlides = slides.length;
+
+if (!["vertical", "horizontal"].includes(config.orientation)) {
+  console.error(
+    `Invalid orientation "${config.orientation}". Accepts only: vertical | horizontal. Defaulting to "vertical".`,
+  );
+  config.orientation = "vertical";
+}
+
+const isHorizontal = config.orientation === "horizontal";
+const directionSign = 1;
+
+const slideHeights = Array.from(
+  { length: totalSlides },
+  () =>
+    config.minHeight + Math.random() * (config.maxHeight - config.minHeight),
+);
+
+const slideSizes = isHorizontal
+  ? slideHeights.map((h) => h * config.aspectRatio)
+  : slideHeights;
+
+const slideOffsets = [];
+let stackPosition = 0;
+
+for (let i = 0; i < totalSlides; i++) {
+  if (i === 0) {
+    slideOffsets.push(0);
+    stackPosition = slideSizes[0] / 2;
+  } else {
+    stackPosition += config.gap + slideSizes[i] / 2;
+    slideOffsets.push(stackPosition);
+    stackPosition += slideSizes[i] / 2;
+  }
+}
+
+const loopLength = stackPosition + config.gap + slideSizes[0] / 2;
+const halfLoop = loopLength / 2;
+
+const meshes = [];
+const textureLoader = new THREE.TextureLoader();
+
+for (let i = 0; i < totalSlides; i++) {
+  const height = slideHeights[i];
+  const width = height * config.aspectRatio;
+
+  const geometry = new THREE.PlaneGeometry(width, height, 32, 16);
+  const material = new THREE.MeshBasicMaterial({
+    side: THREE.DoubleSide,
+    color: 0x999999,
+  });
+  const mesh = new THREE.Mesh(geometry, material);
+
+  mesh.userData = {
+    originalVertices: [...geometry.attributes.position.array],
+    offset: slideOffsets[i],
+    name: slides[i].name,
+    index: i,
+  };
+
+  textureLoader.load(slides[i].img, (texture) => {
+    texture.colorSpace = THREE.SRGBColorSpace;
+    material.map = texture;
+    material.color.set(0xffffff);
+    material.needsUpdate = true;
+
+    const imageAspect = texture.image.width / texture.image.height;
+    const planeAspect = width / height;
+    const ratio = imageAspect / planeAspect;
+
+    if (ratio > 1) {
+      mesh.scale.y = 1 / ratio;
+    } else {
+      mesh.scale.x = ratio;
+    }
+  });
+
+  scene.add(mesh);
+  meshes.push(mesh);
+}
+
+function applyDistortion(mesh, positionOnAxis, strength) {
+  const positions = mesh.geometry.attributes.position;
+  const original = mesh.userData.originalVertices;
+  const falloffRadius = isHorizontal ? 3.5 : 2;
+
+  for (let i = 0; i < positions.count; i++) {
+    const x = original[i * 3];
+    const y = original[i * 3 + 1];
+
+    const distance = isHorizontal
+      ? Math.sqrt((positionOnAxis + x) ** 2 + y * y)
+      : Math.sqrt(x * x + (positionOnAxis + y) ** 2);
+
+    const falloff = Math.max(0, 1 - distance / falloffRadius);
+
+    const bend = Math.pow(Math.sin((falloff * Math.PI) / 2), 1.5);
+    positions.setZ(i, bend * strength);
+  }
+
+  positions.needsUpdate = true;
+  mesh.geometry.computeVertexNormals();
+}
+
+let scrollPosition = 0;
+let scrollTarget = 0;
+let scrollMomentum = 0;
+let isScrolling = false;
+let lastFrameTime = 0;
+
+let distortionAmount = 0;
+let distortionTarget = 0;
+let velocityPeak = 0;
+let scrollDirection = 0;
+let directionTarget = 0;
+const velocityHistory = [0, 0, 0, 0, 0];
+
+let isDragging = false;
+let dragStart = 0;
+let dragDelta = 0;
+let touchStart = 0;
+let touchLast = 0;
+
+let activeSlideIndex = -1;
+
+const addDistortionBurst = (amount) => {
+  distortionTarget = Math.min(1, distortionTarget + amount);
+};
+
+window.addEventListener(
+  "wheel",
+  (e) => {
+    e.preventDefault();
+
+    const rawDelta = isHorizontal ? e.deltaX || e.deltaY : e.deltaY;
+    const clampedDelta =
+      Math.sign(rawDelta) * Math.min(Math.abs(rawDelta), config.wheelMax);
+
+    addDistortionBurst(Math.abs(clampedDelta) * 0.001);
+    scrollTarget += clampedDelta * config.wheelSpeed * directionSign;
+    isScrolling = true;
+
+    clearTimeout(window._scrollTimeout);
+    window._scrollTimeout = setTimeout(() => (isScrolling = false), 150);
+  },
+  { passive: false },
+);
+
+window.addEventListener(
+  "touchstart",
+  (e) => {
+    const pos = isHorizontal ? e.touches[0].clientX : e.touches[0].clientY;
+    touchStart = touchLast = pos;
+    isScrolling = true;
+    scrollMomentum = 0;
+  },
+  { passive: false },
+);
+
+window.addEventListener(
+  "touchmove",
+  (e) => {
+    e.preventDefault();
+
+    const current = isHorizontal ? e.touches[0].clientX : e.touches[0].clientY;
+    const delta = current - touchLast;
+    touchLast = current;
+
+    addDistortionBurst(Math.abs(delta) * 0.02);
+    scrollTarget -= delta * config.touchSpeed * directionSign;
+    isScrolling = true;
+  },
+  { passive: false },
+);
+
+window.addEventListener("touchend", () => {
+  const swipeVelocity = (touchLast - touchStart) * 0.005;
+
+  if (Math.abs(swipeVelocity) > 0.5) {
+    scrollMomentum = -swipeVelocity * config.touchMomentum * directionSign;
+    addDistortionBurst(Math.abs(swipeVelocity) * 0.45);
+    isScrolling = true;
+    setTimeout(() => (isScrolling = false), 800);
+  }
+});
+
+canvas.style.cursor = "grab";
+
+window.addEventListener("mousedown", (e) => {
+  isDragging = true;
+  dragStart = isHorizontal ? e.clientX : e.clientY;
+  dragDelta = 0;
+  scrollMomentum = 0;
+  canvas.style.cursor = "grabbing";
+});
+
+window.addEventListener("mousemove", (e) => {
+  if (!isDragging) return;
+
+  const current = isHorizontal ? e.clientX : e.clientY;
+  const delta = current - dragStart;
+  dragStart = current;
+  dragDelta = delta;
+
+  addDistortionBurst(Math.abs(delta) * 0.02);
+  scrollTarget -= delta * config.dragSpeed * directionSign;
+  isScrolling = true;
+});
+
+window.addEventListener("mouseup", () => {
+  if (!isDragging) return;
+
+  isDragging = false;
+  canvas.style.cursor = "grab";
+
+  if (Math.abs(dragDelta) > 2) {
+    scrollMomentum = -dragDelta * config.dragMomentum * directionSign;
+    addDistortionBurst(Math.abs(dragDelta) * 0.005);
+    isScrolling = true;
+    setTimeout(() => (isScrolling = false), 800);
+  }
+});
+
+window.addEventListener("resize", () => {
+  camera.aspect = window.innerWidth / window.innerHeight;
+  camera.updateProjectionMatrix();
+  renderer.setSize(window.innerWidth, window.innerHeight);
+});
+
+function animate(time) {
+  requestAnimationFrame(animate);
+
+  const deltaTime = lastFrameTime ? (time - lastFrameTime) / 1000 : 0.016;
+  lastFrameTime = time;
+
+  const previousScroll = scrollPosition;
+
+  if (isScrolling) {
+    scrollTarget += scrollMomentum;
+    scrollMomentum *= config.momentumFriction;
+
+    if (Math.abs(scrollMomentum) < config.momentumThreshold) {
+      scrollMomentum = 0;
+    }
+  }
+
+  scrollPosition += (scrollTarget - scrollPosition) * config.smoothing;
+
+  const frameDelta = scrollPosition - previousScroll;
+
+  if (Math.abs(frameDelta) > 0.00001) {
+    directionTarget = frameDelta > 0 ? 1 : -1;
+  }
+  scrollDirection += (directionTarget - scrollDirection) * 0.08;
+
+  const velocity = Math.abs(frameDelta) / deltaTime;
+
+  velocityHistory.push(velocity);
+  velocityHistory.shift();
+
+  const averageVelocity =
+    velocityHistory.reduce((a, b) => a + b) / velocityHistory.length;
+
+  if (averageVelocity > velocityPeak) {
+    velocityPeak = averageVelocity;
+  }
+
+  const isDecelerating =
+    averageVelocity / (velocityPeak + 0.001) < 0.7 && velocityPeak > 0.5;
+
+  if (velocity > 0.05) {
+    distortionTarget = Math.max(
+      distortionTarget,
+      Math.min(1, velocityPeak * 0.1),
+    );
+  }
+
+  if (isDecelerating || averageVelocity < 0.2) {
+    distortionTarget *= isDecelerating ? 0.95 : 0.855;
+  }
+
+  distortionAmount +=
+    (distortionTarget - distortionAmount) * config.distortionSmoothing;
+
+  const signedDistortion = distortionAmount * scrollDirection;
+
+  let closestDistance = Infinity;
+  let closestIndex = 0;
+
+  meshes.forEach((mesh) => {
+    const { offset } = mesh.userData;
+
+    let pos = -(offset - wrap(scrollPosition, loopLength));
+    pos = wrap(pos + halfLoop, loopLength) - halfLoop;
+    if (isHorizontal) pos = -pos;
+
+    if (isHorizontal) {
+      mesh.position.x = pos;
+      mesh.position.y = 0;
+    } else {
+      mesh.position.y = pos;
+      mesh.position.x = 0;
+    }
+
+    if (Math.abs(pos) < closestDistance) {
+      closestDistance = Math.abs(pos);
+      closestIndex = mesh.userData.index;
+    }
+
+    if (Math.abs(pos) < halfLoop + config.maxHeight) {
+      applyDistortion(mesh, pos, config.distortionStrength * signedDistortion);
+    }
+  });
+
+  if (closestIndex !== activeSlideIndex) {
+    activeSlideIndex = closestIndex;
+    titleElement.textContent = slides[activeSlideIndex].name;
+    counterElement.textContent = `${zeroPad(activeSlideIndex + 1)}/${zeroPad(totalSlides)}`;
+  }
+
+  renderer.render(scene, camera);
+}
+
+animate();
+
+--- file: html/warp-slider/style.css ---
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  user-select: none;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+}
+
+section {
+  position: relative;
+  width: 100%;
+  height: 100svh;
+  overflow: hidden;
+}
+
+p {
+  font-weight: 500;
+  font-size: 1.25rem;
+}
+
+canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.slide-info {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  width: 100%;
+  padding: 0 2rem;
+  display: flex;
+  justify-content: space-between;
+  color: #fff;
+  z-index: 2;
 }

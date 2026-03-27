@@ -9,7 +9,7 @@
   "files": [
     {
       "path": "registry/react/examples/scroll-based-text-reveal-demo.tsx",
-      "content": "import { ScrollBasedTextReveal } from \"@/registry/react/atlasui/scroll-based-text-reveal\";\n\nexport const ScrollBasedTextRevealDemo = () => {\n  return (\n    <ScrollBasedTextReveal text=\"AtlasUI is an open-source library offering a suite of prebuilt animated components for React, Next.js, and Vanilla JS.\" />\n  );\n};\n",
+      "content": "import { ScrollBasedTextReveal } from \"@/registry/react/atlasui/scroll-based-text-reveal\";\n\nexport const ScrollBasedTextRevealDemo = () => {\n  return (\n    <div>\n      <div className=\"flex h-svh items-center justify-center text-xl font-medium\">\n        Scroll to see magic :)\n      </div>\n\n      <ScrollBasedTextReveal text=\"AtlasUI is an open-source library offering a suite of prebuilt animated components for React, Next.js, and Vanilla JS.\" />\n\n      <div className=\"flex h-svh items-center justify-center text-xl font-medium\">\n        Loved it? Star us on GitHub!\n      </div>\n    </div>\n  );\n};\n",
       "type": "registry:example",
       "target": "components/scroll-based-text-reveal-demo.tsx"
     }

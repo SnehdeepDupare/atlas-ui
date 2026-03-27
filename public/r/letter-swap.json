@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "letter-swap",
+  "title": "Letter Swap",
+  "description": "A text animation that swaps the letters vertically on hover.",
+  "dependencies": [
+    "motion"
+  ],
+  "registryDependencies": [
+    "utils"
+  ],
+  "files": [
+    {
+      "path": "registry/react/atlasui/letter-swap.tsx",
+      "content": "\"use client\";\n\nimport { useState } from \"react\";\n\nimport { motion, stagger, useAnimate } from \"motion/react\";\n\nimport { cn } from \"@/lib/utils\";\n\ninterface LetterSwapProps {\n  text: string;\n  reverse?: boolean;\n  staggerDuration?: number;\n  staggerFrom?: \"first\" | \"last\" | \"center\";\n  className?: string;\n}\n\nexport const LetterSwap = ({\n  text,\n  reverse = false,\n  staggerDuration = 0.02,\n  staggerFrom = \"first\",\n  className,\n}: LetterSwapProps) => {\n  const [scope, animate] = useAnimate();\n  const [isHovered, setIsHovered] = useState(false);\n\n  const hoverStart = () => {\n    if (isHovered) return;\n    setIsHovered(true);\n\n    animate(\n      \".letter-primary\",\n      { y: reverse ? \"100%\" : \"-100%\" },\n      {\n        delay: stagger(staggerDuration, {\n          from: staggerFrom,\n        }),\n      }\n    );\n\n    animate(\n      \".letter-secondary\",\n      { top: \"0%\" },\n      {\n        delay: stagger(staggerDuration, {\n          from: staggerFrom,\n        }),\n      }\n    );\n  };\n\n  const hoverEnd = () => {\n    if (!isHovered) return;\n    setIsHovered(false);\n\n    animate(\n      \".letter-primary\",\n      { y: 0 },\n      {\n        delay: stagger(staggerDuration, {\n          from: staggerFrom,\n        }),\n      }\n    );\n\n    animate(\n      \".letter-secondary\",\n      { top: reverse ? \"-100%\" : \"100%\" },\n      {\n        delay: stagger(staggerDuration, {\n          from: staggerFrom,\n        }),\n      }\n    );\n  };\n\n  return (\n    <motion.span\n      ref={scope}\n      className={cn(\n        \"relative flex items-center justify-center overflow-hidden\",\n        className\n      )}\n      onHoverStart={hoverStart}\n      onHoverEnd={hoverEnd}\n    >\n      <span className=\"sr-only\">{text}</span>\n\n      {text.split(\"\").map((letter, i) => {\n        return (\n          <span\n            className=\"relative flex whitespace-pre\"\n            key={i}\n            aria-hidden={true}\n          >\n            <motion.span className=\"letter-primary relative\" style={{ top: 0 }}>\n              {letter}\n            </motion.span>\n\n            <motion.span\n              className=\"letter-secondary absolute\"\n              style={{ top: reverse ? \"-100%\" : \"100%\" }}\n            >\n              {letter}\n            </motion.span>\n          </span>\n        );\n      })}\n    </motion.span>\n  );\n};\n",
+      "type": "registry:component"
+    }
+  ],
+  "type": "registry:component"
+}

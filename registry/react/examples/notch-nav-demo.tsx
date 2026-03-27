@@ -7,7 +7,7 @@ import {
 
 export const NotchNavDemo = () => {
   return (
-    <div className="relative min-h-80">
+    <div className="relative h-full min-h-80">
       <NotchNav>
         <NotchNavTrigger />
         <NotchNavContent>

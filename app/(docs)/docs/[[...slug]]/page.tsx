@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 
 import { allDocs } from "contentlayer/generated";
-import { ChevronRightIcon } from "lucide-react";
 
 import { Contribute } from "@/components/contribute";
 import { DocGridPattern } from "@/components/doc-grid-pattern";
@@ -11,6 +10,14 @@ import { DocsPager } from "@/components/docs-pagination";
 import { Mdx } from "@/components/mdx-components";
 import { ScrollToTop } from "@/components/scroll-to-top";
 import { DashboardTableOfContents } from "@/components/toc";
+import {
+  Breadcrumb,
+  BreadcrumbItem,
+  BreadcrumbLink,
+  BreadcrumbList,
+  BreadcrumbPage,
+  BreadcrumbSeparator,
+} from "@/components/ui/breadcrumb";
 import { processMdxContent } from "@/lib/llm";
 import { getTableOfContents } from "@/lib/toc";
 import { absoluteUrl } from "@/lib/utils";
@@ -84,16 +91,49 @@ const DocPage = async (props: DocPageProps) => {
 
   const toc = await getTableOfContents(doc.body.raw);
 
+  const segments = doc.slug
+    .split("/")
+    .filter((item) => item !== "" && item !== "docs");
+
   return (
     <>
       <DocGridPattern />
       <main className="relative py-6 lg:gap-10 lg:py-8 xl:grid xl:grid-cols-[1fr_300px]">
         <div className="mx-auto w-full max-w-4xl min-w-0">
-          <div className="mb-4 flex items-center space-x-2">
-            <p className="text-muted-foreground">Docs</p>
-            <ChevronRightIcon className="size-4" />
-            <p className="text-primary">{doc?.title}</p>
-          </div>
+          <Breadcrumb>
+            <BreadcrumbList className="mb-4 text-base">
+              <BreadcrumbItem>
+                <BreadcrumbLink href="/docs">Docs</BreadcrumbLink>
+              </BreadcrumbItem>
+              <BreadcrumbSeparator />
+
+              {segments.length === 0 ? (
+                <BreadcrumbItem>
+                  <BreadcrumbPage>{doc.title}</BreadcrumbPage>
+                </BreadcrumbItem>
+              ) : (
+                segments.map((item, index, arr) => {
+                  const isLast = index === arr.length - 1;
+                  const href = `/docs/${arr.slice(0, index + 1).join("/")}`;
+
+                  return (
+                    <div key={index} className="flex items-center space-x-2">
+                      <BreadcrumbItem>
+                        {isLast ? (
+                          <BreadcrumbPage>{doc.title}</BreadcrumbPage>
+                        ) : (
+                          <BreadcrumbLink href={href} className="capitalize">
+                            {item}
+                          </BreadcrumbLink>
+                        )}
+                      </BreadcrumbItem>
+                      {!isLast && <BreadcrumbSeparator />}
+                    </div>
+                  );
+                })
+              )}
+            </BreadcrumbList>
+          </Breadcrumb>
 
           <div className="space-y-2">
             <h2 className="text-3xl font-bold">{doc?.title}</h2>
@@ -112,7 +152,7 @@ const DocPage = async (props: DocPageProps) => {
         </div>
         <div className="hidden text-sm xl:block">
           <div className="sticky top-20 -mt-6 h-[calc(100vh-3.5rem)] pt-4">
-            <div className="no-scrollbar h-full space-y-4 overflow-auto pb-10">
+            <div className="no-scrollbar h-full space-y-2 overflow-auto pb-10">
               {doc.toc && <DashboardTableOfContents toc={toc} />}
               <Contribute doc={doc} />
               <ScrollToTop />

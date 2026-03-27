@@ -312,4 +312,49 @@ export const examples: Registry["items"] = [
       },
     ],
   },
+  {
+    name: "letter-swap-demo",
+    type: "registry:example",
+    title: "Letter Swap Demo",
+    description:
+      "Example of Letter Swap that swaps the letters vertically on hover.",
+    registryDependencies: ["https://atlasui.dev/r/letter-swap.json"],
+    files: [
+      {
+        path: "react/examples/letter-swap-demo.tsx",
+        type: "registry:example",
+        target: "components/letter-swap-demo.tsx",
+      },
+    ],
+  },
+  {
+    name: "warp-slider-demo",
+    type: "registry:example",
+    title: "Warp Slider Demo",
+    description:
+      "Example of a smooth, infinite slider with dynamic warp distortion and momentum based scrolling.",
+    registryDependencies: ["https://atlasui.dev/r/warp-slider.json"],
+    files: [
+      {
+        path: "react/examples/warp-slider-demo.tsx",
+        type: "registry:example",
+        target: "components/warp-slider-demo.tsx",
+      },
+    ],
+  },
+  {
+    name: "warp-slider-horizontal-demo",
+    type: "registry:example",
+    title: "Warp Slider Horizontal Demo",
+    description:
+      "Example of a smooth, infinite horizontal slider with dynamic warp distortion and momentum based scrolling.",
+    registryDependencies: ["https://atlasui.dev/r/warp-slider.json"],
+    files: [
+      {
+        path: "react/examples/warp-slider-horizontal-demo.tsx",
+        type: "registry:example",
+        target: "components/warp-slider-horizontal-demo.tsx",
+      },
+    ],
+  },
 ];

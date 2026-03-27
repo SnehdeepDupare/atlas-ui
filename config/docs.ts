@@ -70,16 +70,20 @@ export const docsConfig: DocsConfig = {
       title: "Components",
       items: [
         {
+          title: "Warp Slider",
+          href: "/docs/components/warp-slider",
+          items: [],
+          label: "New",
+        },
+        {
           title: "Notch Nav",
           href: "/docs/components/notch-nav",
           items: [],
-          label: "New",
         },
         {
           title: "Morph Navbar",
           href: "/docs/components/morph-navbar",
           items: [],
-          label: "New",
         },
         {
           title: "Animated Mobile Navbar",
@@ -143,6 +147,12 @@ export const docsConfig: DocsConfig = {
           label: "New",
         },
         {
+          title: "Letter Swap",
+          href: "/docs/components/letter-swap",
+          items: [],
+          label: "New",
+        },
+        {
           title: "Reveal Effect",
           href: "/docs/components/reveal-effect",
           items: [],
@@ -151,7 +161,6 @@ export const docsConfig: DocsConfig = {
           title: "Box Reveal",
           href: "/docs/components/box-reveal",
           items: [],
-          label: "New",
         },
         {
           title: "Scroll Based Text Reveal",

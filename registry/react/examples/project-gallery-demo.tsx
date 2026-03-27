@@ -5,7 +5,7 @@ import {
 
 export const ProjectGalleryDemo = () => {
   return (
-    <div className="flex min-h-screen w-full flex-col justify-center">
+    <div className="mx-auto flex min-h-screen w-full max-w-7xl flex-col justify-center p-5">
       <ProjectGallery>
         <Project
           title="Atlas UI"
