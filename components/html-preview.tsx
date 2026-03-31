@@ -68,63 +68,61 @@ export function HtmlPreview({ name, children }: HtmlPreviewProps) {
             />
           </ComponentWrapper>
         </TabsContent>
-        <TabsContent
-          value="code"
-          className="border-input relative overflow-hidden rounded-xl border"
-        >
-          <div className="relative bg-zinc-900 dark:ring-1 dark:ring-white/10">
-            <Tabs defaultValue="index.html" className="w-full gap-0">
-              <TabsList className="flex w-full translate-y-1 items-center justify-start gap-3 rounded-none border-b border-zinc-700 bg-zinc-800 px-3 py-1 dark:border-zinc-800 dark:bg-transparent">
-                {htmlBlock && (
-                  <TabsTrigger
-                    value="index.html"
-                    className={`mb-2 rounded-md p-0 px-1 text-zinc-400 ${firaCode.className}`}
-                  >
-                    index.html
-                  </TabsTrigger>
-                )}
-                {cssBlock && (
-                  <TabsTrigger
-                    value="style.css"
-                    className={`mb-2 rounded-md p-0 px-1 text-zinc-400 ${firaCode.className}`}
-                  >
-                    style.css
-                  </TabsTrigger>
-                )}
-                {jsBlock && (
-                  <TabsTrigger
-                    value="script.js"
-                    className={`mb-2 rounded-md p-0 px-1 text-zinc-400 ${firaCode.className}`}
-                  >
-                    script.js
-                  </TabsTrigger>
-                )}
-                <TabsIndicator className="h-0.5 -translate-y-1 rounded-none shadow-none" />
-              </TabsList>
-
+        <TabsContent value="code" className="relative">
+          <Tabs
+            defaultValue="index.html"
+            className="relative w-full gap-0 overflow-hidden rounded-xl bg-zinc-900 dark:ring-1 dark:ring-white/10"
+          >
+            <TabsList className="flex w-full items-center justify-start gap-3 rounded-none border-b border-zinc-700 bg-zinc-800 px-3 py-1 dark:border-zinc-800 dark:bg-transparent">
               {htmlBlock && (
-                <TabsContent value="index.html">
-                  <div className="w-full rounded-md dark:bg-white/2.5 [&_pre]:my-0 [&_pre]:max-h-100 [&_pre]:rounded-none [&_pre]:border-0">
-                    {htmlBlock}
-                  </div>
-                </TabsContent>
+                <TabsTrigger
+                  value="index.html"
+                  className={`rounded-md p-0 px-1 text-zinc-400 ${firaCode.className}`}
+                >
+                  index.html
+                </TabsTrigger>
               )}
               {cssBlock && (
-                <TabsContent value="style.css">
-                  <div className="w-full rounded-md dark:bg-white/2.5 [&_pre]:my-0 [&_pre]:max-h-100 [&_pre]:rounded-none [&_pre]:border-0">
-                    {cssBlock}
-                  </div>
-                </TabsContent>
+                <TabsTrigger
+                  value="style.css"
+                  className={`rounded-md p-0 px-1 text-zinc-400 ${firaCode.className}`}
+                >
+                  style.css
+                </TabsTrigger>
               )}
               {jsBlock && (
-                <TabsContent value="script.js">
-                  <div className="w-full rounded-md dark:bg-white/2.5 [&_pre]:my-0 [&_pre]:max-h-100 [&_pre]:rounded-none [&_pre]:border-0">
-                    {jsBlock}
-                  </div>
-                </TabsContent>
+                <TabsTrigger
+                  value="script.js"
+                  className={`rounded-md p-0 px-1 text-zinc-400 ${firaCode.className}`}
+                >
+                  script.js
+                </TabsTrigger>
               )}
-            </Tabs>
-          </div>
+              <TabsIndicator className="z-10 h-0.5 translate-y-0 rounded-none shadow-none" />
+            </TabsList>
+
+            {htmlBlock && (
+              <TabsContent value="index.html">
+                <div className="w-full rounded-md dark:bg-white/2.5 [&_pre]:my-0 [&_pre]:max-h-100 [&_pre]:rounded-none [&_pre]:border-0">
+                  {htmlBlock}
+                </div>
+              </TabsContent>
+            )}
+            {cssBlock && (
+              <TabsContent value="style.css">
+                <div className="w-full rounded-md dark:bg-white/2.5 [&_pre]:my-0 [&_pre]:max-h-100 [&_pre]:rounded-none [&_pre]:border-0">
+                  {cssBlock}
+                </div>
+              </TabsContent>
+            )}
+            {jsBlock && (
+              <TabsContent value="script.js">
+                <div className="w-full rounded-md dark:bg-white/2.5 [&_pre]:my-0 [&_pre]:max-h-100 [&_pre]:rounded-none [&_pre]:border-0">
+                  {jsBlock}
+                </div>
+              </TabsContent>
+            )}
+          </Tabs>
         </TabsContent>
       </Tabs>
     </div>
