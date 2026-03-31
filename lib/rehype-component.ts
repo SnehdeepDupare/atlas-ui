@@ -153,6 +153,76 @@ export function rehypeComponent() {
           console.error(error);
         }
       }
+
+      if (node.name === "HtmlPreview") {
+        const name = getNodeAttributeByName(node, "name")?.value as string;
+
+        if (!name) {
+          return null;
+        }
+
+        try {
+          const folderName = name.replace(/-html$/, "");
+          const componentDir = path.join(
+            process.cwd(),
+            "registry",
+            "html",
+            folderName
+          );
+
+          const fileConfigs = [
+            {
+              filename: "index.html",
+              label: "index.html",
+              lang: "language-html",
+            },
+            {
+              filename: "style.css",
+              label: "style.css",
+              lang: "language-css",
+            },
+            {
+              filename: "script.js",
+              label: "script.js",
+              lang: "language-javascript",
+            },
+          ];
+
+          for (const { filename, label, lang } of fileConfigs) {
+            const filePath = path.join(componentDir, filename);
+            if (fs.existsSync(filePath)) {
+              const source = fs.readFileSync(filePath, "utf8");
+
+              // Add code as children so that rehype can take over at build time.
+              node.children?.push(
+                u("element", {
+                  tagName: "pre",
+                  properties: {
+                    __src__: filePath,
+                    __file_label__: label,
+                  },
+                  children: [
+                    u("element", {
+                      tagName: "code",
+                      properties: {
+                        className: [lang],
+                      },
+                      children: [
+                        {
+                          type: "text",
+                          value: source,
+                        },
+                      ],
+                    }),
+                  ],
+                })
+              );
+            }
+          }
+        } catch (error) {
+          console.error(error);
+        }
+      }
     });
   };
 }

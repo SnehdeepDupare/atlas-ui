@@ -5,6 +5,7 @@ import { allDocs } from "contentlayer/generated";
 
 import { Contribute } from "@/components/contribute";
 import { DocGridPattern } from "@/components/doc-grid-pattern";
+import { DocsBaseSwitcher } from "@/components/docs-base-switcher";
 import { DocsCopyPage } from "@/components/docs-copy-page";
 import { DocsPager } from "@/components/docs-pagination";
 import { Mdx } from "@/components/mdx-components";
@@ -145,6 +146,16 @@ const DocPage = async (props: DocPageProps) => {
           </div>
 
           <div className="pt-8 pb-12">
+            {params.slug &&
+              params.slug[0] === "components" &&
+              params.slug[1] &&
+              params.slug[2] && (
+                <DocsBaseSwitcher
+                  base={params.slug[1]}
+                  component={params.slug[2]}
+                  className="mb-4"
+                />
+              )}
             <Mdx code={doc.body.code} />
           </div>
 

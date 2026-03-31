@@ -81,6 +81,7 @@ export default makeSource({
 
             node.__rawString__ = codeEl.children?.[0]?.value;
             node.__src__ = node.properties?.__src__;
+            node.__file_label__ = node.properties?.__file_label__;
           }
         });
       },
@@ -126,6 +127,10 @@ export default makeSource({
 
             if (node.__event__) {
               preElement.properties["__event__"] = node.__event__;
+            }
+
+            if (node.__file_label__) {
+              preElement.properties["__file_label__"] = node.__file_label__;
             }
           }
         });

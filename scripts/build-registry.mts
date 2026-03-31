@@ -24,6 +24,10 @@ export const Index: Record<string, any> = {`;
     return item.meta?.framework !== "html";
   });
 
+  // const htmlItems = registry.items.filter((item) => {
+  //   return item.meta?.framework === "html";
+  // });
+
   for (const item of indexableItems) {
     const resolveFiles = item.files?.map((file) => `registry/${file.path}`);
     if (!resolveFiles) {
@@ -66,6 +70,47 @@ export const Index: Record<string, any> = {`;
   },`;
   }
 
+  // for (const item of htmlItems) {
+  //   const resolveFiles = item.files?.map((file) => `registry/${file.path}`);
+  //   if (!resolveFiles) {
+  //     continue;
+  //   }
+
+  //   const htmlPath = item.files?.[0]?.path
+  //     ? `@/registry/${item.files[0].path}`
+  //     : "";
+
+  //   const cssPath = item.files?.[1]?.path
+  //     ? `@/registry/${item.files[1].path}`
+  //     : "";
+
+  //   const jsPath = item.files?.[2]?.path
+  //     ? `@/registry/${item.files[2].path}`
+  //     : "";
+
+  //   index += `
+  // "${item.name}": {
+  //   name: "${item.name}",
+  //   description: "${item.description ?? ""}",
+  //   type: "${item.type}",
+  //   registryDependencies: ${JSON.stringify(item.registryDependencies)},
+  //   files: [${item.files?.map((file) => {
+  //     const filePath = `registry/${
+  //       typeof file === "string" ? file : file.path
+  //     }`;
+  //     const resolvedFilePath = path.resolve(filePath);
+  //     return typeof file === "string"
+  //       ? `"${resolvedFilePath}"`
+  //       : `{
+  //     path: "${filePath}",
+  //     type: "${file.type}",
+  //     target: "${file.target ?? ""}"
+  //   }`;
+  //   })}],
+  //   meta: ${JSON.stringify(item.meta)},
+  // },`;
+  // }
+
   index += `
   }`;
 
@@ -100,7 +145,7 @@ async function buildRegistryJsonFile() {
   await fs.writeFile(
     rootRegistryPath,
     JSON.stringify(fixedRegistry, null, 2),
-    "utf8",
+    "utf8"
   );
 
   // 3. Write public registry.json
@@ -110,7 +155,7 @@ async function buildRegistryJsonFile() {
   await fs.writeFile(
     path.join(publicDir, "registry.json"),
     JSON.stringify(fixedRegistry, null, 2),
-    "utf8",
+    "utf8"
   );
 }
 
@@ -132,7 +177,7 @@ async function readRegistryFilesContents(item: RegistryItem): Promise<string> {
       try {
         const content = await fs.readFile(
           path.join(process.cwd(), "registry", filePath),
-          "utf8",
+          "utf8"
         );
         return `--- file: ${filePath} ---\n${
           content.endsWith("\n") ? content : content + "\n"
@@ -140,7 +185,7 @@ async function readRegistryFilesContents(item: RegistryItem): Promise<string> {
       } catch {
         return null; // Skip missing files
       }
-    }),
+    })
   );
 
   // Join non-null contents with blank lines between them
@@ -171,7 +216,7 @@ async function generateLlmsContent() {
   const components = registry.items
     .filter(
       (item) =>
-        item.type === "registry:ui" || item.type === "registry:component",
+        item.type === "registry:ui" || item.type === "registry:component"
     )
     .sort((a, b) => a.name.localeCompare(b.name))
     .map((component) => {
@@ -200,7 +245,7 @@ async function generateLlmsContent() {
   const reactSourceCode = registry.items
     .filter(
       (item) =>
-        item.type === "registry:ui" || item.type === "registry:component",
+        item.type === "registry:ui" || item.type === "registry:component"
     )
     .sort((a, b) => a.name.localeCompare(b.name))
     .map((component) => {
@@ -213,7 +258,7 @@ async function generateLlmsContent() {
     });
 
   const htmlFileItems = registry.items.filter(
-    (item) => item.type === "registry:file" && item.meta?.framework === "html",
+    (item) => item.type === "registry:file" && item.meta?.framework === "html"
   );
 
   const htmlComponentsMap = new Map<
@@ -318,14 +363,14 @@ async function generateLlmsContent() {
 }
 
 async function generateLlmsFullContent(
-  examplesByComponent: Map<string, string[]>,
+  examplesByComponent: Map<string, string[]>
 ) {
   const components = registry.items
     .filter(
       (item) =>
         item.type === "registry:ui" ||
         item.type === "registry:component" ||
-        item.type === "registry:file",
+        item.type === "registry:file"
     )
     .sort((a, b) => a.name.localeCompare(b.name));
 
@@ -369,7 +414,7 @@ async function generateLlmsFullContent(
       }
 
       return content;
-    }),
+    })
   );
 
   return componentContents.join("\n\n\n");

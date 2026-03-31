@@ -1,0 +1,101 @@
+import { type NextRequest, NextResponse } from "next/server";
+
+import fs from "node:fs";
+import path from "node:path";
+
+import { html as htmlRegistry } from "@/registry/registry-html";
+
+const CDN_BASE = "https://esm.sh";
+
+/**
+ * Build an importmap JSON string so bare-specifier imports like
+ *   import { animate } from "motion"
+ * resolve to a CDN URL inside the iframe.
+ */
+function buildImportMap(deps: string[]): string {
+  if (deps.length === 0) return "";
+
+  const imports: Record<string, string> = {};
+  for (const dep of deps) {
+    imports[dep] = `${CDN_BASE}/${dep}`;
+  }
+
+  return `<script type="importmap">${JSON.stringify({ imports })}</script>`;
+}
+
+export async function GET(
+  _req: NextRequest,
+  { params }: { params: Promise<{ name: string }> }
+) {
+  const { name } = await params;
+  const entry = htmlRegistry.find((item) => item.name === name);
+  if (!entry || !entry.files) {
+    return NextResponse.json(
+      { error: `HTML component "${name}" not found in registry` },
+      { status: 404 }
+    );
+  }
+
+  const folderName = name.replace(/-html$/, "");
+  const componentDir = path.join(process.cwd(), "registry", "html", folderName);
+
+  let htmlContent = "";
+  let cssContent = "";
+  let jsContent = "";
+
+  try {
+    const htmlPath = path.join(componentDir, "index.html");
+    if (fs.existsSync(htmlPath)) {
+      htmlContent = fs.readFileSync(htmlPath, "utf-8");
+    }
+
+    const cssPath = path.join(componentDir, "style.css");
+    if (fs.existsSync(cssPath)) {
+      cssContent = fs.readFileSync(cssPath, "utf-8");
+    }
+
+    const jsPath = path.join(componentDir, "script.js");
+    if (fs.existsSync(jsPath)) {
+      jsContent = fs.readFileSync(jsPath, "utf-8");
+    }
+  } catch {
+    return NextResponse.json(
+      { error: `Failed to read files for "${name}"` },
+      { status: 500 }
+    );
+  }
+
+  // Get dependencies for import map
+  const deps = (entry.dependencies as string[]) ?? [];
+  const importMap = buildImportMap(deps);
+
+  // Extract <body> content from the HTML file (everything between <body> and </body>)
+  const bodyMatch = htmlContent.match(/<body[^>]*>([\s\S]*?)<\/body>/i);
+  const bodyContent = bodyMatch ? bodyMatch[1] : htmlContent;
+
+  // Build the full HTML document
+  const fullHtml = `<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <style>${cssContent}</style>
+  ${importMap}
+</head>
+<body>
+  ${bodyContent}
+  <script type="module">${jsContent}</script>
+</body>
+</html>`;
+
+  return new NextResponse(fullHtml, {
+    status: 200,
+    headers: {
+      "Content-Type": "text/html; charset=utf-8",
+      "Cache-Control": "public, max-age=31536000, immutable",
+    },
+  });
+}
