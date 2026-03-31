@@ -153,7 +153,6 @@ const DocPage = async (props: DocPageProps) => {
                 <DocsBaseSwitcher
                   base={params.slug[1]}
                   component={params.slug[2]}
-                  className="mb-4"
                 />
               )}
             <Mdx code={doc.body.code} />
