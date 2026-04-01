@@ -3,6 +3,8 @@ import path from "path";
 import { u } from "unist-builder";
 import { visit } from "unist-util-visit";
 
+import { html as htmlRegistry } from "@/registry/registry-html";
+import { htmlExamples as htmlExamplesRegistry } from "@/registry/registry-html-examples";
 import { UnistNode, UnistTree } from "@/types/unist";
 
 const registry = JSON.parse(
@@ -162,13 +164,28 @@ export function rehypeComponent() {
         }
 
         try {
-          const folderName = name.replace(/-html$/, "");
-          const componentDir = path.join(
-            process.cwd(),
-            "registry",
-            "html",
-            folderName
+          const entry = [...htmlRegistry, ...htmlExamplesRegistry].find(
+            (item: any) => item.name === name
           );
+
+          let componentDir: string;
+          if (entry?.files?.[0]?.path) {
+            const firstFilePath = entry.files[0].path as string;
+            componentDir = path.join(
+              process.cwd(),
+              "registry",
+              path.dirname(firstFilePath)
+            );
+          } else {
+            // Fallback for entries without file paths
+            const folderName = name.replace(/-html$/, "");
+            componentDir = path.join(
+              process.cwd(),
+              "registry",
+              "html",
+              folderName
+            );
+          }
 
           const fileConfigs = [
             {

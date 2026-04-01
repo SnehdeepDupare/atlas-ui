@@ -179,6 +179,7 @@ Do not treat individual files as standalone implementations.
 - [Letter Swap Demo](https://github.com/SnehdeepDupare/atlas-ui/blob/master/registry/react/examples/letter-swap-demo.tsx): Example usage
 - [Warp Slider Demo](https://github.com/SnehdeepDupare/atlas-ui/blob/master/registry/react/examples/warp-slider-demo.tsx): Example usage
 - [Warp Slider Horizontal Demo](https://github.com/SnehdeepDupare/atlas-ui/blob/master/registry/react/examples/warp-slider-horizontal-demo.tsx): Example usage
+- [Warp Slider Horizontal Demo](https://github.com/SnehdeepDupare/atlas-ui/blob/master/registry/html/examples/warp-slider-horizontal-demo/index.html): Example usage
 
 ## Optional
 

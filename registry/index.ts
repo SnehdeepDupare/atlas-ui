@@ -6,6 +6,7 @@ import {
 
 import { examples } from "@/registry/registry-examples";
 import { html } from "@/registry/registry-html";
+import { htmlExamples } from "@/registry/registry-html-examples";
 import { lib } from "@/registry/registry-lib";
 import { ui } from "@/registry/registry-ui";
 
@@ -25,8 +26,10 @@ export const registry = {
   name: "atlas-ui",
   homepage: "https://atlasui.dev",
   items: registryIndexSchema.parse(
-    [DEFAULT, ...ui, ...examples, ...html, ...lib].filter((item) => {
-      return !DEPRECATED_ITEMS.includes(item.name);
-    })
+    [DEFAULT, ...ui, ...examples, ...html, ...htmlExamples, ...lib].filter(
+      (item) => {
+        return !DEPRECATED_ITEMS.includes(item.name);
+      }
+    )
   ),
 } satisfies Registry;

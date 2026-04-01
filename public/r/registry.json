@@ -1341,6 +1341,35 @@
       "type": "registry:file"
     },
     {
+      "name": "warp-slider-horizontal-html-demo",
+      "title": "Warp Slider Horizontal Demo",
+      "description": "Example of Warp Slider component in horizontal orientation.",
+      "dependencies": [
+        "three"
+      ],
+      "registryDependencies": [
+        "https://atlasui.dev/r/warp-slider-html.json"
+      ],
+      "files": [
+        {
+          "path": "registry/html/examples/warp-slider-horizontal-demo/index.html",
+          "type": "registry:example"
+        },
+        {
+          "path": "registry/html/examples/warp-slider-horizontal-demo/style.css",
+          "type": "registry:example"
+        },
+        {
+          "path": "registry/html/examples/warp-slider-horizontal-demo/script.js",
+          "type": "registry:example"
+        }
+      ],
+      "meta": {
+        "framework": "html"
+      },
+      "type": "registry:example"
+    },
+    {
       "name": "utils",
       "dependencies": [
         "clsx",

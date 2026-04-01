@@ -4,6 +4,7 @@ import fs from "node:fs";
 import path from "node:path";
 
 import { html as htmlRegistry } from "@/registry/registry-html";
+import { htmlExamples as htmlExamplesRegistry } from "@/registry/registry-html-examples";
 
 const CDN_BASE = "https://esm.sh";
 
@@ -28,7 +29,9 @@ export async function GET(
   { params }: { params: Promise<{ name: string }> }
 ) {
   const { name } = await params;
-  const entry = htmlRegistry.find((item) => item.name === name);
+  const entry = [...htmlRegistry, ...htmlExamplesRegistry].find(
+    (item) => item.name === name
+  );
   if (!entry || !entry.files) {
     return NextResponse.json(
       { error: `HTML component "${name}" not found in registry` },
@@ -36,8 +39,12 @@ export async function GET(
     );
   }
 
-  const folderName = name.replace(/-html$/, "");
-  const componentDir = path.join(process.cwd(), "registry", "html", folderName);
+  const firstFilePath = entry.files[0].path as string;
+  const componentDir = path.join(
+    process.cwd(),
+    "registry",
+    path.dirname(firstFilePath)
+  );
 
   let htmlContent = "";
   let cssContent = "";
