@@ -7,10 +7,6 @@ description: A simple Lazy Mouse Trailer which blends with the content on hover.
 
 ## Installation
 
-<UsageTabs>
-
-<TabsContent value="React">
-
 <InstallationTabs>
 
 <TabsContent value="cli">
@@ -46,114 +42,7 @@ npm install motion
 
 </InstallationTabs>
 
-</TabsContent>
-
-<TabsContent value="HTML">
-
-<InstallationTabs>
-
-<TabsContent value="cli">
-
-```bash
-npx shadcn@latest add https://atlasui.dev/r/blend-mouse-trailer-html.json
-```
-
-</TabsContent>
-
-<TabsContent value="manual">
-
-<Steps>
-
-<Step>Copy and paste the following code into your project.</Step>
-
-```html
-<div class="trailer" id="trailer"></div>
-<div class="hero-text" id="heroText">
-  AtlasUI is an open-source library offering a suite of prebuilt animated
-  components for React, Next.js, and Vanilla JS.
-</div>
-```
-
-<Step>Add `style.css`</Step>
-
-```css
-body {
-  margin: 0;
-  padding: 0;
-  height: 100vh;
-  width: 100%;
-  background: #18181b;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.hero-text {
-  color: #fff;
-  font-size: 3rem;
-  text-align: center;
-}
-
-.trailer {
-  position: fixed;
-  top: 0;
-  left: 0;
-  transform: translate(-50%, -50%);
-  border-radius: 50%;
-  background-color: #7dd3fc;
-  mix-blend-mode: difference;
-  pointer-events: none;
-  transition:
-    height 0.3s ease-out,
-    width 0.3s ease-out,
-    filter 0.3s ease-out;
-}
-```
-
-<Step>Add `script.js`</Step>
-
-```js
-const trailer = document.getElementById("trailer");
-const heroText = document.getElementById("heroText");
-
-let isHovered = false;
-
-document.addEventListener("mousemove", (e) => {
-  const { clientX, clientY } = e;
-  const size = isHovered ? 300 : 30;
-
-  trailer.animate(
-    {
-      left: `${clientX}px`,
-      top: `${clientY}px`,
-    },
-    { duration: 500, fill: "forwards" }
-  );
-
-  trailer.style.height = `${size}px`;
-  trailer.style.width = `${size}px`;
-  trailer.style.filter = `blur(${isHovered ? 30 : 0}px)`;
-});
-
-heroText.addEventListener("mouseenter", () => (isHovered = true));
-heroText.addEventListener("mouseleave", () => (isHovered = false));
-```
-
-</Steps>
-
-</TabsContent>
-
-</InstallationTabs>
-
-</TabsContent>
-
-</UsageTabs>
-
 ## Usage
-
-<UsageTabs>
-
-<TabsContent value="React">
 
 ```tsx
 import { BlendMouseTrailer } from "@/components/blend-mouse-trailer";
@@ -185,26 +74,3 @@ Call the `BlendMouseTrailer` Component and pass the hovered state as props
 ```tsx
 <BlendMouseTrailer isHovered={isHovered} />
 ```
-
-</TabsContent>
-
-<TabsContent value="HTML">
-
-Define the trailer in your HTML file.
-
-```html
-<div class="trailer" id="trailer"></div>
-```
-
-Define the text you want to blend with the trailer onHover. Pass `id="heroText"` to the text which you want to blend with the trailer.
-
-```html
-<div class="hero-text" id="heroText">
-  AtlasUI is an open-source library offering a suite of prebuilt animated
-  components for React, Next.js, and Vanilla JS.
-</div>
-```
-
-</TabsContent>
-
-</UsageTabs>
