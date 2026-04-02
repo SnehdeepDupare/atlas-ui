@@ -76,6 +76,73 @@ export async function GET(
   const deps = (entry.dependencies as string[]) ?? [];
   const importMap = buildImportMap(deps);
 
+  // Handle assets (fonts, images, etc.) by converting them to Data URLs
+  const MIME_TYPES: Record<string, string> = {
+    ".woff2": "font/woff2",
+    ".woff": "font/woff",
+    ".ttf": "font/ttf",
+    ".otf": "font/otf",
+    ".png": "image/png",
+    ".jpg": "image/jpeg",
+    ".jpeg": "image/jpeg",
+    ".svg": "image/svg+xml",
+    ".gif": "image/gif",
+    ".webp": "image/webp",
+  };
+
+  const assetFiles = entry.files.filter((file) => {
+    const ext = path.extname(file.path as string).toLowerCase();
+    return MIME_TYPES[ext];
+  });
+
+  for (const asset of assetFiles) {
+    const assetPath = path.join(
+      process.cwd(),
+      "registry",
+      asset.path as string
+    );
+    if (fs.existsSync(assetPath)) {
+      const ext = path.extname(asset.path as string).toLowerCase();
+      const mimeType = MIME_TYPES[ext];
+      const assetBuffer = fs.readFileSync(assetPath);
+      const base64 = assetBuffer.toString("base64");
+      const dataUrl = `data:${mimeType};base64,${base64}`;
+
+      // Get the file name
+      const fileName = path.basename(asset.path as string);
+
+      // Escape for regex
+      const escapedFileName = fileName.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+
+      // Replace in CSS: match url(...) and check if it contains the filename
+      cssContent = cssContent.replace(
+        /url\(\s*['"]?([^'"]+)['"]?\s*\)/g,
+        (match, url) => {
+          if (url.includes(fileName)) {
+            return `url('${dataUrl}')`;
+          }
+          return match;
+        }
+      );
+
+      // Replace in HTML: match src/href attributes and check if they contain the filename
+      htmlContent = htmlContent.replace(
+        /(src|href)\s*=\s*['"]([^'"]+)['"]/g,
+        (match, attr, url) => {
+          if (url.includes(fileName)) {
+            return `${attr}="${dataUrl}"`;
+          }
+          return match;
+        }
+      );
+
+      // Generic replacement for any quoted strings or paths ending with the filename
+      const genericRegex = new RegExp(`(['"])[^'"]*${escapedFileName}\\1`, "g");
+      cssContent = cssContent.replace(genericRegex, `$1${dataUrl}$1`);
+      htmlContent = htmlContent.replace(genericRegex, `$1${dataUrl}$1`);
+    }
+  }
+
   // Extract <body> content from the HTML file (everything between <body> and </body>)
   const bodyMatch = htmlContent.match(/<body[^>]*>([\s\S]*?)<\/body>/i);
   const bodyContent = bodyMatch ? bodyMatch[1] : htmlContent;
