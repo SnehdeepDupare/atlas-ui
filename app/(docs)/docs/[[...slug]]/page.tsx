@@ -96,6 +96,18 @@ const DocPage = async (props: DocPageProps) => {
     .split("/")
     .filter((item) => item !== "" && item !== "docs");
 
+  const isReactOrHtml =
+    segments[0] === "components" &&
+    (segments[1] === "react" || segments[1] === "html");
+
+  const breadcrumbItems = segments
+    .map((item, index, arr) => ({
+      item,
+      href: `/docs/${arr.slice(0, index + 1).join("/")}`,
+      isLast: index === arr.length - 1,
+    }))
+    .filter((_, index) => !(isReactOrHtml && index === 1));
+
   return (
     <>
       <DocGridPattern />
@@ -108,23 +120,25 @@ const DocPage = async (props: DocPageProps) => {
               </BreadcrumbItem>
               <BreadcrumbSeparator />
 
-              {segments.length === 0 ? (
+              {breadcrumbItems.length === 0 ? (
                 <BreadcrumbItem>
                   <BreadcrumbPage>{doc.title}</BreadcrumbPage>
                 </BreadcrumbItem>
               ) : (
-                segments.map((item, index, arr) => {
-                  const isLast = index === arr.length - 1;
-                  const href = `/docs/${arr.slice(0, index + 1).join("/")}`;
+                breadcrumbItems.map((item, index) => {
+                  const isLast = index === breadcrumbItems.length - 1;
 
                   return (
                     <div key={index} className="flex items-center space-x-2">
                       <BreadcrumbItem>
-                        {isLast ? (
+                        {item.isLast ? (
                           <BreadcrumbPage>{doc.title}</BreadcrumbPage>
                         ) : (
-                          <BreadcrumbLink href={href} className="capitalize">
-                            {item}
+                          <BreadcrumbLink
+                            href={item.href}
+                            className="capitalize"
+                          >
+                            {item.item}
                           </BreadcrumbLink>
                         )}
                       </BreadcrumbItem>
