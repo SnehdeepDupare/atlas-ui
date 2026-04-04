@@ -1,6 +1,6 @@
 import { scroll, transform } from "motion";
 
-const container = document.getElementById("parallax-container");
+const container = document.getElementById("#parallax-container");
 const section1 = document.querySelector(".section1");
 const section2 = document.querySelector(".section2");
 

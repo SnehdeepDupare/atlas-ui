@@ -1,0 +1,123 @@
+---
+title: Parallax Sections
+description: A simple Parallax effect using Motion.
+---
+
+<HtmlPreview name="parallax-sections-html" />
+
+## Installation
+
+<InstallationTabs>
+
+<TabsContent value="cli">
+
+```bash
+npx shadcn@latest add https://atlasui.dev/r/parallax-sections-html.json
+```
+
+</TabsContent>
+
+<TabsContent value="manual">
+
+<Steps>
+
+<Step>Install the following dependencies:</Step>
+
+```bash
+npm install motion
+```
+
+<Step>Copy and paste the following code into your project.</Step>
+
+```html
+<div id="parallax-container">
+  <section class="section1">
+    <h1>This section is Cool.</h1>
+  </section>
+
+  <section class="section2">
+    <h1>This is Cooler!</h1>
+  </section>
+</div>
+```
+
+<Step>Add `style.css` </Step>
+
+```css
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body,
+html {
+  font-family: sans-serif;
+  position: relative;
+}
+
+#parallax-container {
+  width: 100%;
+  height: 200vh;
+  position: relative;
+}
+
+.section1 {
+  position: sticky;
+  top: 0;
+  background-color: #404040;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  will-change: transform;
+}
+
+.section2 {
+  background-color: #ef4444;
+  position: relative;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  will-change: transform;
+}
+
+h1 {
+  font-size: 3rem;
+  font-weight: bold;
+  color: white;
+}
+```
+
+<Step>Add `script.js` </Step>
+
+```js
+import { scroll, transform } from "motion";
+
+const container = document.getElementById("#parallax-container");
+const section1 = document.querySelector(".section1");
+const section2 = document.querySelector(".section2");
+
+scroll(
+  (progress) => {
+    const scale1 = transform(progress, [0, 1], [1, 0.8]);
+    const rotate1 = transform(progress, [0, 1], [0, -5]);
+    section1.style.transform = `scale(${scale1}) rotate(${rotate1}deg)`;
+
+    const scale2 = transform(progress, [0, 1], [0.8, 1]);
+    const rotate2 = transform(progress, [0, 1], [-5, 0]);
+    section2.style.transform = `scale(${scale2}) rotate(${rotate2}deg)`;
+  },
+  {
+    target: container,
+    offset: ["start start", "end end"],
+  }
+);
+```
+
+</Steps>
+
+</TabsContent>
+
+</InstallationTabs>

@@ -21,7 +21,7 @@
     },
     {
       "path": "registry/html/parallax-sections/script.js",
-      "content": "import { scroll, transform } from \"motion\";\r\n\r\nconst container = document.getElementById(\"parallax-container\");\r\nconst section1 = document.querySelector(\".section1\");\r\nconst section2 = document.querySelector(\".section2\");\r\n\r\nscroll(\r\n  (progress) => {\r\n    const scale1 = transform(progress, [0, 1], [1, 0.8]);\r\n    const rotate1 = transform(progress, [0, 1], [0, -5]);\r\n    section1.style.transform = `scale(${scale1}) rotate(${rotate1}deg)`;\r\n\r\n    const scale2 = transform(progress, [0, 1], [0.8, 1]);\r\n    const rotate2 = transform(progress, [0, 1], [-5, 0]);\r\n    section2.style.transform = `scale(${scale2}) rotate(${rotate2}deg)`;\r\n  },\r\n  {\r\n    target: container,\r\n    offset: [\"start start\", \"end end\"],\r\n  }\r\n);\r\n",
+      "content": "import { scroll, transform } from \"motion\";\r\n\r\nconst container = document.getElementById(\"#parallax-container\");\r\nconst section1 = document.querySelector(\".section1\");\r\nconst section2 = document.querySelector(\".section2\");\r\n\r\nscroll(\r\n  (progress) => {\r\n    const scale1 = transform(progress, [0, 1], [1, 0.8]);\r\n    const rotate1 = transform(progress, [0, 1], [0, -5]);\r\n    section1.style.transform = `scale(${scale1}) rotate(${rotate1}deg)`;\r\n\r\n    const scale2 = transform(progress, [0, 1], [0.8, 1]);\r\n    const rotate2 = transform(progress, [0, 1], [-5, 0]);\r\n    section2.style.transform = `scale(${scale2}) rotate(${rotate2}deg)`;\r\n  },\r\n  {\r\n    target: container,\r\n    offset: [\"start start\", \"end end\"],\r\n  }\r\n);\r\n",
       "type": "registry:file",
       "target": "~/parallax-sections/script.js"
     }
