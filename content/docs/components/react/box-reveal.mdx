@@ -7,10 +7,6 @@ description: A smooth reveal animation that slides a colored overlay away to int
 
 ## Installation
 
-<UsageTabs>
-
-<TabsContent value="React">
-
 <InstallationTabs>
 
 <TabsContent value="cli">
@@ -43,137 +39,7 @@ npm install motion
 
 </InstallationTabs>
 
-</TabsContent>
-
-<TabsContent value="HTML">
-
-<InstallationTabs>
-
-<TabsContent value="cli">
-
-```bash
-npx shadcn@latest add https://atlasui.dev/r/box-reveal-html.json
-```
-
-</TabsContent>
-
-<TabsContent value="manual">
-
-<Steps>
-
-<Step>Install the following dependencies:</Step>
-
-```bash
-npm install motion
-```
-
-<Step>Copy and paste the following `script.js` into your project.</Step>
-
-```js
-import { animate, inView } from "motion";
-
-document.querySelectorAll("#box-reveal").forEach((root) => {
-  const side = root.dataset.side ?? "left";
-  const color = root.dataset.color ?? "#FACC15";
-  const width = root.dataset.width ?? "fit-content";
-
-  if (width === "full") {
-    root.style.width = "100%";
-  } else {
-    root.style.width = "fit-content";
-  }
-
-  const contentWrapper = document.createElement("div");
-  contentWrapper.className = "box-reveal-content";
-
-  while (root.firstChild) {
-    contentWrapper.appendChild(root.firstChild);
-  }
-
-  root.appendChild(contentWrapper);
-
-  // overlay
-  const overlay = document.createElement("div");
-  overlay.className = "box-reveal-overlay";
-  overlay.style.background = color;
-
-  root.appendChild(overlay);
-
-  // initial
-  animate(contentWrapper, { opacity: 0, y: 75 }, { duration: 0 });
-
-  if (side === "right") {
-    animate(overlay, { right: 0 }, { duration: 0 });
-  } else {
-    animate(overlay, { left: 0 }, { duration: 0 });
-  }
-
-  inView(
-    root,
-    () => {
-      // content animation
-      animate(
-        contentWrapper,
-        { opacity: 1, y: 0 },
-        {
-          duration: 0.5,
-          delay: 0.35,
-        }
-      );
-
-      // overlay animation
-      animate(
-        overlay,
-        side === "right" ? { right: "100%" } : { left: "100%" },
-        {
-          duration: 0.5,
-          ease: "easeIn",
-        }
-      );
-    },
-    { once: true }
-  );
-});
-```
-
-<Step>Add `style.css`</Step>
-
-```css
-#box-reveal {
-  position: relative;
-  overflow: hidden;
-}
-
-.box-reveal-overlay {
-  position: absolute;
-  inset: 0;
-  top: 0.25rem;
-  bottom: 0.25rem;
-  pointer-events: none;
-  z-index: 20;
-}
-
-.box-reveal-content {
-  position: relative;
-  z-index: 10;
-}
-```
-
-</Steps>
-
-</TabsContent>
-
-</InstallationTabs>
-
-</TabsContent>
-
-</UsageTabs>
-
 ## Usage
-
-<UsageTabs>
-
-<TabsContent value="React">
 
 ```tsx
 import { BoxReveal } from "@/components/box-reveal";
@@ -189,27 +55,7 @@ import { BoxReveal } from "@/components/box-reveal";
 </BoxReveal>
 ```
 
-</TabsContent>
-
-<TabsContent value="HTML">
-
-Wrap any element with a `<div id="box-reveal">` to apply the box reveal effect.
-
-```html
-<div id="box-reveal">
-  <h1>Box Reveal</h1>
-</div>
-```
-
-</TabsContent>
-
-</UsageTabs>
-
-## Props / Data Attributes
-
-<UsageTabs>
-
-<TabsContent value="React">
+## Props
 
 | Prop        | Type                      | Default         | Description                                          |
 | ----------- | ------------------------- | --------------- | ---------------------------------------------------- |
@@ -218,17 +64,3 @@ Wrap any element with a `<div id="box-reveal">` to apply the box reveal effect.
 | `width`     | `"fit-content" \| "full"` | `"fit-content"` | Controls the width of the reveal container           |
 | `color`     | `string`                  | `"#FACC15"`     | Background color of the reveal overlay               |
 | `className` | `string`                  | -               | Additional class names applied to the root container |
-
-</TabsContent>
-
-<TabsContent value="HTML">
-
-| Data Attribute | Type                      | Default         | Description                                     |
-| -------------- | ------------------------- | --------------- | ----------------------------------------------- |
-| `data-side`    | `"left" \| "right"`       | `"left"`        | Direction from which the reveal box slides away |
-| `data-color`   | `string`                  | `"#FACC15"`     | Background color of the reveal overlay          |
-| `data-width`   | `"fit-content" \| "full"` | `"fit-content"` | Controls the width of the reveal container      |
-
-</TabsContent>
-
-</UsageTabs>
