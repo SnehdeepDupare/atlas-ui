@@ -26,4 +26,76 @@ export const htmlExamples: Registry["items"] = [
       },
     ],
   },
+  {
+    name: "reveal-effect-speed-html-example",
+    type: "registry:example",
+    title: "Reveal Effect HTML Example 1",
+    description: "Example of Reveal Effect with a custom speed.",
+    meta: {
+      framework: "html",
+    },
+    dependencies: ["motion"],
+    files: [
+      {
+        path: "html/examples/reveal-effect-speed-html-example/index.html",
+        type: "registry:example",
+      },
+      {
+        path: "html/examples/reveal-effect-speed-html-example/style.css",
+        type: "registry:example",
+      },
+      {
+        path: "html/examples/reveal-effect-speed-html-example/script.js",
+        type: "registry:example",
+      },
+    ],
+  },
+  {
+    name: "reveal-effect-delay-html-example",
+    type: "registry:example",
+    title: "Reveal Effect HTML Example 2",
+    description: "Example of Reveal Effect with a custom delay.",
+    meta: {
+      framework: "html",
+    },
+    dependencies: ["motion"],
+    files: [
+      {
+        path: "html/examples/reveal-effect-delay-html-example/index.html",
+        type: "registry:example",
+      },
+      {
+        path: "html/examples/reveal-effect-delay-html-example/style.css",
+        type: "registry:example",
+      },
+      {
+        path: "html/examples/reveal-effect-delay-html-example/script.js",
+        type: "registry:example",
+      },
+    ],
+  },
+  {
+    name: "reveal-effect-translate-y-html-example",
+    type: "registry:example",
+    title: "Reveal Effect HTML Example 3",
+    description: "Example of Reveal Effect with a custom translate-y.",
+    meta: {
+      framework: "html",
+    },
+    dependencies: ["motion"],
+    files: [
+      {
+        path: "html/examples/reveal-effect-translate-y-html-example/index.html",
+        type: "registry:example",
+      },
+      {
+        path: "html/examples/reveal-effect-translate-y-html-example/style.css",
+        type: "registry:example",
+      },
+      {
+        path: "html/examples/reveal-effect-translate-y-html-example/script.js",
+        type: "registry:example",
+      },
+    ],
+  },
 ];

@@ -6013,7 +6013,7 @@ Title: Reveal Effect
 Description: Animates content into view with a vertical slide, blur fade-in, and clipping reveal effect using HTML, CSS, JavaScript and Motion.
 
 --- file: html/reveal-effect/index.html ---
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -6038,8 +6038,6 @@ Description: Animates content into view with a vertical slide, blur fade-in, and
     <div id="reveal-effect" data-speed="fast" data-translatey="20">
       Fast and snappy reveal effect.
     </div>
-
-    <button id="reveal-effect" data-speed="fast">Magic</button>
   </body>
 
   <script type="module" src="script.js"></script>

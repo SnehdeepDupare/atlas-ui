@@ -17,7 +17,7 @@
     },
     {
       "path": "registry/html/examples/warp-slider-horizontal-demo/style.css",
-      "content": "* {\r\n  margin: 0;\r\n  padding: 0;\r\n  box-sizing: border-box;\r\n  user-select: none;\r\n}\r\n\r\nbody {\r\n  font-family: \"Inter\", sans-serif;\r\n}\r\n\r\nsection {\r\n  position: relative;\r\n  width: 100%;\r\n  height: 100svh;\r\n  overflow: hidden;\r\n}\r\n\r\np {\r\n  font-weight: 500;\r\n  font-size: 1.25rem;\r\n}\r\n\r\ncanvas {\r\n  position: fixed;\r\n  top: 0;\r\n  left: 0;\r\n  width: 100%;\r\n  height: 100%;\r\n  overflow: hidden;\r\n}\r\n\r\n.slide-info {\r\n  position: absolute;\r\n  top: 50%;\r\n  left: 0;\r\n  transform: translateY(-50%);\r\n  width: 100%;\r\n  padding: 0 2rem;\r\n  display: flex;\r\n  justify-content: space-between;\r\n  color: #fff;\r\n  z-index: 2;\r\n}\r\n",
+      "content": "* {\n  margin: 0;\n  padding: 0;\n  box-sizing: border-box;\n  user-select: none;\n}\n\nbody {\n  font-family: \"Inter\", sans-serif;\n}\n\nsection {\n  position: relative;\n  width: 100%;\n  height: 100svh;\n  overflow: hidden;\n}\n\np {\n  font-weight: 500;\n  font-size: 1.25rem;\n}\n\ncanvas {\n  position: fixed;\n  top: 0;\n  left: 0;\n  width: 100%;\n  height: 100%;\n  overflow: hidden;\n}\n\n.slide-info {\n  position: absolute;\n  top: 50%;\n  left: 0;\n  transform: translateY(-50%);\n  width: 100%;\n  padding: 0 2rem;\n  display: flex;\n  justify-content: space-between;\n  color: #fff;\n  z-index: 2;\n}\n",
       "type": "registry:example"
     },
     {

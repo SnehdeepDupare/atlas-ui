@@ -1,0 +1,140 @@
+---
+title: Reveal Effect
+description: Animates content into view with a vertical slide, blur fade-in, and clipping reveal effect.
+---
+
+<HtmlPreview name="reveal-effect-html" />
+
+## Installation
+
+<InstallationTabs>
+
+<TabsContent value="cli">
+
+```bash
+npx shadcn@latest add https://atlasui.dev/r/reveal-effect-html.json
+```
+
+</TabsContent>
+
+<TabsContent value="manual">
+
+<Steps>
+
+<Step>Install the following dependencies:</Step>
+
+```bash
+npm install motion
+```
+
+<Step>Copy and paste the following `script.js` into your project.</Step>
+
+```js
+import { animate, inView } from "motion";
+
+const speedDurations = {
+  slow: 1.6,
+  medium: 1,
+  fast: 0.5,
+};
+
+document.querySelectorAll("#reveal-effect").forEach((el) => {
+  const delay = parseFloat(el.dataset.delay) || 0;
+  const speed = el.dataset.speed || "medium";
+  const translateY = parseFloat(el.dataset.translatey) || 0;
+
+  el.style.opacity = "0";
+  el.style.filter = "blur(12px)";
+  el.style.clipPath = "inset(-5% 100% -5% 0)";
+  el.style.transform = `translateY(${translateY}px)`;
+
+  inView(el, () => {
+    animate(
+      el,
+      {
+        opacity: 1,
+        filter: "blur(0px)",
+        clipPath: "inset(-5% 0% -5% 0)",
+        transform: "translateY(0)",
+      },
+      {
+        duration: speedDurations[speed],
+        easing: "ease-in-out",
+        delay,
+      }
+    );
+  });
+});
+```
+
+</Steps>
+
+</TabsContent>
+
+</InstallationTabs>
+
+## Usage
+
+Assign the `id="reveal-effect"` to any element to apply the reveal effect.
+
+```html
+<div id="reveal-effect">
+  <h1>Reveal Effect</h1>
+</div>
+```
+
+## Data Attributes
+
+| Data Attribute    | Type     | Default    | Description                                                                  |
+| ----------------- | -------- | ---------- | ---------------------------------------------------------------------------- |
+| `data-speed`      | `string` | `"medium"` | Animation speed, can be `"slow"`, `"medium"`, or `"fast"`                    |
+| `data-delay`      | `number` | `0`        | Delay before the animation starts                                            |
+| `data-translatey` | `number` | `0`        | The Y-axis translation from where the element will initially begin animation |
+
+## Examples
+
+### Speed
+
+To change the speed of the animation, you can pass the `data-speed` attribute.
+The default speed is `"medium"`. You can set it to `"slow"` or `"fast"`.
+
+<HtmlPreview name="reveal-effect-speed-html-example" />
+
+```html {2,4}
+<div>
+  <div id="reveal-effect" data-speed="fast">...</div>
+
+  <div id="reveal-effect" data-speed="slow">...</div>
+</div>
+```
+
+### Delay
+
+To add a delay before the animation starts, you can pass the `delay` prop or use the `data-delay` attribute.
+The default delay is `0`.
+
+<HtmlPreview name="reveal-effect-delay-html-example" />
+
+```html {2,4}
+<div>
+  <div id="reveal-effect" data-delay="0.2">...</div>
+
+  <div id="reveal-effect" data-delay="0.5">...</div>
+</div>
+```
+
+### Translate Y
+
+To change the Y-axis translation from where the element will initially begin animation, you can pass the `translateY` prop or use the `data-translatey` attribute.
+The default value is `0`. You can set the value between `10-15` for a subtle effect or any other value suitable for your needs.
+Pair `translateY` with a small `delay` for a more pronounced effect.
+
+<HtmlPreview name="reveal-effect-translate-y-html-example" />
+
+```html {2,4}
+<div>
+  <div id="reveal-effect" data-translatey="10">...</div>
+
+  <div id="reveal-effect" data-translatey="15">...</div>
+</div>
+```

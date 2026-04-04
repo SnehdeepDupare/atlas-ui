@@ -7,10 +7,6 @@ description: Animates content into view with a vertical slide, blur fade-in, and
 
 ## Installation
 
-<UsageTabs>
-
-<TabsContent value="React">
-
 <InstallationTabs>
 
 <TabsContent value="cli">
@@ -43,85 +39,7 @@ npm install motion
 
 </InstallationTabs>
 
-</TabsContent>
-
-<TabsContent value="HTML">
-
-<InstallationTabs>
-
-<TabsContent value="cli">
-
-```bash
-npx shadcn@latest add https://atlasui.dev/r/reveal-effect-html.json
-```
-
-</TabsContent>
-
-<TabsContent value="manual">
-
-<Steps>
-
-<Step>Install the following dependencies:</Step>
-
-```bash
-npm install motion
-```
-
-<Step>Copy and paste the following `script.js` into your project.</Step>
-
-```js
-import { animate, inView } from "motion";
-
-const speedDurations = {
-  slow: 1.6,
-  medium: 1,
-  fast: 0.5,
-};
-
-document.querySelectorAll("#reveal-effect").forEach((el) => {
-  const delay = parseFloat(el.dataset.delay) || 0;
-  const speed = el.dataset.speed || "medium";
-  const translateY = parseFloat(el.dataset.translatey) || 0;
-
-  el.style.opacity = "0";
-  el.style.filter = "blur(12px)";
-  el.style.clipPath = "inset(-5% 100% -5% 0)";
-  el.style.transform = `translateY(${translateY}px)`;
-
-  inView(el, () => {
-    animate(
-      el,
-      {
-        opacity: 1,
-        filter: "blur(0px)",
-        clipPath: "inset(-5% 0% -5% 0)",
-        transform: "translateY(0)",
-      },
-      {
-        duration: speedDurations[speed],
-        easing: "ease-in-out",
-        delay,
-      }
-    );
-  });
-});
-```
-
-</Steps>
-
-</TabsContent>
-
-</InstallationTabs>
-
-</TabsContent>
-
-</UsageTabs>
-
 ## Usage
-
-<UsageTabs>
-
-<TabsContent value="React">
 
 ```tsx
 import { RevealEffect } from "@/components/reveal-effect";
@@ -139,27 +57,7 @@ import { RevealEffect } from "@/components/reveal-effect";
 
 You can increase/decrease the speed of the animation by passing the `speed` prop.
 
-</TabsContent>
-
-<TabsContent value="HTML">
-
-Assign the `id="reveal-effect"` to any element to apply the reveal effect.
-
-```html
-<div id="reveal-effect">
-  <h1>Reveal Effect</h1>
-</div>
-```
-
-</TabsContent>
-
-</UsageTabs>
-
-## Props / Data Attributes
-
-<UsageTabs>
-
-<TabsContent value="React">
+## Props
 
 | Prop         | Type              | Default    | Description                                                                  |
 | ------------ | ----------------- | ---------- | ---------------------------------------------------------------------------- |
@@ -168,21 +66,7 @@ Assign the `id="reveal-effect"` to any element to apply the reveal effect.
 | `delay`      | `number`          | `0`        | Delay before the animation starts                                            |
 | `translateY` | `number`          | `0`        | The Y-axis translation from where the element will initially begin animation |
 
-</TabsContent>
-
-<TabsContent value="HTML">
-
-| Data Attribute    | Type     | Default    | Description                                                                  |
-| ----------------- | -------- | ---------- | ---------------------------------------------------------------------------- |
-| `data-speed`      | `string` | `"medium"` | Animation speed, can be `"slow"`, `"medium"`, or `"fast"`                    |
-| `data-delay`      | `number` | `0`        | Delay before the animation starts                                            |
-| `data-translatey` | `number` | `0`        | The Y-axis translation from where the element will initially begin animation |
-
-</TabsContent>
-
-</UsageTabs>
-
-## Example
+## Examples
 
 ### Speed
 
@@ -190,10 +74,6 @@ To change the speed of the animation, you can pass the `speed` prop or use the `
 The default speed is `"medium"`. You can set it to `"slow"` or `"fast"`.
 
 <ComponentPreview name="reveal-effect-speed-example" />
-
-<UsageTabs>
-
-<TabsContent value="React">
 
 ```tsx {2,4}
 <div>
@@ -203,32 +83,12 @@ The default speed is `"medium"`. You can set it to `"slow"` or `"fast"`.
 </div>
 ```
 
-</TabsContent>
-
-<TabsContent value="HTML">
-
-```html {2,4}
-<div>
-  <div id="reveal-effect" data-speed="fast">...</div>
-
-  <div id="reveal-effect" data-speed="slow">...</div>
-</div>
-```
-
-</TabsContent>
-
-</UsageTabs>
-
 ### Delay
 
 To add a delay before the animation starts, you can pass the `delay` prop or use the `data-delay` attribute.
 The default delay is `0`.
 
 <ComponentPreview name="reveal-effect-delay-example" />
-
-<UsageTabs>
-
-<TabsContent value="React">
 
 ```tsx {2,4}
 <div>
@@ -238,22 +98,6 @@ The default delay is `0`.
 </div>
 ```
 
-</TabsContent>
-
-<TabsContent value="HTML">
-
-```html {2,4}
-<div>
-  <div id="reveal-effect" data-delay="0.2">...</div>
-
-  <div id="reveal-effect" data-delay="0.5">...</div>
-</div>
-```
-
-</TabsContent>
-
-</UsageTabs>
-
 ### Translate Y
 
 To change the Y-axis translation from where the element will initially begin animation, you can pass the `translateY` prop or use the `data-translatey` attribute.
@@ -262,10 +106,6 @@ Pair `translateY` with a small `delay` for a more pronounced effect.
 
 <ComponentPreview name="reveal-effect-translate-y-example" />
 
-<UsageTabs>
-
-<TabsContent value="React">
-
 ```tsx {2,4}
 <div>
   <RevealEffect translateY={10}>...</RevealEffect>
@@ -273,19 +113,3 @@ Pair `translateY` with a small `delay` for a more pronounced effect.
   <RevealEffect translateY={15}>...</RevealEffect>
 </div>
 ```
-
-</TabsContent>
-
-<TabsContent value="HTML">
-
-```html {2,4}
-<div>
-  <div id="reveal-effect" data-translatey="10">...</div>
-
-  <div id="reveal-effect" data-translatey="15">...</div>
-</div>
-```
-
-</TabsContent>
-
-</UsageTabs>
