@@ -7,10 +7,6 @@ description: A text animation that swaps the letters vertically on hover.
 
 ## Installation
 
-<UsageTabs>
-
-<TabsContent value="React">
-
 <InstallationTabs>
 
 <TabsContent value="cli">
@@ -43,202 +39,7 @@ npm install motion
 
 </InstallationTabs>
 
-</TabsContent>
-
-<TabsContent value="HTML">
-
-<InstallationTabs>
-
-<TabsContent value="cli">
-
-```bash
-npx shadcn@latest add https://atlasui.dev/r/letter-swap-html.json
-```
-
-</TabsContent>
-
-<TabsContent value="manual">
-
-<Steps>
-
-<Step>Install the following dependencies:</Step>
-
-```bash
-npm install motion
-```
-
-<Step>Copy and paste the following `script.js` into your project.</Step>
-
-```js
-import { animate, stagger } from "motion";
-
-document.querySelectorAll(".letter-swap").forEach((element) => {
-  const text = element.getAttribute("data-text");
-  const reverse = element.hasAttribute("data-reverse");
-  const staggerDuration = element.getAttribute("data-stagger-duration") || 0.02;
-
-  const validStaggerFrom = ["first", "last", "center"];
-  const rawStaggerFrom = element.getAttribute("data-stagger-from");
-  if (rawStaggerFrom && !validStaggerFrom.includes(rawStaggerFrom)) {
-    console.error(
-      `Invalid data-stagger-from value: "${rawStaggerFrom}". Expected one of: ${validStaggerFrom.join(", ")}. Falling back to "first".`
-    );
-  }
-  const staggerFrom = validStaggerFrom.includes(rawStaggerFrom)
-    ? rawStaggerFrom
-    : "first";
-
-  element.innerHTML = "";
-
-  const letters = [];
-
-  text.split("").forEach((char) => {
-    const wrapper = document.createElement("span");
-    wrapper.className = "letter-wrapper";
-
-    const primary = document.createElement("span");
-    primary.className = "letter-primary";
-    primary.textContent = char;
-
-    const secondary = document.createElement("span");
-    secondary.className = "letter-secondary";
-    secondary.textContent = char;
-    secondary.style.top = reverse ? "-100%" : "100%";
-
-    wrapper.appendChild(primary);
-    wrapper.appendChild(secondary);
-    element.appendChild(wrapper);
-
-    letters.push({ primary, secondary });
-  });
-
-  let isHovered = false;
-
-  const primaryEls = letters.map((l) => l.primary);
-  const secondaryEls = letters.map((l) => l.secondary);
-
-  const hoverStart = () => {
-    if (isHovered) return;
-    isHovered = true;
-
-    animate(
-      primaryEls,
-      { y: reverse ? "100%" : "-100%" },
-      {
-        delay: stagger(staggerDuration, {
-          from: staggerFrom,
-        }),
-      }
-    );
-
-    animate(
-      secondaryEls,
-      { top: "0%" },
-      {
-        delay: stagger(staggerDuration, {
-          from: staggerFrom,
-        }),
-      }
-    );
-  };
-
-  const hoverEnd = () => {
-    if (!isHovered) return;
-    isHovered = false;
-
-    animate(
-      primaryEls,
-      { y: 0 },
-      {
-        delay: stagger(staggerDuration, {
-          from: staggerFrom,
-        }),
-      }
-    );
-
-    animate(
-      secondaryEls,
-      { top: reverse ? "-100%" : "100%" },
-      {
-        delay: stagger(staggerDuration, {
-          from: staggerFrom,
-        }),
-      }
-    );
-  };
-
-  element.addEventListener("mouseenter", hoverStart);
-  element.addEventListener("mouseleave", hoverEnd);
-});
-```
-
-<Step>Add `style.css`</Step>
-
-```css
-.letter-swap {
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
-}
-
-.letter-wrapper {
-  position: relative;
-  display: inline-flex;
-  white-space: pre;
-}
-
-.letter-primary {
-  position: relative;
-}
-
-.letter-secondary {
-  position: absolute;
-}
-
-/* Optional styles */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-body {
-  min-height: 100svh;
-  background-color: #18181b;
-  color: #fff;
-  font-family: "Inter", sans-serif;
-  max-width: 800px;
-  margin: 0 auto;
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-  align-items: center;
-  justify-content: center;
-}
-
-span {
-  font-size: 2rem;
-  font-weight: 500;
-}
-```
-
-</Steps>
-
-</TabsContent>
-
-</InstallationTabs>
-
-</TabsContent>
-
-</UsageTabs>
-
 ## Usage
-
-<UsageTabs>
-
-<TabsContent value="React">
 
 ```tsx
 import { LetterSwap } from "@/components/letter-swap";
@@ -250,27 +51,7 @@ import { LetterSwap } from "@/components/letter-swap";
 <LetterSwap text="Atlas UI" />
 ```
 
-</TabsContent>
-
-<TabsContent value="HTML">
-
-Pass `class="letter-swap"` and `data-text="Your Text"` to your text element.
-
-```html
-<p class="letter-swap" data-text="Hello World">Hello World</p>
-
-<span class="letter-swap" data-text="Atlas UI">Atlas UI</span>
-```
-
-</TabsContent>
-
-</UsageTabs>
-
-## Props / Data Attributes
-
-<UsageTabs>
-
-<TabsContent value="React">
+## Props
 
 | Prop              | Type                      | Default | Required | Description                                                                              |
 | ----------------- | ------------------------- | ------- | -------- | ---------------------------------------------------------------------------------------- |
@@ -279,18 +60,3 @@ Pass `class="letter-swap"` and `data-text="Your Text"` to your text element.
 | `staggerDuration` | `number`                  | `0.02`  | false    | Delay between each letter animation                                                      |
 | `staggerFrom`     | `first \| last \| center` | `first` | false    | Direction from where the animation starts                                                |
 | `className`       | `string`                  | `0`     | false    | Optional classnames for according to match your setup                                    |
-
-</TabsContent>
-
-<TabsContent value="HTML">
-
-| Data Attribute          | Type                      | Default | Required | Description                                                                              |
-| ----------------------- | ------------------------- | ------- | -------- | ---------------------------------------------------------------------------------------- |
-| `data-text`             | `string`                  | -       | true     | The text content to animate                                                              |
-| `data-reverse`          | `boolean`                 | `false` | false    | Controls the direction of the animation. (`false`: bottom to top, `true`: top to bottom) |
-| `data-stagger-duration` | `number`                  | `0.02`  | false    | Delay between each letter animation                                                      |
-| `data-stagger-from`     | `first \| last \| center` | `first` | false    | Direction from where the animation starts                                                |
-
-</TabsContent>
-
-</UsageTabs>
