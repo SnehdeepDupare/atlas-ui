@@ -1,0 +1,107 @@
+---
+title: Scroll Based Text Reveal
+description: A text reveal effect which animates the opacity of the text as you scroll.
+---
+
+<HtmlPreview name="scroll-based-text-reveal-html" />
+
+## Installation
+
+<InstallationTabs>
+
+<TabsContent value="cli">
+
+```bash
+npx shadcn@latest add https://atlasui.dev/r/scroll-based-text-reveal-html.json
+```
+
+</TabsContent>
+
+<TabsContent value="manual">
+
+<Steps>
+
+<Step>Install the following dependencies:</Step>
+
+```bash
+npm install motion
+```
+
+<Step>Copy and paste the following code into your project.</Step>
+
+```html
+<div class="spacer"></div>
+<p class="reveal-text" id="reveal-text">
+  AtlasUI is an open-source library offering a suite of prebuilt animated
+  components for React, Next.js, and Vanilla JS.
+</p>
+<div class="spacer"></div>
+```
+
+<Step>Add `style.css`</Step>
+
+```css
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  width: 100%;
+  background: #18181b;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+}
+
+.spacer {
+  height: 100vh;
+}
+
+.reveal-text {
+  font-size: 3rem;
+  line-height: 1;
+  font-weight: bold;
+  text-align: center;
+  opacity: 0;
+  max-width: 64rem;
+}
+```
+
+<Step>Add `script.js`</Step>
+
+```js
+import { animate, scroll } from "motion";
+
+const revealText = document.getElementById("reveal-text");
+
+scroll((progress) => animate(revealText, { opacity: progress }), {
+  target: revealText,
+  offset: ["start 0.8", "start 0.3"],
+});
+```
+
+</Steps>
+
+</TabsContent>
+
+</InstallationTabs>
+
+## Usage
+
+Define the text you want to display with Scroll Based Text Reveal Effect in a p element with `id="reveal-text"` and `class="reveal-text"`.
+
+```html
+<p class="reveal-text" id="reveal-text">
+  AtlasUI is an open-source library offering a suite of prebuilt animated
+  components for React, Next.js, and Vanilla JS.
+</p>
+```
+
+Add spacer `div` to create space between the text and the top of the page or replace it with your own content.
+
+```html {1,3}
+<div class="spacer"></div>
+<p class="reveal-text" id="reveal-text">...</p>
+<div class="spacer"></div>
+```
