@@ -37,3 +37,22 @@ export function getAllDocsLinks(docsConfig: DocsConfig): string[] {
 
   return Array.from(links);
 }
+
+export const getCurrentBase = (pathname: string) => {
+  const baseMatch = pathname.match(/\/docs\/components\/(react|html)\//);
+  return baseMatch ? baseMatch[1] : "react"; // Default to react.
+};
+
+export const updateComponentPathname = (base: string, pathname: string) => {
+  if (!pathname) return pathname;
+
+  if (pathname === "/docs/components") return pathname;
+
+  if (pathname.includes("/docs/components")) {
+    const segments = pathname.split("/");
+    const component = segments[segments.length - 1];
+    return `/docs/components/${base}/${component}`;
+  }
+
+  return pathname;
+};
