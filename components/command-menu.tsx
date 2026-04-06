@@ -3,7 +3,7 @@
 import { useCallback, useEffect, useState } from "react";
 
 import { useTheme } from "next-themes";
-import { useRouter } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 
 import { type DialogProps } from "@radix-ui/react-dialog";
 import {
@@ -36,10 +36,13 @@ import {
 import { Kbd } from "@/components/ui/kbd";
 import { Separator } from "@/components/ui/separator";
 import { docsConfig } from "@/config/docs";
-import { cn } from "@/lib/utils";
+import { cn, getCurrentBase, updateComponentPathname } from "@/lib/utils";
 
 export function CommandMenu({ ...props }: DialogProps) {
   const router = useRouter();
+  const pathname = usePathname();
+  const currentBase = getCurrentBase(pathname);
+
   const [open, setOpen] = useState(false);
   const { setTheme } = useTheme();
 
@@ -110,13 +113,18 @@ export function CommandMenu({ ...props }: DialogProps) {
               >
                 {group.items.map((navItem) => {
                   const isComponent = navItem.href?.includes("/components/");
+
+                  const href = updateComponentPathname(
+                    currentBase,
+                    navItem.href!
+                  );
                   return (
                     <CommandItem
                       key={navItem.href}
                       value={navItem.title}
                       className="data-[selected=true]:bg-input/50 h-9 rounded-md border border-transparent px-3! font-medium data-[selected=true]:border-neutral-300 dark:data-[selected=true]:border-neutral-700"
                       onSelect={() => {
-                        runCommand(() => router.push(navItem.href as string));
+                        runCommand(() => router.push(href));
                       }}
                     >
                       <div className="mr-2 flex size-4 items-center justify-center">
