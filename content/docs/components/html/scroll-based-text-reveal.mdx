@@ -40,46 +40,11 @@ npm install motion
 
 <Step>Add `style.css`</Step>
 
-```css
-body {
-  margin: 0;
-  padding: 0;
-  min-height: 100vh;
-  width: 100%;
-  background: #18181b;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  color: #fff;
-}
-
-.spacer {
-  height: 100vh;
-}
-
-.reveal-text {
-  font-size: 3rem;
-  line-height: 1;
-  font-weight: bold;
-  text-align: center;
-  opacity: 0;
-  max-width: 64rem;
-}
-```
+<ComponentSource name="scroll-based-text-reveal-html" file="css" />
 
 <Step>Add `script.js`</Step>
 
-```js
-import { animate, scroll } from "motion";
-
-const revealText = document.getElementById("reveal-text");
-
-scroll((progress) => animate(revealText, { opacity: progress }), {
-  target: revealText,
-  offset: ["start 0.8", "start 0.3"],
-});
-```
+<ComponentSource name="scroll-based-text-reveal-html" file="js" />
 
 </Steps>
 

@@ -30,74 +30,11 @@ npx shadcn@latest add https://atlasui.dev/r/dot-and-circle-mouse-trailer-html.js
 
 <Step>Add `style.css`</Step>
 
-```css
-body {
-  margin: 0;
-  padding: 0;
-  height: 100vh;
-  width: 100%;
-  background-color: #18181b;
-}
-
-.trailer {
-  position: fixed;
-  width: 8px;
-  height: 8px;
-  background-color: white;
-  border-radius: 50%;
-  left: 0;
-  top: 0;
-  transform: translate(-50%, -50%);
-  pointer-events: none;
-  z-index: 1000;
-}
-
-.trailer-outline {
-  position: fixed;
-  left: 0;
-  top: 0;
-  transform: translate(-50%, -50%);
-  width: 80px;
-  height: 80px;
-  border: 2px solid white;
-  border-radius: 50%;
-  pointer-events: none;
-  z-index: 1000;
-}
-```
+<ComponentSource name="dot-and-circle-mouse-trailer-html" file="css" />
 
 <Step>Add `script.js`</Step>
 
-```js
-const trailer = document.getElementById("trailer");
-const trailerOutline = document.getElementById("trailer-outline");
-
-document.body.onpointermove = (e) => {
-  const { clientX, clientY } = e;
-
-  trailer.animate(
-    {
-      left: `${clientX}px`,
-      top: `${clientY}px`,
-    },
-    {
-      duration: 1000,
-      fill: "forwards",
-    }
-  );
-
-  trailerOutline.animate(
-    {
-      left: `${clientX}px`,
-      top: `${clientY}px`,
-    },
-    {
-      duration: 3000,
-      fill: "forwards",
-    }
-  );
-};
-```
+<ComponentSource name="dot-and-circle-mouse-trailer-html" file="js" />
 
 </Steps>
 

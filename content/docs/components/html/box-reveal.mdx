@@ -29,95 +29,11 @@ npm install motion
 
 <Step>Copy and paste the following `script.js` into your project.</Step>
 
-```js
-import { animate, inView } from "motion";
-
-document.querySelectorAll("#box-reveal").forEach((root) => {
-  const side = root.dataset.side ?? "left";
-  const color = root.dataset.color ?? "#FACC15";
-  const width = root.dataset.width ?? "fit-content";
-
-  if (width === "full") {
-    root.style.width = "100%";
-  } else {
-    root.style.width = "fit-content";
-  }
-
-  const contentWrapper = document.createElement("div");
-  contentWrapper.className = "box-reveal-content";
-
-  while (root.firstChild) {
-    contentWrapper.appendChild(root.firstChild);
-  }
-
-  root.appendChild(contentWrapper);
-
-  // overlay
-  const overlay = document.createElement("div");
-  overlay.className = "box-reveal-overlay";
-  overlay.style.background = color;
-
-  root.appendChild(overlay);
-
-  // initial
-  animate(contentWrapper, { opacity: 0, y: 75 }, { duration: 0 });
-
-  if (side === "right") {
-    animate(overlay, { right: 0 }, { duration: 0 });
-  } else {
-    animate(overlay, { left: 0 }, { duration: 0 });
-  }
-
-  inView(
-    root,
-    () => {
-      // content animation
-      animate(
-        contentWrapper,
-        { opacity: 1, y: 0 },
-        {
-          duration: 0.5,
-          delay: 0.35,
-        }
-      );
-
-      // overlay animation
-      animate(
-        overlay,
-        side === "right" ? { right: "100%" } : { left: "100%" },
-        {
-          duration: 0.5,
-          ease: "easeIn",
-        }
-      );
-    },
-    { once: true }
-  );
-});
-```
+<ComponentSource name="box-reveal-html" file="js" />
 
 <Step>Add `style.css`</Step>
 
-```css
-#box-reveal {
-  position: relative;
-  overflow: hidden;
-}
-
-.box-reveal-overlay {
-  position: absolute;
-  inset: 0;
-  top: 0.25rem;
-  bottom: 0.25rem;
-  pointer-events: none;
-  z-index: 20;
-}
-
-.box-reveal-content {
-  position: relative;
-  z-index: 10;
-}
-```
+<ComponentSource name="box-reveal-html" file="css" />
 
 </Steps>
 

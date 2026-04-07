@@ -11,6 +11,27 @@ const registry = JSON.parse(
   fs.readFileSync(path.join(process.cwd(), "registry.json"), "utf8")
 );
 
+// File type configurations for HTML components
+const HTML_FILE_CONFIGS = {
+  html: {
+    filename: "index.html",
+    label: "index.html",
+    lang: "language-html",
+  },
+  css: {
+    filename: "style.css",
+    label: "style.css",
+    lang: "language-css",
+  },
+  js: {
+    filename: "script.js",
+    label: "script.js",
+    lang: "language-javascript",
+  },
+};
+
+type FileType = "html" | "css" | "js";
+
 export function rehypeComponent() {
   return async (tree: UnistTree) => {
     visit(tree, (node: UnistNode) => {
@@ -28,11 +49,70 @@ export function rehypeComponent() {
           | string
           | undefined;
 
+        // Check for HTML/CSS/JS files for HTML Components
+        const fileType = getNodeAttributeByName(node, "file")
+          ?.value as FileType;
+
         if (!name && !srcPath) {
           return null;
         }
 
         try {
+          // If fileType is specified, look up in HTML registry
+          if (fileType) {
+            const entry = [...htmlRegistry, ...htmlExamplesRegistry].find(
+              (item) => item.name === name
+            );
+
+            if (!entry?.files?.[0]?.path) {
+              console.error(`HTML component "${name}" not found in registry`);
+              return null;
+            }
+
+            const firstFilePath = entry.files[0].path as string;
+            const componentDir = path.join(
+              process.cwd(),
+              "registry",
+              path.dirname(firstFilePath)
+            );
+
+            const config = HTML_FILE_CONFIGS[fileType];
+            const filePath = path.join(componentDir, config.filename);
+
+            if (!fs.existsSync(filePath)) {
+              console.error(`File not found: ${filePath}`);
+              return null;
+            }
+
+            const source = fs.readFileSync(filePath, "utf8");
+
+            // Add code as children so that rehype can take over at build time.
+            node.children?.push(
+              u("element", {
+                tagName: "pre",
+                properties: {
+                  __src__: filePath,
+                  __file_label__: config.label,
+                },
+                children: [
+                  u("element", {
+                    tagName: "code",
+                    properties: {
+                      className: [config.lang],
+                    },
+                    children: [
+                      {
+                        type: "text",
+                        value: source,
+                      },
+                    ],
+                  }),
+                ],
+              })
+            );
+            return;
+          }
+
           let src: string;
 
           if (srcPath) {
