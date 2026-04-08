@@ -39,6 +39,10 @@ export const Doc = defineDocumentType(() => ({
       type: "boolean",
       default: true,
     },
+    base: {
+      type: "string",
+      required: false,
+    },
     component: {
       type: "boolean",
       default: false,
