@@ -6,19 +6,19 @@
   "dependencies": [],
   "files": [
     {
-      "path": "registry/html/blob-mouse-trailer/index.html",
+      "path": "registry/html/atlasui/blob-mouse-trailer/index.html",
       "content": "<!DOCTYPE html>\r\n<html lang=\"en\">\r\n  <head>\r\n    <meta charset=\"UTF-8\" />\r\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" />\r\n    <title>Blob Mouse Trailer - Atlas UI</title>\r\n    <link rel=\"stylesheet\" href=\"style.css\" />\r\n  </head>\r\n  <body>\r\n    <div class=\"trailer\" id=\"trailer\"></div>\r\n  </body>\r\n  <script type=\"module\" src=\"script.js\"></script>\r\n</html>\r\n",
       "type": "registry:file",
       "target": "~/blob-mouse-trailer/index.html"
     },
     {
-      "path": "registry/html/blob-mouse-trailer/style.css",
+      "path": "registry/html/atlasui/blob-mouse-trailer/style.css",
       "content": "body {\n  margin: 0;\n  padding: 0;\n  height: 100vh;\n  width: 100%;\n  background: #18181b;\n}\n\n.trailer {\n  position: fixed;\n  height: 24rem;\n  aspect-ratio: 1;\n  background: linear-gradient(to right, #a855f7, #f59e0b);\n  border-radius: 50%;\n  left: 0;\n  top: 0;\n  transform: translate(-50%, -50%);\n  transform-origin: center;\n  pointer-events: none;\n  z-index: -10;\n  filter: blur(100px);\n  animation: rotate 10s infinite;\n}\n\n@keyframes rotate {\n  from {\n    transform: translate(-50%, -50%) rotate(0deg);\n  }\n  to {\n    transform: translate(-50%, -50%) rotate(360deg);\n  }\n}\n",
       "type": "registry:file",
       "target": "~/blob-mouse-trailer/style.css"
     },
     {
-      "path": "registry/html/blob-mouse-trailer/script.js",
+      "path": "registry/html/atlasui/blob-mouse-trailer/script.js",
       "content": "const trailer = document.getElementById(\"trailer\");\r\n\r\ndocument.body.onpointermove = (e) => {\r\n  const { clientX, clientY } = e;\r\n\r\n  trailer.animate(\r\n    {\r\n      left: `${clientX}px`,\r\n      top: `${clientY}px`,\r\n    },\r\n    {\r\n      duration: 3000,\r\n      fill: \"forwards\",\r\n    }\r\n  );\r\n};\r\n",
       "type": "registry:file",
       "target": "~/blob-mouse-trailer/script.js"

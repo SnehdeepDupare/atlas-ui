@@ -8,7 +8,8 @@ body {
   position: relative;
   border: none;
   border-radius: 8px;
-  background: radial-gradient(
+  background:
+    radial-gradient(
       circle at 50% 0%,
       rgba(250, 250, 250, 0.05) 0%,
       transparent 60%
@@ -46,7 +47,9 @@ body {
     rgba(255, 255, 255, 0.5) calc(var(--x) + 25%),
     rgba(255, 255, 255, 0.1) calc(var(--x) + 100%)
   );
-  mask: linear-gradient(black, black) content-box, linear-gradient(black, black);
+  mask:
+    linear-gradient(black, black) content-box,
+    linear-gradient(black, black);
   mask-composite: exclude;
   pointer-events: none;
 }

@@ -1,0 +1,35 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #18181b;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  align-items: center;
+  justify-content: center;
+  min-height: 100svh;
+  font-size: x-large;
+}
+
+#box-reveal {
+  position: relative;
+  overflow: hidden;
+}
+
+.box-reveal-overlay {
+  position: absolute;
+  inset: 0;
+  top: 0.25rem;
+  bottom: 0.25rem;
+  pointer-events: none;
+  z-index: 20;
+}
+
+.box-reveal-content {
+  position: relative;
+  z-index: 10;
+}

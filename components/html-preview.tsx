@@ -2,7 +2,9 @@
 
 import * as React from "react";
 
-import { RotateCcwIcon } from "lucide-react";
+import Link from "next/link";
+
+import { FullscreenIcon, RotateCcwIcon } from "lucide-react";
 
 import ComponentWrapper from "@/components/component-wrapper";
 import { Button } from "@/components/ui/button";
@@ -50,6 +52,15 @@ export function HtmlPreview({ name, children }: HtmlPreviewProps) {
         <TabsContent value="preview" className="relative rounded-md">
           <ComponentWrapper className="overflow-hidden">
             <div className="absolute top-2 right-2 z-10 flex items-center gap-1">
+              <Button asChild variant="ghost" size="icon" className="size-8">
+                <Link href={`/preview/${name}`} target="_blank">
+                  <FullscreenIcon
+                    aria-label="fullscreen-btn"
+                    className="size-4"
+                  />
+                </Link>
+              </Button>
+
               <Button
                 onClick={() => setKey((prev) => prev + 1)}
                 variant="ghost"

@@ -6,6 +6,9 @@
   "dependencies": [
     "motion"
   ],
+  "registryDependencies": [
+    "https://atlasui.dev/r/reveal-effect-html.json"
+  ],
   "files": [
     {
       "path": "registry/html/examples/reveal-effect-speed-html-example/index.html",

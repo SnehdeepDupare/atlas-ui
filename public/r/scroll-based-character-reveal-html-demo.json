@@ -1,0 +1,36 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "scroll-based-character-reveal-html-demo",
+  "title": "Scroll Based Character Reveal",
+  "description": "Example of text reveal effect which progressively reveals text character by character as you scroll using HTML, CSS, JavaScript and Motion.",
+  "dependencies": [
+    "motion"
+  ],
+  "registryDependencies": [
+    "https://atlasui.dev/r/scroll-based-character-reveal-html.json"
+  ],
+  "files": [
+    {
+      "path": "registry/html/examples/scroll-based-character-reveal-html-demo/index.html",
+      "content": "<!DOCTYPE html>\r\n<html lang=\"en\">\r\n  <head>\r\n    <meta charset=\"UTF-8\" />\r\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" />\r\n    <title>Scroll Based Character Reveal - Atlas UI</title>\r\n    <link rel=\"stylesheet\" href=\"style.css\" />\r\n  </head>\r\n  <body>\r\n    <div class=\"spacer\"></div>\r\n    <p class=\"reveal-text\" id=\"reveal-text\">\r\n      AtlasUI is an open-source library offering a suite of prebuilt animated\r\n      components for React, Next.js, and Vanilla JS.\r\n    </p>\r\n    <div class=\"spacer\"></div>\r\n  </body>\r\n\r\n  <script type=\"module\" src=\"script.js\"></script>\r\n</html>\r\n",
+      "type": "registry:file",
+      "target": "~/scroll-based-character-reveal/index.html"
+    },
+    {
+      "path": "registry/html/examples/scroll-based-character-reveal-html-demo/style.css",
+      "content": "body {\n  margin: 0;\n  padding: 0;\n  min-height: 100vh;\n  width: 100%;\n  background: #18181b;\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  justify-content: center;\n  color: #fff;\n}\n\n.spacer {\n  height: 100vh;\n}\n\n.reveal-text {\n  font-size: 3rem;\n  font-weight: bold;\n  text-align: center;\n  display: flex;\n  flex-wrap: wrap;\n  justify-content: center;\n  max-width: 64rem;\n}\n\n.word {\n  display: flex;\n  align-items: center;\n  margin-right: 0.5rem;\n}\n\n.character-container {\n  position: relative;\n  display: inline-flex;\n}\n\n.char-shadow {\n  position: absolute;\n  inset: 0;\n  pointer-events: none;\n  opacity: 0.1;\n}\n\n.char {\n  opacity: 0;\n}\n",
+      "type": "registry:file",
+      "target": "~/scroll-based-character-reveal/style.css"
+    },
+    {
+      "path": "registry/html/examples/scroll-based-character-reveal-html-demo/script.js",
+      "content": "import { animate, scroll, transform } from \"motion\";\r\n\r\nconst revealText = document.getElementById(\"reveal-text\");\r\n\r\nconst words = revealText.innerText.split(\" \");\r\nrevealText.innerHTML = words\r\n  .map(\r\n    (word) => `\r\n    <span class=\"word\">\r\n      ${word\r\n        .split(\"\")\r\n        .map(\r\n          (char) => `\r\n          <span class=\"character-container\">\r\n            <span class=\"char-shadow\">${char}</span>\r\n            <span class=\"char\">${char}</span>\r\n          </span>\r\n        `\r\n        )\r\n        .join(\"\")}\r\n    </span>\r\n  `\r\n  )\r\n  .join(\" \");\r\n\r\nconst characters = document.querySelectorAll(\".char\");\r\n\r\ncharacters.forEach((char) => {\r\n  char.style.opacity = 0;\r\n});\r\n\r\nscroll(\r\n  (progress) => {\r\n    characters.forEach((char, i) => {\r\n      const start = i / characters.length;\r\n      const end = (start + i) / characters.length;\r\n\r\n      const opacity = transform(progress, [start, end], [0, 1]);\r\n\r\n      char.style.opacity = opacity;\r\n    });\r\n  },\r\n  {\r\n    target: revealText,\r\n    offset: [\"start 0.8\", \"start 0.3\"],\r\n  }\r\n);\r\n",
+      "type": "registry:file",
+      "target": "~/scroll-based-character-reveal/script.js"
+    }
+  ],
+  "meta": {
+    "framework": "html"
+  },
+  "type": "registry:file"
+}
