@@ -48,55 +48,30 @@ npm install motion
 
 ## Usage
 
-Define your projects in the project gallery section.
+Define a section with `class="project-gallery"` and `id="project-gallery"`.
 
 ```html
+<section id="project-gallery" class="project-gallery">...</section>
+```
+
+Define your projects inside the section as follows.
+
+```html {2-8, 10-16}
 <section id="project-gallery" class="project-gallery">
-  <a href="#" class="gallery-item" data-index="0">
-    <div
-      class="project-image-container"
-      data-index="0"
-      style="background-color: #efe8d3"
-    >
+  <a href="#" class="gallery-item">
+    <div class="project-image-container" style="background-color: #efe8d3">
       <img src="https://atlasui.dev/assets/atlas-ui.png" alt="Atlas UI" />
     </div>
     <h2>Atlas UI</h2>
     <p>Frontend</p>
   </a>
 
-  <a href="#" class="gallery-item" data-index="1">
-    <div
-      class="project-image-container"
-      data-index="1"
-      style="background-color: #706d63"
-    >
+  <a href="#" class="gallery-item">
+    <div class="project-image-container" style="background-color: #706d63">
       <img src="https://atlasui.dev/assets/portfolio.png" alt="Portfolio" />
     </div>
     <h2>Portfolio</h2>
-    <p>Design & Development</p>
+    <p>Design &amp; Development</p>
   </a>
 </section>
-```
-
-Add your project images and your background color to the interactive modal section.
-
-```html
-<section id="interactive-modal" class="interactive-modal">
-  <!-- Modal Container -->
-  <div class="modal" id="modal">
-    <div class="modal-image" data-index="0" style="background-color: #efe8d3">
-      <img src="https://atlasui.dev/assets/atlas-ui.png" alt="Atlas UI" />
-    </div>
-    <div class="modal-image" data-index="1" style="background-color: #706d63">
-      <img src="https://atlasui.dev/assets/portfolio.png" alt="Portfolio" />
-    </div>
-  </div>
-</section>
-```
-
-Add the cursor elements in the interactive modal section.
-
-```html
-<div class="cursor" id="cursor"></div>
-<div class="cursor-label" id="cursor-label">View</div>
 ```
