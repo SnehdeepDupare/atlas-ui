@@ -17,5 +17,5 @@ scroll(
   {
     target: container,
     offset: ["start start", "end end"],
-  }
+  },
 );

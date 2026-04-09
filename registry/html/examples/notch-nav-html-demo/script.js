@@ -5,7 +5,7 @@ const DEFAULT_OFFSET_Y = 20;
 
 const trigger = document.getElementById("notch-nav-trigger");
 const content = document.getElementById("notch-nav-content");
-const items = document.querySelectorAll("#notch-nav-item");
+const items = document.querySelectorAll(".notch-nav-item");
 
 const getOffsetY = () => {
   const attr = content.getAttribute("data-offset-y");

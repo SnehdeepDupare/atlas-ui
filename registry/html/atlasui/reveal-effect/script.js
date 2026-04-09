@@ -6,7 +6,7 @@ const speedDurations = {
   fast: 0.5,
 };
 
-document.querySelectorAll("#reveal-effect").forEach((el) => {
+document.querySelectorAll(".reveal-effect").forEach((el) => {
   const delay = parseFloat(el.dataset.delay) || 0;
   const speed = el.dataset.speed || "medium";
   const translateY = parseFloat(el.dataset.translatey) || 0;
@@ -29,7 +29,7 @@ document.querySelectorAll("#reveal-effect").forEach((el) => {
         duration: speedDurations[speed],
         easing: "ease-in-out",
         delay,
-      }
+      },
     );
   });
 });

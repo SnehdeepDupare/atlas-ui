@@ -1,6 +1,6 @@
 import { animate, inView } from "motion";
 
-document.querySelectorAll("#box-reveal").forEach((root) => {
+document.querySelectorAll(".box-reveal").forEach((root) => {
   const side = root.dataset.side ?? "left";
   const color = root.dataset.color ?? "#FACC15";
   const width = root.dataset.width ?? "fit-content";
@@ -28,11 +28,7 @@ document.querySelectorAll("#box-reveal").forEach((root) => {
   root.appendChild(overlay);
 
   // initial
-  animate(
-    contentWrapper,
-    { opacity: 0, y: 75 },
-    { duration: 0 }
-  );
+  animate(contentWrapper, { opacity: 0, y: 75 }, { duration: 0 });
 
   if (side === "right") {
     animate(overlay, { right: 0 }, { duration: 0 });
@@ -40,7 +36,6 @@ document.querySelectorAll("#box-reveal").forEach((root) => {
     animate(overlay, { left: 0 }, { duration: 0 });
   }
 
-  
   inView(
     root,
     () => {
@@ -51,21 +46,19 @@ document.querySelectorAll("#box-reveal").forEach((root) => {
         {
           duration: 0.5,
           delay: 0.35,
-        }
+        },
       );
 
       // overlay animation
       animate(
         overlay,
-        side === "right"
-          ? { right: "100%" }
-          : { left: "100%" },
+        side === "right" ? { right: "100%" } : { left: "100%" },
         {
           duration: 0.5,
           ease: "easeIn",
-        }
+        },
       );
     },
-    { once: true }
+    { once: true },
   );
 });

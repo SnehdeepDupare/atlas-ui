@@ -1,6 +1,9 @@
 import { animate, spring } from "motion";
 
 const btn = document.querySelector(".shiny-button");
+const shinyOverlay = document.createElement("span");
+shinyOverlay.className = "shiny-overlay";
+btn.appendChild(shinyOverlay);
 
 animate(
   btn,
@@ -16,7 +19,7 @@ animate(
     stiffness: 20,
     damping: 15,
     mass: 2,
-  }
+  },
 );
 
 btn.addEventListener("mousedown", () => {

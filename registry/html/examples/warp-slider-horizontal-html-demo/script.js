@@ -78,14 +78,36 @@ const renderer = new THREE.WebGLRenderer({
 renderer.setSize(window.innerWidth, window.innerHeight);
 renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
 
+const getBackgroundColor = () => {
+  const htmlTheme = document.documentElement.getAttribute("data-theme");
+  const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+
+  const isDark = htmlTheme === "dark" || (!htmlTheme && prefersDark);
+
+  return isDark ? "#111111" : "#ffffff";
+};
+
 const scene = new THREE.Scene();
-scene.background = new THREE.Color(0x141414);
+scene.background = new THREE.Color(getBackgroundColor());
+
+const updateSceneBackground = () => {
+  scene.background = new THREE.Color(getBackgroundColor());
+};
+
+const darkModeMediaQuery = window.matchMedia("(prefers-color-scheme: dark)");
+darkModeMediaQuery.addEventListener("change", updateSceneBackground);
+
+const themeObserver = new MutationObserver(updateSceneBackground);
+themeObserver.observe(document.documentElement, {
+  attributes: true,
+  attributeFilter: ["data-theme", "style"],
+});
 
 const camera = new THREE.PerspectiveCamera(
   45,
   window.innerWidth / window.innerHeight,
   0.1,
-  100
+  100,
 );
 camera.position.z = 5;
 
@@ -97,7 +119,7 @@ const totalSlides = slides.length;
 
 if (!["vertical", "horizontal"].includes(config.orientation)) {
   console.error(
-    `Invalid orientation "${config.orientation}". Accepts only: vertical | horizontal. Defaulting to "vertical".`
+    `Invalid orientation "${config.orientation}". Accepts only: vertical | horizontal. Defaulting to "vertical".`,
   );
   config.orientation = "vertical";
 }
@@ -107,7 +129,8 @@ const directionSign = 1;
 
 const slideHeights = Array.from(
   { length: totalSlides },
-  () => config.minHeight + Math.random() * (config.maxHeight - config.minHeight)
+  () =>
+    config.minHeight + Math.random() * (config.maxHeight - config.minHeight),
 );
 
 const slideSizes = isHorizontal
@@ -237,7 +260,7 @@ window.addEventListener(
     clearTimeout(window._scrollTimeout);
     window._scrollTimeout = setTimeout(() => (isScrolling = false), 150);
   },
-  { passive: false }
+  { passive: false },
 );
 
 window.addEventListener(
@@ -248,7 +271,7 @@ window.addEventListener(
     isScrolling = true;
     scrollMomentum = 0;
   },
-  { passive: false }
+  { passive: false },
 );
 
 window.addEventListener(
@@ -264,7 +287,7 @@ window.addEventListener(
     scrollTarget -= delta * config.touchSpeed * directionSign;
     isScrolling = true;
   },
-  { passive: false }
+  { passive: false },
 );
 
 window.addEventListener("touchend", () => {
@@ -365,7 +388,7 @@ function animate(time) {
   if (velocity > 0.05) {
     distortionTarget = Math.max(
       distortionTarget,
-      Math.min(1, velocityPeak * 0.1)
+      Math.min(1, velocityPeak * 0.1),
     );
   }
 

@@ -1,16 +1,31 @@
+:root {
+  --background: light-dark(
+    oklch(100% 0.00011 271.152),
+    oklch(18.22% 0.00002 271.152)
+  );
+  --foreground: light-dark(
+    oklch(18.22% 0.00002 271.152),
+    oklch(98.511% 0.00011 271.152)
+  );
+}
+
+html {
+  color-scheme: light dark;
+}
+
 body {
   margin: 0;
   padding: 0;
   height: 100vh;
   width: 100%;
-  background-color: #18181b;
+  background-color: var(--background);
 }
 
 .trailer {
   position: fixed;
   width: 8px;
   height: 8px;
-  background-color: white;
+  background-color: var(--foreground);
   border-radius: 50%;
   left: 0;
   top: 0;
@@ -26,7 +41,7 @@ body {
   transform: translate(-50%, -50%);
   width: 80px;
   height: 80px;
-  border: 2px solid white;
+  border: 2px solid var(--foreground);
   border-radius: 50%;
   pointer-events: none;
   z-index: 1000;

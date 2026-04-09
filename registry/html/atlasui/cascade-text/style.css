@@ -1,3 +1,18 @@
+:root {
+  --background: light-dark(
+    oklch(100% 0.00011 271.152),
+    oklch(18.22% 0.00002 271.152)
+  );
+  --foreground: light-dark(
+    oklch(18.22% 0.00002 271.152),
+    oklch(98.511% 0.00011 271.152)
+  );
+}
+
+html {
+  color-scheme: light dark;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -7,8 +22,8 @@
 body {
   min-height: 100svh;
   padding: 4rem 1.25rem;
-  background-color: #18181b;
-  color: #fff;
+  background-color: var(--background);
+  color: var(--foreground);
   font-family: "Inter", sans-serif;
   max-width: 800px;
   margin: 0 auto;

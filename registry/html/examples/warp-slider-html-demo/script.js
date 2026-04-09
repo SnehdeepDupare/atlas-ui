@@ -78,8 +78,30 @@ const renderer = new THREE.WebGLRenderer({
 renderer.setSize(window.innerWidth, window.innerHeight);
 renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
 
+const getBackgroundColor = () => {
+  const htmlTheme = document.documentElement.getAttribute("data-theme");
+  const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+
+  const isDark = htmlTheme === "dark" || (!htmlTheme && prefersDark);
+
+  return isDark ? "#111111" : "#ffffff";
+};
+
 const scene = new THREE.Scene();
-scene.background = new THREE.Color(0x141414);
+scene.background = new THREE.Color(getBackgroundColor());
+
+const updateSceneBackground = () => {
+  scene.background = new THREE.Color(getBackgroundColor());
+};
+
+const darkModeMediaQuery = window.matchMedia("(prefers-color-scheme: dark)");
+darkModeMediaQuery.addEventListener("change", updateSceneBackground);
+
+const themeObserver = new MutationObserver(updateSceneBackground);
+themeObserver.observe(document.documentElement, {
+  attributes: true,
+  attributeFilter: ["data-theme", "style"],
+});
 
 const camera = new THREE.PerspectiveCamera(
   45,

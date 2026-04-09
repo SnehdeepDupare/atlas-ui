@@ -1,3 +1,18 @@
+:root {
+  --background: light-dark(
+    oklch(100% 0.00011 271.152),
+    oklch(18.22% 0.00002 271.152)
+  );
+  --foreground: light-dark(
+    oklch(18.22% 0.00002 271.152),
+    oklch(98.511% 0.00011 271.152)
+  );
+}
+
+html {
+  color-scheme: light dark;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -6,8 +21,8 @@
 
 body {
   font-family: sans-serif;
-  background: #18181b;
-  color: #fff;
+  background: var(--background);
+  color: var(--foreground);
   overflow-x: hidden;
   max-width: 80rem;
   width: 100%;
@@ -30,7 +45,7 @@ a {
   justify-content: space-between;
   align-items: center;
   padding: 6rem;
-  border-top: 1px solid white;
+  border-top: 1px solid var(--foreground);
   cursor: pointer;
   transition: opacity 0.2s linear;
 }

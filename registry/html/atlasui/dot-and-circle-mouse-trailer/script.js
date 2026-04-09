@@ -1,5 +1,8 @@
 const trailer = document.getElementById("trailer");
-const trailerOutline = document.getElementById("trailer-outline");
+
+const trailerOutline = document.createElement("div");
+trailerOutline.className = "trailer-outline";
+document.body.appendChild(trailerOutline);
 
 document.body.onpointermove = (e) => {
   const { clientX, clientY } = e;
@@ -12,7 +15,7 @@ document.body.onpointermove = (e) => {
     {
       duration: 1000,
       fill: "forwards",
-    }
+    },
   );
 
   trailerOutline.animate(
@@ -23,6 +26,6 @@ document.body.onpointermove = (e) => {
     {
       duration: 3000,
       fill: "forwards",
-    }
+    },
   );
 };

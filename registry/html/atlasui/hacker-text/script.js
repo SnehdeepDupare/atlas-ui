@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
-  const textElement = document.getElementById("text");
+  const textElements = document.querySelectorAll(".hacker-text");
   const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
   let interval = null;
   let timeout = null;
@@ -32,14 +32,18 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const applyEffect = () => {
     if (window.matchMedia("(min-width: 768px)").matches) {
-      textElement.addEventListener("mouseover", (event) => {
-        const target = event.target;
-        scrambleText(target);
+      textElements.forEach((textElement) => {
+        textElement.addEventListener("mouseover", (event) => {
+          const target = event.target;
+          scrambleText(target);
+        });
       });
     }
     // Run effect on page load after 600ms for all devices
     timeout = setTimeout(() => {
-      scrambleText(textElement);
+      textElements.forEach((textElement) => {
+        scrambleText(textElement);
+      });
     }, 600);
   };
 

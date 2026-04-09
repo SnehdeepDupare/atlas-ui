@@ -1,20 +1,69 @@
 import { animate as motionAnimate } from "motion";
 
-const modal = document.getElementById("modal");
-const modalImages = document.getElementById("modal-images");
-const cursor = document.getElementById("cursor");
-const cursorLabel = document.getElementById("cursor-label");
+const gallery = document.getElementById("project-gallery");
+const galleryItems = gallery.querySelectorAll(".gallery-item");
 
-const galleryItems = document.querySelectorAll(".gallery-item");
+function createInteractiveElements() {
+  // Create Modal
+  const section = document.createElement("section");
+  section.id = "interactive-modal";
+  section.className = "interactive-modal";
 
+  const modal = document.createElement("div");
+  modal.className = "modal";
+  modal.id = "modal";
+
+  const modalImages = document.createElement("div");
+  modalImages.className = "modal-images";
+  modalImages.id = "modal-images";
+
+  galleryItems.forEach((item) => {
+    const container = item.querySelector(".project-image-container");
+    const img = container.querySelector("img");
+
+    const modalImageDiv = document.createElement("div");
+    modalImageDiv.className = "modal-image";
+    modalImageDiv.style.backgroundColor = container.style.backgroundColor || "";
+
+    const modalImg = document.createElement("img");
+    modalImg.src = img.src;
+    modalImg.alt = img.alt;
+
+    modalImageDiv.appendChild(modalImg);
+    modalImages.appendChild(modalImageDiv);
+  });
+
+  modal.appendChild(modalImages);
+  section.appendChild(modal);
+
+  // Create Cursor
+  const cursor = document.createElement("div");
+  cursor.className = "cursor";
+  cursor.id = "cursor";
+
+  const cursorLabel = document.createElement("div");
+  cursorLabel.className = "cursor-label";
+  cursorLabel.id = "cursor-label";
+  cursorLabel.textContent = "View";
+
+  section.appendChild(cursor);
+  section.appendChild(cursorLabel);
+
+  // Insert after the gallery section
+  gallery.after(section);
+
+  return { modal, modalImages, cursor, cursorLabel };
+}
+
+const { modal, modalImages, cursor, cursorLabel } = createInteractiveElements();
+
+// State
 let activeIndex = 0;
 let isModalVisible = false;
-
-// Track mouse position
 let mouseX = 0;
 let mouseY = 0;
 
-// Animation settings for smooth following
+// Animation options
 const modalAnimationOptions = {
   duration: 300,
   easing: "ease-out",
@@ -27,6 +76,7 @@ const cursorAnimationOptions = {
   fill: "forwards",
 };
 
+// Helpers
 function isMobile() {
   return window.innerWidth <= 768;
 }
@@ -34,45 +84,38 @@ function isMobile() {
 // Animation loop for smooth following
 function updatePositions() {
   if (isModalVisible) {
-    // Calculate centered positions
     const modalWidth = modal.offsetWidth;
     const modalHeight = modal.offsetHeight;
     const cursorWidth = cursor.offsetWidth;
     const cursorHeight = cursor.offsetHeight;
 
-    // Center the elements on the mouse cursor
     const modalLeft = mouseX - modalWidth / 2;
     const modalTop = mouseY - modalHeight / 2;
     const cursorLeft = mouseX - cursorWidth / 2;
     const cursorTop = mouseY - cursorHeight / 2;
 
-    // Animate modal with built-in animate function
     modal.animate(
       [
         { left: modal.offsetLeft + "px", top: modal.offsetTop + "px" },
         { left: modalLeft + "px", top: modalTop + "px" },
       ],
-      modalAnimationOptions
+      modalAnimationOptions,
     );
 
-    // Update the actual position after animation
     modal.style.left = modalLeft + "px";
     modal.style.top = modalTop + "px";
 
-    // Animate cursor with built-in animate function
     cursor.animate(
       [
         { left: cursor.offsetLeft + "px", top: cursor.offsetTop + "px" },
         { left: cursorLeft + "px", top: cursorTop + "px" },
       ],
-      cursorAnimationOptions
+      cursorAnimationOptions,
     );
 
-    // Update the actual position after animation
     cursor.style.left = cursorLeft + "px";
     cursor.style.top = cursorTop + "px";
 
-    // Animate cursor label with built-in animate function
     cursorLabel.animate(
       [
         {
@@ -81,30 +124,26 @@ function updatePositions() {
         },
         { left: cursorLeft + "px", top: cursorTop + "px" },
       ],
-      cursorAnimationOptions
+      cursorAnimationOptions,
     );
 
-    // Update the actual position after animation
     cursorLabel.style.left = cursorLeft + "px";
     cursorLabel.style.top = cursorTop + "px";
   }
 
-  // Continue animation loop
   requestAnimationFrame(updatePositions);
 }
 
+// Mouse tracking
 function handleMouseMove(e) {
-  const { clientX, clientY } = e;
-
-  // Update mouse position
-  mouseX = clientX;
-  mouseY = clientY;
+  mouseX = e.clientX;
+  mouseY = e.clientY;
 }
 
+// Modal show / hide
 function showModal(index) {
   if (isMobile()) return;
 
-  // Validate index
   if (index < 0 || index >= galleryItems.length) {
     console.error(`Invalid project index: ${index}`);
     return;
@@ -114,7 +153,6 @@ function showModal(index) {
   modalImages.style.top = `-${index * 100}%`;
   isModalVisible = true;
 
-  // Animate modal and cursors to open using Motion
   motionAnimate(modal, {
     scale: 1,
     transition: {
@@ -145,7 +183,6 @@ function hideModal() {
 
   isModalVisible = false;
 
-  // Animate modal and cursors to close using Motion
   motionAnimate(modal, {
     scale: 0,
     transition: {
@@ -171,18 +208,9 @@ function hideModal() {
   });
 }
 
-// Add event listeners to gallery items
-galleryItems.forEach((item) => {
-  const index = parseInt(item.getAttribute("data-index"), 10);
-
-  // Validate that the index is a number
-  if (isNaN(index)) {
-    console.error("Invalid data-index attribute:", item);
-    return;
-  }
-
+// Event listeners
+galleryItems.forEach((item, index) => {
   item.addEventListener("mouseenter", (e) => {
-    // Prevent default link behavior on hover
     e.preventDefault();
     showModal(index);
   });
@@ -190,7 +218,6 @@ galleryItems.forEach((item) => {
   item.addEventListener("mouseleave", hideModal);
 });
 
-// Add mousemove event listener to track mouse position
 window.addEventListener("mousemove", handleMouseMove);
 
 // Start the animation loop

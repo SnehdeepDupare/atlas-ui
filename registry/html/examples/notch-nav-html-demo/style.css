@@ -1,3 +1,18 @@
+:root {
+  --background: light-dark(
+    oklch(100% 0.00011 271.152),
+    oklch(18.22% 0.00002 271.152)
+  );
+  --foreground: light-dark(
+    oklch(18.22% 0.00002 271.152),
+    oklch(98.511% 0.00011 271.152)
+  );
+}
+
+html {
+  color-scheme: light dark;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -5,7 +20,7 @@
 }
 
 body {
-  background-color: #18181b;
+  background-color: var(--background);
 }
 
 #notch-nav {
@@ -105,7 +120,7 @@ body {
   transform: translateY(-100%);
 }
 
-#notch-nav-item {
+.notch-nav-item {
   position: relative;
   height: 2rem;
   padding: 0.25rem;
@@ -156,10 +171,10 @@ body {
   font-weight: 500;
 }
 
-#notch-nav-item:hover .primary {
+.notch-nav-item:hover .primary {
   transform: translateY(-100%);
 }
 
-#notch-nav-item:hover .secondary {
+.notch-nav-item:hover .secondary {
   transform: translateY(0);
 }

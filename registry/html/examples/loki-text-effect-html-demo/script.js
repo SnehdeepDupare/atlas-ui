@@ -27,11 +27,11 @@ const applyLokiEffect = (element) => {
   const text = element.dataset.value || element.textContent.trim();
   const velocityFont = Math.max(
     100,
-    Number(element.dataset.velocityFont || 800)
+    Number(element.dataset.velocityFont || 800),
   );
   const velocityMove = Math.max(
     100,
-    Number(element.dataset.velocityMove || 1800)
+    Number(element.dataset.velocityMove || 1800),
   );
 
   element.innerHTML = "";
@@ -60,5 +60,5 @@ const applyLokiEffect = (element) => {
 };
 
 window.addEventListener("DOMContentLoaded", () => {
-  document.querySelectorAll("#loki-effect-text").forEach(applyLokiEffect);
+  document.querySelectorAll(".loki-effect-text").forEach(applyLokiEffect);
 });

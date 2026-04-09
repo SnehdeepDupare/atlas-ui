@@ -1,18 +1,41 @@
+:root {
+  --background: light-dark(
+    oklch(100% 0.00011 271.152),
+    oklch(18.22% 0.00002 271.152)
+  );
+  --foreground: light-dark(
+    oklch(18.22% 0.00002 271.152),
+    oklch(98.511% 0.00011 271.152)
+  );
+}
+
+html {
+  color-scheme: light dark;
+}
+
+html {
+  color-scheme: light dark;
+}
+
 body {
   margin: 0;
   padding: 0;
   min-height: 100vh;
   width: 100%;
-  background: #18181b;
+  background: var(--background);
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  color: #fff;
+  color: var(--foreground);
 }
 
 .spacer {
   height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
 }
 
 .reveal-text {

@@ -1,3 +1,18 @@
+:root {
+  --background: light-dark(
+    oklch(100% 0.00011 271.152),
+    oklch(18.22% 0.00002 271.152)
+  );
+  --foreground: light-dark(
+    oklch(18.22% 0.00002 271.152),
+    oklch(98.511% 0.00011 271.152)
+  );
+}
+
+html {
+  color-scheme: light dark;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -5,7 +20,7 @@
 }
 
 body {
-  background-color: #18181b;
+  background-color: var(--background);
 }
 
 #morph-navbar {

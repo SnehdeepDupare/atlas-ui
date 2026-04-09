@@ -28,8 +28,24 @@
   src: url("/fonts/fontSeven.woff2") format("woff2");
 }
 
+:root {
+  --background: light-dark(
+    oklch(100% 0.00011 271.152),
+    oklch(18.22% 0.00002 271.152)
+  );
+  --foreground: light-dark(
+    oklch(18.22% 0.00002 271.152),
+    oklch(98.511% 0.00011 271.152)
+  );
+  --shadow: light-dark(black, white);
+}
+
+html {
+  color-scheme: light dark;
+}
+
 body {
-  background-color: #18181b;
+  background-color: var(--background);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -45,10 +61,10 @@ body {
     7rem
   ); /* You can adjust the font size according to you usage ;) */
   font-weight: 700;
-  color: white;
+  color: var(--foreground);
   letter-spacing: 0.15em;
   text-shadow:
     0 0 2px #ffffff66,
     0 0 5px #ffffff66;
-  filter: drop-shadow(0 0 8px white);
+  filter: drop-shadow(0 0 8px var(--shadow));
 }

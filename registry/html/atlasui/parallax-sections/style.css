@@ -1,3 +1,14 @@
+:root {
+  --background: light-dark(
+    oklch(100% 0.00011 271.152),
+    oklch(18.22% 0.00002 271.152)
+  );
+  --foreground: light-dark(
+    oklch(18.22% 0.00002 271.152),
+    oklch(98.511% 0.00011 271.152)
+  );
+}
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -8,6 +19,8 @@ body,
 html {
   font-family: sans-serif;
   position: relative;
+  color-scheme: light dark;
+  background-color: var(--background);
 }
 
 #parallax-container {
@@ -40,5 +53,5 @@ html {
 h1 {
   font-size: 3rem;
   font-weight: bold;
-  color: white;
+  color: var(--foreground);
 }

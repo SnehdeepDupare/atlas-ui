@@ -1,5 +1,5 @@
 const trailer = document.getElementById("trailer");
-const heroText = document.getElementById("heroText");
+const heroText = document.querySelectorAll(".hero-text");
 
 let isHovered = false;
 
@@ -12,7 +12,7 @@ document.addEventListener("mousemove", (e) => {
       left: `${clientX}px`,
       top: `${clientY}px`,
     },
-    { duration: 500, fill: "forwards" }
+    { duration: 500, fill: "forwards" },
   );
 
   trailer.style.height = `${size}px`;
@@ -20,5 +20,7 @@ document.addEventListener("mousemove", (e) => {
   trailer.style.filter = `blur(${isHovered ? 30 : 0}px)`;
 });
 
-heroText.addEventListener("mouseenter", () => (isHovered = true));
-heroText.addEventListener("mouseleave", () => (isHovered = false));
+heroText.forEach((text) => {
+  text.addEventListener("mouseenter", () => (isHovered = true));
+  text.addEventListener("mouseleave", () => (isHovered = false));
+});
