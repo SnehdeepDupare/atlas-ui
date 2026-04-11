@@ -2,13 +2,9 @@
 
 import * as React from "react";
 
-import Link from "next/link";
-
-import { FullscreenIcon, RotateCcwIcon } from "lucide-react";
-
 import ComponentWrapper from "@/components/component-wrapper";
+import { FullScreenButton } from "@/components/full-screen-button";
 import { ReplayAnimationButton } from "@/components/replay-animation-button";
-import { Button } from "@/components/ui/button";
 import {
   Tabs,
   TabsContent,
@@ -52,15 +48,8 @@ export function HtmlPreview({ name, children }: HtmlPreviewProps) {
         </TabsList>
         <TabsContent value="preview" className="relative rounded-md">
           <ComponentWrapper className="overflow-hidden">
-            <div className="absolute top-2 right-2 z-10 flex items-center gap-1">
-              <Button asChild variant="ghost" size="icon" className="size-8">
-                <Link href={`/preview/${name}`} target="_blank">
-                  <FullscreenIcon
-                    aria-label="fullscreen-btn"
-                    className="size-4"
-                  />
-                </Link>
-              </Button>
+            <div className="absolute top-2 right-2 z-10 flex items-center gap-0.5">
+              <FullScreenButton name={name} />
 
               <ReplayAnimationButton
                 onClick={() => setKey((prev) => prev + 1)}
