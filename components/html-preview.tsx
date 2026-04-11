@@ -12,13 +12,14 @@ import {
   TabsList,
   TabsTrigger,
 } from "@/components/ui/tabs";
-import { firaCode } from "@/lib/utils";
+import { cn, firaCode } from "@/lib/utils";
 
 interface HtmlPreviewProps extends React.HTMLAttributes<HTMLDivElement> {
   name: string;
+  className?: string;
 }
 
-export function HtmlPreview({ name, children }: HtmlPreviewProps) {
+export function HtmlPreview({ name, children, className }: HtmlPreviewProps) {
   const [key, setKey] = React.useState(0);
   const iframeSrc = `/api/html-preview/${name}`;
 
@@ -59,7 +60,10 @@ export function HtmlPreview({ name, children }: HtmlPreviewProps) {
               key={key}
               src={iframeSrc}
               title={`${name} preview`}
-              className="mx-auto flex min-h-100 w-full flex-wrap items-center justify-center gap-y-3"
+              className={cn(
+                "mx-auto flex min-h-100 w-full flex-wrap items-center justify-center gap-y-3",
+                className
+              )}
               sandbox="allow-scripts allow-same-origin"
             />
           </ComponentWrapper>
