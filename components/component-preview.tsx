@@ -9,6 +9,7 @@ import { FullscreenIcon, RotateCcwIcon } from "lucide-react";
 
 import ComponentWrapper from "@/components/component-wrapper";
 import { OpenInV0Button } from "@/components/open-in-v0-button";
+import { ReplayAnimationButton } from "@/components/replay-animation-button";
 import { Button } from "@/components/ui/button";
 import {
   Tabs,
@@ -74,14 +75,9 @@ export function ComponentPreview({
                 </Link>
               </Button>
 
-              <Button
+              <ReplayAnimationButton
                 onClick={() => setKey((prev) => prev + 1)}
-                variant="ghost"
-                size="icon"
-                className="size-8"
-              >
-                <RotateCcwIcon aria-label="restart-btn" className="size-4" />
-              </Button>
+              />
             </div>
             <div
               key={key}
