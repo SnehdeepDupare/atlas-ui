@@ -14,6 +14,8 @@ interface DocsPagerProps {
   doc: Doc;
 }
 
+const EXCLUDED_LINKS = ["Changelog", "llms.txt"];
+
 export function DocsPager({ doc }: DocsPagerProps) {
   const currentBase = getCurrentBase(doc.slug);
   const pager = getPagerForDoc(doc, currentBase);
@@ -75,5 +77,5 @@ export function flatten(
           : { ...link, href }
       );
     }, [])
-    .filter((link) => !link?.disabled);
+    .filter((link) => !link?.disabled && !EXCLUDED_LINKS.includes(link.title));
 }
