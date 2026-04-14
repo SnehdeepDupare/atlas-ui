@@ -1,15 +1,11 @@
 import type { MetadataRoute } from "next";
 
-import { docsConfig } from "@/config/docs";
 import { getAllDocsLinks } from "@/lib/utils";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = "https://atlasui.dev";
 
-  const routes = getAllDocsLinks(docsConfig).filter((route) => {
-    if (route.endsWith(".txt")) return false;
-    return true;
-  });
+  const routes = ["/", ...getAllDocsLinks().sort()];
 
   return routes.map((route) => {
     let priority = 0.7;
