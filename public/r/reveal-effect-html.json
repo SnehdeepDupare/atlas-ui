@@ -15,7 +15,7 @@
     },
     {
       "path": "registry/html/atlasui/reveal-effect/style.css",
-      "content": ":root {\r\n  --background: light-dark(\r\n    oklch(100% 0.00011 271.152),\r\n    oklch(18.22% 0.00002 271.152)\r\n  );\r\n  --foreground: light-dark(\r\n    oklch(18.22% 0.00002 271.152),\r\n    oklch(98.511% 0.00011 271.152)\r\n  );\r\n}\r\n\r\nhtml {\r\n  color-scheme: light dark;\r\n}\r\n\r\n* {\r\n  margin: 0;\r\n  padding: 0;\r\n}\r\n\r\nbody {\r\n  background-color: var(--background);\r\n  color: var(--foreground);\r\n  display: flex;\r\n  flex-direction: column;\r\n  gap: 2rem;\r\n  align-items: center;\r\n  justify-content: center;\r\n  min-height: 100svh;\r\n  font-size: x-large;\r\n}\r\n",
+      "content": ":root {\n  --background: light-dark(\n    oklch(100% 0.00011 271.152),\n    oklch(18.22% 0.00002 271.152)\n  );\n  --foreground: light-dark(\n    oklch(18.22% 0.00002 271.152),\n    oklch(98.511% 0.00011 271.152)\n  );\n}\n\nhtml {\n  color-scheme: light dark;\n}\n\n* {\n  margin: 0;\n  padding: 0;\n}\n\nbody {\n  background-color: var(--background);\n  color: var(--foreground);\n  display: flex;\n  flex-direction: column;\n  gap: 2rem;\n  align-items: center;\n  justify-content: center;\n  min-height: 100svh;\n  font-size: x-large;\n}\n",
       "type": "registry:file",
       "target": "~/reveal-effect/style.css"
     },
@@ -29,5 +29,5 @@
   "meta": {
     "framework": "html"
   },
-  "type": "registry:file"
+  "type": "registry:component"
 }

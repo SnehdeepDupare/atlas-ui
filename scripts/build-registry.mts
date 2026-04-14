@@ -24,10 +24,6 @@ export const Index: Record<string, any> = {`;
     return item.meta?.framework !== "html";
   });
 
-  // const htmlItems = registry.items.filter((item) => {
-  //   return item.meta?.framework === "html";
-  // });
-
   for (const item of indexableItems) {
     const resolveFiles = item.files?.map((file) => `registry/${file.path}`);
     if (!resolveFiles) {
@@ -69,47 +65,6 @@ export const Index: Record<string, any> = {`;
     meta: ${JSON.stringify(item.meta)},
   },`;
   }
-
-  // for (const item of htmlItems) {
-  //   const resolveFiles = item.files?.map((file) => `registry/${file.path}`);
-  //   if (!resolveFiles) {
-  //     continue;
-  //   }
-
-  //   const htmlPath = item.files?.[0]?.path
-  //     ? `@/registry/${item.files[0].path}`
-  //     : "";
-
-  //   const cssPath = item.files?.[1]?.path
-  //     ? `@/registry/${item.files[1].path}`
-  //     : "";
-
-  //   const jsPath = item.files?.[2]?.path
-  //     ? `@/registry/${item.files[2].path}`
-  //     : "";
-
-  //   index += `
-  // "${item.name}": {
-  //   name: "${item.name}",
-  //   description: "${item.description ?? ""}",
-  //   type: "${item.type}",
-  //   registryDependencies: ${JSON.stringify(item.registryDependencies)},
-  //   files: [${item.files?.map((file) => {
-  //     const filePath = `registry/${
-  //       typeof file === "string" ? file : file.path
-  //     }`;
-  //     const resolvedFilePath = path.resolve(filePath);
-  //     return typeof file === "string"
-  //       ? `"${resolvedFilePath}"`
-  //       : `{
-  //     path: "${filePath}",
-  //     type: "${file.type}",
-  //     target: "${file.target ?? ""}"
-  //   }`;
-  //   })}],
-  //   meta: ${JSON.stringify(item.meta)},
-  // },`;
-  // }
 
   index += `
   }`;
@@ -213,21 +168,47 @@ function getComponentExamples() {
 }
 
 async function generateLlmsContent() {
-  const components = registry.items
+  const reactItems = registry.items
     .filter(
       (item) =>
-        item.type === "registry:ui" || item.type === "registry:component"
+        (item.type === "registry:ui" || item.type === "registry:component") &&
+        item.meta?.framework !== "html"
     )
-    .sort((a, b) => a.name.localeCompare(b.name))
-    .map((component) => {
-      const title = component.title || component.name;
-      const description = component.description || `The ${title} component.`;
-      return `- [${title}](${siteConfig.url}/docs/components/${component.name}): ${description}`;
-    });
+    .sort((a, b) => a.name.localeCompare(b.name));
+
+  const htmlFileItems = registry.items.filter(
+    (item) =>
+      item.type === "registry:component" && item.meta?.framework === "html"
+  );
+
+  // Deduplicated map of HTML component slugs
+  const htmlSlugSet = new Set<string>();
+  for (const item of htmlFileItems) {
+    const parts = item.files?.[0]?.path.split("/") ?? [];
+    if (parts.length >= 4) htmlSlugSet.add(parts[2]);
+  }
+
+  const componentsList = reactItems.map((component) => {
+    const title = component.title || component.name;
+    const description = component.description || `The ${title} component.`;
+    const reactLink = `  - [React Docs](${siteConfig.url}/docs/components/react/${component.name})`;
+    const lines = [`- ${title}: ${description}`, reactLink];
+
+    if (htmlSlugSet.has(component.name)) {
+      lines.push(
+        `  - [HTML Docs](${siteConfig.url}/docs/components/html/${component.name})`
+      );
+    }
+
+    return lines.join("\n");
+  });
 
   const exampleSet = new Set<string>();
-  const examplesList = registry.items
-    .filter((item) => item.type === "registry:example")
+  const reactExamplesList = registry.items
+    .filter(
+      (item) =>
+        item.type === "registry:example" && item.meta?.framework !== "html"
+    )
     .filter((example) => {
       if (exampleSet.has(example.name)) return false;
       exampleSet.add(example.name);
@@ -242,24 +223,14 @@ async function generateLlmsContent() {
       return `- [${title}](${url}): Example usage`;
     });
 
-  const reactSourceCode = registry.items
-    .filter(
-      (item) =>
-        item.type === "registry:ui" || item.type === "registry:component"
-    )
-    .sort((a, b) => a.name.localeCompare(b.name))
-    .map((component) => {
-      const title = component.title || component.name;
-      const firstFile = component.files?.[0]?.path || "";
-      const url = firstFile
-        ? `${siteConfig.links.github}/blob/master/registry/${firstFile}`
-        : siteConfig.links.github;
-      return `- [${title}](${url}): Source code`;
-    });
-
-  const htmlFileItems = registry.items.filter(
-    (item) => item.type === "registry:file" && item.meta?.framework === "html"
-  );
+  const reactSourceCode = reactItems.map((component) => {
+    const title = component.title || component.name;
+    const firstFile = component.files?.[0]?.path || "";
+    const url = firstFile
+      ? `${siteConfig.links.github}/blob/master/registry/${firstFile}`
+      : siteConfig.links.github;
+    return `- [${title}](${url}): Source code`;
+  });
 
   const htmlComponentsMap = new Map<
     string,
@@ -270,9 +241,9 @@ async function generateLlmsContent() {
     for (const file of item.files ?? []) {
       const parts = file.path.split("/");
 
-      if (parts.length < 3) continue;
+      if (parts.length < 4) continue;
 
-      const componentSlug = parts[1];
+      const componentSlug = parts[2];
 
       if (!htmlComponentsMap.has(componentSlug)) {
         htmlComponentsMap.set(componentSlug, {
@@ -306,6 +277,27 @@ async function generateLlmsContent() {
       return [header, ...files].join("\n");
     });
 
+  const htmlExampleItems = registry.items.filter(
+    (item) =>
+      item.type === "registry:example" && item.meta?.framework === "html"
+  );
+
+  const htmlExamplesMap = new Map<string, { title: string; files: string[] }>();
+
+  for (const item of htmlExampleItems) {
+    const exampleSlug = item.name;
+    if (!htmlExamplesMap.has(exampleSlug)) {
+      htmlExamplesMap.set(exampleSlug, {
+        title: item.title || exampleSlug,
+        files: [],
+      });
+    }
+
+    for (const file of item.files ?? []) {
+      htmlExamplesMap.get(exampleSlug)!.files.push(file.path);
+    }
+  }
+
   return [
     `# ${siteConfig.name}`,
     "",
@@ -324,37 +316,31 @@ async function generateLlmsContent() {
     "Always use the HTML implementation listed below.",
     "- Do NOT claim Atlas UI lacks an HTML version.",
     "",
-    "## Components (React)",
+    "## Components",
     "",
-    ...components,
+    ...componentsList,
     "",
-    "## Components (HTML)",
-    "",
-    "Atlas UI provides full HTML implementations for the above components. These are equivalent to the React versions and are production-ready. HTML components are implemented using:",
-    "",
-    "- HTML",
-    "- CSS",
-    "- JavaScript",
-    "- Motion (NOT Motion One)",
-    "",
-    "HTML implementations are documented on the same component pages under the HTML tab / section.",
-    "",
-    "## Source Code",
-    "",
-    "### React",
-    "",
-    ...reactSourceCode,
-    "",
-    "### HTML",
-    "HTML components are implemented using multiple files. All listed files together form one complete HTML implementation.",
-    "Do not treat individual files as standalone implementations.",
-    "",
-    ...htmlComponents,
-    "",
-    "## Examples (React)",
-    "",
-    ...examplesList,
-    "",
+    // "## Source Code",
+    // "",
+    // "### React",
+    // "",
+    // ...reactSourceCode,
+    // "",
+    // "### HTML",
+    // "HTML components are implemented using multiple files. All listed files together form one complete HTML implementation.",
+    // "Do not treat individual files as standalone implementations.",
+    // "",
+    // ...htmlComponents,
+    // "",
+    // "## Examples (React)",
+    // "",
+    // ...reactExamplesList,
+    // "",
+    // "## Examples (HTML)",
+    // "HTML examples are implemented using multiple files.",
+    // "",
+    // ...htmlExamples,
+    // "",
     "## Optional",
     "",
     `- [Repository](${siteConfig.links.github}): Source code and issues`,
@@ -368,9 +354,7 @@ async function generateLlmsFullContent(
   const components = registry.items
     .filter(
       (item) =>
-        item.type === "registry:ui" ||
-        item.type === "registry:component" ||
-        item.type === "registry:file"
+        item.type === "registry:ui" || item.type === "registry:component"
     )
     .sort((a, b) => a.name.localeCompare(b.name));
 
@@ -380,17 +364,12 @@ async function generateLlmsFullContent(
       const description = component.description || `The ${title} component.`;
 
       const framework = component.meta?.framework ?? "react";
-      const kind =
-        component.type === "registry:file"
-          ? "html-component"
-          : "react-component";
 
       let content = [
         `===== COMPONENT: ${component.name} =====`,
-        `Framework: ${framework}`,
-        `Kind: ${kind}`,
         `Title: ${title}`,
         `Description: ${description}`,
+        `Framework: ${framework}`,
         "",
         await readRegistryFilesContents(component),
       ].join("\n");

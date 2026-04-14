@@ -789,7 +789,7 @@
       "meta": {
         "framework": "html"
       },
-      "type": "registry:file"
+      "type": "registry:component"
     },
     {
       "name": "project-gallery-html",
@@ -818,7 +818,7 @@
       "meta": {
         "framework": "html"
       },
-      "type": "registry:file"
+      "type": "registry:component"
     },
     {
       "name": "parallax-sections-html",
@@ -847,7 +847,7 @@
       "meta": {
         "framework": "html"
       },
-      "type": "registry:file"
+      "type": "registry:component"
     },
     {
       "name": "shiny-button-html",
@@ -876,7 +876,7 @@
       "meta": {
         "framework": "html"
       },
-      "type": "registry:file"
+      "type": "registry:component"
     },
     {
       "name": "dot-and-circle-mouse-trailer-html",
@@ -903,7 +903,7 @@
       "meta": {
         "framework": "html"
       },
-      "type": "registry:file"
+      "type": "registry:component"
     },
     {
       "name": "blob-mouse-trailer-html",
@@ -930,7 +930,7 @@
       "meta": {
         "framework": "html"
       },
-      "type": "registry:file"
+      "type": "registry:component"
     },
     {
       "name": "blend-mouse-trailer-html",
@@ -957,7 +957,7 @@
       "meta": {
         "framework": "html"
       },
-      "type": "registry:file"
+      "type": "registry:component"
     },
     {
       "name": "hacker-text-html",
@@ -984,7 +984,7 @@
       "meta": {
         "framework": "html"
       },
-      "type": "registry:file"
+      "type": "registry:component"
     },
     {
       "name": "scroll-based-text-reveal-html",
@@ -1013,7 +1013,7 @@
       "meta": {
         "framework": "html"
       },
-      "type": "registry:file"
+      "type": "registry:component"
     },
     {
       "name": "scroll-based-word-reveal-html",
@@ -1042,7 +1042,7 @@
       "meta": {
         "framework": "html"
       },
-      "type": "registry:file"
+      "type": "registry:component"
     },
     {
       "name": "scroll-based-character-reveal-html",
@@ -1071,7 +1071,7 @@
       "meta": {
         "framework": "html"
       },
-      "type": "registry:file"
+      "type": "registry:component"
     },
     {
       "name": "reveal-effect-html",
@@ -1100,7 +1100,7 @@
       "meta": {
         "framework": "html"
       },
-      "type": "registry:file"
+      "type": "registry:component"
     },
     {
       "name": "loki-text-effect-html",
@@ -1164,7 +1164,7 @@
       "meta": {
         "framework": "html"
       },
-      "type": "registry:file"
+      "type": "registry:component"
     },
     {
       "name": "box-reveal-html",
@@ -1193,7 +1193,7 @@
       "meta": {
         "framework": "html"
       },
-      "type": "registry:file"
+      "type": "registry:component"
     },
     {
       "name": "notch-nav-html",
@@ -1222,7 +1222,7 @@
       "meta": {
         "framework": "html"
       },
-      "type": "registry:file"
+      "type": "registry:component"
     },
     {
       "name": "morph-navbar-html",
@@ -1251,7 +1251,7 @@
       "meta": {
         "framework": "html"
       },
-      "type": "registry:file"
+      "type": "registry:component"
     },
     {
       "name": "cascade-text-html",
@@ -1280,7 +1280,7 @@
       "meta": {
         "framework": "html"
       },
-      "type": "registry:file"
+      "type": "registry:component"
     },
     {
       "name": "letter-swap-html",
@@ -1309,7 +1309,7 @@
       "meta": {
         "framework": "html"
       },
-      "type": "registry:file"
+      "type": "registry:component"
     },
     {
       "name": "warp-slider-html",
@@ -1338,7 +1338,7 @@
       "meta": {
         "framework": "html"
       },
-      "type": "registry:file"
+      "type": "registry:component"
     },
     {
       "name": "animated-mobile-navbar-html-demo",
@@ -1370,7 +1370,7 @@
       "meta": {
         "framework": "html"
       },
-      "type": "registry:file"
+      "type": "registry:example"
     },
     {
       "name": "project-gallery-html-demo",
@@ -1402,7 +1402,7 @@
       "meta": {
         "framework": "html"
       },
-      "type": "registry:file"
+      "type": "registry:example"
     },
     {
       "name": "parallax-sections-html-demo",
@@ -1434,7 +1434,7 @@
       "meta": {
         "framework": "html"
       },
-      "type": "registry:file"
+      "type": "registry:example"
     },
     {
       "name": "shiny-button-html-demo",
@@ -1466,7 +1466,7 @@
       "meta": {
         "framework": "html"
       },
-      "type": "registry:file"
+      "type": "registry:example"
     },
     {
       "name": "dot-and-circle-mouse-trailer-html-demo",
@@ -1496,7 +1496,7 @@
       "meta": {
         "framework": "html"
       },
-      "type": "registry:file"
+      "type": "registry:example"
     },
     {
       "name": "blob-mouse-trailer-html-demo",
@@ -1526,7 +1526,7 @@
       "meta": {
         "framework": "html"
       },
-      "type": "registry:file"
+      "type": "registry:example"
     },
     {
       "name": "blend-mouse-trailer-html-demo",
@@ -1556,7 +1556,7 @@
       "meta": {
         "framework": "html"
       },
-      "type": "registry:file"
+      "type": "registry:example"
     },
     {
       "name": "hacker-text-html-demo",
@@ -1586,7 +1586,7 @@
       "meta": {
         "framework": "html"
       },
-      "type": "registry:file"
+      "type": "registry:example"
     },
     {
       "name": "scroll-based-text-reveal-html-demo",
@@ -1618,7 +1618,7 @@
       "meta": {
         "framework": "html"
       },
-      "type": "registry:file"
+      "type": "registry:example"
     },
     {
       "name": "scroll-based-word-reveal-html-demo",
@@ -1650,7 +1650,7 @@
       "meta": {
         "framework": "html"
       },
-      "type": "registry:file"
+      "type": "registry:example"
     },
     {
       "name": "scroll-based-character-reveal-html-demo",
@@ -1682,7 +1682,7 @@
       "meta": {
         "framework": "html"
       },
-      "type": "registry:file"
+      "type": "registry:example"
     },
     {
       "name": "reveal-effect-html-demo",
@@ -1714,7 +1714,7 @@
       "meta": {
         "framework": "html"
       },
-      "type": "registry:file"
+      "type": "registry:example"
     },
     {
       "name": "reveal-effect-speed-html-example",
@@ -1868,7 +1868,7 @@
       "meta": {
         "framework": "html"
       },
-      "type": "registry:file"
+      "type": "registry:example"
     },
     {
       "name": "box-reveal-html-demo",
@@ -1900,7 +1900,7 @@
       "meta": {
         "framework": "html"
       },
-      "type": "registry:file"
+      "type": "registry:example"
     },
     {
       "name": "notch-nav-html-demo",
@@ -1932,7 +1932,7 @@
       "meta": {
         "framework": "html"
       },
-      "type": "registry:file"
+      "type": "registry:example"
     },
     {
       "name": "morph-navbar-html-demo",
@@ -1964,7 +1964,7 @@
       "meta": {
         "framework": "html"
       },
-      "type": "registry:file"
+      "type": "registry:example"
     },
     {
       "name": "cascade-text-html-demo",
@@ -1996,7 +1996,7 @@
       "meta": {
         "framework": "html"
       },
-      "type": "registry:file"
+      "type": "registry:example"
     },
     {
       "name": "letter-swap-html-demo",
@@ -2028,7 +2028,7 @@
       "meta": {
         "framework": "html"
       },
-      "type": "registry:file"
+      "type": "registry:example"
     },
     {
       "name": "warp-slider-html-demo",
@@ -2060,7 +2060,7 @@
       "meta": {
         "framework": "html"
       },
-      "type": "registry:file"
+      "type": "registry:example"
     },
     {
       "name": "warp-slider-horizontal-html-demo",

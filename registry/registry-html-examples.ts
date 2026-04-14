@@ -3,7 +3,7 @@ import { type Registry } from "shadcn/schema";
 export const htmlExamples: Registry["items"] = [
   {
     name: "animated-mobile-navbar-html-demo",
-    type: "registry:file",
+    type: "registry:example",
     title: "Animated Mobile Navbar",
     description:
       "Example showcasing the Animated Mobile Navbar component in HTML, CSS, JavaScript and Motion.",
@@ -34,7 +34,7 @@ export const htmlExamples: Registry["items"] = [
   },
   {
     name: "project-gallery-html-demo",
-    type: "registry:file",
+    type: "registry:example",
     title: "Project Gallery",
     description:
       "Example showcasing the Project Gallery component with an interactive modal using HTML, CSS, JavaScript and Motion.",
@@ -63,7 +63,7 @@ export const htmlExamples: Registry["items"] = [
   },
   {
     name: "parallax-sections-html-demo",
-    type: "registry:file",
+    type: "registry:example",
     title: "Parallax Sections",
     description:
       "Example of Parallax Sections component using HTML, CSS, JavaScript and Motion.",
@@ -92,7 +92,7 @@ export const htmlExamples: Registry["items"] = [
   },
   {
     name: "shiny-button-html-demo",
-    type: "registry:file",
+    type: "registry:example",
     title: "Shiny Button",
     description:
       "Example of Shiny Button with a sleek animation effect using HTML, CSS, JavaScript and Motion.",
@@ -121,7 +121,7 @@ export const htmlExamples: Registry["items"] = [
   },
   {
     name: "dot-and-circle-mouse-trailer-html-demo",
-    type: "registry:file",
+    type: "registry:example",
     title: "Dot And Circle Mouse Trailer",
     description:
       "Example of Dot And Circle Mouse Trailer using HTML, CSS and JavaScript.",
@@ -152,7 +152,7 @@ export const htmlExamples: Registry["items"] = [
   },
   {
     name: "blob-mouse-trailer-html-demo",
-    type: "registry:file",
+    type: "registry:example",
     title: "Blob Mouse Trailer",
     description:
       "Example of Blob Mouse Trailer using HTML, CSS and JavaScript.",
@@ -183,7 +183,7 @@ export const htmlExamples: Registry["items"] = [
   },
   {
     name: "blend-mouse-trailer-html-demo",
-    type: "registry:file",
+    type: "registry:example",
     title: "Blend Mouse Trailer",
     description:
       "Example of Blend Mouse Trailer which blends with the content on hover using HTML, CSS and JavaScript.",
@@ -214,7 +214,7 @@ export const htmlExamples: Registry["items"] = [
   },
   {
     name: "hacker-text-html-demo",
-    type: "registry:file",
+    type: "registry:example",
     title: "Hacker Text",
     description:
       "Example of text animation that scrambles letters before revealing the final text using HTML, CSS and JavaScript.",
@@ -243,7 +243,7 @@ export const htmlExamples: Registry["items"] = [
   },
   {
     name: "scroll-based-text-reveal-html-demo",
-    type: "registry:file",
+    type: "registry:example",
     title: "Scroll Based Text Reveal",
     description:
       "Example of text reveal effect which animates the opacity of the text as you scroll using HTML, CSS, JavaScript and Motion.",
@@ -274,7 +274,7 @@ export const htmlExamples: Registry["items"] = [
   },
   {
     name: "scroll-based-word-reveal-html-demo",
-    type: "registry:file",
+    type: "registry:example",
     title: "Scroll Based Word Reveal",
     description:
       "Example of text reveal effect which progressively reveals text word by word as you scroll using HTML, CSS, JavaScript and Motion.",
@@ -305,7 +305,7 @@ export const htmlExamples: Registry["items"] = [
   },
   {
     name: "scroll-based-character-reveal-html-demo",
-    type: "registry:file",
+    type: "registry:example",
     title: "Scroll Based Character Reveal",
     description:
       "Example of text reveal effect which progressively reveals text character by character as you scroll using HTML, CSS, JavaScript and Motion.",
@@ -336,7 +336,7 @@ export const htmlExamples: Registry["items"] = [
   },
   {
     name: "reveal-effect-html-demo",
-    type: "registry:file",
+    type: "registry:example",
     title: "Reveal Effect",
     description:
       "Example of Reveal Effect with a vertical slide, blur fade-in, and clipping reveal effect using HTML, CSS, JavaScript and Motion.",
@@ -440,7 +440,7 @@ export const htmlExamples: Registry["items"] = [
   },
   {
     name: "loki-text-effect-html-demo",
-    type: "registry:file",
+    type: "registry:example",
     title: "Loki Text Effect",
     description:
       "Example showcasing the iconic text animation from the Loki series intro using HTML, CSS, JavaScript and Motion.",
@@ -504,7 +504,7 @@ export const htmlExamples: Registry["items"] = [
   },
   {
     name: "box-reveal-html-demo",
-    type: "registry:file",
+    type: "registry:example",
     title: "Box Reveal",
     description:
       "Example of Box Reveal that has a smooth reveal animation that slides a colored overlay away to introduce content as it enters the viewport.",
@@ -533,7 +533,7 @@ export const htmlExamples: Registry["items"] = [
   },
   {
     name: "notch-nav-html-demo",
-    type: "registry:file",
+    type: "registry:example",
     title: "Notch Nav",
     description:
       "Example of a Notch style trigger that reveals the navigation menu from above built with HTML, CSS, JavaScript and Motion.",
@@ -562,7 +562,7 @@ export const htmlExamples: Registry["items"] = [
   },
   {
     name: "morph-navbar-html-demo",
-    type: "registry:file",
+    type: "registry:example",
     title: "Morph Navbar",
     description:
       "Example of Morph Navbar with a fluid, morphing pill that tracks the active link and hover state built with HTML, CSS, JavaScript and Motion.",
@@ -591,7 +591,7 @@ export const htmlExamples: Registry["items"] = [
   },
   {
     name: "cascade-text-html-demo",
-    type: "registry:file",
+    type: "registry:example",
     title: "Cascade Text",
     description:
       "Example of Cascade Text with a smooth line-by-line reveal built with HTML, CSS, JavaScript and Motion.",
@@ -620,7 +620,7 @@ export const htmlExamples: Registry["items"] = [
   },
   {
     name: "letter-swap-html-demo",
-    type: "registry:file",
+    type: "registry:example",
     title: "Letter Swap",
     description:
       "Example of Letter Swap that swaps the letters vertically on hover built with HTML, CSS, JavaScript and Motion.",
@@ -649,7 +649,7 @@ export const htmlExamples: Registry["items"] = [
   },
   {
     name: "warp-slider-html-demo",
-    type: "registry:file",
+    type: "registry:example",
     title: "Warp Slider",
     description:
       "Example of a smooth, infinite slider with dynamic warp distortion and momentum based scrolling built with HTML, CSS, JavaScript and Three.js.",

@@ -29,5 +29,5 @@
   "meta": {
     "framework": "html"
   },
-  "type": "registry:file"
+  "type": "registry:component"
 }
