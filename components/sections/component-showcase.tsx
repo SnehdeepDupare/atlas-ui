@@ -43,7 +43,7 @@ export const ComponentShowcase = () => {
 
           <ItemFooter
             title="Morph Navbar"
-            href="/docs/components/morph-navbar"
+            href="/docs/components/react/morph-navbar"
           />
         </ComponentWrapper>
 
@@ -52,7 +52,7 @@ export const ComponentShowcase = () => {
 
           <ItemFooter
             title="Loki Text Effect"
-            href="/docs/components/loki-text-effect"
+            href="/docs/components/react/loki-text-effect"
           />
         </ComponentWrapper>
 
@@ -61,7 +61,7 @@ export const ComponentShowcase = () => {
 
           <ItemFooter
             title="Notch Nav"
-            href="/docs/components/notch-nav"
+            href="/docs/components/react/notch-nav"
             className="group"
           />
         </ComponentWrapper>
@@ -71,7 +71,7 @@ export const ComponentShowcase = () => {
 
           <ItemFooter
             title="Project Gallery"
-            href="/docs/components/project-gallery"
+            href="/docs/components/react/project-gallery"
             className="group h-20"
           />
         </ComponentWrapper>
@@ -79,7 +79,10 @@ export const ComponentShowcase = () => {
         <ComponentWrapper className="group flex h-48 items-center justify-center overflow-hidden rounded-xl border bg-neutral-50/30 p-2 shadow md:row-start-4 md:h-auto dark:bg-neutral-950">
           <HackerTextDemo />
 
-          <ItemFooter title="Hacker Text" href="/docs/components/hacker-text" />
+          <ItemFooter
+            title="Hacker Text"
+            href="/docs/components/react/hacker-text"
+          />
         </ComponentWrapper>
 
         <ComponentWrapper className="group flex h-48 items-center justify-center overflow-hidden rounded-xl border bg-neutral-50/30 p-2 px-4 shadow md:col-span-2 md:row-start-5 md:h-auto dark:bg-neutral-950">
@@ -88,7 +91,10 @@ export const ComponentShowcase = () => {
           </div>
           <BoxRevealDemo key={key} />
 
-          <ItemFooter title="Box Reveal" href="/docs/components/box-reveal" />
+          <ItemFooter
+            title="Box Reveal"
+            href="/docs/components/react/box-reveal"
+          />
         </ComponentWrapper>
 
         <ComponentWrapper className="group flex h-48 items-center justify-center overflow-hidden rounded-xl border bg-neutral-50/30 p-2 shadow md:row-start-5 md:h-auto dark:bg-neutral-950">
@@ -96,7 +102,7 @@ export const ComponentShowcase = () => {
 
           <ItemFooter
             title="Shiny Button"
-            href="/docs/components/shiny-button"
+            href="/docs/components/react/shiny-button"
           />
         </ComponentWrapper>
       </div>
