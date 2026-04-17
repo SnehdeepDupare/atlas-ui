@@ -1,0 +1,45 @@
+---
+title: Hacker Text
+description: A text animation that scrambles letters before revealing the final text.
+base: react
+---
+
+<ComponentPreview name="hacker-text-demo" />
+
+## Installation
+
+<InstallationTabs>
+
+<TabsContent value="cli">
+
+```bash
+npx shadcn@latest add https://atlasui.dev/r/hacker-text.json
+```
+
+</TabsContent>
+
+<TabsContent value="manual">
+
+<Steps>
+
+<Step>Copy and paste the following code into your project.</Step>
+
+<ComponentSource name="hacker-text" filePath="components/hacker-text.tsx" />
+
+<Step>Update the import paths to match your project setup.</Step>
+
+</Steps>
+
+</TabsContent>
+
+</InstallationTabs>
+
+## Usage
+
+```tsx
+import { HackerText } from "@/components/hacker-text";
+```
+
+```tsx
+<HackerText text="Atlas UI" />
+```

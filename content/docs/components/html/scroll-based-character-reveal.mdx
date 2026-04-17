@@ -1,0 +1,73 @@
+---
+title: Scroll Based Character Reveal
+description: A text reveal effect which progressively reveals text character by character as you scroll.
+base: html
+---
+
+<HtmlPreview name="scroll-based-character-reveal-html" />
+
+## Installation
+
+<InstallationTabs>
+
+<TabsContent value="cli">
+
+```bash
+npx shadcn@latest add https://atlasui.dev/r/scroll-based-character-reveal-html.json
+```
+
+</TabsContent>
+
+<TabsContent value="manual">
+
+<Steps>
+
+<Step>Install the following dependencies:</Step>
+
+```bash
+npm install motion
+```
+
+<Step>Copy and paste the following code into your project.</Step>
+
+```html
+<div class="spacer"></div>
+<p class="reveal-text" id="reveal-text">
+  AtlasUI is an open-source library offering a suite of prebuilt animated
+  components for React, Next.js, and Vanilla JS.
+</p>
+<div class="spacer"></div>
+```
+
+<Step>Add `style.css`</Step>
+
+<ComponentSource name="scroll-based-character-reveal-html" file="css" />
+
+<Step>Add `script.js`</Step>
+
+<ComponentSource name="scroll-based-character-reveal-html" file="js" />
+
+</Steps>
+
+</TabsContent>
+
+</InstallationTabs>
+
+## Usage
+
+Define the text you want to display with Scroll Based Character Reveal Effect in a p element with `id="reveal-text"` and `class="reveal-text"`.
+
+```html
+<p class="reveal-text" id="reveal-text">
+  AtlasUI is an open-source library offering a suite of prebuilt animated
+  components for React, Next.js, and Vanilla JS.
+</p>
+```
+
+Add spacer `div` to create space between the text and the top of the page or replace it with your own content.
+
+```html {1,3}
+<div class="spacer"></div>
+<p class="reveal-text" id="reveal-text">...</p>
+<div class="spacer"></div>
+```

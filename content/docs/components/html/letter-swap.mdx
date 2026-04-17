@@ -1,0 +1,62 @@
+---
+title: Letter Swap
+description: A text animation that swaps the letters vertically on hover.
+base: html
+---
+
+<HtmlPreview name="letter-swap-html-demo" />
+
+## Installation
+
+<InstallationTabs>
+
+<TabsContent value="cli">
+
+```bash
+npx shadcn@latest add https://atlasui.dev/r/letter-swap-html.json
+```
+
+</TabsContent>
+
+<TabsContent value="manual">
+
+<Steps>
+
+<Step>Install the following dependencies:</Step>
+
+```bash
+npm install motion
+```
+
+<Step>Copy and paste the following `script.js` into your project.</Step>
+
+<ComponentSource name="letter-swap-html" file="js" />
+
+<Step>Add `style.css`</Step>
+
+<ComponentSource name="letter-swap-html" file="css" />
+
+</Steps>
+
+</TabsContent>
+
+</InstallationTabs>
+
+## Usage
+
+Pass `class="letter-swap"` and `data-text="Your Text"` to your text element.
+
+```html
+<p class="letter-swap" data-text="Hello World">Hello World</p>
+
+<span class="letter-swap" data-text="Atlas UI">Atlas UI</span>
+```
+
+## Data Attributes
+
+| Data Attribute          | Type                      | Default | Required | Description                                                                              |
+| ----------------------- | ------------------------- | ------- | -------- | ---------------------------------------------------------------------------------------- |
+| `data-text`             | `string`                  | -       | true     | The text content to animate                                                              |
+| `data-reverse`          | `boolean`                 | `false` | false    | Controls the direction of the animation. (`false`: bottom to top, `true`: top to bottom) |
+| `data-stagger-duration` | `number`                  | `0.02`  | false    | Delay between each letter animation                                                      |
+| `data-stagger-from`     | `first \| last \| center` | `first` | false    | Direction from where the animation starts                                                |

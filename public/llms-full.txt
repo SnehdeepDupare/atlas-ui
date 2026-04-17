@@ -1,8 +1,7 @@
 ===== COMPONENT: animated-mobile-navbar =====
-Framework: react
-Kind: react-component
 Title: Animated Mobile Navbar
 Description: A simple animated mobile navbar component.
+Framework: react
 
 --- file: react/atlasui/animated-mobile-navbar.tsx ---
 "use client";
@@ -215,12 +214,11 @@ export {
 
 
 ===== COMPONENT: animated-mobile-navbar-html =====
-Framework: html
-Kind: html-component
 Title: Animated Mobile Navbar
 Description: A simple animated mobile navbar component in HTML, CSS, JavaScript and Motion.
+Framework: html
 
---- file: html/animated-mobile-navbar/index.html ---
+--- file: html/atlasui/animated-mobile-navbar/index.html ---
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -246,7 +244,7 @@ Description: A simple animated mobile navbar component in HTML, CSS, JavaScript 
   <script type="module" src="script.js"></script>
 </html>
 
---- file: html/animated-mobile-navbar/script.js ---
+--- file: html/atlasui/animated-mobile-navbar/script.js ---
 import { animate, stagger } from "motion";
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -302,13 +300,37 @@ document.addEventListener("DOMContentLoaded", () => {
   menuClose.addEventListener("click", closeMenu);
 });
 
---- file: html/animated-mobile-navbar/style.css ---
+--- file: html/atlasui/animated-mobile-navbar/style.css ---
+:root {
+  --background: light-dark(
+    oklch(100% 0.00011 271.152),
+    oklch(18.22% 0.00002 271.152)
+  );
+  --foreground: light-dark(
+    oklch(18.22% 0.00002 271.152),
+    oklch(98.511% 0.00011 271.152)
+  );
+  --content-background: light-dark(white, black);
+  --muted: light-dark(
+    oklch(97.015% 0.00011 271.152),
+    oklch(26.862% 0.00003 271.152)
+  );
+  --muted-foreground: light-dark(
+    oklch(71.547% 0.00008 271.152),
+    oklch(71.547% 0.00008 271.152)
+  );
+}
+
+html {
+  color-scheme: light dark;
+}
+
 body {
   margin: 0;
   padding: 0;
   font-family: Arial, sans-serif;
-  background: #18181b;
-  color: #fff;
+  background: var(--background);
+  color: var(--foreground);
   text-align: center;
 }
 
@@ -318,8 +340,15 @@ body {
   left: 20px;
   background: transparent;
   border: none;
-  color: #fff;
+  color: var(--foreground);
   cursor: pointer;
+  border-radius: 0.5rem;
+  height: 2rem;
+  width: 2rem;
+
+  &:hover {
+    background-color: var(--muted);
+  }
 }
 
 .mobile-menu {
@@ -328,13 +357,16 @@ body {
   left: 0;
   width: 100%;
   height: 100vh;
-  background: #000;
+  background: var(--content-background);
   transform: scaleY(0);
   transform-origin: top;
   opacity: 0;
   pointer-events: none;
   z-index: 99;
   padding: 2.5rem 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .mobile-menu.active {
@@ -347,36 +379,64 @@ body {
   right: 1.25rem;
   background: transparent;
   border: none;
-  color: #fff;
+  color: var(--foreground);
   cursor: pointer;
+  border-radius: 0.5rem;
+  height: 2rem;
+  width: 2rem;
+
+  &:hover {
+    background-color: var(--muted);
+  }
 }
 
 .menu-links {
   display: flex;
   flex-direction: column;
-  gap: 32px;
+  gap: 2rem;
   margin-top: 4rem;
   overflow: hidden;
+  height: 100%;
 }
 
 .nav-link {
   font-size: 1.125rem;
   line-height: 1.75rem;
   font-weight: bold;
-  color: #fff;
+  color: var(--muted-foreground);
   text-transform: uppercase;
   text-decoration: none;
   opacity: 0;
   transform: translateY(30vh);
+  position: relative;
+
+  &::after {
+    content: "";
+    background-color: var(--foreground);
+    position: absolute;
+    bottom: -0.125rem;
+    left: 0;
+    height: 1px;
+    width: 100%;
+    transform: scaleX(0);
+    transition: transform 300ms ease-in-out;
+  }
+
+  &:hover {
+    color: var(--foreground);
+
+    &::after {
+      transform: scaleX(1.25);
+    }
+  }
 }
 
 
 
 ===== COMPONENT: blend-mouse-trailer =====
-Framework: react
-Kind: react-component
 Title: Blend Mouse Trailer
 Description: A simple Lazy Mouse Trailer which blends with the content on hover.
+Framework: react
 
 --- file: react/atlasui/blend-mouse-trailer.tsx ---
 "use client";
@@ -443,13 +503,12 @@ export const BlendMouseTrailer = ({ isHovered }: { isHovered: boolean }) => {
 
 
 ===== COMPONENT: blend-mouse-trailer-html =====
-Framework: html
-Kind: html-component
 Title: Blend Mouse Trailer
 Description: A simple Lazy Mouse Trailer which blends with the content on hover using HTML, CSS and JavaScript.
+Framework: html
 
---- file: html/blend-mouse-trailer/index.html ---
-<!DOCTYPE html>
+--- file: html/atlasui/blend-mouse-trailer/index.html ---
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -459,7 +518,7 @@ Description: A simple Lazy Mouse Trailer which blends with the content on hover 
   </head>
   <body>
     <div class="trailer" id="trailer"></div>
-    <div class="hero-text" id="heroText">
+    <div class="hero-text">
       AtlasUI is an open-source library offering a suite of prebuilt animated
       components for React, Next.js, and Vanilla JS.
     </div>
@@ -467,9 +526,9 @@ Description: A simple Lazy Mouse Trailer which blends with the content on hover 
   <script type="module" src="script.js"></script>
 </html>
 
---- file: html/blend-mouse-trailer/script.js ---
+--- file: html/atlasui/blend-mouse-trailer/script.js ---
 const trailer = document.getElementById("trailer");
-const heroText = document.getElementById("heroText");
+const heroText = document.querySelectorAll(".hero-text");
 
 let isHovered = false;
 
@@ -482,7 +541,7 @@ document.addEventListener("mousemove", (e) => {
       left: `${clientX}px`,
       top: `${clientY}px`,
     },
-    { duration: 500, fill: "forwards" }
+    { duration: 500, fill: "forwards" },
   );
 
   trailer.style.height = `${size}px`;
@@ -490,23 +549,40 @@ document.addEventListener("mousemove", (e) => {
   trailer.style.filter = `blur(${isHovered ? 30 : 0}px)`;
 });
 
-heroText.addEventListener("mouseenter", () => (isHovered = true));
-heroText.addEventListener("mouseleave", () => (isHovered = false));
+heroText.forEach((text) => {
+  text.addEventListener("mouseenter", () => (isHovered = true));
+  text.addEventListener("mouseleave", () => (isHovered = false));
+});
 
---- file: html/blend-mouse-trailer/style.css ---
+--- file: html/atlasui/blend-mouse-trailer/style.css ---
+:root {
+  --background: light-dark(
+    oklch(100% 0.00011 271.152),
+    oklch(18.22% 0.00002 271.152)
+  );
+  --foreground: light-dark(
+    oklch(18.22% 0.00002 271.152),
+    oklch(98.511% 0.00011 271.152)
+  );
+}
+
+html {
+  color-scheme: light dark;
+}
+
 body {
   margin: 0;
   padding: 0;
   height: 100vh;
   width: 100%;
-  background: #18181b;
+  background: var(--background);
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
 .hero-text {
-  color: #fff;
+  color: var(--foreground);
   font-size: 3rem;
   text-align: center;
 }
@@ -520,16 +596,18 @@ body {
   background-color: #7dd3fc;
   mix-blend-mode: difference;
   pointer-events: none;
-  transition: height 0.3s ease-out, width 0.3s ease-out, filter 0.3s ease-out;
+  transition:
+    height 0.3s ease-out,
+    width 0.3s ease-out,
+    filter 0.3s ease-out;
 }
 
 
 
 ===== COMPONENT: blob-mouse-trailer =====
-Framework: react
-Kind: react-component
 Title: Blob Mouse Trailer
 Description: A simple Lazy Blob Mouse Trailer
+Framework: react
 
 --- file: react/atlasui/blob-mouse-trailer.tsx ---
 "use client";
@@ -587,12 +665,11 @@ export const BlobMouseTrailer = () => {
 
 
 ===== COMPONENT: blob-mouse-trailer-html =====
-Framework: html
-Kind: html-component
 Title: Blob Mouse Trailer
 Description: A simple Lazy Blob Mouse Trailer using HTML, CSS and JavaScript.
+Framework: html
 
---- file: html/blob-mouse-trailer/index.html ---
+--- file: html/atlasui/blob-mouse-trailer/index.html ---
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -607,7 +684,7 @@ Description: A simple Lazy Blob Mouse Trailer using HTML, CSS and JavaScript.
   <script type="module" src="script.js"></script>
 </html>
 
---- file: html/blob-mouse-trailer/script.js ---
+--- file: html/atlasui/blob-mouse-trailer/script.js ---
 const trailer = document.getElementById("trailer");
 
 document.body.onpointermove = (e) => {
@@ -625,13 +702,24 @@ document.body.onpointermove = (e) => {
   );
 };
 
---- file: html/blob-mouse-trailer/style.css ---
+--- file: html/atlasui/blob-mouse-trailer/style.css ---
+:root {
+  --background: light-dark(
+    oklch(100% 0.00011 271.152),
+    oklch(18.22% 0.00002 271.152)
+  );
+}
+
+html {
+  color-scheme: light dark;
+}
+
 body {
   margin: 0;
   padding: 0;
   height: 100vh;
   width: 100%;
-  background: #18181b;
+  background: var(--background);
 }
 
 .trailer {
@@ -662,10 +750,9 @@ body {
 
 
 ===== COMPONENT: box-reveal =====
-Framework: react
-Kind: react-component
 Title: Box Reveal
 Description: A smooth reveal animation that slides a colored overlay away to introduce content as it enters the viewport.
+Framework: react
 
 --- file: react/atlasui/box-reveal.tsx ---
 "use client";
@@ -747,12 +834,11 @@ export const BoxReveal = ({
 
 
 ===== COMPONENT: box-reveal-html =====
-Framework: html
-Kind: html-component
 Title: Box Reveal
 Description: A smooth reveal animation that slides a colored overlay away to introduce content as it enters the viewport.
+Framework: html
 
---- file: html/box-reveal/index.html ---
+--- file: html/atlasui/box-reveal/index.html ---
 <!doctype html>
 <html lang="en">
   <head>
@@ -762,11 +848,11 @@ Description: A smooth reveal animation that slides a colored overlay away to int
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <div id="box-reveal">
+    <div class="box-reveal">
       <h1>Box Reveal Component</h1>
     </div>
 
-    <div id="box-reveal">
+    <div class="box-reveal">
       <button>Magic</button>
     </div>
   </body>
@@ -774,10 +860,10 @@ Description: A smooth reveal animation that slides a colored overlay away to int
   <script type="module" src="script.js"></script>
 </html>
 
---- file: html/box-reveal/script.js ---
+--- file: html/atlasui/box-reveal/script.js ---
 import { animate, inView } from "motion";
 
-document.querySelectorAll("#box-reveal").forEach((root) => {
+document.querySelectorAll(".box-reveal").forEach((root) => {
   const side = root.dataset.side ?? "left";
   const color = root.dataset.color ?? "#FACC15";
   const width = root.dataset.width ?? "fit-content";
@@ -805,11 +891,7 @@ document.querySelectorAll("#box-reveal").forEach((root) => {
   root.appendChild(overlay);
 
   // initial
-  animate(
-    contentWrapper,
-    { opacity: 0, y: 75 },
-    { duration: 0 }
-  );
+  animate(contentWrapper, { opacity: 0, y: 75 }, { duration: 0 });
 
   if (side === "right") {
     animate(overlay, { right: 0 }, { duration: 0 });
@@ -817,7 +899,6 @@ document.querySelectorAll("#box-reveal").forEach((root) => {
     animate(overlay, { left: 0 }, { duration: 0 });
   }
 
-  
   inView(
     root,
     () => {
@@ -828,34 +909,48 @@ document.querySelectorAll("#box-reveal").forEach((root) => {
         {
           duration: 0.5,
           delay: 0.35,
-        }
+        },
       );
 
       // overlay animation
       animate(
         overlay,
-        side === "right"
-          ? { right: "100%" }
-          : { left: "100%" },
+        side === "right" ? { right: "100%" } : { left: "100%" },
         {
           duration: 0.5,
           ease: "easeIn",
-        }
+        },
       );
     },
-    { once: true }
+    { once: true },
   );
 });
 
---- file: html/box-reveal/style.css ---
+--- file: html/atlasui/box-reveal/style.css ---
+:root {
+  --background: light-dark(
+    oklch(100% 0.00011 271.152),
+    oklch(18.22% 0.00002 271.152)
+  );
+  --foreground: light-dark(
+    oklch(18.22% 0.00002 271.152),
+    oklch(98.511% 0.00011 271.152)
+  );
+}
+
+html {
+  color-scheme: light dark;
+}
+
 * {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-  background-color: #18181b;
-  color: #fff;
+  background-color: var(--background);
+  color: var(--foreground);
   display: flex;
   flex-direction: column;
   gap: 2rem;
@@ -865,7 +960,7 @@ body {
   font-size: x-large;
 }
 
-#box-reveal {
+.box-reveal {
   position: relative;
   overflow: hidden;
 }
@@ -887,10 +982,9 @@ body {
 
 
 ===== COMPONENT: cascade-text =====
-Framework: react
-Kind: react-component
 Title: Cascade Text
 Description: A smooth line-by-line text reveal animation.
+Framework: react
 
 --- file: react/atlasui/cascade-text.tsx ---
 "use client";
@@ -1145,12 +1239,11 @@ export const CascadeText = ({
 
 
 ===== COMPONENT: cascade-text-html =====
-Framework: html
-Kind: html-component
 Title: Cascade Text
 Description: A smooth line-by-line text reveal animation built with HTML, CSS, JavaScript and Motion.
+Framework: html
 
---- file: html/cascade-text/index.html ---
+--- file: html/atlasui/cascade-text/index.html ---
 <!doctype html>
 <html lang="en">
   <head>
@@ -1194,7 +1287,7 @@ Description: A smooth line-by-line text reveal animation built with HTML, CSS, J
   <script type="module" src="script.js"></script>
 </html>
 
---- file: html/cascade-text/script.js ---
+--- file: html/atlasui/cascade-text/script.js ---
 import { animate, cubicBezier, inView, stagger } from "motion";
 
 const REVEAL_EASE = cubicBezier(0.165, 0.84, 0.44, 1);
@@ -1346,7 +1439,22 @@ document.querySelectorAll("[data-cascade-text]").forEach((element) => {
   );
 });
 
---- file: html/cascade-text/style.css ---
+--- file: html/atlasui/cascade-text/style.css ---
+:root {
+  --background: light-dark(
+    oklch(100% 0.00011 271.152),
+    oklch(18.22% 0.00002 271.152)
+  );
+  --foreground: light-dark(
+    oklch(18.22% 0.00002 271.152),
+    oklch(98.511% 0.00011 271.152)
+  );
+}
+
+html {
+  color-scheme: light dark;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -1356,8 +1464,8 @@ document.querySelectorAll("[data-cascade-text]").forEach((element) => {
 body {
   min-height: 100svh;
   padding: 4rem 1.25rem;
-  background-color: #18181b;
-  color: #fff;
+  background-color: var(--background);
+  color: var(--foreground);
   font-family: "Inter", sans-serif;
   max-width: 800px;
   margin: 0 auto;
@@ -1384,10 +1492,9 @@ p {
 
 
 ===== COMPONENT: dot-and-circle-mouse-trailer =====
-Framework: react
-Kind: react-component
 Title: Dot And Circle Mouse Trailer
 Description: A simple Lazy Dot and Circle Mouse Trailer
+Framework: react
 
 --- file: react/atlasui/dot-and-circle-mouse-trailer.tsx ---
 "use client";
@@ -1479,13 +1586,12 @@ export const DotAndCircleMouseTrailer = () => {
 
 
 ===== COMPONENT: dot-and-circle-mouse-trailer-html =====
-Framework: html
-Kind: html-component
 Title: Dot And Circle Mouse Trailer
 Description: A simple Lazy Dot and Circle Mouse Trailer using HTML, CSS and JavaScript.
+Framework: html
 
---- file: html/dot-and-circle-mouse-trailer/index.html ---
-<!DOCTYPE html>
+--- file: html/atlasui/dot-and-circle-mouse-trailer/index.html ---
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -1495,15 +1601,17 @@ Description: A simple Lazy Dot and Circle Mouse Trailer using HTML, CSS and Java
   </head>
   <body>
     <div class="trailer" id="trailer"></div>
-    <div class="trailer-outline" id="trailer-outline"></div>
   </body>
 
   <script type="module" src="script.js"></script>
 </html>
 
---- file: html/dot-and-circle-mouse-trailer/script.js ---
+--- file: html/atlasui/dot-and-circle-mouse-trailer/script.js ---
 const trailer = document.getElementById("trailer");
-const trailerOutline = document.getElementById("trailer-outline");
+
+const trailerOutline = document.createElement("div");
+trailerOutline.className = "trailer-outline";
+document.body.appendChild(trailerOutline);
 
 document.body.onpointermove = (e) => {
   const { clientX, clientY } = e;
@@ -1516,7 +1624,7 @@ document.body.onpointermove = (e) => {
     {
       duration: 1000,
       fill: "forwards",
-    }
+    },
   );
 
   trailerOutline.animate(
@@ -1527,24 +1635,39 @@ document.body.onpointermove = (e) => {
     {
       duration: 3000,
       fill: "forwards",
-    }
+    },
   );
 };
 
---- file: html/dot-and-circle-mouse-trailer/style.css ---
+--- file: html/atlasui/dot-and-circle-mouse-trailer/style.css ---
+:root {
+  --background: light-dark(
+    oklch(100% 0.00011 271.152),
+    oklch(18.22% 0.00002 271.152)
+  );
+  --foreground: light-dark(
+    oklch(18.22% 0.00002 271.152),
+    oklch(98.511% 0.00011 271.152)
+  );
+}
+
+html {
+  color-scheme: light dark;
+}
+
 body {
   margin: 0;
   padding: 0;
   height: 100vh;
   width: 100%;
-  background-color: #18181b;
+  background-color: var(--background);
 }
 
 .trailer {
   position: fixed;
   width: 8px;
   height: 8px;
-  background-color: white;
+  background-color: var(--foreground);
   border-radius: 50%;
   left: 0;
   top: 0;
@@ -1560,7 +1683,7 @@ body {
   transform: translate(-50%, -50%);
   width: 80px;
   height: 80px;
-  border: 2px solid white;
+  border: 2px solid var(--foreground);
   border-radius: 50%;
   pointer-events: none;
   z-index: 1000;
@@ -1569,10 +1692,9 @@ body {
 
 
 ===== COMPONENT: hacker-text =====
-Framework: react
-Kind: react-component
 Title: Hacker Text
 Description: A text animation that scrambles letters before revealing the final text.
+Framework: react
 
 --- file: react/atlasui/hacker-text.tsx ---
 "use client";
@@ -1674,30 +1796,29 @@ export const HackerText = ({
 
 
 ===== COMPONENT: hacker-text-html =====
-Framework: html
-Kind: html-component
 Title: Hacker Text
 Description: A text animation that scrambles letters before revealing the final text using HTML, CSS and JavaScript.
+Framework: html
 
---- file: html/hacker-text/index.html ---
-<!DOCTYPE html>
+--- file: html/atlasui/hacker-text/index.html ---
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Blend Mouse Trailer - Atlas UI</title>
+    <title>Hacker Text - Atlas UI</title>
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <span id="text" class="hacker-text" data-value="Atlas UI">Atlas UI</span>
+    <span class="hacker-text" data-value="Atlas UI">Atlas UI</span>
   </body>
 
   <script type="module" src="script.js"></script>
 </html>
 
---- file: html/hacker-text/script.js ---
+--- file: html/atlasui/hacker-text/script.js ---
 document.addEventListener("DOMContentLoaded", () => {
-  const textElement = document.getElementById("text");
+  const textElements = document.querySelectorAll(".hacker-text");
   const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
   let interval = null;
   let timeout = null;
@@ -1730,14 +1851,18 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const applyEffect = () => {
     if (window.matchMedia("(min-width: 768px)").matches) {
-      textElement.addEventListener("mouseover", (event) => {
-        const target = event.target;
-        scrambleText(target);
+      textElements.forEach((textElement) => {
+        textElement.addEventListener("mouseover", (event) => {
+          const target = event.target;
+          scrambleText(target);
+        });
       });
     }
     // Run effect on page load after 600ms for all devices
     timeout = setTimeout(() => {
-      scrambleText(textElement);
+      textElements.forEach((textElement) => {
+        scrambleText(textElement);
+      });
     }, 600);
   };
 
@@ -1749,13 +1874,30 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
---- file: html/hacker-text/style.css ---
+--- file: html/atlasui/hacker-text/style.css ---
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap");
+
+:root {
+  --background: light-dark(
+    oklch(100% 0.00011 271.152),
+    oklch(18.22% 0.00002 271.152)
+  );
+  --foreground: light-dark(
+    oklch(18.22% 0.00002 271.152),
+    oklch(98.511% 0.00011 271.152)
+  );
+}
+
+html {
+  color-scheme: light dark;
+}
+
 body {
   margin: 0;
   padding: 0;
   height: 100vh;
   width: 100%;
-  background: #18181b;
+  background: var(--background);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1766,16 +1908,15 @@ body {
   text-transform: uppercase;
   font-size: 4rem;
   cursor: pointer;
-  color: #fff;
+  color: var(--foreground);
 }
 
 
 
 ===== COMPONENT: letter-swap =====
-Framework: react
-Kind: react-component
 Title: Letter Swap
 Description: A text animation that swaps the letters vertically on hover.
+Framework: react
 
 --- file: react/atlasui/letter-swap.tsx ---
 "use client";
@@ -1893,12 +2034,11 @@ export const LetterSwap = ({
 
 
 ===== COMPONENT: letter-swap-html =====
-Framework: html
-Kind: html-component
 Title: Letter Swap
 Description: A text animation that swaps the letters vertically on hover, built with HTML, CSS, JavaScript and Motion.
+Framework: html
 
---- file: html/letter-swap/index.html ---
+--- file: html/atlasui/letter-swap/index.html ---
 <!doctype html>
 <html lang="en">
   <head>
@@ -1941,7 +2081,7 @@ Description: A text animation that swaps the letters vertically on hover, built 
   <script type="module" src="script.js"></script>
 </html>
 
---- file: html/letter-swap/script.js ---
+--- file: html/atlasui/letter-swap/script.js ---
 import { animate, stagger } from "motion";
 
 document.querySelectorAll(".letter-swap").forEach((element) => {
@@ -2043,7 +2183,22 @@ document.querySelectorAll(".letter-swap").forEach((element) => {
   element.addEventListener("mouseleave", hoverEnd);
 });
 
---- file: html/letter-swap/style.css ---
+--- file: html/atlasui/letter-swap/style.css ---
+:root {
+  --background: light-dark(
+    oklch(100% 0.00011 271.152),
+    oklch(18.22% 0.00002 271.152)
+  );
+  --foreground: light-dark(
+    oklch(18.22% 0.00002 271.152),
+    oklch(98.511% 0.00011 271.152)
+  );
+}
+
+html {
+  color-scheme: light dark;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -2052,8 +2207,8 @@ document.querySelectorAll(".letter-swap").forEach((element) => {
 
 body {
   min-height: 100svh;
-  background-color: #18181b;
-  color: #fff;
+  background-color: var(--background);
+  color: var(--foreground);
   font-family: "Inter", sans-serif;
   max-width: 800px;
   margin: 0 auto;
@@ -2096,10 +2251,9 @@ span {
 
 
 ===== COMPONENT: loki-text-effect =====
-Framework: react
-Kind: react-component
 Title: Loki Text Effect
 Description: The iconic text animation from the Loki series intro.
+Framework: react
 
 --- file: fonts/font.ts ---
 import localFont from "next/font/local";
@@ -2985,10 +3139,9 @@ export const LokiTextEffect = ({
 
 
 ===== COMPONENT: loki-text-effect-html =====
-Framework: html
-Kind: html-component
 Title: Loki Text Effect
 Description: The iconic text animation from the Loki series intro using HTML, CSS, JavaScript and Motion.
+Framework: html
 
 --- file: fonts/fontFive.woff2 ---
 wOF2    Dh    �D D                       �` �&	�s
@@ -3716,8 +3869,8 @@ c�& 7���w����iLc��P �Jvh�ޅ'C�`&��%�|L�
 ��R�7����	�����4���R���ޣ��ƨ�	����1�����Zm3�Zm٠!WӐ˨��Ӑa�2��#4k+��cD�4�9S+�������%�Y�'M�v�:���L��ޥF�N�=B<CO���E��b
 �p��e�]��q�/�M�e�՟�ʥ���.o�����`�F)ì�Ĝb�N ��.q��F�@�Q��}\�ʯ�R��[ȏ�Xȓ9���bSֲ.��b	���{p�w���b�E^����^�����*w��UF^k3�Rh]����V�2}�%�^Ww̠̠\�j����F�@��Jκn�-*����τ^�A��;G��j���%����GC�v���4R6X�*�chc~�勄f������wU�a��}%)+X`,R������0�o󠅥P*,�Zǒ�̕:�iOKL�1:��x�`yFʺ%j��c�#���kU�|1+���3����Xz�L�ox��i������,4� ���9�"  
 
---- file: html/loki-text-effect/index.html ---
-<!DOCTYPE html>
+--- file: html/atlasui/loki-text-effect/index.html ---
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -3726,13 +3879,13 @@ c�& 7���w����iLc��P �Jvh�ޅ'C�`&��%�|L�
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <p id="loki-effect-text" data-value="Loki">Loki</p>
+    <p class="loki-effect-text" data-value="Loki">Loki</p>
   </body>
 
   <script type="module" src="script.js"></script>
 </html>
 
---- file: html/loki-text-effect/script.js ---
+--- file: html/atlasui/loki-text-effect/script.js ---
 import { animate } from "motion";
 
 const fonts = [
@@ -3762,11 +3915,11 @@ const applyLokiEffect = (element) => {
   const text = element.dataset.value || element.textContent.trim();
   const velocityFont = Math.max(
     100,
-    Number(element.dataset.velocityFont || 800)
+    Number(element.dataset.velocityFont || 800),
   );
   const velocityMove = Math.max(
     100,
-    Number(element.dataset.velocityMove || 1800)
+    Number(element.dataset.velocityMove || 1800),
   );
 
   element.innerHTML = "";
@@ -3795,10 +3948,10 @@ const applyLokiEffect = (element) => {
 };
 
 window.addEventListener("DOMContentLoaded", () => {
-  document.querySelectorAll("#loki-effect-text").forEach(applyLokiEffect);
+  document.querySelectorAll(".loki-effect-text").forEach(applyLokiEffect);
 });
 
---- file: html/loki-text-effect/style.css ---
+--- file: html/atlasui/loki-text-effect/style.css ---
 /* Loading the fonts */
 @font-face {
   font-family: "FontOne";
@@ -3829,8 +3982,24 @@ window.addEventListener("DOMContentLoaded", () => {
   src: url("/fonts/fontSeven.woff2") format("woff2");
 }
 
+:root {
+  --background: light-dark(
+    oklch(100% 0.00011 271.152),
+    oklch(18.22% 0.00002 271.152)
+  );
+  --foreground: light-dark(
+    oklch(18.22% 0.00002 271.152),
+    oklch(98.511% 0.00011 271.152)
+  );
+  --shadow: light-dark(black, white);
+}
+
+html {
+  color-scheme: light dark;
+}
+
 body {
-  background-color: #18181b;
+  background-color: var(--background);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -3846,19 +4015,20 @@ body {
     7rem
   ); /* You can adjust the font size according to you usage ;) */
   font-weight: 700;
-  color: white;
+  color: var(--foreground);
   letter-spacing: 0.15em;
-  text-shadow: 0 0 2px #ffffff66, 0 0 5px #ffffff66;
-  filter: drop-shadow(0 0 8px white);
+  text-shadow:
+    0 0 2px #ffffff66,
+    0 0 5px #ffffff66;
+  filter: drop-shadow(0 0 8px var(--shadow));
 }
 
 
 
 ===== COMPONENT: morph-navbar =====
-Framework: react
-Kind: react-component
 Title: Morph Navbar
 Description: A polished navigation bar with a fluid, morphing pill that tracks the active link and hover state.
+Framework: react
 
 --- file: react/atlasui/morph-navbar.tsx ---
 "use client";
@@ -4043,12 +4213,11 @@ export function MorphNavbarItem({
 
 
 ===== COMPONENT: morph-navbar-html =====
-Framework: html
-Kind: html-component
 Title: Morph Navbar
 Description: A polished navigation bar with a fluid, morphing pill that tracks the active link and hover state built with HTML, CSS, JavaScript and Motion.
+Framework: html
 
---- file: html/morph-navbar/index.html ---
+--- file: html/atlasui/morph-navbar/index.html ---
 <!doctype html>
 <html lang="en">
   <head>
@@ -4072,7 +4241,7 @@ Description: A polished navigation bar with a fluid, morphing pill that tracks t
   <script type="module" src="script.js"></script>
 </html>
 
---- file: html/morph-navbar/script.js ---
+--- file: html/atlasui/morph-navbar/script.js ---
 import { animate } from "motion";
 
 const navbar = document.getElementById("morph-navbar-container");
@@ -4177,7 +4346,22 @@ window.addEventListener("load", () => {
   resetHoverPill();
 });
 
---- file: html/morph-navbar/style.css ---
+--- file: html/atlasui/morph-navbar/style.css ---
+:root {
+  --background: light-dark(
+    oklch(100% 0.00011 271.152),
+    oklch(18.22% 0.00002 271.152)
+  );
+  --foreground: light-dark(
+    oklch(18.22% 0.00002 271.152),
+    oklch(98.511% 0.00011 271.152)
+  );
+}
+
+html {
+  color-scheme: light dark;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -4185,7 +4369,7 @@ window.addEventListener("load", () => {
 }
 
 body {
-  background-color: #18181b;
+  background-color: var(--background);
 }
 
 #morph-navbar {
@@ -4293,10 +4477,9 @@ body {
 
 
 ===== COMPONENT: notch-nav =====
-Framework: react
-Kind: react-component
 Title: Notch Nav
 Description: A Notch style trigger that reveals the navigation menu from above.
+Framework: react
 
 --- file: react/atlasui/notch-nav.tsx ---
 "use client";
@@ -4557,12 +4740,11 @@ export { NotchNav, NotchNavContent, NotchNavItem, NotchNavTrigger };
 
 
 ===== COMPONENT: notch-nav-html =====
-Framework: html
-Kind: html-component
 Title: Notch Nav
 Description: A Notch style trigger that reveals the navigation menu from above built with HTML, CSS, JavaScript and Motion.
+Framework: html
 
---- file: html/notch-nav/index.html ---
+--- file: html/atlasui/notch-nav/index.html ---
 <!doctype html>
 <html lang="en">
   <head>
@@ -4575,11 +4757,11 @@ Description: A Notch style trigger that reveals the navigation menu from above b
     <div id="notch-nav">
       <button id="notch-nav-trigger"></button>
       <div id="notch-nav-content">
-        <a href="#" id="notch-nav-item">Home</a>
-        <a href="#" id="notch-nav-item">About</a>
-        <a href="#" id="notch-nav-item">Services</a>
-        <a href="#" id="notch-nav-item">Portfolio</a>
-        <a href="#" id="notch-nav-item">Contact</a>
+        <a href="#" class="notch-nav-item">Home</a>
+        <a href="#" class="notch-nav-item">About</a>
+        <a href="#" class="notch-nav-item">Services</a>
+        <a href="#" class="notch-nav-item">Portfolio</a>
+        <a href="#" class="notch-nav-item">Contact</a>
       </div>
     </div>
   </body>
@@ -4587,7 +4769,7 @@ Description: A Notch style trigger that reveals the navigation menu from above b
   <script type="module" src="script.js"></script>
 </html>
 
---- file: html/notch-nav/script.js ---
+--- file: html/atlasui/notch-nav/script.js ---
 import { animate, stagger } from "motion";
 
 let open = false;
@@ -4595,7 +4777,7 @@ const DEFAULT_OFFSET_Y = 20;
 
 const trigger = document.getElementById("notch-nav-trigger");
 const content = document.getElementById("notch-nav-content");
-const items = document.querySelectorAll("#notch-nav-item");
+const items = document.querySelectorAll(".notch-nav-item");
 
 const getOffsetY = () => {
   const attr = content.getAttribute("data-offset-y");
@@ -4789,7 +4971,22 @@ items.forEach((item) => {
   item.dataset.enhanced = "true";
 });
 
---- file: html/notch-nav/style.css ---
+--- file: html/atlasui/notch-nav/style.css ---
+:root {
+  --background: light-dark(
+    oklch(100% 0.00011 271.152),
+    oklch(18.22% 0.00002 271.152)
+  );
+  --foreground: light-dark(
+    oklch(18.22% 0.00002 271.152),
+    oklch(98.511% 0.00011 271.152)
+  );
+}
+
+html {
+  color-scheme: light dark;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -4797,7 +4994,7 @@ items.forEach((item) => {
 }
 
 body {
-  background-color: #18181b;
+  background-color: var(--background);
 }
 
 #notch-nav {
@@ -4897,7 +5094,7 @@ body {
   transform: translateY(-100%);
 }
 
-#notch-nav-item {
+.notch-nav-item {
   position: relative;
   height: 2rem;
   padding: 0.25rem;
@@ -4948,21 +5145,20 @@ body {
   font-weight: 500;
 }
 
-#notch-nav-item:hover .primary {
+.notch-nav-item:hover .primary {
   transform: translateY(-100%);
 }
 
-#notch-nav-item:hover .secondary {
+.notch-nav-item:hover .secondary {
   transform: translateY(0);
 }
 
 
 
 ===== COMPONENT: parallax-sections =====
-Framework: react
-Kind: react-component
 Title: Parallax Sections
 Description: A simple Parallax effect using Motion.
+Framework: react
 
 --- file: react/atlasui/parallax-sections.tsx ---
 "use client";
@@ -5021,13 +5217,12 @@ const Section2 = ({ scrollYProgress }: SectionProps) => {
 
 
 ===== COMPONENT: parallax-sections-html =====
-Framework: html
-Kind: html-component
 Title: Parallax Sections
 Description: A simple Parallax effect using HTML, CSS, JavaScript and Motion.
+Framework: html
 
---- file: html/parallax-sections/index.html ---
-<!DOCTYPE html>
+--- file: html/atlasui/parallax-sections/index.html ---
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -5050,10 +5245,10 @@ Description: A simple Parallax effect using HTML, CSS, JavaScript and Motion.
   <script type="module" src="script.js"></script>
 </html>
 
---- file: html/parallax-sections/script.js ---
+--- file: html/atlasui/parallax-sections/script.js ---
 import { scroll, transform } from "motion";
 
-const container = document.getElementById("parallax-container");
+const container = document.getElementById("#parallax-container");
 const section1 = document.querySelector(".section1");
 const section2 = document.querySelector(".section2");
 
@@ -5070,10 +5265,21 @@ scroll(
   {
     target: container,
     offset: ["start start", "end end"],
-  }
+  },
 );
 
---- file: html/parallax-sections/style.css ---
+--- file: html/atlasui/parallax-sections/style.css ---
+:root {
+  --background: light-dark(
+    oklch(100% 0.00011 271.152),
+    oklch(18.22% 0.00002 271.152)
+  );
+  --foreground: light-dark(
+    oklch(18.22% 0.00002 271.152),
+    oklch(98.511% 0.00011 271.152)
+  );
+}
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -5084,6 +5290,8 @@ body,
 html {
   font-family: sans-serif;
   position: relative;
+  color-scheme: light dark;
+  background-color: var(--background);
 }
 
 #parallax-container {
@@ -5116,16 +5324,15 @@ html {
 h1 {
   font-size: 3rem;
   font-weight: bold;
-  color: white;
+  color: var(--foreground);
 }
 
 
 
 ===== COMPONENT: project-gallery =====
-Framework: react
-Kind: react-component
 Title: Project Gallery
 Description: A Project Gallery with an interactive modal.
+Framework: react
 
 --- file: react/atlasui/project-gallery.tsx ---
 "use client";
@@ -5420,13 +5627,12 @@ export { ProjectGallery, Project };
 
 
 ===== COMPONENT: project-gallery-html =====
-Framework: html
-Kind: html-component
 Title: Project Gallery
 Description: A Project Gallery with an interactive modal using HTML, CSS, JavaScript and Motion.
+Framework: html
 
---- file: html/project-gallery/index.html ---
-<!DOCTYPE html>
+--- file: html/atlasui/project-gallery/index.html ---
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -5435,38 +5641,25 @@ Description: A Project Gallery with an interactive modal using HTML, CSS, JavaSc
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <!-- Project Gallery Section -->
     <section id="project-gallery" class="project-gallery">
-      <a href="#" class="gallery-item" data-index="0">
-        <div
-          class="project-image-container"
-          data-index="0"
-          style="background-color: #efe8d3"
-        >
+      <a href="#" class="gallery-item">
+        <div class="project-image-container" style="background-color: #efe8d3">
           <img src="https://atlasui.dev/assets/atlas-ui.png" alt="Atlas UI" />
         </div>
         <h2>Atlas UI</h2>
         <p>Frontend</p>
       </a>
 
-      <a href="#" class="gallery-item" data-index="1">
-        <div
-          class="project-image-container"
-          data-index="1"
-          style="background-color: #706d63"
-        >
+      <a href="#" class="gallery-item">
+        <div class="project-image-container" style="background-color: #706d63">
           <img src="https://atlasui.dev/assets/portfolio.png" alt="Portfolio" />
         </div>
         <h2>Portfolio</h2>
-        <p>Design & Development</p>
+        <p>Design &amp; Development</p>
       </a>
 
-      <a href="#" class="gallery-item" data-index="2">
-        <div
-          class="project-image-container"
-          data-index="2"
-          style="background-color: #fafbfc"
-        >
+      <a href="#" class="gallery-item">
+        <div class="project-image-container" style="background-color: #fafbfc">
           <img
             src="https://images.unsplash.com/photo-1540652980807-db4655e8fa60?q=80&w=2130&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
             alt="Tokyo Art"
@@ -5476,12 +5669,8 @@ Description: A Project Gallery with an interactive modal using HTML, CSS, JavaSc
         <p>Photography</p>
       </a>
 
-      <a href="#" class="gallery-item" data-index="3">
-        <div
-          class="project-image-container"
-          data-index="3"
-          style="background-color: #404040"
-        >
+      <a href="#" class="gallery-item">
+        <div class="project-image-container" style="background-color: #404040">
           <img
             src="https://images.unsplash.com/photo-1515705576963-95cad62945b6?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
             alt="Milky Way"
@@ -5491,78 +5680,77 @@ Description: A Project Gallery with an interactive modal using HTML, CSS, JavaSc
         <p>Photography</p>
       </a>
     </section>
-
-    <!-- Interactive Modal Section -->
-    <section id="interactive-modal" class="interactive-modal">
-      <!-- Modal Container -->
-      <div class="modal" id="modal">
-        <div class="modal-images" id="modal-images">
-          <div
-            class="modal-image"
-            data-index="0"
-            style="background-color: #efe8d3"
-          >
-            <img src="https://atlasui.dev/og.png" alt="Atlas UI" />
-          </div>
-          <div
-            class="modal-image"
-            data-index="1"
-            style="background-color: #706d63"
-          >
-            <img
-              src="https://atlasui.dev/assets/portfolio.png"
-              alt="Portfolio"
-            />
-          </div>
-          <div
-            class="modal-image"
-            data-index="2"
-            style="background-color: #fafbfc"
-          >
-            <img
-              src="https://images.unsplash.com/photo-1540652980807-db4655e8fa60?q=80&w=2130&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-              alt="Tokyo Art"
-            />
-          </div>
-          <div
-            class="modal-image"
-            data-index="3"
-            style="background-color: #404040"
-          >
-            <img
-              src="https://images.unsplash.com/photo-1515705576963-95cad62945b6?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-              alt="Milky Way"
-            />
-          </div>
-        </div>
-      </div>
-
-      <!-- Cursor Elements -->
-      <div class="cursor" id="cursor"></div>
-      <div class="cursor-label" id="cursor-label">View</div>
-    </section>
   </body>
   <script type="module" src="script.js"></script>
 </html>
 
---- file: html/project-gallery/script.js ---
+--- file: html/atlasui/project-gallery/script.js ---
 import { animate as motionAnimate } from "motion";
 
-const modal = document.getElementById("modal");
-const modalImages = document.getElementById("modal-images");
-const cursor = document.getElementById("cursor");
-const cursorLabel = document.getElementById("cursor-label");
+const gallery = document.getElementById("project-gallery");
+const galleryItems = gallery.querySelectorAll(".gallery-item");
 
-const galleryItems = document.querySelectorAll(".gallery-item");
+function createInteractiveElements() {
+  // Create Modal
+  const section = document.createElement("section");
+  section.id = "interactive-modal";
+  section.className = "interactive-modal";
 
+  const modal = document.createElement("div");
+  modal.className = "modal";
+  modal.id = "modal";
+
+  const modalImages = document.createElement("div");
+  modalImages.className = "modal-images";
+  modalImages.id = "modal-images";
+
+  galleryItems.forEach((item) => {
+    const container = item.querySelector(".project-image-container");
+    const img = container.querySelector("img");
+
+    const modalImageDiv = document.createElement("div");
+    modalImageDiv.className = "modal-image";
+    modalImageDiv.style.backgroundColor = container.style.backgroundColor || "";
+
+    const modalImg = document.createElement("img");
+    modalImg.src = img.src;
+    modalImg.alt = img.alt;
+
+    modalImageDiv.appendChild(modalImg);
+    modalImages.appendChild(modalImageDiv);
+  });
+
+  modal.appendChild(modalImages);
+  section.appendChild(modal);
+
+  // Create Cursor
+  const cursor = document.createElement("div");
+  cursor.className = "cursor";
+  cursor.id = "cursor";
+
+  const cursorLabel = document.createElement("div");
+  cursorLabel.className = "cursor-label";
+  cursorLabel.id = "cursor-label";
+  cursorLabel.textContent = "View";
+
+  section.appendChild(cursor);
+  section.appendChild(cursorLabel);
+
+  // Insert after the gallery section
+  gallery.after(section);
+
+  return { modal, modalImages, cursor, cursorLabel };
+}
+
+const { modal, modalImages, cursor, cursorLabel } = createInteractiveElements();
+
+// State
 let activeIndex = 0;
 let isModalVisible = false;
-
-// Track mouse position
 let mouseX = 0;
 let mouseY = 0;
 
-// Animation settings for smooth following
+// Animation options
 const modalAnimationOptions = {
   duration: 300,
   easing: "ease-out",
@@ -5575,6 +5763,7 @@ const cursorAnimationOptions = {
   fill: "forwards",
 };
 
+// Helpers
 function isMobile() {
   return window.innerWidth <= 768;
 }
@@ -5582,45 +5771,38 @@ function isMobile() {
 // Animation loop for smooth following
 function updatePositions() {
   if (isModalVisible) {
-    // Calculate centered positions
     const modalWidth = modal.offsetWidth;
     const modalHeight = modal.offsetHeight;
     const cursorWidth = cursor.offsetWidth;
     const cursorHeight = cursor.offsetHeight;
 
-    // Center the elements on the mouse cursor
     const modalLeft = mouseX - modalWidth / 2;
     const modalTop = mouseY - modalHeight / 2;
     const cursorLeft = mouseX - cursorWidth / 2;
     const cursorTop = mouseY - cursorHeight / 2;
 
-    // Animate modal with built-in animate function
     modal.animate(
       [
         { left: modal.offsetLeft + "px", top: modal.offsetTop + "px" },
         { left: modalLeft + "px", top: modalTop + "px" },
       ],
-      modalAnimationOptions
+      modalAnimationOptions,
     );
 
-    // Update the actual position after animation
     modal.style.left = modalLeft + "px";
     modal.style.top = modalTop + "px";
 
-    // Animate cursor with built-in animate function
     cursor.animate(
       [
         { left: cursor.offsetLeft + "px", top: cursor.offsetTop + "px" },
         { left: cursorLeft + "px", top: cursorTop + "px" },
       ],
-      cursorAnimationOptions
+      cursorAnimationOptions,
     );
 
-    // Update the actual position after animation
     cursor.style.left = cursorLeft + "px";
     cursor.style.top = cursorTop + "px";
 
-    // Animate cursor label with built-in animate function
     cursorLabel.animate(
       [
         {
@@ -5629,30 +5811,26 @@ function updatePositions() {
         },
         { left: cursorLeft + "px", top: cursorTop + "px" },
       ],
-      cursorAnimationOptions
+      cursorAnimationOptions,
     );
 
-    // Update the actual position after animation
     cursorLabel.style.left = cursorLeft + "px";
     cursorLabel.style.top = cursorTop + "px";
   }
 
-  // Continue animation loop
   requestAnimationFrame(updatePositions);
 }
 
+// Mouse tracking
 function handleMouseMove(e) {
-  const { clientX, clientY } = e;
-
-  // Update mouse position
-  mouseX = clientX;
-  mouseY = clientY;
+  mouseX = e.clientX;
+  mouseY = e.clientY;
 }
 
+// Modal show / hide
 function showModal(index) {
   if (isMobile()) return;
 
-  // Validate index
   if (index < 0 || index >= galleryItems.length) {
     console.error(`Invalid project index: ${index}`);
     return;
@@ -5662,7 +5840,6 @@ function showModal(index) {
   modalImages.style.top = `-${index * 100}%`;
   isModalVisible = true;
 
-  // Animate modal and cursors to open using Motion
   motionAnimate(modal, {
     scale: 1,
     transition: {
@@ -5693,7 +5870,6 @@ function hideModal() {
 
   isModalVisible = false;
 
-  // Animate modal and cursors to close using Motion
   motionAnimate(modal, {
     scale: 0,
     transition: {
@@ -5719,18 +5895,9 @@ function hideModal() {
   });
 }
 
-// Add event listeners to gallery items
-galleryItems.forEach((item) => {
-  const index = parseInt(item.getAttribute("data-index"), 10);
-
-  // Validate that the index is a number
-  if (isNaN(index)) {
-    console.error("Invalid data-index attribute:", item);
-    return;
-  }
-
+// Event listeners
+galleryItems.forEach((item, index) => {
   item.addEventListener("mouseenter", (e) => {
-    // Prevent default link behavior on hover
     e.preventDefault();
     showModal(index);
   });
@@ -5738,13 +5905,27 @@ galleryItems.forEach((item) => {
   item.addEventListener("mouseleave", hideModal);
 });
 
-// Add mousemove event listener to track mouse position
 window.addEventListener("mousemove", handleMouseMove);
 
 // Start the animation loop
 updatePositions();
 
---- file: html/project-gallery/style.css ---
+--- file: html/atlasui/project-gallery/style.css ---
+:root {
+  --background: light-dark(
+    oklch(100% 0.00011 271.152),
+    oklch(18.22% 0.00002 271.152)
+  );
+  --foreground: light-dark(
+    oklch(18.22% 0.00002 271.152),
+    oklch(98.511% 0.00011 271.152)
+  );
+}
+
+html {
+  color-scheme: light dark;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -5753,8 +5934,8 @@ updatePositions();
 
 body {
   font-family: sans-serif;
-  background: #18181b;
-  color: #fff;
+  background: var(--background);
+  color: var(--foreground);
   overflow-x: hidden;
   max-width: 80rem;
   width: 100%;
@@ -5777,7 +5958,7 @@ a {
   justify-content: space-between;
   align-items: center;
   padding: 6rem;
-  border-top: 1px solid white;
+  border-top: 1px solid var(--foreground);
   cursor: pointer;
   transition: opacity 0.2s linear;
 }
@@ -5949,10 +6130,9 @@ a {
 
 
 ===== COMPONENT: reveal-effect =====
-Framework: react
-Kind: react-component
 Title: Reveal Effect
 Description: Animates content into view with a vertical slide, blur fade-in, and clipping reveal effect.
+Framework: react
 
 --- file: react/atlasui/reveal-effect.tsx ---
 "use client";
@@ -6007,13 +6187,12 @@ export const RevealEffect = ({
 
 
 ===== COMPONENT: reveal-effect-html =====
-Framework: html
-Kind: html-component
 Title: Reveal Effect
 Description: Animates content into view with a vertical slide, blur fade-in, and clipping reveal effect using HTML, CSS, JavaScript and Motion.
+Framework: html
 
---- file: html/reveal-effect/index.html ---
-<!DOCTYPE html>
+--- file: html/atlasui/reveal-effect/index.html ---
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -6023,7 +6202,7 @@ Description: Animates content into view with a vertical slide, blur fade-in, and
   </head>
   <body>
     <div
-      id="reveal-effect"
+      class="reveal-effect"
       data-speed="medium"
       data-delay="0.2"
       data-translatey="40"
@@ -6031,21 +6210,21 @@ Description: Animates content into view with a vertical slide, blur fade-in, and
       This content fades in, unblurs, and slides up when visible.
     </div>
 
-    <div id="reveal-effect" data-speed="fast">
+    <div class="reveal-effect" data-speed="fast">
       Slower animation with more translateY.
     </div>
 
-    <div id="reveal-effect" data-speed="fast" data-translatey="20">
+    <div class="reveal-effect" data-speed="fast" data-translatey="20">
       Fast and snappy reveal effect.
     </div>
 
-    <button id="reveal-effect" data-speed="fast">Magic</button>
+    <button class="reveal-effect" data-speed="fast">Magic</button>
   </body>
 
   <script type="module" src="script.js"></script>
 </html>
 
---- file: html/reveal-effect/script.js ---
+--- file: html/atlasui/reveal-effect/script.js ---
 import { animate, inView } from "motion";
 
 const speedDurations = {
@@ -6054,7 +6233,7 @@ const speedDurations = {
   fast: 0.5,
 };
 
-document.querySelectorAll("#reveal-effect").forEach((el) => {
+document.querySelectorAll(".reveal-effect").forEach((el) => {
   const delay = parseFloat(el.dataset.delay) || 0;
   const speed = el.dataset.speed || "medium";
   const translateY = parseFloat(el.dataset.translatey) || 0;
@@ -6077,20 +6256,35 @@ document.querySelectorAll("#reveal-effect").forEach((el) => {
         duration: speedDurations[speed],
         easing: "ease-in-out",
         delay,
-      }
+      },
     );
   });
 });
 
---- file: html/reveal-effect/style.css ---
+--- file: html/atlasui/reveal-effect/style.css ---
+:root {
+  --background: light-dark(
+    oklch(100% 0.00011 271.152),
+    oklch(18.22% 0.00002 271.152)
+  );
+  --foreground: light-dark(
+    oklch(18.22% 0.00002 271.152),
+    oklch(98.511% 0.00011 271.152)
+  );
+}
+
+html {
+  color-scheme: light dark;
+}
+
 * {
   margin: 0;
   padding: 0;
 }
 
 body {
-  background-color: #18181b;
-  color: #fff;
+  background-color: var(--background);
+  color: var(--foreground);
   display: flex;
   flex-direction: column;
   gap: 2rem;
@@ -6103,10 +6297,9 @@ body {
 
 
 ===== COMPONENT: scroll-based-character-reveal =====
-Framework: react
-Kind: react-component
 Title: Scroll Based Character Reveal
 Description: A text reveal effect which progressively reveals text character by character as you scroll.
+Framework: react
 
 --- file: react/atlasui/scroll-based-character-reveal.tsx ---
 "use client";
@@ -6204,13 +6397,12 @@ const Character = ({ children, scrollYProgress, range }: CharacterProps) => {
 
 
 ===== COMPONENT: scroll-based-character-reveal-html =====
-Framework: html
-Kind: html-component
 Title: Scroll Based Character Reveal
 Description: A text reveal effect which progressively reveals text character by character as you scroll using HTML, CSS, JavaScript and Motion.
+Framework: html
 
---- file: html/scroll-based-character-reveal/index.html ---
-<!DOCTYPE html>
+--- file: html/atlasui/scroll-based-character-reveal/index.html ---
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -6219,18 +6411,18 @@ Description: A text reveal effect which progressively reveals text character by 
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <div class="spacer"></div>
+    <div class="spacer">Scroll to see magic :)</div>
     <p class="reveal-text" id="reveal-text">
       AtlasUI is an open-source library offering a suite of prebuilt animated
       components for React, Next.js, and Vanilla JS.
     </p>
-    <div class="spacer"></div>
+    <div class="spacer">Loved it? Star us on GitHub!</div>
   </body>
 
   <script type="module" src="script.js"></script>
 </html>
 
---- file: html/scroll-based-character-reveal/script.js ---
+--- file: html/atlasui/scroll-based-character-reveal/script.js ---
 import { animate, scroll, transform } from "motion";
 
 const revealText = document.getElementById("reveal-text");
@@ -6279,22 +6471,41 @@ scroll(
   }
 );
 
---- file: html/scroll-based-character-reveal/style.css ---
+--- file: html/atlasui/scroll-based-character-reveal/style.css ---
+:root {
+  --background: light-dark(
+    oklch(100% 0.00011 271.152),
+    oklch(18.22% 0.00002 271.152)
+  );
+  --foreground: light-dark(
+    oklch(18.22% 0.00002 271.152),
+    oklch(98.511% 0.00011 271.152)
+  );
+}
+
+html {
+  color-scheme: light dark;
+}
+
 body {
   margin: 0;
   padding: 0;
   min-height: 100vh;
   width: 100%;
-  background: #18181b;
+  background: var(--background);
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  color: #fff;
+  color: var(--foreground);
 }
 
 .spacer {
   height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
 }
 
 .reveal-text {
@@ -6332,10 +6543,9 @@ body {
 
 
 ===== COMPONENT: scroll-based-text-reveal =====
-Framework: react
-Kind: react-component
 Title: Scroll Based Text Reveal
 Description: A text reveal effect which animates the opacity of the text as you scroll.
+Framework: react
 
 --- file: react/atlasui/scroll-based-text-reveal.tsx ---
 "use client";
@@ -6371,13 +6581,12 @@ export const ScrollBasedTextReveal = ({ text }: ScrollBasedTextRevealProps) => {
 
 
 ===== COMPONENT: scroll-based-text-reveal-html =====
-Framework: html
-Kind: html-component
 Title: Scroll Based Text Reveal
 Description: A text reveal effect which animates the opacity of the text as you scroll using HTML, CSS, JavaScript and Motion.
+Framework: html
 
---- file: html/scroll-based-text-reveal/index.html ---
-<!DOCTYPE html>
+--- file: html/atlasui/scroll-based-text-reveal/index.html ---
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -6386,18 +6595,18 @@ Description: A text reveal effect which animates the opacity of the text as you 
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <div class="spacer"></div>
+    <div class="spacer">Scroll to see magic :)</div>
     <p class="reveal-text" id="reveal-text">
       AtlasUI is an open-source library offering a suite of prebuilt animated
       components for React, Next.js, and Vanilla JS.
     </p>
-    <div class="spacer"></div>
+    <div class="spacer">Loved it? Star us on GitHub!</div>
   </body>
 
   <script type="module" src="script.js"></script>
 </html>
 
---- file: html/scroll-based-text-reveal/script.js ---
+--- file: html/atlasui/scroll-based-text-reveal/script.js ---
 import { animate, scroll } from "motion";
 
 const revealText = document.getElementById("reveal-text");
@@ -6407,22 +6616,45 @@ scroll((progress) => animate(revealText, { opacity: progress }), {
   offset: ["start 0.8", "start 0.3"],
 });
 
---- file: html/scroll-based-text-reveal/style.css ---
+--- file: html/atlasui/scroll-based-text-reveal/style.css ---
+:root {
+  --background: light-dark(
+    oklch(100% 0.00011 271.152),
+    oklch(18.22% 0.00002 271.152)
+  );
+  --foreground: light-dark(
+    oklch(18.22% 0.00002 271.152),
+    oklch(98.511% 0.00011 271.152)
+  );
+}
+
+html {
+  color-scheme: light dark;
+}
+
+html {
+  color-scheme: light dark;
+}
+
 body {
   margin: 0;
   padding: 0;
   min-height: 100vh;
   width: 100%;
-  background: #18181b;
+  background: var(--background);
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  color: #fff;
+  color: var(--foreground);
 }
 
 .spacer {
   height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
 }
 
 .reveal-text {
@@ -6437,10 +6669,9 @@ body {
 
 
 ===== COMPONENT: scroll-based-word-reveal =====
-Framework: react
-Kind: react-component
 Title: Scroll Based Word Reveal
 Description: A text reveal effect which progressively reveals text word by word as you scroll.
+Framework: react
 
 --- file: react/atlasui/scroll-based-word-reveal.tsx ---
 "use client";
@@ -6489,13 +6720,12 @@ export const ScrollBasedWordReveal = ({ text }: ScrollBasedWordRevealProps) => {
 
 
 ===== COMPONENT: scroll-based-word-reveal-html =====
-Framework: html
-Kind: html-component
 Title: Scroll Based Word Reveal
 Description: A text reveal effect which progressively reveals text word by word as you scroll using HTML, CSS, JavaScript and Motion.
+Framework: html
 
---- file: html/scroll-based-word-reveal/index.html ---
-<!DOCTYPE html>
+--- file: html/atlasui/scroll-based-word-reveal/index.html ---
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -6504,18 +6734,18 @@ Description: A text reveal effect which progressively reveals text word by word 
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <div class="spacer"></div>
+    <div class="spacer">Scroll to see magic :)</div>
     <p class="reveal-text" id="reveal-text">
       AtlasUI is an open-source library offering a suite of prebuilt animated
       components for React, Next.js, and Vanilla JS.
     </p>
-    <div class="spacer"></div>
+    <div class="spacer">Loved it? Star us on GitHub!</div>
   </body>
 
   <script type="module" src="script.js"></script>
 </html>
 
---- file: html/scroll-based-word-reveal/script.js ---
+--- file: html/atlasui/scroll-based-word-reveal/script.js ---
 import { animate, scroll, transform } from "motion";
 
 const revealText = document.getElementById("reveal-text");
@@ -6555,22 +6785,41 @@ scroll(
   }
 );
 
---- file: html/scroll-based-word-reveal/style.css ---
+--- file: html/atlasui/scroll-based-word-reveal/style.css ---
+:root {
+  --background: light-dark(
+    oklch(100% 0.00011 271.152),
+    oklch(18.22% 0.00002 271.152)
+  );
+  --foreground: light-dark(
+    oklch(18.22% 0.00002 271.152),
+    oklch(98.511% 0.00011 271.152)
+  );
+}
+
+html {
+  color-scheme: light dark;
+}
+
 body {
   margin: 0;
   padding: 0;
   min-height: 100vh;
   width: 100%;
-  background: #18181b;
+  background: var(--background);
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  color: #fff;
+  color: var(--foreground);
 }
 
 .spacer {
   height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
 }
 
 .reveal-text {
@@ -6610,10 +6859,9 @@ body {
 
 
 ===== COMPONENT: shiny-button =====
-Framework: react
-Kind: react-component
 Title: Shiny Button
 Description: A shiny button with a sleek animation effect.
+Framework: react
 
 --- file: react/atlasui/shiny-button.tsx ---
 "use client";
@@ -6674,13 +6922,12 @@ export const ShinyButton = ({
 
 
 ===== COMPONENT: shiny-button-html =====
-Framework: html
-Kind: html-component
 Title: Shiny Button
 Description: A shiny button with a sleek animation effect using HTML, CSS, JavaScript and Motion.
+Framework: html
 
---- file: html/shiny-button/index.html ---
-<!DOCTYPE html>
+--- file: html/atlasui/shiny-button/index.html ---
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -6691,17 +6938,19 @@ Description: A shiny button with a sleek animation effect using HTML, CSS, JavaS
   <body>
     <button class="shiny-button">
       <span class="button-content">Button</span>
-      <span class="shiny-overlay"></span>
     </button>
   </body>
 
   <script type="module" src="script.js"></script>
 </html>
 
---- file: html/shiny-button/script.js ---
+--- file: html/atlasui/shiny-button/script.js ---
 import { animate, spring } from "motion";
 
 const btn = document.querySelector(".shiny-button");
+const shinyOverlay = document.createElement("span");
+shinyOverlay.className = "shiny-overlay";
+btn.appendChild(shinyOverlay);
 
 animate(
   btn,
@@ -6717,7 +6966,7 @@ animate(
     stiffness: 20,
     damping: 15,
     mass: 2,
-  }
+  },
 );
 
 btn.addEventListener("mousedown", () => {
@@ -6732,9 +6981,24 @@ btn.addEventListener("mouseup", () => {
   });
 });
 
---- file: html/shiny-button/style.css ---
+--- file: html/atlasui/shiny-button/style.css ---
+:root {
+  --background: light-dark(
+    oklch(100% 0.00011 271.152),
+    oklch(18.22% 0.00002 271.152)
+  );
+  --foreground: light-dark(
+    oklch(18.22% 0.00002 271.152),
+    oklch(98.511% 0.00011 271.152)
+  );
+}
+
+html {
+  color-scheme: light dark;
+}
+
 body {
-  background-color: #18181b;
+  background-color: var(--background);
 }
 
 .shiny-button {
@@ -6743,7 +7007,8 @@ body {
   position: relative;
   border: none;
   border-radius: 8px;
-  background: radial-gradient(
+  background:
+    radial-gradient(
       circle at 50% 0%,
       rgba(250, 250, 250, 0.05) 0%,
       transparent 60%
@@ -6781,7 +7046,9 @@ body {
     rgba(255, 255, 255, 0.5) calc(var(--x) + 25%),
     rgba(255, 255, 255, 0.1) calc(var(--x) + 100%)
   );
-  mask: linear-gradient(black, black) content-box, linear-gradient(black, black);
+  mask:
+    linear-gradient(black, black) content-box,
+    linear-gradient(black, black);
   mask-composite: exclude;
   pointer-events: none;
 }
@@ -6789,10 +7056,9 @@ body {
 
 
 ===== COMPONENT: warp-slider =====
-Framework: react
-Kind: react-component
 Title: Warp Slider
 Description: A smooth, infinite slider with dynamic warp distortion and momentum based scrolling.
+Framework: react
 
 --- file: react/atlasui/warp-slider.tsx ---
 "use client";
@@ -7374,19 +7640,18 @@ export const WarpSlider = ({
 
 
 ===== COMPONENT: warp-slider-html =====
-Framework: html
-Kind: html-component
 Title: Warp Slider
 Description: A smooth, infinite slider with dynamic warp distortion and momentum based scrolling built with HTML, CSS, JavaScript and Three.js.
+Framework: html
 
---- file: html/warp-slider/index.html ---
+--- file: html/atlasui/warp-slider/index.html ---
 <!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style.css" />
-    <title>Atlas UI - Warp Slider</title>
+    <title>Warp Slider - Atlas UI</title>
   </head>
   <body>
     <section class="slider">
@@ -7400,7 +7665,7 @@ Description: A smooth, infinite slider with dynamic warp distortion and momentum
   </body>
 </html>
 
---- file: html/warp-slider/script.js ---
+--- file: html/atlasui/warp-slider/script.js ---
 import * as THREE from "three";
 
 const slides = [
@@ -7481,8 +7746,30 @@ const renderer = new THREE.WebGLRenderer({
 renderer.setSize(window.innerWidth, window.innerHeight);
 renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
 
+const getBackgroundColor = () => {
+  const htmlTheme = document.documentElement.getAttribute("data-theme");
+  const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+
+  const isDark = htmlTheme === "dark" || (!htmlTheme && prefersDark);
+
+  return isDark ? "#111111" : "#ffffff";
+};
+
 const scene = new THREE.Scene();
-scene.background = new THREE.Color(0x141414);
+scene.background = new THREE.Color(getBackgroundColor());
+
+const updateSceneBackground = () => {
+  scene.background = new THREE.Color(getBackgroundColor());
+};
+
+const darkModeMediaQuery = window.matchMedia("(prefers-color-scheme: dark)");
+darkModeMediaQuery.addEventListener("change", updateSceneBackground);
+
+const themeObserver = new MutationObserver(updateSceneBackground);
+themeObserver.observe(document.documentElement, {
+  attributes: true,
+  attributeFilter: ["data-theme", "style"],
+});
 
 const camera = new THREE.PerspectiveCamera(
   45,
@@ -7821,7 +8108,22 @@ function animate(time) {
 
 animate();
 
---- file: html/warp-slider/style.css ---
+--- file: html/atlasui/warp-slider/style.css ---
+:root {
+  --background: light-dark(
+    oklch(100% 0.00011 271.152),
+    oklch(18.22% 0.00002 271.152)
+  );
+  --foreground: light-dark(
+    oklch(18.22% 0.00002 271.152),
+    oklch(98.511% 0.00011 271.152)
+  );
+}
+
+html {
+  color-scheme: light dark;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -7831,6 +8133,8 @@ animate();
 
 body {
   font-family: "Inter", sans-serif;
+  background-color: var(--background);
+  color: var(--foreground);
 }
 
 section {
@@ -7863,6 +8167,5 @@ canvas {
   padding: 0 2rem;
   display: flex;
   justify-content: space-between;
-  color: #fff;
   z-index: 2;
 }

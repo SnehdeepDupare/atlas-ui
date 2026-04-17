@@ -3,13 +3,10 @@
 
 import * as React from "react";
 
-import Link from "next/link";
-
-import { FullscreenIcon, RotateCcwIcon } from "lucide-react";
-
 import ComponentWrapper from "@/components/component-wrapper";
+import { FullScreenButton } from "@/components/full-screen-button";
 import { OpenInV0Button } from "@/components/open-in-v0-button";
-import { Button } from "@/components/ui/button";
+import { ReplayAnimationButton } from "@/components/replay-animation-button";
 import {
   Tabs,
   TabsContent,
@@ -62,26 +59,14 @@ export function ComponentPreview({
         </TabsList>
         <TabsContent value="preview" className="relative rounded-md">
           <ComponentWrapper overflow={overflow}>
-            <div className="absolute top-2 right-2 z-10 flex items-center gap-1">
+            <div className="absolute top-2 right-2 z-10 flex items-center gap-0.5">
               <OpenInV0Button url={`https://atlasui.dev/r/${name}.json`} />
 
-              <Button asChild variant="ghost" size="icon" className="size-8">
-                <Link href={`/preview/${name}`} target="_blank">
-                  <FullscreenIcon
-                    aria-label="fullscreen-btn"
-                    className="size-4"
-                  />
-                </Link>
-              </Button>
+              <FullScreenButton name={name} />
 
-              <Button
+              <ReplayAnimationButton
                 onClick={() => setKey((prev) => prev + 1)}
-                variant="ghost"
-                size="icon"
-                className="size-8"
-              >
-                <RotateCcwIcon aria-label="restart-btn" className="size-4" />
-              </Button>
+              />
             </div>
             <div
               key={key}

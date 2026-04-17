@@ -4,12 +4,12 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 
 import { type DocsConfig } from "@/config/docs";
-import { cn } from "@/lib/utils";
+import { cn, getCurrentBase, updateComponentPathname } from "@/lib/utils";
 import { SidebarNavItem } from "@/types/nav";
 
 export function DocsNav({ config }: { config: DocsConfig }) {
   const pathname = usePathname();
-
+  const currentBase = getCurrentBase(pathname);
   const items = config.sidebarNav;
 
   return items.length ? (
@@ -25,7 +25,11 @@ export function DocsNav({ config }: { config: DocsConfig }) {
             )}
           </h4>
           {item?.items?.length && (
-            <DocsNavItems items={item.items} pathname={pathname} />
+            <DocsNavItems
+              items={item.items}
+              pathname={pathname}
+              currentBase={currentBase}
+            />
           )}
         </div>
       ))}
@@ -36,21 +40,26 @@ export function DocsNav({ config }: { config: DocsConfig }) {
 function DocsNavItems({
   items,
   pathname,
+  currentBase,
 }: {
   items: SidebarNavItem[];
   pathname: string | null;
+  currentBase: string;
 }) {
   return items?.length ? (
     <div className="grid grid-flow-row auto-rows-max gap-0.5 text-sm">
-      {items.map((item, index) =>
-        item.href && !item.disabled ? (
+      {items.map((item, index) => {
+        const href = item.href
+          ? updateComponentPathname(currentBase, item.href)
+          : null;
+        return item.href && !item.disabled ? (
           <Link
             key={index}
-            href={item.href}
+            href={href!}
             className={cn(
               "group text-foreground hover:bg-accent hover:text-accent-foreground flex h-8 w-full items-center rounded-r-lg px-2 font-normal underline-offset-2 hover:rounded-lg",
               item.disabled && "cursor-not-allowed opacity-60",
-              pathname === item.href &&
+              pathname === href &&
                 "bg-accent text-accent-foreground border-l-2 border-emerald-500 font-medium hover:rounded-l-none"
             )}
             target={item.external ? "_blank" : ""}
@@ -78,8 +87,8 @@ function DocsNavItems({
               </span>
             )}
           </span>
-        )
-      )}
+        );
+      })}
     </div>
   ) : null;
 }

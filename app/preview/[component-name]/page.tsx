@@ -1,6 +1,8 @@
 import { Metadata } from "next";
 
 import { Index } from "@/registry/__index__";
+import { html as htmlRegistry } from "@/registry/registry-html";
+import { htmlExamples as htmlExamplesRegistry } from "@/registry/registry-html-examples";
 
 interface PreviewPageProps {
   params: Promise<{ "component-name": string }>;
@@ -11,7 +13,16 @@ export async function generateMetadata(
 ): Promise<Metadata> {
   const { "component-name": name } = await props.params;
 
-  const componentData = Index[name];
+  const isHtmlComponent =
+    name.endsWith("-html") ||
+    name.endsWith("-html-example") ||
+    name.endsWith("-html-demo");
+
+  const componentData = isHtmlComponent
+    ? [...htmlRegistry, ...htmlExamplesRegistry].find(
+        (component) => component.name === name
+      )
+    : Index[name];
 
   if (!componentData) {
     return {};
@@ -28,6 +39,24 @@ export async function generateMetadata(
 
 const Page = async (props: PreviewPageProps) => {
   const { "component-name": name } = await props.params;
+  const iframeSrc = `/api/html-preview/${name}`;
+
+  if (
+    name.endsWith("-html") ||
+    name.endsWith("-html-example") ||
+    name.endsWith("-html-demo")
+  ) {
+    return (
+      <div className="relative flex min-h-svh w-full flex-1 items-center justify-center">
+        <iframe
+          src={iframeSrc}
+          title={`${name} preview`}
+          sandbox="allow-scripts allow-same-origin"
+          className="h-full w-full"
+        />
+      </div>
+    );
+  }
 
   const Component = Index[name]?.component;
 

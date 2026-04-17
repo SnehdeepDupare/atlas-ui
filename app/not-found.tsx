@@ -54,10 +54,7 @@ const NotFoundPage = () => {
           <Link href="/" className="underline underline-offset-2">
             Home
           </Link>
-          <Link
-            href="/docs/components/animated-mobile-navbar"
-            className="underline underline-offset-2"
-          >
+          <Link href="/docs" className="underline underline-offset-2">
             Docs
           </Link>
         </div>

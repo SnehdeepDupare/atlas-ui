@@ -1,0 +1,71 @@
+---
+title: Cascade Text
+description: A smooth line-by-line text reveal animation.
+base: react
+---
+
+<ComponentPreview name="cascade-text-demo" />
+
+## Installation
+
+<InstallationTabs>
+
+<TabsContent value="cli">
+
+```bash
+npx shadcn@latest add https://atlasui.dev/r/cascade-text.json
+```
+
+</TabsContent>
+
+<TabsContent value="manual">
+
+<Steps>
+
+<Step>Install the following dependencies:</Step>
+
+```bash
+npm install motion
+```
+
+<Step>Copy and paste the following code into your project.</Step>
+
+<ComponentSource name="cascade-text" filePath="components/cascade-text.tsx" />
+
+<Step>Update the import paths to match your project setup.</Step>
+
+</Steps>
+
+</TabsContent>
+
+</InstallationTabs>
+
+We recommend pairing `CascadeText` with smooth scroll like [`lenis`](https://github.com/darkroomengineering/lenis?tab=readme-ov-file#installation) for the best effect.
+
+## Usage
+
+```tsx
+import { CascadeText } from "@/components/cascade-text";
+```
+
+```tsx
+<CascadeText>
+  <h1>Your text here</h1>
+</CascadeText>
+
+<CascadeText>
+  <p>Your description here</p>
+</CascadeText>
+
+<CascadeText>
+  {/* Pass any text element */}
+</CascadeText>
+```
+
+## Props
+
+| Prop              | Type              | Default | Description                                                                                                                                                                                   |
+| ----------------- | ----------------- | ------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `children`        | `React.ReactNode` | -       | The text content to animate                                                                                                                                                                   |
+| `animateOnScroll` | `boolean`         | `true`  | Controls when the animation starts. When `true`, the animation triggers as the element enters the viewport (around the lower 75% of the screen). When `false`, it plays immediately on mount. |
+| `delay`           | `number`          | `0`     | Delay before the animation starts                                                                                                                                                             |

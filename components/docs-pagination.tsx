@@ -7,14 +7,18 @@ import { ChevronLeft, ChevronRight } from "lucide-react";
 import { Doc } from "@/.contentlayer/generated";
 import { Button } from "@/components/ui/button";
 import { docsConfig } from "@/config/docs";
+import { getCurrentBase, updateComponentPathname } from "@/lib/utils";
 import { NavItem, NavItemWithChildren } from "@/types/nav";
 
 interface DocsPagerProps {
   doc: Doc;
 }
 
+const EXCLUDED_LINKS = ["Changelog", "llms.txt"];
+
 export function DocsPager({ doc }: DocsPagerProps) {
-  const pager = getPagerForDoc(doc);
+  const currentBase = getCurrentBase(doc.slug);
+  const pager = getPagerForDoc(doc, currentBase);
 
   if (!pager) {
     return null;
@@ -42,9 +46,10 @@ export function DocsPager({ doc }: DocsPagerProps) {
   );
 }
 
-export function getPagerForDoc(doc: Doc) {
+export function getPagerForDoc(doc: Doc, currentBase: string) {
   const nav = docsConfig.sidebarNav;
-  const flattenedLinks = [null, ...flatten(nav), null];
+  const flattenedLinks = [null, ...flatten(nav, currentBase), null];
+
   const activeIndex = flattenedLinks.findIndex(
     (link) => doc.slug === link?.href
   );
@@ -59,10 +64,18 @@ export function getPagerForDoc(doc: Doc) {
   };
 }
 
-export function flatten(links: NavItemWithChildren[]): NavItem[] {
+export function flatten(
+  links: NavItemWithChildren[],
+  currentBase: string
+): NavItem[] {
   return links
     .reduce<NavItem[]>((flat, link) => {
-      return flat.concat(link.items?.length ? flatten(link.items) : link);
+      const href = updateComponentPathname(currentBase, link.href!);
+      return flat.concat(
+        link.items?.length
+          ? flatten(link.items, currentBase)
+          : { ...link, href }
+      );
     }, [])
-    .filter((link) => !link?.disabled);
+    .filter((link) => !link?.disabled && !EXCLUDED_LINKS.includes(link.title));
 }

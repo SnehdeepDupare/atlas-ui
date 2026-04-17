@@ -6,20 +6,20 @@
   "dependencies": [],
   "files": [
     {
-      "path": "registry/html/dot-and-circle-mouse-trailer/index.html",
-      "content": "<!DOCTYPE html>\r\n<html lang=\"en\">\r\n  <head>\r\n    <meta charset=\"UTF-8\" />\r\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" />\r\n    <title>Dot and Circle Mouse Trailer - Atlas UI</title>\r\n    <link rel=\"stylesheet\" href=\"style.css\" />\r\n  </head>\r\n  <body>\r\n    <div class=\"trailer\" id=\"trailer\"></div>\r\n    <div class=\"trailer-outline\" id=\"trailer-outline\"></div>\r\n  </body>\r\n\r\n  <script type=\"module\" src=\"script.js\"></script>\r\n</html>\r\n",
+      "path": "registry/html/atlasui/dot-and-circle-mouse-trailer/index.html",
+      "content": "<!doctype html>\r\n<html lang=\"en\">\r\n  <head>\r\n    <meta charset=\"UTF-8\" />\r\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" />\r\n    <title>Dot and Circle Mouse Trailer - Atlas UI</title>\r\n    <link rel=\"stylesheet\" href=\"style.css\" />\r\n  </head>\r\n  <body>\r\n    <div class=\"trailer\" id=\"trailer\"></div>\r\n  </body>\r\n\r\n  <script type=\"module\" src=\"script.js\"></script>\r\n</html>\r\n",
       "type": "registry:file",
       "target": "~/dot-and-circle-mouse-trailer/index.html"
     },
     {
-      "path": "registry/html/dot-and-circle-mouse-trailer/style.css",
-      "content": "body {\n  margin: 0;\n  padding: 0;\n  height: 100vh;\n  width: 100%;\n  background-color: #18181b;\n}\n\n.trailer {\n  position: fixed;\n  width: 8px;\n  height: 8px;\n  background-color: white;\n  border-radius: 50%;\n  left: 0;\n  top: 0;\n  transform: translate(-50%, -50%);\n  pointer-events: none;\n  z-index: 1000;\n}\n\n.trailer-outline {\n  position: fixed;\n  left: 0;\n  top: 0;\n  transform: translate(-50%, -50%);\n  width: 80px;\n  height: 80px;\n  border: 2px solid white;\n  border-radius: 50%;\n  pointer-events: none;\n  z-index: 1000;\n}\n",
+      "path": "registry/html/atlasui/dot-and-circle-mouse-trailer/style.css",
+      "content": ":root {\n  --background: light-dark(\n    oklch(100% 0.00011 271.152),\n    oklch(18.22% 0.00002 271.152)\n  );\n  --foreground: light-dark(\n    oklch(18.22% 0.00002 271.152),\n    oklch(98.511% 0.00011 271.152)\n  );\n}\n\nhtml {\n  color-scheme: light dark;\n}\n\nbody {\n  margin: 0;\n  padding: 0;\n  height: 100vh;\n  width: 100%;\n  background-color: var(--background);\n}\n\n.trailer {\n  position: fixed;\n  width: 8px;\n  height: 8px;\n  background-color: var(--foreground);\n  border-radius: 50%;\n  left: 0;\n  top: 0;\n  transform: translate(-50%, -50%);\n  pointer-events: none;\n  z-index: 1000;\n}\n\n.trailer-outline {\n  position: fixed;\n  left: 0;\n  top: 0;\n  transform: translate(-50%, -50%);\n  width: 80px;\n  height: 80px;\n  border: 2px solid var(--foreground);\n  border-radius: 50%;\n  pointer-events: none;\n  z-index: 1000;\n}\n",
       "type": "registry:file",
       "target": "~/dot-and-circle-mouse-trailer/style.css"
     },
     {
-      "path": "registry/html/dot-and-circle-mouse-trailer/script.js",
-      "content": "const trailer = document.getElementById(\"trailer\");\r\nconst trailerOutline = document.getElementById(\"trailer-outline\");\r\n\r\ndocument.body.onpointermove = (e) => {\r\n  const { clientX, clientY } = e;\r\n\r\n  trailer.animate(\r\n    {\r\n      left: `${clientX}px`,\r\n      top: `${clientY}px`,\r\n    },\r\n    {\r\n      duration: 1000,\r\n      fill: \"forwards\",\r\n    }\r\n  );\r\n\r\n  trailerOutline.animate(\r\n    {\r\n      left: `${clientX}px`,\r\n      top: `${clientY}px`,\r\n    },\r\n    {\r\n      duration: 3000,\r\n      fill: \"forwards\",\r\n    }\r\n  );\r\n};\r\n",
+      "path": "registry/html/atlasui/dot-and-circle-mouse-trailer/script.js",
+      "content": "const trailer = document.getElementById(\"trailer\");\r\n\r\nconst trailerOutline = document.createElement(\"div\");\r\ntrailerOutline.className = \"trailer-outline\";\r\ndocument.body.appendChild(trailerOutline);\r\n\r\ndocument.body.onpointermove = (e) => {\r\n  const { clientX, clientY } = e;\r\n\r\n  trailer.animate(\r\n    {\r\n      left: `${clientX}px`,\r\n      top: `${clientY}px`,\r\n    },\r\n    {\r\n      duration: 1000,\r\n      fill: \"forwards\",\r\n    },\r\n  );\r\n\r\n  trailerOutline.animate(\r\n    {\r\n      left: `${clientX}px`,\r\n      top: `${clientY}px`,\r\n    },\r\n    {\r\n      duration: 3000,\r\n      fill: \"forwards\",\r\n    },\r\n  );\r\n};\r\n",
       "type": "registry:file",
       "target": "~/dot-and-circle-mouse-trailer/script.js"
     }
@@ -27,5 +27,5 @@
   "meta": {
     "framework": "html"
   },
-  "type": "registry:file"
+  "type": "registry:component"
 }

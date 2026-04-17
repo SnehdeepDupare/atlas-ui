@@ -1,0 +1,94 @@
+---
+title: Notch Nav
+description: A Notch style trigger that reveals the navigation menu from above.
+base: react
+---
+
+<ComponentPreview name="notch-nav-demo" />
+
+## Installation
+
+<InstallationTabs>
+
+<TabsContent value="cli">
+
+```bash
+npx shadcn@latest add https://atlasui.dev/r/notch-nav.json
+```
+
+</TabsContent>
+
+<TabsContent value="manual">
+
+<Steps>
+
+<Step>Install the following dependencies:</Step>
+
+```bash
+npm install motion
+```
+
+<Step>Copy and paste the following code into your project.</Step>
+
+<ComponentSource name="notch-nav" filePath="components/notch-nav.tsx" />
+
+<Step>Update the import paths to match your project setup.</Step>
+
+</Steps>
+
+</TabsContent>
+
+</InstallationTabs>
+
+## Usage
+
+```tsx
+import {
+  NotchNav,
+  NotchNavContent,
+  NotchNavItem,
+  NotchNavTrigger,
+} from "@/components/notch-nav";
+```
+
+```tsx
+<NotchNav>
+  <NotchNavTrigger />
+  <NotchNavContent>
+    <NotchNavItem href="/">Home</NotchNavItem>
+    <NotchNavItem href="/about">About</NotchNavItem>
+    <NotchNavItem href="/products">Products</NotchNavItem>
+    <NotchNavItem href="/services">Services</NotchNavItem>
+    <NotchNavItem href="/contact">Contact</NotchNavItem>
+  </NotchNavContent>
+</NotchNav>
+```
+
+**NOTE:** `<NotchNavTrigger />` includes all required animation and interaction logic out of the box. The trigger is absolutely positioned at `top-0` so ensure the parent container has `relative` position.
+
+## Props
+
+**`<NotchNavTrigger />`**
+
+| Prop        | Type     | Default | Description                              |
+| ----------- | -------- | ------- | ---------------------------------------- |
+| `className` | `string` | -       | Optional class names for custom styling. |
+
+**`<NotchNavContent />`**
+
+| Prop       | Type              | Default | Description                                                                      |
+| ---------- | ----------------- | ------- | -------------------------------------------------------------------------------- |
+| `children` | `React.ReactNode` | -       | The navigation items rendered inside the notch menu.                             |
+| `offsetY`  | `number`          | `20`    | Vertical offset from top (in pixels) applied when the menu slides in from above. |
+
+**`<NotchNavItem />`**
+
+| Prop        | Type              | Default | Description                               |
+| ----------- | ----------------- | ------- | ----------------------------------------- |
+| `children`  | `React.ReactNode` | -       | The label content of the navigation item. |
+| `href`      | `string`          | -       | Destination URL for the navigation item.  |
+| `className` | `string`          | -       | Optional class names for custom styling.  |
+
+## Credits
+
+This component is inspired from [this website](https://www.joinflowparty.com/).

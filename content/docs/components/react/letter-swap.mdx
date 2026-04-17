@@ -1,0 +1,63 @@
+---
+title: Letter Swap
+description: A text animation that swaps the letters vertically on hover.
+base: react
+---
+
+<ComponentPreview name="letter-swap-demo" />
+
+## Installation
+
+<InstallationTabs>
+
+<TabsContent value="cli">
+
+```bash
+npx shadcn@latest add https://atlasui.dev/r/letter-swap.json
+```
+
+</TabsContent>
+
+<TabsContent value="manual">
+
+<Steps>
+
+<Step>Install the following dependencies:</Step>
+
+```bash
+npm install motion
+```
+
+<Step>Copy and paste the following code into your project.</Step>
+
+<ComponentSource name="letter-swap" filePath="components/letter-swap.tsx" />
+
+<Step>Update the import paths to match your project setup.</Step>
+
+</Steps>
+
+</TabsContent>
+
+</InstallationTabs>
+
+## Usage
+
+```tsx
+import { LetterSwap } from "@/components/letter-swap";
+```
+
+```tsx
+<LetterSwap text="Hello World" />
+
+<LetterSwap text="Atlas UI" />
+```
+
+## Props
+
+| Prop              | Type                      | Default | Required | Description                                                                              |
+| ----------------- | ------------------------- | ------- | -------- | ---------------------------------------------------------------------------------------- |
+| `text`            | `string`                  | -       | true     | The text content to animate                                                              |
+| `reverse`         | `boolean`                 | `false` | false    | Controls the direction of the animation. (`false`: bottom to top, `true`: top to bottom) |
+| `staggerDuration` | `number`                  | `0.02`  | false    | Delay between each letter animation                                                      |
+| `staggerFrom`     | `first \| last \| center` | `first` | false    | Direction from where the animation starts                                                |
+| `className`       | `string`                  | `0`     | false    | Optional classnames for according to match your setup                                    |

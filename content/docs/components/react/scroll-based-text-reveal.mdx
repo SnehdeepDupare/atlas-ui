@@ -1,0 +1,54 @@
+---
+title: Scroll Based Text Reveal
+description: A text reveal effect which animates the opacity of the text as you scroll.
+base: react
+---
+
+<ComponentPreview name="scroll-based-text-reveal-demo" />
+
+## Installation
+
+<InstallationTabs>
+
+<TabsContent value="cli">
+
+```bash
+npx shadcn@latest add https://atlasui.dev/r/scroll-based-text-reveal.json
+```
+
+</TabsContent>
+
+<TabsContent value="manual">
+
+<Steps>
+
+<Step>Install the following dependencies:</Step>
+
+```bash
+npm install motion
+```
+
+<Step>Copy and paste the following code into your project.</Step>
+
+<ComponentSource
+  name="scroll-based-text-reveal"
+  filePath="components/scroll-based-text-reveal.tsx"
+/>
+
+<Step>Update the import paths to match your project setup.</Step>
+
+</Steps>
+
+</TabsContent>
+
+</InstallationTabs>
+
+## Usage
+
+```tsx
+import { ScrollBasedTextReveal } from "@/components/scroll-based-text-reveal";
+```
+
+```tsx
+<ScrollBasedTextReveal text="AtlasUI is an open-source library offering a suite of prebuilt animated components for React, Next.js, and Vanilla JS." />
+```

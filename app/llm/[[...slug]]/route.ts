@@ -29,6 +29,7 @@ export async function GET(
   const frontmatter = `---
 title: ${doc.title}
 description: ${doc.description}
+${doc.base ? `base: ${doc.base}` : ""}
 ---
 `;
 

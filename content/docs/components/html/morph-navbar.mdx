@@ -1,0 +1,93 @@
+---
+title: Morph Navbar
+description: A polished navigation bar with a fluid, morphing pill that tracks the active link and hover state.
+base: html
+---
+
+<HtmlPreview name="morph-navbar-html-demo" />
+
+## Installation
+
+<InstallationTabs>
+
+<TabsContent value="cli">
+
+```bash
+npx shadcn@latest add https://atlasui.dev/r/morph-navbar-html.json
+```
+
+</TabsContent>
+
+<TabsContent value="manual">
+
+<Steps>
+
+<Step>Install the following dependencies:</Step>
+
+```bash
+npm install motion
+```
+
+<Step>Copy and paste the following code into your project.</Step>
+
+Structure in your html file:
+
+```html
+<nav id="morph-navbar">
+  <div id="morph-navbar-container">
+    <a href="#" class="morph-navbar-item">Home</a>
+    <a href="#about" class="morph-navbar-item">About</a>
+    <a href="#services" class="morph-navbar-item">Services</a>
+    <a href="#portfolio" class="morph-navbar-item">Portfolio</a>
+    <a href="#contact" class="morph-navbar-item">Contact</a>
+  </div>
+</nav>
+```
+
+<Step>Add `style.css` </Step>
+
+<ComponentSource name="morph-navbar-html" file="css" />
+
+<Step>Add `script.js`</Step>
+
+<ComponentSource name="morph-navbar-html" file="js" />
+
+</Steps>
+
+</TabsContent>
+
+</InstallationTabs>
+
+## Usage
+
+Create a wrapper nav element with `id="morph-navbar"`.
+
+```html
+<nav id="morph-navbar"></nav>
+```
+
+Create a container div with `id="morph-navbar-container"` inside the nav element.
+
+```html {2}
+<nav id="morph-navbar">
+  <div id="morph-navbar-container">...</div>
+</nav>
+```
+
+Place your links inside the container with `class="morph-navbar-item"`.
+
+```html {3-7}
+<nav id="morph-navbar">
+  <div id="morph-navbar-container">
+    <a href="#" class="morph-navbar-item">Home</a>
+    <a href="#about" class="morph-navbar-item">About</a>
+    <a href="#services" class="morph-navbar-item">Services</a>
+    <a href="#portfolio" class="morph-navbar-item">Portfolio</a>
+    <a href="#contact" class="morph-navbar-item">Contact</a>
+  </div>
+</nav>
+```
+
+## Credits
+
+This component is inspired by [this tweet](https://x.com/raul_dronca/status/1996134668916216000) by Raul Dronca.

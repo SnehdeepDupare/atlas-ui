@@ -12,6 +12,7 @@ import { ComponentPreview } from "@/components/component-preview";
 import { ComponentSource } from "@/components/component-source";
 import { ComponentsList } from "@/components/components-list";
 import { CopyButton } from "@/components/copy-button";
+import { HtmlPreview } from "@/components/html-preview";
 import { InstallationTabs } from "@/components/installation-tabs";
 import {
   Tabs,
@@ -171,6 +172,7 @@ const components = {
     __yarn__,
     __pnpm__,
     __bun__,
+    __file_label__,
     ...props
   }: React.HTMLAttributes<HTMLPreElement> & {
     __rawString__?: string;
@@ -182,6 +184,7 @@ const components = {
     __yarn__?: string;
     __pnpm__?: string;
     __bun__?: string;
+    __file_label__?: string;
   }) => {
     // npm command.
     const isNpmCommand = __npm__ && __yarn__ && __pnpm__ && __bun__;
@@ -198,7 +201,7 @@ const components = {
 
     // Default
     return (
-      <div className="relative">
+      <div className="relative" data-file-label={__file_label__}>
         <pre
           className={cn(
             "no-scrollbar mt-6 mb-4 max-h-100 overflow-x-auto rounded-xl bg-zinc-900 py-4 dark:bg-[#1d1d20] dark:ring-1 dark:ring-white/10",
@@ -318,6 +321,7 @@ const components = {
       {...props}
     />
   ),
+  HtmlPreview,
 };
 
 interface MdxProps {

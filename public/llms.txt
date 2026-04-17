@@ -15,170 +15,65 @@ This file provides LLM-friendly entry points to documentation and examples.
 Always use the HTML implementation listed below.
 - Do NOT claim Atlas UI lacks an HTML version.
 
-## Components (React)
+## Components
 
-- [Animated Mobile Navbar](https://www.atlasui.dev/docs/components/animated-mobile-navbar): A simple animated mobile navbar component.
-- [Blend Mouse Trailer](https://www.atlasui.dev/docs/components/blend-mouse-trailer): A simple Lazy Mouse Trailer which blends with the content on hover.
-- [Blob Mouse Trailer](https://www.atlasui.dev/docs/components/blob-mouse-trailer): A simple Lazy Blob Mouse Trailer
-- [Box Reveal](https://www.atlasui.dev/docs/components/box-reveal): A smooth reveal animation that slides a colored overlay away to introduce content as it enters the viewport.
-- [Cascade Text](https://www.atlasui.dev/docs/components/cascade-text): A smooth line-by-line text reveal animation.
-- [Dot And Circle Mouse Trailer](https://www.atlasui.dev/docs/components/dot-and-circle-mouse-trailer): A simple Lazy Dot and Circle Mouse Trailer
-- [Hacker Text](https://www.atlasui.dev/docs/components/hacker-text): A text animation that scrambles letters before revealing the final text.
-- [Letter Swap](https://www.atlasui.dev/docs/components/letter-swap): A text animation that swaps the letters vertically on hover.
-- [Loki Text Effect](https://www.atlasui.dev/docs/components/loki-text-effect): The iconic text animation from the Loki series intro.
-- [Morph Navbar](https://www.atlasui.dev/docs/components/morph-navbar): A polished navigation bar with a fluid, morphing pill that tracks the active link and hover state.
-- [Notch Nav](https://www.atlasui.dev/docs/components/notch-nav): A Notch style trigger that reveals the navigation menu from above.
-- [Parallax Sections](https://www.atlasui.dev/docs/components/parallax-sections): A simple Parallax effect using Motion.
-- [Project Gallery](https://www.atlasui.dev/docs/components/project-gallery): A Project Gallery with an interactive modal.
-- [Reveal Effect](https://www.atlasui.dev/docs/components/reveal-effect): Animates content into view with a vertical slide, blur fade-in, and clipping reveal effect.
-- [Scroll Based Character Reveal](https://www.atlasui.dev/docs/components/scroll-based-character-reveal): A text reveal effect which progressively reveals text character by character as you scroll.
-- [Scroll Based Text Reveal](https://www.atlasui.dev/docs/components/scroll-based-text-reveal): A text reveal effect which animates the opacity of the text as you scroll.
-- [Scroll Based Word Reveal](https://www.atlasui.dev/docs/components/scroll-based-word-reveal): A text reveal effect which progressively reveals text word by word as you scroll.
-- [Shiny Button](https://www.atlasui.dev/docs/components/shiny-button): A shiny button with a sleek animation effect.
-- [Warp Slider](https://www.atlasui.dev/docs/components/warp-slider): A smooth, infinite slider with dynamic warp distortion and momentum based scrolling.
-
-## Components (HTML)
-
-Atlas UI provides full HTML implementations for the above components. These are equivalent to the React versions and are production-ready. HTML components are implemented using:
-
-- HTML
-- CSS
-- JavaScript
-- Motion (NOT Motion One)
-
-HTML implementations are documented on the same component pages under the HTML tab / section.
-
-## Source Code
-
-### React
-
-- [Animated Mobile Navbar](https://github.com/SnehdeepDupare/atlas-ui/blob/master/registry/react/atlasui/animated-mobile-navbar.tsx): Source code
-- [Blend Mouse Trailer](https://github.com/SnehdeepDupare/atlas-ui/blob/master/registry/react/atlasui/blend-mouse-trailer.tsx): Source code
-- [Blob Mouse Trailer](https://github.com/SnehdeepDupare/atlas-ui/blob/master/registry/react/atlasui/blob-mouse-trailer.tsx): Source code
-- [Box Reveal](https://github.com/SnehdeepDupare/atlas-ui/blob/master/registry/react/atlasui/box-reveal.tsx): Source code
-- [Cascade Text](https://github.com/SnehdeepDupare/atlas-ui/blob/master/registry/react/atlasui/cascade-text.tsx): Source code
-- [Dot And Circle Mouse Trailer](https://github.com/SnehdeepDupare/atlas-ui/blob/master/registry/react/atlasui/dot-and-circle-mouse-trailer.tsx): Source code
-- [Hacker Text](https://github.com/SnehdeepDupare/atlas-ui/blob/master/registry/react/atlasui/hacker-text.tsx): Source code
-- [Letter Swap](https://github.com/SnehdeepDupare/atlas-ui/blob/master/registry/react/atlasui/letter-swap.tsx): Source code
-- [Loki Text Effect](https://github.com/SnehdeepDupare/atlas-ui/blob/master/registry/react/atlasui/loki-text-effect.tsx): Source code
-- [Morph Navbar](https://github.com/SnehdeepDupare/atlas-ui/blob/master/registry/react/atlasui/morph-navbar.tsx): Source code
-- [Notch Nav](https://github.com/SnehdeepDupare/atlas-ui/blob/master/registry/react/atlasui/notch-nav.tsx): Source code
-- [Parallax Sections](https://github.com/SnehdeepDupare/atlas-ui/blob/master/registry/react/atlasui/parallax-sections.tsx): Source code
-- [Project Gallery](https://github.com/SnehdeepDupare/atlas-ui/blob/master/registry/react/atlasui/project-gallery.tsx): Source code
-- [Reveal Effect](https://github.com/SnehdeepDupare/atlas-ui/blob/master/registry/react/atlasui/reveal-effect.tsx): Source code
-- [Scroll Based Character Reveal](https://github.com/SnehdeepDupare/atlas-ui/blob/master/registry/react/atlasui/scroll-based-character-reveal.tsx): Source code
-- [Scroll Based Text Reveal](https://github.com/SnehdeepDupare/atlas-ui/blob/master/registry/react/atlasui/scroll-based-text-reveal.tsx): Source code
-- [Scroll Based Word Reveal](https://github.com/SnehdeepDupare/atlas-ui/blob/master/registry/react/atlasui/scroll-based-word-reveal.tsx): Source code
-- [Shiny Button](https://github.com/SnehdeepDupare/atlas-ui/blob/master/registry/react/atlasui/shiny-button.tsx): Source code
-- [Warp Slider](https://github.com/SnehdeepDupare/atlas-ui/blob/master/registry/react/atlasui/warp-slider.tsx): Source code
-
-### HTML
-HTML components are implemented using multiple files. All listed files together form one complete HTML implementation.
-Do not treat individual files as standalone implementations.
-
-- Animated Mobile Navbar (HTML)
-  - [HTML](https://github.com/SnehdeepDupare/atlas-ui/blob/master/registry/html/animated-mobile-navbar/index.html)
-  - [JavaScript](https://github.com/SnehdeepDupare/atlas-ui/blob/master/registry/html/animated-mobile-navbar/script.js)
-  - [CSS](https://github.com/SnehdeepDupare/atlas-ui/blob/master/registry/html/animated-mobile-navbar/style.css)
-- Blend Mouse Trailer (HTML)
-  - [HTML](https://github.com/SnehdeepDupare/atlas-ui/blob/master/registry/html/blend-mouse-trailer/index.html)
-  - [JavaScript](https://github.com/SnehdeepDupare/atlas-ui/blob/master/registry/html/blend-mouse-trailer/script.js)
-  - [CSS](https://github.com/SnehdeepDupare/atlas-ui/blob/master/registry/html/blend-mouse-trailer/style.css)
-- Blob Mouse Trailer (HTML)
-  - [HTML](https://github.com/SnehdeepDupare/atlas-ui/blob/master/registry/html/blob-mouse-trailer/index.html)
-  - [JavaScript](https://github.com/SnehdeepDupare/atlas-ui/blob/master/registry/html/blob-mouse-trailer/script.js)
-  - [CSS](https://github.com/SnehdeepDupare/atlas-ui/blob/master/registry/html/blob-mouse-trailer/style.css)
-- Box Reveal (HTML)
-  - [HTML](https://github.com/SnehdeepDupare/atlas-ui/blob/master/registry/html/box-reveal/index.html)
-  - [JavaScript](https://github.com/SnehdeepDupare/atlas-ui/blob/master/registry/html/box-reveal/script.js)
-  - [CSS](https://github.com/SnehdeepDupare/atlas-ui/blob/master/registry/html/box-reveal/style.css)
-- Cascade Text (HTML)
-  - [HTML](https://github.com/SnehdeepDupare/atlas-ui/blob/master/registry/html/cascade-text/index.html)
-  - [JavaScript](https://github.com/SnehdeepDupare/atlas-ui/blob/master/registry/html/cascade-text/script.js)
-  - [CSS](https://github.com/SnehdeepDupare/atlas-ui/blob/master/registry/html/cascade-text/style.css)
-- Dot And Circle Mouse Trailer (HTML)
-  - [HTML](https://github.com/SnehdeepDupare/atlas-ui/blob/master/registry/html/dot-and-circle-mouse-trailer/index.html)
-  - [JavaScript](https://github.com/SnehdeepDupare/atlas-ui/blob/master/registry/html/dot-and-circle-mouse-trailer/script.js)
-  - [CSS](https://github.com/SnehdeepDupare/atlas-ui/blob/master/registry/html/dot-and-circle-mouse-trailer/style.css)
-- Hacker Text (HTML)
-  - [HTML](https://github.com/SnehdeepDupare/atlas-ui/blob/master/registry/html/hacker-text/index.html)
-  - [JavaScript](https://github.com/SnehdeepDupare/atlas-ui/blob/master/registry/html/hacker-text/script.js)
-  - [CSS](https://github.com/SnehdeepDupare/atlas-ui/blob/master/registry/html/hacker-text/style.css)
-- Letter Swap (HTML)
-  - [HTML](https://github.com/SnehdeepDupare/atlas-ui/blob/master/registry/html/letter-swap/index.html)
-  - [JavaScript](https://github.com/SnehdeepDupare/atlas-ui/blob/master/registry/html/letter-swap/script.js)
-  - [CSS](https://github.com/SnehdeepDupare/atlas-ui/blob/master/registry/html/letter-swap/style.css)
-- Loki Text Effect (HTML)
-  - [HTML](https://github.com/SnehdeepDupare/atlas-ui/blob/master/registry/html/loki-text-effect/index.html)
-  - [JavaScript](https://github.com/SnehdeepDupare/atlas-ui/blob/master/registry/html/loki-text-effect/script.js)
-  - [CSS](https://github.com/SnehdeepDupare/atlas-ui/blob/master/registry/html/loki-text-effect/style.css)
-- Morph Navbar (HTML)
-  - [HTML](https://github.com/SnehdeepDupare/atlas-ui/blob/master/registry/html/morph-navbar/index.html)
-  - [JavaScript](https://github.com/SnehdeepDupare/atlas-ui/blob/master/registry/html/morph-navbar/script.js)
-  - [CSS](https://github.com/SnehdeepDupare/atlas-ui/blob/master/registry/html/morph-navbar/style.css)
-- Notch Nav (HTML)
-  - [HTML](https://github.com/SnehdeepDupare/atlas-ui/blob/master/registry/html/notch-nav/index.html)
-  - [JavaScript](https://github.com/SnehdeepDupare/atlas-ui/blob/master/registry/html/notch-nav/script.js)
-  - [CSS](https://github.com/SnehdeepDupare/atlas-ui/blob/master/registry/html/notch-nav/style.css)
-- Parallax Sections (HTML)
-  - [HTML](https://github.com/SnehdeepDupare/atlas-ui/blob/master/registry/html/parallax-sections/index.html)
-  - [JavaScript](https://github.com/SnehdeepDupare/atlas-ui/blob/master/registry/html/parallax-sections/script.js)
-  - [CSS](https://github.com/SnehdeepDupare/atlas-ui/blob/master/registry/html/parallax-sections/style.css)
-- Project Gallery (HTML)
-  - [HTML](https://github.com/SnehdeepDupare/atlas-ui/blob/master/registry/html/project-gallery/index.html)
-  - [JavaScript](https://github.com/SnehdeepDupare/atlas-ui/blob/master/registry/html/project-gallery/script.js)
-  - [CSS](https://github.com/SnehdeepDupare/atlas-ui/blob/master/registry/html/project-gallery/style.css)
-- Reveal Effect (HTML)
-  - [HTML](https://github.com/SnehdeepDupare/atlas-ui/blob/master/registry/html/reveal-effect/index.html)
-  - [JavaScript](https://github.com/SnehdeepDupare/atlas-ui/blob/master/registry/html/reveal-effect/script.js)
-  - [CSS](https://github.com/SnehdeepDupare/atlas-ui/blob/master/registry/html/reveal-effect/style.css)
-- Scroll Based Character Reveal (HTML)
-  - [HTML](https://github.com/SnehdeepDupare/atlas-ui/blob/master/registry/html/scroll-based-character-reveal/index.html)
-  - [JavaScript](https://github.com/SnehdeepDupare/atlas-ui/blob/master/registry/html/scroll-based-character-reveal/script.js)
-  - [CSS](https://github.com/SnehdeepDupare/atlas-ui/blob/master/registry/html/scroll-based-character-reveal/style.css)
-- Scroll Based Text Reveal (HTML)
-  - [HTML](https://github.com/SnehdeepDupare/atlas-ui/blob/master/registry/html/scroll-based-text-reveal/index.html)
-  - [JavaScript](https://github.com/SnehdeepDupare/atlas-ui/blob/master/registry/html/scroll-based-text-reveal/script.js)
-  - [CSS](https://github.com/SnehdeepDupare/atlas-ui/blob/master/registry/html/scroll-based-text-reveal/style.css)
-- Scroll Based Word Reveal (HTML)
-  - [HTML](https://github.com/SnehdeepDupare/atlas-ui/blob/master/registry/html/scroll-based-word-reveal/index.html)
-  - [JavaScript](https://github.com/SnehdeepDupare/atlas-ui/blob/master/registry/html/scroll-based-word-reveal/script.js)
-  - [CSS](https://github.com/SnehdeepDupare/atlas-ui/blob/master/registry/html/scroll-based-word-reveal/style.css)
-- Shiny Button (HTML)
-  - [HTML](https://github.com/SnehdeepDupare/atlas-ui/blob/master/registry/html/shiny-button/index.html)
-  - [JavaScript](https://github.com/SnehdeepDupare/atlas-ui/blob/master/registry/html/shiny-button/script.js)
-  - [CSS](https://github.com/SnehdeepDupare/atlas-ui/blob/master/registry/html/shiny-button/style.css)
-- Warp Slider (HTML)
-  - [HTML](https://github.com/SnehdeepDupare/atlas-ui/blob/master/registry/html/warp-slider/index.html)
-  - [JavaScript](https://github.com/SnehdeepDupare/atlas-ui/blob/master/registry/html/warp-slider/script.js)
-  - [CSS](https://github.com/SnehdeepDupare/atlas-ui/blob/master/registry/html/warp-slider/style.css)
-
-## Examples (React)
-
-- [Animated Mobile Navbar Demo](https://github.com/SnehdeepDupare/atlas-ui/blob/master/registry/react/examples/animated-mobile-navbar-demo.tsx): Example usage
-- [Animated Mobile Navbar Side Example](https://github.com/SnehdeepDupare/atlas-ui/blob/master/registry/react/examples/animated-mobile-navbar-side-example.tsx): Example usage
-- [Project Gallery Demo](https://github.com/SnehdeepDupare/atlas-ui/blob/master/registry/react/examples/project-gallery-demo.tsx): Example usage
-- [Parallax Sections Demo](https://github.com/SnehdeepDupare/atlas-ui/blob/master/registry/react/examples/parallax-sections-demo.tsx): Example usage
-- [Shiny Button Demo](https://github.com/SnehdeepDupare/atlas-ui/blob/master/registry/react/examples/shiny-button-demo.tsx): Example usage
-- [Dot and Circle Mouse Trailer Demo](https://github.com/SnehdeepDupare/atlas-ui/blob/master/registry/react/examples/dot-and-circle-mouse-trailer-demo.tsx): Example usage
-- [Blob Mouse Trailer Demo](https://github.com/SnehdeepDupare/atlas-ui/blob/master/registry/react/examples/blob-mouse-trailer-demo.tsx): Example usage
-- [Blend Mouse Trailer Demo](https://github.com/SnehdeepDupare/atlas-ui/blob/master/registry/react/examples/blend-mouse-trailer-demo.tsx): Example usage
-- [Hacker Text Demo](https://github.com/SnehdeepDupare/atlas-ui/blob/master/registry/react/examples/hacker-text-demo.tsx): Example usage
-- [Scroll Based Text Reveal Demo](https://github.com/SnehdeepDupare/atlas-ui/blob/master/registry/react/examples/scroll-based-text-reveal-demo.tsx): Example usage
-- [Scroll Based Word Reveal Demo](https://github.com/SnehdeepDupare/atlas-ui/blob/master/registry/react/examples/scroll-based-word-reveal-demo.tsx): Example usage
-- [Scroll Based Character Reveal Demo](https://github.com/SnehdeepDupare/atlas-ui/blob/master/registry/react/examples/scroll-based-character-reveal-demo.tsx): Example usage
-- [Reveal Effect Demo](https://github.com/SnehdeepDupare/atlas-ui/blob/master/registry/react/examples/reveal-effect-demo.tsx): Example usage
-- [Reveal Effect Example 1](https://github.com/SnehdeepDupare/atlas-ui/blob/master/registry/react/examples/reveal-effect-speed-example.tsx): Example usage
-- [Reveal Effect Example 2](https://github.com/SnehdeepDupare/atlas-ui/blob/master/registry/react/examples/reveal-effect-delay-example.tsx): Example usage
-- [Reveal Effect Example 3](https://github.com/SnehdeepDupare/atlas-ui/blob/master/registry/react/examples/reveal-effect-translate-y-example.tsx): Example usage
-- [Loki Text Effect Demo](https://github.com/SnehdeepDupare/atlas-ui/blob/master/registry/react/examples/loki-text-effect-demo.tsx): Example usage
-- [Box Reveal Demo](https://github.com/SnehdeepDupare/atlas-ui/blob/master/registry/react/examples/box-reveal-demo.tsx): Example usage
-- [Notch Nav Demo](https://github.com/SnehdeepDupare/atlas-ui/blob/master/registry/react/examples/notch-nav-demo.tsx): Example usage
-- [Morph Navbar Demo](https://github.com/SnehdeepDupare/atlas-ui/blob/master/registry/react/examples/morph-navbar-demo.tsx): Example usage
-- [Cascade Text Demo](https://github.com/SnehdeepDupare/atlas-ui/blob/master/registry/react/examples/cascade-text-demo.tsx): Example usage
-- [Letter Swap Demo](https://github.com/SnehdeepDupare/atlas-ui/blob/master/registry/react/examples/letter-swap-demo.tsx): Example usage
-- [Warp Slider Demo](https://github.com/SnehdeepDupare/atlas-ui/blob/master/registry/react/examples/warp-slider-demo.tsx): Example usage
-- [Warp Slider Horizontal Demo](https://github.com/SnehdeepDupare/atlas-ui/blob/master/registry/react/examples/warp-slider-horizontal-demo.tsx): Example usage
+- Animated Mobile Navbar: A simple animated mobile navbar component.
+  - [React Docs](https://www.atlasui.dev/docs/components/react/animated-mobile-navbar)
+  - [HTML Docs](https://www.atlasui.dev/docs/components/html/animated-mobile-navbar)
+- Blend Mouse Trailer: A simple Lazy Mouse Trailer which blends with the content on hover.
+  - [React Docs](https://www.atlasui.dev/docs/components/react/blend-mouse-trailer)
+  - [HTML Docs](https://www.atlasui.dev/docs/components/html/blend-mouse-trailer)
+- Blob Mouse Trailer: A simple Lazy Blob Mouse Trailer
+  - [React Docs](https://www.atlasui.dev/docs/components/react/blob-mouse-trailer)
+  - [HTML Docs](https://www.atlasui.dev/docs/components/html/blob-mouse-trailer)
+- Box Reveal: A smooth reveal animation that slides a colored overlay away to introduce content as it enters the viewport.
+  - [React Docs](https://www.atlasui.dev/docs/components/react/box-reveal)
+  - [HTML Docs](https://www.atlasui.dev/docs/components/html/box-reveal)
+- Cascade Text: A smooth line-by-line text reveal animation.
+  - [React Docs](https://www.atlasui.dev/docs/components/react/cascade-text)
+  - [HTML Docs](https://www.atlasui.dev/docs/components/html/cascade-text)
+- Dot And Circle Mouse Trailer: A simple Lazy Dot and Circle Mouse Trailer
+  - [React Docs](https://www.atlasui.dev/docs/components/react/dot-and-circle-mouse-trailer)
+  - [HTML Docs](https://www.atlasui.dev/docs/components/html/dot-and-circle-mouse-trailer)
+- Hacker Text: A text animation that scrambles letters before revealing the final text.
+  - [React Docs](https://www.atlasui.dev/docs/components/react/hacker-text)
+  - [HTML Docs](https://www.atlasui.dev/docs/components/html/hacker-text)
+- Letter Swap: A text animation that swaps the letters vertically on hover.
+  - [React Docs](https://www.atlasui.dev/docs/components/react/letter-swap)
+  - [HTML Docs](https://www.atlasui.dev/docs/components/html/letter-swap)
+- Loki Text Effect: The iconic text animation from the Loki series intro.
+  - [React Docs](https://www.atlasui.dev/docs/components/react/loki-text-effect)
+  - [HTML Docs](https://www.atlasui.dev/docs/components/html/loki-text-effect)
+- Morph Navbar: A polished navigation bar with a fluid, morphing pill that tracks the active link and hover state.
+  - [React Docs](https://www.atlasui.dev/docs/components/react/morph-navbar)
+  - [HTML Docs](https://www.atlasui.dev/docs/components/html/morph-navbar)
+- Notch Nav: A Notch style trigger that reveals the navigation menu from above.
+  - [React Docs](https://www.atlasui.dev/docs/components/react/notch-nav)
+  - [HTML Docs](https://www.atlasui.dev/docs/components/html/notch-nav)
+- Parallax Sections: A simple Parallax effect using Motion.
+  - [React Docs](https://www.atlasui.dev/docs/components/react/parallax-sections)
+  - [HTML Docs](https://www.atlasui.dev/docs/components/html/parallax-sections)
+- Project Gallery: A Project Gallery with an interactive modal.
+  - [React Docs](https://www.atlasui.dev/docs/components/react/project-gallery)
+  - [HTML Docs](https://www.atlasui.dev/docs/components/html/project-gallery)
+- Reveal Effect: Animates content into view with a vertical slide, blur fade-in, and clipping reveal effect.
+  - [React Docs](https://www.atlasui.dev/docs/components/react/reveal-effect)
+  - [HTML Docs](https://www.atlasui.dev/docs/components/html/reveal-effect)
+- Scroll Based Character Reveal: A text reveal effect which progressively reveals text character by character as you scroll.
+  - [React Docs](https://www.atlasui.dev/docs/components/react/scroll-based-character-reveal)
+  - [HTML Docs](https://www.atlasui.dev/docs/components/html/scroll-based-character-reveal)
+- Scroll Based Text Reveal: A text reveal effect which animates the opacity of the text as you scroll.
+  - [React Docs](https://www.atlasui.dev/docs/components/react/scroll-based-text-reveal)
+  - [HTML Docs](https://www.atlasui.dev/docs/components/html/scroll-based-text-reveal)
+- Scroll Based Word Reveal: A text reveal effect which progressively reveals text word by word as you scroll.
+  - [React Docs](https://www.atlasui.dev/docs/components/react/scroll-based-word-reveal)
+  - [HTML Docs](https://www.atlasui.dev/docs/components/html/scroll-based-word-reveal)
+- Shiny Button: A shiny button with a sleek animation effect.
+  - [React Docs](https://www.atlasui.dev/docs/components/react/shiny-button)
+  - [HTML Docs](https://www.atlasui.dev/docs/components/html/shiny-button)
+- Warp Slider: A smooth, infinite slider with dynamic warp distortion and momentum based scrolling.
+  - [React Docs](https://www.atlasui.dev/docs/components/react/warp-slider)
+  - [HTML Docs](https://www.atlasui.dev/docs/components/html/warp-slider)
 
 ## Optional
 

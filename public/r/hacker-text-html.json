@@ -6,20 +6,20 @@
   "dependencies": [],
   "files": [
     {
-      "path": "registry/html/hacker-text/index.html",
-      "content": "<!DOCTYPE html>\r\n<html lang=\"en\">\r\n  <head>\r\n    <meta charset=\"UTF-8\" />\r\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" />\r\n    <title>Blend Mouse Trailer - Atlas UI</title>\r\n    <link rel=\"stylesheet\" href=\"style.css\" />\r\n  </head>\r\n  <body>\r\n    <span id=\"text\" class=\"hacker-text\" data-value=\"Atlas UI\">Atlas UI</span>\r\n  </body>\r\n\r\n  <script type=\"module\" src=\"script.js\"></script>\r\n</html>\r\n",
+      "path": "registry/html/atlasui/hacker-text/index.html",
+      "content": "<!doctype html>\r\n<html lang=\"en\">\r\n  <head>\r\n    <meta charset=\"UTF-8\" />\r\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" />\r\n    <title>Hacker Text - Atlas UI</title>\r\n    <link rel=\"stylesheet\" href=\"style.css\" />\r\n  </head>\r\n  <body>\r\n    <span class=\"hacker-text\" data-value=\"Atlas UI\">Atlas UI</span>\r\n  </body>\r\n\r\n  <script type=\"module\" src=\"script.js\"></script>\r\n</html>\r\n",
       "type": "registry:file",
       "target": "~/hacker-text/index.html"
     },
     {
-      "path": "registry/html/hacker-text/style.css",
-      "content": "body {\n  margin: 0;\n  padding: 0;\n  height: 100vh;\n  width: 100%;\n  background: #18181b;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n}\n\n.hacker-text {\n  font-family: \"Bebas Neue\", sans-serif;\n  text-transform: uppercase;\n  font-size: 4rem;\n  cursor: pointer;\n  color: #fff;\n}\n",
+      "path": "registry/html/atlasui/hacker-text/style.css",
+      "content": "@import url(\"https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap\");\n\n:root {\n  --background: light-dark(\n    oklch(100% 0.00011 271.152),\n    oklch(18.22% 0.00002 271.152)\n  );\n  --foreground: light-dark(\n    oklch(18.22% 0.00002 271.152),\n    oklch(98.511% 0.00011 271.152)\n  );\n}\n\nhtml {\n  color-scheme: light dark;\n}\n\nbody {\n  margin: 0;\n  padding: 0;\n  height: 100vh;\n  width: 100%;\n  background: var(--background);\n  display: flex;\n  align-items: center;\n  justify-content: center;\n}\n\n.hacker-text {\n  font-family: \"Bebas Neue\", sans-serif;\n  text-transform: uppercase;\n  font-size: 4rem;\n  cursor: pointer;\n  color: var(--foreground);\n}\n",
       "type": "registry:file",
       "target": "~/hacker-text/style.css"
     },
     {
-      "path": "registry/html/hacker-text/script.js",
-      "content": "document.addEventListener(\"DOMContentLoaded\", () => {\r\n  const textElement = document.getElementById(\"text\");\r\n  const letters = \"ABCDEFGHIJKLMNOPQRSTUVWXYZ\";\r\n  let interval = null;\r\n  let timeout = null;\r\n\r\n  const scrambleText = (target) => {\r\n    let iteration = 0;\r\n\r\n    clearInterval(interval);\r\n\r\n    interval = setInterval(() => {\r\n      if (!target.dataset.value) return;\r\n\r\n      target.innerText = target.innerText\r\n        .split(\"\")\r\n        .map((letter, index) => {\r\n          if (index < iteration) {\r\n            return target.dataset.value[index];\r\n          }\r\n          return letters[Math.floor(Math.random() * 26)];\r\n        })\r\n        .join(\"\");\r\n\r\n      if (iteration >= target.dataset.value.length) {\r\n        clearInterval(interval);\r\n      }\r\n\r\n      iteration += 1 / 3;\r\n    }, 30);\r\n  };\r\n\r\n  const applyEffect = () => {\r\n    if (window.matchMedia(\"(min-width: 768px)\").matches) {\r\n      textElement.addEventListener(\"mouseover\", (event) => {\r\n        const target = event.target;\r\n        scrambleText(target);\r\n      });\r\n    }\r\n    // Run effect on page load after 600ms for all devices\r\n    timeout = setTimeout(() => {\r\n      scrambleText(textElement);\r\n    }, 600);\r\n  };\r\n\r\n  applyEffect();\r\n\r\n  window.addEventListener(\"beforeunload\", () => {\r\n    if (interval) clearInterval(interval);\r\n    if (timeout) clearTimeout(timeout);\r\n  });\r\n});\r\n",
+      "path": "registry/html/atlasui/hacker-text/script.js",
+      "content": "document.addEventListener(\"DOMContentLoaded\", () => {\r\n  const textElements = document.querySelectorAll(\".hacker-text\");\r\n  const letters = \"ABCDEFGHIJKLMNOPQRSTUVWXYZ\";\r\n  let interval = null;\r\n  let timeout = null;\r\n\r\n  const scrambleText = (target) => {\r\n    let iteration = 0;\r\n\r\n    clearInterval(interval);\r\n\r\n    interval = setInterval(() => {\r\n      if (!target.dataset.value) return;\r\n\r\n      target.innerText = target.innerText\r\n        .split(\"\")\r\n        .map((letter, index) => {\r\n          if (index < iteration) {\r\n            return target.dataset.value[index];\r\n          }\r\n          return letters[Math.floor(Math.random() * 26)];\r\n        })\r\n        .join(\"\");\r\n\r\n      if (iteration >= target.dataset.value.length) {\r\n        clearInterval(interval);\r\n      }\r\n\r\n      iteration += 1 / 3;\r\n    }, 30);\r\n  };\r\n\r\n  const applyEffect = () => {\r\n    if (window.matchMedia(\"(min-width: 768px)\").matches) {\r\n      textElements.forEach((textElement) => {\r\n        textElement.addEventListener(\"mouseover\", (event) => {\r\n          const target = event.target;\r\n          scrambleText(target);\r\n        });\r\n      });\r\n    }\r\n    // Run effect on page load after 600ms for all devices\r\n    timeout = setTimeout(() => {\r\n      textElements.forEach((textElement) => {\r\n        scrambleText(textElement);\r\n      });\r\n    }, 600);\r\n  };\r\n\r\n  applyEffect();\r\n\r\n  window.addEventListener(\"beforeunload\", () => {\r\n    if (interval) clearInterval(interval);\r\n    if (timeout) clearTimeout(timeout);\r\n  });\r\n});\r\n",
       "type": "registry:file",
       "target": "~/hacker-text/script.js"
     }
@@ -27,5 +27,5 @@
   "meta": {
     "framework": "html"
   },
-  "type": "registry:file"
+  "type": "registry:component"
 }

@@ -1,0 +1,43 @@
+:root {
+  --background: light-dark(
+    oklch(100% 0.00011 271.152),
+    oklch(18.22% 0.00002 271.152)
+  );
+}
+
+html {
+  color-scheme: light dark;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  width: 100%;
+  background: var(--background);
+}
+
+.trailer {
+  position: fixed;
+  height: 24rem;
+  aspect-ratio: 1;
+  background: linear-gradient(to right, #a855f7, #f59e0b);
+  border-radius: 50%;
+  left: 0;
+  top: 0;
+  transform: translate(-50%, -50%);
+  transform-origin: center;
+  pointer-events: none;
+  z-index: -10;
+  filter: blur(100px);
+  animation: rotate 10s infinite;
+}
+
+@keyframes rotate {
+  from {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  to {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}

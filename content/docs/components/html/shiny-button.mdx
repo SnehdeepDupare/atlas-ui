@@ -1,0 +1,61 @@
+---
+title: Shiny Button
+description: A shiny button with a sleek animation effect.
+base: html
+---
+
+<HtmlPreview name="shiny-button-html-demo" />
+
+## Installation
+
+<InstallationTabs>
+
+<TabsContent value="cli">
+
+```bash
+npx shadcn@latest add https://atlasui.dev/r/shiny-button-html.json
+```
+
+</TabsContent>
+
+<TabsContent value="manual">
+
+<Steps>
+
+<Step>Install the following dependencies:</Step>
+
+```bash
+npm install motion
+```
+
+<Step>Copy and paste the following code into your project.</Step>
+
+```html
+<button class="shiny-button">
+  <span class="button-content">Button</span>
+</button>
+```
+
+<Step>Add `style.css`</Step>
+
+<ComponentSource name="shiny-button-html" file="css" />
+
+<Step>Add `script.js`</Step>
+
+<ComponentSource name="shiny-button-html" file="js" />
+
+</Steps>
+
+</TabsContent>
+
+</InstallationTabs>
+
+## Usage
+
+Define your button with `class="shiny-button"`. Add the text in the span with `class="button-content"`.
+
+```html
+<button class="shiny-button">
+  <span class="button-content">Button</span>
+</button>
+```

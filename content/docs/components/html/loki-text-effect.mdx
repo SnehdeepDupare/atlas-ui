@@ -1,0 +1,82 @@
+---
+title: Loki Text Effect
+description: The iconic text animation from the Loki series intro.
+base: html
+---
+
+<HtmlPreview name="loki-text-effect-html-demo" />
+
+## Installation
+
+<InstallationTabs>
+
+<TabsContent value="cli">
+
+```bash
+npx shadcn@latest add https://atlasui.dev/r/loki-text-effect-html.json
+```
+
+</TabsContent>
+
+<TabsContent value="manual">
+
+<Steps>
+
+<Step>
+  Download all the fonts and add them to your project. [Download
+  Link](https://github.com/SnehdeepDupare/atlas-ui/tree/master/app/fonts)
+</Step>
+
+```txt
+index.html
+fonts
+├──fontOne.woff2
+├──fontTwo.woff2
+├──fontThree.woff2
+├──fontFour.woff2
+├──fontFive.woff2
+├──fontSix.woff2
+└──fontSeven.woff2
+```
+
+<Step>Install the following dependencies:</Step>
+
+```bash
+npm install motion
+```
+
+<Step>Copy and paste the following code into your project.</Step>
+
+```html
+<p class="loki-effect-text" data-value="Loki">Loki</p>
+```
+
+<Step>Add `style.css` </Step>
+
+<ComponentSource name="loki-text-effect-html" file="css" />
+
+<Step>Add `script.js`</Step>
+
+<ComponentSource name="loki-text-effect-html" file="js" />
+
+</Steps>
+
+</TabsContent>
+
+</InstallationTabs>
+
+## Usage
+
+Define the text you want to display with Loki text Effect with `class="loki-effect-text"`. Add `data-value` attribute to the element with the text you want to display, it must be the same as the text you want to display.
+
+```html
+<p class="loki-effect-text" data-value="Loki">Loki</p>
+```
+
+## Data Attributes
+
+| Data Attribute       | Type     | Default | Required | Description                                                 |
+| -------------------- | -------- | ------- | -------- | ----------------------------------------------------------- |
+| `data-value`         | `string` | -       | true     | The text to display and animate                             |
+| `data-velocity-font` | `number` | `800`   | false    | Interval in ms for how often the font changes               |
+| `data-velocity-move` | `number` | `1800`  | false    | Interval in ms for how often the position jitter is updated |

@@ -1,0 +1,116 @@
+---
+title: Reveal Effect
+description: Animates content into view with a vertical slide, blur fade-in, and clipping reveal effect.
+base: react
+---
+
+<ComponentPreview name="reveal-effect-demo" />
+
+## Installation
+
+<InstallationTabs>
+
+<TabsContent value="cli">
+
+```bash
+npx shadcn@latest add https://atlasui.dev/r/reveal-effect.json
+```
+
+</TabsContent>
+
+<TabsContent value="manual">
+
+<Steps>
+
+<Step>Install the following dependencies:</Step>
+
+```bash
+npm install motion
+```
+
+<Step>Copy and paste the following code into your project.</Step>
+
+<ComponentSource name="reveal-effect" filePath="components/reveal-effect.tsx" />
+
+<Step>Update the import paths to match your project setup.</Step>
+
+</Steps>
+
+</TabsContent>
+
+</InstallationTabs>
+
+## Usage
+
+```tsx
+import { RevealEffect } from "@/components/reveal-effect";
+```
+
+```tsx
+<RevealEffect>
+  <h1>Reveal Effect</h1>
+</RevealEffect>
+
+<RevealEffect>
+  // Pass any children here, and the reveal effect will be applied to it.
+</RevealEffect>
+```
+
+You can increase/decrease the speed of the animation by passing the `speed` prop.
+
+## Props
+
+| Prop         | Type              | Default    | Description                                                                  |
+| ------------ | ----------------- | ---------- | ---------------------------------------------------------------------------- |
+| `children`   | `React.ReactNode` | -          | The content to which animation must be applied                               |
+| `speed`      | `string`          | `"medium"` | Animation speed, can be `"slow"`, `"medium"`, or `"fast"`                    |
+| `delay`      | `number`          | `0`        | Delay before the animation starts                                            |
+| `translateY` | `number`          | `0`        | The Y-axis translation from where the element will initially begin animation |
+
+## Examples
+
+### Speed
+
+To change the speed of the animation, you can pass the `speed` prop or use the `data-speed` attribute.
+The default speed is `"medium"`. You can set it to `"slow"` or `"fast"`.
+
+<ComponentPreview name="reveal-effect-speed-example" />
+
+```tsx {2,4}
+<div>
+  <RevealEffect speed="slow">...</RevealEffect>
+
+  <RevealEffect speed="fast">...</RevealEffect>
+</div>
+```
+
+### Delay
+
+To add a delay before the animation starts, you can pass the `delay` prop or use the `data-delay` attribute.
+The default delay is `0`.
+
+<ComponentPreview name="reveal-effect-delay-example" />
+
+```tsx {2,4}
+<div>
+  <RevealEffect delay={0.2}>...</RevealEffect>
+
+  <RevealEffect delay={0.5}>...</RevealEffect>
+</div>
+```
+
+### Translate Y
+
+To change the Y-axis translation from where the element will initially begin animation, you can pass the `translateY` prop or use the `data-translatey` attribute.
+The default value is `0`. You can set the value between `10-15` for a subtle effect or any other value suitable for your needs.
+Pair `translateY` with a small `delay` for a more pronounced effect.
+
+<ComponentPreview name="reveal-effect-translate-y-example" />
+
+```tsx {2,4}
+<div>
+  <RevealEffect translateY={10}>...</RevealEffect>
+
+  <RevealEffect translateY={15}>...</RevealEffect>
+</div>
+```

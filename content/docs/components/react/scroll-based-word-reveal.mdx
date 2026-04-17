@@ -1,0 +1,54 @@
+---
+title: Scroll Based Word Reveal
+description: A text reveal effect which progressively reveals text word by word as you scroll.
+base: react
+---
+
+<ComponentPreview name="scroll-based-word-reveal-demo" />
+
+## Installation
+
+<InstallationTabs>
+
+<TabsContent value="cli">
+
+```bash
+npx shadcn@latest add https://atlasui.dev/r/scroll-based-word-reveal.json
+```
+
+</TabsContent>
+
+<TabsContent value="manual">
+
+<Steps>
+
+<Step>Install the following dependencies:</Step>
+
+```bash
+npm install motion
+```
+
+<Step>Copy and paste the following code into your project.</Step>
+
+<ComponentSource
+  name="scroll-based-word-reveal"
+  filePath="components/scroll-based-word-reveal.tsx"
+/>
+
+<Step>Update the import paths to match your project setup.</Step>
+
+</Steps>
+
+</TabsContent>
+
+</InstallationTabs>
+
+## Usage
+
+```tsx
+import { ScrollBasedWordReveal } from "@/components/scroll-based-word-reveal";
+```
+
+```tsx
+<ScrollBasedWordReveal text="AtlasUI is an open-source library offering a suite of prebuilt animated components for React, Next.js, and Vanilla JS." />
+```

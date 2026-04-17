@@ -1,0 +1,87 @@
+---
+title: Animated Mobile Navbar
+description: A simple animated mobile navbar component.
+base: html
+---
+
+<HtmlPreview name="animated-mobile-navbar-html-demo" />
+
+## Installation
+
+<InstallationTabs>
+
+<TabsContent value="cli">
+
+```bash
+npx shadcn@latest add https://atlasui.dev/r/animated-mobile-navbar-html.json
+```
+
+</TabsContent>
+
+<TabsContent value="manual">
+
+<Steps>
+
+<Step>Install the following dependencies:</Step>
+
+```bash
+npm install motion
+```
+
+<Step>Copy and paste the following code into your project.</Step>
+
+Structure in your html file. Place the button with the id `menu-trigger` in the header to trigger the menu.
+
+```html
+<button id="menu-trigger" class="menu-trigger">☰</button>
+
+<div id="mobile-menu" class="mobile-menu">
+  <button id="menu-close" class="menu-close">✖</button>
+  <nav class="menu-links">
+    <a href="#" class="nav-link">Home</a>
+    <a href="#" class="nav-link">About</a>
+    <a href="#" class="nav-link">Services</a>
+    <a href="#" class="nav-link">Contact Us</a>
+    <a href="#" class="nav-link">Pricing</a>
+  </nav>
+</div>
+```
+
+<Step>Add `style.css` </Step>
+
+<ComponentSource name="animated-mobile-navbar-html" file="css" />
+
+<Step>Add `script.js`</Step>
+
+<ComponentSource name="animated-mobile-navbar-html" file="js" />
+
+</Steps>
+
+</TabsContent>
+
+</InstallationTabs>
+
+## Usage
+
+Place the button with the id `menu-trigger` in the header to trigger the menu.
+
+```html
+<button id="menu-trigger" class="menu-trigger">☰</button>
+```
+
+Place the following code in the body to create the animated menu.
+
+```html
+<div id="mobile-menu" class="mobile-menu">
+  <button id="menu-close" class="menu-close">✖</button>
+  <nav class="menu-links">
+    <a href="#" class="nav-link">Home</a>
+    <a href="#" class="nav-link">About</a>
+    <a href="#" class="nav-link">Services</a>
+    <a href="#" class="nav-link">Portfolio</a>
+    <a href="#" class="nav-link">Contact</a>
+  </nav>
+</div>
+```
+
+> **NOTE:** The `class` and `id` value must match with your CSS and HTML codes respectively.

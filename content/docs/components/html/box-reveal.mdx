@@ -1,0 +1,61 @@
+---
+title: Box Reveal
+description: A smooth reveal animation that slides a colored overlay away to introduce content as it enters the viewport.
+base: html
+---
+
+<HtmlPreview name="box-reveal-html-demo" />
+
+## Installation
+
+<InstallationTabs>
+
+<TabsContent value="cli">
+
+```bash
+npx shadcn@latest add https://atlasui.dev/r/box-reveal-html.json
+```
+
+</TabsContent>
+
+<TabsContent value="manual">
+
+<Steps>
+
+<Step>Install the following dependencies:</Step>
+
+```bash
+npm install motion
+```
+
+<Step>Copy and paste the following `script.js` into your project.</Step>
+
+<ComponentSource name="box-reveal-html" file="js" />
+
+<Step>Add `style.css`</Step>
+
+<ComponentSource name="box-reveal-html" file="css" />
+
+</Steps>
+
+</TabsContent>
+
+</InstallationTabs>
+
+## Usage
+
+Wrap any element with a `<div class="box-reveal">` to apply the box reveal effect.
+
+```html
+<div class="box-reveal">
+  <h1>Box Reveal</h1>
+</div>
+```
+
+## Data Attributes
+
+| Data Attribute | Type                      | Default         | Description                                     |
+| -------------- | ------------------------- | --------------- | ----------------------------------------------- |
+| `data-side`    | `"left" \| "right"`       | `"left"`        | Direction from which the reveal box slides away |
+| `data-color`   | `string`                  | `"#FACC15"`     | Background color of the reveal overlay          |
+| `data-width`   | `"fit-content" \| "full"` | `"fit-content"` | Controls the width of the reveal container      |

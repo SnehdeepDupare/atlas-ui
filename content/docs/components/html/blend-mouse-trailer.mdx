@@ -1,0 +1,64 @@
+---
+title: Blend Mouse Trailer
+description: A simple Lazy Mouse Trailer which blends with the content on hover.
+base: html
+---
+
+<HtmlPreview name="blend-mouse-trailer-html-demo" />
+
+## Installation
+
+<InstallationTabs>
+
+<TabsContent value="cli">
+
+```bash
+npx shadcn@latest add https://atlasui.dev/r/blend-mouse-trailer-html.json
+```
+
+</TabsContent>
+
+<TabsContent value="manual">
+
+<Steps>
+
+<Step>Copy and paste the following code into your project.</Step>
+
+```html
+<div class="trailer" id="trailer"></div>
+<div class="hero-text">
+  AtlasUI is an open-source library offering a suite of prebuilt animated
+  components for React, Next.js, and Vanilla JS.
+</div>
+```
+
+<Step>Add `style.css`</Step>
+
+<ComponentSource name="blend-mouse-trailer-html" file="css" />
+
+<Step>Add `script.js`</Step>
+
+<ComponentSource name="blend-mouse-trailer-html" file="js" />
+
+</Steps>
+
+</TabsContent>
+
+</InstallationTabs>
+
+## Usage
+
+Define the trailer in your HTML file.
+
+```html
+<div class="trailer" id="trailer"></div>
+```
+
+Define the text you want to blend with the trailer onHover. Pass `class="hero-text"` to the text which you want to blend with the trailer.
+
+```html
+<div class="hero-text">
+  AtlasUI is an open-source library offering a suite of prebuilt animated
+  components for React, Next.js, and Vanilla JS.
+</div>
+```

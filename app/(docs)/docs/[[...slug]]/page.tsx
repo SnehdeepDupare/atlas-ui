@@ -5,6 +5,7 @@ import { allDocs } from "contentlayer/generated";
 
 import { Contribute } from "@/components/contribute";
 import { DocGridPattern } from "@/components/doc-grid-pattern";
+import { DocsBaseSwitcher } from "@/components/docs-base-switcher";
 import { DocsCopyPage } from "@/components/docs-copy-page";
 import { DocsPager } from "@/components/docs-pagination";
 import { Mdx } from "@/components/mdx-components";
@@ -95,6 +96,18 @@ const DocPage = async (props: DocPageProps) => {
     .split("/")
     .filter((item) => item !== "" && item !== "docs");
 
+  const isReactOrHtml =
+    segments[0] === "components" &&
+    (segments[1] === "react" || segments[1] === "html");
+
+  const breadcrumbItems = segments
+    .map((item, index, arr) => ({
+      item,
+      href: `/docs/${arr.slice(0, index + 1).join("/")}`,
+      isLast: index === arr.length - 1,
+    }))
+    .filter((_, index) => !(isReactOrHtml && index === 1));
+
   return (
     <>
       <DocGridPattern />
@@ -107,23 +120,25 @@ const DocPage = async (props: DocPageProps) => {
               </BreadcrumbItem>
               <BreadcrumbSeparator />
 
-              {segments.length === 0 ? (
+              {breadcrumbItems.length === 0 ? (
                 <BreadcrumbItem>
                   <BreadcrumbPage>{doc.title}</BreadcrumbPage>
                 </BreadcrumbItem>
               ) : (
-                segments.map((item, index, arr) => {
-                  const isLast = index === arr.length - 1;
-                  const href = `/docs/${arr.slice(0, index + 1).join("/")}`;
+                breadcrumbItems.map((item, index) => {
+                  const isLast = index === breadcrumbItems.length - 1;
 
                   return (
                     <div key={index} className="flex items-center space-x-2">
                       <BreadcrumbItem>
-                        {isLast ? (
+                        {item.isLast ? (
                           <BreadcrumbPage>{doc.title}</BreadcrumbPage>
                         ) : (
-                          <BreadcrumbLink href={href} className="capitalize">
-                            {item}
+                          <BreadcrumbLink
+                            href={item.href}
+                            className="capitalize"
+                          >
+                            {item.item}
                           </BreadcrumbLink>
                         )}
                       </BreadcrumbItem>
@@ -145,6 +160,15 @@ const DocPage = async (props: DocPageProps) => {
           </div>
 
           <div className="pt-8 pb-12">
+            {params.slug &&
+              params.slug[0] === "components" &&
+              params.slug[1] &&
+              params.slug[2] && (
+                <DocsBaseSwitcher
+                  base={params.slug[1]}
+                  component={params.slug[2]}
+                />
+              )}
             <Mdx code={doc.body.code} />
           </div>
 

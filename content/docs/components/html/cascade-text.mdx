@@ -1,0 +1,63 @@
+---
+title: Cascade Text
+description: A smooth line-by-line text reveal animation.
+base: html
+---
+
+<HtmlPreview name="cascade-text-html-demo" className="h-150" />
+
+## Installation
+
+<InstallationTabs>
+
+<TabsContent value="cli">
+
+```bash
+npx shadcn@latest add https://atlasui.dev/r/cascade-text-html.json
+```
+
+</TabsContent>
+
+<TabsContent value="manual">
+
+<Steps>
+
+<Step>Install the following dependencies:</Step>
+
+```bash
+npm install motion
+```
+
+<Step>Copy and paste the following `script.js` into your project.</Step>
+
+<ComponentSource name="cascade-text-html" file="js" />
+
+<Step>Add `style.css`</Step>
+
+<ComponentSource name="cascade-text-html" file="css" />
+
+</Steps>
+
+</TabsContent>
+
+</InstallationTabs>
+
+We recommend pairing `CascadeText` with smooth scroll like [`lenis`](https://github.com/darkroomengineering/lenis?tab=readme-ov-file#installation) for the best effect.
+
+## Usage
+
+Pass any text element with the `data-cascade-text` attribute to animate it.
+
+```html
+<h1 data-cascade-text>Your text here</h1>
+
+<p data-cascade-text>Your description here</p>
+```
+
+## Data Attributes
+
+| Data Attribute           | Type      | Default | Description                                                                                                                                                                                   |
+| ------------------------ | --------- | ------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `data-cascade-text`      | `string`  | -       | The text content to animate                                                                                                                                                                   |
+| `data-animate-on-scroll` | `boolean` | `true`  | Controls when the animation starts. When `true`, the animation triggers as the element enters the viewport (around the lower 75% of the screen). When `false`, it plays immediately on mount. |
+| `data-delay`             | `number`  | `0`     | Delay before the animation starts                                                                                                                                                             |

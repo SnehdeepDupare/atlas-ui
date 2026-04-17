@@ -20,6 +20,16 @@ const nextConfig = {
         destination: "/docs/:path*.md",
         permanent: true,
       },
+      {
+        source: "/docs/components/:name((?!react|html)[^/]+)",
+        destination: "/docs/components/react/:name",
+        permanent: false,
+      },
+      {
+        source: "/docs/components/:name((?!react|html)[^/]+).md",
+        destination: "/docs/components/react/:name.md",
+        permanent: false,
+      },
     ];
   },
   rewrites() {

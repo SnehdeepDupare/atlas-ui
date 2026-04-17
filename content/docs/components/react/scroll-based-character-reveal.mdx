@@ -1,0 +1,54 @@
+---
+title: Scroll Based Character Reveal
+description: A text reveal effect which progressively reveals text character by character as you scroll.
+base: react
+---
+
+<ComponentPreview name="scroll-based-character-reveal-demo" />
+
+## Installation
+
+<InstallationTabs>
+
+<TabsContent value="cli">
+
+```bash
+npx shadcn@latest add https://atlasui.dev/r/scroll-based-character-reveal.json
+```
+
+</TabsContent>
+
+<TabsContent value="manual">
+
+<Steps>
+
+<Step>Install the following dependencies:</Step>
+
+```bash
+npm install motion
+```
+
+<Step>Copy and paste the following code into your project.</Step>
+
+<ComponentSource
+  name="scroll-based-character-reveal"
+  filePath="components/scroll-based-character-reveal.tsx"
+/>
+
+<Step>Update the import paths to match your project setup.</Step>
+
+</Steps>
+
+</TabsContent>
+
+</InstallationTabs>
+
+## Usage
+
+```tsx
+import { ScrollBasedCharacterReveal } from "@/components/scroll-based-character-reveal";
+```
+
+```tsx
+<ScrollBasedCharacterReveal text="AtlasUI is an open-source library offering a suite of prebuilt animated components for React, Next.js, and Vanilla JS." />
+```

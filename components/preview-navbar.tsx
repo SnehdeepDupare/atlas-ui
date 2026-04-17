@@ -9,20 +9,33 @@ import { ModeToggle } from "@/components/mode-toggle";
 import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
 import { Index } from "@/registry/__index__";
+import { html as htmlRegistry } from "@/registry/registry-html";
+import { htmlExamples as htmlExamplesRegistry } from "@/registry/registry-html-examples";
 
 export const PreviewNavbar = () => {
   const pathname = usePathname();
 
   const componentName = pathname.split("/")[2];
 
-  const component = Index[componentName];
+  const isHtml =
+    componentName.endsWith("-html") ||
+    componentName.endsWith("-html-example") ||
+    componentName.endsWith("-html-demo");
+
+  const component = isHtml
+    ? [...htmlRegistry, ...htmlExamplesRegistry].find(
+        (component) => component.name === componentName
+      )
+    : Index[componentName];
 
   if (!component) {
     return notFound();
   }
 
+  const base = isHtml ? "html" : "react";
   const componentUrl = component.registryDependencies[0]
     .replace("https://atlasui.dev/r/", "")
+    .replace("-html", "")
     .replace(".json", "");
 
   return (
@@ -59,7 +72,7 @@ export const PreviewNavbar = () => {
 
       <Button asChild variant="ghost" className="rounded-full" size="lg">
         <Link
-          href={`/docs/components/${componentUrl}`}
+          href={`/docs/components/${base}/${componentUrl}`}
           className="flex items-center"
         >
           <Code2Icon className="size-4" />

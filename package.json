@@ -54,7 +54,7 @@
     "tailwindcss-animate": "^1.0.7",
     "three": "^0.183.2",
     "ts-morph": "^27.0.2",
-    "zod": "^4.2.1"
+    "zod": "^3.25.76"
   },
   "devDependencies": {
     "@shikijs/compat": "^1.1.7",

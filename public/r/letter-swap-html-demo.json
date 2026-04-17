@@ -1,0 +1,36 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "letter-swap-html-demo",
+  "title": "Letter Swap",
+  "description": "Example of Letter Swap that swaps the letters vertically on hover built with HTML, CSS, JavaScript and Motion.",
+  "dependencies": [
+    "motion"
+  ],
+  "registryDependencies": [
+    "https://atlasui.dev/r/letter-swap-html.json"
+  ],
+  "files": [
+    {
+      "path": "registry/html/examples/letter-swap-html-demo/index.html",
+      "content": "<!doctype html>\n<html lang=\"en\">\n  <head>\n    <meta charset=\"UTF-8\" />\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" />\n    <title>Letter Swap Html Demo - Atlas UI</title>\n    <link rel=\"stylesheet\" href=\"style.css\" />\n  </head>\n  <body>\n    <span class=\"letter-swap\" data-text=\"Hover me!\">Hover me!</span>\n\n    <span class=\"letter-swap\" data-text=\"Feature, not a bug\" data-reverse\n      >Feature, not a bug</span\n    >\n\n    <span\n      class=\"letter-swap\"\n      data-text=\"Elegant chaos in production\"\n      data-reverse\n      data-stagger-from=\"last\"\n      >Elegant chaos in production</span\n    >\n\n    <span\n      class=\"letter-swap\"\n      data-text=\"Fast, fragile, fantastic\"\n      data-stagger-from=\"center\"\n    >\n      Fast, fragile, fantastic\n    </span>\n\n    <span\n      class=\"letter-swap\"\n      data-text=\"Deploy now, panic later\"\n      data-stagger-duration=\"0\"\n    >\n      Deploy now, panic later\n    </span>\n  </body>\n  <script type=\"module\" src=\"script.js\"></script>\n</html>\n",
+      "type": "registry:file",
+      "target": "~/letter-swap/index.html"
+    },
+    {
+      "path": "registry/html/examples/letter-swap-html-demo/style.css",
+      "content": ":root {\n  --background: light-dark(\n    oklch(100% 0.00011 271.152),\n    oklch(18.22% 0.00002 271.152)\n  );\n  --foreground: light-dark(\n    oklch(18.22% 0.00002 271.152),\n    oklch(98.511% 0.00011 271.152)\n  );\n}\n\nhtml {\n  color-scheme: light dark;\n}\n\n* {\n  margin: 0;\n  padding: 0;\n  box-sizing: border-box;\n}\n\nbody {\n  min-height: 100svh;\n  background-color: var(--background);\n  color: var(--foreground);\n  font-family: \"Inter\", sans-serif;\n  max-width: 800px;\n  margin: 0 auto;\n  display: flex;\n  flex-direction: column;\n  gap: 1rem;\n  align-items: center;\n  justify-content: center;\n}\n\nspan {\n  font-size: 2rem;\n  font-weight: 500;\n}\n\n/* Mandatory styles */\n\n.letter-swap {\n  position: relative;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  overflow: hidden;\n}\n\n.letter-wrapper {\n  position: relative;\n  display: inline-flex;\n  white-space: pre;\n}\n\n.letter-primary {\n  position: relative;\n}\n\n.letter-secondary {\n  position: absolute;\n}\n",
+      "type": "registry:file",
+      "target": "~/letter-swap/style.css"
+    },
+    {
+      "path": "registry/html/examples/letter-swap-html-demo/script.js",
+      "content": "import { animate, stagger } from \"motion\";\n\ndocument.querySelectorAll(\".letter-swap\").forEach((element) => {\n  const text = element.getAttribute(\"data-text\");\n  const reverse = element.hasAttribute(\"data-reverse\");\n  const staggerDuration = element.getAttribute(\"data-stagger-duration\") || 0.02;\n\n  const validStaggerFrom = [\"first\", \"last\", \"center\"];\n  const rawStaggerFrom = element.getAttribute(\"data-stagger-from\");\n  if (rawStaggerFrom && !validStaggerFrom.includes(rawStaggerFrom)) {\n    console.error(\n      `Invalid data-stagger-from value: \"${rawStaggerFrom}\". Expected one of: ${validStaggerFrom.join(\", \")}. Falling back to \"first\".`,\n    );\n  }\n  const staggerFrom = validStaggerFrom.includes(rawStaggerFrom)\n    ? rawStaggerFrom\n    : \"first\";\n\n  element.innerHTML = \"\";\n\n  const letters = [];\n\n  text.split(\"\").forEach((char) => {\n    const wrapper = document.createElement(\"span\");\n    wrapper.className = \"letter-wrapper\";\n\n    const primary = document.createElement(\"span\");\n    primary.className = \"letter-primary\";\n    primary.textContent = char;\n\n    const secondary = document.createElement(\"span\");\n    secondary.className = \"letter-secondary\";\n    secondary.textContent = char;\n    secondary.style.top = reverse ? \"-100%\" : \"100%\";\n\n    wrapper.appendChild(primary);\n    wrapper.appendChild(secondary);\n    element.appendChild(wrapper);\n\n    letters.push({ primary, secondary });\n  });\n\n  let isHovered = false;\n\n  const primaryEls = letters.map((l) => l.primary);\n  const secondaryEls = letters.map((l) => l.secondary);\n\n  const hoverStart = () => {\n    if (isHovered) return;\n    isHovered = true;\n\n    animate(\n      primaryEls,\n      { y: reverse ? \"100%\" : \"-100%\" },\n      {\n        delay: stagger(staggerDuration, {\n          from: staggerFrom,\n        }),\n      },\n    );\n\n    animate(\n      secondaryEls,\n      { top: \"0%\" },\n      {\n        delay: stagger(staggerDuration, {\n          from: staggerFrom,\n        }),\n      },\n    );\n  };\n\n  const hoverEnd = () => {\n    if (!isHovered) return;\n    isHovered = false;\n\n    animate(\n      primaryEls,\n      { y: 0 },\n      {\n        delay: stagger(staggerDuration, {\n          from: staggerFrom,\n        }),\n      },\n    );\n\n    animate(\n      secondaryEls,\n      { top: reverse ? \"-100%\" : \"100%\" },\n      {\n        delay: stagger(staggerDuration, {\n          from: staggerFrom,\n        }),\n      },\n    );\n  };\n\n  element.addEventListener(\"mouseenter\", hoverStart);\n  element.addEventListener(\"mouseleave\", hoverEnd);\n});\n",
+      "type": "registry:file",
+      "target": "~/letter-swap/script.js"
+    }
+  ],
+  "meta": {
+    "framework": "html"
+  },
+  "type": "registry:example"
+}

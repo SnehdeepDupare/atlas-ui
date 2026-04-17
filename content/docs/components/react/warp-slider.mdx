@@ -1,0 +1,100 @@
+---
+title: Warp Slider
+description: A smooth, infinite slider with dynamic warp distortion and momentum based scrolling.
+base: react
+---
+
+<ComponentPreview name="warp-slider-demo" />
+
+## Installation
+
+<InstallationTabs>
+
+<TabsContent value="cli">
+
+```bash
+npx shadcn@latest add https://atlasui.dev/r/warp-slider.json
+```
+
+</TabsContent>
+
+<TabsContent value="manual">
+
+<Steps>
+
+<Step>Install the following dependencies:</Step>
+
+```bash
+npm install three @types/three
+```
+
+<Step>Copy and paste the following code into your project.</Step>
+
+<ComponentSource name="warp-slider" filePath="components/warp-slider.tsx" />
+
+<Step>Update the import paths to match your project setup.</Step>
+
+</Steps>
+
+</TabsContent>
+
+</InstallationTabs>
+
+## Usage
+
+```tsx
+import { WarpSlider } from "@/components/warp-slider";
+```
+
+Define your slides array with name and image URL.
+
+```tsx
+const slides = [
+  {
+    name: "Slide 1",
+    img: "/image-url",
+  },
+  {
+    name: "Slide 2",
+    img: "/image-url",
+  },
+];
+```
+
+```tsx
+<WarpSlider slides={slides} />
+```
+
+## Examples
+
+### Horizontal
+
+<ComponentPreview name="warp-slider-horizontal-demo" />
+
+Update the `orientation` property in the `config` object to `"horizontal"`.
+
+```tsx
+<WarpSlider slides={slides} config={{ orientation: "horizontal" }} />
+```
+
+## Props
+
+| Prop                         | Type                              | Default      | Required | Description                              |
+| ---------------------------- | --------------------------------- | ------------ | -------- | ---------------------------------------- |
+| `slides`                     | `{ name: string; img: string }[]` | -            | true     | Array of slides                          |
+| `config.orientation`         | `"vertical" \| "horizontal"`      | `"vertical"` | false    | Orientation of the slider                |
+| `config.minHeight`           | `number`                          | `1`          | false    | Minimum height of each slide (image)     |
+| `config.maxHeight`           | `number`                          | `1.5`        | false    | Maximum height of each slide (image)     |
+| `config.aspectRatio`         | `number`                          | `1.5`        | false    | Aspect ratio of slides (width / height)  |
+| `config.gap`                 | `number`                          | `0.05`       | false    | Gap between slides                       |
+| `config.smoothing`           | `number`                          | `0.05`       | false    | General smoothing factor for motion      |
+| `config.distortionStrength`  | `number`                          | `2.5`        | false    | Strength of the warp/distortion effect   |
+| `config.distortionSmoothing` | `number`                          | `0.1`        | false    | Smoothness of distortion transitions     |
+| `config.momentumFriction`    | `number`                          | `0.95`       | false    | Friction applied to momentum             |
+| `config.momentumThreshold`   | `number`                          | `0.001`      | false    | Minimum threshold to trigger momentum    |
+| `config.wheelSpeed`          | `number`                          | `0.01`       | false    | Scroll wheel sensitivity                 |
+| `config.wheelMax`            | `number`                          | `150`        | false    | Maximum wheel velocity                   |
+| `config.dragSpeed`           | `number`                          | `0.01`       | false    | Drag interaction speed                   |
+| `config.dragMomentum`        | `number`                          | `0.01`       | false    | Momentum applied after dragging          |
+| `config.touchSpeed`          | `number`                          | `0.01`       | false    | Touch swipe sensitivity                  |
+| `config.touchMomentum`       | `number`                          | `0.1`        | false    | Momentum applied after touch interaction |

@@ -771,17 +771,17 @@
       "registryDependencies": [],
       "files": [
         {
-          "path": "registry/html/animated-mobile-navbar/index.html",
+          "path": "registry/html/atlasui/animated-mobile-navbar/index.html",
           "type": "registry:file",
           "target": "~/animated-mobile-navbar/index.html"
         },
         {
-          "path": "registry/html/animated-mobile-navbar/style.css",
+          "path": "registry/html/atlasui/animated-mobile-navbar/style.css",
           "type": "registry:file",
           "target": "~/animated-mobile-navbar/style.css"
         },
         {
-          "path": "registry/html/animated-mobile-navbar/script.js",
+          "path": "registry/html/atlasui/animated-mobile-navbar/script.js",
           "type": "registry:file",
           "target": "~/animated-mobile-navbar/script.js"
         }
@@ -789,7 +789,7 @@
       "meta": {
         "framework": "html"
       },
-      "type": "registry:file"
+      "type": "registry:component"
     },
     {
       "name": "project-gallery-html",
@@ -800,17 +800,17 @@
       ],
       "files": [
         {
-          "path": "registry/html/project-gallery/index.html",
+          "path": "registry/html/atlasui/project-gallery/index.html",
           "type": "registry:file",
           "target": "~/project-gallery/index.html"
         },
         {
-          "path": "registry/html/project-gallery/style.css",
+          "path": "registry/html/atlasui/project-gallery/style.css",
           "type": "registry:file",
           "target": "~/project-gallery/style.css"
         },
         {
-          "path": "registry/html/project-gallery/script.js",
+          "path": "registry/html/atlasui/project-gallery/script.js",
           "type": "registry:file",
           "target": "~/project-gallery/script.js"
         }
@@ -818,7 +818,7 @@
       "meta": {
         "framework": "html"
       },
-      "type": "registry:file"
+      "type": "registry:component"
     },
     {
       "name": "parallax-sections-html",
@@ -829,17 +829,17 @@
       ],
       "files": [
         {
-          "path": "registry/html/parallax-sections/index.html",
+          "path": "registry/html/atlasui/parallax-sections/index.html",
           "type": "registry:file",
           "target": "~/parallax-sections/index.html"
         },
         {
-          "path": "registry/html/parallax-sections/style.css",
+          "path": "registry/html/atlasui/parallax-sections/style.css",
           "type": "registry:file",
           "target": "~/parallax-sections/style.css"
         },
         {
-          "path": "registry/html/parallax-sections/script.js",
+          "path": "registry/html/atlasui/parallax-sections/script.js",
           "type": "registry:file",
           "target": "~/parallax-sections/script.js"
         }
@@ -847,7 +847,7 @@
       "meta": {
         "framework": "html"
       },
-      "type": "registry:file"
+      "type": "registry:component"
     },
     {
       "name": "shiny-button-html",
@@ -858,17 +858,17 @@
       ],
       "files": [
         {
-          "path": "registry/html/shiny-button/index.html",
+          "path": "registry/html/atlasui/shiny-button/index.html",
           "type": "registry:file",
           "target": "~/shiny-button/index.html"
         },
         {
-          "path": "registry/html/shiny-button/style.css",
+          "path": "registry/html/atlasui/shiny-button/style.css",
           "type": "registry:file",
           "target": "~/shiny-button/style.css"
         },
         {
-          "path": "registry/html/shiny-button/script.js",
+          "path": "registry/html/atlasui/shiny-button/script.js",
           "type": "registry:file",
           "target": "~/shiny-button/script.js"
         }
@@ -876,7 +876,7 @@
       "meta": {
         "framework": "html"
       },
-      "type": "registry:file"
+      "type": "registry:component"
     },
     {
       "name": "dot-and-circle-mouse-trailer-html",
@@ -885,17 +885,17 @@
       "dependencies": [],
       "files": [
         {
-          "path": "registry/html/dot-and-circle-mouse-trailer/index.html",
+          "path": "registry/html/atlasui/dot-and-circle-mouse-trailer/index.html",
           "type": "registry:file",
           "target": "~/dot-and-circle-mouse-trailer/index.html"
         },
         {
-          "path": "registry/html/dot-and-circle-mouse-trailer/style.css",
+          "path": "registry/html/atlasui/dot-and-circle-mouse-trailer/style.css",
           "type": "registry:file",
           "target": "~/dot-and-circle-mouse-trailer/style.css"
         },
         {
-          "path": "registry/html/dot-and-circle-mouse-trailer/script.js",
+          "path": "registry/html/atlasui/dot-and-circle-mouse-trailer/script.js",
           "type": "registry:file",
           "target": "~/dot-and-circle-mouse-trailer/script.js"
         }
@@ -903,7 +903,7 @@
       "meta": {
         "framework": "html"
       },
-      "type": "registry:file"
+      "type": "registry:component"
     },
     {
       "name": "blob-mouse-trailer-html",
@@ -912,17 +912,17 @@
       "dependencies": [],
       "files": [
         {
-          "path": "registry/html/blob-mouse-trailer/index.html",
+          "path": "registry/html/atlasui/blob-mouse-trailer/index.html",
           "type": "registry:file",
           "target": "~/blob-mouse-trailer/index.html"
         },
         {
-          "path": "registry/html/blob-mouse-trailer/style.css",
+          "path": "registry/html/atlasui/blob-mouse-trailer/style.css",
           "type": "registry:file",
           "target": "~/blob-mouse-trailer/style.css"
         },
         {
-          "path": "registry/html/blob-mouse-trailer/script.js",
+          "path": "registry/html/atlasui/blob-mouse-trailer/script.js",
           "type": "registry:file",
           "target": "~/blob-mouse-trailer/script.js"
         }
@@ -930,7 +930,7 @@
       "meta": {
         "framework": "html"
       },
-      "type": "registry:file"
+      "type": "registry:component"
     },
     {
       "name": "blend-mouse-trailer-html",
@@ -939,17 +939,17 @@
       "dependencies": [],
       "files": [
         {
-          "path": "registry/html/blend-mouse-trailer/index.html",
+          "path": "registry/html/atlasui/blend-mouse-trailer/index.html",
           "type": "registry:file",
           "target": "~/blend-mouse-trailer/index.html"
         },
         {
-          "path": "registry/html/blend-mouse-trailer/style.css",
+          "path": "registry/html/atlasui/blend-mouse-trailer/style.css",
           "type": "registry:file",
           "target": "~/blend-mouse-trailer/style.css"
         },
         {
-          "path": "registry/html/blend-mouse-trailer/script.js",
+          "path": "registry/html/atlasui/blend-mouse-trailer/script.js",
           "type": "registry:file",
           "target": "~/blend-mouse-trailer/script.js"
         }
@@ -957,7 +957,7 @@
       "meta": {
         "framework": "html"
       },
-      "type": "registry:file"
+      "type": "registry:component"
     },
     {
       "name": "hacker-text-html",
@@ -966,17 +966,17 @@
       "dependencies": [],
       "files": [
         {
-          "path": "registry/html/hacker-text/index.html",
+          "path": "registry/html/atlasui/hacker-text/index.html",
           "type": "registry:file",
           "target": "~/hacker-text/index.html"
         },
         {
-          "path": "registry/html/hacker-text/style.css",
+          "path": "registry/html/atlasui/hacker-text/style.css",
           "type": "registry:file",
           "target": "~/hacker-text/style.css"
         },
         {
-          "path": "registry/html/hacker-text/script.js",
+          "path": "registry/html/atlasui/hacker-text/script.js",
           "type": "registry:file",
           "target": "~/hacker-text/script.js"
         }
@@ -984,7 +984,7 @@
       "meta": {
         "framework": "html"
       },
-      "type": "registry:file"
+      "type": "registry:component"
     },
     {
       "name": "scroll-based-text-reveal-html",
@@ -995,17 +995,17 @@
       ],
       "files": [
         {
-          "path": "registry/html/scroll-based-text-reveal/index.html",
+          "path": "registry/html/atlasui/scroll-based-text-reveal/index.html",
           "type": "registry:file",
           "target": "~/scroll-based-text-reveal/index.html"
         },
         {
-          "path": "registry/html/scroll-based-text-reveal/style.css",
+          "path": "registry/html/atlasui/scroll-based-text-reveal/style.css",
           "type": "registry:file",
           "target": "~/scroll-based-text-reveal/style.css"
         },
         {
-          "path": "registry/html/scroll-based-text-reveal/script.js",
+          "path": "registry/html/atlasui/scroll-based-text-reveal/script.js",
           "type": "registry:file",
           "target": "~/scroll-based-text-reveal/script.js"
         }
@@ -1013,7 +1013,7 @@
       "meta": {
         "framework": "html"
       },
-      "type": "registry:file"
+      "type": "registry:component"
     },
     {
       "name": "scroll-based-word-reveal-html",
@@ -1024,17 +1024,17 @@
       ],
       "files": [
         {
-          "path": "registry/html/scroll-based-word-reveal/index.html",
+          "path": "registry/html/atlasui/scroll-based-word-reveal/index.html",
           "type": "registry:file",
           "target": "~/scroll-based-word-reveal/index.html"
         },
         {
-          "path": "registry/html/scroll-based-word-reveal/style.css",
+          "path": "registry/html/atlasui/scroll-based-word-reveal/style.css",
           "type": "registry:file",
           "target": "~/scroll-based-word-reveal/style.css"
         },
         {
-          "path": "registry/html/scroll-based-word-reveal/script.js",
+          "path": "registry/html/atlasui/scroll-based-word-reveal/script.js",
           "type": "registry:file",
           "target": "~/scroll-based-word-reveal/script.js"
         }
@@ -1042,7 +1042,7 @@
       "meta": {
         "framework": "html"
       },
-      "type": "registry:file"
+      "type": "registry:component"
     },
     {
       "name": "scroll-based-character-reveal-html",
@@ -1053,17 +1053,17 @@
       ],
       "files": [
         {
-          "path": "registry/html/scroll-based-character-reveal/index.html",
+          "path": "registry/html/atlasui/scroll-based-character-reveal/index.html",
           "type": "registry:file",
           "target": "~/scroll-based-character-reveal/index.html"
         },
         {
-          "path": "registry/html/scroll-based-character-reveal/style.css",
+          "path": "registry/html/atlasui/scroll-based-character-reveal/style.css",
           "type": "registry:file",
           "target": "~/scroll-based-character-reveal/style.css"
         },
         {
-          "path": "registry/html/scroll-based-character-reveal/script.js",
+          "path": "registry/html/atlasui/scroll-based-character-reveal/script.js",
           "type": "registry:file",
           "target": "~/scroll-based-character-reveal/script.js"
         }
@@ -1071,7 +1071,7 @@
       "meta": {
         "framework": "html"
       },
-      "type": "registry:file"
+      "type": "registry:component"
     },
     {
       "name": "reveal-effect-html",
@@ -1082,17 +1082,17 @@
       ],
       "files": [
         {
-          "path": "registry/html/reveal-effect/index.html",
+          "path": "registry/html/atlasui/reveal-effect/index.html",
           "type": "registry:file",
           "target": "~/reveal-effect/index.html"
         },
         {
-          "path": "registry/html/reveal-effect/style.css",
+          "path": "registry/html/atlasui/reveal-effect/style.css",
           "type": "registry:file",
           "target": "~/reveal-effect/style.css"
         },
         {
-          "path": "registry/html/reveal-effect/script.js",
+          "path": "registry/html/atlasui/reveal-effect/script.js",
           "type": "registry:file",
           "target": "~/reveal-effect/script.js"
         }
@@ -1100,7 +1100,7 @@
       "meta": {
         "framework": "html"
       },
-      "type": "registry:file"
+      "type": "registry:component"
     },
     {
       "name": "loki-text-effect-html",
@@ -1111,17 +1111,17 @@
       ],
       "files": [
         {
-          "path": "registry/html/loki-text-effect/index.html",
+          "path": "registry/html/atlasui/loki-text-effect/index.html",
           "type": "registry:file",
           "target": "~/loki-text-effect/index.html"
         },
         {
-          "path": "registry/html/loki-text-effect/style.css",
+          "path": "registry/html/atlasui/loki-text-effect/style.css",
           "type": "registry:file",
           "target": "~/loki-text-effect/style.css"
         },
         {
-          "path": "registry/html/loki-text-effect/script.js",
+          "path": "registry/html/atlasui/loki-text-effect/script.js",
           "type": "registry:file",
           "target": "~/loki-text-effect/script.js"
         },
@@ -1164,7 +1164,7 @@
       "meta": {
         "framework": "html"
       },
-      "type": "registry:file"
+      "type": "registry:component"
     },
     {
       "name": "box-reveal-html",
@@ -1175,17 +1175,17 @@
       ],
       "files": [
         {
-          "path": "registry/html/box-reveal/index.html",
+          "path": "registry/html/atlasui/box-reveal/index.html",
           "type": "registry:file",
           "target": "~/box-reveal/index.html"
         },
         {
-          "path": "registry/html/box-reveal/style.css",
+          "path": "registry/html/atlasui/box-reveal/style.css",
           "type": "registry:file",
           "target": "~/box-reveal/style.css"
         },
         {
-          "path": "registry/html/box-reveal/script.js",
+          "path": "registry/html/atlasui/box-reveal/script.js",
           "type": "registry:file",
           "target": "~/box-reveal/script.js"
         }
@@ -1193,7 +1193,7 @@
       "meta": {
         "framework": "html"
       },
-      "type": "registry:file"
+      "type": "registry:component"
     },
     {
       "name": "notch-nav-html",
@@ -1204,17 +1204,17 @@
       ],
       "files": [
         {
-          "path": "registry/html/notch-nav/index.html",
+          "path": "registry/html/atlasui/notch-nav/index.html",
           "type": "registry:file",
           "target": "~/notch-nav/index.html"
         },
         {
-          "path": "registry/html/notch-nav/style.css",
+          "path": "registry/html/atlasui/notch-nav/style.css",
           "type": "registry:file",
           "target": "~/notch-nav/style.css"
         },
         {
-          "path": "registry/html/notch-nav/script.js",
+          "path": "registry/html/atlasui/notch-nav/script.js",
           "type": "registry:file",
           "target": "~/notch-nav/script.js"
         }
@@ -1222,7 +1222,7 @@
       "meta": {
         "framework": "html"
       },
-      "type": "registry:file"
+      "type": "registry:component"
     },
     {
       "name": "morph-navbar-html",
@@ -1233,17 +1233,17 @@
       ],
       "files": [
         {
-          "path": "registry/html/morph-navbar/index.html",
+          "path": "registry/html/atlasui/morph-navbar/index.html",
           "type": "registry:file",
           "target": "~/morph-navbar/index.html"
         },
         {
-          "path": "registry/html/morph-navbar/style.css",
+          "path": "registry/html/atlasui/morph-navbar/style.css",
           "type": "registry:file",
           "target": "~/morph-navbar/style.css"
         },
         {
-          "path": "registry/html/morph-navbar/script.js",
+          "path": "registry/html/atlasui/morph-navbar/script.js",
           "type": "registry:file",
           "target": "~/morph-navbar/script.js"
         }
@@ -1251,7 +1251,7 @@
       "meta": {
         "framework": "html"
       },
-      "type": "registry:file"
+      "type": "registry:component"
     },
     {
       "name": "cascade-text-html",
@@ -1262,17 +1262,17 @@
       ],
       "files": [
         {
-          "path": "registry/html/cascade-text/index.html",
+          "path": "registry/html/atlasui/cascade-text/index.html",
           "type": "registry:file",
           "target": "~/cascade-text/index.html"
         },
         {
-          "path": "registry/html/cascade-text/style.css",
+          "path": "registry/html/atlasui/cascade-text/style.css",
           "type": "registry:file",
           "target": "~/cascade-text/style.css"
         },
         {
-          "path": "registry/html/cascade-text/script.js",
+          "path": "registry/html/atlasui/cascade-text/script.js",
           "type": "registry:file",
           "target": "~/cascade-text/script.js"
         }
@@ -1280,7 +1280,7 @@
       "meta": {
         "framework": "html"
       },
-      "type": "registry:file"
+      "type": "registry:component"
     },
     {
       "name": "letter-swap-html",
@@ -1291,17 +1291,17 @@
       ],
       "files": [
         {
-          "path": "registry/html/letter-swap/index.html",
+          "path": "registry/html/atlasui/letter-swap/index.html",
           "type": "registry:file",
           "target": "~/letter-swap/index.html"
         },
         {
-          "path": "registry/html/letter-swap/style.css",
+          "path": "registry/html/atlasui/letter-swap/style.css",
           "type": "registry:file",
           "target": "~/letter-swap/style.css"
         },
         {
-          "path": "registry/html/letter-swap/script.js",
+          "path": "registry/html/atlasui/letter-swap/script.js",
           "type": "registry:file",
           "target": "~/letter-swap/script.js"
         }
@@ -1309,7 +1309,7 @@
       "meta": {
         "framework": "html"
       },
-      "type": "registry:file"
+      "type": "registry:component"
     },
     {
       "name": "warp-slider-html",
@@ -1320,17 +1320,17 @@
       ],
       "files": [
         {
-          "path": "registry/html/warp-slider/index.html",
+          "path": "registry/html/atlasui/warp-slider/index.html",
           "type": "registry:file",
           "target": "~/warp-slider/index.html"
         },
         {
-          "path": "registry/html/warp-slider/style.css",
+          "path": "registry/html/atlasui/warp-slider/style.css",
           "type": "registry:file",
           "target": "~/warp-slider/style.css"
         },
         {
-          "path": "registry/html/warp-slider/script.js",
+          "path": "registry/html/atlasui/warp-slider/script.js",
           "type": "registry:file",
           "target": "~/warp-slider/script.js"
         }
@@ -1338,7 +1338,758 @@
       "meta": {
         "framework": "html"
       },
-      "type": "registry:file"
+      "type": "registry:component"
+    },
+    {
+      "name": "animated-mobile-navbar-html-demo",
+      "title": "Animated Mobile Navbar",
+      "description": "Example showcasing the Animated Mobile Navbar component in HTML, CSS, JavaScript and Motion.",
+      "dependencies": [
+        "motion"
+      ],
+      "registryDependencies": [
+        "https://atlasui.dev/r/animated-mobile-navbar-html.json"
+      ],
+      "files": [
+        {
+          "path": "registry/html/examples/animated-mobile-navbar-html-demo/index.html",
+          "type": "registry:file",
+          "target": "~/animated-mobile-navbar/index.html"
+        },
+        {
+          "path": "registry/html/examples/animated-mobile-navbar-html-demo/style.css",
+          "type": "registry:file",
+          "target": "~/animated-mobile-navbar/style.css"
+        },
+        {
+          "path": "registry/html/examples/animated-mobile-navbar-html-demo/script.js",
+          "type": "registry:file",
+          "target": "~/animated-mobile-navbar/script.js"
+        }
+      ],
+      "meta": {
+        "framework": "html"
+      },
+      "type": "registry:example"
+    },
+    {
+      "name": "project-gallery-html-demo",
+      "title": "Project Gallery",
+      "description": "Example showcasing the Project Gallery component with an interactive modal using HTML, CSS, JavaScript and Motion.",
+      "dependencies": [
+        "motion"
+      ],
+      "registryDependencies": [
+        "https://atlasui.dev/r/project-gallery-html.json"
+      ],
+      "files": [
+        {
+          "path": "registry/html/examples/project-gallery-html-demo/index.html",
+          "type": "registry:file",
+          "target": "~/project-gallery/index.html"
+        },
+        {
+          "path": "registry/html/examples/project-gallery-html-demo/style.css",
+          "type": "registry:file",
+          "target": "~/project-gallery/style.css"
+        },
+        {
+          "path": "registry/html/examples/project-gallery-html-demo/script.js",
+          "type": "registry:file",
+          "target": "~/project-gallery/script.js"
+        }
+      ],
+      "meta": {
+        "framework": "html"
+      },
+      "type": "registry:example"
+    },
+    {
+      "name": "parallax-sections-html-demo",
+      "title": "Parallax Sections",
+      "description": "Example of Parallax Sections component using HTML, CSS, JavaScript and Motion.",
+      "dependencies": [
+        "motion"
+      ],
+      "registryDependencies": [
+        "https://atlasui.dev/r/parallax-sections-html.json"
+      ],
+      "files": [
+        {
+          "path": "registry/html/examples/parallax-sections-html-demo/index.html",
+          "type": "registry:file",
+          "target": "~/parallax-sections/index.html"
+        },
+        {
+          "path": "registry/html/examples/parallax-sections-html-demo/style.css",
+          "type": "registry:file",
+          "target": "~/parallax-sections/style.css"
+        },
+        {
+          "path": "registry/html/examples/parallax-sections-html-demo/script.js",
+          "type": "registry:file",
+          "target": "~/parallax-sections/script.js"
+        }
+      ],
+      "meta": {
+        "framework": "html"
+      },
+      "type": "registry:example"
+    },
+    {
+      "name": "shiny-button-html-demo",
+      "title": "Shiny Button",
+      "description": "Example of Shiny Button with a sleek animation effect using HTML, CSS, JavaScript and Motion.",
+      "dependencies": [
+        "motion"
+      ],
+      "registryDependencies": [
+        "https://atlasui.dev/r/shiny-button-html.json"
+      ],
+      "files": [
+        {
+          "path": "registry/html/examples/shiny-button-html-demo/index.html",
+          "type": "registry:file",
+          "target": "~/shiny-button/index.html"
+        },
+        {
+          "path": "registry/html/examples/shiny-button-html-demo/style.css",
+          "type": "registry:file",
+          "target": "~/shiny-button/style.css"
+        },
+        {
+          "path": "registry/html/examples/shiny-button-html-demo/script.js",
+          "type": "registry:file",
+          "target": "~/shiny-button/script.js"
+        }
+      ],
+      "meta": {
+        "framework": "html"
+      },
+      "type": "registry:example"
+    },
+    {
+      "name": "dot-and-circle-mouse-trailer-html-demo",
+      "title": "Dot And Circle Mouse Trailer",
+      "description": "Example of Dot And Circle Mouse Trailer using HTML, CSS and JavaScript.",
+      "dependencies": [],
+      "registryDependencies": [
+        "https://atlasui.dev/r/dot-and-circle-mouse-trailer-html.json"
+      ],
+      "files": [
+        {
+          "path": "registry/html/examples/dot-and-circle-mouse-trailer-html-demo/index.html",
+          "type": "registry:file",
+          "target": "~/dot-and-circle-mouse-trailer/index.html"
+        },
+        {
+          "path": "registry/html/examples/dot-and-circle-mouse-trailer-html-demo/style.css",
+          "type": "registry:file",
+          "target": "~/dot-and-circle-mouse-trailer/style.css"
+        },
+        {
+          "path": "registry/html/examples/dot-and-circle-mouse-trailer-html-demo/script.js",
+          "type": "registry:file",
+          "target": "~/dot-and-circle-mouse-trailer/script.js"
+        }
+      ],
+      "meta": {
+        "framework": "html"
+      },
+      "type": "registry:example"
+    },
+    {
+      "name": "blob-mouse-trailer-html-demo",
+      "title": "Blob Mouse Trailer",
+      "description": "Example of Blob Mouse Trailer using HTML, CSS and JavaScript.",
+      "dependencies": [],
+      "registryDependencies": [
+        "https://atlasui.dev/r/blob-mouse-trailer-html.json"
+      ],
+      "files": [
+        {
+          "path": "registry/html/examples/blob-mouse-trailer-html-demo/index.html",
+          "type": "registry:file",
+          "target": "~/blob-mouse-trailer/index.html"
+        },
+        {
+          "path": "registry/html/examples/blob-mouse-trailer-html-demo/style.css",
+          "type": "registry:file",
+          "target": "~/blob-mouse-trailer/style.css"
+        },
+        {
+          "path": "registry/html/examples/blob-mouse-trailer-html-demo/script.js",
+          "type": "registry:file",
+          "target": "~/blob-mouse-trailer/script.js"
+        }
+      ],
+      "meta": {
+        "framework": "html"
+      },
+      "type": "registry:example"
+    },
+    {
+      "name": "blend-mouse-trailer-html-demo",
+      "title": "Blend Mouse Trailer",
+      "description": "Example of Blend Mouse Trailer which blends with the content on hover using HTML, CSS and JavaScript.",
+      "dependencies": [],
+      "registryDependencies": [
+        "https://atlasui.dev/r/blend-mouse-trailer-html.json"
+      ],
+      "files": [
+        {
+          "path": "registry/html/examples/blend-mouse-trailer-html-demo/index.html",
+          "type": "registry:file",
+          "target": "~/blend-mouse-trailer/index.html"
+        },
+        {
+          "path": "registry/html/examples/blend-mouse-trailer-html-demo/style.css",
+          "type": "registry:file",
+          "target": "~/blend-mouse-trailer/style.css"
+        },
+        {
+          "path": "registry/html/examples/blend-mouse-trailer-html-demo/script.js",
+          "type": "registry:file",
+          "target": "~/blend-mouse-trailer/script.js"
+        }
+      ],
+      "meta": {
+        "framework": "html"
+      },
+      "type": "registry:example"
+    },
+    {
+      "name": "hacker-text-html-demo",
+      "title": "Hacker Text",
+      "description": "Example of text animation that scrambles letters before revealing the final text using HTML, CSS and JavaScript.",
+      "dependencies": [],
+      "registryDependencies": [
+        "https://atlasui.dev/r/hacker-text-html.json"
+      ],
+      "files": [
+        {
+          "path": "registry/html/examples/hacker-text-html-demo/index.html",
+          "type": "registry:file",
+          "target": "~/hacker-text/index.html"
+        },
+        {
+          "path": "registry/html/examples/hacker-text-html-demo/style.css",
+          "type": "registry:file",
+          "target": "~/hacker-text/style.css"
+        },
+        {
+          "path": "registry/html/examples/hacker-text-html-demo/script.js",
+          "type": "registry:file",
+          "target": "~/hacker-text/script.js"
+        }
+      ],
+      "meta": {
+        "framework": "html"
+      },
+      "type": "registry:example"
+    },
+    {
+      "name": "scroll-based-text-reveal-html-demo",
+      "title": "Scroll Based Text Reveal",
+      "description": "Example of text reveal effect which animates the opacity of the text as you scroll using HTML, CSS, JavaScript and Motion.",
+      "dependencies": [
+        "motion"
+      ],
+      "registryDependencies": [
+        "https://atlasui.dev/r/scroll-based-text-reveal-html.json"
+      ],
+      "files": [
+        {
+          "path": "registry/html/examples/scroll-based-text-reveal-html-demo/index.html",
+          "type": "registry:file",
+          "target": "~/scroll-based-text-reveal/index.html"
+        },
+        {
+          "path": "registry/html/examples/scroll-based-text-reveal-html-demo/style.css",
+          "type": "registry:file",
+          "target": "~/scroll-based-text-reveal/style.css"
+        },
+        {
+          "path": "registry/html/examples/scroll-based-text-reveal-html-demo/script.js",
+          "type": "registry:file",
+          "target": "~/scroll-based-text-reveal/script.js"
+        }
+      ],
+      "meta": {
+        "framework": "html"
+      },
+      "type": "registry:example"
+    },
+    {
+      "name": "scroll-based-word-reveal-html-demo",
+      "title": "Scroll Based Word Reveal",
+      "description": "Example of text reveal effect which progressively reveals text word by word as you scroll using HTML, CSS, JavaScript and Motion.",
+      "dependencies": [
+        "motion"
+      ],
+      "registryDependencies": [
+        "https://atlasui.dev/r/scroll-based-word-reveal-html.json"
+      ],
+      "files": [
+        {
+          "path": "registry/html/examples/scroll-based-word-reveal-html-demo/index.html",
+          "type": "registry:file",
+          "target": "~/scroll-based-word-reveal/index.html"
+        },
+        {
+          "path": "registry/html/examples/scroll-based-word-reveal-html-demo/style.css",
+          "type": "registry:file",
+          "target": "~/scroll-based-word-reveal/style.css"
+        },
+        {
+          "path": "registry/html/examples/scroll-based-word-reveal-html-demo/script.js",
+          "type": "registry:file",
+          "target": "~/scroll-based-word-reveal/script.js"
+        }
+      ],
+      "meta": {
+        "framework": "html"
+      },
+      "type": "registry:example"
+    },
+    {
+      "name": "scroll-based-character-reveal-html-demo",
+      "title": "Scroll Based Character Reveal",
+      "description": "Example of text reveal effect which progressively reveals text character by character as you scroll using HTML, CSS, JavaScript and Motion.",
+      "dependencies": [
+        "motion"
+      ],
+      "registryDependencies": [
+        "https://atlasui.dev/r/scroll-based-character-reveal-html.json"
+      ],
+      "files": [
+        {
+          "path": "registry/html/examples/scroll-based-character-reveal-html-demo/index.html",
+          "type": "registry:file",
+          "target": "~/scroll-based-character-reveal/index.html"
+        },
+        {
+          "path": "registry/html/examples/scroll-based-character-reveal-html-demo/style.css",
+          "type": "registry:file",
+          "target": "~/scroll-based-character-reveal/style.css"
+        },
+        {
+          "path": "registry/html/examples/scroll-based-character-reveal-html-demo/script.js",
+          "type": "registry:file",
+          "target": "~/scroll-based-character-reveal/script.js"
+        }
+      ],
+      "meta": {
+        "framework": "html"
+      },
+      "type": "registry:example"
+    },
+    {
+      "name": "reveal-effect-html-demo",
+      "title": "Reveal Effect",
+      "description": "Example of Reveal Effect with a vertical slide, blur fade-in, and clipping reveal effect using HTML, CSS, JavaScript and Motion.",
+      "dependencies": [
+        "motion"
+      ],
+      "registryDependencies": [
+        "https://atlasui.dev/r/reveal-effect-html.json"
+      ],
+      "files": [
+        {
+          "path": "registry/html/examples/reveal-effect-html-demo/index.html",
+          "type": "registry:file",
+          "target": "~/reveal-effect/index.html"
+        },
+        {
+          "path": "registry/html/examples/reveal-effect-html-demo/style.css",
+          "type": "registry:file",
+          "target": "~/reveal-effect/style.css"
+        },
+        {
+          "path": "registry/html/examples/reveal-effect-html-demo/script.js",
+          "type": "registry:file",
+          "target": "~/reveal-effect/script.js"
+        }
+      ],
+      "meta": {
+        "framework": "html"
+      },
+      "type": "registry:example"
+    },
+    {
+      "name": "reveal-effect-speed-html-example",
+      "title": "Reveal Effect HTML Example 1",
+      "description": "Example of Reveal Effect with a custom speed.",
+      "dependencies": [
+        "motion"
+      ],
+      "registryDependencies": [
+        "https://atlasui.dev/r/reveal-effect-html.json"
+      ],
+      "files": [
+        {
+          "path": "registry/html/examples/reveal-effect-speed-html-example/index.html",
+          "type": "registry:example"
+        },
+        {
+          "path": "registry/html/examples/reveal-effect-speed-html-example/style.css",
+          "type": "registry:example"
+        },
+        {
+          "path": "registry/html/examples/reveal-effect-speed-html-example/script.js",
+          "type": "registry:example"
+        }
+      ],
+      "meta": {
+        "framework": "html"
+      },
+      "type": "registry:example"
+    },
+    {
+      "name": "reveal-effect-delay-html-example",
+      "title": "Reveal Effect HTML Example 2",
+      "description": "Example of Reveal Effect with a custom delay.",
+      "dependencies": [
+        "motion"
+      ],
+      "registryDependencies": [
+        "https://atlasui.dev/r/reveal-effect-html.json"
+      ],
+      "files": [
+        {
+          "path": "registry/html/examples/reveal-effect-delay-html-example/index.html",
+          "type": "registry:example"
+        },
+        {
+          "path": "registry/html/examples/reveal-effect-delay-html-example/style.css",
+          "type": "registry:example"
+        },
+        {
+          "path": "registry/html/examples/reveal-effect-delay-html-example/script.js",
+          "type": "registry:example"
+        }
+      ],
+      "meta": {
+        "framework": "html"
+      },
+      "type": "registry:example"
+    },
+    {
+      "name": "reveal-effect-translate-y-html-example",
+      "title": "Reveal Effect HTML Example 3",
+      "description": "Example of Reveal Effect with a custom translate-y.",
+      "dependencies": [
+        "motion"
+      ],
+      "registryDependencies": [
+        "https://atlasui.dev/r/reveal-effect-html.json"
+      ],
+      "files": [
+        {
+          "path": "registry/html/examples/reveal-effect-translate-y-html-example/index.html",
+          "type": "registry:example"
+        },
+        {
+          "path": "registry/html/examples/reveal-effect-translate-y-html-example/style.css",
+          "type": "registry:example"
+        },
+        {
+          "path": "registry/html/examples/reveal-effect-translate-y-html-example/script.js",
+          "type": "registry:example"
+        }
+      ],
+      "meta": {
+        "framework": "html"
+      },
+      "type": "registry:example"
+    },
+    {
+      "name": "loki-text-effect-html-demo",
+      "title": "Loki Text Effect",
+      "description": "Example showcasing the iconic text animation from the Loki series intro using HTML, CSS, JavaScript and Motion.",
+      "dependencies": [
+        "motion"
+      ],
+      "registryDependencies": [
+        "https://atlasui.dev/r/loki-text-effect-html.json"
+      ],
+      "files": [
+        {
+          "path": "registry/html/examples/loki-text-effect-html-demo/index.html",
+          "type": "registry:file",
+          "target": "~/loki-text-effect/index.html"
+        },
+        {
+          "path": "registry/html/examples/loki-text-effect-html-demo/style.css",
+          "type": "registry:file",
+          "target": "~/loki-text-effect/style.css"
+        },
+        {
+          "path": "registry/html/examples/loki-text-effect-html-demo/script.js",
+          "type": "registry:file",
+          "target": "~/loki-text-effect/script.js"
+        },
+        {
+          "path": "registry/fonts/fontOne.woff2",
+          "type": "registry:file",
+          "target": "~/fonts/fontOne.woff2"
+        },
+        {
+          "path": "registry/fonts/fontTwo.woff2",
+          "type": "registry:file",
+          "target": "~/fonts/fontTwo.woff2"
+        },
+        {
+          "path": "registry/fonts/fontThree.woff2",
+          "type": "registry:file",
+          "target": "~/fonts/fontThree.woff2"
+        },
+        {
+          "path": "registry/fonts/fontFour.woff2",
+          "type": "registry:file",
+          "target": "~/fonts/fontFour.woff2"
+        },
+        {
+          "path": "registry/fonts/fontFive.woff2",
+          "type": "registry:file",
+          "target": "~/fonts/fontFive.woff2"
+        },
+        {
+          "path": "registry/fonts/fontSix.woff2",
+          "type": "registry:file",
+          "target": "~/fonts/fontSix.woff2"
+        },
+        {
+          "path": "registry/fonts/fontSeven.woff2",
+          "type": "registry:file",
+          "target": "~/fonts/fontSeven.woff2"
+        }
+      ],
+      "meta": {
+        "framework": "html"
+      },
+      "type": "registry:example"
+    },
+    {
+      "name": "box-reveal-html-demo",
+      "title": "Box Reveal",
+      "description": "Example of Box Reveal that has a smooth reveal animation that slides a colored overlay away to introduce content as it enters the viewport.",
+      "dependencies": [
+        "motion"
+      ],
+      "registryDependencies": [
+        "https://atlasui.dev/r/box-reveal-html.json"
+      ],
+      "files": [
+        {
+          "path": "registry/html/examples/box-reveal-html-demo/index.html",
+          "type": "registry:file",
+          "target": "~/box-reveal/index.html"
+        },
+        {
+          "path": "registry/html/examples/box-reveal-html-demo/style.css",
+          "type": "registry:file",
+          "target": "~/box-reveal/style.css"
+        },
+        {
+          "path": "registry/html/examples/box-reveal-html-demo/script.js",
+          "type": "registry:file",
+          "target": "~/box-reveal/script.js"
+        }
+      ],
+      "meta": {
+        "framework": "html"
+      },
+      "type": "registry:example"
+    },
+    {
+      "name": "notch-nav-html-demo",
+      "title": "Notch Nav",
+      "description": "Example of a Notch style trigger that reveals the navigation menu from above built with HTML, CSS, JavaScript and Motion.",
+      "dependencies": [
+        "motion"
+      ],
+      "registryDependencies": [
+        "https://atlasui.dev/r/notch-nav-html.json"
+      ],
+      "files": [
+        {
+          "path": "registry/html/examples/notch-nav-html-demo/index.html",
+          "type": "registry:file",
+          "target": "~/notch-nav/index.html"
+        },
+        {
+          "path": "registry/html/examples/notch-nav-html-demo/style.css",
+          "type": "registry:file",
+          "target": "~/notch-nav/style.css"
+        },
+        {
+          "path": "registry/html/examples/notch-nav-html-demo/script.js",
+          "type": "registry:file",
+          "target": "~/notch-nav/script.js"
+        }
+      ],
+      "meta": {
+        "framework": "html"
+      },
+      "type": "registry:example"
+    },
+    {
+      "name": "morph-navbar-html-demo",
+      "title": "Morph Navbar",
+      "description": "Example of Morph Navbar with a fluid, morphing pill that tracks the active link and hover state built with HTML, CSS, JavaScript and Motion.",
+      "dependencies": [
+        "motion"
+      ],
+      "registryDependencies": [
+        "https://atlasui.dev/r/morph-navbar-html.json"
+      ],
+      "files": [
+        {
+          "path": "registry/html/examples/morph-navbar-html-demo/index.html",
+          "type": "registry:file",
+          "target": "~/morph-navbar/index.html"
+        },
+        {
+          "path": "registry/html/examples/morph-navbar-html-demo/style.css",
+          "type": "registry:file",
+          "target": "~/morph-navbar/style.css"
+        },
+        {
+          "path": "registry/html/examples/morph-navbar-html-demo/script.js",
+          "type": "registry:file",
+          "target": "~/morph-navbar/script.js"
+        }
+      ],
+      "meta": {
+        "framework": "html"
+      },
+      "type": "registry:example"
+    },
+    {
+      "name": "cascade-text-html-demo",
+      "title": "Cascade Text",
+      "description": "Example of Cascade Text with a smooth line-by-line reveal built with HTML, CSS, JavaScript and Motion.",
+      "dependencies": [
+        "motion"
+      ],
+      "registryDependencies": [
+        "https://atlasui.dev/r/cascade-text-html.json"
+      ],
+      "files": [
+        {
+          "path": "registry/html/examples/cascade-text-html-demo/index.html",
+          "type": "registry:file",
+          "target": "~/cascade-text/index.html"
+        },
+        {
+          "path": "registry/html/examples/cascade-text-html-demo/style.css",
+          "type": "registry:file",
+          "target": "~/cascade-text/style.css"
+        },
+        {
+          "path": "registry/html/examples/cascade-text-html-demo/script.js",
+          "type": "registry:file",
+          "target": "~/cascade-text/script.js"
+        }
+      ],
+      "meta": {
+        "framework": "html"
+      },
+      "type": "registry:example"
+    },
+    {
+      "name": "letter-swap-html-demo",
+      "title": "Letter Swap",
+      "description": "Example of Letter Swap that swaps the letters vertically on hover built with HTML, CSS, JavaScript and Motion.",
+      "dependencies": [
+        "motion"
+      ],
+      "registryDependencies": [
+        "https://atlasui.dev/r/letter-swap-html.json"
+      ],
+      "files": [
+        {
+          "path": "registry/html/examples/letter-swap-html-demo/index.html",
+          "type": "registry:file",
+          "target": "~/letter-swap/index.html"
+        },
+        {
+          "path": "registry/html/examples/letter-swap-html-demo/style.css",
+          "type": "registry:file",
+          "target": "~/letter-swap/style.css"
+        },
+        {
+          "path": "registry/html/examples/letter-swap-html-demo/script.js",
+          "type": "registry:file",
+          "target": "~/letter-swap/script.js"
+        }
+      ],
+      "meta": {
+        "framework": "html"
+      },
+      "type": "registry:example"
+    },
+    {
+      "name": "warp-slider-html-demo",
+      "title": "Warp Slider",
+      "description": "Example of a smooth, infinite slider with dynamic warp distortion and momentum based scrolling built with HTML, CSS, JavaScript and Three.js.",
+      "dependencies": [
+        "three"
+      ],
+      "registryDependencies": [
+        "https://atlasui.dev/r/warp-slider-html.json"
+      ],
+      "files": [
+        {
+          "path": "registry/html/examples/warp-slider-html-demo/index.html",
+          "type": "registry:file",
+          "target": "~/warp-slider/index.html"
+        },
+        {
+          "path": "registry/html/examples/warp-slider-html-demo/style.css",
+          "type": "registry:file",
+          "target": "~/warp-slider/style.css"
+        },
+        {
+          "path": "registry/html/examples/warp-slider-html-demo/script.js",
+          "type": "registry:file",
+          "target": "~/warp-slider/script.js"
+        }
+      ],
+      "meta": {
+        "framework": "html"
+      },
+      "type": "registry:example"
+    },
+    {
+      "name": "warp-slider-horizontal-html-demo",
+      "title": "Warp Slider Horizontal Demo",
+      "description": "Example of Warp Slider component in horizontal orientation with dynamic warp distortion and momentum based scrolling built with HTML, CSS, JavaScript and Three.js.",
+      "dependencies": [
+        "three"
+      ],
+      "registryDependencies": [
+        "https://atlasui.dev/r/warp-slider-html.json"
+      ],
+      "files": [
+        {
+          "path": "registry/html/examples/warp-slider-horizontal-html-demo/index.html",
+          "type": "registry:example"
+        },
+        {
+          "path": "registry/html/examples/warp-slider-horizontal-html-demo/style.css",
+          "type": "registry:example"
+        },
+        {
+          "path": "registry/html/examples/warp-slider-horizontal-html-demo/script.js",
+          "type": "registry:example"
+        }
+      ],
+      "meta": {
+        "framework": "html"
+      },
+      "type": "registry:example"
     },
     {
       "name": "utils",

@@ -1,0 +1,67 @@
+---
+title: Box Reveal
+description: A smooth reveal animation that slides a colored overlay away to introduce content as it enters the viewport.
+base: react
+---
+
+<ComponentPreview name="box-reveal-demo" />
+
+## Installation
+
+<InstallationTabs>
+
+<TabsContent value="cli">
+
+```bash
+npx shadcn@latest add https://atlasui.dev/r/box-reveal.json
+```
+
+</TabsContent>
+
+<TabsContent value="manual">
+
+<Steps>
+
+<Step>Install the following dependencies:</Step>
+
+```bash
+npm install motion
+```
+
+<Step>Copy and paste the following code into your project.</Step>
+
+<ComponentSource name="box-reveal" filePath="components/box-reveal.tsx" />
+
+<Step>Update the import paths to match your project setup.</Step>
+
+</Steps>
+
+</TabsContent>
+
+</InstallationTabs>
+
+## Usage
+
+```tsx
+import { BoxReveal } from "@/components/box-reveal";
+```
+
+```tsx
+<BoxReveal>
+  <h1>Box Reveal</h1>
+</BoxReveal>
+
+<BoxReveal>
+  // Pass any children here, and the reveal effect will be applied to it.
+</BoxReveal>
+```
+
+## Props
+
+| Prop        | Type                      | Default         | Description                                          |
+| ----------- | ------------------------- | --------------- | ---------------------------------------------------- |
+| `children`  | `React.ReactNode`         | -               | The content to which animation must be applied       |
+| `side`      | `"left" \| "right"`       | `"left"`        | Direction from which the reveal box slides away      |
+| `width`     | `"fit-content" \| "full"` | `"fit-content"` | Controls the width of the reveal container           |
+| `color`     | `string`                  | `"#FACC15"`     | Background color of the reveal overlay               |
+| `className` | `string`                  | -               | Additional class names applied to the root container |

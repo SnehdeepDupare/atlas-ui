@@ -1,0 +1,104 @@
+---
+title: Loki Text Effect
+description: The iconic text animation from the Loki series intro.
+base: react
+---
+
+<ComponentPreview name="loki-text-effect-demo" />
+
+## Installation
+
+<InstallationTabs>
+
+<TabsContent value="cli">
+
+```bash
+npx shadcn@latest add https://atlasui.dev/r/loki-text-effect.json
+```
+
+</TabsContent>
+
+<TabsContent value="manual">
+
+<Steps>
+
+<Step>
+  Download all the fonts and add them to your project. [Download
+  Link](https://github.com/SnehdeepDupare/atlas-ui/tree/master/app/fonts)
+</Step>
+
+```txt
+└──app
+    └──fonts
+        ├──fontOne.woff2
+        ├──fontTwo.woff2
+        ├──fontThree.woff2
+        ├──fontFour.woff2
+        ├──fontFive.woff2
+        ├──fontSix.woff2
+        └──fontSeven.woff2
+```
+
+<Step>Copy and paste the following code into your project.</Step>
+
+<ComponentSource
+  name="loki-text-effect"
+  filePath="components/loki-text-effect.tsx"
+/>
+
+<Step>Add `@/fonts/font.ts`.</Step>
+
+```tsx
+import localFont from "next/font/local";
+
+const fontOne = localFont({
+  src: "../app/fonts/fontOne.woff2",
+});
+const fontTwo = localFont({
+  src: "../app/fonts/fontTwo.woff2",
+});
+const fontThree = localFont({
+  src: "../app/fonts/fontThree.woff2",
+});
+const fontFour = localFont({
+  src: "../app/fonts/fontFour.woff2",
+});
+const fontFive = localFont({
+  src: "../app/fonts/fontFive.woff2",
+});
+const fontSix = localFont({
+  src: "../app/fonts/fontSix.woff2",
+});
+const fontSeven = localFont({
+  src: "../app/fonts/fontSeven.woff2",
+});
+
+export { fontOne, fontTwo, fontThree, fontFour, fontFive, fontSix, fontSeven };
+```
+
+<Step>Update the import paths to match your project setup.</Step>
+
+</Steps>
+
+</TabsContent>
+
+</InstallationTabs>
+
+## Usage
+
+```tsx
+import { LokiTextEffect } from "@/components/(react)/loki-text-effect";
+```
+
+```tsx
+<LokiTextEffect text="Loki" />
+```
+
+## Props
+
+| Prop           | Type     | Default | Required | Description                                                 |
+| -------------- | -------- | ------- | -------- | ----------------------------------------------------------- |
+| `text`         | `string` | -       | true     | The text to display and animate                             |
+| `velocityFont` | `number` | `800`   | false    | Interval in ms for how often the font changes               |
+| `velocityMove` | `number` | `1800`  | false    | Interval in ms for how often the position jitter is updated |
+| `className`    | `string` | -       | false    | Optional classnames for according to match your setup       |

@@ -1,0 +1,107 @@
+---
+title: Notch Nav
+description: A Notch style trigger that reveals the navigation menu from above.
+base: html
+---
+
+<HtmlPreview name="notch-nav-html-demo" />
+
+## Installation
+
+<InstallationTabs>
+
+<TabsContent value="cli">
+
+```bash
+npx shadcn@latest add https://atlasui.dev/r/notch-nav-html.json
+```
+
+</TabsContent>
+
+<TabsContent value="manual">
+
+<Steps>
+
+<Step>Install the following dependencies:</Step>
+
+```bash
+npm install motion
+```
+
+<Step>Copy and paste the following code into your project.</Step>
+
+Structure in your html file:
+
+```html
+<div id="notch-nav">
+  <button id="notch-nav-trigger"></button>
+  <div id="notch-nav-content">
+    <a href="#" class="notch-nav-item">Home</a>
+    <a href="#" class="notch-nav-item">About</a>
+    <a href="#" class="notch-nav-item">Services</a>
+    <a href="#" class="notch-nav-item">Portfolio</a>
+    <a href="#" class="notch-nav-item">Contact</a>
+  </div>
+</div>
+```
+
+<Step>Add `style.css` </Step>
+
+<ComponentSource name="notch-nav-html" file="css" />
+
+<Step>Add `script.js`</Step>
+
+<ComponentSource name="notch-nav-html" file="js" />
+
+</Steps>
+
+</TabsContent>
+
+</InstallationTabs>
+
+## Usage
+
+Create a wrapper div with `id="notch-nav"`
+
+```html
+<div id="notch-nav"></div>
+```
+
+Place a button with `id="notch-nav-trigger"` inside the wrapper div. The button can remain empty as the icons are already handled by the `script.js` file.
+
+```html {2}
+<div id="notch-nav">
+  <button id="notch-nav-trigger"></button>
+</div>
+```
+
+Create a `div` with `id="notch-nav-content"` inside the wrapper div and place your links inside the `<a>` tags with `class="notch-nav-item"`.
+
+```html {3-9}
+<div id="notch-nav">
+  <button id="notch-nav-trigger"></button>
+  <div id="notch-nav-content">
+    <a href="#" class="notch-nav-item">Home</a>
+    <a href="#" class="notch-nav-item">About</a>
+    <a href="#" class="notch-nav-item">Services</a>
+    <a href="#" class="notch-nav-item">Portfolio</a>
+    <a href="#" class="notch-nav-item">Contact</a>
+  </div>
+</div>
+```
+
+You can optionally control the vertical offset using the `data-offset-y` attribute on `#notch-nav-content`.
+
+**NOTE:** Do not change any of the IDs as the styles and animations are dependent on them.
+
+## Data Attributes
+
+**#notch-nav-content**
+
+| Data Attribute  | Type     | Default | Description                                                                        |
+| --------------- | -------- | ------- | ---------------------------------------------------------------------------------- |
+| `data-offset-y` | `number` | `20`    | Vertical offset from top (in pixels) applied when the menu is revealed from above. |
+
+## Credits
+
+This component is inspired from [this website](https://www.joinflowparty.com/).

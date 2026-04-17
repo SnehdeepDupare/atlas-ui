@@ -1,0 +1,34 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "blend-mouse-trailer-html-demo",
+  "title": "Blend Mouse Trailer",
+  "description": "Example of Blend Mouse Trailer which blends with the content on hover using HTML, CSS and JavaScript.",
+  "dependencies": [],
+  "registryDependencies": [
+    "https://atlasui.dev/r/blend-mouse-trailer-html.json"
+  ],
+  "files": [
+    {
+      "path": "registry/html/examples/blend-mouse-trailer-html-demo/index.html",
+      "content": "<!doctype html>\r\n<html lang=\"en\">\r\n  <head>\r\n    <meta charset=\"UTF-8\" />\r\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" />\r\n    <title>Blend Mouse Trailer Html Demo - Atlas UI</title>\r\n    <link rel=\"stylesheet\" href=\"style.css\" />\r\n  </head>\r\n  <body>\r\n    <div class=\"trailer\" id=\"trailer\"></div>\r\n    <div class=\"hero-text\">\r\n      AtlasUI is an open-source library offering a suite of prebuilt animated\r\n      components for React, HTML and Vanilla JS.\r\n    </div>\r\n  </body>\r\n  <script type=\"module\" src=\"script.js\"></script>\r\n</html>\r\n",
+      "type": "registry:file",
+      "target": "~/blend-mouse-trailer/index.html"
+    },
+    {
+      "path": "registry/html/examples/blend-mouse-trailer-html-demo/style.css",
+      "content": ":root {\n  --background: light-dark(\n    oklch(100% 0.00011 271.152),\n    oklch(18.22% 0.00002 271.152)\n  );\n  --foreground: light-dark(\n    oklch(18.22% 0.00002 271.152),\n    oklch(98.511% 0.00011 271.152)\n  );\n}\n\nhtml {\n  color-scheme: light dark;\n}\n\nbody {\n  margin: 0;\n  padding: 0;\n  height: 100vh;\n  width: 100%;\n  background: var(--background);\n  display: flex;\n  align-items: center;\n  justify-content: center;\n}\n\n.hero-text {\n  color: var(--foreground);\n  font-size: 3rem;\n  text-align: center;\n}\n\n.trailer {\n  position: fixed;\n  top: 0;\n  left: 0;\n  transform: translate(-50%, -50%);\n  border-radius: 50%;\n  background-color: #7dd3fc;\n  mix-blend-mode: difference;\n  pointer-events: none;\n  transition:\n    height 0.3s ease-out,\n    width 0.3s ease-out,\n    filter 0.3s ease-out;\n}\n",
+      "type": "registry:file",
+      "target": "~/blend-mouse-trailer/style.css"
+    },
+    {
+      "path": "registry/html/examples/blend-mouse-trailer-html-demo/script.js",
+      "content": "const trailer = document.getElementById(\"trailer\");\r\nconst heroText = document.querySelectorAll(\".hero-text\");\r\n\r\nlet isHovered = false;\r\n\r\ndocument.addEventListener(\"mousemove\", (e) => {\r\n  const { clientX, clientY } = e;\r\n  const size = isHovered ? 300 : 30;\r\n\r\n  trailer.animate(\r\n    {\r\n      left: `${clientX}px`,\r\n      top: `${clientY}px`,\r\n    },\r\n    { duration: 500, fill: \"forwards\" },\r\n  );\r\n\r\n  trailer.style.height = `${size}px`;\r\n  trailer.style.width = `${size}px`;\r\n  trailer.style.filter = `blur(${isHovered ? 30 : 0}px)`;\r\n});\r\n\r\nheroText.forEach((text) => {\r\n  text.addEventListener(\"mouseenter\", () => (isHovered = true));\r\n  text.addEventListener(\"mouseleave\", () => (isHovered = false));\r\n});\r\n",
+      "type": "registry:file",
+      "target": "~/blend-mouse-trailer/script.js"
+    }
+  ],
+  "meta": {
+    "framework": "html"
+  },
+  "type": "registry:example"
+}
