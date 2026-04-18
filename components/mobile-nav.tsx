@@ -12,10 +12,17 @@ import {
   PopoverTrigger,
 } from "@/components/ui/popover";
 import { docsConfig } from "@/config/docs";
-import { cn } from "@/lib/utils";
+import { cn, getCurrentBase, updateComponentPathname } from "@/lib/utils";
 
-export function MobileNav({ className }: { className?: string }) {
+export function MobileNav({
+  className,
+  pathname,
+}: {
+  className?: string;
+  pathname: string;
+}) {
   const [isOpen, setIsOpen] = useState(false);
+  const currentBase = getCurrentBase(pathname);
 
   return (
     <Popover open={isOpen} onOpenChange={setIsOpen}>
@@ -59,11 +66,14 @@ export function MobileNav({ className }: { className?: string }) {
               <h4 className="rounded-md px-2 py-1 text-sm font-semibold">
                 {item.title}
               </h4>
-              {item.items?.map((item) =>
-                !item.disabled && item.href ? (
+              {item.items?.map((item) => {
+                const href = item.href
+                  ? updateComponentPathname(currentBase, item.href)
+                  : null;
+                return !item.disabled && href ? (
                   <MobileLink
                     key={item.href}
-                    href={item.href}
+                    href={href}
                     onOpenChange={setIsOpen}
                     className={cn(
                       "text-muted-foreground flex justify-between",
@@ -94,8 +104,8 @@ export function MobileNav({ className }: { className?: string }) {
                       </span>
                     )}
                   </span>
-                )
-              )}
+                );
+              })}
             </div>
           ))}
         </div>

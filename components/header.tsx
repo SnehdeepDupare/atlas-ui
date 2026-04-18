@@ -16,7 +16,6 @@ import {
   TooltipTrigger,
 } from "@/components/ui/tooltip";
 import { siteConfig } from "@/config/site";
-import { cn } from "@/lib/utils";
 
 export const Header = () => {
   const pathname = usePathname();
@@ -24,7 +23,7 @@ export const Header = () => {
     <header className="dark:shadow-primary-foreground sticky top-0 z-50 w-full border-b shadow-md backdrop-blur-sm dark:backdrop-blur-xs">
       <div className="container-wrapper">
         <div className="container flex h-14 items-center">
-          <MobileNav className="mr-3 md:hidden" />
+          <MobileNav className="mr-3 md:hidden" pathname={pathname} />
 
           <nav className="flex items-center text-sm">
             <Link
