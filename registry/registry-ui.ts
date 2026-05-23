@@ -337,4 +337,18 @@ export const ui: Registry["items"] = [
       },
     ],
   },
+  {
+    name: "magnetic-hover",
+    type: "registry:component",
+    title: "Magnetic Hover",
+    description:
+      "A smooth magnetic hover interaction that subtly pulls elements toward the with using spring based motion animations.",
+    dependencies: ["motion"],
+    files: [
+      {
+        path: "react/atlasui/magnetic-hover.tsx",
+        type: "registry:component",
+      },
+    ],
+  },
 ];

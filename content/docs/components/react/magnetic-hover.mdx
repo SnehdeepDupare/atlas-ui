@@ -1,0 +1,63 @@
+---
+title: Magnetic Hover
+description: A smooth magnetic hover effect that subtly pulls elements toward the cursor.
+base: react
+---
+
+<ComponentPreview name="magnetic-hover-demo" />
+
+## Installation
+
+<InstallationTabs>
+
+<TabsContent value="cli">
+
+```bash
+npx shadcn@latest add https://atlasui.dev/r/magnetic-hover.json
+```
+
+</TabsContent>
+
+<TabsContent value="manual">
+
+<Steps>
+
+<Step>Install the following dependencies:</Step>
+
+```bash
+npm install motion
+```
+
+<Step>Copy and paste the following code into your project.</Step>
+
+<ComponentSource
+  name="magnetic-hover"
+  filePath="components/magnetic-hover.tsx"
+/>
+
+<Step>Update the import paths to match your project setup.</Step>
+
+</Steps>
+
+</TabsContent>
+
+</InstallationTabs>
+
+## Usage
+
+```tsx
+import { MagneticHover } from "@/components/magnetic-hover";
+```
+
+```tsx {1,3}
+<MagneticHover>
+  {/* Pass any children here, and the magnetic effect will be applied to it.*/}
+</MagneticHover>
+```
+
+## Props
+
+| Prop       | Type              | Default | Description                                         |
+| ---------- | ----------------- | ------- | --------------------------------------------------- |
+| `children` | `React.ReactNode` | -       | The content to which the magnetic effect is applied |
+| `strength` | `number`          | `1`     | Controls the intensity of the magnetic effect       |

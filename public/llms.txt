@@ -47,6 +47,8 @@ Always use the HTML implementation listed below.
 - Loki Text Effect: The iconic text animation from the Loki series intro.
   - [React Docs](https://www.atlasui.dev/docs/components/react/loki-text-effect)
   - [HTML Docs](https://www.atlasui.dev/docs/components/html/loki-text-effect)
+- Magnetic Hover: A smooth magnetic hover interaction that subtly pulls elements toward the with using spring based motion animations.
+  - [React Docs](https://www.atlasui.dev/docs/components/react/magnetic-hover)
 - Morph Navbar: A polished navigation bar with a fluid, morphing pill that tracks the active link and hover state.
   - [React Docs](https://www.atlasui.dev/docs/components/react/morph-navbar)
   - [HTML Docs](https://www.atlasui.dev/docs/components/html/morph-navbar)

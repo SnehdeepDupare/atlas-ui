@@ -164,6 +164,12 @@ export const docsConfig: DocsConfig = {
           items: [],
         },
         {
+          title: "Magnetic Hover",
+          href: "/docs/components/magnetic-hover",
+          items: [],
+          label: "New",
+        },
+        {
           title: "Box Reveal",
           href: "/docs/components/box-reveal",
           items: [],

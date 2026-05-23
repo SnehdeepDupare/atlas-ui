@@ -398,6 +398,21 @@
       "type": "registry:component"
     },
     {
+      "name": "magnetic-hover",
+      "title": "Magnetic Hover",
+      "description": "A smooth magnetic hover interaction that subtly pulls elements toward the with using spring based motion animations.",
+      "dependencies": [
+        "motion"
+      ],
+      "files": [
+        {
+          "path": "registry/react/atlasui/magnetic-hover.tsx",
+          "type": "registry:component"
+        }
+      ],
+      "type": "registry:component"
+    },
+    {
       "name": "animated-mobile-navbar-demo",
       "title": "Animated Mobile Navbar Demo",
       "description": "Example showcasing the Animated Mobile Navbar component.",
@@ -781,8 +796,8 @@
     },
     {
       "name": "fancy-theme-toggle-demo",
-      "title": "Fancy Theme Toggle",
-      "description": "Theme Toggle from the classic Designer vs Developer meme.",
+      "title": "Fancy Theme Toggle Demo",
+      "description": "Example of Theme Toggle from the classic Designer vs Developer meme.",
       "registryDependencies": [
         "https://atlasui.dev/r/fancy-theme-toggle.json"
       ],
@@ -791,6 +806,22 @@
           "path": "registry/react/examples/fancy-theme-toggle-demo.tsx",
           "type": "registry:example",
           "target": "components/fancy-theme-toggle-demo.tsx"
+        }
+      ],
+      "type": "registry:example"
+    },
+    {
+      "name": "magnetic-hover-demo",
+      "title": "Magnetic Hover Demo",
+      "description": "Example of a smooth magnetic hover interaction that subtly pulls elements toward the with using spring based motion animations.",
+      "registryDependencies": [
+        "https://atlasui.dev/r/magnetic-hover.json"
+      ],
+      "files": [
+        {
+          "path": "registry/react/examples/magnetic-hover-demo.tsx",
+          "type": "registry:example",
+          "target": "components/magnetic-hover-demo.tsx"
         }
       ],
       "type": "registry:example"

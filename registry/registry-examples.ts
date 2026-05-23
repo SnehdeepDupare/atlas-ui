@@ -360,14 +360,30 @@ export const examples: Registry["items"] = [
   {
     name: "fancy-theme-toggle-demo",
     type: "registry:example",
-    title: "Fancy Theme Toggle",
-    description: "Theme Toggle from the classic Designer vs Developer meme.",
+    title: "Fancy Theme Toggle Demo",
+    description:
+      "Example of Theme Toggle from the classic Designer vs Developer meme.",
     registryDependencies: ["https://atlasui.dev/r/fancy-theme-toggle.json"],
     files: [
       {
         path: "react/examples/fancy-theme-toggle-demo.tsx",
         type: "registry:example",
         target: "components/fancy-theme-toggle-demo.tsx",
+      },
+    ],
+  },
+  {
+    name: "magnetic-hover-demo",
+    type: "registry:example",
+    title: "Magnetic Hover Demo",
+    description:
+      "Example of a smooth magnetic hover interaction that subtly pulls elements toward the with using spring based motion animations.",
+    registryDependencies: ["https://atlasui.dev/r/magnetic-hover.json"],
+    files: [
+      {
+        path: "react/examples/magnetic-hover-demo.tsx",
+        type: "registry:example",
+        target: "components/magnetic-hover-demo.tsx",
       },
     ],
   },

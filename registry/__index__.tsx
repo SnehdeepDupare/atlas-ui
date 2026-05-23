@@ -387,6 +387,23 @@ export const Index: Record<string, any> = {
     }),
     meta: undefined,
   },
+  "magnetic-hover": {
+    name: "magnetic-hover",
+    description: "A smooth magnetic hover interaction that subtly pulls elements toward the with using spring based motion animations.",
+    type: "registry:component",
+    registryDependencies: undefined,
+    files: [{
+      path: "registry/react/atlasui/magnetic-hover.tsx",
+      type: "registry:component",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/react/atlasui/magnetic-hover.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: undefined,
+  },
   "animated-mobile-navbar-demo": {
     name: "animated-mobile-navbar-demo",
     description: "Example showcasing the Animated Mobile Navbar component.",
@@ -797,7 +814,7 @@ export const Index: Record<string, any> = {
   },
   "fancy-theme-toggle-demo": {
     name: "fancy-theme-toggle-demo",
-    description: "Theme Toggle from the classic Designer vs Developer meme.",
+    description: "Example of Theme Toggle from the classic Designer vs Developer meme.",
     type: "registry:example",
     registryDependencies: ["https://atlasui.dev/r/fancy-theme-toggle.json"],
     files: [{
@@ -807,6 +824,23 @@ export const Index: Record<string, any> = {
     }],
     component: React.lazy(async () => {
       const mod = await import("@/registry/react/examples/fancy-theme-toggle-demo.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: undefined,
+  },
+  "magnetic-hover-demo": {
+    name: "magnetic-hover-demo",
+    description: "Example of a smooth magnetic hover interaction that subtly pulls elements toward the with using spring based motion animations.",
+    type: "registry:example",
+    registryDependencies: ["https://atlasui.dev/r/magnetic-hover.json"],
+    files: [{
+      path: "registry/react/examples/magnetic-hover-demo.tsx",
+      type: "registry:example",
+      target: "components/magnetic-hover-demo.tsx"
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/react/examples/magnetic-hover-demo.tsx")
       const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
       return { default: mod.default || mod[exportName] }
     }),
