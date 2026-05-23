@@ -370,6 +370,23 @@ export const Index: Record<string, any> = {
     }),
     meta: undefined,
   },
+  "fancy-theme-toggle": {
+    name: "fancy-theme-toggle",
+    description: "Theme Toggle from the classic Designer vs Developer meme.",
+    type: "registry:component",
+    registryDependencies: ["utils"],
+    files: [{
+      path: "registry/react/atlasui/fancy-theme-toggle.tsx",
+      type: "registry:component",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/react/atlasui/fancy-theme-toggle.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: undefined,
+  },
   "animated-mobile-navbar-demo": {
     name: "animated-mobile-navbar-demo",
     description: "Example showcasing the Animated Mobile Navbar component.",
@@ -773,6 +790,23 @@ export const Index: Record<string, any> = {
     }],
     component: React.lazy(async () => {
       const mod = await import("@/registry/react/examples/warp-slider-horizontal-demo.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: undefined,
+  },
+  "fancy-theme-toggle-demo": {
+    name: "fancy-theme-toggle-demo",
+    description: "Theme Toggle from the classic Designer vs Developer meme.",
+    type: "registry:example",
+    registryDependencies: ["https://atlasui.dev/r/fancy-theme-toggle.json"],
+    files: [{
+      path: "registry/react/examples/fancy-theme-toggle-demo.tsx",
+      type: "registry:example",
+      target: "components/fancy-theme-toggle-demo.tsx"
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/react/examples/fancy-theme-toggle-demo.tsx")
       const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
       return { default: mod.default || mod[exportName] }
     }),

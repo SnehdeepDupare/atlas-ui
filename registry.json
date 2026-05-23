@@ -380,6 +380,24 @@
       "type": "registry:component"
     },
     {
+      "name": "fancy-theme-toggle",
+      "title": "Fancy Theme Toggle",
+      "description": "Theme Toggle from the classic Designer vs Developer meme.",
+      "dependencies": [
+        "motion"
+      ],
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "registry/react/atlasui/fancy-theme-toggle.tsx",
+          "type": "registry:component"
+        }
+      ],
+      "type": "registry:component"
+    },
+    {
       "name": "animated-mobile-navbar-demo",
       "title": "Animated Mobile Navbar Demo",
       "description": "Example showcasing the Animated Mobile Navbar component.",
@@ -757,6 +775,22 @@
           "path": "registry/react/examples/warp-slider-horizontal-demo.tsx",
           "type": "registry:example",
           "target": "components/warp-slider-horizontal-demo.tsx"
+        }
+      ],
+      "type": "registry:example"
+    },
+    {
+      "name": "fancy-theme-toggle-demo",
+      "title": "Fancy Theme Toggle",
+      "description": "Theme Toggle from the classic Designer vs Developer meme.",
+      "registryDependencies": [
+        "https://atlasui.dev/r/fancy-theme-toggle.json"
+      ],
+      "files": [
+        {
+          "path": "registry/react/examples/fancy-theme-toggle-demo.tsx",
+          "type": "registry:example",
+          "target": "components/fancy-theme-toggle-demo.tsx"
         }
       ],
       "type": "registry:example"

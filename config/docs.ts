@@ -96,6 +96,12 @@ export const docsConfig: DocsConfig = {
           items: [],
         },
         {
+          title: "Fancy Theme Toggle",
+          href: "/docs/components/fancy-theme-toggle",
+          items: [],
+          label: "New",
+        },
+        {
           title: "Parallax Sections",
           href: "/docs/components/parallax-sections",
           items: [],
