@@ -37,6 +37,7 @@ Always use the HTML implementation listed below.
   - [HTML Docs](https://www.atlasui.dev/docs/components/html/dot-and-circle-mouse-trailer)
 - Fancy Theme Toggle: Theme Toggle from the classic Designer vs Developer meme.
   - [React Docs](https://www.atlasui.dev/docs/components/react/fancy-theme-toggle)
+  - [HTML Docs](https://www.atlasui.dev/docs/components/html/fancy-theme-toggle)
 - Hacker Text: A text animation that scrambles letters before revealing the final text.
   - [React Docs](https://www.atlasui.dev/docs/components/react/hacker-text)
   - [HTML Docs](https://www.atlasui.dev/docs/components/html/hacker-text)

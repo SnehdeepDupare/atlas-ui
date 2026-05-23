@@ -1375,6 +1375,36 @@
       "type": "registry:component"
     },
     {
+      "name": "fancy-theme-toggle-html",
+      "title": "Fancy Theme Toggle",
+      "description": "Theme Toggle from the classic Designer vs Developer meme, built with HTML, CSS, JavaScript and Motion.",
+      "dependencies": [
+        "motion",
+        "lucide"
+      ],
+      "files": [
+        {
+          "path": "registry/html/atlasui/fancy-theme-toggle/index.html",
+          "type": "registry:file",
+          "target": "~/fancy-theme-toggle/index.html"
+        },
+        {
+          "path": "registry/html/atlasui/fancy-theme-toggle/style.css",
+          "type": "registry:file",
+          "target": "~/fancy-theme-toggle/style.css"
+        },
+        {
+          "path": "registry/html/atlasui/fancy-theme-toggle/script.js",
+          "type": "registry:file",
+          "target": "~/fancy-theme-toggle/script.js"
+        }
+      ],
+      "meta": {
+        "framework": "html"
+      },
+      "type": "registry:component"
+    },
+    {
       "name": "animated-mobile-navbar-html-demo",
       "title": "Animated Mobile Navbar",
       "description": "Example showcasing the Animated Mobile Navbar component in HTML, CSS, JavaScript and Motion.",
@@ -2118,6 +2148,39 @@
         {
           "path": "registry/html/examples/warp-slider-horizontal-html-demo/script.js",
           "type": "registry:example"
+        }
+      ],
+      "meta": {
+        "framework": "html"
+      },
+      "type": "registry:example"
+    },
+    {
+      "name": "fancy-theme-toggle-html-demo",
+      "title": "Fancy Theme Toggle",
+      "description": "Example of Theme Toggle from the classic Designer vs Developer meme, built with HTML, CSS, JavaScript and Motion.",
+      "dependencies": [
+        "motion",
+        "lucide"
+      ],
+      "registryDependencies": [
+        "https://atlasui.dev/r/fancy-theme-toggle.json"
+      ],
+      "files": [
+        {
+          "path": "registry/html/examples/fancy-theme-toggle-html-demo/index.html",
+          "type": "registry:file",
+          "target": "~/fancy-theme-toggle/index.html"
+        },
+        {
+          "path": "registry/html/examples/fancy-theme-toggle-html-demo/style.css",
+          "type": "registry:file",
+          "target": "~/fancy-theme-toggle/style.css"
+        },
+        {
+          "path": "registry/html/examples/fancy-theme-toggle-html-demo/script.js",
+          "type": "registry:file",
+          "target": "~/fancy-theme-toggle/script.js"
         }
       ],
       "meta": {

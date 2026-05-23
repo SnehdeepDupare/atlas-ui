@@ -702,4 +702,33 @@ export const htmlExamples: Registry["items"] = [
       },
     ],
   },
+  {
+    name: "fancy-theme-toggle-html-demo",
+    type: "registry:example",
+    title: "Fancy Theme Toggle",
+    description:
+      "Example of Theme Toggle from the classic Designer vs Developer meme, built with HTML, CSS, JavaScript and Motion.",
+    meta: {
+      framework: "html",
+    },
+    dependencies: ["motion", "lucide"],
+    registryDependencies: ["https://atlasui.dev/r/fancy-theme-toggle.json"],
+    files: [
+      {
+        path: "html/examples/fancy-theme-toggle-html-demo/index.html",
+        type: "registry:file",
+        target: "~/fancy-theme-toggle/index.html",
+      },
+      {
+        path: "html/examples/fancy-theme-toggle-html-demo/style.css",
+        type: "registry:file",
+        target: "~/fancy-theme-toggle/style.css",
+      },
+      {
+        path: "html/examples/fancy-theme-toggle-html-demo/script.js",
+        type: "registry:file",
+        target: "~/fancy-theme-toggle/script.js",
+      },
+    ],
+  },
 ];

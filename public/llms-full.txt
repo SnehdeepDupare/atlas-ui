@@ -1786,6 +1786,344 @@ const Clouds = () => {
 
 
 
+===== COMPONENT: fancy-theme-toggle-html =====
+Title: Fancy Theme Toggle
+Description: Theme Toggle from the classic Designer vs Developer meme, built with HTML, CSS, JavaScript and Motion.
+Framework: html
+
+--- file: html/atlasui/fancy-theme-toggle/index.html ---
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fancy Theme Toggle - Atlas UI</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <button role="switch" id="theme-toggle"></button>
+  </body>
+  <script type="module" src="script.js"></script>
+</html>
+
+--- file: html/atlasui/fancy-theme-toggle/script.js ---
+import { createIcons, Sparkle, Cloud } from "lucide";
+import { animate } from "motion";
+
+const themeToggle = document.getElementById("theme-toggle");
+const thumb = document.createElement("div");
+thumb.id = "thumb";
+themeToggle.appendChild(thumb);
+
+const savedTheme = localStorage.getItem("theme");
+let currentTheme;
+
+if (savedTheme) {
+  currentTheme = savedTheme;
+} else {
+  const systemDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+  currentTheme = systemDark ? "dark" : "light";
+}
+
+document.documentElement.setAttribute("data-theme", currentTheme);
+themeToggle.setAttribute("data-theme", currentTheme);
+
+const stars = document.createElement("div");
+stars.id = "stars";
+themeToggle.appendChild(stars);
+
+for (let i = 0; i < 7; i++) {
+  const star = document.createElement("i");
+  star.dataset.lucide = "sparkle";
+  star.classList.add("star");
+  stars.appendChild(star);
+}
+
+const clouds = document.createElement("div");
+clouds.id = "clouds";
+themeToggle.appendChild(clouds);
+
+for (let i = 0; i < 6; i++) {
+  const cloud = document.createElement("i");
+  cloud.dataset.lucide = "cloud";
+  cloud.classList.add("cloud");
+  clouds.appendChild(cloud);
+}
+
+createIcons({
+  icons: {
+    Sparkle,
+    Cloud,
+  },
+});
+
+const DURATION = 0.2;
+const EASE = "easeOut";
+
+const SPRING = {
+  type: "spring",
+  stiffness: 420,
+  damping: 32,
+  mass: 0.6,
+};
+
+function getTravelDistance() {
+  const toggleStyles = getComputedStyle(themeToggle);
+  const paddingLeft = parseFloat(toggleStyles.paddingLeft);
+  const paddingRight = parseFloat(toggleStyles.paddingRight);
+  const innerWidth = themeToggle.clientWidth - paddingLeft - paddingRight;
+  return innerWidth - thumb.offsetWidth;
+}
+
+const initialTravel = getTravelDistance();
+stars.style.transform = "translateY(-100%)";
+clouds.style.transform = "translateY(100%)";
+
+if (currentTheme === "dark") {
+  thumb.style.transform = `translateX(${initialTravel}px)`;
+  animate(stars, { y: ["-100%", 0] }, { duration: DURATION, ease: EASE });
+} else {
+  thumb.style.transform = "translateX(0px)";
+  animate(clouds, { y: ["100%", 0] }, { duration: DURATION, ease: EASE });
+}
+
+themeToggle.addEventListener("click", () => {
+  const current = document.documentElement.getAttribute("data-theme");
+  const next = current === "light" ? "dark" : "light";
+
+  document.documentElement.setAttribute("data-theme", next);
+  themeToggle.setAttribute("data-theme", next);
+  localStorage.setItem("theme", next);
+
+  const thumbTravel = getTravelDistance();
+
+  if (next === "dark") {
+    animate(thumb, { x: [0, thumbTravel] }, SPRING);
+    animate(clouds, { y: [0, "100%"] }, { duration: DURATION, ease: EASE });
+    animate(stars, { y: ["-100%", 0] }, { duration: DURATION, ease: EASE });
+  } else {
+    animate(thumb, { x: [thumbTravel, 0] }, SPRING);
+    animate(stars, { y: [0, "-100%"] }, { duration: DURATION, ease: EASE });
+    animate(clouds, { y: ["100%", 0] }, { duration: DURATION, ease: EASE });
+  }
+});
+
+--- file: html/atlasui/fancy-theme-toggle/style.css ---
+:root {
+  --background: light-dark(
+    oklch(100% 0.00011 271.152),
+    oklch(18.22% 0.00002 271.152)
+  );
+}
+
+html {
+  color-scheme: light dark;
+}
+
+html[data-theme="light"] {
+  color-scheme: light;
+}
+
+html[data-theme="dark"] {
+  color-scheme: dark;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100svh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#theme-toggle {
+  position: relative;
+  display: flex;
+  width: 5rem;
+  align-items: center;
+  overflow: hidden;
+  border-radius: 9999px;
+  background-image: linear-gradient(
+    to bottom,
+    oklch(62.3% 0.214 259.815),
+    oklch(80.9% 0.105 251.813)
+  );
+  padding: 0.375rem;
+  box-shadow:
+    inset 0 2px 4px rgba(0, 0, 0, 0.3),
+    inset 0 -2px 3px rgba(0, 0, 0, 0.1);
+  border: none;
+  cursor: pointer;
+}
+
+#thumb {
+  position: relative;
+  height: 1.75rem;
+  width: 1.75rem;
+  flex-shrink: 0;
+  z-index: 1;
+  border-radius: 9999px;
+  background-image: linear-gradient(
+    to bottom right,
+    oklch(90.5% 0.182 98.111),
+    oklch(85.2% 0.199 91.936)
+  );
+  box-shadow:
+    inset 1px 1px 2px 0 rgb(255, 255, 255),
+    0 3px 9px 4px rgba(0, 0, 0, 0.141);
+  will-change: transform;
+}
+
+#clouds,
+#stars {
+  position: absolute;
+  inset: 0;
+}
+
+.star {
+  fill: oklch(70.7% 0.022 261.325);
+  stroke-width: 0;
+  position: absolute;
+}
+
+#stars {
+  :nth-child(1) {
+    top: 0.5rem;
+    left: 0.5rem;
+    height: 0.5rem;
+    width: 0.5rem;
+  }
+
+  :nth-child(2) {
+    top: 1rem;
+    left: 1.25rem;
+    height: 0.625rem;
+    width: 0.625rem;
+  }
+
+  :nth-child(3) {
+    top: 0.5rem;
+    left: 2.5rem;
+    height: 0.25rem;
+    width: 0.25rem;
+  }
+
+  :nth-child(4) {
+    top: 0.25rem;
+    left: 1.75rem;
+    height: 0.25rem;
+    width: 0.25rem;
+  }
+
+  :nth-child(5) {
+    bottom: 0.5rem;
+    left: 0.5rem;
+    height: 0.25rem;
+    width: 0.25rem;
+  }
+
+  :nth-child(6) {
+    bottom: 0.5rem;
+    left: 2rem;
+    height: 0.25rem;
+    width: 0.25rem;
+  }
+
+  :nth-child(7) {
+    bottom: 0.25rem;
+    left: 1.25rem;
+    height: 0.375rem;
+    width: 0.375rem;
+  }
+}
+
+#clouds {
+  :nth-child(1) {
+    top: 0.5rem;
+    right: 0.5rem;
+    height: 0.5rem;
+    width: 0.5rem;
+  }
+
+  :nth-child(2) {
+    top: 1rem;
+    right: 1.25rem;
+    height: 0.625rem;
+    width: 0.625rem;
+  }
+
+  :nth-child(3) {
+    top: 0.5rem;
+    left: 2.5rem;
+    height: 0.375rem;
+    width: 0.375rem;
+  }
+
+  :nth-child(4) {
+    right: 0.5rem;
+    bottom: 0.25rem;
+    height: 0.375rem;
+    width: 0.375rem;
+  }
+
+  :nth-child(5) {
+    bottom: 0.25rem;
+    left: 2rem;
+    height: 0.375rem;
+    width: 0.375rem;
+  }
+
+  :nth-child(6) {
+    bottom: 0.5rem;
+    left: 2.75rem;
+    height: 0.375rem;
+    width: 0.375rem;
+  }
+}
+
+.cloud {
+  position: absolute;
+  fill: rgb(255, 255, 255);
+  stroke-width: 0;
+}
+
+#theme-toggle[data-theme="dark"] {
+  background-image: linear-gradient(
+    to bottom,
+    oklch(20.5% 0 0),
+    oklch(26.9% 0 0)
+  );
+
+  #thumb {
+    background-image: linear-gradient(
+      to bottom right,
+      oklch(92.8% 0.006 264.531),
+      oklch(87.2% 0.01 258.338)
+    );
+
+    &::after {
+      position: absolute;
+      bottom: 0.375rem;
+      left: 0.25rem;
+      height: 0.75rem;
+      width: 0.75rem;
+      border-radius: 9999px;
+      background-color: oklch(70.7% 0.022 261.325);
+      box-shadow:
+        6px -10px 0 -3.5px oklch(70.7% 0.022 261.325),
+        10px 4px 0 -3px oklch(70.7% 0.022 261.325);
+      content: "";
+    }
+  }
+}
+
+
+
 ===== COMPONENT: hacker-text =====
 Title: Hacker Text
 Description: A text animation that scrambles letters before revealing the final text.
