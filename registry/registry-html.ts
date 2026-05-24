@@ -597,4 +597,32 @@ export const html: Registry["items"] = [
       },
     ],
   },
+  {
+    name: "magnetic-hover-html",
+    type: "registry:component",
+    title: "Magnetic Hover",
+    description:
+      "A smooth magnetic hover interaction that subtly pulls elements toward the with using spring based motion animations, built with HTML, CSS, JavaScript and Motion.",
+    meta: {
+      framework: "html",
+    },
+    dependencies: ["motion"],
+    files: [
+      {
+        path: "html/atlasui/magnetic-hover/index.html",
+        type: "registry:file",
+        target: "~/magnetic-hover/index.html",
+      },
+      {
+        path: "html/atlasui/magnetic-hover/style.css",
+        type: "registry:file",
+        target: "~/magnetic-hover/style.css",
+      },
+      {
+        path: "html/atlasui/magnetic-hover/script.js",
+        type: "registry:file",
+        target: "~/magnetic-hover/script.js",
+      },
+    ],
+  },
 ];

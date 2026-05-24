@@ -1,0 +1,33 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "magnetic-hover-html-demo",
+  "title": "Magnetic Hover",
+  "description": "Example of Magnetic Hover component, built with HTML, CSS, JavaScript and Motion.",
+  "dependencies": [
+    "motion"
+  ],
+  "files": [
+    {
+      "path": "registry/html/examples/magnetic-hover-html-demo/index.html",
+      "content": "<!doctype html>\r\n<html lang=\"en\">\r\n  <head>\r\n    <meta charset=\"UTF-8\" />\r\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" />\r\n    <title>Magnetic Hover Html Demo - Atlas UI</title>\r\n    <link rel=\"stylesheet\" href=\"style.css\" />\r\n  </head>\r\n  <body>\r\n    <button class=\"magnetic-hover\">Hover me</button>\r\n\r\n    <div class=\"link-wrapper\">\r\n      <span>The cursor has</span>\r\n\r\n      <a href=\"#\" class=\"magnetic-hover\" data-strength=\"0.5\">\r\n        magnetic powers\r\n      </a>\r\n\r\n      <span>now.</span>\r\n    </div>\r\n  </body>\r\n  <script type=\"module\" src=\"script.js\"></script>\r\n</html>\r\n",
+      "type": "registry:file",
+      "target": "~/magnetic-hover/index.html"
+    },
+    {
+      "path": "registry/html/examples/magnetic-hover-html-demo/style.css",
+      "content": ":root {\r\n  --background: light-dark(\r\n    oklch(100% 0.00011 271.152),\r\n    oklch(18.22% 0.00002 271.152)\r\n  );\r\n  --foreground: light-dark(\r\n    oklch(18.22% 0.00002 271.152),\r\n    oklch(98.511% 0.00011 271.152)\r\n  );\r\n}\r\n\r\nhtml {\r\n  color-scheme: light dark;\r\n}\r\n\r\n* {\r\n  margin: 0;\r\n  padding: 0;\r\n  box-sizing: border-box;\r\n}\r\n\r\nbody {\r\n  min-height: 100svh;\r\n  background-color: var(--background);\r\n  color: var(--foreground);\r\n  font-family: \"Inter\", sans-serif;\r\n  max-width: 800px;\r\n  margin: 0 auto;\r\n  display: flex;\r\n  flex-direction: column;\r\n  gap: 1rem;\r\n  align-items: center;\r\n  justify-content: center;\r\n}\r\n\r\nbutton {\r\n  border: none;\r\n  background-color: var(--foreground);\r\n  color: var(--background);\r\n  padding: 0.5rem 1rem;\r\n  border-radius: 0.5rem;\r\n  cursor: pointer;\r\n  font-weight: 500;\r\n}\r\n\r\n.link-wrapper {\r\n  display: flex;\r\n  flex-wrap: wrap;\r\n  align-items: center;\r\n  justify-content: center;\r\n  gap: 0.5rem;\r\n  font-size: 0.875rem;\r\n  color: oklch(0.71 0.02 261);\r\n}\r\n\r\na {\r\n  color: var(--foreground);\r\n  text-underline-offset: 4px;\r\n  font-weight: 500;\r\n}\r\n",
+      "type": "registry:file",
+      "target": "~/magnetic-hover/style.css"
+    },
+    {
+      "path": "registry/html/examples/magnetic-hover-html-demo/script.js",
+      "content": "import { animate } from \"motion\";\r\n\r\nconst magneticHoverContainers = document.querySelectorAll(\".magnetic-hover\");\r\n\r\nmagneticHoverContainers.forEach((element) => {\r\n  const strength = element.getAttribute(\"data-strength\") || 1;\r\n  element.addEventListener(\"mousemove\", (e) => {\r\n    const { left, top, width, height } = element.getBoundingClientRect();\r\n    const x = (e.clientX - (left + width / 2)) * strength;\r\n    const y = (e.clientY - (top + height / 2)) * strength;\r\n\r\n    animate(\r\n      element,\r\n      { x, y },\r\n      { type: \"spring\", stiffness: 150, damping: 15, mass: 0.2 },\r\n    );\r\n  });\r\n\r\n  element.addEventListener(\"mouseleave\", () => {\r\n    animate(\r\n      element,\r\n      { x: 0, y: 0 },\r\n      { type: \"spring\", stiffness: 150, damping: 15, mass: 0.2 },\r\n    );\r\n  });\r\n});\r\n",
+      "type": "registry:file",
+      "target": "~/magnetic-hover/script.js"
+    }
+  ],
+  "meta": {
+    "framework": "html"
+  },
+  "type": "registry:example"
+}

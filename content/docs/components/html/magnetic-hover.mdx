@@ -1,0 +1,59 @@
+---
+title: Magnetic Hover
+description: A smooth magnetic hover effect that subtly pulls elements toward the cursor.
+base: html
+---
+
+<HtmlPreview name="magnetic-hover-html-demo" />
+
+## Installation
+
+<InstallationTabs>
+
+<TabsContent value="cli">
+
+```bash
+npx shadcn@latest add https://atlasui.dev/r/magnetic-hover-html.json
+```
+
+</TabsContent>
+
+<TabsContent value="manual">
+
+<Steps>
+
+<Step>Install the following dependencies:</Step>
+
+```bash
+npm install motion
+```
+
+<Step>Copy and paste the following code into your project.</Step>
+
+<ComponentSource name="magnetic-hover-html" file="js" />
+
+<Step>Update the import paths to match your project setup.</Step>
+
+</Steps>
+
+</TabsContent>
+
+</InstallationTabs>
+
+## Usage
+
+Add `class="magnetic-hover"` to the element you want to apply the effect.
+
+```html {1,3,5}
+<button class="magnetic-hover">...</button>
+
+<a href="#" class="magnetic-hover">...</a>
+
+<div class="magnetic-hover">...</div>
+```
+
+## Data Attributes
+
+| Data Attribute  | Type     | Default | Required | Description                                   |
+| --------------- | -------- | ------- | -------- | --------------------------------------------- |
+| `data-strength` | `number` | `1`     | false    | Controls the intensity of the magnetic effect |

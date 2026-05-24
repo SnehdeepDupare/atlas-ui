@@ -4513,6 +4513,108 @@ export const MagneticHover = ({
 
 
 
+===== COMPONENT: magnetic-hover-html =====
+Title: Magnetic Hover
+Description: A smooth magnetic hover interaction that subtly pulls elements toward the with using spring based motion animations, built with HTML, CSS, JavaScript and Motion.
+Framework: html
+
+--- file: html/atlasui/magnetic-hover/index.html ---
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Magnetic Hover - Atlas UI</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <button class="magnetic-hover">Hover me</button>
+
+    <a href="#" class="magnetic-hover">Hover me</a>
+  </body>
+  <script type="module" src="script.js"></script>
+</html>
+
+--- file: html/atlasui/magnetic-hover/script.js ---
+import { animate } from "motion";
+
+const magneticHoverContainers = document.querySelectorAll(".magnetic-hover");
+
+magneticHoverContainers.forEach((element) => {
+  const strength = element.getAttribute("data-strength") || 1;
+  element.addEventListener("mousemove", (e) => {
+    const { left, top, width, height } = element.getBoundingClientRect();
+    const x = (e.clientX - (left + width / 2)) * strength;
+    const y = (e.clientY - (top + height / 2)) * strength;
+
+    animate(
+      element,
+      { x, y },
+      { type: "spring", stiffness: 150, damping: 15, mass: 0.2 },
+    );
+  });
+
+  element.addEventListener("mouseleave", () => {
+    animate(
+      element,
+      { x: 0, y: 0 },
+      { type: "spring", stiffness: 150, damping: 15, mass: 0.2 },
+    );
+  });
+});
+
+--- file: html/atlasui/magnetic-hover/style.css ---
+:root {
+  --background: light-dark(
+    oklch(100% 0.00011 271.152),
+    oklch(18.22% 0.00002 271.152)
+  );
+  --foreground: light-dark(
+    oklch(18.22% 0.00002 271.152),
+    oklch(98.511% 0.00011 271.152)
+  );
+}
+
+html {
+  color-scheme: light dark;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100svh;
+  background-color: var(--background);
+  color: var(--foreground);
+  font-family: "Inter", sans-serif;
+  max-width: 800px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  align-items: center;
+  justify-content: center;
+}
+
+button {
+  border: none;
+  background-color: var(--foreground);
+  color: var(--background);
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+}
+
+a {
+  color: var(--foreground);
+  text-underline-offset: 4px;
+}
+
+
+
 ===== COMPONENT: morph-navbar =====
 Title: Morph Navbar
 Description: A polished navigation bar with a fluid, morphing pill that tracks the active link and hover state.

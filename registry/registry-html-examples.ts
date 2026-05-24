@@ -731,4 +731,32 @@ export const htmlExamples: Registry["items"] = [
       },
     ],
   },
+  {
+    name: "magnetic-hover-html-demo",
+    type: "registry:example",
+    title: "Magnetic Hover",
+    description:
+      "Example of Magnetic Hover component, built with HTML, CSS, JavaScript and Motion.",
+    meta: {
+      framework: "html",
+    },
+    dependencies: ["motion"],
+    files: [
+      {
+        path: "html/examples/magnetic-hover-html-demo/index.html",
+        type: "registry:file",
+        target: "~/magnetic-hover/index.html",
+      },
+      {
+        path: "html/examples/magnetic-hover-html-demo/style.css",
+        type: "registry:file",
+        target: "~/magnetic-hover/style.css",
+      },
+      {
+        path: "html/examples/magnetic-hover-html-demo/script.js",
+        type: "registry:file",
+        target: "~/magnetic-hover/script.js",
+      },
+    ],
+  },
 ];
