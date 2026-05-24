@@ -102,6 +102,12 @@ export const docsConfig: DocsConfig = {
           label: "New",
         },
         {
+          title: "Typewriter",
+          href: "/docs/components/typewriter",
+          items: [],
+          label: "New",
+        },
+        {
           title: "Parallax Sections",
           href: "/docs/components/parallax-sections",
           items: [],

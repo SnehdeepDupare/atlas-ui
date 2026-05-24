@@ -351,4 +351,18 @@ export const ui: Registry["items"] = [
       },
     ],
   },
+  {
+    name: "typewriter",
+    type: "registry:component",
+    title: "Typewriter",
+    description:
+      "A typewriter component that cycles through text with a synced flashing highlight animation.",
+    dependencies: ["motion"],
+    files: [
+      {
+        path: "react/atlasui/typewriter.tsx",
+        type: "registry:component",
+      },
+    ],
+  },
 ];

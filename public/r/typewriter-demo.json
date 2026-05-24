@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "typewriter-demo",
+  "title": "Typewriter Demo",
+  "description": "Example of typewriter component that cycles through text with a synced flashing highlight animation.",
+  "registryDependencies": [
+    "https://atlasui.dev/r/typewriter.json"
+  ],
+  "files": [
+    {
+      "path": "registry/react/examples/typewriter-demo.tsx",
+      "content": "import { Typewriter } from \"@/registry/react/atlasui/typewriter\";\n\nexport const TypewriterDemo = () => {\n  return (\n    <Typewriter\n      text={[\n        \"Building pixels with purpose\",\n        \"Shipping faster than deadlines\",\n        \"Deploy now, panic later!\",\n        \"Debugging at 2AM professionally\",\n        \"Fueled by coffee and code\",\n      ]}\n    />\n  );\n};\n",
+      "type": "registry:example",
+      "target": "components/typewriter-demo.tsx"
+    }
+  ],
+  "type": "registry:example"
+}

@@ -413,6 +413,21 @@
       "type": "registry:component"
     },
     {
+      "name": "typewriter",
+      "title": "Typewriter",
+      "description": "A typewriter component that cycles through text with a synced flashing highlight animation.",
+      "dependencies": [
+        "motion"
+      ],
+      "files": [
+        {
+          "path": "registry/react/atlasui/typewriter.tsx",
+          "type": "registry:component"
+        }
+      ],
+      "type": "registry:component"
+    },
+    {
       "name": "animated-mobile-navbar-demo",
       "title": "Animated Mobile Navbar Demo",
       "description": "Example showcasing the Animated Mobile Navbar component.",
@@ -822,6 +837,22 @@
           "path": "registry/react/examples/magnetic-hover-demo.tsx",
           "type": "registry:example",
           "target": "components/magnetic-hover-demo.tsx"
+        }
+      ],
+      "type": "registry:example"
+    },
+    {
+      "name": "typewriter-demo",
+      "title": "Typewriter Demo",
+      "description": "Example of typewriter component that cycles through text with a synced flashing highlight animation.",
+      "registryDependencies": [
+        "https://atlasui.dev/r/typewriter.json"
+      ],
+      "files": [
+        {
+          "path": "registry/react/examples/typewriter-demo.tsx",
+          "type": "registry:example",
+          "target": "components/typewriter-demo.tsx"
         }
       ],
       "type": "registry:example"

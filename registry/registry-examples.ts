@@ -387,4 +387,19 @@ export const examples: Registry["items"] = [
       },
     ],
   },
+  {
+    name: "typewriter-demo",
+    type: "registry:example",
+    title: "Typewriter Demo",
+    description:
+      "Example of typewriter component that cycles through text with a synced flashing highlight animation.",
+    registryDependencies: ["https://atlasui.dev/r/typewriter.json"],
+    files: [
+      {
+        path: "react/examples/typewriter-demo.tsx",
+        type: "registry:example",
+        target: "components/typewriter-demo.tsx",
+      },
+    ],
+  },
 ];

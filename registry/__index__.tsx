@@ -404,6 +404,23 @@ export const Index: Record<string, any> = {
     }),
     meta: undefined,
   },
+  "typewriter": {
+    name: "typewriter",
+    description: "A typewriter component that cycles through text with a synced flashing highlight animation.",
+    type: "registry:component",
+    registryDependencies: undefined,
+    files: [{
+      path: "registry/react/atlasui/typewriter.tsx",
+      type: "registry:component",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/react/atlasui/typewriter.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: undefined,
+  },
   "animated-mobile-navbar-demo": {
     name: "animated-mobile-navbar-demo",
     description: "Example showcasing the Animated Mobile Navbar component.",
@@ -841,6 +858,23 @@ export const Index: Record<string, any> = {
     }],
     component: React.lazy(async () => {
       const mod = await import("@/registry/react/examples/magnetic-hover-demo.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: undefined,
+  },
+  "typewriter-demo": {
+    name: "typewriter-demo",
+    description: "Example of typewriter component that cycles through text with a synced flashing highlight animation.",
+    type: "registry:example",
+    registryDependencies: ["https://atlasui.dev/r/typewriter.json"],
+    files: [{
+      path: "registry/react/examples/typewriter-demo.tsx",
+      type: "registry:example",
+      target: "components/typewriter-demo.tsx"
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/react/examples/typewriter-demo.tsx")
       const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
       return { default: mod.default || mod[exportName] }
     }),

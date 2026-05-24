@@ -77,6 +77,8 @@ Always use the HTML implementation listed below.
 - Shiny Button: A shiny button with a sleek animation effect.
   - [React Docs](https://www.atlasui.dev/docs/components/react/shiny-button)
   - [HTML Docs](https://www.atlasui.dev/docs/components/html/shiny-button)
+- Typewriter: A typewriter component that cycles through text with a synced flashing highlight animation.
+  - [React Docs](https://www.atlasui.dev/docs/components/react/typewriter)
 - Warp Slider: A smooth, infinite slider with dynamic warp distortion and momentum based scrolling.
   - [React Docs](https://www.atlasui.dev/docs/components/react/warp-slider)
   - [HTML Docs](https://www.atlasui.dev/docs/components/html/warp-slider)
