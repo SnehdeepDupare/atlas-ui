@@ -139,10 +139,8 @@ function MobileLink({
       }}
       className={cn(
         className,
-        "group text-foreground flex h-8 w-full items-center rounded-r-lg px-2 font-normal",
-        isActive
-          ? "bg-accent text-accent-foreground border-l-2 border-emerald-500 font-medium hover:rounded-l-none"
-          : ""
+        "group text-foreground flex h-8 w-full items-center rounded-lg px-2 font-normal",
+        isActive ? "bg-accent text-accent-foreground font-medium" : ""
       )}
       {...props}
     >
