@@ -625,4 +625,32 @@ export const html: Registry["items"] = [
       },
     ],
   },
+  {
+    name: "typewriter-html",
+    type: "registry:component",
+    title: "Typewriter",
+    description:
+      "A typewriter component that cycles through text with a synced flashing highlight animation built with HTML, CSS, JavaScript and Motion.",
+    meta: {
+      framework: "html",
+    },
+    dependencies: ["motion"],
+    files: [
+      {
+        path: "html/atlasui/typewriter/index.html",
+        type: "registry:file",
+        target: "~/typewriter/index.html",
+      },
+      {
+        path: "html/atlasui/typewriter/style.css",
+        type: "registry:file",
+        target: "~/typewriter/style.css",
+      },
+      {
+        path: "html/atlasui/typewriter/script.js",
+        type: "registry:file",
+        target: "~/typewriter/script.js",
+      },
+    ],
+  },
 ];

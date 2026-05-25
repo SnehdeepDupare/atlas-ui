@@ -759,4 +759,32 @@ export const htmlExamples: Registry["items"] = [
       },
     ],
   },
+  {
+    name: "typewriter-html-demo",
+    type: "registry:example",
+    title: "Typewriter",
+    description:
+      "Example of typewriter component that cycles through text with a synced flashing highlight animation built with HTML, CSS, JavaScript and Motion.",
+    meta: {
+      framework: "html",
+    },
+    dependencies: ["motion"],
+    files: [
+      {
+        path: "html/examples/typewriter-html-demo/index.html",
+        type: "registry:file",
+        target: "~/typewriter/index.html",
+      },
+      {
+        path: "html/examples/typewriter-html-demo/style.css",
+        type: "registry:file",
+        target: "~/typewriter/style.css",
+      },
+      {
+        path: "html/examples/typewriter-html-demo/script.js",
+        type: "registry:file",
+        target: "~/typewriter/script.js",
+      },
+    ],
+  },
 ];

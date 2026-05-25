@@ -7750,6 +7750,171 @@ export const Typewriter = ({
 
 
 
+===== COMPONENT: typewriter-html =====
+Title: Typewriter
+Description: A typewriter component that cycles through text with a synced flashing highlight animation built with HTML, CSS, JavaScript and Motion.
+Framework: html
+
+--- file: html/atlasui/typewriter/index.html ---
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Typewriter - Atlas UI</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <p class="typewriter"></p>
+
+    <script type="module" src="script.js"></script>
+  </body>
+</html>
+
+--- file: html/atlasui/typewriter/script.js ---
+import { animate } from "motion";
+
+const CONFIG = {
+  letterDelay: 0.025,
+  boxFadeDuration: 0.125,
+  textFadeOutDuration: 0.25,
+  delayBetween: 5500,
+};
+
+const textArray = [
+  "Building pixels with purpose",
+  "Shipping faster than deadlines",
+  "Deploy now, panic later!",
+  "Debugging at 2AM professionally",
+  "Fueled by coffee and code",
+];
+
+const typewriterEl = document.querySelector(".typewriter");
+
+let currentIndex = 0;
+
+function renderText(text) {
+  typewriterEl.innerHTML = "";
+
+  const wrapper = document.createElement("span");
+
+  text.split("").forEach((char, index) => {
+    const charContainer = document.createElement("span");
+    charContainer.style.position = "relative";
+
+    // Character span
+    const charSpan = document.createElement("span");
+    charSpan.textContent = char === " " ? "\u00A0" : char;
+    charSpan.style.opacity = "0";
+
+    // box overlay
+    const boxSpan = document.createElement("span");
+    boxSpan.classList.add("box-span");
+
+    charContainer.appendChild(charSpan);
+    charContainer.appendChild(boxSpan);
+    wrapper.appendChild(charContainer);
+
+    // animate character
+    animate(
+      charSpan,
+      { opacity: 1 },
+      { duration: 0, delay: index * CONFIG.letterDelay },
+    );
+
+    // animate box
+    animate(
+      boxSpan,
+      { opacity: [0, 1, 0] },
+      {
+        delay: index * CONFIG.letterDelay,
+        times: [0, 0.1, 1],
+        duration: CONFIG.boxFadeDuration,
+        ease: "ease-in-out",
+      },
+    );
+  });
+
+  typewriterEl.appendChild(wrapper);
+}
+
+async function transitionText() {
+  const currentWrapper = typewriterEl.querySelector("span");
+
+  // Fade out existing text
+  if (currentWrapper) {
+    await animate(
+      currentWrapper,
+      { opacity: 0 },
+      {
+        duration: CONFIG.textFadeOutDuration,
+        ease: "ease-in-out",
+      },
+    ).finished;
+  }
+
+  currentIndex = (currentIndex + 1) % textArray.length;
+
+  renderText(textArray[currentIndex]);
+}
+
+renderText(textArray[0]);
+setInterval(transitionText, CONFIG.delayBetween);
+
+--- file: html/atlasui/typewriter/style.css ---
+:root {
+  --background: light-dark(
+    oklch(100% 0.00011 271.152),
+    oklch(18.22% 0.00002 271.152)
+  );
+  --foreground: light-dark(
+    oklch(18.22% 0.00002 271.152),
+    oklch(98.511% 0.00011 271.152)
+  );
+}
+
+html {
+  color-scheme: light dark;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100svh;
+  background-color: var(--background);
+  color: var(--foreground);
+  font-family: "Inter", sans-serif;
+  max-width: 800px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Important styles */
+.typewriter {
+  font-size: 0.875rem;
+  line-height: 1.5;
+  font-weight: 300;
+  text-transform: uppercase;
+}
+
+.box-span {
+  position: absolute;
+  inset: 0 1px;
+  opacity: 0;
+  background: currentColor;
+  pointer-events: none;
+}
+
+
+
 ===== COMPONENT: warp-slider =====
 Title: Warp Slider
 Description: A smooth, infinite slider with dynamic warp distortion and momentum based scrolling.

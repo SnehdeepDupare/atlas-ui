@@ -1,0 +1,33 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "typewriter-html-demo",
+  "title": "Typewriter",
+  "description": "Example of typewriter component that cycles through text with a synced flashing highlight animation built with HTML, CSS, JavaScript and Motion.",
+  "dependencies": [
+    "motion"
+  ],
+  "files": [
+    {
+      "path": "registry/html/examples/typewriter-html-demo/index.html",
+      "content": "<!doctype html>\n<html lang=\"en\">\n  <head>\n    <meta charset=\"UTF-8\" />\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" />\n    <title>Typewriter Html Demo - Atlas UI</title>\n    <link rel=\"stylesheet\" href=\"style.css\" />\n  </head>\n  <body>\n    <p class=\"typewriter\"></p>\n\n    <script type=\"module\" src=\"script.js\"></script>\n  </body>\n</html>\n",
+      "type": "registry:file",
+      "target": "~/typewriter/index.html"
+    },
+    {
+      "path": "registry/html/examples/typewriter-html-demo/style.css",
+      "content": ":root {\r\n  --background: light-dark(\r\n    oklch(100% 0.00011 271.152),\r\n    oklch(18.22% 0.00002 271.152)\r\n  );\r\n  --foreground: light-dark(\r\n    oklch(18.22% 0.00002 271.152),\r\n    oklch(98.511% 0.00011 271.152)\r\n  );\r\n}\r\n\r\nhtml {\r\n  color-scheme: light dark;\r\n}\r\n\r\n* {\r\n  margin: 0;\r\n  padding: 0;\r\n  box-sizing: border-box;\r\n}\r\n\r\nbody {\r\n  min-height: 100svh;\r\n  background-color: var(--background);\r\n  color: var(--foreground);\r\n  font-family: \"Inter\", sans-serif;\r\n  max-width: 800px;\r\n  margin: 0 auto;\r\n  display: flex;\r\n  flex-direction: column;\r\n  gap: 1rem;\r\n  align-items: center;\r\n  justify-content: center;\r\n}\r\n\r\n/* Important styles */\r\n.typewriter {\r\n  font-size: 0.875rem;\r\n  line-height: 1.5;\r\n  font-weight: 300;\r\n  text-transform: uppercase;\r\n}\r\n\r\n.box-span {\r\n  position: absolute;\r\n  inset: 0 1px;\r\n  opacity: 0;\r\n  background: currentColor;\r\n  pointer-events: none;\r\n}\r\n",
+      "type": "registry:file",
+      "target": "~/typewriter/style.css"
+    },
+    {
+      "path": "registry/html/examples/typewriter-html-demo/script.js",
+      "content": "import { animate } from \"motion\";\n\nconst CONFIG = {\n  letterDelay: 0.025,\n  boxFadeDuration: 0.125,\n  textFadeOutDuration: 0.25,\n  delayBetween: 5500,\n};\n\nconst textArray = [\n  \"Building pixels with purpose\",\n  \"Shipping faster than deadlines\",\n  \"Deploy now, panic later!\",\n  \"Debugging at 2AM professionally\",\n  \"Fueled by coffee and code\",\n];\n\nconst typewriterEl = document.querySelector(\".typewriter\");\n\nlet currentIndex = 0;\n\nfunction renderText(text) {\n  typewriterEl.innerHTML = \"\";\n\n  const wrapper = document.createElement(\"span\");\n\n  text.split(\"\").forEach((char, index) => {\n    const charContainer = document.createElement(\"span\");\n    charContainer.style.position = \"relative\";\n\n    // Character span\n    const charSpan = document.createElement(\"span\");\n    charSpan.textContent = char === \" \" ? \"\\u00A0\" : char;\n    charSpan.style.opacity = \"0\";\n\n    // box overlay\n    const boxSpan = document.createElement(\"span\");\n    boxSpan.classList.add(\"box-span\");\n\n    charContainer.appendChild(charSpan);\n    charContainer.appendChild(boxSpan);\n    wrapper.appendChild(charContainer);\n\n    // animate character\n    animate(\n      charSpan,\n      { opacity: 1 },\n      { duration: 0, delay: index * CONFIG.letterDelay },\n    );\n\n    // animate box\n    animate(\n      boxSpan,\n      { opacity: [0, 1, 0] },\n      {\n        delay: index * CONFIG.letterDelay,\n        times: [0, 0.1, 1],\n        duration: CONFIG.boxFadeDuration,\n        ease: \"ease-in-out\",\n      },\n    );\n  });\n\n  typewriterEl.appendChild(wrapper);\n}\n\nasync function transitionText() {\n  const currentWrapper = typewriterEl.querySelector(\"span\");\n\n  // Fade out existing text\n  if (currentWrapper) {\n    await animate(\n      currentWrapper,\n      { opacity: 0 },\n      {\n        duration: CONFIG.textFadeOutDuration,\n        ease: \"ease-in-out\",\n      },\n    ).finished;\n  }\n\n  currentIndex = (currentIndex + 1) % textArray.length;\n\n  renderText(textArray[currentIndex]);\n}\n\nrenderText(textArray[0]);\nsetInterval(transitionText, CONFIG.delayBetween);\n",
+      "type": "registry:file",
+      "target": "~/typewriter/script.js"
+    }
+  ],
+  "meta": {
+    "framework": "html"
+  },
+  "type": "registry:example"
+}
