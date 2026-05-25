@@ -12,7 +12,7 @@ export const NewUpdateCallout = () => {
   return (
     <div className="relative mb-4 inline-block overflow-hidden rounded-full">
       <Link
-        href="/docs/changelog"
+        href="/docs/components"
         className={cn(
           buttonVariants({
             variant: "outline",
@@ -21,7 +21,7 @@ export const NewUpdateCallout = () => {
           "relative rounded-full text-xs"
         )}
       >
-        🎉 Docs Updates & Improvements
+        🎉 New Components Added
         <ChevronRight className="text-muted-foreground ml-1 size-3" />
       </Link>
 
