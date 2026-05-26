@@ -18,71 +18,71 @@ Always use the HTML implementation listed below.
 ## Components
 
 - Animated Mobile Navbar: A simple animated mobile navbar component.
-  - [React Docs](https://www.atlasui.dev/docs/components/react/animated-mobile-navbar)
-  - [HTML Docs](https://www.atlasui.dev/docs/components/html/animated-mobile-navbar)
+  - [React Docs](https://www.atlasui.dev/docs/components/react/animated-mobile-navbar.md)
+  - [HTML Docs](https://www.atlasui.dev/docs/components/html/animated-mobile-navbar.md)
 - Blend Mouse Trailer: A simple Lazy Mouse Trailer which blends with the content on hover.
-  - [React Docs](https://www.atlasui.dev/docs/components/react/blend-mouse-trailer)
-  - [HTML Docs](https://www.atlasui.dev/docs/components/html/blend-mouse-trailer)
+  - [React Docs](https://www.atlasui.dev/docs/components/react/blend-mouse-trailer.md)
+  - [HTML Docs](https://www.atlasui.dev/docs/components/html/blend-mouse-trailer.md)
 - Blob Mouse Trailer: A simple Lazy Blob Mouse Trailer
-  - [React Docs](https://www.atlasui.dev/docs/components/react/blob-mouse-trailer)
-  - [HTML Docs](https://www.atlasui.dev/docs/components/html/blob-mouse-trailer)
+  - [React Docs](https://www.atlasui.dev/docs/components/react/blob-mouse-trailer.md)
+  - [HTML Docs](https://www.atlasui.dev/docs/components/html/blob-mouse-trailer.md)
 - Box Reveal: A smooth reveal animation that slides a colored overlay away to introduce content as it enters the viewport.
-  - [React Docs](https://www.atlasui.dev/docs/components/react/box-reveal)
-  - [HTML Docs](https://www.atlasui.dev/docs/components/html/box-reveal)
+  - [React Docs](https://www.atlasui.dev/docs/components/react/box-reveal.md)
+  - [HTML Docs](https://www.atlasui.dev/docs/components/html/box-reveal.md)
 - Cascade Text: A smooth line-by-line text reveal animation.
-  - [React Docs](https://www.atlasui.dev/docs/components/react/cascade-text)
-  - [HTML Docs](https://www.atlasui.dev/docs/components/html/cascade-text)
+  - [React Docs](https://www.atlasui.dev/docs/components/react/cascade-text.md)
+  - [HTML Docs](https://www.atlasui.dev/docs/components/html/cascade-text.md)
 - Dot And Circle Mouse Trailer: A simple Lazy Dot and Circle Mouse Trailer
-  - [React Docs](https://www.atlasui.dev/docs/components/react/dot-and-circle-mouse-trailer)
-  - [HTML Docs](https://www.atlasui.dev/docs/components/html/dot-and-circle-mouse-trailer)
+  - [React Docs](https://www.atlasui.dev/docs/components/react/dot-and-circle-mouse-trailer.md)
+  - [HTML Docs](https://www.atlasui.dev/docs/components/html/dot-and-circle-mouse-trailer.md)
 - Fancy Theme Toggle: Theme Toggle from the classic Designer vs Developer meme.
-  - [React Docs](https://www.atlasui.dev/docs/components/react/fancy-theme-toggle)
-  - [HTML Docs](https://www.atlasui.dev/docs/components/html/fancy-theme-toggle)
+  - [React Docs](https://www.atlasui.dev/docs/components/react/fancy-theme-toggle.md)
+  - [HTML Docs](https://www.atlasui.dev/docs/components/html/fancy-theme-toggle.md)
 - Hacker Text: A text animation that scrambles letters before revealing the final text.
-  - [React Docs](https://www.atlasui.dev/docs/components/react/hacker-text)
-  - [HTML Docs](https://www.atlasui.dev/docs/components/html/hacker-text)
+  - [React Docs](https://www.atlasui.dev/docs/components/react/hacker-text.md)
+  - [HTML Docs](https://www.atlasui.dev/docs/components/html/hacker-text.md)
 - Letter Swap: A text animation that swaps the letters vertically on hover.
-  - [React Docs](https://www.atlasui.dev/docs/components/react/letter-swap)
-  - [HTML Docs](https://www.atlasui.dev/docs/components/html/letter-swap)
+  - [React Docs](https://www.atlasui.dev/docs/components/react/letter-swap.md)
+  - [HTML Docs](https://www.atlasui.dev/docs/components/html/letter-swap.md)
 - Loki Text Effect: The iconic text animation from the Loki series intro.
-  - [React Docs](https://www.atlasui.dev/docs/components/react/loki-text-effect)
-  - [HTML Docs](https://www.atlasui.dev/docs/components/html/loki-text-effect)
+  - [React Docs](https://www.atlasui.dev/docs/components/react/loki-text-effect.md)
+  - [HTML Docs](https://www.atlasui.dev/docs/components/html/loki-text-effect.md)
 - Magnetic Hover: A smooth magnetic hover interaction that subtly pulls elements toward the with using spring based motion animations.
-  - [React Docs](https://www.atlasui.dev/docs/components/react/magnetic-hover)
-  - [HTML Docs](https://www.atlasui.dev/docs/components/html/magnetic-hover)
+  - [React Docs](https://www.atlasui.dev/docs/components/react/magnetic-hover.md)
+  - [HTML Docs](https://www.atlasui.dev/docs/components/html/magnetic-hover.md)
 - Morph Navbar: A polished navigation bar with a fluid, morphing pill that tracks the active link and hover state.
-  - [React Docs](https://www.atlasui.dev/docs/components/react/morph-navbar)
-  - [HTML Docs](https://www.atlasui.dev/docs/components/html/morph-navbar)
+  - [React Docs](https://www.atlasui.dev/docs/components/react/morph-navbar.md)
+  - [HTML Docs](https://www.atlasui.dev/docs/components/html/morph-navbar.md)
 - Notch Nav: A Notch style trigger that reveals the navigation menu from above.
-  - [React Docs](https://www.atlasui.dev/docs/components/react/notch-nav)
-  - [HTML Docs](https://www.atlasui.dev/docs/components/html/notch-nav)
+  - [React Docs](https://www.atlasui.dev/docs/components/react/notch-nav.md)
+  - [HTML Docs](https://www.atlasui.dev/docs/components/html/notch-nav.md)
 - Parallax Sections: A simple Parallax effect using Motion.
-  - [React Docs](https://www.atlasui.dev/docs/components/react/parallax-sections)
-  - [HTML Docs](https://www.atlasui.dev/docs/components/html/parallax-sections)
+  - [React Docs](https://www.atlasui.dev/docs/components/react/parallax-sections.md)
+  - [HTML Docs](https://www.atlasui.dev/docs/components/html/parallax-sections.md)
 - Project Gallery: A Project Gallery with an interactive modal.
-  - [React Docs](https://www.atlasui.dev/docs/components/react/project-gallery)
-  - [HTML Docs](https://www.atlasui.dev/docs/components/html/project-gallery)
+  - [React Docs](https://www.atlasui.dev/docs/components/react/project-gallery.md)
+  - [HTML Docs](https://www.atlasui.dev/docs/components/html/project-gallery.md)
 - Reveal Effect: Animates content into view with a vertical slide, blur fade-in, and clipping reveal effect.
-  - [React Docs](https://www.atlasui.dev/docs/components/react/reveal-effect)
-  - [HTML Docs](https://www.atlasui.dev/docs/components/html/reveal-effect)
+  - [React Docs](https://www.atlasui.dev/docs/components/react/reveal-effect.md)
+  - [HTML Docs](https://www.atlasui.dev/docs/components/html/reveal-effect.md)
 - Scroll Based Character Reveal: A text reveal effect which progressively reveals text character by character as you scroll.
-  - [React Docs](https://www.atlasui.dev/docs/components/react/scroll-based-character-reveal)
-  - [HTML Docs](https://www.atlasui.dev/docs/components/html/scroll-based-character-reveal)
+  - [React Docs](https://www.atlasui.dev/docs/components/react/scroll-based-character-reveal.md)
+  - [HTML Docs](https://www.atlasui.dev/docs/components/html/scroll-based-character-reveal.md)
 - Scroll Based Text Reveal: A text reveal effect which animates the opacity of the text as you scroll.
-  - [React Docs](https://www.atlasui.dev/docs/components/react/scroll-based-text-reveal)
-  - [HTML Docs](https://www.atlasui.dev/docs/components/html/scroll-based-text-reveal)
+  - [React Docs](https://www.atlasui.dev/docs/components/react/scroll-based-text-reveal.md)
+  - [HTML Docs](https://www.atlasui.dev/docs/components/html/scroll-based-text-reveal.md)
 - Scroll Based Word Reveal: A text reveal effect which progressively reveals text word by word as you scroll.
-  - [React Docs](https://www.atlasui.dev/docs/components/react/scroll-based-word-reveal)
-  - [HTML Docs](https://www.atlasui.dev/docs/components/html/scroll-based-word-reveal)
+  - [React Docs](https://www.atlasui.dev/docs/components/react/scroll-based-word-reveal.md)
+  - [HTML Docs](https://www.atlasui.dev/docs/components/html/scroll-based-word-reveal.md)
 - Shiny Button: A shiny button with a sleek animation effect.
-  - [React Docs](https://www.atlasui.dev/docs/components/react/shiny-button)
-  - [HTML Docs](https://www.atlasui.dev/docs/components/html/shiny-button)
+  - [React Docs](https://www.atlasui.dev/docs/components/react/shiny-button.md)
+  - [HTML Docs](https://www.atlasui.dev/docs/components/html/shiny-button.md)
 - Typewriter: A typewriter component that cycles through text with a synced flashing highlight animation.
-  - [React Docs](https://www.atlasui.dev/docs/components/react/typewriter)
-  - [HTML Docs](https://www.atlasui.dev/docs/components/html/typewriter)
+  - [React Docs](https://www.atlasui.dev/docs/components/react/typewriter.md)
+  - [HTML Docs](https://www.atlasui.dev/docs/components/html/typewriter.md)
 - Warp Slider: A smooth, infinite slider with dynamic warp distortion and momentum based scrolling.
-  - [React Docs](https://www.atlasui.dev/docs/components/react/warp-slider)
-  - [HTML Docs](https://www.atlasui.dev/docs/components/html/warp-slider)
+  - [React Docs](https://www.atlasui.dev/docs/components/react/warp-slider.md)
+  - [HTML Docs](https://www.atlasui.dev/docs/components/html/warp-slider.md)
 
 ## Optional
 

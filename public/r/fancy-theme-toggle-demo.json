@@ -1,15 +1,15 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "fancy-theme-toggle-demo",
-  "title": "Fancy Theme Toggle",
-  "description": "Theme Toggle from the classic Designer vs Developer meme.",
+  "title": "Fancy Theme Toggle Demo",
+  "description": "Example of Theme Toggle from the classic Designer vs Developer meme.",
   "registryDependencies": [
     "https://atlasui.dev/r/fancy-theme-toggle.json"
   ],
   "files": [
     {
       "path": "registry/react/examples/fancy-theme-toggle-demo.tsx",
-      "content": "import { ThemeToggle } from \"@/registry/react/atlasui/fancy-theme-toggle\";\n\nexport const FancyThemeToggleDemo = () => {\n  return <ThemeToggle />;\n};\n",
+      "content": "import { ThemeToggle } from \"@/registry/react/atlasui/fancy-theme-toggle\";\r\n\r\nexport const FancyThemeToggleDemo = () => {\r\n  return <ThemeToggle />;\r\n};\r\n",
       "type": "registry:example",
       "target": "components/fancy-theme-toggle-demo.tsx"
     }

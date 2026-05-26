@@ -3,7 +3,7 @@ import { type Registry } from "shadcn/schema";
 export const html: Registry["items"] = [
   {
     name: "animated-mobile-navbar-html",
-    type: "registry:component",
+    type: "registry:file",
     title: "Animated Mobile Navbar",
     description:
       "A simple animated mobile navbar component in HTML, CSS, JavaScript and Motion.",
@@ -32,7 +32,7 @@ export const html: Registry["items"] = [
   },
   {
     name: "project-gallery-html",
-    type: "registry:component",
+    type: "registry:file",
     title: "Project Gallery",
     description:
       "A Project Gallery with an interactive modal using HTML, CSS, JavaScript and Motion.",
@@ -60,7 +60,7 @@ export const html: Registry["items"] = [
   },
   {
     name: "parallax-sections-html",
-    type: "registry:component",
+    type: "registry:file",
     title: "Parallax Sections",
     description:
       "A simple Parallax effect using HTML, CSS, JavaScript and Motion.",
@@ -88,7 +88,7 @@ export const html: Registry["items"] = [
   },
   {
     name: "shiny-button-html",
-    type: "registry:component",
+    type: "registry:file",
     title: "Shiny Button",
     description:
       "A shiny button with a sleek animation effect using HTML, CSS, JavaScript and Motion.",
@@ -116,7 +116,7 @@ export const html: Registry["items"] = [
   },
   {
     name: "dot-and-circle-mouse-trailer-html",
-    type: "registry:component",
+    type: "registry:file",
     title: "Dot And Circle Mouse Trailer",
     description:
       "A simple Lazy Dot and Circle Mouse Trailer using HTML, CSS and JavaScript.",
@@ -144,7 +144,7 @@ export const html: Registry["items"] = [
   },
   {
     name: "blob-mouse-trailer-html",
-    type: "registry:component",
+    type: "registry:file",
     title: "Blob Mouse Trailer",
     description:
       "A simple Lazy Blob Mouse Trailer using HTML, CSS and JavaScript.",
@@ -172,7 +172,7 @@ export const html: Registry["items"] = [
   },
   {
     name: "blend-mouse-trailer-html",
-    type: "registry:component",
+    type: "registry:file",
     title: "Blend Mouse Trailer",
     description:
       "A simple Lazy Mouse Trailer which blends with the content on hover using HTML, CSS and JavaScript.",
@@ -200,7 +200,7 @@ export const html: Registry["items"] = [
   },
   {
     name: "hacker-text-html",
-    type: "registry:component",
+    type: "registry:file",
     title: "Hacker Text",
     description:
       "A text animation that scrambles letters before revealing the final text using HTML, CSS and JavaScript.",
@@ -228,7 +228,7 @@ export const html: Registry["items"] = [
   },
   {
     name: "scroll-based-text-reveal-html",
-    type: "registry:component",
+    type: "registry:file",
     title: "Scroll Based Text Reveal",
     description:
       "A text reveal effect which animates the opacity of the text as you scroll using HTML, CSS, JavaScript and Motion.",
@@ -256,7 +256,7 @@ export const html: Registry["items"] = [
   },
   {
     name: "scroll-based-word-reveal-html",
-    type: "registry:component",
+    type: "registry:file",
     title: "Scroll Based Word Reveal",
     description:
       "A text reveal effect which progressively reveals text word by word as you scroll using HTML, CSS, JavaScript and Motion.",
@@ -284,7 +284,7 @@ export const html: Registry["items"] = [
   },
   {
     name: "scroll-based-character-reveal-html",
-    type: "registry:component",
+    type: "registry:file",
     title: "Scroll Based Character Reveal",
     description:
       "A text reveal effect which progressively reveals text character by character as you scroll using HTML, CSS, JavaScript and Motion.",
@@ -312,7 +312,7 @@ export const html: Registry["items"] = [
   },
   {
     name: "reveal-effect-html",
-    type: "registry:component",
+    type: "registry:file",
     title: "Reveal Effect",
     description:
       "Animates content into view with a vertical slide, blur fade-in, and clipping reveal effect using HTML, CSS, JavaScript and Motion.",
@@ -340,7 +340,7 @@ export const html: Registry["items"] = [
   },
   {
     name: "loki-text-effect-html",
-    type: "registry:component",
+    type: "registry:file",
     title: "Loki Text Effect",
     description:
       "The iconic text animation from the Loki series intro using HTML, CSS, JavaScript and Motion.",
@@ -403,7 +403,7 @@ export const html: Registry["items"] = [
   },
   {
     name: "box-reveal-html",
-    type: "registry:component",
+    type: "registry:file",
     title: "Box Reveal",
     description:
       "A smooth reveal animation that slides a colored overlay away to introduce content as it enters the viewport.",
@@ -431,7 +431,7 @@ export const html: Registry["items"] = [
   },
   {
     name: "notch-nav-html",
-    type: "registry:component",
+    type: "registry:file",
     title: "Notch Nav",
     description:
       "A Notch style trigger that reveals the navigation menu from above built with HTML, CSS, JavaScript and Motion.",
@@ -459,7 +459,7 @@ export const html: Registry["items"] = [
   },
   {
     name: "morph-navbar-html",
-    type: "registry:component",
+    type: "registry:file",
     title: "Morph Navbar",
     description:
       "A polished navigation bar with a fluid, morphing pill that tracks the active link and hover state built with HTML, CSS, JavaScript and Motion.",
@@ -487,7 +487,7 @@ export const html: Registry["items"] = [
   },
   {
     name: "cascade-text-html",
-    type: "registry:component",
+    type: "registry:file",
     title: "Cascade Text",
     description:
       "A smooth line-by-line text reveal animation built with HTML, CSS, JavaScript and Motion.",
@@ -515,7 +515,7 @@ export const html: Registry["items"] = [
   },
   {
     name: "letter-swap-html",
-    type: "registry:component",
+    type: "registry:file",
     title: "Letter Swap",
     description:
       "A text animation that swaps the letters vertically on hover, built with HTML, CSS, JavaScript and Motion.",
@@ -543,7 +543,7 @@ export const html: Registry["items"] = [
   },
   {
     name: "warp-slider-html",
-    type: "registry:component",
+    type: "registry:file",
     title: "Warp Slider",
     description:
       "A smooth, infinite slider with dynamic warp distortion and momentum based scrolling built with HTML, CSS, JavaScript and Three.js.",
@@ -571,7 +571,7 @@ export const html: Registry["items"] = [
   },
   {
     name: "fancy-theme-toggle-html",
-    type: "registry:component",
+    type: "registry:file",
     title: "Fancy Theme Toggle",
     description:
       "Theme Toggle from the classic Designer vs Developer meme, built with HTML, CSS, JavaScript and Motion.",
@@ -599,7 +599,7 @@ export const html: Registry["items"] = [
   },
   {
     name: "magnetic-hover-html",
-    type: "registry:component",
+    type: "registry:file",
     title: "Magnetic Hover",
     description:
       "A smooth magnetic hover interaction that subtly pulls elements toward the with using spring based motion animations, built with HTML, CSS, JavaScript and Motion.",
@@ -627,7 +627,7 @@ export const html: Registry["items"] = [
   },
   {
     name: "typewriter-html",
-    type: "registry:component",
+    type: "registry:file",
     title: "Typewriter",
     description:
       "A typewriter component that cycles through text with a synced flashing highlight animation built with HTML, CSS, JavaScript and Motion.",

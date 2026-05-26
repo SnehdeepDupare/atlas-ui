@@ -9,7 +9,7 @@
   "files": [
     {
       "path": "registry/react/examples/magnetic-hover-demo.tsx",
-      "content": "import { Button } from \"@/components/ui/button\";\r\nimport { MagneticHover } from \"@/registry/react/atlasui/magnetic-hover\";\r\n\r\nexport const MagneticHoverDemo = () => {\r\n  return (\r\n    <div>\r\n      <MagneticHover>\r\n        <Button>Hover Me</Button>\r\n      </MagneticHover>\r\n    </div>\r\n  );\r\n};\r\n",
+      "content": "import Link from \"next/link\";\r\n\r\nimport { Button } from \"@/components/ui/button\";\r\nimport { MagneticHover } from \"@/registry/react/atlasui/magnetic-hover\";\r\n\r\nexport const MagneticHoverDemo = () => {\r\n  return (\r\n    <div className=\"flex flex-col items-center justify-center gap-4\">\r\n      <MagneticHover>\r\n        <Button>Hover Me</Button>\r\n      </MagneticHover>\r\n\r\n      <div className=\"text-muted-foreground flex flex-wrap items-center justify-center gap-2 text-sm\">\r\n        <span>The cursor has</span>\r\n\r\n        <MagneticHover strength={0.5}>\r\n          <Link\r\n            href=\"#\"\r\n            className=\"text-foreground font-medium underline underline-offset-4\"\r\n          >\r\n            magnetic powers\r\n          </Link>\r\n        </MagneticHover>\r\n\r\n        <span>now.</span>\r\n      </div>\r\n    </div>\r\n  );\r\n};\r\n",
       "type": "registry:example",
       "target": "components/magnetic-hover-demo.tsx"
     }

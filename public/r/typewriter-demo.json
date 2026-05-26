@@ -9,7 +9,7 @@
   "files": [
     {
       "path": "registry/react/examples/typewriter-demo.tsx",
-      "content": "import { Typewriter } from \"@/registry/react/atlasui/typewriter\";\n\nexport const TypewriterDemo = () => {\n  return (\n    <Typewriter\n      text={[\n        \"Building pixels with purpose\",\n        \"Shipping faster than deadlines\",\n        \"Deploy now, panic later!\",\n        \"Debugging at 2AM professionally\",\n        \"Fueled by coffee and code\",\n      ]}\n    />\n  );\n};\n",
+      "content": "import { Typewriter } from \"@/registry/react/atlasui/typewriter\";\r\n\r\nexport const TypewriterDemo = () => {\r\n  return (\r\n    <Typewriter\r\n      text={[\r\n        \"Building pixels with purpose\",\r\n        \"Shipping faster than deadlines\",\r\n        \"Deploy now, panic later!\",\r\n        \"Debugging at 2AM professionally\",\r\n        \"Fueled by coffee and code\",\r\n      ]}\r\n    />\r\n  );\r\n};\r\n",
       "type": "registry:example",
       "target": "components/typewriter-demo.tsx"
     }

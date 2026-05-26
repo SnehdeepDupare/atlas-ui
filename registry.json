@@ -885,7 +885,7 @@
       "meta": {
         "framework": "html"
       },
-      "type": "registry:component"
+      "type": "registry:file"
     },
     {
       "name": "project-gallery-html",
@@ -914,7 +914,7 @@
       "meta": {
         "framework": "html"
       },
-      "type": "registry:component"
+      "type": "registry:file"
     },
     {
       "name": "parallax-sections-html",
@@ -943,7 +943,7 @@
       "meta": {
         "framework": "html"
       },
-      "type": "registry:component"
+      "type": "registry:file"
     },
     {
       "name": "shiny-button-html",
@@ -972,7 +972,7 @@
       "meta": {
         "framework": "html"
       },
-      "type": "registry:component"
+      "type": "registry:file"
     },
     {
       "name": "dot-and-circle-mouse-trailer-html",
@@ -999,7 +999,7 @@
       "meta": {
         "framework": "html"
       },
-      "type": "registry:component"
+      "type": "registry:file"
     },
     {
       "name": "blob-mouse-trailer-html",
@@ -1026,7 +1026,7 @@
       "meta": {
         "framework": "html"
       },
-      "type": "registry:component"
+      "type": "registry:file"
     },
     {
       "name": "blend-mouse-trailer-html",
@@ -1053,7 +1053,7 @@
       "meta": {
         "framework": "html"
       },
-      "type": "registry:component"
+      "type": "registry:file"
     },
     {
       "name": "hacker-text-html",
@@ -1080,7 +1080,7 @@
       "meta": {
         "framework": "html"
       },
-      "type": "registry:component"
+      "type": "registry:file"
     },
     {
       "name": "scroll-based-text-reveal-html",
@@ -1109,7 +1109,7 @@
       "meta": {
         "framework": "html"
       },
-      "type": "registry:component"
+      "type": "registry:file"
     },
     {
       "name": "scroll-based-word-reveal-html",
@@ -1138,7 +1138,7 @@
       "meta": {
         "framework": "html"
       },
-      "type": "registry:component"
+      "type": "registry:file"
     },
     {
       "name": "scroll-based-character-reveal-html",
@@ -1167,7 +1167,7 @@
       "meta": {
         "framework": "html"
       },
-      "type": "registry:component"
+      "type": "registry:file"
     },
     {
       "name": "reveal-effect-html",
@@ -1196,7 +1196,7 @@
       "meta": {
         "framework": "html"
       },
-      "type": "registry:component"
+      "type": "registry:file"
     },
     {
       "name": "loki-text-effect-html",
@@ -1260,7 +1260,7 @@
       "meta": {
         "framework": "html"
       },
-      "type": "registry:component"
+      "type": "registry:file"
     },
     {
       "name": "box-reveal-html",
@@ -1289,7 +1289,7 @@
       "meta": {
         "framework": "html"
       },
-      "type": "registry:component"
+      "type": "registry:file"
     },
     {
       "name": "notch-nav-html",
@@ -1318,7 +1318,7 @@
       "meta": {
         "framework": "html"
       },
-      "type": "registry:component"
+      "type": "registry:file"
     },
     {
       "name": "morph-navbar-html",
@@ -1347,7 +1347,7 @@
       "meta": {
         "framework": "html"
       },
-      "type": "registry:component"
+      "type": "registry:file"
     },
     {
       "name": "cascade-text-html",
@@ -1376,7 +1376,7 @@
       "meta": {
         "framework": "html"
       },
-      "type": "registry:component"
+      "type": "registry:file"
     },
     {
       "name": "letter-swap-html",
@@ -1405,7 +1405,7 @@
       "meta": {
         "framework": "html"
       },
-      "type": "registry:component"
+      "type": "registry:file"
     },
     {
       "name": "warp-slider-html",
@@ -1434,7 +1434,7 @@
       "meta": {
         "framework": "html"
       },
-      "type": "registry:component"
+      "type": "registry:file"
     },
     {
       "name": "fancy-theme-toggle-html",
@@ -1464,7 +1464,7 @@
       "meta": {
         "framework": "html"
       },
-      "type": "registry:component"
+      "type": "registry:file"
     },
     {
       "name": "magnetic-hover-html",
@@ -1493,7 +1493,7 @@
       "meta": {
         "framework": "html"
       },
-      "type": "registry:component"
+      "type": "registry:file"
     },
     {
       "name": "typewriter-html",
@@ -1522,7 +1522,7 @@
       "meta": {
         "framework": "html"
       },
-      "type": "registry:component"
+      "type": "registry:file"
     },
     {
       "name": "animated-mobile-navbar-html-demo",

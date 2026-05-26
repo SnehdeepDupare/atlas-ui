@@ -177,8 +177,7 @@ async function generateLlmsContent() {
     .sort((a, b) => a.name.localeCompare(b.name));
 
   const htmlFileItems = registry.items.filter(
-    (item) =>
-      item.type === "registry:component" && item.meta?.framework === "html"
+    (item) => item.type === "registry:file" && item.meta?.framework === "html"
   );
 
   // Deduplicated map of HTML component slugs
@@ -191,12 +190,12 @@ async function generateLlmsContent() {
   const componentsList = reactItems.map((component) => {
     const title = component.title || component.name;
     const description = component.description || `The ${title} component.`;
-    const reactLink = `  - [React Docs](${siteConfig.url}/docs/components/react/${component.name})`;
+    const reactLink = `  - [React Docs](${siteConfig.url}/docs/components/react/${component.name}.md)`;
     const lines = [`- ${title}: ${description}`, reactLink];
 
     if (htmlSlugSet.has(component.name)) {
       lines.push(
-        `  - [HTML Docs](${siteConfig.url}/docs/components/html/${component.name})`
+        `  - [HTML Docs](${siteConfig.url}/docs/components/html/${component.name}.md)`
       );
     }
 
@@ -354,7 +353,9 @@ async function generateLlmsFullContent(
   const components = registry.items
     .filter(
       (item) =>
-        item.type === "registry:ui" || item.type === "registry:component"
+        item.type === "registry:ui" ||
+        item.type === "registry:component" ||
+        (item.meta?.framework === "html" && item.type === "registry:file")
     )
     .sort((a, b) => a.name.localeCompare(b.name));
 
