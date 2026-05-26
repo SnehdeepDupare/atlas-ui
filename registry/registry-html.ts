@@ -569,4 +569,88 @@ export const html: Registry["items"] = [
       },
     ],
   },
+  {
+    name: "fancy-theme-toggle-html",
+    type: "registry:component",
+    title: "Fancy Theme Toggle",
+    description:
+      "Theme Toggle from the classic Designer vs Developer meme, built with HTML, CSS, JavaScript and Motion.",
+    meta: {
+      framework: "html",
+    },
+    dependencies: ["motion", "lucide"],
+    files: [
+      {
+        path: "html/atlasui/fancy-theme-toggle/index.html",
+        type: "registry:file",
+        target: "~/fancy-theme-toggle/index.html",
+      },
+      {
+        path: "html/atlasui/fancy-theme-toggle/style.css",
+        type: "registry:file",
+        target: "~/fancy-theme-toggle/style.css",
+      },
+      {
+        path: "html/atlasui/fancy-theme-toggle/script.js",
+        type: "registry:file",
+        target: "~/fancy-theme-toggle/script.js",
+      },
+    ],
+  },
+  {
+    name: "magnetic-hover-html",
+    type: "registry:component",
+    title: "Magnetic Hover",
+    description:
+      "A smooth magnetic hover interaction that subtly pulls elements toward the with using spring based motion animations, built with HTML, CSS, JavaScript and Motion.",
+    meta: {
+      framework: "html",
+    },
+    dependencies: ["motion"],
+    files: [
+      {
+        path: "html/atlasui/magnetic-hover/index.html",
+        type: "registry:file",
+        target: "~/magnetic-hover/index.html",
+      },
+      {
+        path: "html/atlasui/magnetic-hover/style.css",
+        type: "registry:file",
+        target: "~/magnetic-hover/style.css",
+      },
+      {
+        path: "html/atlasui/magnetic-hover/script.js",
+        type: "registry:file",
+        target: "~/magnetic-hover/script.js",
+      },
+    ],
+  },
+  {
+    name: "typewriter-html",
+    type: "registry:component",
+    title: "Typewriter",
+    description:
+      "A typewriter component that cycles through text with a synced flashing highlight animation built with HTML, CSS, JavaScript and Motion.",
+    meta: {
+      framework: "html",
+    },
+    dependencies: ["motion"],
+    files: [
+      {
+        path: "html/atlasui/typewriter/index.html",
+        type: "registry:file",
+        target: "~/typewriter/index.html",
+      },
+      {
+        path: "html/atlasui/typewriter/style.css",
+        type: "registry:file",
+        target: "~/typewriter/style.css",
+      },
+      {
+        path: "html/atlasui/typewriter/script.js",
+        type: "registry:file",
+        target: "~/typewriter/script.js",
+      },
+    ],
+  },
 ];

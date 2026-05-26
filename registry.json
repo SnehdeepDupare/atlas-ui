@@ -380,6 +380,54 @@
       "type": "registry:component"
     },
     {
+      "name": "fancy-theme-toggle",
+      "title": "Fancy Theme Toggle",
+      "description": "Theme Toggle from the classic Designer vs Developer meme.",
+      "dependencies": [
+        "motion"
+      ],
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "registry/react/atlasui/fancy-theme-toggle.tsx",
+          "type": "registry:component"
+        }
+      ],
+      "type": "registry:component"
+    },
+    {
+      "name": "magnetic-hover",
+      "title": "Magnetic Hover",
+      "description": "A smooth magnetic hover interaction that subtly pulls elements toward the with using spring based motion animations.",
+      "dependencies": [
+        "motion"
+      ],
+      "files": [
+        {
+          "path": "registry/react/atlasui/magnetic-hover.tsx",
+          "type": "registry:component"
+        }
+      ],
+      "type": "registry:component"
+    },
+    {
+      "name": "typewriter",
+      "title": "Typewriter",
+      "description": "A typewriter component that cycles through text with a synced flashing highlight animation.",
+      "dependencies": [
+        "motion"
+      ],
+      "files": [
+        {
+          "path": "registry/react/atlasui/typewriter.tsx",
+          "type": "registry:component"
+        }
+      ],
+      "type": "registry:component"
+    },
+    {
       "name": "animated-mobile-navbar-demo",
       "title": "Animated Mobile Navbar Demo",
       "description": "Example showcasing the Animated Mobile Navbar component.",
@@ -757,6 +805,54 @@
           "path": "registry/react/examples/warp-slider-horizontal-demo.tsx",
           "type": "registry:example",
           "target": "components/warp-slider-horizontal-demo.tsx"
+        }
+      ],
+      "type": "registry:example"
+    },
+    {
+      "name": "fancy-theme-toggle-demo",
+      "title": "Fancy Theme Toggle Demo",
+      "description": "Example of Theme Toggle from the classic Designer vs Developer meme.",
+      "registryDependencies": [
+        "https://atlasui.dev/r/fancy-theme-toggle.json"
+      ],
+      "files": [
+        {
+          "path": "registry/react/examples/fancy-theme-toggle-demo.tsx",
+          "type": "registry:example",
+          "target": "components/fancy-theme-toggle-demo.tsx"
+        }
+      ],
+      "type": "registry:example"
+    },
+    {
+      "name": "magnetic-hover-demo",
+      "title": "Magnetic Hover Demo",
+      "description": "Example of a smooth magnetic hover interaction that subtly pulls elements toward the with using spring based motion animations.",
+      "registryDependencies": [
+        "https://atlasui.dev/r/magnetic-hover.json"
+      ],
+      "files": [
+        {
+          "path": "registry/react/examples/magnetic-hover-demo.tsx",
+          "type": "registry:example",
+          "target": "components/magnetic-hover-demo.tsx"
+        }
+      ],
+      "type": "registry:example"
+    },
+    {
+      "name": "typewriter-demo",
+      "title": "Typewriter Demo",
+      "description": "Example of typewriter component that cycles through text with a synced flashing highlight animation.",
+      "registryDependencies": [
+        "https://atlasui.dev/r/typewriter.json"
+      ],
+      "files": [
+        {
+          "path": "registry/react/examples/typewriter-demo.tsx",
+          "type": "registry:example",
+          "target": "components/typewriter-demo.tsx"
         }
       ],
       "type": "registry:example"
@@ -1333,6 +1429,94 @@
           "path": "registry/html/atlasui/warp-slider/script.js",
           "type": "registry:file",
           "target": "~/warp-slider/script.js"
+        }
+      ],
+      "meta": {
+        "framework": "html"
+      },
+      "type": "registry:component"
+    },
+    {
+      "name": "fancy-theme-toggle-html",
+      "title": "Fancy Theme Toggle",
+      "description": "Theme Toggle from the classic Designer vs Developer meme, built with HTML, CSS, JavaScript and Motion.",
+      "dependencies": [
+        "motion",
+        "lucide"
+      ],
+      "files": [
+        {
+          "path": "registry/html/atlasui/fancy-theme-toggle/index.html",
+          "type": "registry:file",
+          "target": "~/fancy-theme-toggle/index.html"
+        },
+        {
+          "path": "registry/html/atlasui/fancy-theme-toggle/style.css",
+          "type": "registry:file",
+          "target": "~/fancy-theme-toggle/style.css"
+        },
+        {
+          "path": "registry/html/atlasui/fancy-theme-toggle/script.js",
+          "type": "registry:file",
+          "target": "~/fancy-theme-toggle/script.js"
+        }
+      ],
+      "meta": {
+        "framework": "html"
+      },
+      "type": "registry:component"
+    },
+    {
+      "name": "magnetic-hover-html",
+      "title": "Magnetic Hover",
+      "description": "A smooth magnetic hover interaction that subtly pulls elements toward the with using spring based motion animations, built with HTML, CSS, JavaScript and Motion.",
+      "dependencies": [
+        "motion"
+      ],
+      "files": [
+        {
+          "path": "registry/html/atlasui/magnetic-hover/index.html",
+          "type": "registry:file",
+          "target": "~/magnetic-hover/index.html"
+        },
+        {
+          "path": "registry/html/atlasui/magnetic-hover/style.css",
+          "type": "registry:file",
+          "target": "~/magnetic-hover/style.css"
+        },
+        {
+          "path": "registry/html/atlasui/magnetic-hover/script.js",
+          "type": "registry:file",
+          "target": "~/magnetic-hover/script.js"
+        }
+      ],
+      "meta": {
+        "framework": "html"
+      },
+      "type": "registry:component"
+    },
+    {
+      "name": "typewriter-html",
+      "title": "Typewriter",
+      "description": "A typewriter component that cycles through text with a synced flashing highlight animation built with HTML, CSS, JavaScript and Motion.",
+      "dependencies": [
+        "motion"
+      ],
+      "files": [
+        {
+          "path": "registry/html/atlasui/typewriter/index.html",
+          "type": "registry:file",
+          "target": "~/typewriter/index.html"
+        },
+        {
+          "path": "registry/html/atlasui/typewriter/style.css",
+          "type": "registry:file",
+          "target": "~/typewriter/style.css"
+        },
+        {
+          "path": "registry/html/atlasui/typewriter/script.js",
+          "type": "registry:file",
+          "target": "~/typewriter/script.js"
         }
       ],
       "meta": {
@@ -2084,6 +2268,97 @@
         {
           "path": "registry/html/examples/warp-slider-horizontal-html-demo/script.js",
           "type": "registry:example"
+        }
+      ],
+      "meta": {
+        "framework": "html"
+      },
+      "type": "registry:example"
+    },
+    {
+      "name": "fancy-theme-toggle-html-demo",
+      "title": "Fancy Theme Toggle",
+      "description": "Example of Theme Toggle from the classic Designer vs Developer meme, built with HTML, CSS, JavaScript and Motion.",
+      "dependencies": [
+        "motion",
+        "lucide"
+      ],
+      "registryDependencies": [
+        "https://atlasui.dev/r/fancy-theme-toggle.json"
+      ],
+      "files": [
+        {
+          "path": "registry/html/examples/fancy-theme-toggle-html-demo/index.html",
+          "type": "registry:file",
+          "target": "~/fancy-theme-toggle/index.html"
+        },
+        {
+          "path": "registry/html/examples/fancy-theme-toggle-html-demo/style.css",
+          "type": "registry:file",
+          "target": "~/fancy-theme-toggle/style.css"
+        },
+        {
+          "path": "registry/html/examples/fancy-theme-toggle-html-demo/script.js",
+          "type": "registry:file",
+          "target": "~/fancy-theme-toggle/script.js"
+        }
+      ],
+      "meta": {
+        "framework": "html"
+      },
+      "type": "registry:example"
+    },
+    {
+      "name": "magnetic-hover-html-demo",
+      "title": "Magnetic Hover",
+      "description": "Example of Magnetic Hover component, built with HTML, CSS, JavaScript and Motion.",
+      "dependencies": [
+        "motion"
+      ],
+      "files": [
+        {
+          "path": "registry/html/examples/magnetic-hover-html-demo/index.html",
+          "type": "registry:file",
+          "target": "~/magnetic-hover/index.html"
+        },
+        {
+          "path": "registry/html/examples/magnetic-hover-html-demo/style.css",
+          "type": "registry:file",
+          "target": "~/magnetic-hover/style.css"
+        },
+        {
+          "path": "registry/html/examples/magnetic-hover-html-demo/script.js",
+          "type": "registry:file",
+          "target": "~/magnetic-hover/script.js"
+        }
+      ],
+      "meta": {
+        "framework": "html"
+      },
+      "type": "registry:example"
+    },
+    {
+      "name": "typewriter-html-demo",
+      "title": "Typewriter",
+      "description": "Example of typewriter component that cycles through text with a synced flashing highlight animation built with HTML, CSS, JavaScript and Motion.",
+      "dependencies": [
+        "motion"
+      ],
+      "files": [
+        {
+          "path": "registry/html/examples/typewriter-html-demo/index.html",
+          "type": "registry:file",
+          "target": "~/typewriter/index.html"
+        },
+        {
+          "path": "registry/html/examples/typewriter-html-demo/style.css",
+          "type": "registry:file",
+          "target": "~/typewriter/style.css"
+        },
+        {
+          "path": "registry/html/examples/typewriter-html-demo/script.js",
+          "type": "registry:file",
+          "target": "~/typewriter/script.js"
         }
       ],
       "meta": {

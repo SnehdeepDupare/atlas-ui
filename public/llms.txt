@@ -35,6 +35,9 @@ Always use the HTML implementation listed below.
 - Dot And Circle Mouse Trailer: A simple Lazy Dot and Circle Mouse Trailer
   - [React Docs](https://www.atlasui.dev/docs/components/react/dot-and-circle-mouse-trailer)
   - [HTML Docs](https://www.atlasui.dev/docs/components/html/dot-and-circle-mouse-trailer)
+- Fancy Theme Toggle: Theme Toggle from the classic Designer vs Developer meme.
+  - [React Docs](https://www.atlasui.dev/docs/components/react/fancy-theme-toggle)
+  - [HTML Docs](https://www.atlasui.dev/docs/components/html/fancy-theme-toggle)
 - Hacker Text: A text animation that scrambles letters before revealing the final text.
   - [React Docs](https://www.atlasui.dev/docs/components/react/hacker-text)
   - [HTML Docs](https://www.atlasui.dev/docs/components/html/hacker-text)
@@ -44,6 +47,9 @@ Always use the HTML implementation listed below.
 - Loki Text Effect: The iconic text animation from the Loki series intro.
   - [React Docs](https://www.atlasui.dev/docs/components/react/loki-text-effect)
   - [HTML Docs](https://www.atlasui.dev/docs/components/html/loki-text-effect)
+- Magnetic Hover: A smooth magnetic hover interaction that subtly pulls elements toward the with using spring based motion animations.
+  - [React Docs](https://www.atlasui.dev/docs/components/react/magnetic-hover)
+  - [HTML Docs](https://www.atlasui.dev/docs/components/html/magnetic-hover)
 - Morph Navbar: A polished navigation bar with a fluid, morphing pill that tracks the active link and hover state.
   - [React Docs](https://www.atlasui.dev/docs/components/react/morph-navbar)
   - [HTML Docs](https://www.atlasui.dev/docs/components/html/morph-navbar)
@@ -71,6 +77,9 @@ Always use the HTML implementation listed below.
 - Shiny Button: A shiny button with a sleek animation effect.
   - [React Docs](https://www.atlasui.dev/docs/components/react/shiny-button)
   - [HTML Docs](https://www.atlasui.dev/docs/components/html/shiny-button)
+- Typewriter: A typewriter component that cycles through text with a synced flashing highlight animation.
+  - [React Docs](https://www.atlasui.dev/docs/components/react/typewriter)
+  - [HTML Docs](https://www.atlasui.dev/docs/components/html/typewriter)
 - Warp Slider: A smooth, infinite slider with dynamic warp distortion and momentum based scrolling.
   - [React Docs](https://www.atlasui.dev/docs/components/react/warp-slider)
   - [HTML Docs](https://www.atlasui.dev/docs/components/html/warp-slider)

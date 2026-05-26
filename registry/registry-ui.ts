@@ -323,4 +323,46 @@ export const ui: Registry["items"] = [
       },
     ],
   },
+  {
+    name: "fancy-theme-toggle",
+    type: "registry:component",
+    title: "Fancy Theme Toggle",
+    description: "Theme Toggle from the classic Designer vs Developer meme.",
+    dependencies: ["motion"],
+    registryDependencies: ["utils"],
+    files: [
+      {
+        path: "react/atlasui/fancy-theme-toggle.tsx",
+        type: "registry:component",
+      },
+    ],
+  },
+  {
+    name: "magnetic-hover",
+    type: "registry:component",
+    title: "Magnetic Hover",
+    description:
+      "A smooth magnetic hover interaction that subtly pulls elements toward the with using spring based motion animations.",
+    dependencies: ["motion"],
+    files: [
+      {
+        path: "react/atlasui/magnetic-hover.tsx",
+        type: "registry:component",
+      },
+    ],
+  },
+  {
+    name: "typewriter",
+    type: "registry:component",
+    title: "Typewriter",
+    description:
+      "A typewriter component that cycles through text with a synced flashing highlight animation.",
+    dependencies: ["motion"],
+    files: [
+      {
+        path: "react/atlasui/typewriter.tsx",
+        type: "registry:component",
+      },
+    ],
+  },
 ];

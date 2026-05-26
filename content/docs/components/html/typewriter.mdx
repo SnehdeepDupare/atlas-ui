@@ -1,0 +1,94 @@
+---
+title: Typewriter
+description: A typewriter component that cycles through text with a synced flashing highlight animation.
+base: html
+---
+
+<HtmlPreview name="typewriter-html-demo" />
+
+## Installation
+
+<InstallationTabs>
+
+<TabsContent value="cli">
+
+```bash
+npx shadcn@latest add https://atlasui.dev/r/typewriter-html.json
+```
+
+</TabsContent>
+
+<TabsContent value="manual">
+
+<Steps>
+
+<Step>Install the following dependencies:</Step>
+
+```bash
+npm install motion
+```
+
+<Step>Copy and paste the following code into your project.</Step>
+
+Structure in your html file:
+
+```html
+<p class="typewriter"></p>
+```
+
+<Step>Add `style.css` </Step>
+
+```css
+.typewriter {
+  font-size: 0.875rem;
+  line-height: 1.5;
+  font-weight: 300;
+  text-transform: uppercase;
+}
+
+.box-span {
+  position: absolute;
+  inset: 0 1px;
+  opacity: 0;
+  background: currentColor;
+  pointer-events: none;
+}
+```
+
+<Step>Add `script.js`</Step>
+
+<ComponentSource name="typewriter-html" file="js" />
+
+</Steps>
+
+</TabsContent>
+
+</InstallationTabs>
+
+## Usage
+
+Define a `<p>` tag with class `typewriter` in your HTML file.
+
+```html
+<p class="typewriter"></p>
+```
+
+Define an array of strings in your `script.js` file.
+
+```js
+const textArray = [
+  "Building pixels with purpose",
+  "Shipping faster than deadlines",
+  "Deploy now, panic later!",
+  "...",
+];
+```
+
+## Config
+
+| Config                | Type     | Default | Description                                |
+| --------------------- | -------- | ------- | ------------------------------------------ |
+| `letterDelay`         | `number` | `0.025` | Delay between each letter (in seconds)     |
+| `boxFadeDuration`     | `number` | `0.125` | Duration of the box fade (in seconds)      |
+| `textFadeOutDuration` | `number` | `0.25`  | Duration of the text fade out (in seconds) |
+| `delayBetween`        | `number` | `5500`  | Delay between each text fade out (in ms)   |

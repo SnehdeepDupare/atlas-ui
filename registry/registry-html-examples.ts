@@ -702,4 +702,89 @@ export const htmlExamples: Registry["items"] = [
       },
     ],
   },
+  {
+    name: "fancy-theme-toggle-html-demo",
+    type: "registry:example",
+    title: "Fancy Theme Toggle",
+    description:
+      "Example of Theme Toggle from the classic Designer vs Developer meme, built with HTML, CSS, JavaScript and Motion.",
+    meta: {
+      framework: "html",
+    },
+    dependencies: ["motion", "lucide"],
+    registryDependencies: ["https://atlasui.dev/r/fancy-theme-toggle.json"],
+    files: [
+      {
+        path: "html/examples/fancy-theme-toggle-html-demo/index.html",
+        type: "registry:file",
+        target: "~/fancy-theme-toggle/index.html",
+      },
+      {
+        path: "html/examples/fancy-theme-toggle-html-demo/style.css",
+        type: "registry:file",
+        target: "~/fancy-theme-toggle/style.css",
+      },
+      {
+        path: "html/examples/fancy-theme-toggle-html-demo/script.js",
+        type: "registry:file",
+        target: "~/fancy-theme-toggle/script.js",
+      },
+    ],
+  },
+  {
+    name: "magnetic-hover-html-demo",
+    type: "registry:example",
+    title: "Magnetic Hover",
+    description:
+      "Example of Magnetic Hover component, built with HTML, CSS, JavaScript and Motion.",
+    meta: {
+      framework: "html",
+    },
+    dependencies: ["motion"],
+    files: [
+      {
+        path: "html/examples/magnetic-hover-html-demo/index.html",
+        type: "registry:file",
+        target: "~/magnetic-hover/index.html",
+      },
+      {
+        path: "html/examples/magnetic-hover-html-demo/style.css",
+        type: "registry:file",
+        target: "~/magnetic-hover/style.css",
+      },
+      {
+        path: "html/examples/magnetic-hover-html-demo/script.js",
+        type: "registry:file",
+        target: "~/magnetic-hover/script.js",
+      },
+    ],
+  },
+  {
+    name: "typewriter-html-demo",
+    type: "registry:example",
+    title: "Typewriter",
+    description:
+      "Example of typewriter component that cycles through text with a synced flashing highlight animation built with HTML, CSS, JavaScript and Motion.",
+    meta: {
+      framework: "html",
+    },
+    dependencies: ["motion"],
+    files: [
+      {
+        path: "html/examples/typewriter-html-demo/index.html",
+        type: "registry:file",
+        target: "~/typewriter/index.html",
+      },
+      {
+        path: "html/examples/typewriter-html-demo/style.css",
+        type: "registry:file",
+        target: "~/typewriter/style.css",
+      },
+      {
+        path: "html/examples/typewriter-html-demo/script.js",
+        type: "registry:file",
+        target: "~/typewriter/script.js",
+      },
+    ],
+  },
 ];

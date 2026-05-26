@@ -1,0 +1,59 @@
+---
+title: Fancy Theme Toggle
+description: Theme Toggle from the classic Designer vs Developer meme.
+base: html
+---
+
+<HtmlPreview name="fancy-theme-toggle-html-demo" />
+
+## Installation
+
+<InstallationTabs>
+
+<TabsContent value="cli">
+
+```bash
+npx shadcn@latest add https://atlasui.dev/r/fancy-theme-toggle-html.json
+```
+
+</TabsContent>
+
+<TabsContent value="manual">
+
+<Steps>
+
+<Step>Install the following dependencies:</Step>
+
+```bash
+npm install motion lucide
+```
+
+<Step>Copy and paste the following code into your project.</Step>
+
+Structure in your html file:
+
+```html
+<button role="switch" id="theme-toggle"></button>
+```
+
+<Step>Add `style.css` </Step>
+
+<ComponentSource name="fancy-theme-toggle-html" file="css" />
+
+<Step>Add `script.js`</Step>
+
+<ComponentSource name="fancy-theme-toggle-html" file="js" />
+
+</Steps>
+
+</TabsContent>
+
+</InstallationTabs>
+
+## Usage
+
+Create a button element with `role="switch"` and `id="theme-toggle"`. Rest of the logic is handled by `script.js`
+
+```html
+<button role="switch" id="theme-toggle"></button>
+```

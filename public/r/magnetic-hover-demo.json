@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "magnetic-hover-demo",
+  "title": "Magnetic Hover Demo",
+  "description": "Example of a smooth magnetic hover interaction that subtly pulls elements toward the with using spring based motion animations.",
+  "registryDependencies": [
+    "https://atlasui.dev/r/magnetic-hover.json"
+  ],
+  "files": [
+    {
+      "path": "registry/react/examples/magnetic-hover-demo.tsx",
+      "content": "import { Button } from \"@/components/ui/button\";\r\nimport { MagneticHover } from \"@/registry/react/atlasui/magnetic-hover\";\r\n\r\nexport const MagneticHoverDemo = () => {\r\n  return (\r\n    <div>\r\n      <MagneticHover>\r\n        <Button>Hover Me</Button>\r\n      </MagneticHover>\r\n    </div>\r\n  );\r\n};\r\n",
+      "type": "registry:example",
+      "target": "components/magnetic-hover-demo.tsx"
+    }
+  ],
+  "type": "registry:example"
+}

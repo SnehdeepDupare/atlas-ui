@@ -1,0 +1,69 @@
+---
+title: Typewriter
+description: A typewriter component that cycles through text with a synced flashing highlight animation.
+base: react
+---
+
+<ComponentPreview name="typewriter-demo" />
+
+## Installation
+
+<InstallationTabs>
+
+<TabsContent value="cli">
+
+```bash
+npx shadcn@latest add https://atlasui.dev/r/typewriter.json
+```
+
+</TabsContent>
+
+<TabsContent value="manual">
+
+<Steps>
+
+<Step>Install the following dependencies:</Step>
+
+```bash
+npm install motion
+```
+
+<Step>Copy and paste the following code into your project.</Step>
+
+<ComponentSource name="typewriter" filePath="components/typewriter.tsx" />
+
+<Step>Update the import paths to match your project setup.</Step>
+
+</Steps>
+
+</TabsContent>
+
+</InstallationTabs>
+
+## Usage
+
+```tsx
+import { Typewriter } from "@/components/typewriter";
+```
+
+```tsx
+<Typewriter
+  text={[
+    "Building pixels with purpose",
+    "Shipping faster than deadlines",
+    "Deploy now, panic later!",
+    "...",
+  ]}
+/>
+```
+
+## Props
+
+| Prop                  | Type       | Default | Description                                |
+| --------------------- | ---------- | ------- | ------------------------------------------ |
+| `text`                | `string[]` | -       | Array of strings to display                |
+| `letterDelay`         | `number`   | `0.025` | Delay between each letter (in seconds)     |
+| `boxFadeDuration`     | `number`   | `0.125` | Duration of the box fade (in seconds)      |
+| `textFadeOutDuration` | `number`   | `0.25`  | Duration of the text fade out (in seconds) |
+| `delayBetween`        | `number`   | `5500`  | Delay between each text fade out (in ms)   |
+| `className`           | `string`   | -       | Optional class names for custom styling.   |

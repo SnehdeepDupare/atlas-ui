@@ -96,6 +96,18 @@ export const docsConfig: DocsConfig = {
           items: [],
         },
         {
+          title: "Fancy Theme Toggle",
+          href: "/docs/components/fancy-theme-toggle",
+          items: [],
+          label: "New",
+        },
+        {
+          title: "Typewriter",
+          href: "/docs/components/typewriter",
+          items: [],
+          label: "New",
+        },
+        {
           title: "Parallax Sections",
           href: "/docs/components/parallax-sections",
           items: [],
@@ -156,6 +168,12 @@ export const docsConfig: DocsConfig = {
           title: "Reveal Effect",
           href: "/docs/components/reveal-effect",
           items: [],
+        },
+        {
+          title: "Magnetic Hover",
+          href: "/docs/components/magnetic-hover",
+          items: [],
+          label: "New",
         },
         {
           title: "Box Reveal",
