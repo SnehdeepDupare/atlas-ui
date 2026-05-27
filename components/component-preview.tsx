@@ -74,7 +74,7 @@ export function ComponentPreview({
             </div>
             <div
               key={key}
-              className="mx-auto flex min-h-80 w-full flex-wrap items-center justify-center gap-y-3 pb-7 lg:px-10"
+              className="mx-auto flex min-h-84 w-full flex-wrap items-center justify-center gap-y-3 pb-7 lg:px-10"
             >
               <React.Suspense
                 fallback={

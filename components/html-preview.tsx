@@ -64,7 +64,7 @@ export function HtmlPreview({ name, children, className }: HtmlPreviewProps) {
               src={iframeSrc}
               title={`${name} preview`}
               className={cn(
-                "mx-auto flex min-h-100 w-full flex-wrap items-center justify-center gap-y-3",
+                "mx-auto flex min-h-84 w-full flex-wrap items-center justify-center gap-y-3",
                 className
               )}
               sandbox="allow-scripts allow-same-origin"
