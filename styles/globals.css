@@ -28,6 +28,11 @@
   --color-destructive: var(--destructive);
   --color-destructive-foreground: var(--destructive-foreground);
 
+  --color-code: var(--code);
+  --color-code-foreground: var(--code-foreground);
+
+  --color-surface: var(--surface);
+
   --color-border: var(--border);
   --color-input: var(--input);
   --color-ring: var(--ring);
@@ -134,6 +139,9 @@
     --accent-foreground: oklch(20.463% 0.00002 271.152);
     --destructive: oklch(63.681% 0.20784 25.315);
     --destructive-foreground: oklch(98.511% 0.00011 271.152);
+    --code: oklch(18.22% 0.00002 271.152);
+    --code-foreground: var(--foreground);
+    --surface: oklch(0.985 0 0);
     --border: oklch(92.191% 0.0001 271.152);
     --input: oklch(92.191% 0.0001 271.152);
     --ring: oklch(18.22% 0.00002 271.152);
@@ -161,6 +169,9 @@
     --accent-foreground: oklch(98.511% 0.00011 271.152);
     --destructive: oklch(39.583% 0.13307 25.707);
     --destructive-foreground: oklch(98.511% 0.00011 271.152);
+    --code: var(--background);
+    --code-foreground: var(--foreground);
+    --surface: oklch(0.21 0.006 285.885);
     --border: oklch(26.862% 0.00003 271.152);
     --input: oklch(26.862% 0.00003 271.152);
     --ring: oklch(86.995% 0.0001 271.152);
@@ -237,7 +248,7 @@
 }
 
 [data-rehype-pretty-code-fragment] {
-  @apply relative text-white;
+  @apply bg-surface inset-ring-border/64 relative my-[1.25em] rounded-xl p-1 text-white inset-ring-1;
 }
 
 [data-rehype-pretty-code-fragment] code {

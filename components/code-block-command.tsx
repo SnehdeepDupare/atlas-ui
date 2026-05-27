@@ -50,7 +50,7 @@ export function CodeBlockCommand({
   const currentCommand = tabs[packageManager];
 
   return (
-    <div className="relative mt-6 overflow-x-auto rounded-xl bg-zinc-900 dark:ring-1 dark:ring-white/10">
+    <div className="relative overflow-x-auto rounded-[9px] bg-zinc-900 dark:ring-1 dark:ring-white/10">
       <Tabs
         value={packageManager}
         className="gap-0"
