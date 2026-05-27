@@ -60,7 +60,7 @@ export function ComponentPreview({
         </TabsList>
         <TabsContent
           value="preview"
-          className="bg-surface inset-ring-border/64 relative rounded-xl p-1 inset-ring-1"
+          className="bg-[oklch(0.985 0 0)] dark:bg-surface inset-ring-border/64 relative rounded-xl p-1 inset-ring-1"
         >
           <ComponentWrapper overflow={overflow}>
             <div className="absolute top-2 right-2 z-10 flex items-center gap-0.5">

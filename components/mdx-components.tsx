@@ -204,7 +204,7 @@ const components = {
       <div className="relative" data-file-label={__file_label__}>
         <pre
           className={cn(
-            "no-scrollbar bg-code max-h-100 overflow-x-auto rounded-[9px] border py-4",
+            "no-scrollbar bg-code dark:border-border max-h-100 overflow-x-auto rounded-[9px] border border-white/20 py-4",
             className
           )}
           {...props}
