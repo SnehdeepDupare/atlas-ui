@@ -140,7 +140,7 @@
     --accent-foreground: oklch(20.463% 0.00002 271.152);
     --destructive: oklch(63.681% 0.20784 25.315);
     --destructive-foreground: oklch(98.511% 0.00011 271.152);
-    --code: oklch(0.27 0.01 286);
+    --code: oklch(22.213% 0.00003 271.152);
     --code-foreground: var(--foreground);
     --code-highlight: oklch(36.993% 0.01022 285.838 / 0.4);
     --surface: oklch(0% 0 0);
