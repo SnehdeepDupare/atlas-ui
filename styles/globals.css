@@ -279,7 +279,21 @@
 }
 
 [data-rehype-pretty-code-fragment] .line--highlighted {
-  @apply bg-code-highlight;
+  @apply bg-code-highlight relative;
+}
+
+.line--highlighted::after {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 2px;
+  height: 100%;
+  content: "";
+  background-color: color-mix(
+    in oklab,
+    var(--muted-foreground) 50%,
+    transparent
+  );
 }
 
 [data-rehype-pretty-code-fragment] .line-highlighted span {
