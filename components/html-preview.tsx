@@ -47,7 +47,10 @@ export function HtmlPreview({ name, children, className }: HtmlPreviewProps) {
 
           <TabsIndicator className="h-0.5 translate-y-0 rounded-none shadow-none" />
         </TabsList>
-        <TabsContent value="preview" className="relative rounded-md">
+        <TabsContent
+          value="preview"
+          className="bg-[oklch(0.985 0 0)] dark:bg-surface inset-ring-border/64 relative rounded-xl p-1 inset-ring-1"
+        >
           <ComponentWrapper className="overflow-hidden">
             <div className="absolute top-2 right-2 z-10 flex items-center gap-0.5">
               <FullScreenButton name={name} />
@@ -61,7 +64,7 @@ export function HtmlPreview({ name, children, className }: HtmlPreviewProps) {
               src={iframeSrc}
               title={`${name} preview`}
               className={cn(
-                "mx-auto flex min-h-100 w-full flex-wrap items-center justify-center gap-y-3",
+                "mx-auto flex min-h-84 w-full flex-wrap items-center justify-center gap-y-3",
                 className
               )}
               sandbox="allow-scripts allow-same-origin"
@@ -71,9 +74,9 @@ export function HtmlPreview({ name, children, className }: HtmlPreviewProps) {
         <TabsContent value="code" className="relative">
           <Tabs
             defaultValue="index.html"
-            className="relative w-full gap-0 overflow-hidden rounded-xl bg-zinc-900 dark:ring-1 dark:ring-white/10"
+            className="bg-surface inset-ring-border/64 relative w-full gap-0 overflow-hidden rounded-xl p-1 text-white inset-ring-1"
           >
-            <TabsList className="flex w-full items-center justify-start gap-3 rounded-none border-b border-zinc-700 bg-zinc-800 px-3 py-1 dark:border-zinc-800 dark:bg-transparent">
+            <TabsList className="flex w-full items-center justify-start gap-3 rounded-none px-3 py-1">
               {htmlBlock && (
                 <TabsTrigger
                   value="index.html"
@@ -102,22 +105,31 @@ export function HtmlPreview({ name, children, className }: HtmlPreviewProps) {
             </TabsList>
 
             {htmlBlock && (
-              <TabsContent value="index.html">
-                <div className="w-full rounded-md dark:bg-white/2.5 [&_pre]:my-0 [&_pre]:max-h-100 [&_pre]:rounded-none [&_pre]:border-0">
+              <TabsContent
+                value="index.html"
+                className="dark:border-border overflow-hidden rounded-[9px] border border-white/20"
+              >
+                <div className="w-full rounded-md **:data-rehype-pretty-code-fragment:my-0! **:data-rehype-pretty-code-fragment:p-0! [&_pre]:my-0 [&_pre]:max-h-100 [&_pre]:rounded-none [&_pre]:border-0">
                   {htmlBlock}
                 </div>
               </TabsContent>
             )}
             {cssBlock && (
-              <TabsContent value="style.css">
-                <div className="w-full rounded-md dark:bg-white/2.5 [&_pre]:my-0 [&_pre]:max-h-100 [&_pre]:rounded-none [&_pre]:border-0">
+              <TabsContent
+                value="style.css"
+                className="dark:border-border overflow-hidden rounded-[9px] border border-white/20"
+              >
+                <div className="w-full rounded-md **:data-rehype-pretty-code-fragment:my-0! **:data-rehype-pretty-code-fragment:p-0! [&_pre]:my-0 [&_pre]:max-h-100 [&_pre]:rounded-none [&_pre]:border-0">
                   {cssBlock}
                 </div>
               </TabsContent>
             )}
             {jsBlock && (
-              <TabsContent value="script.js">
-                <div className="w-full rounded-md dark:bg-white/2.5 [&_pre]:my-0 [&_pre]:max-h-100 [&_pre]:rounded-none [&_pre]:border-0">
+              <TabsContent
+                value="script.js"
+                className="dark:border-border overflow-hidden rounded-[9px] border border-white/20"
+              >
+                <div className="w-full rounded-md **:data-rehype-pretty-code-fragment:my-0! **:data-rehype-pretty-code-fragment:p-0! [&_pre]:my-0 [&_pre]:max-h-100 [&_pre]:rounded-none [&_pre]:border-0">
                   {jsBlock}
                 </div>
               </TabsContent>

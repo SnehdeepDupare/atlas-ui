@@ -50,7 +50,7 @@ export function CodeBlockCommand({
   const currentCommand = tabs[packageManager];
 
   return (
-    <div className="relative mt-6 overflow-x-auto rounded-xl bg-zinc-900 dark:ring-1 dark:ring-white/10">
+    <div className="bg-surface relative overflow-x-auto">
       <Tabs
         value={packageManager}
         className="gap-0"
@@ -61,7 +61,7 @@ export function CodeBlockCommand({
           });
         }}
       >
-        <div className="flex items-center gap-3 border-b border-zinc-700 bg-zinc-800 px-3 py-1 dark:border-zinc-800 dark:bg-transparent">
+        <div className="flex items-center gap-3 px-3 py-1">
           <div className="flex size-4 items-center justify-center rounded-[1px] bg-white opacity-70">
             <TerminalIcon className="size-3 text-black" />
           </div>
@@ -81,7 +81,7 @@ export function CodeBlockCommand({
             <TabsIndicator className="h-0.5 translate-y-0 rounded-none shadow-none" />
           </TabsList>
         </div>
-        <div className="no-scrollbar overflow-x-auto dark:bg-white/2.5">
+        <div className="no-scrollbar bg-code dark:border-border overflow-x-auto rounded-[9px] border border-white/20">
           {Object.entries(tabs).map(([key, value]) => {
             return (
               <TabsContent key={key} value={key} className="mt-0 px-4 py-5">

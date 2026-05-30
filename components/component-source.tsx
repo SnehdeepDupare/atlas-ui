@@ -32,7 +32,7 @@ export function ComponentSource({
       <Collapsible open={isOpened} onOpenChange={setIsOpened}>
         <div
           className={cn(
-            "relative mt-6 overflow-hidden rounded-xl dark:ring dark:ring-white/10 [&_pre]:my-0",
+            "relative overflow-hidden rounded-[9px] [&_pre]:my-0",
             className
           )}
         >
@@ -50,8 +50,8 @@ export function ComponentSource({
           </CollapsibleContent>
           <div
             className={cn(
-              "absolute flex items-end justify-center rounded-xl bg-linear-to-b from-transparent to-zinc-950/90 p-2",
-              isOpened ? "inset-x-0 bottom-0 h-12" : "inset-0"
+              "absolute flex items-end justify-center rounded-[9px] bg-linear-to-b from-transparent from-10% to-zinc-950/90 p-2",
+              isOpened ? "inset-x-1 bottom-6 h-12" : "inset-0"
             )}
           >
             <CollapsibleTrigger asChild>

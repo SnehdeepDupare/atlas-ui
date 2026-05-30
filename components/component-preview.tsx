@@ -14,6 +14,7 @@ import {
   TabsList,
   TabsTrigger,
 } from "@/components/ui/tabs";
+import { cn } from "@/lib/utils";
 import { Index } from "@/registry/__index__";
 
 interface ComponentPreviewProps extends React.HTMLAttributes<HTMLDivElement> {
@@ -57,7 +58,10 @@ export function ComponentPreview({
 
           <TabsIndicator className="h-0.5 translate-y-0 rounded-none shadow-none" />
         </TabsList>
-        <TabsContent value="preview" className="relative rounded-md">
+        <TabsContent
+          value="preview"
+          className="bg-[oklch(0.985 0 0)] dark:bg-surface inset-ring-border/64 relative rounded-xl p-1 inset-ring-1"
+        >
           <ComponentWrapper overflow={overflow}>
             <div className="absolute top-2 right-2 z-10 flex items-center gap-0.5">
               <OpenInV0Button url={`https://atlasui.dev/r/${name}.json`} />
@@ -70,7 +74,7 @@ export function ComponentPreview({
             </div>
             <div
               key={key}
-              className="mx-auto flex min-h-80 w-full flex-wrap items-center justify-center gap-y-3 pb-7 lg:px-10"
+              className="mx-auto flex min-h-84 w-full flex-wrap items-center justify-center gap-y-3 pb-7 lg:px-10"
             >
               <React.Suspense
                 fallback={
@@ -86,10 +90,14 @@ export function ComponentPreview({
         </TabsContent>
         <TabsContent
           value="code"
-          className="border-input relative overflow-hidden rounded-xl border"
+          className="relative overflow-hidden rounded-[9px]"
         >
           <div className="flex flex-col space-y-4">
-            <div className="w-full rounded-md [&_pre]:my-0 [&_pre]:max-h-100">
+            <div
+              className={cn(
+                "w-full rounded-md **:data-rehype-pretty-code-fragment:my-0! [&_pre]:my-0 [&_pre]:max-h-100"
+              )}
+            >
               {Code}
             </div>
           </div>
