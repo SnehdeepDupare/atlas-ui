@@ -81,7 +81,7 @@ export function CodeBlockCommand({
             <TabsIndicator className="h-0.5 translate-y-0 rounded-none shadow-none" />
           </TabsList>
         </div>
-        <div className="no-scrollbar bg-code dark:border-border overflow-x-auto rounded-[9px] border border-white/20">
+        <div className="no-scrollbar bg-code overflow-x-auto rounded-[9px] border">
           {Object.entries(tabs).map(([key, value]) => {
             return (
               <TabsContent key={key} value={key} className="mt-0 px-4 py-5">

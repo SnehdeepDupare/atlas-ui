@@ -49,7 +49,7 @@ export function HtmlPreview({ name, children, className }: HtmlPreviewProps) {
         </TabsList>
         <TabsContent
           value="preview"
-          className="bg-[oklch(0.985 0 0)] dark:bg-surface inset-ring-border/64 relative rounded-xl p-1 inset-ring-1"
+          className="bg-surface inset-ring-border/64 relative rounded-xl p-1 inset-ring-1"
         >
           <ComponentWrapper className="overflow-hidden">
             <div className="absolute top-2 right-2 z-10 flex items-center gap-0.5">
@@ -74,7 +74,7 @@ export function HtmlPreview({ name, children, className }: HtmlPreviewProps) {
         <TabsContent value="code" className="relative">
           <Tabs
             defaultValue="index.html"
-            className="bg-surface inset-ring-border/64 relative w-full gap-0 overflow-hidden rounded-xl p-1 text-white inset-ring-1"
+            className="bg-surface inset-ring-border/64 relative w-full gap-0 overflow-hidden rounded-xl p-1 inset-ring-1"
           >
             <TabsList className="flex w-full items-center justify-start gap-3 rounded-none px-3 py-1">
               {htmlBlock && (
@@ -107,7 +107,7 @@ export function HtmlPreview({ name, children, className }: HtmlPreviewProps) {
             {htmlBlock && (
               <TabsContent
                 value="index.html"
-                className="dark:border-border overflow-hidden rounded-[9px] border border-white/20"
+                className="overflow-hidden rounded-[9px] border"
               >
                 <div className="w-full rounded-md **:data-rehype-pretty-code-fragment:my-0! **:data-rehype-pretty-code-fragment:p-0! [&_pre]:my-0 [&_pre]:max-h-100 [&_pre]:rounded-none [&_pre]:border-0">
                   {htmlBlock}
@@ -117,7 +117,7 @@ export function HtmlPreview({ name, children, className }: HtmlPreviewProps) {
             {cssBlock && (
               <TabsContent
                 value="style.css"
-                className="dark:border-border overflow-hidden rounded-[9px] border border-white/20"
+                className="overflow-hidden rounded-[9px] border"
               >
                 <div className="w-full rounded-md **:data-rehype-pretty-code-fragment:my-0! **:data-rehype-pretty-code-fragment:p-0! [&_pre]:my-0 [&_pre]:max-h-100 [&_pre]:rounded-none [&_pre]:border-0">
                   {cssBlock}
@@ -127,7 +127,7 @@ export function HtmlPreview({ name, children, className }: HtmlPreviewProps) {
             {jsBlock && (
               <TabsContent
                 value="script.js"
-                className="dark:border-border overflow-hidden rounded-[9px] border border-white/20"
+                className="overflow-hidden rounded-[9px] border"
               >
                 <div className="w-full rounded-md **:data-rehype-pretty-code-fragment:my-0! **:data-rehype-pretty-code-fragment:p-0! [&_pre]:my-0 [&_pre]:max-h-100 [&_pre]:rounded-none [&_pre]:border-0">
                   {jsBlock}
