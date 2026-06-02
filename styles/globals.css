@@ -34,6 +34,7 @@
   --color-code-number: var(--code-number);
 
   --color-surface: var(--surface);
+  --color-surface-foreground: var(--surface-foreground);
 
   --color-border: var(--border);
   --color-input: var(--input);
@@ -146,6 +147,7 @@
     --code-highlight: oklch(0.96 0 0);
     --code-number: oklch(0.56 0 0);
     --surface: oklch(0.985 0 0);
+    --surface-foreground: oklch(0.141 0.005 285.823);
     --border: oklch(92.191% 0.0001 271.152);
     --input: oklch(92.191% 0.0001 271.152);
     --ring: oklch(18.22% 0.00002 271.152);
@@ -178,6 +180,7 @@
     --code-highlight: oklch(36.993% 0.01022 285.838 / 0.3);
     --code-number: oklch(0.72 0 0);
     --surface: oklch(0.21 0.006 285.885);
+    --surface-foreground: oklch(0.985 0 0);
     --border: oklch(26.862% 0.00003 271.152);
     --input: oklch(26.862% 0.00003 271.152);
     --ring: oklch(86.995% 0.0001 271.152);
@@ -254,7 +257,7 @@
 }
 
 [data-rehype-pretty-code-fragment] {
-  @apply inset-ring-border/64 relative my-[1.25em] rounded-xl bg-zinc-50 p-1 text-zinc-900 inset-ring-1;
+  @apply inset-ring-border/64 bg-surface text-surface-foreground relative my-[1.25em] rounded-xl p-1 inset-ring-1;
 }
 
 .dark [data-rehype-pretty-code-fragment] {
@@ -283,10 +286,6 @@
   width: 1.8rem;
   margin-right: 1.4rem;
   text-align: right;
-}
-
-.dark [data-rehype-pretty-code-fragment] [data-line-numbers] > .line::before {
-  @apply text-code-number;
 }
 
 [data-rehype-pretty-code-fragment] .line--highlighted {

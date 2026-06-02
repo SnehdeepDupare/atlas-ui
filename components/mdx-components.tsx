@@ -185,28 +185,34 @@ const components = {
     __pnpm__?: string;
     __bun__?: string;
     __file_label__?: string;
+    "data-theme"?: string;
   }) => {
+    const dataTheme = props["data-theme"] as string | undefined;
+
     // npm command.
     const isNpmCommand = __npm__ && __yarn__ && __pnpm__ && __bun__;
     if (isNpmCommand) {
-      const dataTheme = (props as Record<string, unknown>)["data-theme"] as
-        | string
-        | undefined;
+      if (dataTheme === "dark") {
+        return null;
+      }
+
       return (
-        <div data-theme={dataTheme}>
-          <CodeBlockCommand
-            __npm__={__npm__}
-            __yarn__={__yarn__}
-            __pnpm__={__pnpm__}
-            __bun__={__bun__}
-          />
-        </div>
+        <CodeBlockCommand
+          __npm__={__npm__}
+          __yarn__={__yarn__}
+          __pnpm__={__pnpm__}
+          __bun__={__bun__}
+        />
       );
     }
 
     // Default
     return (
-      <div className="relative" data-file-label={__file_label__}>
+      <div
+        className="relative"
+        data-file-label={__file_label__}
+        data-theme={dataTheme}
+      >
         <pre
           className={cn(
             "no-scrollbar bg-code max-h-100 overflow-x-auto rounded-[9px] border py-4",
