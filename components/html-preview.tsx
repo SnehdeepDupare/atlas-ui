@@ -30,7 +30,13 @@ export function HtmlPreview({ name, children, className }: HtmlPreviewProps) {
   // Helper to find a code block by its data-file-label
   const getCodeBlock = (label: string) => {
     return codeBlocks.find((child) => {
-      return child?.props?.children?.props?.["__file_label__"] === label;
+      const innerChildren = child?.props?.children;
+      if (Array.isArray(innerChildren)) {
+        return innerChildren.some(
+          (c: any) => c?.props?.["__file_label__"] === label
+        );
+      }
+      return innerChildren?.props?.["__file_label__"] === label;
     });
   };
 
