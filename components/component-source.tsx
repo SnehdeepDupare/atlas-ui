@@ -50,12 +50,12 @@ export function ComponentSource({
           </CollapsibleContent>
           <div
             className={cn(
-              "absolute flex items-end justify-center rounded-[9px] bg-linear-to-b from-transparent from-10% to-zinc-950/90 p-2",
+              "absolute flex items-end justify-center rounded-[9px] bg-linear-to-b from-transparent from-50% to-zinc-50 p-2 dark:to-zinc-950/90",
               isOpened ? "inset-x-1 bottom-6 h-12" : "inset-0"
             )}
           >
             <CollapsibleTrigger asChild>
-              <Button variant="secondary" className="h-8 text-xs">
+              <Button variant="outline" className="h-8 text-xs">
                 {isOpened ? "Collapse" : "View Code"}
               </Button>
             </CollapsibleTrigger>
