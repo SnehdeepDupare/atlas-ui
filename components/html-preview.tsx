@@ -86,7 +86,7 @@ export function HtmlPreview({ name, children, className }: HtmlPreviewProps) {
               {htmlBlock && (
                 <TabsTrigger
                   value="index.html"
-                  className={`rounded-md p-0 px-1 text-zinc-400 ${firaCode.className}`}
+                  className={`rounded-md p-0 px-1 ${firaCode.className}`}
                 >
                   index.html
                 </TabsTrigger>
@@ -94,7 +94,7 @@ export function HtmlPreview({ name, children, className }: HtmlPreviewProps) {
               {cssBlock && (
                 <TabsTrigger
                   value="style.css"
-                  className={`rounded-md p-0 px-1 text-zinc-400 ${firaCode.className}`}
+                  className={`rounded-md p-0 px-1 ${firaCode.className}`}
                 >
                   style.css
                 </TabsTrigger>
@@ -102,7 +102,7 @@ export function HtmlPreview({ name, children, className }: HtmlPreviewProps) {
               {jsBlock && (
                 <TabsTrigger
                   value="script.js"
-                  className={`rounded-md p-0 px-1 text-zinc-400 ${firaCode.className}`}
+                  className={`rounded-md p-0 px-1 ${firaCode.className}`}
                 >
                   script.js
                 </TabsTrigger>
