@@ -9,6 +9,8 @@ import { visit } from "unist-util-visit";
 
 import { rehypeComponent } from "@/lib/rehype-component";
 import { rehypeNpmCommand } from "@/lib/rehype-npm-command";
+// Updated the orginal poimandres theme color palette for light mode. Full credit for the original Poimandres theme goes to its creators.
+import poimandresLight from "@/styles/poimandres-light.json";
 
 /** @type {import('contentlayer/source-files').ComputedFields} */
 const computedFields = {
@@ -93,7 +95,7 @@ export default makeSource({
         rehypePrettyCode,
         {
           theme: {
-            light: "github-light-default",
+            light: poimandresLight,
             dark: "poimandres",
           },
           getHighlighter,
