@@ -13,6 +13,7 @@ import { ComponentSource } from "@/components/component-source";
 import { ComponentsList } from "@/components/components-list";
 import { CopyButton } from "@/components/copy-button";
 import { HtmlPreview } from "@/components/html-preview";
+import { getIconForLanguageExtension } from "@/components/icons";
 import { InstallationTabs } from "@/components/installation-tabs";
 import {
   Tabs,
@@ -189,6 +190,11 @@ const components = {
   }) => {
     const dataTheme = props["data-theme"] as string | undefined;
 
+    const iconExtension =
+      "data-language" in props && typeof props["data-language"] === "string"
+        ? getIconForLanguageExtension(props["data-language"])
+        : null;
+
     // npm command.
     const isNpmCommand = __npm__ && __yarn__ && __pnpm__ && __bun__;
     if (isNpmCommand) {
@@ -213,6 +219,11 @@ const components = {
         data-file-label={__file_label__}
         data-theme={dataTheme}
       >
+        {__withMeta__ && (
+          <div className="text-code-foreground! [&_svg]:text-code-foreground! px-4 py-2.5 [&_svg]:size-4 [&_svg]:opacity-70">
+            {iconExtension}
+          </div>
+        )}
         <pre
           className={cn(
             "no-scrollbar bg-code max-h-100 overflow-x-auto rounded-[9px] border py-4",
@@ -227,7 +238,7 @@ const components = {
             event={__event__}
             className={cn(
               "absolute top-4 right-4 z-30",
-              __withMeta__ && "top-16"
+              __withMeta__ && "top-1.5 right-1.5"
             )}
           />
         )}

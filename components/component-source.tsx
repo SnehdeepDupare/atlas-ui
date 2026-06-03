@@ -12,23 +12,13 @@ import { cn } from "@/lib/utils";
 interface ComponentSourceProps {
   children?: React.ReactNode;
   className?: string;
-  filePath?: string;
 }
 
-export function ComponentSource({
-  children,
-  className,
-  filePath,
-}: ComponentSourceProps) {
+export function ComponentSource({ children, className }: ComponentSourceProps) {
   const [isOpened, setIsOpened] = useState(false);
 
   return (
     <div className="relative">
-      {filePath && (
-        <span className="bg-muted rounded px-[0.3rem] py-[0.2rem] font-mono text-sm">
-          {filePath}
-        </span>
-      )}
       <Collapsible open={isOpened} onOpenChange={setIsOpened}>
         <div
           className={cn(

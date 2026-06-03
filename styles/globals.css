@@ -258,6 +258,7 @@
 
 [data-rehype-pretty-code-fragment] {
   @apply inset-ring-border/64 bg-surface text-surface-foreground relative my-[1.25em] rounded-xl p-1 inset-ring-1;
+  @apply has-data-rehype-pretty-code-title:mt-0;
 }
 
 .dark [data-rehype-pretty-code-fragment] {
@@ -319,11 +320,7 @@
 }
 
 [data-rehype-pretty-code-title] {
-  @apply text-foreground mt-2 px-4 pt-6 text-sm font-medium;
-}
-
-[data-rehype-pretty-code-title] + pre {
-  @apply mt-2;
+  @apply text-muted-foreground absolute top-3 left-12 font-mono text-sm;
 }
 
 .mdx > .steps:first-child > h3:first-child {
