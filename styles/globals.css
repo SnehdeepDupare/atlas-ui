@@ -258,7 +258,6 @@
 
 [data-rehype-pretty-code-fragment] {
   @apply inset-ring-border/64 bg-surface text-surface-foreground relative my-[1.25em] rounded-xl p-1 inset-ring-1;
-  @apply has-data-rehype-pretty-code-title:mt-0;
 }
 
 .dark [data-rehype-pretty-code-fragment] {
@@ -328,5 +327,5 @@
 }
 
 .steps > h3 {
-  @apply mt-8 mb-4 text-base font-semibold;
+  @apply mt-8 text-base font-semibold;
 }
