@@ -5,6 +5,8 @@ import * as React from "react";
 import { TerminalIcon } from "lucide-react";
 
 import { CopyButton } from "@/components/copy-button";
+import { IconSwap, IconSwapItem } from "@/components/icon-swap";
+import { getIconForPackageManager } from "@/components/icons";
 import {
   Tabs,
   TabsContent,
@@ -62,10 +64,14 @@ export function CodeBlockCommand({
         }}
       >
         <div className="flex items-center gap-3 px-3 py-1">
-          <div className="flex size-4 items-center justify-center rounded-[1px] bg-black/80 opacity-70 dark:bg-white">
-            <TerminalIcon className="size-3 text-white dark:text-black" />
+          <div className="[&_svg]:text-muted-foreground [&_svg]:size-4">
+            <IconSwap>
+              <IconSwapItem key={packageManager}>
+                {getIconForPackageManager(packageManager)}
+              </IconSwapItem>
+            </IconSwap>
           </div>
-          <TabsList className="h-8 translate-y-1 gap-3 rounded-none bg-transparent p-0 dark:bg-transparent">
+          <TabsList className="[&_svg]:text-muted-foreground h-8 translate-y-1 gap-3 rounded-none bg-transparent p-0 dark:bg-transparent [&_svg]:size-4">
             {Object.entries(tabs).map(([key]) => {
               return (
                 <TabsTrigger
