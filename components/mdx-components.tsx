@@ -13,6 +13,7 @@ import { ComponentSource } from "@/components/component-source";
 import { ComponentsList } from "@/components/components-list";
 import { CopyButton } from "@/components/copy-button";
 import { HtmlPreview } from "@/components/html-preview";
+import { getIconForLanguageExtension } from "@/components/icons";
 import { InstallationTabs } from "@/components/installation-tabs";
 import {
   Tabs,
@@ -185,10 +186,22 @@ const components = {
     __pnpm__?: string;
     __bun__?: string;
     __file_label__?: string;
+    "data-theme"?: string;
   }) => {
+    const dataTheme = props["data-theme"] as string | undefined;
+
+    const iconExtension =
+      "data-language" in props && typeof props["data-language"] === "string"
+        ? getIconForLanguageExtension(props["data-language"])
+        : null;
+
     // npm command.
     const isNpmCommand = __npm__ && __yarn__ && __pnpm__ && __bun__;
     if (isNpmCommand) {
+      if (dataTheme === "dark") {
+        return null;
+      }
+
       return (
         <CodeBlockCommand
           __npm__={__npm__}
@@ -201,10 +214,19 @@ const components = {
 
     // Default
     return (
-      <div className="relative" data-file-label={__file_label__}>
+      <div
+        className="relative"
+        data-file-label={__file_label__}
+        data-theme={dataTheme}
+      >
+        {__withMeta__ && (
+          <div className="text-code-foreground! [&_svg]:text-code-foreground! px-4 py-2.5 [&_svg]:size-4 [&_svg]:opacity-70">
+            {iconExtension}
+          </div>
+        )}
         <pre
           className={cn(
-            "no-scrollbar bg-code dark:border-border max-h-100 overflow-x-auto rounded-[9px] border border-white/20 py-4",
+            "no-scrollbar bg-code max-h-100 overflow-x-auto rounded-[9px] border py-4",
             className
           )}
           {...props}
@@ -216,7 +238,7 @@ const components = {
             event={__event__}
             className={cn(
               "absolute top-4 right-4 z-30",
-              __withMeta__ && "top-16"
+              __withMeta__ && "top-1.5 right-1.5"
             )}
           />
         )}
@@ -275,7 +297,7 @@ const components = {
   }: React.ComponentProps<typeof TabsTrigger>) => (
     <TabsTrigger
       className={cn(
-        "ring-offset-background focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:outline-ring inline-flex items-center justify-center gap-2 rounded-sm px-4 py-1.5 text-sm font-medium whitespace-nowrap transition-all focus-visible:ring-[3px] focus-visible:ring-offset-2 focus-visible:outline-hidden focus-visible:outline-1 disabled:pointer-events-none disabled:opacity-50 data-active:text-emerald-400 [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4",
+        "ring-offset-background focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:outline-ring inline-flex items-center justify-center gap-2 rounded-sm px-4 py-1.5 text-sm font-medium whitespace-nowrap transition-all focus-visible:ring-[3px] focus-visible:ring-offset-2 focus-visible:outline-hidden focus-visible:outline-1 disabled:pointer-events-none disabled:opacity-50 data-active:text-emerald-500 [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4",
         className
       )}
       {...props}

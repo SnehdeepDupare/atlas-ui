@@ -9,6 +9,8 @@ import { visit } from "unist-util-visit";
 
 import { rehypeComponent } from "@/lib/rehype-component";
 import { rehypeNpmCommand } from "@/lib/rehype-npm-command";
+// Updated the orginal poimandres theme color palette for light mode. Full credit for the original Poimandres theme goes to its creators.
+import poimandresLight from "@/styles/poimandres-light.json";
 
 /** @type {import('contentlayer/source-files').ComputedFields} */
 const computedFields = {
@@ -92,7 +94,10 @@ export default makeSource({
       [
         rehypePrettyCode,
         {
-          theme: "poimandres",
+          theme: {
+            light: poimandresLight,
+            dark: "poimandres",
+          },
           getHighlighter,
           onVisitLine(node) {
             // Prevent lines from collapsing in `display: grid` mode, and allow empty
@@ -116,25 +121,30 @@ export default makeSource({
               return;
             }
 
-            const preElement = node.children.at(-1);
-            if (preElement.tagName !== "pre") {
+            const preElements = node.children.filter(
+              (child) => child.tagName === "pre"
+            );
+
+            if (preElements.length === 0) {
               return;
             }
 
-            preElement.properties["__withMeta__"] =
-              node.children.at(0).tagName === "div";
-            preElement.properties["__rawString__"] = node.__rawString__;
+            for (const preElement of preElements) {
+              preElement.properties["__withMeta__"] =
+                node.children.at(0).tagName === "div";
+              preElement.properties["__rawString__"] = node.__rawString__;
 
-            if (node.__src__) {
-              preElement.properties["__src__"] = node.__src__;
-            }
+              if (node.__src__) {
+                preElement.properties["__src__"] = node.__src__;
+              }
 
-            if (node.__event__) {
-              preElement.properties["__event__"] = node.__event__;
-            }
+              if (node.__event__) {
+                preElement.properties["__event__"] = node.__event__;
+              }
 
-            if (node.__file_label__) {
-              preElement.properties["__file_label__"] = node.__file_label__;
+              if (node.__file_label__) {
+                preElement.properties["__file_label__"] = node.__file_label__;
+              }
             }
           }
         });

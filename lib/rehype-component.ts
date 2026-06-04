@@ -78,6 +78,7 @@ export function rehypeComponent() {
 
             const config = HTML_FILE_CONFIGS[fileType];
             const filePath = path.join(componentDir, config.filename);
+            const title = getNodeAttributeByName(node, "title");
 
             if (!fs.existsSync(filePath)) {
               console.error(`File not found: ${filePath}`);
@@ -99,6 +100,9 @@ export function rehypeComponent() {
                     tagName: "code",
                     properties: {
                       className: [config.lang],
+                    },
+                    data: {
+                      meta: title ? `title="${title.value}"` : "",
                     },
                     children: [
                       {
@@ -140,6 +144,7 @@ export function rehypeComponent() {
             : path.join(process.cwd(), src);
 
           let source = fs.readFileSync(filePath, "utf8");
+          const title = getNodeAttributeByName(node, "title");
 
           // Replace imports.
           // TODO: Use @swc/core and a visitor to replace this.
@@ -162,6 +167,9 @@ export function rehypeComponent() {
                   tagName: "code",
                   properties: {
                     className: ["language-tsx"],
+                  },
+                  data: {
+                    meta: title ? `title="${title.value}"` : "",
                   },
                   children: [
                     {
