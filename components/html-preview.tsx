@@ -4,6 +4,7 @@ import * as React from "react";
 
 import ComponentWrapper from "@/components/component-wrapper";
 import { FullScreenButton } from "@/components/full-screen-button";
+import { Icons } from "@/components/icons";
 import { ReplayAnimationButton } from "@/components/replay-animation-button";
 import {
   Tabs,
@@ -82,12 +83,13 @@ export function HtmlPreview({ name, children, className }: HtmlPreviewProps) {
             defaultValue="index.html"
             className="bg-surface inset-ring-border/64 relative w-full gap-0 overflow-hidden rounded-xl p-1 inset-ring-1"
           >
-            <TabsList className="flex w-full items-center justify-start gap-3 rounded-none px-3 py-1">
+            <TabsList className="no-scrollbar flex w-full items-center justify-start gap-3 overflow-x-auto rounded-none px-3 py-1">
               {htmlBlock && (
                 <TabsTrigger
                   value="index.html"
                   className={`rounded-md p-0 px-1 ${firaCode.className}`}
                 >
+                  <Icons.html />
                   index.html
                 </TabsTrigger>
               )}
@@ -96,6 +98,7 @@ export function HtmlPreview({ name, children, className }: HtmlPreviewProps) {
                   value="style.css"
                   className={`rounded-md p-0 px-1 ${firaCode.className}`}
                 >
+                  <Icons.css />
                   style.css
                 </TabsTrigger>
               )}
@@ -104,6 +107,7 @@ export function HtmlPreview({ name, children, className }: HtmlPreviewProps) {
                   value="script.js"
                   className={`rounded-md p-0 px-1 ${firaCode.className}`}
                 >
+                  <Icons.js />
                   script.js
                 </TabsTrigger>
               )}
