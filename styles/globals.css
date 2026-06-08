@@ -329,3 +329,7 @@
 .steps > h3 {
   @apply mt-8 text-base font-semibold;
 }
+
+.steps > h3 > p {
+  @apply inline;
+}
