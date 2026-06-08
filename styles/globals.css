@@ -50,6 +50,10 @@
   --radius-md: calc(var(--radius) - 2px);
   --radius-sm: calc(var(--radius) - 4px);
 
+  --font-sans: var(--font-sans);
+  --font-heading: var(--font-heading);
+  --font-mono: var(--font-mono);
+
   --animate-bg-pan: bg-pan 3s linear infinite;
 
   @keyframes bg-pan {

@@ -1,5 +1,4 @@
 import { Metadata } from "next";
-import { Inter } from "next/font/google";
 
 import { Analytics } from "@vercel/analytics/next";
 import { Provider as JotaiProvider } from "jotai";
@@ -10,9 +9,8 @@ import { PostHogProvider } from "@/components/posthog-provider";
 import { ThemeProvider } from "@/components/theme-provider";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { siteConfig } from "@/config/site";
+import { fontVariables } from "@/lib/fonts";
 import "@/styles/globals.css";
-
-const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: {
@@ -66,9 +64,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang="en" suppressHydrationWarning className={fontVariables}>
       <body
-        className={`${inter.className} bg-background flex min-h-svh flex-col antialiased selection:bg-emerald-200/50 selection:text-emerald-900 dark:selection:bg-emerald-400/10 dark:selection:text-emerald-300`}
+        className={`bg-background flex min-h-svh flex-col antialiased selection:bg-emerald-200/50 selection:text-emerald-900 dark:selection:bg-emerald-400/10 dark:selection:text-emerald-300`}
       >
         <JotaiProvider>
           <PostHogProvider>

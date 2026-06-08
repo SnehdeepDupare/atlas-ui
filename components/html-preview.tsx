@@ -13,7 +13,7 @@ import {
   TabsList,
   TabsTrigger,
 } from "@/components/ui/tabs";
-import { cn, firaCode } from "@/lib/utils";
+import { cn } from "@/lib/utils";
 
 interface HtmlPreviewProps extends React.HTMLAttributes<HTMLDivElement> {
   name: string;
@@ -87,7 +87,7 @@ export function HtmlPreview({ name, children, className }: HtmlPreviewProps) {
               {htmlBlock && (
                 <TabsTrigger
                   value="index.html"
-                  className={`rounded-md p-0 px-1 ${firaCode.className}`}
+                  className="rounded-md p-0 px-1 font-mono"
                 >
                   <Icons.html />
                   index.html
@@ -96,7 +96,7 @@ export function HtmlPreview({ name, children, className }: HtmlPreviewProps) {
               {cssBlock && (
                 <TabsTrigger
                   value="style.css"
-                  className={`rounded-md p-0 px-1 ${firaCode.className}`}
+                  className="rounded-md p-0 px-1 font-mono"
                 >
                   <Icons.css />
                   style.css
@@ -105,7 +105,7 @@ export function HtmlPreview({ name, children, className }: HtmlPreviewProps) {
               {jsBlock && (
                 <TabsTrigger
                   value="script.js"
-                  className={`rounded-md p-0 px-1 ${firaCode.className}`}
+                  className="rounded-md p-0 px-1 font-mono"
                 >
                   <Icons.js />
                   script.js

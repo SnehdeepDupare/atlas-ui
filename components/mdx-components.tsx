@@ -24,7 +24,7 @@ import {
 } from "@/components/ui/tabs";
 import { UsageTabs } from "@/components/usage-tabs";
 import { Event } from "@/lib/events";
-import { cn, firaCode } from "@/lib/utils";
+import { cn } from "@/lib/utils";
 
 const components = {
   h1: ({ className, ...props }: React.HTMLAttributes<HTMLHeadingElement>) => (
@@ -248,7 +248,7 @@ const components = {
   code: ({ className, ...props }: React.HTMLAttributes<HTMLElement>) => (
     <code
       className={cn(
-        `${firaCode.className} bg-muted relative rounded px-[0.3rem] py-[0.2rem] font-mono text-sm`,
+        "bg-muted relative rounded px-[0.3rem] py-[0.2rem] font-mono text-sm",
         className
       )}
       {...props}

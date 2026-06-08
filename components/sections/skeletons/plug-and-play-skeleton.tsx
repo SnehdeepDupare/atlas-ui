@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 
 import { motion } from "motion/react";
 
-import { cn, firaCode } from "@/lib/utils";
+import { cn } from "@/lib/utils";
 
 export const PlugAndPlaySkeleton = () => {
   const [activeIndex, setActiveIndex] = useState(0);
@@ -82,17 +82,14 @@ export const PlugAndPlaySkeleton = () => {
           >
             <span
               className={cn(
-                "flex size-4 items-center justify-center text-sm font-bold",
-                firaCode.className,
+                "flex size-4 items-center justify-center font-mono text-sm font-bold",
                 variant.symbol
               )}
             >
               {item.symbol}
             </span>
 
-            <span
-              className={`text-sm font-medium tracking-tight ${firaCode.className}`}
-            >
+            <span className="font-mono text-sm font-medium tracking-tight">
               {item.text}
             </span>
           </motion.div>

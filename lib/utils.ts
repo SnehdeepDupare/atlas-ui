@@ -1,5 +1,3 @@
-import { Fira_Code } from "next/font/google";
-
 import { type ClassValue, clsx } from "clsx";
 import { twMerge } from "tailwind-merge";
 
@@ -8,8 +6,6 @@ import { allDocs } from "@/.contentlayer/generated";
 export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs));
 }
-
-export const firaCode = Fira_Code({ subsets: ["latin"] });
 
 export function absoluteUrl(path: string) {
   return `${process.env.NEXT_PUBLIC_APP_URL}${path}`;

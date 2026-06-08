@@ -2,8 +2,6 @@
 
 import * as React from "react";
 
-import { TerminalIcon } from "lucide-react";
-
 import { CopyButton } from "@/components/copy-button";
 import { IconSwap, IconSwapItem } from "@/components/icon-swap";
 import { getIconForPackageManager } from "@/components/icons";
@@ -15,7 +13,6 @@ import {
   TabsTrigger,
 } from "@/components/ui/tabs";
 import { useConfig } from "@/hooks/use-config";
-import { firaCode } from "@/lib/utils";
 
 export function CodeBlockCommand({
   __npm__,
@@ -77,7 +74,7 @@ export function CodeBlockCommand({
                 <TabsTrigger
                   key={key}
                   value={key}
-                  className={`${firaCode.className} mb-2 rounded-md p-0 px-1 text-zinc-400`}
+                  className="mb-2 rounded-md p-0 px-1 font-mono text-zinc-400"
                 >
                   {key}
                 </TabsTrigger>
@@ -93,7 +90,7 @@ export function CodeBlockCommand({
               <TabsContent key={key} value={key} className="mt-0 px-4 py-5">
                 <pre>
                   <code
-                    className={`${firaCode.className} relative font-mono text-sm leading-none`}
+                    className="relative font-mono text-sm leading-none"
                     data-language="bash"
                   >
                     {value}
