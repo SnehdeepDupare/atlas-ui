@@ -78,8 +78,7 @@
   counter-increment: step;
 
   &:before {
-    @apply bg-muted border-background absolute inline-flex h-9 w-9 items-center justify-center rounded-full border-4 text-center -indent-px font-mono text-base font-medium;
-    @apply mt-[-4px] ml-[-50px];
+    @apply border-background bg-muted mr-2 inline-flex size-6 items-center justify-center rounded-full text-center -indent-px font-mono text-sm font-medium md:absolute md:mt-[-4px] md:ml-[-50px] md:size-9 md:border-4 md:text-base;
     content: counter(step);
   }
 }
@@ -117,10 +116,6 @@
 
   ::-webkit-scrollbar-corner {
     background: transparent;
-  }
-
-  body {
-    font-family: Arial, Helvetica, sans-serif;
   }
 }
 
@@ -240,6 +235,7 @@
 }
 
 /* MDX Styles */
+
 [data-theme="light"] {
   display: block;
 }
