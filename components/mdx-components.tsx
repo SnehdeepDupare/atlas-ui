@@ -186,22 +186,10 @@ const components = {
     __pnpm__?: string;
     __bun__?: string;
     __file_label__?: string;
-    "data-theme"?: string;
   }) => {
-    const dataTheme = props["data-theme"] as string | undefined;
-
-    const iconExtension =
-      "data-language" in props && typeof props["data-language"] === "string"
-        ? getIconForLanguageExtension(props["data-language"])
-        : null;
-
     // npm command.
     const isNpmCommand = __npm__ && __yarn__ && __pnpm__ && __bun__;
     if (isNpmCommand) {
-      if (dataTheme === "dark") {
-        return null;
-      }
-
       return (
         <CodeBlockCommand
           __npm__={__npm__}
@@ -214,21 +202,13 @@ const components = {
 
     // Default
     return (
-      <div
-        className="relative"
-        data-file-label={__file_label__}
-        data-theme={dataTheme}
-      >
-        {__withMeta__ && (
-          <div className="text-code-foreground! [&_svg]:text-code-foreground! px-4 py-2.5 [&_svg]:size-4 [&_svg]:opacity-70">
-            {iconExtension}
-          </div>
-        )}
+      <div className="relative">
         <pre
           className={cn(
             "no-scrollbar bg-code max-h-100 overflow-x-auto rounded-[9px] border py-4",
             className
           )}
+          data-file-label={__file_label__}
           {...props}
         />
         {__rawString__ && (
@@ -243,6 +223,32 @@ const components = {
           />
         )}
       </div>
+    );
+  },
+  figure: ({ className, ...props }: React.ComponentProps<"figure">) => {
+    return <figure className={cn(className)} {...props} />;
+  },
+  figcaption: ({
+    className,
+    children,
+    ...props
+  }: React.ComponentProps<"figcaption">) => {
+    const iconExtension =
+      "data-language" in props && typeof props["data-language"] === "string"
+        ? getIconForLanguageExtension(props["data-language"])
+        : null;
+
+    return (
+      <figcaption
+        className={cn(
+          "text-code-foreground [&_svg]:text-code-foreground flex items-center gap-2 [&_svg]:size-4 [&_svg]:opacity-70",
+          className
+        )}
+        {...props}
+      >
+        {iconExtension}
+        {children}
+      </figcaption>
     );
   },
   code: ({ className, ...props }: React.HTMLAttributes<HTMLElement>) => (

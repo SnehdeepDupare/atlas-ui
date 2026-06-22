@@ -1,4 +1,3 @@
-import { getHighlighter } from "@shikijs/compat";
 import { defineDocumentType, makeSource } from "contentlayer2/source-files";
 import rehypeAutolinkHeadings from "rehype-autolink-headings";
 import rehypePrettyCode from "rehype-pretty-code";
@@ -98,7 +97,8 @@ export default makeSource({
             light: poimandresLight,
             dark: "poimandres",
           },
-          getHighlighter,
+          defaultColor: false,
+          keepBackground: false,
           onVisitLine(node) {
             // Prevent lines from collapsing in `display: grid` mode, and allow empty
             // lines to be copy/pasted
@@ -106,18 +106,12 @@ export default makeSource({
               node.children = [{ type: "text", value: " " }];
             }
           },
-          onVisitHighlightedLine(node) {
-            node.properties.className.push("line--highlighted");
-          },
-          onVisitHighlightedWord(node) {
-            node.properties.className = ["word--highlighted"];
-          },
         },
       ],
       () => (tree) => {
         visit(tree, (node) => {
-          if (node?.type === "element" && node?.tagName === "div") {
-            if (!("data-rehype-pretty-code-fragment" in node.properties)) {
+          if (node?.type === "element" && node?.tagName === "figure") {
+            if (!("data-rehype-pretty-code-figure" in node.properties)) {
               return;
             }
 
@@ -130,8 +124,9 @@ export default makeSource({
             }
 
             for (const preElement of preElements) {
+              const firstChild = node.children.at(0);
               preElement.properties["__withMeta__"] =
-                node.children.at(0).tagName === "div";
+                firstChild?.tagName === "figcaption";
               preElement.properties["__rawString__"] = node.__rawString__;
 
               if (node.__src__) {
