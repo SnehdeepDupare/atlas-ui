@@ -49,7 +49,10 @@ export function CodeBlockCommand({
   const currentCommand = tabs[packageManager];
 
   return (
-    <div className="bg-surface relative overflow-x-auto">
+    <div
+      data-slot="code-block-command"
+      className="bg-surface relative overflow-x-auto"
+    >
       <Tabs
         value={packageManager}
         className="gap-0"
@@ -87,7 +90,7 @@ export function CodeBlockCommand({
         <div className="no-scrollbar bg-code overflow-x-auto rounded-[9px] border">
           {Object.entries(tabs).map(([key, value]) => {
             return (
-              <TabsContent key={key} value={key} className="mt-0 px-4 py-5">
+              <TabsContent key={key} value={key} className="mt-0 px-4 py-1">
                 <pre>
                   <code
                     className="relative font-mono text-sm leading-none"

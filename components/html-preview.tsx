@@ -119,7 +119,7 @@ export function HtmlPreview({ name, children, className }: HtmlPreviewProps) {
                 value="index.html"
                 className="overflow-hidden rounded-[9px] border"
               >
-                <div className="w-full rounded-md **:data-rehype-pretty-code-fragment:my-0! **:data-rehype-pretty-code-fragment:p-0! [&_pre]:my-0 [&_pre]:max-h-100 [&_pre]:rounded-none [&_pre]:border-0">
+                <div className="w-full rounded-md **:data-rehype-pretty-code-figure:my-0! **:data-rehype-pretty-code-figure:p-0! [&_pre]:my-0 [&_pre]:max-h-100 [&_pre]:rounded-none [&_pre]:border-0">
                   {htmlBlock}
                 </div>
               </TabsContent>
@@ -129,7 +129,7 @@ export function HtmlPreview({ name, children, className }: HtmlPreviewProps) {
                 value="style.css"
                 className="overflow-hidden rounded-[9px] border"
               >
-                <div className="w-full rounded-md **:data-rehype-pretty-code-fragment:my-0! **:data-rehype-pretty-code-fragment:p-0! [&_pre]:my-0 [&_pre]:max-h-100 [&_pre]:rounded-none [&_pre]:border-0">
+                <div className="w-full rounded-md **:data-rehype-pretty-code-figure:my-0! **:data-rehype-pretty-code-figure:p-0! [&_pre]:my-0 [&_pre]:max-h-100 [&_pre]:rounded-none [&_pre]:border-0">
                   {cssBlock}
                 </div>
               </TabsContent>
@@ -139,7 +139,7 @@ export function HtmlPreview({ name, children, className }: HtmlPreviewProps) {
                 value="script.js"
                 className="overflow-hidden rounded-[9px] border"
               >
-                <div className="w-full rounded-md **:data-rehype-pretty-code-fragment:my-0! **:data-rehype-pretty-code-fragment:p-0! [&_pre]:my-0 [&_pre]:max-h-100 [&_pre]:rounded-none [&_pre]:border-0">
+                <div className="w-full rounded-md **:data-rehype-pretty-code-figure:my-0! **:data-rehype-pretty-code-figure:p-0! [&_pre]:my-0 [&_pre]:max-h-100 [&_pre]:rounded-none [&_pre]:border-0">
                   {jsBlock}
                 </div>
               </TabsContent>

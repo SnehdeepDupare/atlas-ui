@@ -95,7 +95,7 @@ export function ComponentPreview({
           <div className="flex flex-col space-y-4">
             <div
               className={cn(
-                "w-full rounded-md **:data-rehype-pretty-code-fragment:my-0! [&_pre]:my-0 [&_pre]:max-h-100"
+                "w-full rounded-md **:data-rehype-pretty-code-figure:my-0! [&_pre]:my-0 [&_pre]:max-h-100"
               )}
             >
               {Code}
