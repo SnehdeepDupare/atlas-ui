@@ -7,6 +7,7 @@ import {
   ExternalLinkIcon,
 } from "lucide-react";
 
+import { IconSwap, IconSwapItem } from "@/components/icon-swap";
 import { Button } from "@/components/ui/button";
 import { ButtonGroup } from "@/components/ui/button-group";
 import {
@@ -26,11 +27,6 @@ Help me understand how to use it. Be ready to explain concepts, give examples, o
 };
 export const DocsCopyPage = ({ page, url }: { page: string; url: string }) => {
   const { copyToClipboard, isCopied } = useCopyToClipboard();
-  const trigger = (
-    <Button variant="outline" name="copy-page" className="size-8 shadow-none">
-      <ChevronDownIcon />
-    </Button>
-  );
 
   const menuItems = {
     markdown: (url: string) => (
@@ -61,7 +57,7 @@ export const DocsCopyPage = ({ page, url }: { page: string; url: string }) => {
         >
           <path d="M56 50.203V14h14v46.156C70 65.593 65.593 70 60.156 70c-2.596 0-5.158-1-7-2.843L0 14h19.797L56 50.203ZM147 56h-14V23.953L100.953 56H133v14H96.687C85.814 70 77 61.186 77 50.312V14h14v32.156L123.156 14H91V0h36.312C138.186 0 147 8.814 147 19.688V56Z" />
         </svg>
-        <span className="-translate-x-[2px]">Open in v0</span>
+        <span className="-translate-x-0.5">Open in v0</span>
         <ExternalLinkIcon className="ml-auto size-3 md:size-3.5" />
       </a>
     ),
@@ -107,11 +103,23 @@ export const DocsCopyPage = ({ page, url }: { page: string; url: string }) => {
           className="h-8! shadow-none"
           onClick={() => copyToClipboard(page)}
         >
-          {isCopied ? <CheckIcon /> : <CopyIcon />}
+          <IconSwap>
+            <IconSwapItem key={isCopied ? "check" : "copy"}>
+              {isCopied ? <CheckIcon /> : <CopyIcon />}
+            </IconSwapItem>
+          </IconSwap>
           Copy Page
         </Button>
         <DropdownMenu>
-          <DropdownMenuTrigger asChild>{trigger}</DropdownMenuTrigger>
+          <DropdownMenuTrigger asChild>
+            <Button
+              variant="outline"
+              name="copy-page"
+              className="size-8 shadow-none [&_svg]:transition-transform data-[state=open]:[&_svg]:rotate-180"
+            >
+              <ChevronDownIcon />
+            </Button>
+          </DropdownMenuTrigger>
           <DropdownMenuContent align="end" className="shadow-none">
             {Object.entries(menuItems).map(([key, value]) => (
               <DropdownMenuItem key={key} asChild className="cursor-pointer">
