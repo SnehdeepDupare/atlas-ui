@@ -20,7 +20,7 @@ import { siteConfig } from "@/config/site";
 export const Header = () => {
   const pathname = usePathname();
   return (
-    <header className="dark:shadow-primary-foreground sticky top-0 z-50 w-full border-b shadow-md backdrop-blur-sm dark:backdrop-blur-xs">
+    <header className="sticky top-0 z-50 w-full border-b backdrop-blur-sm dark:backdrop-blur-xs">
       <div className="container-wrapper">
         <div className="container flex h-14 items-center">
           <MobileNav className="mr-3 md:hidden" pathname={pathname} />
