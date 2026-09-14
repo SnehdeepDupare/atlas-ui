@@ -9,7 +9,7 @@
   "files": [
     {
       "path": "registry/react/examples/fancy-theme-toggle-demo.tsx",
-      "content": "import { ThemeToggle } from \"@/registry/react/atlasui/fancy-theme-toggle\";\r\n\r\nexport const FancyThemeToggleDemo = () => {\r\n  return <ThemeToggle />;\r\n};\r\n",
+      "content": "import { ThemeToggle } from \"@/registry/react/atlasui/fancy-theme-toggle\";\n\nexport const FancyThemeToggleDemo = () => {\n  return <ThemeToggle />;\n};\n",
       "type": "registry:example",
       "target": "components/fancy-theme-toggle-demo.tsx"
     }
